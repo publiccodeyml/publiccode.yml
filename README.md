@@ -27,6 +27,8 @@ We want to make the following discoverable:
 
 The format should both be able to easily be added to any new project, as well as grow with the project as it grows beyond the original context it was developed in.
 
+The standard needs strong versioning in development and should develop freely with the needs of the community.
+
 ## Contributing
 
 Feel free to submit Pull Requests and to file Issues.
