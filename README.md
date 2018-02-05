@@ -31,6 +31,10 @@ The standard needs strong versioning in development and should develop freely wi
 
 The file should be lintable with a simple tool for compliance.
 
+## Finding projects with a `publiccode.yml`
+
+You can find all `publiccode.yml` files on [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
+
 ## Contributing
 
 Feel free to submit Pull Requests and to file Issues.
