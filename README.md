@@ -6,7 +6,7 @@ A metadata description standard for public software and policy repositories.
 
 The goal of this standard is to make public software, such as the software developed by public administrations and public organisations easily discoverable.
 
-A [draft](https://gist.github.com/rasky/fbd2da521b827c4a22b352bdb0811471) of the implementation has been made by @rasky.
+A [draft](https://gist.github.com/rasky/fbd2da521b827c4a22b352bdb0811471) of the implementation has been made by [Giovanni Bajo](https://github.com/rasky).
 
 ## Contributing
 
