@@ -29,6 +29,8 @@ The format should both be able to easily be added to any new project, as well as
 
 The standard needs strong versioning in development and should develop freely with the needs of the community.
 
+The file should be lintable with a simple tool for compliance.
+
 ## Contributing
 
 Feel free to submit Pull Requests and to file Issues.
