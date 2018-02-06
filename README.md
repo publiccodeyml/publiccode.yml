@@ -41,4 +41,4 @@ Feel free to submit Pull Requests and to file Issues.
 
 ## Licence
 
-Licenced under the [EUPL](LICENCE.md)
+Licenced under the [CC-0](LICENCE)
