@@ -41,4 +41,4 @@ Feel free to submit Pull Requests and to file Issues.
 
 ## Licence
 
-Licenced under the [CC-0](LICENCE)
+Licenced under the [CC-0](LICENSE)
