@@ -31,6 +31,7 @@ description:
       - https://youtube.com/xxxxxxxx 
     version: 1.0                                          # Last stable version
     released: 2017-04-15                                  # Date of last stable software release 
+    platforms: web                    # or Windows, Mac, Linux, etc. 
 
 ita-pianotriennale:     # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
   use-spid: yes         # yes, no, or "n/a" se il software non ha un login
@@ -44,8 +45,9 @@ meta:                            # Meta information to help categorization of th
       - Comune di Firenze
       - Comune di Roma 
 
-requisites:
-    platforms: web                    # or Windows, Mac, Linux, etc. 
-    proprietary-dependencies:          # List of proprietary software that must be owned to be able to use this software
+dependencies:             # List of dependencies. The only mandatory list is the proprietary one
+    open:                 # List of open dependencies. Optional
+      - MySQL
+    proprietary:          # List of proprietary software that must be bought to be able to use this software
       - Oracle 11.4
       - IBM SoftLayer 4.5
