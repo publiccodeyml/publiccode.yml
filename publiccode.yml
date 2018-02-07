@@ -46,10 +46,10 @@ meta:                            # Meta information to help categorization of th
       - Comune di Roma 
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
-    open:                 # List of open dependencies. Optional
-      - MySQL
-    proprietary:          # List of proprietary software that must be bought to be able to use this software
-      - Oracle 11.4
-      - IBM SoftLayer 4.5
-    hardware:             # List of special hardware required. Optional.
-      - NFC Reader (chipset xxx) 
+  open:                 # List of open dependencies. Optional
+    - MySQL
+  proprietary:          # List of proprietary software that must be bought to be able to use this software
+    - Oracle 11.4
+    - IBM SoftLayer 4.5
+  hardware:             # List of special hardware required. Optional.
+    - NFC Reader (chipset xxx) 
