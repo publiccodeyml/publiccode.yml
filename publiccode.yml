@@ -1,12 +1,12 @@
 version: 0.0.1                     # publiccode YAML standard version 0.0.1
 
 legal:
-  owner: Comune di Reggio Emilia    # main author
+  authors-file: AUTHORS             # file listing copyright information
   license: AGPL-3.0-or-later        # SPDX expression of license
 
-maintainance:                        # Whether the software is currently maintained as open-source software
-  - maintained: yes
-    maintained-until: 2019-01-01     # When the maintenance contract is due
+maintainance:                        # Maintainance status as open-source software
+  - maintanance-type: commercial     # Whether there is a commercial contract of maintainance in place. No -> community
+    maintained-until: 2019-01-01     # If maintainance-type is commercial, then the maintenance contract is due
     technical-contacts:              # Name of the people that are currently technically maintaining this software
     - name: Francesco Rossi
       email: francesco.rossi@comune.reggioemilia.it
