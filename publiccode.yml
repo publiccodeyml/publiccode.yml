@@ -1,0 +1,51 @@
+version: 0.0.1                     # publiccode YAML standard version 0.0.1
+
+legal:
+  owner: Comune di Reggio Emilia    # main author
+  license: AGPL-3.0-or-later        # SPDX expression of license
+
+maintainance:                        # Whether the software is currently maintained as open-source software
+  - maintained: yes
+    maintained-until: 2019-01-01     # When the maintenance contract is due
+    technical-contacts:              # Name of the people that are currently technically maintaining this software
+    - name: Francesco Rossi
+      email: francesco.rossi@comune.reggioemilia.it
+      affiliation: Comune di Reggio Emilia
+    - name: Dario Bianchi
+      email: dario.bianchi@fornitore.it
+      affiliation: Fornitore Privato Spa
+
+description:
+  - name: Medusa                                          # Short descriptive name
+    logo: img/logo.jpg                                    # Logo
+    shortdesc: A really interesting software.             # Max 100 characters
+    longdesc: >
+      Very long description of this software, also split
+      on multiple rows. You should note what the software
+      is and why one should need it.
+    screenshots:                                          # Screen shots used to get a quick look&feel of the software
+      - img/sshot1.jpg
+      - img/sshot2.jpg
+      - img/sshot3.jpg
+    videos:                                               # Demo videos of the software
+      - https://youtube.com/xxxxxxxx 
+    version: 1.0                                          # Last stable version
+    released: 2017-04-15                                  # Date of last stable software release 
+
+ita-pianotriennale:     # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
+  use-spid: yes         # yes, no, or "n/a" se il software non ha un login
+  use-pagopa: yes
+
+meta:                            # Meta information to help categorization of this software
+  - scope: ita
+    pa-type: city 
+    category: ita-anagrafe       # Category list in National Guidelines (possibly, per-country)
+    used-by:                     # Which other public administrations are known to use this software
+      - Comune di Firenze
+      - Comune di Roma 
+
+requisites:
+    platforms: web                    # or Windows, Mac, Linux, etc. 
+    proprietary-dependencies:          # List of proprietary software that must be owned to be able to use this software
+      - Oracle 11.4
+      - IBM SoftLayer 4.5
