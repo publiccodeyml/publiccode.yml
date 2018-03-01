@@ -29,7 +29,7 @@ description:
       - img/sshot3.jpg
     videos:                                               # Demo videos of the software
       - https://youtube.com/xxxxxxxx 
-    version: 1.0                                          # Last stable version
+    version: "1.0"                                        # Last stable version
     released: 2017-04-15                                  # Date of last stable software release 
     platforms: web                    # or Windows, Mac, Linux, etc. 
 
