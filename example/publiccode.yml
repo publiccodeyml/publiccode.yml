@@ -1,28 +1,34 @@
-version: 0.0.1                     # publiccode YAML standard version 0.0.1
+version: "0.1"                    # publiccode YAML standard version 0.0.1
+url: "https://example.com/italia/repo.git"  # URL of this repository
 
 legal:
+  main-copyright-owner: Comune di Reggio Emilia e amici
+  repo-owner: Comune di Reggio Emilia # copyright owner
   authors-file: AUTHORS             # file listing copyright information
   license: AGPL-3.0-or-later        # SPDX expression of license
 
-maintainance:                        # Maintainance status as open-source software
-  - maintanance-type: commercial     # Whether there is a commercial contract of maintainance in place. No -> community
-    maintained-until: 2019-01-01     # If maintainance-type is commercial, then the maintenance contract is due
-    technical-contacts:              # Name of the people that are currently technically maintaining this software
-    - name: Francesco Rossi
-      email: francesco.rossi@comune.reggioemilia.it
-      affiliation: Comune di Reggio Emilia
-    - name: Dario Bianchi
-      email: dario.bianchi@fornitore.it
-      affiliation: Fornitore Privato Spa
+maintenance:                        # Maintainance status as open-source software
+  type: commercial                  # Whether there is a commercial contract of maintainance in place. No -> community
+  until: "2019-01-01"               # If maintainance-type is commercial, then the maintenance contract is due
+  maintainer: Company Spa           # Name of the lead maintainer
+  technical-contacts:               # Name of the people that are currently technically maintaining this software
+  - name: Francesco Rossi
+    email: "francesco.rossi@comune.reggioemilia.it"
+    affiliation: Comune di Reggio Emilia
+  - name: Dario Bianchi
+    email: "dario.bianchi@fornitore.it"
+    affiliation: Fornitore Privato Spa
 
 description:
   - name: Medusa                                          # Short descriptive name
-    logo: img/logo.jpg                                    # Logo
-    shortdesc: A really interesting software.             # Max 100 characters
-    longdesc: >
-      Very long description of this software, also split
-      on multiple rows. You should note what the software
-      is and why one should need it.
+    logo: img/logo.jpg                                    # Logo (size > 500px)
+    shortdesc:
+      - en: A really interesting software.             # Max 100 characters
+    longdesc:
+      - en: >
+          Very long description of this software, also split
+          on multiple rows. You should note what the software
+          is and why one should need it.
     screenshots:                                          # Screen shots used to get a quick look&feel of the software
       - img/sshot1.jpg
       - img/sshot2.jpg
@@ -33,14 +39,17 @@ description:
     released: 2017-04-15                                  # Date of last stable software release 
     platforms: web                    # or Windows, Mac, Linux, etc. 
 
-ita-pianotriennale:     # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
+it-riuso:
+  ipa: BF14X            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+
+it-pianotriennale:      # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
   use-spid: yes         # yes, no, or "n/a" se il software non ha un login
   use-pagopa: yes
 
 meta:                            # Meta information to help categorization of this software
-  - scope: ita
+  - scope: it
     pa-type: city 
-    category: ita-anagrafe       # Category list in National Guidelines (possibly, per-country)
+    category: it-anagrafe        # Category list in National Guidelines (possibly, per-country)
     used-by:                     # Which other public administrations are known to use this software
       - Comune di Firenze
       - Comune di Roma 
