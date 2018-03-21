@@ -25,7 +25,7 @@ or many country-specific sections instead.
 Documentation for country specific sections is maintained in separate
 files:
 
-* Italy: [Italian extensions](schema-it.md)
+* Italy: [Italian extensions](it-schema.md)
 
 
 ## Top-level section
@@ -322,15 +322,18 @@ value can be used.
 
 * Type: string or array of strings (path to file)
 * Presence: optional
-* Formats: PNG, JPG, SVG
-* Example: "img/logo.jpg"
+* Formats: SVG, PNG
+* Example: "img/logo.svg"
 
-This key contains the logo of the software. Logos can be of any shape
-and size; the longer size (width or height) should be at least 500
-pixels. It is possible to provide multiple logos of different shapes and
-colors (eg: an inverted logo, a non-transparent one, a favicon, etc.);
-parsers can analyze the provided logos, to be able to display the best
-one depending on the context (eg: shape, background color, etc.).
+This key contains the logo of the software. Logos should be in vector
+format, but raster formats are allowed as a fallback.
+
+Vector logos should be provided at least in two formats: a color one,
+and a monochromatic (black) one.
+
+Raster logos should be provided only if vector logos do not exist.
+In this case, they should be transparent PNGs, minimum 1000px of
+width.
 
 ### Key `description/shortdesc`
 
@@ -358,13 +361,19 @@ website (if the software had one).
 
 * Type: array of strings (paths)
 * Presence: optional
-* Formats: PNG, JPG, SVG
+* Formats: PNG, JPG
 * Example: "data/screenshots/configuration.png"
 
 This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
-looks like and how it works. Screenshots can be of any shape and size;
-the longer size (width or height) should be at least 500 pixels.
+looks like and how it works.
+
+Screenshots can be of any shape and size; the suggested formats are:
+
+ * Desktop: 1280x800 @1x
+ * Tablet: 1024x768 @2x
+ * Mobile: 375x667 @2x
+
 
 ### Key `description/videos`
 
@@ -409,7 +418,7 @@ the ISO693-1 two-letter country codes of the countries n this key.
 
 * Type: enumerated string or array of strings
 * Presence: optional
-* Values: see []
+* Values: see [pa-types.md](pa-types.md)
 * Example: "city"
 
 This key defines the types of public administration which is expected
@@ -417,6 +426,105 @@ to use this software. Public software is often specific in scope, because
 there is a large set of tasks that are specific to each type of
 administration. For instance, many softwares that are used in schools
 are probably not useful in hospitals.
+
+The list of allowed values is defined in [pa-types.md](pa-types.md),
+and can evolve at any time, separately from the version of this
+specification.
+
+### Key `meta/category`
+
+* Type: enumerated string
+* Presence: optional
+* Values: see [sw-category.md](sw-category.md)
+* Example: "it-anagrafe"
+
+This key defines the "category" of software, which is the market area
+for the software. You can select the category that is more similar to
+the software; it doesn't have to be an exact match, but it can still
+be very useful for building catalogs of software and evaluate
+alternatives.
+
+The list of allowed values is defined in [sw-category.md](sw-category.md),
+and can evolve at any time, separately from the version of this
+specification.
+
+### Key `meta/tags`
+
+* Type: array of strings
+* Presence: optional
+* Example: "city", "accounting", "hr", "employee", "public"
+
+A list of words that can be used to describe the software and can
+help building catalogs of open software.
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple word is `-` (single dash).
+
+
+### Key `meta/used-by`
+
+* Type: array of strings
+* Presence: optional
+* Example: "City of Amsterdam"
+
+A list of public administrations that are currently using this software.
+
+Parsers are encouraged to enhance this list also with other information
+that can obtain independently; for instance, a fork of a software,
+owned by an administration, could be used as a signal of usage of the
+software.
+
+
+
+
+### Section `dependencies`
+
+This section provides an overview on the system-level dependencies
+required to install and use this software.
+
+**NOTE:** do not list dependencies at the source code level (eg: software
+libraries being used), and focus only on runtime and/or system-level
+dependencies that must be installed and maintained separately. For
+instance, a database is a good example of such dependencies.
+
+### Key `section/open`
+
+* Type: array of strings
+* Presence: optional
+* Example: "MariaDB 10.2"
+
+This key contains a list of runtime dependencies that are distributed
+under an open-source license.
+
+Each string is free form, max 50 characters; feel free to add version
+numbers and/or short comments.
+
+### Key `section/proprietary`
+
+* Type: array of strings
+* Presence: optional
+* Example: "IBM SoftLayer 4.5"
+
+This key contains a list of runtime dependencies that are distributed
+under a proprietary license.
+
+Each string is free form, max 50 characters; feel free to add version
+numbers and/or short comments.
+
+### Key `section/hardware`
+
+* Type: array of strings
+* Presence: optional
+* Example: "NFC Reader (only for scanning tags)"
+
+This key contains a list of hardware dependencies that must be owned
+to use the software.
+
+Each string is free form, max 50 characters; feel free to add version
+numbers and/or short comments.
+
+
 
 
 

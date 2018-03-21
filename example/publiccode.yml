@@ -1,4 +1,4 @@
-version: "0.1"                    # publiccode YAML standard version 0.0.1
+version: "0.1" /                    # publiccode YAML standard version 0.0.1
 url: "https://example.com/italia/repo.git"  # URL of this repository
 
 legal:
@@ -50,6 +50,10 @@ meta:                            # Meta information to help categorization of th
   - scope: it
     pa-type: city 
     category: it-anagrafe        # Category list in National Guidelines (possibly, per-country)
+    tags:
+      - comune
+      - anagrafe
+      - cittadino
     used-by:                     # Which other public administrations are known to use this software
       - Comune di Firenze
       - Comune di Roma 
