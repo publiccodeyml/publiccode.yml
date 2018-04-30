@@ -55,7 +55,7 @@ immediately skips irrelevant forks. On the contrary, a fork that is
 meant to be maintained separately from the original software should
 modify this line, to give themselves the status of a fork.
 
-### Key `upstream-url`
+### Key `upstreamUrl`
 
 * Type: string or array of strings
 * Presence: optional
@@ -85,7 +85,7 @@ distributed. The string must contain a valid SPDX expression, referring
 to one (or multiple) open-source license. Please refer to the [SPDX
 documentation](https://spdx.org/licenses/) for further information.
 
-### Key `legal/main-copyright-owner`
+### Key `legal/mainCopyrightOwner`
 
 * Type: string
 * Presence: optional
@@ -102,9 +102,9 @@ group of people like "Linus Torvalds and all Linux contributors".
 
 In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has a authors
-file, you can point to it through `legal/authors_file`.
+file, you can point to it through `legal/authorsFile`.
 
-### Key `legal/authors-file`
+### Key `legal/authorsFile`
 
 * Type: string (path to file)
 * Presence: optional
@@ -117,16 +117,16 @@ where there are many external contributors and no clear single/main
 copyright owner. In such cases, this key can be used to refer to the
 authors file, using a path relative to the root of the repository.
 
-### Key `legal/repo-owner`
+### Key `legal/repoOwner`
 
 * Type: string
 * Presence: mandatory
-* Example: "City of Amsterday"
+* Example: "City of Amsterdam"
 
 This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
-`repo-owner` is probably different from the `main-copyright-owner`.
+`repoOwner` is probably different from the `mainCopyrightOwner`.
 
 
 ## Section `maintenance`
@@ -176,7 +176,7 @@ specify the final entities actually contracted to deliver the
 maintenance. Do not specify the software owner unless it is technically
 involved with the maintenance of the product as well.
 
-### Key `maintenance/maintainer-website`
+### Key `maintenance/maintainerWebsite`
 
 * Type: URL
 * Presence: optional (if there is a maintenance)
@@ -184,7 +184,7 @@ involved with the maintenance of the product as well.
 This key points to the maintainer website. It can either point to the main
 institutional website, or to a more project-specific page or website.
 
-### Key `maintenance/technical-contacts`
+### Key `maintenance/technicalContacts`
 
 * Type: array of objects
 * Presence: mandatory (if there is a maintenance)
@@ -199,7 +199,7 @@ e-mail addresses. Do NOT populate these objects using generic contact
 points (like mailing lists, generic "info@" email addresses) and/or
 generic department names (eg: "Acme Inc. Support Department").
 
-### Key `maintenance/technical-contacts/name`
+### Key `maintenance/technicalContacts/name`
 
 * Type: string
 * Presence: mandatory
@@ -209,7 +209,7 @@ This key contains the full name of one of the technical contacts.
 It must be a real person; do NOT populate this key with generic
 contact information, company departments, associations, etc.
 
-### Key `maintenance/technical-contacts/email`
+### Key `maintenance/technicalContacts/email`
 
 * Type: string
 * Presence: mandatory
@@ -224,7 +224,7 @@ The e-mail address must not be obfuscated. To improve resistance
 against e-mail collection, use `\x64` to replace `@`, as allowed
 by the YAML specification.
 
-### Key `maintenance/technical-contacts/affiliation`
+### Key `maintenance/technicalContacts/affiliation`
 
 * Type: string
 * Presence: optional
@@ -266,7 +266,7 @@ versioning or any other specific version format.
 The key can be omitted if the software is currently in initial
 development and has never been released yet.
 
-### Key `description/release-date`
+### Key `description/releaseDate`
 
 * Type: string (date)
 * Presence: mandatory if `description/version` is present
@@ -309,7 +309,7 @@ Raster logos should be provided only if vector logos do not exist.
 In this case, they should be transparent PNGs, minimum 1000px of
 width.
 
-### Key `description/shortdesc`
+### Key `description/shortDesc`
 
 * Type: multi-language string (max 100 chars)
 * Presence: mandatory
@@ -319,7 +319,7 @@ This key contains a short description of the software. It should be
 a single line containing a single sentence. Maximum 100 characters are
 allowed.
 
-### Key `description/longdesc`
+### Key `description/longDesc`
 
 * Type: multi-language string (min 500 chars, max 10000 chars)
 * Presence: mandatory
@@ -363,12 +363,12 @@ be hosted on a video sharing website that supports the
 Vimeo.
 
 
-## Section `meta`
+## Section `classification`
 
 This section contains information useful to classify the software,
 define its scope of usage and its goal at a general level.
 
-### Key `meta/scope`
+### Key `classification/scope`
 
 * Type: string or array of strings
 * Presence: optional
@@ -379,7 +379,7 @@ a software is probably useful only within some specific countries
 (because, eg., it helps implementing a specific regulation), specify
 the ISO693-1 two-letter country codes of the countries n this key.
 
-### Key `meta/pa-type`
+### Key `classification/paType`
 
 * Type: enumerated string or array of strings
 * Presence: optional
@@ -396,7 +396,7 @@ The list of allowed values is defined in [pa-types.md](pa-types.md),
 and can evolve at any time, separately from the version of this
 specification.
 
-### Key `meta/category`
+### Key `classification/category`
 
 * Type: enumerated string
 * Presence: optional
@@ -413,7 +413,7 @@ The list of allowed values is defined in [sw-category.md](sw-category.md),
 and can evolve at any time, separately from the version of this
 specification.
 
-### Key `meta/tags`
+### Key `classification/tags`
 
 * Type: array of strings
 * Presence: optional
@@ -427,7 +427,7 @@ any Unicode whitespace character. The suggested character to
 separate multiple word is `-` (single dash).
 
 
-### Key `meta/used-by`
+### Key `classification/usedBy`
 
 * Type: array of strings
 * Presence: optional
