@@ -72,19 +72,6 @@ version, you should consider mentioning the upstream project in this
 key.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Section `legal`
 
 ### Key `legal/license`
@@ -142,20 +129,6 @@ itself. For instance, in case of a fork of the original software, the
 `repo-owner` is probably different from the `main-copyright-owner`.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Section `maintenance`
 
 This section provides information on the maintenance status of the
@@ -166,23 +139,27 @@ developed or not.
 
 * Type: enumerate
 * Presence: mandatory
-* Values: "commercial", "community", "none"
+* Values: "internal", "contract", "community", "none"
 
 This key describes how the software is currently maintained.
-"Commercial" means that there is a commercial contract that binds
-an entity to the maintenance of the software; "community" means that
-the software is currently maintained by one or more people that donate
-their time to the project; "none" means that the software is not
-actively maintained.
+"internal" means that the software is internally maintained by
+the repository owner. "contract" means that there is a commercial
+contract that binds an entity to the maintenance of the software;
+"community" means that the software is currently maintained by one
+or more people that donate their time to the project;
+"none" means that the software is not actively maintained.
 
 ### Key `maintenance/until`
 
 * Type: date (YYYY-MM-DD)
-* Presence: mandatory (if the software is commercially maintained)
+* Presence: mandatory (if the software maintenance type is not "none")
 * Example: 2019-07-01
 
-In case of a commercial maintenance, this key must contain the date
-at which the maintenance is going to end.
+In case of a maintenance, this key must contain the date
+at which the maintenance is going to end. In case of community
+maintenance, the value should not be more than 2 years in the
+future, and thus will need to be regularly updated as the
+community continues working on the project.
 
 ### Key `maintenance/maintainer`
 
@@ -199,6 +176,14 @@ specify the final entities actually contracted to deliver the
 maintenance. Do not specify the software owner unless it is technically
 involved with the maintenance of the product as well.
 
+### Key `maintenance/maintainer-website`
+
+* Type: URL
+* Presence: optional (if there is a maintenance)
+
+This key points to the maintainer website. It can either point to the main
+institutional website, or to a more project-specific page or website.
+
 ### Key `maintenance/technical-contacts`
 
 * Type: array of objects
@@ -209,7 +194,7 @@ people in charge of the maintenance. The goal is to provide a clear
 contact point for contributors that need to discuss how to best
 implement modifications to the software.
 
-It MUST contain real people names (first name, family name) and direct
+It MUST contain real names of individuals (eg: first name, family name) and direct
 e-mail addresses. Do NOT populate these objects using generic contact
 points (like mailing lists, generic "info@" email addresses) and/or
 generic department names (eg: "Acme Inc. Support Department").
@@ -250,17 +235,6 @@ contact. In case of multiple maintainers, this can be used to create
 a relation between each technical contact and each maintainer entity.
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Section `description`
 
 This section contains general description on the software. Parsers
@@ -292,7 +266,7 @@ versioning or any other specific version format.
 The key can be omitted if the software is currently in initial
 development and has never been released yet.
 
-### Key `description/released`
+### Key `description/release-date`
 
 * Type: string (date)
 * Presence: mandatory if `description/version` is present
@@ -389,15 +363,6 @@ be hosted on a video sharing website that supports the
 Vimeo.
 
 
-
-
-
-
-
-
-
-
-
 ## Section `meta`
 
 This section contains information useful to classify the software,
@@ -476,8 +441,6 @@ owned by an administration, could be used as a signal of usage of the
 software.
 
 
-
-
 ### Section `dependencies`
 
 This section provides an overview on the system-level dependencies
@@ -488,7 +451,7 @@ libraries being used), and focus only on runtime and/or system-level
 dependencies that must be installed and maintained separately. For
 instance, a database is a good example of such dependencies.
 
-### Key `section/open`
+### Key `dependencies/open`
 
 * Type: array of strings
 * Presence: optional
@@ -500,7 +463,7 @@ under an open-source license.
 Each string is free form, max 50 characters; feel free to add version
 numbers and/or short comments.
 
-### Key `section/proprietary`
+### Key `dependencies/proprietary`
 
 * Type: array of strings
 * Presence: optional
@@ -512,7 +475,7 @@ under a proprietary license.
 Each string is free form, max 50 characters; feel free to add version
 numbers and/or short comments.
 
-### Key `section/hardware`
+### Key `dependencies/hardware`
 
 * Type: array of strings
 * Presence: optional
@@ -523,9 +486,6 @@ to use the software.
 
 Each string is free form, max 50 characters; feel free to add version
 numbers and/or short comments.
-
-
-
 
 
 ## Special data formats

@@ -1,4 +1,4 @@
-version: "0.1" /                    # publiccode YAML standard version 0.0.1
+version: "0.1"                      # publiccode YAML standard version 0.0.1
 url: "https://example.com/italia/repo.git"  # URL of this repository
 
 legal:
@@ -34,21 +34,36 @@ description:
       - img/sshot2.jpg
       - img/sshot3.jpg
     videos:                                               # Demo videos of the software
-      - https://youtube.com/xxxxxxxx 
+      - https://youtube.com/xxxxxxxx
     version: "1.0"                                        # Last stable version
-    released: 2017-04-15                                  # Date of last stable software release 
-    platforms: web                    # or Windows, Mac, Linux, etc. 
+    released: 2017-04-15                                  # Date of last stable software release
+    platforms: web                    # or Windows, Mac, Linux, etc.
 
 it-riuso:
   ipa: BF14X            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
 
 it-pianotriennale:      # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
-  use-spid: yes         # yes, no, or "n/a" se il software non ha un login
-  use-pagopa: yes
+  piattaforme-abilitanti:
+    spid: yes
+    pagopa: yes
+    cie: yes
+    anpr: yes
+
+  designers:
+    - kits:
+      - service-design: no
+      - ui: yes
+      - webtoolkit: yes
+
+  tema: theme-school
+
+  api:
+    - uses: yes
+    - exports: yes
 
 meta:                            # Meta information to help categorization of this software
   - scope: it
-    pa-type: city 
+    pa-type: city
     category: it-anagrafe        # Category list in National Guidelines (possibly, per-country)
     tags:
       - comune
@@ -56,7 +71,7 @@ meta:                            # Meta information to help categorization of th
       - cittadino
     used-by:                     # Which other public administrations are known to use this software
       - Comune di Firenze
-      - Comune di Roma 
+      - Comune di Roma
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
@@ -65,4 +80,4 @@ dependencies:             # List of dependencies. The only mandatory list is the
     - Oracle 11.4
     - IBM SoftLayer 4.5
   hardware:             # List of special hardware required. Optional.
-    - NFC Reader (chipset xxx) 
+    - NFC Reader (chipset xxx)
