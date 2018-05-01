@@ -14,8 +14,8 @@ laws or regulations. The provided extension mechanism is the usage
 of country-specific sections.
 
 All country-specific sections are prefixed with the two-letter ISO 639-1
-country code, followed by a dash (`-`), followed by the section name.
-For instance `it-pianotriennale` is a section declaring compliance to
+country code, followed by an underscore (`_`), followed by the section name.
+For instance `it_pianoTriennale` is a section declaring compliance to
 the Italian digital transformation plan.
 
 Notice that country-specific keys within international sections are
