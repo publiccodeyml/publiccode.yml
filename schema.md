@@ -62,15 +62,13 @@ modify this line, to give themselves the status of a fork.
 * Example: "https://github.com/italia/otello"
 
 This string must be one or multiple URLs of upstream repositories from
-which this fork was created. This key is meant to create a relation
-between forked repositories that could not be found out otherwise (for
-instance, some code hosting platforms record fork relations in their
-metadata).
+which this fork was created. The existence of this key identifies the
+fork as a [software variant](forks.md), which descends from the
+specified repositories.
 
-If you fork a software with the purpose of creating an independent
-version, you should consider mentioning the upstream project in this
-key.
-
+See [Forks and Variants](forks.md) for a complete description of
+what is a software variant and how to handle forked softwares as a
+parser or an author.
 
 ## Section `legal`
 
@@ -330,6 +328,50 @@ of the software for a potential users. The audience for this text
 should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
+
+### Key `description/documentation`
+
+* Type: URL
+* Presence: optional
+
+This key contains a reference to the user-level (not developer-level)
+documentation of the software. The value must be a URL to a
+hosted version of the documentation.
+
+It is suggested that the URL points to a hosted version of the
+documentation that is immediately readable through a common web browser
+in both desktop and mobile format. The documentation should be rendered
+in HTML and browsable like a website (with a navigation index, a search bar,
+etc.).
+
+If the documentation is instead available only as a document, put a direct
+view/download link as URL in this key. You should commit the document as
+part of the source code repository, and then link to it using the code
+hosting source browser URL (eg: GitHub URL to the file). Prefer using
+open formats like PDF or ODT for maximum interoperability.
+
+Whichever the format for the documentation, remember to make its source
+files available under an open license, possibly by committing them as
+part of the repository itself.
+
+### Key `description/features`
+
+* Type: array of multi-language strings
+* Presence: mandatory
+
+This key contains a list of software features, describing what capabilities
+the software allows to do. The audience for this text should be that of users
+of the software, not developers, so do not list technical features referring
+to implementation details, but rather user-visible functionalities of the
+software.
+
+While the key is mandatory, there is no mandatory minimum or maximum number
+of features that should be listed in this key. Each feature must use a maximum
+of 100 characters.
+
+The suggested number of features to list is between 5 and 20, depending on the
+software size and complexity. There is no need for exhaustiveness, as users
+can always read the documentation for additional information.
 
 ### Key `description/screenshots`
 
