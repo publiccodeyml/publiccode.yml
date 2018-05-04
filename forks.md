@@ -5,17 +5,17 @@ context of updating `publiccode.yml`. We define two different
 semantics that require different handling: technical forks and
 software variants.
 
-## Technical forks
+## Technical forks (i.e. to publish patches)
 
 A technical fork is a fork made by a developer for the purpose
-of working on the code base (called *upstream*), without any
+of working on the original code base (called *upstream*), without any
 explicit goal of creating and publishing an alternative variant
 of the original software.
 
 In the context of distributed control systems and collaborative
 code hosting platforms like GitHub, forking is almost always used
 by developers as a step to work on a contribution on an existing
-codebase.
+codebase, by sending "pull requests".
 
 Because of the way forking works on GitHub and other platforms,
 developers publish their forks as perfect copies of the original
