@@ -8,9 +8,9 @@ software variants.
 ## Technical forks (i.e. to publish patches)
 
 A technical fork is a fork made by a developer for the purpose
-of working on the original code base (called *upstream*), without any
-explicit goal of creating and publishing an alternative variant
-of the original software.
+of working on the original code base or sending improvements to
+the original authors, without any explicit goal of creating and
+publishing an alternative variant of the original software.
 
 In the context of distributed control systems and collaborative
 code hosting platforms like GitHub, forking is almost always used
@@ -37,7 +37,7 @@ marks forks explicitly as forks)
 
 Authors of technical forks **SHOULD NOT** modify `publiccode.yml`
 in any way. Specifically, they **MUST NOT** modify the top-level
-`url` key that **MUST** continue pointing to the upstream repository.
+`url` key that **MUST** continue pointing to the original repository.
 
 There is no explicit key to mark a fork as a technical fork. This
 is a conscious design decision because we do not want authors of
