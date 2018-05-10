@@ -3,6 +3,8 @@
 This document contains an informal description of the schema of
 `publiccode.yml`.
 
+Version: 1.0-alpha1
+
 ## Structure
 
 ### Country-specific extensions
