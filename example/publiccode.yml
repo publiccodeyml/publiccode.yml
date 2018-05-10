@@ -5,6 +5,7 @@ applicationSuite: MegaProductivitySuite
 repoURL: "https://example.com/italia/repo.git"  # URL of this repository
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
+logo: img/logo.jpg                                    # Logo (size > 500px)
 platforms:                   # or Windows, Mac, Linux, etc.
   - android                   
   - ios
@@ -76,7 +77,6 @@ about:
     - de
   en:
     localizedName: Medusa                                          # Short descriptive name
-    logo: img/logo.jpg                                    # Logo (size > 500px)
     shortDesc: "A really interesting software."           # Max 100 characters
     longDesc: >
           Very long description of this software, also split
