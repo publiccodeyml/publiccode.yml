@@ -83,9 +83,8 @@ it:
 classification:                  # Meta information to help categorization of this software
   softwareType:
     standalone: yes
-    webService: no
     library: no
-    configuration: no
+    configurationFiles: no
   scope: it
   paType: city
   category: it-anagrafe          # Category list in National Guidelines (possibly, per-country)
