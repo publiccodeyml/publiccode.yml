@@ -62,6 +62,14 @@ maintenance:                        # Maintainance status as open-source softwar
     phone: +39 16 24231322
 
 description:
+  # Does the software support, at least in the design, multiple languages?
+  localizationReady: yes
+  # Languages already available
+  availableLanguages:
+    - en
+    - it
+    - fr
+    - de
   en:
     name: Medusa                                          # Short descriptive name
     logo: img/logo.jpg                                    # Logo (size > 500px)
@@ -82,16 +90,6 @@ description:
        - Has zero bugs
        - Solves all the problems of the world
      documentation: "https://read.the.documentation/medusa/v1.0"
-
-i18n:
-  # Does the software support, at least in the design, multiple languages?
-  localizationReady: yes
-  # Languages already available
-  availableLanguages:
-    - en
-    - it
-    - fr
-    - de
 
 it:
   riuso:
