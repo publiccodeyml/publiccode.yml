@@ -81,8 +81,11 @@ it:
       - exports: yes
 
 classification:                  # Meta information to help categorization of this software
-  isSoftware: yes
-  isLibrary: no
+  softwareType:
+    standalone: yes
+    webService: no
+    library: no
+    configuration: no
   scope: it
   paType: city
   category: it-anagrafe          # Category list in National Guidelines (possibly, per-country)
