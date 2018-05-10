@@ -58,7 +58,8 @@ description:
        - Solves all the problems of the world
 
 it:
-  codiceIPA: BF14X            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+  riuso:
+    codiceIPA: http://w3id.org/italia/data/ipa/c_h501            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
   
   pianoTriennale:
     piattaformeAbilitanti:
