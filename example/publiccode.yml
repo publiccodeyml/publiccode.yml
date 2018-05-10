@@ -1,12 +1,13 @@
 publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
 url: "https://example.com/italia/repo.git"  # URL of this repository
 
+name: Medusa 
+applicationSuite: MegaProductivitySuite
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
 platforms:                   # or Windows, Mac, Linux, etc.
   - android                   
   - ios
-applicationSuite: MegaProductivitySuite
 
 countriesSupported:        # Explicitly supported countries
   - it
@@ -20,11 +21,12 @@ softwareType:
   library: no
   configurationFiles: no
   
-scope:
+intendedAudience:
   world: yes
-  eu: yes
-  it: yes
-  paType: city # Who 
+  institutionType: city
+  countries:
+    - it
+    - de
 
 usedBy:                        # Which other public administrations are known to use this software
   - Comune di Firenze
@@ -36,32 +38,35 @@ legal:
   authorsFile: AUTHORS              # file listing copyright information
   license: AGPL-3.0-or-later        # SPDX expression of license
 
-maintenance:                        # Maintainance status as open-source software
-  developmentStatus:
-    concept: no
-    development: yes
-    beta: no
-    stable: no
-    obsolete: no
-  type: # Whether there is a commercial contract of maintainance in place. No -> community
-    internal: no
-    contract: no
-    community: yes
-    unmaintained: no
-  until: "2019-01-01"               # If maintainance-type is commercial, then the maintenance contract is due
-  roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
-  maintainer: Company Spa           # Name of the lead maintainer
-  technicalContacts:                # Name of the people that are currently responsible for technically maintaining this software
-  - name: Francesco Rossi
-    email: "francesco.rossi@comune.reggioemilia.it"
-    affiliation: Comune di Reggio Emilia
-    phone: +39 231 13215112
-  - name: Dario Bianchi
-    email: "dario.bianchi@fornitore.it"
-    affiliation: Fornitore Privato S.P.A.
-    phone: +39 16 24231322
+developmentStatus:
+  concept: no
+  development: yes
+  beta: no
+  stable: no
+  obsolete: no
+  
+maintenance: # Whether there is a commercial contract of maintainance in place. No -> community
+  internal: no
+  contract: no
+  community: yes
+  unmaintained: no
+  
+  until: "2019-01-01"
+  
+  maintainers:
+    - name: Francesco Rossi
+      email: "francesco.rossi@comune.reggioemilia.it"
+      affiliation: Comune di Reggio Emilia
+      phone: +39 231 13215112
+      leadMaintainer: yes
+    - name: Dario Bianchi
+      email: "dario.bianchi@fornitore.it"
+      affiliation: Fornitore Privato S.P.A.
+      phone: +39 16 24231322
+      
+roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
 
-description:
+about:
   # Does the software support, at least in the design, multiple languages?
   localizationReady: yes
   # Languages already available
@@ -71,7 +76,7 @@ description:
     - fr
     - de
   en:
-    name: Medusa                                          # Short descriptive name
+    localizedName: Medusa                                          # Short descriptive name
     logo: img/logo.jpg                                    # Logo (size > 500px)
     shortDesc: "A really interesting software."           # Max 100 characters
     longDesc: >
