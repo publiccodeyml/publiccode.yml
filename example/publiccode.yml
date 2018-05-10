@@ -66,6 +66,9 @@ maintenance: # Whether there is a commercial contract of maintainance in place. 
       
 roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
 
+awards:
+  - 1st Price Software of the year
+
 localization:
   # Does the software support, at least in the design, multiple languages?
   localizationReady: yes
