@@ -3,14 +3,15 @@ url: "https://example.com/italia/repo.git"  # URL of this repository
 
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
-platforms: web                    # or Windows, Mac, Linux, etc.
+platforms:                   # or Windows, Mac, Linux, etc.
+  - android                   
+  - ios
 applicationSuite: MegaProductivitySuite
-availableOnDevice: Phone X 
- 
-countriesSupported: # Explicitly supported countries
+
+countriesSupported:        # Explicitly supported countries
   - it
   - de
-countriesNotSupported: # Explicitly unsupported countries
+countriesNotSupported:     # Explicitly unsupported countries
   - us
 
 softwareType:
@@ -18,16 +19,16 @@ softwareType:
   standalone: yes
   library: no
   configurationFiles: no
-territorialScope:
-  international: yes
+  
+scope:
+  world: yes
   eu: yes
   it: yes
-paType: city
+  paType: city # Who 
 
 usedBy:                        # Which other public administrations are known to use this software
   - Comune di Firenze
   - Comune di Roma
-
 
 legal:
   mainCopyrightOwner: Comune di Reggio Emilia e amici
