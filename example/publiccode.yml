@@ -47,27 +47,27 @@ description:
        - Has zero bugs
        - Solves all the problems of the world
 
-it_riuso:
-  ipa: BF14X            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+it:
+  codiceIPA: BF14X            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+  
+  pianoTriennale:
+    piattaformeAbilitanti:
+      spid: yes
+      pagopa: yes
+      cie: yes
+      anpr: yes
 
-it_pianoTriennale:      # Aderenza al piano triennale. Chiave sotto namespace "it_", quindi solo italiana
-  piattaformeAbilitanti:
-    spid: yes
-    pagopa: yes
-    cie: yes
-    anpr: yes
+    designers:
+      - kits:
+        - service-design: no
+        - ui: yes
+        - webtoolkit: yes
 
-  designers:
-    - kits:
-      - service-design: no
-      - ui: yes
-      - webtoolkit: yes
+    tema: theme-school
 
-  tema: theme-school
-
-  api:
-    - uses: yes
-    - exports: yes
+    api:
+      - uses: yes
+      - exports: yes
 
 classification:                  # Meta information to help categorization of this software
   isSoftware: yes
