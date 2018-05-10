@@ -96,7 +96,7 @@ localization:
        - Will run without a problem
        - Has zero bugs
        - Solves all the problems of the world
-     documentation: "https://read.the.documentation/medusa/v1.0"
+    documentation: "https://read.the.documentation/medusa/v1.0"
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
