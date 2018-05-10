@@ -58,6 +58,15 @@ description:
        - Solves all the problems of the world
      documentation: "https://read.the.documentation/medusa/v1.0"
 
+international:
+  # Does the software support, at least in the design, multiple languages?
+  localizationReady: yes
+  availableLanguages:
+    - en
+    - it
+    - fr
+    - de
+
 it:
   riuso:
     codiceIPA: http://w3id.org/italia/data/ipa/c_h501            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
