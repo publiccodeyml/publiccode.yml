@@ -60,7 +60,14 @@ description:
 it:
   riuso:
     codiceIPA: http://w3id.org/italia/data/ipa/c_h501            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
-  
+    
+    tags:
+      - comune
+      - anagrafe
+      - cittadino
+    
+    category: it-anagrafe          # Category list in National Guidelines (possibly, per-country)
+
   pianoTriennale:
     piattaformeAbilitanti:
       spid: yes
@@ -85,13 +92,11 @@ classification:                  # Meta information to help categorization of th
     standalone: yes
     library: no
     configurationFiles: no
-  scope: it
+  scope:
+    international: yes
+    it: yes
   paType: city
-  category: it-anagrafe          # Category list in National Guidelines (possibly, per-country)
-  tags:
-    - comune
-    - anagrafe
-    - cittadino
+  
   usedBy:                        # Which other public administrations are known to use this software
     - Comune di Firenze
     - Comune di Roma
