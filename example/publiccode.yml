@@ -34,7 +34,7 @@ usedBy:                        # Which other public administrations are known to
   - Comune di Roma
 
 legal:
-  mainCopyrightOwner: Comune di Reggio Emilia e amici
+  mainCopyrightOwner: Comune di Reggio Emilia and friends
   repoOwner: Comune di Reggio Emilia # copyright owner
   authorsFile: AUTHORS              # file listing copyright information
   license: AGPL-3.0-or-later        # SPDX expression of license
