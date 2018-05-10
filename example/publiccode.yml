@@ -56,6 +56,7 @@ description:
        - Will run without a problem
        - Has zero bugs
        - Solves all the problems of the world
+     documentation: "https://read.the.documentation/medusa/v1.0"
 
 it:
   riuso:
