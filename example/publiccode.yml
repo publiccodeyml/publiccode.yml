@@ -1,4 +1,4 @@
-version: "0.1"                      # publiccode YAML standard version 0.0.1
+publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
 url: "https://example.com/italia/repo.git"  # URL of this repository
 
 legal:
