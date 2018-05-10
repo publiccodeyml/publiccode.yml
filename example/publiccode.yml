@@ -52,8 +52,7 @@ maintenance: # Whether there is a commercial contract of maintainance in place. 
   unmaintained: no
   
   until: "2019-01-01"
-  
-  maintainers:
+  contacts:
     - name: Francesco Rossi
       email: "francesco.rossi@comune.reggioemilia.it"
       affiliation: Comune di Reggio Emilia
@@ -100,8 +99,8 @@ it:
   accessibile: yes # Rispetta i requisiti di legge in materia di accessibilità?
   
   riuso:
-    codiceIPA: http://w3id.org/italia/data/ipa/c_h501            # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
- 
+    # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+    codiceIPA: http://w3id.org/italia/data/ipa/c_h501            
     tag:
       - comune
       - anagrafe
@@ -138,7 +137,8 @@ dependencies:             # List of dependencies. The only mandatory list is the
     - name: PostgreSQL
     	version: 3.2
       optional: yes
-  proprietary:          # List of proprietary software which is a dependency for using this product. This includes runtime dependencies
+  # List of proprietary software which is a dependency for using this product. This includes runtime dependencies
+  proprietary:          
     - Oracle 11.4
     - IBM SoftLayer 4.5
   hardware:             # List of special hardware required. Optional.
