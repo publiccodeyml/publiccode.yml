@@ -1,6 +1,34 @@
 publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
 url: "https://example.com/italia/repo.git"  # URL of this repository
 
+softwareVersion: "1.0"                                        # Last stable version
+releaseDate: 2017-04-15                               # Date of last stable software release
+platforms: web                    # or Windows, Mac, Linux, etc.
+applicationSuite: MegaProductivitySuite
+availableOnDevice: Phone X 
+ 
+countriesSupported: # Explicitly supported countries
+  - it
+  - de
+countriesNotSupported: # Explicitly unsupported countries
+  - us
+
+softwareType:
+  internalComponent: no
+  standalone: yes
+  library: no
+  configurationFiles: no
+territorialScope:
+  international: yes
+  eu: yes
+  it: yes
+paType: city
+
+usedBy:                        # Which other public administrations are known to use this software
+  - Comune di Firenze
+  - Comune di Roma
+
+
 legal:
   mainCopyrightOwner: Comune di Reggio Emilia e amici
   repoOwner: Comune di Reggio Emilia # copyright owner
@@ -33,12 +61,11 @@ maintenance:                        # Maintainance status as open-source softwar
     phone: +39 16 24231322
 
 description:
-  - name: Medusa                                          # Short descriptive name
+  en:
+    name: Medusa                                          # Short descriptive name
     logo: img/logo.jpg                                    # Logo (size > 500px)
-    shortDesc:
-      - en: A really interesting software.             # Max 100 characters
-    longDesc:
-      - en: >
+    shortDesc: "A really interesting software."           # Max 100 characters
+    longDesc: >
           Very long description of this software, also split
           on multiple rows. You should note what the software
           is and why one should need it.
@@ -48,19 +75,17 @@ description:
       - img/sshot3.jpg
     videos:                                               # Demo videos of the software
       - https://youtube.com/xxxxxxxx
-    version: "1.0"                                        # Last stable version
-    releaseDate: 2017-04-15                               # Date of last stable software release
-    platforms: web                    # or Windows, Mac, Linux, etc.
-    features:
+    featureList:
        - Very important feature
        - Will run without a problem
        - Has zero bugs
        - Solves all the problems of the world
      documentation: "https://read.the.documentation/medusa/v1.0"
 
-international:
+i18n:
   # Does the software support, at least in the design, multiple languages?
   localizationReady: yes
+  # Languages already available
   availableLanguages:
     - en
     - it
@@ -96,21 +121,6 @@ it:
     api:
       - uses: yes
       - exports: yes
-
-classification:                  # Meta information to help categorization of this software
-  softwareType:
-    internalComponent: no
-    standalone: yes
-    library: no
-    configurationFiles: no
-  scope:
-    international: yes
-    it: yes
-  paType: city
-  
-  usedBy:                        # Which other public administrations are known to use this software
-    - Comune di Firenze
-    - Comune di Roma
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
