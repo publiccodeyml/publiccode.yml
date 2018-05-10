@@ -17,7 +17,7 @@ countriesNotSupported:     # Explicitly unsupported countries
   - us
 
 softwareType:
-  internalComponent: no
+  softwareAddon: no
   standalone: yes
   library: no
   configurationFiles: no
