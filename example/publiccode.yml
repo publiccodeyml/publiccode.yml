@@ -95,6 +95,23 @@ localization:
        - Solves all the problems of the world
      documentation: "https://read.the.documentation/medusa/v1.0"
 
+dependencies:             # List of dependencies. The only mandatory list is the proprietary one
+  open:                 # List of open dependencies. Optional
+    - name: MySQL
+    	version: 
+      	greaterThan: 1.1
+        lesserThan: 1.3
+      optional: yes
+    - name: PostgreSQL
+    	version: 3.2
+      optional: yes
+  # List of proprietary software which is a dependency for using this product. This includes runtime dependencies
+  proprietary:          
+    - Oracle 11.4
+    - IBM SoftLayer 4.5
+  hardware:             # List of special hardware required. Optional.
+    - NFC Reader (chipset xxx)
+
 it:
   accessibile: yes # Rispetta i requisiti di legge in materia di accessibilità?
   
@@ -126,20 +143,3 @@ it:
     api:
       - uses: yes
       - exports: yes
-
-dependencies:             # List of dependencies. The only mandatory list is the proprietary one
-  open:                 # List of open dependencies. Optional
-    - name: MySQL
-    	version: 
-      	greaterThan: 1.1
-        lesserThan: 1.3
-      optional: yes
-    - name: PostgreSQL
-    	version: 3.2
-      optional: yes
-  # List of proprietary software which is a dependency for using this product. This includes runtime dependencies
-  proprietary:          
-    - Oracle 11.4
-    - IBM SoftLayer 4.5
-  hardware:             # List of special hardware required. Optional.
-    - NFC Reader (chipset xxx)
