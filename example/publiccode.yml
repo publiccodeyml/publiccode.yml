@@ -1,8 +1,8 @@
 publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
-url: "https://example.com/italia/repo.git"  # URL of this repository
 
 name: Medusa 
 applicationSuite: MegaProductivitySuite
+repoURL: "https://example.com/italia/repo.git"  # URL of this repository
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
 platforms:                   # or Windows, Mac, Linux, etc.
