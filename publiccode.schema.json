@@ -1,13 +1,19 @@
 {
+  "title": "Public code",
   "$id": "http://example.com/example.json",
   "type": "object",
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+        "legal": {},
+        "dependencies": {},
+        "version": {},
+        "tmpfs": {}
+  },
   "properties": {
     "publiccode-yaml-version": {
       "$id": "/properties/publiccode-yaml-version",
       "type": "string",
-      "title": "The Publiccode-yaml-version Schema ",
+      "title": "Version of the specification",
+      "description": "This key specifies the version to which the current publiccode.yml adheres to, for forward compatibility. Current version is 0.1. Accepts a URL",
       "default": "",
       "examples": [
         "http://w3id.org/publiccode/version/0.1"
@@ -84,10 +90,12 @@
     "countriesSupported": {
       "$id": "/properties/countriesSupported",
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "$id": "/properties/countriesSupported/items",
         "type": "string",
-        "title": "The 0th Schema ",
+        "title": "List of countries",
+        "description": "A list of countries explicitly supported",
         "default": "",
         "examples": [
           "it",
@@ -158,7 +166,7 @@
           "$id": "/properties/intendedAudience/properties/world",
           "type": "boolean",
           "title": "The World Schema ",
-          "default": false,
+          "default": true,
           "examples": [
             true
           ]
@@ -166,7 +174,8 @@
         "institutionType": {
           "$id": "/properties/intendedAudience/properties/institutionType",
           "type": "string",
-          "title": "The Institutiontype Schema ",
+          "title": "The institution type",
+          "description": "",
           "default": "",
           "examples": [
             "city"
@@ -178,7 +187,8 @@
           "items": {
             "$id": "/properties/intendedAudience/properties/countries/items",
             "type": "string",
-            "title": "The 0th Schema ",
+            "title": "List of countries",
+            "description": "List of the countries",
             "default": "",
             "examples": [
               "it",
@@ -269,7 +279,7 @@
         "beta": {
           "$id": "/properties/developmentStatus/properties/beta",
           "type": "boolean",
-          "title": "The Beta Schema ",
+          "title": "Whether the software is a beta",
           "default": false,
           "examples": [
             false
@@ -784,5 +794,8 @@
         }
       }
     }
-  }
+  },
+  "required": [
+    "publiccode-yaml-version"
+  ]
 }
