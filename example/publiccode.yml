@@ -89,6 +89,7 @@ it:
 
 classification:                  # Meta information to help categorization of this software
   softwareType:
+    internalComponent: no
     standalone: yes
     library: no
     configurationFiles: no
