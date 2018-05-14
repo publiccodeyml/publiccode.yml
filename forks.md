@@ -5,17 +5,17 @@ context of updating `publiccode.yml`. We define two different
 semantics that require different handling: technical forks and
 software variants.
 
-## Technical forks
+## Technical forks (i.e. to publish patches)
 
 A technical fork is a fork made by a developer for the purpose
-of working on the code base (called *upstream*), without any
-explicit goal of creating and publishing an alternative variant
-of the original software.
+of working on the original code base or sending improvements to
+the original authors, without any explicit goal of creating and
+publishing an alternative variant of the original software.
 
 In the context of distributed control systems and collaborative
 code hosting platforms like GitHub, forking is almost always used
 by developers as a step to work on a contribution on an existing
-codebase.
+codebase, by sending "pull requests".
 
 Because of the way forking works on GitHub and other platforms,
 developers publish their forks as perfect copies of the original
@@ -37,7 +37,7 @@ marks forks explicitly as forks)
 
 Authors of technical forks **SHOULD NOT** modify `publiccode.yml`
 in any way. Specifically, they **MUST NOT** modify the top-level
-`url` key that **MUST** continue pointing to the upstream repository.
+`url` key that **MUST** continue pointing to the original repository.
 
 There is no explicit key to mark a fork as a technical fork. This
 is a conscious design decision because we do not want authors of
@@ -83,7 +83,7 @@ user-visible differences.
 Authors that are willing to publish a fork as a variant **MUST**
 at least:
 
-* Add a key `upstreamUrl` pointing to one or more upstream
+* Add a key `isBasedOn` pointing to one or more upstream
   repositories from which this variant is derived.
 * Change the value for `url` to point to the repository
   holding the variant.
