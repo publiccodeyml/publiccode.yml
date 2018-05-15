@@ -124,7 +124,7 @@ development and has never been released yet.
 ### Key `releaseDate`
 
 * Type: string (date)
-* Presence: mandatory if `version` is present
+* Presence: mandatory if `softwareVersion` is present
 * Example: `"2017-04-15"`
 
 This key contains the date at which the latest version was released.
