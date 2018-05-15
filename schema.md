@@ -123,7 +123,7 @@ development and has never been released yet.
 ### Key `releaseDate`
 
 * Type: string (date)
-* Presence: mandatory if `softwareVersion` is present
+* Presence: mandatory
 * Example: `"2017-04-15"`
 
 This key contains the date at which the latest version was released.
@@ -132,20 +132,24 @@ and thus the version number is present.
 
 ### Key `logo`
 
-* Type: string or array of strings (path to file)
+* Type: string (path to file)
 * Presence: optional
 * Acceptable formats: SVG, SVGZ, PNG
 * Example: `img/logo.svg`
 
 This key contains the logo of the software. Logos should be in vector
-format, but raster formats are allowed as a fallback.
-
-Vector logos should be provided at least in two formats: a color one,
-and a monochromatic (black) one.
-
-Raster logos should be provided only if vector logos do not exist.
-In this case, they should be transparent PNGs, minimum 1000px of
+format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of
 width.
+
+### Key `monochromeLogo`
+
+* Type: string (path to file)
+* Presence: optional
+* Acceptable formats: SVG, SVGZ, PNG
+* Example: `img/logo-mono.svg`
+
+A monochromatic (black) logo. The logo should be in vector
+format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of width.
 
 ### Key `platforms`
 

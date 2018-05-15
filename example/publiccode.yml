@@ -8,7 +8,9 @@ landingURL: "https://example.com/italia/medusa"
 isBasedOn: "https://github.com/italia/otello.git"   # The original repository, "Otello"
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
-logo: img/logo.jpg                                    # Logo (size > 500px)
+logo: img/logo.svg
+monochromeLogo: img/logo-mono.svg
+
 platforms:                   # or Windows, Mac, Linux, etc.
   - android
   - ios
