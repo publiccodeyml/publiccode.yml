@@ -299,9 +299,9 @@ This section contains general description on the software. Parsers
 can use this section for instance to create a web page describing
 the software.
 
-**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in by creating a section with that name.
+**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes) by creating a section with that name.
 
-An example for English (US):
+An example for English:
 ```.yaml
 description:
   eng:
@@ -311,7 +311,7 @@ description:
 
 In the following part of the document, all keys are assumed to be in a section with the name of the language (we will note this with `[lang]`).
 
-**Note** It is mandatory to have *at least* one language in this section. All other languages are optional.
+**Note:** It is mandatory to have *at least* one language in this section. All other languages are optional.
 
 ### Key `description/[lang]/localisedName`
 
@@ -329,7 +329,7 @@ commercial name.
 
 * Type: multi-language string (max 150 chars)
 * Presence: mandatory
-* Example: "Advanced booking system for hospitals"
+* Example: `"Advanced booking system for hospitals"`
 
 This key contains a short description of the software. It should be
 a single line containing a single sentence. Maximum 100 characters are
@@ -398,7 +398,7 @@ can always read the documentation for additional information.
 * Type: array of strings (paths)
 * Presence: optional
 * Formats: PNG, JPG
-* Example: "data/screenshots/configuration.png"
+* Example: `"data/screenshots/configuration.png"`
 
 This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
@@ -447,7 +447,7 @@ documentation](https://spdx.org/licenses/) for further information.
 
 * Type: string
 * Presence: optional
-* Example: "City of Amsterdam"
+* Example: `"City of Amsterdam"`
 
 This string describes the entity that owns the copyright on
 "most" of the code in the repository. Normally, this is the line
@@ -466,7 +466,7 @@ file, you can point to it through `legal/authorsFile`.
 
 * Type: string
 * Presence: mandatory
-* Example: "City of Amsterdam"
+* Example: `"City of Amsterdam"`
 
 This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
@@ -477,7 +477,7 @@ itself. For instance, in case of a fork of the original software, the
 
 * Type: string (path to file)
 * Presence: optional
-* Example: "doc/AUTHORS.txt"
+* Example: `"doc/AUTHORS.txt"`
 
 Some open-source softwares adopt a convention of identify the copyright
 holders through a file that lists all the entities that own the
