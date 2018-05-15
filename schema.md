@@ -136,7 +136,7 @@ and thus he version number is present.
 * Type: string or array of strings (path to file)
 * Presence: optional
 * Acceptable formats: SVG, SVGZ, PNG
-* Example: "img/logo.svg"
+* Example: `img/logo.svg`
 
 This key contains the logo of the software. Logos should be in vector
 format, but raster formats are allowed as a fallback.
@@ -152,7 +152,7 @@ width.
 
 * Type: enumerated string or array of strings
 * Presence: mandatory
-* Values: "web", "windows", "mac", "linux", "ios", "android". Human readable values outside this list are allowed.
+* Values: `web`, `windows`, `mac`, `linux`, `ios`, `android`. Human readable values outside this list are allowed.
 * Example: `web`
 
 This key specifies which platform the software runs on. It is meant
