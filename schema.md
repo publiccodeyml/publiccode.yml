@@ -302,7 +302,7 @@ the software.
 **Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in by creating a section with that name.
 
 An example for English (US):
-```
+```.yaml
 description:
   eng:
     shortDescription: ...
@@ -599,7 +599,7 @@ A `dependency` is a complex object. The properties are the following:
 It is of course possible to use the various keys to specify a complex compatibility matrix.
 
 *Ex. 1*
-```
+```.yaml
 - name: PostgreSQL
   version: 3.2
   optional: yes
@@ -607,7 +607,7 @@ It is of course possible to use the various keys to specify a complex compatibil
 This snippet marks an optional dependency on PostgreSQL exactly version 3.2.
 
 *Ex. 2*
-```
+```.yaml
 - name: MySQL
   versionMin: 1.1
   versionMax: 1.3
