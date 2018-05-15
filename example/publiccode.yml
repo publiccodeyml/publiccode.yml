@@ -16,23 +16,22 @@ platforms:                   # or Windows, Mac, Linux, etc.
 api: "https://read.the.api.doc/"
 
 tags:
-  - CMS
-  - Productivity
-  - it-PortaleTrasparenza
+  - cms
+  - productivity
+  - it-portale-trasparenza
 
 freeTags:
   en:
-    - FreeTag EN
+    - english-free-tag
   it:
-    - FreeTag IT
+    - tag-libero-italiano
 
-usedBy:                        # Which other public administrations are known to use this software
+usedBy:
   - Comune di Firenze
   - Comune di Roma
 
-roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
+roadmap: "https://example.com/italia/medusa/roadmap"
 
-# TODO Go back to enum for developmentStatus
 developmentStatus: development
 
 softwareType:
@@ -47,14 +46,14 @@ intendedAudience:
     - cities
     - health-services
     - it-ag-agricolo
-  countries: # ISO 3166-1 alpha-2 + EU
+  countries: # FIXME ISO 3166-1 alpha-2 + EU
     - it
     - de
   unsupportedCountries:     # Explicitly unsupported countries
     - us
 
 description:
-  en_US:
+  eng:
     localisedName: Medusa
     shortDescription: "A really interesting software."
     longDescription: >
@@ -86,33 +85,36 @@ legal:
 maintenance:
   type: "contract"
 
-  contractor: "Private Company Ltd" # if maintainance is a contract
-  contractorWebsite: "https://privatecompany.com"
-  
-  until: "2019-01-01"
+  contractors:
+    - name: "Fornitore Privato SPA" # if maintainance is a contract
+      website: "https://privatecompany.com"
+      until: "2019-01-01"
 
   contacts:
     - name: Francesco Rossi
       email: "francesco.rossi@comune.reggioemilia.it"
       affiliation: Comune di Reggio Emilia
       phone: +39 231 13215112
-      leadMaintainer: yes
+
     - name: Dario Bianchi
       email: "dario.bianchi@fornitore.it"
       affiliation: Fornitore Privato S.P.A.
       phone: +39 16 24231322
-      technicalMaintainer: yes
-      website: "https://fornitoreprivato.it"
+
+    - name: Giancarlo Verdi
+      email: "dario.bianchi@fornitore.it"
+      affiliation: Fornitore Privato S.P.A.
+      phone: +39 16 24231322
 
 localisation:
   # Does the software support, at least by design, multiple languages?
   localisationReady: yes
   # Languages already available
   availableLanguages:
-    - en_US
-    - it_IT
-    - fr_FR
-    - de_DE
+    - eng
+    - ita
+    - fra
+    - deu
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
@@ -132,7 +134,7 @@ dependencies:             # List of dependencies. The only mandatory list is the
     - name: NFC Reader
       optional: yes
 
-it:
+ita:
   accessibile: yes # Rispetta i requisiti di legge in materia di accessibilità?
   interoperabile: yes # Rispetta i requisiti di legge sull'interoperabilita'
 

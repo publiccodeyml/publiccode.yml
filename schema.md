@@ -169,6 +169,13 @@ value can be used.
 * Presence: mandatory
 * Acceptable values: see [Available tags](tags.md)
 
+A list of words that can be used to describe the software and can
+help building catalogs of open software.
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple word is `-` (single dash).
+
 ### Key `freeTags/[lang]`
 
 * Type: array of strings
@@ -183,10 +190,14 @@ Since they contain values that do not have an official translation, and as such 
 ```.yaml
 freeTags:
   en:
-    - EnglishFreeTag
+    - english-free-tag
   it:
-    - TagLiberoItaliano
+    - tag-libero-italiano
 ```
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple word is `-` (single dash).
 
 ### Key `usedBy`
 
@@ -293,7 +304,7 @@ the software.
 An example for English (US):
 ```
 description:
-  en_US:
+  eng:
     shortDescription: ...
     longDescription: ...
 ```
@@ -496,33 +507,12 @@ contract that binds an entity to the maintenance of the software;
 or more people that donate their time to the project;
 * `"none"` means that the software is not actively maintained.
 
-### Key `maintenance/contractor`
+### Key `maintenance/contractors`
 
-* Type: string
-* Presence: mandatory if the software maintenance type is `"contract"`
-* Example: `"Private Company Ltd"`
+* Type: array of Contractor (see below)
+* Presence: mandatory (if `maintainance/type` is `contract`)
 
-In case the maintainance is carried through a contract, this is the name of the contractor.
-
-### Key `maintenance/contractorWebsite`
-
-* Type: URL
-* Presence: optional (if there is a maintenance)
-
-This key points to the maintainer website, if it is a contractor. It can either point to the main
-institutional website, or to a more project-specific page or website.
-
-### Key `maintenance/until`
-
-* Type: date (YYYY-MM-DD)
-* Presence: mandatory if the software maintenance type is `"contract"`
-* Example: 2019-07-01
-
-In case of a maintenance, this key must contain the date
-at which the maintenance is going to end. In case of community
-maintenance, the value should not be more than 2 years in the
-future, and thus will need to be regularly updated as the
-community continues working on the project.
+This key describes the entity or entities, if any, that are currently contracted for maintaining the software. They can be companies, organizations, or other collective names.
 
 ### Key `maintenance/contacts`
 
@@ -531,62 +521,33 @@ community continues working on the project.
 
 One or more contacts maintaining this software.
 
-This key describes the entity or entities that are currently maintaining
-the software. All contacts need to be a physical person, not a company or an organization. if somebody is acting as a representative of an institution, it must be listed within the `affiliation` of the contact.
+This key describes the technical people currently responsible for maintaining
+the software. All contacts need to be a physical person, not a company or an organisation. if somebody is acting as a representative of an institution, it must be listed within the `affiliation` of the contact.
 
-Do not specify the software owner or an administrative contact unless it is technically involved with the maintenance of the product as well.
-
+In case of a commercial agreement (or a chain of such agreements),
+specify the final entities actually contracted to deliver the
+maintenance. Do not specify the software owner unless it is technically
+involved with the maintenance of the product as well.
 
 ## Section `localisation`
-This section is fully optional, and is only meant to include the translation of user-visible strings.
 
+This section provides an overview of the localization features of the software.
 
-## Section `classification`
+## Key `localisation/localisationReady`
 
-This section contains information useful to classify the software,
-define its scope of usage and its goal at a general level.
+* Type: boolean
+* Presence: mandatory
 
-### Key `classification/scope`
+If `yes`, the software has infrastructure in place or is othewise designed to be multilingual. It does not need to be available in more than one language.
 
-* Type: string or array of strings
-* Presence: optional
-* Example: "es"
+## Key `localisation/availableLanguages`
 
-This key defines the expected geographical scope of the software. If
-a software is probably useful only within some specific countries
-(because, eg., it helps implementing a specific regulation), specify
-the ISO693-1 two-letter country codes of the countries n this key.
+* Type: list of [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes
+* Presence: mandatory
 
+If present, this is the list of languages in which the software is available. Of course, this list will contain at least one language.
 
-### Key `classification/category`
-
-* Type: enumerated string
-* Presence: optional
-* Values: see [sw-category.md](sw-category.md)
-* Example: "it-anagrafe"
-
-This key defines the "category" of software, which is the market area
-for the software. You can select the category that is more similar to
-the software; it doesn't have to be an exact match, but it can still
-be very useful for building catalogs of software and evaluate
-alternatives.
-
-The list of allowed values is defined in [sw-category.md](sw-category.md),
-and can evolve at any time, separately from the version of this
-specification.
-
-### Key `classification/tags`
-
-* Type: array of strings
-* Presence: optional
-* Example: "city", "accounting", "hr", "employee", "public"
-
-A list of words that can be used to describe the software and can
-help building catalogs of open software.
-
-Each tag must be in Unicode lowercase, and should not contain
-any Unicode whitespace character. The suggested character to
-separate multiple word is `-` (single dash).
+See also: https://en.wikipedia.org/wiki/ISO_639-3
 
 ### Section `dependencies`
 
@@ -629,12 +590,11 @@ to use the software.
 A `dependency` is a complex object. The properties are the following:
 
   * `name` - **mandatory** - The name of the dependency (e.g. MySQL, NFC Reader)
-  * `version` - the dependency is set on a specific version
-  **  `greaterThan` - the software requires a version greater than this version
-  **  `lesserThan` - the software requires a version lesser than this version
-  * optional - whether the dependency is optional or mandatory
+  * `versionMin` - the first compatible version
+  * `versionMax` - the latest compatible version
+  * `optional` - whether the dependency is optional or mandatory
 
-#### Complex versioning
+### Complex versioning
 
 It is of course possible to use the various keys to specify a complex compatibility matrix.
 
@@ -649,89 +609,28 @@ This snippet marks an optional dependency on PostgreSQL exactly version 3.2.
 *Ex. 2*
 ```
 - name: MySQL
-  version:
-    greaterThan: 1.1
-    lesserThan: 1.3
+  versionMin: 1.1
+  versionMax: 1.3
 ```
 This snippet marks a mandatory dependency on MySQL, allowing any version between 1.1 and 1.3.
 
-### Contacts
+### Contact
 
 A Contact is an object with the following properties:
 
-* `name` - **mandatory** - The name of the dependency (e.g. MySQL, NFC Reader)
+* `name` - **mandatory** - This key contains the full name of one of the technical contacts. It must be a real person; do NOT populate this key with generic contact information, company departments, associations, etc.
 * `email` - This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like "info@acme.inc". The e-mail address must not be obfuscated. To improve resistance against e-mail collection, use `\x64` to replace `@`, as allowed by the YAML specification.
-* `affiliation` - affiliation to a specific organization or group
 * `phone` - phone number (with international prefix)
-* `leadMaintainer` - boolean:
-* `website` -
+* `affiliation` - This key contains an explicit affiliation information for the technical contact. In case of multiple maintainers, this can be used to create a relation between each technical contact and each maintainer entity. It can contain for instance a company name, an association
+name, etc.
 
+### Contractor
 
-### Key `maintenance/maintainer`
+A Contractor is an object with the following properties:
 
-* Type: string or array of strings
-* Presence: mandatory (if there is a maintenance)
-* Example: "Linus Torvalds", "Italian Linux Group", "Acme Inc."
-
-This key describes the entity or entities that are currently maintaining
-the software. It can contain for instance a company name, an association
-name, a private person. etc.
-
-In case of a commercial agreement (or a chain of such agreements),
-specify the final entities actually contracted to deliver the
-maintenance. Do not specify the software owner unless it is technically
-involved with the maintenance of the product as well.
-
-### Key `maintenance/technicalContacts`
-
-* Type: array of objects
-* Presence: mandatory (if there is a maintenance)
-
-This key describes the physical point of contacts of the technical
-people in charge of the maintenance. The goal is to provide a clear
-contact point for contributors that need to discuss how to best
-implement modifications to the software.
-
-It MUST contain real names of individuals (eg: first name, family name) and direct
-e-mail addresses. Do NOT populate these objects using generic contact
-points (like mailing lists, generic "info@" email addresses) and/or
-generic department names (eg: "Acme Inc. Support Department").
-
-### Key `maintenance/technicalContacts/name`
-
-* Type: string
-* Presence: mandatory
-* Example: "Frank Zappa"
-
-This key contains the full name of one of the technical contacts.
-It must be a real person; do NOT populate this key with generic
-contact information, company departments, associations, etc.
-
-### Key `maintenance/technicalContacts/email`
-
-* Type: string
-* Presence: mandatory
-* Example: "frank.zappa@example.com"
-
-This key contains the e-mail address of the technical contact. It
-must be an email address of where the technical contact can be
-directly reached; do NOT populate this key with mailing-lists or
-generic contact points like "info@acme.inc".
-
-The e-mail address must not be obfuscated. To improve resistance
-against e-mail collection, use `\x64` to replace `@`, as allowed
-by the YAML specification.
-
-### Key `maintenance/technicalContacts/affiliation`
-
-* Type: string
-* Presence: optional
-* Example: "Acme Inc."
-
-This key contains an explicit affiliation information for the technical
-contact. In case of multiple maintainers, this can be used to create
-a relation between each technical contact and each maintainer entity.
-
+* `name` - **mandatory** - The name of the contractor, whether it's a company or a physical person.
+* `until` - **mandatory**  - This is a date (YYYY-MM-DD). This key must contain the date at which the maintenance is going to end. In case of community maintenance, the value should not be more than 2 years in the future, and thus will need to be regularly updated as the community continues working on the project.
+* `website` -  This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.
 
 ### Dates
 
