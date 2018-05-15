@@ -16,8 +16,7 @@ sense in specific countries, such as declaring compliance with local
 laws or regulations. The provided extension mechanism is the usage
 of country-specific sections.
 
-All country-specific sections are contained in a section named with the two-letter ISO 639-1
-country code.
+All country-specific sections are contained in a section named with the two-letter lowercase [ISO 3166-1 alpha-2 country code](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 For instance `spid` is a property for Italian softare declaring whether the software is integrated with the Italian Public Identification System.
 
 If a software is compliant I will find:
@@ -110,7 +109,7 @@ specified repositories.
 ### Key `softwareVersion`
 
 * Type: string
-* Presence: optional
+* Presence: mandatory
 * Example: `"1.0"`, `"dev"`
 
 This key contains the latest stable version number of the software.
@@ -129,7 +128,7 @@ development and has never been released yet.
 
 This key contains the date at which the latest version was released.
 This date is mandatory if the software has been released at least once
-and thus he version number is present.
+and thus the version number is present.
 
 ### Key `logo`
 
@@ -204,7 +203,7 @@ separate multiple word is `-` (single dash).
 * Type: array of strings
 * Presence: optional
 
-A list of prominent public administrations that are currently known to the software maintainer to be using this software.
+A list of the names of prominent public administrations (that will serve as "testimonials") that are currently known to the software maintainer to be using this software.
 
 Parsers are encouraged to enhance this list also with other information
 that can obtain independently; for instance, a fork of a software,
@@ -380,10 +379,8 @@ part of the repository itself.
 * Presence: mandatory (for at least one language)
 
 This key contains a list of software features, describing what capabilities
-the software allows to do. The audience for this text should be that of users
-of the software, not developers, so do not list technical features referring
-to implementation details, but rather user-visible functionalities of the
-software.
+the software allows to do. The audience for this text should be that of public decision makers who will be commissioning the software. The features should thus not target developers: instead of listing technical features referring
+to implementation details, prefer listing user-visible functionalities of the software.
 
 While the key is mandatory, there is no mandatory minimum or maximum number
 of features that should be listed in this key. Each feature must use a maximum
@@ -594,7 +591,7 @@ A `dependency` is a complex object. The properties are the following:
   * `versionMax` - the latest compatible version
   * `optional` - whether the dependency is optional or mandatory
 
-### Complex versioning
+### Complex versioning
 
 It is of course possible to use the various keys to specify a complex compatibility matrix.
 
