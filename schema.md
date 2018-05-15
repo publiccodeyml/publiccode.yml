@@ -415,7 +415,7 @@ Screenshots can be of any shape and size; the suggested formats are:
 
 * Type: array of strings (URLs)
 * Presence: optional
-* Example: "https://youtube.com/xxxxxxxx"
+* Example: `"https://youtube.com/xxxxxxxx"`
 
 This key contains one or multiple URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
