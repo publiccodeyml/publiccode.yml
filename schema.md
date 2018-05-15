@@ -159,8 +159,6 @@ value can be used.
 * Type: array of strings
 * Presence: mandatory
 
-
-
 ### Key `countriesSupported`
 
 * Type: array of strings
@@ -462,7 +460,7 @@ has both an internal "code" name and a commercial name, use the
 commercial name.
 
 
-### Key `description/[lang]/shortDesc`
+### Key `description/[lang]/shortDescription`
 
 * Type: multi-language string (max 100 chars)
 * Presence: mandatory
@@ -472,7 +470,7 @@ This key contains a short description of the software. It should be
 a single line containing a single sentence. Maximum 100 characters are
 allowed.
 
-### Key `description/[lang]/longDesc`
+### Key `description/[lang]/longDescription`
 
 * Type: multi-language string (min 500 chars, max 10000 chars)
 * Presence: mandatory (for at least one language)
@@ -483,6 +481,8 @@ of the software for a potential users. The audience for this text
 should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
+
+TODO: Basic markdown
 
 ### Key `description/[lang]/documentation`
 

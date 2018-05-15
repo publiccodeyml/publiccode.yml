@@ -10,7 +10,7 @@ must contain a value from this list.
 Value | Description
 ----- | -----------
 `city` | City
-`hospital` | Hospital
+`health` | Health service
 `police` | Police forces
 `school` | School of any level
 `university` | University of any level
@@ -60,12 +60,12 @@ Value | Description
 	>Enti di Regolazione dei Servizi Idrici e o dei Rifiuti
 	Enti e Istituzioni di Ricerca Pubblici
 	Enti Pubblici Non Economici
-	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali 
+	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali
 	>Federazioni Nazionali, Ordini, Collegi e Consigli Professionali
 	>Fondazioni Lirico, Sinfoniche
 	>Istituti Zooprofilattici Sperimentali
 	Organi Costituzionali e di Rilievo Costituzionale
 	>Parchi Nazionali, Consorzi e Enti Gestori di Parchi e Aree Naturali Protette
-	
+
 	>Teatri Stabili ad Iniziativa Pubblica
 -->
