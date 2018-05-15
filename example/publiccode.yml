@@ -3,6 +3,8 @@ publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
 name: Medusa
 applicationSuite: MegaProductivitySuite
 url: "https://example.com/italia/medusa.git"        # URL of this repository
+landingURL: "https://example.com/italia/medusa"
+
 isBasedOn: "https://github.com/italia/otello.git"   # The original repository, "Otello"
 softwareVersion: "1.0"                                        # Last stable version
 releaseDate: 2017-04-15                               # Date of last stable software release
@@ -31,18 +33,10 @@ usedBy:                        # Which other public administrations are known to
 roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
 
 # TODO Go back to enum for developmentStatus
-developmentStatus:
-  concept: no
-  development: yes
-  beta: no
-  stable: no
-  obsolete: no
+developmentStatus: development
 
 softwareType:
-  standalone: yes
-  addon: no
-  library: no
-  configurationFiles: no
+  type: "standalone"
   isRelatedTo:
     - "https://example.com/italia/software1.git"
     - "https://example.com/italia/software2.git"
@@ -61,42 +55,40 @@ intendedAudience:
 
 description:
   en_US:
-    localisedName: Medusa                                          # Short descriptive name
-    shortDescription: "A really interesting software."           # Max 100 characters
+    localisedName: Medusa
+    shortDescription: "A really interesting software."
     longDescription: >
           Very long description of this software, also split
           on multiple rows. You should note what the software
           is and why one should need it.
-    screenshots:                         # Screen shots used to get a quick look&feel of the software
-      - img/sshot1.jpg
-      - img/sshot2.jpg
-      - img/sshot3.jpg
-    videos:                             # Demo videos of the software
-      - https://youtube.com/xxxxxxxx
+
+    documentation: "https://read.the.documentation/medusa/v1.0"
     featureList:
        - Very important feature
        - Will run without a problem
        - Has zero bugs
        - Solves all the problems of the world
-    documentation: "https://read.the.documentation/medusa/v1.0"
+    screenshots:
+       - img/sshot1.jpg
+       - img/sshot2.jpg
+       - img/sshot3.jpg
+    videos:                             # Demo videos of the software
+       - https://youtube.com/xxxxxxxx
     awards:
-      - 1st Price Software of the year
+       - 1st Price Software of the year
 
 legal:
+  license: AGPL-3.0-or-later        # SPDX expression of license
   mainCopyrightOwner: City of Chicago
   repoOwner: City of Chicago
   authorsFile: AUTHORS              # file listing copyright information
-  license: AGPL-3.0-or-later        # SPDX expression of license
 
-maintenance: # Whether there is a commercial contract of maintainance in place. No -> community
-
-  # type --> internal
-  internal: no
-  contract: no
-  community: yes
-  unmaintained: no
+maintenance:
+  type: "contract"
 
   contractor: "Private Company Ltd" # if maintainance is a contract
+  contractorWebsite: "https://privatecompany.com"
+  
   until: "2019-01-01"
 
   contacts:
@@ -109,7 +101,8 @@ maintenance: # Whether there is a commercial contract of maintainance in place. 
       email: "dario.bianchi@fornitore.it"
       affiliation: Fornitore Privato S.P.A.
       phone: +39 16 24231322
-      technicalMaintainer: yes #FIXME this or the one above??
+      technicalMaintainer: yes
+      website: "https://fornitoreprivato.it"
 
 localisation:
   # Does the software support, at least by design, multiple languages?
