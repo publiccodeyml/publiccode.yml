@@ -3,7 +3,8 @@
 This document contains an informal description of the schema of
 `publiccode.yml`.
 
-Version: 1.0-alpha1
+Version: 0.1-alpha1
+This file needs to be converted to JSON-Schema.
 
 ## Structure
 
@@ -15,248 +16,101 @@ sense in specific countries, such as declaring compliance with local
 laws or regulations. The provided extension mechanism is the usage
 of country-specific sections.
 
-All country-specific sections are prefixed with the two-letter ISO 639-1
-country code, followed by an underscore (`_`), followed by the section name.
-For instance `it_pianoTriennale` is a section declaring compliance to
-the Italian digital transformation plan.
+All country-specific sections are contained in a section named with the two-letter lowercase [ISO 3166-1 alpha-2 country code](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+For instance `spid` is a property for Italian softare declaring whether the software is integrated with the Italian Public Identification System.
+
+If a software is compliant I will find:
+```
+it:
+  spid: yes
+```
 
 Notice that country-specific keys within international sections are
 not allowed. Countries that want to extend the format should add one
 or many country-specific sections instead.
 
 Documentation for country specific sections is maintained in separate
-files:
+files.
 
-* Italy: [Italian extensions](it-schema.md)
+* Italy: [Italian extensions](schema.it.md)
 
 
 ## Top-level section
 
-### Key `version`
+### Key `publiccode-yaml-version`
 
 * Type: string
 * Presence: mandatory
-* Example: `"0.1"`
+* Example: `"http://w3id.org/publiccode/version/0.1"`
 
 This key specifies the version to which the current `publiccode.yml`
 adheres to, for forward compatibility. Current version is `0.1`.
 
-### Key `url`
-
-* Type: string (URL)
-* Presence: mandatory
-* Example: `"https://example.com/italia/repo.git"`
-
-This string must be a URL to the repository in which the software is
-published. If the repository is available under multiple protocols,
-prefer HTTP/HTTPS URLs.
-
-Forks created for the purpose of contributing upstreams should not
-modify this file; this helps software parsing `publiccode.yml` to
-immediately skips irrelevant forks. On the contrary, a fork that is
-meant to be maintained separately from the original software should
-modify this line, to give themselves the status of a fork.
-
-### Key `upstreamUrl`
-
-* Type: string or array of strings
-* Presence: optional
-* Example: "https://github.com/italia/otello"
-
-This string must be one or multiple URLs of upstream repositories from
-which this fork was created. The existence of this key identifies the
-fork as a [software variant](forks.md), which descends from the
-specified repositories.
-
-See [Forks and Variants](forks.md) for a complete description of
-what is a software variant and how to handle forked softwares as a
-parser or an author.
-
-## Section `legal`
-
-### Key `legal/license`
-
-* Type: string
-* Presence: mandatory
-* Example: `"AGPL-3.0-or-later"`
-
-This string describes the license under which the software is
-distributed. The string must contain a valid SPDX expression, referring
-to one (or multiple) open-source license. Please refer to the [SPDX
-documentation](https://spdx.org/licenses/) for further information.
-
-### Key `legal/mainCopyrightOwner`
-
-* Type: string
-* Presence: optional
-* Example: "City of Amsterdam and many contributors"
-
-This string describes the entity that owns the copyright on
-"most" of the code in the repository. Normally, this is the line
-that is reported with the copyright symbol at the top of most files
-in the repo.
-
-It is possible to list multiple owners if required so, using an English
-sentence. It is also possible to informally refer to a community of
-group of people like "Linus Torvalds and all Linux contributors".
-
-In case it is not possible to name a main copyright owner, it is
-possible to omit this key; in those cases, if the repo has a authors
-file, you can point to it through `legal/authorsFile`.
-
-### Key `legal/authorsFile`
-
-* Type: string (path to file)
-* Presence: optional
-* Example: "doc/AUTHORS.txt"
-
-Some open-source softwares adopt a convention of identify the copyright
-holders through a file that lists all the entities that own the
-copyright. This is common in projects strongly backed by a community
-where there are many external contributors and no clear single/main
-copyright owner. In such cases, this key can be used to refer to the
-authors file, using a path relative to the root of the repository.
-
-### Key `legal/repoOwner`
-
-* Type: string
-* Presence: mandatory
-* Example: "City of Amsterdam"
-
-This string describes the entity that owns this repository; this might
-or might not be the same entity who owns the copyright on the code
-itself. For instance, in case of a fork of the original software, the
-`repoOwner` is probably different from the `mainCopyrightOwner`.
-
-
-## Section `maintenance`
-
-This section provides information on the maintenance status of the
-software, useful to evaluate whether the software is actively
-developed or not.
-
-### Key `maintenance/type`
-
-* Type: enumerate
-* Presence: mandatory
-* Values: "internal", "contract", "community", "none"
-
-This key describes how the software is currently maintained.
-"internal" means that the software is internally maintained by
-the repository owner. "contract" means that there is a commercial
-contract that binds an entity to the maintenance of the software;
-"community" means that the software is currently maintained by one
-or more people that donate their time to the project;
-"none" means that the software is not actively maintained.
-
-### Key `maintenance/until`
-
-* Type: date (YYYY-MM-DD)
-* Presence: mandatory (if the software maintenance type is not "none")
-* Example: 2019-07-01
-
-In case of a maintenance, this key must contain the date
-at which the maintenance is going to end. In case of community
-maintenance, the value should not be more than 2 years in the
-future, and thus will need to be regularly updated as the
-community continues working on the project.
-
-### Key `maintenance/maintainer`
-
-* Type: string or array of strings
-* Presence: mandatory (if there is a maintenance)
-* Example: "Linus Torvalds", "Italian Linux Group", "Acme Inc."
-
-This key describes the entity or entities that are currently maintaining
-the software. It can contain for instance a company name, an association
-name, a private person. etc.
-
-In case of a commercial agreement (or a chain of such agreements),
-specify the final entities actually contracted to deliver the
-maintenance. Do not specify the software owner unless it is technically
-involved with the maintenance of the product as well.
-
-### Key `maintenance/maintainerWebsite`
-
-* Type: URL
-* Presence: optional (if there is a maintenance)
-
-This key points to the maintainer website. It can either point to the main
-institutional website, or to a more project-specific page or website.
-
-### Key `maintenance/technicalContacts`
-
-* Type: array of objects
-* Presence: mandatory (if there is a maintenance)
-
-This key describes the physical point of contacts of the technical
-people in charge of the maintenance. The goal is to provide a clear
-contact point for contributors that need to discuss how to best
-implement modifications to the software.
-
-It MUST contain real names of individuals (eg: first name, family name) and direct
-e-mail addresses. Do NOT populate these objects using generic contact
-points (like mailing lists, generic "info@" email addresses) and/or
-generic department names (eg: "Acme Inc. Support Department").
-
-### Key `maintenance/technicalContacts/name`
-
-* Type: string
-* Presence: mandatory
-* Example: "Frank Zappa"
-
-This key contains the full name of one of the technical contacts.
-It must be a real person; do NOT populate this key with generic
-contact information, company departments, associations, etc.
-
-### Key `maintenance/technicalContacts/email`
-
-* Type: string
-* Presence: mandatory
-* Example: "frank.zappa@example.com"
-
-This key contains the e-mail address of the technical contact. It
-must be an email address of where the technical contact can be
-directly reached; do NOT populate this key with mailing-lists or
-generic contact points like "info@acme.inc".
-
-The e-mail address must not be obfuscated. To improve resistance
-against e-mail collection, use `\x64` to replace `@`, as allowed
-by the YAML specification.
-
-### Key `maintenance/technicalContacts/affiliation`
-
-* Type: string
-* Presence: optional
-* Example: "Acme Inc."
-
-This key contains an explicit affiliation information for the technical
-contact. In case of multiple maintainers, this can be used to create
-a relation between each technical contact and each maintainer entity.
-
-
-## Section `description`
-
-This section contains general description on the software. Parsers
-can use this section for instance to create a web page describing
-the software.
-
-### Key `description/name`
+### Key `name`
 
 * Type: string
 * Presence: mandatory
 * Example: "Medusa"
 
-This key contains the (short) public name of the product. It should be
+This key contains the name of the software. It contains the (short) public name of the product, which can be localised in the specific `localisation` section. It should be
 the name most people usually refer to the software. In case the software
 has both an internal "code" name and a commercial name, use the
 commercial name.
 
-### Key `description/version`
+### Key `applicationSuite`
 
 * Type: string
 * Presence: optional
-* Example: "1.0", "dev"
+* Example: "MegaProductivitySuite"
+
+This key contains the name of the "suite" to which the software belongs.
+
+### Key `url`
+
+* Type: string (URL)
+* Presence: mandatory
+* Example: `"https://example.com/italia/medusa.git"`
+
+A unique identifier for this software. This string must be a URL to the source code repository (git, svn, ...) in which the software is
+published. If the repository is available under multiple protocols,
+prefer HTTP/HTTPS URLs which don't require user authentication.
+
+Forks created for the purpose of contributing upstreams should not
+modify this file; this helps software parsing `publiccode.yml` to
+immediately skips [technical forks](forks.md).
+On the contrary, a complete fork that is
+meant to be maintained separately from the original software should
+modify this line, to give themselves the status of a different project.
+
+See [Forks and Variants](forks.md) for a complete description of
+what is a software variant and how to handle forked softwares as a
+parser or an author.
+
+### Key `landingURL`
+
+* Type: string (URL)
+* Presence: optional
+* Example: `"https://example.com/italia/medusa"`
+
+If the previous URL does not serve a human readable page, but only serves source code to a source control client, with this key you have an option to specify a landing page. This page, ideally, is where your users will land when they will click a button labeled something like "Go to the application Source Code".
+
+### Key `isBasedOn`
+
+* Type: string or array of strings
+* Presence: optional
+* Example: `"https://github.com/italia/otello.git"`
+
+In case this software is a variant or a fork of another software, which might or might not contain a `publiccode.yml` file, this key will contain the `url` of the original project(s).
+
+The existence of this key identifies the
+fork as a [software variant](forks.md), descending from the
+specified repositories.
+
+### Key `softwareVersion`
+
+* Type: string
+* Presence: mandatory
+* Example: `"1.0"`, `"dev"`
 
 This key contains the latest stable version number of the software.
 The version number is a string that is not meant to be interpreted
@@ -266,23 +120,43 @@ versioning or any other specific version format.
 The key can be omitted if the software is currently in initial
 development and has never been released yet.
 
-### Key `description/releaseDate`
+### Key `releaseDate`
 
 * Type: string (date)
-* Presence: mandatory if `description/version` is present
-* Example: "2017-04-15"
+* Presence: mandatory
+* Example: `"2017-04-15"`
 
 This key contains the date at which the latest version was released.
 This date is mandatory if the software has been released at least once
-and thus he version number is present.
+and thus the version number is present.
 
-### Key `description/platforms`
+### Key `logo`
+
+* Type: string (path to file)
+* Presence: optional
+* Acceptable formats: SVG, SVGZ, PNG
+* Example: `img/logo.svg`
+
+This key contains the logo of the software. Logos should be in vector
+format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of
+width.
+
+### Key `monochromeLogo`
+
+* Type: string (path to file)
+* Presence: optional
+* Acceptable formats: SVG, SVGZ, PNG
+* Example: `img/logo-mono.svg`
+
+A monochromatic (black) logo. The logo should be in vector
+format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of width.
+
+### Key `platforms`
 
 * Type: enumerated string or array of strings
 * Presence: mandatory
-* Values: "web", "windows", "mac", "linux", "ios", "android". Values
-  outside this list are allowed.
-* Example: "web"
+* Values: `web`, `windows`, `mac`, `linux`, `ios`, `android`. Human readable values outside this list are allowed.
+* Example: `web`
 
 This key specifies which platform the software runs on. It is meant
 to describe the platforms that users will use to access and operate
@@ -292,37 +166,182 @@ Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
 value can be used.
 
-### Key `description/logo`
+### Key `tags`
 
-* Type: string or array of strings (path to file)
-* Presence: optional
-* Formats: SVG, PNG
-* Example: "img/logo.svg"
-
-This key contains the logo of the software. Logos should be in vector
-format, but raster formats are allowed as a fallback.
-
-Vector logos should be provided at least in two formats: a color one,
-and a monochromatic (black) one.
-
-Raster logos should be provided only if vector logos do not exist.
-In this case, they should be transparent PNGs, minimum 1000px of
-width.
-
-### Key `description/shortDesc`
-
-* Type: multi-language string (max 100 chars)
+* Type: array of strings
 * Presence: mandatory
-* Example: "Advanced booking system for hospitals"
+* Acceptable values: see [Available tags](tags.md)
+
+A list of words that can be used to describe the software and can
+help building catalogs of open software.
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple word is `-` (single dash).
+
+### Key `freeTags/[lang]`
+
+* Type: array of strings
+* Presence: optional
+
+This key contains a list of free tags that can be applied to a software.
+
+Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
+
+*Example:*
+
+```.yaml
+freeTags:
+  en:
+    - english-free-tag
+  it:
+    - tag-libero-italiano
+```
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple word is `-` (single dash).
+
+### Key `usedBy`
+
+* Type: array of strings
+* Presence: optional
+
+A list of the names of prominent public administrations (that will serve as "testimonials") that are currently known to the software maintainer to be using this software.
+
+Parsers are encouraged to enhance this list also with other information
+that can obtain independently; for instance, a fork of a software,
+owned by an administration, could be used as a signal of usage of the
+software.
+
+### Key `roadmap`
+
+* Type: string
+* Presence: optional
+
+A link to a public roadmap of the software.
+
+
+## Key `developmentStatus`
+
+* Type: enumerated string
+* Presence: mandatory
+* Allowed values: `concept`, `development`, `beta`, `stable`, `obsolete`
+
+The keys are:
+  * `concept` - The software is just a "concept". No actual code may have been produced, and the repository could simply be a placeholder.
+  * `development` - Some effort has gone into the development of the software, but the code is not ready for the end user, even in a preliminary version (beta or alpha) to be tested by end users.
+  * `beta` - The software is in the testing phase (alpha or beta). At this stage, the software might or might not have had a preliminary public release.
+  * `stable` - The software has seen a first public release, and is ready to be used in a production environment.
+  * `obsolete` - The software is no longer maintained or kept up to date. All of the source code is archived and kept for historical reasons.
+
+## Section `softwareType`
+
+### Key `softwareType/type`
+
+* Type: enumerated string
+* Presence: mandatory
+* Allowed values: `standalone`, `addon`, `library`, `configurationFiles`
+
+The keys are:
+
+  * `standalone` - The software is a standalone, self-contained package. Most software will be of this type. Part of this category is software that can run on a desktop computer (e.g. as an executable), as a cloud-based application, as a network service or even as a set of cloud services or microservices.
+  * `softwareAddon` - The software is an addon, such as a plugin or a theme, for a more complex software (e.g. a CMS or an office suite).
+  * `library` - The software contains a library or an SDK to make it easier to third party developers to create new products.
+  * `configurationFiles` - The software does not contain executable script but a set of configuration files. They may document how to obtain a certain deployment. They could be in the form of plain configuration files, bash scripts, ansible playbooks, Dockerfiles, or other instruction sets.
+
+### Key `softwareType/isRelatedTo`
+
+* Type: array of strings
+* Presence: optional (highly suggested if `type` is not `standalone`)
+
+If `softwareType` is not `standalone`, a list of repositories (which may or may not contain a `publiccode.yml` file) closely related to the software.
+
+It might be the original suite for which the software is an addon, or simply the repositories for which the software provides the configuration files.
+
+## Section `intendedAudience`
+
+### Key `intendedAudience/onlyFor`
+
+* Type: enumerated string or array of strings
+* Presence: optional
+* Values: see [pa-types.md](pa-types.md)
+* Example: `"city"`
+
+Public software could be very specific in scope, because there is a large set of tasks that are specific to each type of
+administration. For instance, many softwares that are used in schools
+are probably not useful in hospitals.
+If you want to explicitly mark some software as only useful
+to certain types of administrations, you should add them to this key.
+
+The list of allowed values is defined in [pa-types.md](pa-types.md), and can be country-specific.
+
+This list can evolve at any time, separately from the version of this
+specification.
+
+### Key `intendedAudience/countries`
+
+* Type: array of strings
+* Presence: optional
+
+This key explicitly includes certain countries in the intended audience, i.e. the software was explicitly claims compliance with specific processes, technologies or laws. All countries are specified using lowercase
+ISO 3166-1 alpha-2 two-letter country codes.
+
+### Key `intendedAudience/unsupportedCountries`
+
+* Type: array of strings
+* Presence: optional
+
+This key explicitly marks countries as NOT supported. This might be the case if there is a conflict between how software is working and a specific law, process or technology. All countries are specified using lowercase
+ISO 3166-1 alpha-2 two-letter country codes.
+
+
+## Section `description`
+
+This section contains general description on the software. Parsers
+can use this section for instance to create a web page describing
+the software.
+
+**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes) by creating a section with that name.
+
+An example for English:
+```.yaml
+description:
+  eng:
+    shortDescription: ...
+    longDescription: ...
+```
+
+In the following part of the document, all keys are assumed to be in a section with the name of the language (we will note this with `[lang]`).
+
+**Note:** It is mandatory to have *at least* one language in this section. All other languages are optional.
+
+### Key `description/[lang]/localisedName`
+
+* Type: string
+* Presence: optional
+* Example: "Medusa"
+
+This key is an opportunity to localise the name in a specific language. It contains the (short) public name of the product. It should be
+the name most people usually refer to the software. In case the software
+has both an internal "code" name and a commercial name, use the
+commercial name.
+
+
+### Key `description/[lang]/shortDescription`
+
+* Type: multi-language string (max 150 chars)
+* Presence: mandatory
+* Example: `"Advanced booking system for hospitals"`
 
 This key contains a short description of the software. It should be
 a single line containing a single sentence. Maximum 100 characters are
 allowed.
 
-### Key `description/longDesc`
+### Key `description/[lang]/longDescription`
 
 * Type: multi-language string (min 500 chars, max 10000 chars)
-* Presence: mandatory
+* Presence: mandatory (for at least one language)
 
 This key contains a longer description of the software, between 500
 and 10000 chars. It is meant to provide an overview of the capabilities
@@ -331,7 +350,9 @@ should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
 
-### Key `description/documentation`
+This description can contain some basic markdown: *italic*, **bold**, bullet points and [links](#).
+
+### Key `description/[lang]/documentation`
 
 * Type: URL
 * Presence: optional
@@ -356,16 +377,14 @@ Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.
 
-### Key `description/features`
+### Key `description/[lang]/featureList`
 
-* Type: array of multi-language strings
-* Presence: mandatory
+* Type: array of strings
+* Presence: mandatory (for at least one language)
 
 This key contains a list of software features, describing what capabilities
-the software allows to do. The audience for this text should be that of users
-of the software, not developers, so do not list technical features referring
-to implementation details, but rather user-visible functionalities of the
-software.
+the software allows to do. The audience for this text should be that of public decision makers who will be commissioning the software. The features should thus not target developers: instead of listing technical features referring
+to implementation details, prefer listing user-visible functionalities of the software.
 
 While the key is mandatory, there is no mandatory minimum or maximum number
 of features that should be listed in this key. Each feature must use a maximum
@@ -375,12 +394,12 @@ The suggested number of features to list is between 5 and 20, depending on the
 software size and complexity. There is no need for exhaustiveness, as users
 can always read the documentation for additional information.
 
-### Key `description/screenshots`
+### Key `description/[lang]/screenshots`
 
 * Type: array of strings (paths)
 * Presence: optional
 * Formats: PNG, JPG
-* Example: "data/screenshots/configuration.png"
+* Example: `"data/screenshots/configuration.png"`
 
 This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
@@ -393,11 +412,11 @@ Screenshots can be of any shape and size; the suggested formats are:
  * Mobile: 375x667 @2x
 
 
-### Key `description/videos`
+### Key `description/[lang]/videos`
 
 * Type: array of strings (URLs)
 * Presence: optional
-* Example: "https://youtube.com/xxxxxxxx"
+* Example: `"https://youtube.com/xxxxxxxx"`
 
 This key contains one or multiple URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
@@ -406,84 +425,130 @@ be hosted on a video sharing website that supports the
 [oEmbed](https://oembed.com) standard; popular options are YouTube and
 Vimeo.
 
-
-## Section `classification`
-
-This section contains information useful to classify the software,
-define its scope of usage and its goal at a general level.
-
-### Key `classification/scope`
-
-* Type: string or array of strings
-* Presence: optional
-* Example: "es"
-
-This key defines the expected geographical scope of the software. If
-a software is probably useful only within some specific countries
-(because, eg., it helps implementing a specific regulation), specify
-the ISO693-1 two-letter country codes of the countries n this key.
-
-### Key `classification/paType`
-
-* Type: enumerated string or array of strings
-* Presence: optional
-* Values: see [pa-types.md](pa-types.md)
-* Example: "city"
-
-This key defines the types of public administration which is expected
-to use this software. Public software is often specific in scope, because
-there is a large set of tasks that are specific to each type of
-administration. For instance, many softwares that are used in schools
-are probably not useful in hospitals.
-
-The list of allowed values is defined in [pa-types.md](pa-types.md),
-and can evolve at any time, separately from the version of this
-specification.
-
-### Key `classification/category`
-
-* Type: enumerated string
-* Presence: optional
-* Values: see [sw-category.md](sw-category.md)
-* Example: "it-anagrafe"
-
-This key defines the "category" of software, which is the market area
-for the software. You can select the category that is more similar to
-the software; it doesn't have to be an exact match, but it can still
-be very useful for building catalogs of software and evaluate
-alternatives.
-
-The list of allowed values is defined in [sw-category.md](sw-category.md),
-and can evolve at any time, separately from the version of this
-specification.
-
-### Key `classification/tags`
+### Key `description/[lang]/awards`
 
 * Type: array of strings
+
+An list of awards won by the software.
+
+## Section `legal`
+
+### Key `legal/license`
+
+* Type: string
+* Presence: mandatory
+* Example: `"AGPL-3.0-or-later"`
+
+This string describes the license under which the software is
+distributed. The string must contain a valid SPDX expression, referring
+to one (or multiple) open-source license. Please refer to the [SPDX
+documentation](https://spdx.org/licenses/) for further information.
+
+### Key `legal/mainCopyrightOwner`
+
+* Type: string
 * Presence: optional
-* Example: "city", "accounting", "hr", "employee", "public"
+* Example: `"City of Amsterdam"`
 
-A list of words that can be used to describe the software and can
-help building catalogs of open software.
+This string describes the entity that owns the copyright on
+"most" of the code in the repository. Normally, this is the line
+that is reported with the copyright symbol at the top of most files
+in the repo.
 
-Each tag must be in Unicode lowercase, and should not contain
-any Unicode whitespace character. The suggested character to
-separate multiple word is `-` (single dash).
+It is possible to list multiple owners if required so, using an English
+sentence. It is also possible to informally refer to a community of
+group of people like "Linus Torvalds and all Linux contributors".
 
+In case it is not possible to name a main copyright owner, it is
+possible to omit this key; in those cases, if the repo has a authors
+file, you can point to it through `legal/authorsFile`.
 
-### Key `classification/usedBy`
+### Key `legal/repoOwner`
 
-* Type: array of strings
+* Type: string
+* Presence: mandatory
+* Example: `"City of Amsterdam"`
+
+This string describes the entity that owns this repository; this might
+or might not be the same entity who owns the copyright on the code
+itself. For instance, in case of a fork of the original software, the
+`repoOwner` is probably different from the `mainCopyrightOwner`.
+
+### Key `legal/authorsFile`
+
+* Type: string (path to file)
 * Presence: optional
-* Example: "City of Amsterdam"
+* Example: `"doc/AUTHORS.txt"`
 
-A list of public administrations that are currently using this software.
+Some open-source softwares adopt a convention of identify the copyright
+holders through a file that lists all the entities that own the
+copyright. This is common in projects strongly backed by a community
+where there are many external contributors and no clear single/main
+copyright owner. In such cases, this key can be used to refer to the
+authors file, using a path relative to the root of the repository.
 
-Parsers are encouraged to enhance this list also with other information
-that can obtain independently; for instance, a fork of a software,
-owned by an administration, could be used as a signal of usage of the
-software.
+## Section `maintenance`
 
+This section provides information on the maintenance status of the
+software, useful to evaluate whether the software is actively
+developed or not.
+
+### Key `maintenance/type`
+
+* Type: enumerate
+* Presence: mandatory
+* Values: `"internal"`, `"contract"`, `"community"`, `"none"`
+
+This key describes how the software is currently maintained.
+* `"internal"` means that the software is internally maintained by
+the repository owner.
+* `"contract"` means that there is a commercial
+contract that binds an entity to the maintenance of the software;
+* `"community"` means that the software is currently maintained by one
+or more people that donate their time to the project;
+* `"none"` means that the software is not actively maintained.
+
+### Key `maintenance/contractors`
+
+* Type: array of Contractor (see below)
+* Presence: mandatory (if `maintainance/type` is `contract`)
+
+This key describes the entity or entities, if any, that are currently contracted for maintaining the software. They can be companies, organizations, or other collective names.
+
+### Key `maintenance/contacts`
+
+* Type: List of Contacts (see below)
+* Presence: mandatory
+
+One or more contacts maintaining this software.
+
+This key describes the technical people currently responsible for maintaining
+the software. All contacts need to be a physical person, not a company or an organisation. if somebody is acting as a representative of an institution, it must be listed within the `affiliation` of the contact.
+
+In case of a commercial agreement (or a chain of such agreements),
+specify the final entities actually contracted to deliver the
+maintenance. Do not specify the software owner unless it is technically
+involved with the maintenance of the product as well.
+
+## Section `localisation`
+
+This section provides an overview of the localization features of the software.
+
+## Key `localisation/localisationReady`
+
+* Type: boolean
+* Presence: mandatory
+
+If `yes`, the software has infrastructure in place or is othewise designed to be multilingual. It does not need to be available in more than one language.
+
+## Key `localisation/availableLanguages`
+
+* Type: list of [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes
+* Presence: mandatory
+
+If present, this is the list of languages in which the software is available. Of course, this list will contain at least one language.
+
+See also: https://en.wikipedia.org/wiki/ISO_639-3
 
 ### Section `dependencies`
 
@@ -497,42 +562,76 @@ instance, a database is a good example of such dependencies.
 
 ### Key `dependencies/open`
 
-* Type: array of strings
+* Type: array of Dependencies (see below)
 * Presence: optional
-* Example: "MariaDB 10.2"
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
 
-Each string is free form, max 50 characters; feel free to add version
-numbers and/or short comments.
-
 ### Key `dependencies/proprietary`
 
-* Type: array of strings
+* Type: array of Dependencies (see below)
 * Presence: optional
-* Example: "IBM SoftLayer 4.5"
 
 This key contains a list of runtime dependencies that are distributed
 under a proprietary license.
 
-Each string is free form, max 50 characters; feel free to add version
-numbers and/or short comments.
-
 ### Key `dependencies/hardware`
 
-* Type: array of strings
+* Type: array of Dependencies (see below)
 * Presence: optional
-* Example: "NFC Reader (only for scanning tags)"
 
 This key contains a list of hardware dependencies that must be owned
 to use the software.
 
-Each string is free form, max 50 characters; feel free to add version
-numbers and/or short comments.
-
-
 ## Special data formats
+
+### Dependency
+
+A `dependency` is a complex object. The properties are the following:
+
+  * `name` - **mandatory** - The name of the dependency (e.g. MySQL, NFC Reader)
+  * `versionMin` - the first compatible version
+  * `versionMax` - the latest compatible version
+  * `optional` - whether the dependency is optional or mandatory
+
+### Complex versioning
+
+It is of course possible to use the various keys to specify a complex compatibility matrix.
+
+*Ex. 1*
+```.yaml
+- name: PostgreSQL
+  version: 3.2
+  optional: yes
+```
+This snippet marks an optional dependency on PostgreSQL exactly version 3.2.
+
+*Ex. 2*
+```.yaml
+- name: MySQL
+  versionMin: 1.1
+  versionMax: 1.3
+```
+This snippet marks a mandatory dependency on MySQL, allowing any version between 1.1 and 1.3.
+
+### Contact
+
+A Contact is an object with the following properties:
+
+* `name` - **mandatory** - This key contains the full name of one of the technical contacts. It must be a real person; do NOT populate this key with generic contact information, company departments, associations, etc.
+* `email` - This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like "info@acme.inc". The e-mail address must not be obfuscated. To improve resistance against e-mail collection, use `\x64` to replace `@`, as allowed by the YAML specification.
+* `phone` - phone number (with international prefix)
+* `affiliation` - This key contains an explicit affiliation information for the technical contact. In case of multiple maintainers, this can be used to create a relation between each technical contact and each maintainer entity. It can contain for instance a company name, an association
+name, etc.
+
+### Contractor
+
+A Contractor is an object with the following properties:
+
+* `name` - **mandatory** - The name of the contractor, whether it's a company or a physical person.
+* `until` - **mandatory**  - This is a date (YYYY-MM-DD). This key must contain the date at which the maintenance is going to end. In case of community maintenance, the value should not be more than 2 years in the future, and thus will need to be regularly updated as the community continues working on the project.
+* `website` -  This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.
 
 ### Dates
 
@@ -540,20 +639,3 @@ All dates in `publiccode.yml` must follow the format "YYYY-MM-DD",
 which is one of the ISO8601 allowed encoding. This is the only
 allowed encoding though, so not the full ISO8601 is allowed for the
 date keys.
-
-## Multi-language strings
-
-Some strings in `publiccode.yml` can be translated in multiple
-languages; they are marked as "multi-language string" in the above
-documentation and they are implemented using a YAML object in which
-each field's key is the two-letter ISO 639-1 language code, and the
-content is the string in the specified language.
-
-Example:
-
-```yaml
-description:
-    shortdesc:
-       - en: Advanced booking system for hospitals
-       - it: Sistema avanzato di prenotazione per ospedali
-```

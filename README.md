@@ -1,3 +1,5 @@
+# :warning: :warning: This standard is under heavy development :warning: :warning:
+
 # `publiccode.yml` standard
 
 Status: **Alpha**

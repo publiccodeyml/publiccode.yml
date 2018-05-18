@@ -83,7 +83,7 @@ user-visible differences.
 Authors that are willing to publish a fork as a variant **MUST**
 at least:
 
-* Add a key `upstreamUrl` pointing to one or more upstream
+* Add a key `isBasedOn` pointing to one or more upstream
   repositories from which this variant is derived.
 * Change the value for `url` to point to the repository
   holding the variant.

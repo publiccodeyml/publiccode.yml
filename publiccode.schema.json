@@ -1,7 +1,25 @@
 {
   "title": "Public code",
-  "$id": "http://example.com/example.json",
+  "$id": "http://w3id.org/publiccode/version/0.1.schema.json",
   "type": "object",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+
+  "allOf": [
+          {
+              "$ref": "https://example.com/schemas/extensible#/definitions/second"
+          },
+          {
+              "$ref": "https://example.com/schemas/definitions#/definitions/myid"
+          },
+          {
+              "$ref": "#/definitions/third"
+          }
+      ],
+      "meta:extensible": true,
+      "meta:extends": [
+          "https://example.com/schemas/definitions",
+          "https://example.com/schemas/extensible"
+      ],
   "definitions": {
         "legal": {},
         "dependencies": {},

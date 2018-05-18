@@ -2,7 +2,7 @@
 # Public code Schema
 
 ```
-http://example.com/example.json
+http://w3id.org/publiccode/version/0.1.schema.json
 ```
 
 
