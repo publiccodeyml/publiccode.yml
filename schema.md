@@ -188,13 +188,15 @@ This key contains a list of free tags that can be applied to a software.
 
 Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
 
+The language is specified using [ISO 639-3 alpha-3 codes](https://en.wikipedia.org/wiki/ISO_639-3).
+
 *Example:*
 
 ```.yaml
 freeTags:
-  en:
+  eng:
     - english-free-tag
-  it:
+  ita:
     - tag-libero-italiano
 ```
 
