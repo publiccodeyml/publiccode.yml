@@ -23,9 +23,9 @@ tags:
   - it-portale-trasparenza
 
 freeTags:
-  en:
+  eng:
     - english-free-tag
-  it:
+  ita:
     - tag-libero-italiano
 
 usedBy:
