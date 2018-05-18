@@ -142,7 +142,7 @@ ita:
 
   riuso:
     # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
-    codiceIPA: http://w3id.org/italia/data/ipa/c_h501 # Approfondire con Giorgia
+    codiceIPA: c_h501
 
   spid: yes
   pagopa: yes
