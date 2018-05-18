@@ -352,7 +352,7 @@ should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
 
-This description can contain some basic markdown: *italic*, **bold**, bullet points and [links](#).
+This description can contain some basic markdown: `*italic*`, `**bold**`, bullet points and `[links](#)`.
 
 ### Key `description/[lang]/documentation`
 

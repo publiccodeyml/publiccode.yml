@@ -41,6 +41,10 @@ You can find all `publiccode.yml` files on [GitHub Search `filename:publiccode.y
 
 Feel free to submit Pull Requests and to file Issues.
 
+## Website
+
+The website at <https://yml.publiccode.net/> is automatically generated from the `master` branch of the [`publiccode.yml` repository](https://github.com/publiccodenet/publiccode.yml) using [GitHub pages](https://pages.github.com) and its static site generator [Jekyll](https://jekyllrb.com) and the [Foundation For Public Code jekyll theme](https://github.com/publiccodenet/jekyll-theme).
+
 ## Licence
 
 Licenced under the [CC-0](LICENSE)
