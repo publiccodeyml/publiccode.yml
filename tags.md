@@ -70,3 +70,5 @@ This document contains a controlled list of tags usable to categorize the softwa
 | webbrowser | a web browser |
 | whistleblowing | software for whistleblowing / anticorruption |
 | wordprocessor | a word processor |
+
+This tag list is partly based on Freedesktop.org's latest [Desktop Menu Specification](https://standards.freedesktop.org/menu-spec/latest/).
