@@ -1,12 +1,12 @@
 # `publiccode.yml` standard
 
-Status: **Concept**
+Status: **Alpha**
 
 A metadata description standard for public software and policy repositories.
 
-The goal of this standard is to make public software, such as the software developed by public administrations and public organisations easily discoverable.
+The goal of this standard is to make public software, such as the software developed by public administrations and public organisations, easily discoverable.
 
-A [draft](https://gist.github.com/rasky/fbd2da521b827c4a22b352bdb0811471) of the implementation has been made by [Giovanni Bajo](https://github.com/rasky) of the [Italian Digital Transformation Team](https://teamdigitale.governo.it).
+The first draft of the implementation has been created by the [Italian Digital Transformation Team](https://teamdigitale.governo.it).
 
 ## Goals
 
@@ -15,7 +15,7 @@ We want to make the following discoverable:
 * The codebase is public and open source
 * The title and description of the project or product in English
 * The title and description of the project or product in other languages
-* The status of development, e.g. 'concept', 'alpha', 'beta', 'released', 'depricated'
+* The status of development, e.g. 'concept', 'alpha', 'beta', 'released', 'deprecated'
 * Other project or product assets available (in multiple languages if applicable)
 * By what organisation this project is developed
 * Who is caring for the maintenance and when this runs out

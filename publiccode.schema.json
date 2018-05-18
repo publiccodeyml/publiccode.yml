@@ -1,0 +1,801 @@
+{
+  "title": "Public code",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {
+        "legal": {},
+        "dependencies": {},
+        "version": {},
+        "tmpfs": {}
+  },
+  "properties": {
+    "publiccode-yaml-version": {
+      "$id": "/properties/publiccode-yaml-version",
+      "type": "string",
+      "title": "Version of the specification",
+      "description": "This key specifies the version to which the current publiccode.yml adheres to, for forward compatibility. Current version is 0.1. Accepts a URL",
+      "default": "",
+      "examples": [
+        "http://w3id.org/publiccode/version/0.1"
+      ]
+    },
+    "name": {
+      "$id": "/properties/name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+      "examples": [
+        "Medusa"
+      ]
+    },
+    "applicationSuite": {
+      "$id": "/properties/applicationSuite",
+      "type": "string",
+      "title": "The Applicationsuite Schema ",
+      "default": "",
+      "examples": [
+        "MegaProductivitySuite"
+      ]
+    },
+    "repoURL": {
+      "$id": "/properties/repoURL",
+      "type": "string",
+      "title": "The Repourl Schema ",
+      "default": "",
+      "examples": [
+        "https://example.com/italia/repo.git"
+      ]
+    },
+    "softwareVersion": {
+      "$id": "/properties/softwareVersion",
+      "type": "string",
+      "title": "The Softwareversion Schema ",
+      "default": "",
+      "examples": [
+        "1.0"
+      ]
+    },
+    "releaseDate": {
+      "$id": "/properties/releaseDate",
+      "type": "string",
+      "title": "The Releasedate Schema ",
+      "default": "",
+      "examples": [
+        "2017-04-15"
+      ]
+    },
+    "logo": {
+      "$id": "/properties/logo",
+      "type": "string",
+      "title": "The Logo Schema ",
+      "default": "",
+      "examples": [
+        "img/logo.jpg"
+      ]
+    },
+    "platforms": {
+      "$id": "/properties/platforms",
+      "type": "array",
+      "items": {
+        "$id": "/properties/platforms/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "android",
+          "ios"
+        ]
+      }
+    },
+    "countriesSupported": {
+      "$id": "/properties/countriesSupported",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$id": "/properties/countriesSupported/items",
+        "type": "string",
+        "title": "List of countries",
+        "description": "A list of countries explicitly supported",
+        "default": "",
+        "examples": [
+          "it",
+          "de"
+        ]
+      }
+    },
+    "countriesNotSupported": {
+      "$id": "/properties/countriesNotSupported",
+      "type": "array",
+      "items": {
+        "$id": "/properties/countriesNotSupported/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "us"
+        ]
+      }
+    },
+    "softwareType": {
+      "$id": "/properties/softwareType",
+      "type": "object",
+      "properties": {
+        "softwareAddon": {
+          "$id": "/properties/softwareType/properties/softwareAddon",
+          "type": "boolean",
+          "title": "The Softwareaddon Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "standalone": {
+          "$id": "/properties/softwareType/properties/standalone",
+          "type": "boolean",
+          "title": "The Standalone Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "library": {
+          "$id": "/properties/softwareType/properties/library",
+          "type": "boolean",
+          "title": "The Library Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "configurationFiles": {
+          "$id": "/properties/softwareType/properties/configurationFiles",
+          "type": "boolean",
+          "title": "The Configurationfiles Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "intendedAudience": {
+      "$id": "/properties/intendedAudience",
+      "type": "object",
+      "properties": {
+        "world": {
+          "$id": "/properties/intendedAudience/properties/world",
+          "type": "boolean",
+          "title": "The World Schema ",
+          "default": true,
+          "examples": [
+            true
+          ]
+        },
+        "institutionType": {
+          "$id": "/properties/intendedAudience/properties/institutionType",
+          "type": "string",
+          "title": "The institution type",
+          "description": "",
+          "default": "",
+          "examples": [
+            "city"
+          ]
+        },
+        "countries": {
+          "$id": "/properties/intendedAudience/properties/countries",
+          "type": "array",
+          "items": {
+            "$id": "/properties/intendedAudience/properties/countries/items",
+            "type": "string",
+            "title": "List of countries",
+            "description": "List of the countries",
+            "default": "",
+            "examples": [
+              "it",
+              "de"
+            ]
+          }
+        }
+      }
+    },
+    "usedBy": {
+      "$id": "/properties/usedBy",
+      "type": "array",
+      "items": {
+        "$id": "/properties/usedBy/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "Comune di Firenze",
+          "Comune di Roma"
+        ]
+      }
+    },
+    "legal": {
+      "$id": "/properties/legal",
+      "type": "object",
+      "properties": {
+        "mainCopyrightOwner": {
+          "$id": "/properties/legal/properties/mainCopyrightOwner",
+          "type": "string",
+          "title": "The Maincopyrightowner Schema ",
+          "default": "",
+          "examples": [
+            "Comune di Reggio Emilia and friends"
+          ]
+        },
+        "repoOwner": {
+          "$id": "/properties/legal/properties/repoOwner",
+          "type": "string",
+          "title": "The Repoowner Schema ",
+          "default": "",
+          "examples": [
+            "Comune di Reggio Emilia"
+          ]
+        },
+        "authorsFile": {
+          "$id": "/properties/legal/properties/authorsFile",
+          "type": "string",
+          "title": "The Authorsfile Schema ",
+          "default": "",
+          "examples": [
+            "AUTHORS"
+          ]
+        },
+        "license": {
+          "$id": "/properties/legal/properties/license",
+          "type": "string",
+          "title": "The License Schema ",
+          "default": "",
+          "examples": [
+            "AGPL-3.0-or-later"
+          ]
+        }
+      }
+    },
+    "developmentStatus": {
+      "$id": "/properties/developmentStatus",
+      "type": "object",
+      "properties": {
+        "concept": {
+          "$id": "/properties/developmentStatus/properties/concept",
+          "type": "boolean",
+          "title": "The Concept Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "development": {
+          "$id": "/properties/developmentStatus/properties/development",
+          "type": "boolean",
+          "title": "The Development Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "beta": {
+          "$id": "/properties/developmentStatus/properties/beta",
+          "type": "boolean",
+          "title": "Whether the software is a beta",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "stable": {
+          "$id": "/properties/developmentStatus/properties/stable",
+          "type": "boolean",
+          "title": "The Stable Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "obsolete": {
+          "$id": "/properties/developmentStatus/properties/obsolete",
+          "type": "boolean",
+          "title": "The Obsolete Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "maintenance": {
+      "$id": "/properties/maintenance",
+      "type": "object",
+      "properties": {
+        "internal": {
+          "$id": "/properties/maintenance/properties/internal",
+          "type": "boolean",
+          "title": "The Internal Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "contract": {
+          "$id": "/properties/maintenance/properties/contract",
+          "type": "boolean",
+          "title": "The Contract Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "community": {
+          "$id": "/properties/maintenance/properties/community",
+          "type": "boolean",
+          "title": "The Community Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "unmaintained": {
+          "$id": "/properties/maintenance/properties/unmaintained",
+          "type": "boolean",
+          "title": "The Unmaintained Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "until": {
+          "$id": "/properties/maintenance/properties/until",
+          "type": "string",
+          "title": "The Until Schema ",
+          "default": "",
+          "examples": [
+            "2019-01-01"
+          ]
+        },
+        "contacts": {
+          "$id": "/properties/maintenance/properties/contacts",
+          "type": "array",
+          "items": {
+            "$id": "/properties/maintenance/properties/contacts/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "Francesco Rossi"
+                ]
+              },
+              "email": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/email",
+                "type": "string",
+                "title": "The Email Schema ",
+                "default": "",
+                "examples": [
+                  "francesco.rossi@comune.reggioemilia.it"
+                ]
+              },
+              "affiliation": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/affiliation",
+                "type": "string",
+                "title": "The Affiliation Schema ",
+                "default": "",
+                "examples": [
+                  "Comune di Reggio Emilia"
+                ]
+              },
+              "phone": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/phone",
+                "type": "string",
+                "title": "The Phone Schema ",
+                "default": "",
+                "examples": [
+                  "+39 231 13215112"
+                ]
+              },
+              "leadMaintainer": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/leadMaintainer",
+                "type": "boolean",
+                "title": "The Leadmaintainer Schema ",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "roadmap": {
+      "$id": "/properties/roadmap",
+      "type": "string",
+      "title": "The Roadmap Schema ",
+      "default": "",
+      "examples": [
+        "https://example.com/italia/medusa/roadmap"
+      ]
+    },
+    "awards": {
+      "$id": "/properties/awards",
+      "type": "array",
+      "items": {
+        "$id": "/properties/awards/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "1st Price Software of the year"
+        ]
+      }
+    },
+    "localization": {
+      "$id": "/properties/localization",
+      "type": "object",
+      "properties": {
+        "localizationReady": {
+          "$id": "/properties/localization/properties/localizationReady",
+          "type": "boolean",
+          "title": "The Localizationready Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "availableLanguages": {
+          "$id": "/properties/localization/properties/availableLanguages",
+          "type": "array",
+          "items": {
+            "$id": "/properties/localization/properties/availableLanguages/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "en",
+              "it",
+              "fr",
+              "de"
+            ]
+          }
+        },
+        "it": {
+          "$id": "/properties/localization/properties/it",
+          "type": "object",
+          "properties": {
+            "localizedName": {
+              "$id": "/properties/localization/properties/it/properties/localizedName",
+              "type": "string",
+              "title": "The Localizedname Schema ",
+              "default": "",
+              "examples": [
+                "Medusa"
+              ]
+            },
+            "shortDesc": {
+              "$id": "/properties/localization/properties/it/properties/shortDesc",
+              "type": "string",
+              "title": "The Shortdesc Schema ",
+              "default": "",
+              "examples": [
+                "A really interesting software."
+              ]
+            },
+            "longDesc": {
+              "$id": "/properties/localization/properties/it/properties/longDesc",
+              "type": "string",
+              "title": "The Longdesc Schema ",
+              "default": "",
+              "examples": [
+                "Very long description of this software, also split on multiple rows. You should note what the software is and why one should need it.\n"
+              ]
+            },
+            "screenshots": {
+              "$id": "/properties/localization/properties/it/properties/screenshots",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/screenshots/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "img/sshot1.jpg",
+                  "img/sshot2.jpg",
+                  "img/sshot3.jpg"
+                ]
+              }
+            },
+            "videos": {
+              "$id": "/properties/localization/properties/it/properties/videos",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/videos/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "https://youtube.com/xxxxxxxx"
+                ]
+              }
+            },
+            "featureList": {
+              "$id": "/properties/localization/properties/it/properties/featureList",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/featureList/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "Very important feature",
+                  "Will run without a problem",
+                  "Has zero bugs",
+                  "Solves all the problems of the world"
+                ]
+              }
+            },
+            "documentation": {
+              "$id": "/properties/localization/properties/it/properties/documentation",
+              "type": "string",
+              "title": "The Documentation Schema ",
+              "default": "",
+              "examples": [
+                "https://read.the.documentation/medusa/v1.0"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "$id": "/properties/dependencies",
+      "type": "object",
+      "properties": {
+        "open": {
+          "$id": "/properties/dependencies/properties/open",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/open/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/dependencies/properties/open/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "MySQL"
+                ]
+              },
+              "version": {
+                "$id": "/properties/dependencies/properties/open/items/properties/version",
+                "type": "object",
+                "properties": {
+                  "greaterThan": {
+                    "$id": "/properties/dependencies/properties/open/items/properties/version/properties/greaterThan",
+                    "type": "number",
+                    "title": "The Greaterthan Schema ",
+                    "default": 0,
+                    "examples": [
+                      1.100000023841858
+                    ]
+                  },
+                  "lesserThan": {
+                    "$id": "/properties/dependencies/properties/open/items/properties/version/properties/lesserThan",
+                    "type": "number",
+                    "title": "The Lesserthan Schema ",
+                    "default": 0,
+                    "examples": [
+                      1.2999999523162842
+                    ]
+                  }
+                }
+              },
+              "optional": {
+                "$id": "/properties/dependencies/properties/open/items/properties/optional",
+                "type": "boolean",
+                "title": "The Optional Schema ",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        },
+        "proprietary": {
+          "$id": "/properties/dependencies/properties/proprietary",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/proprietary/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "Oracle 11.4",
+              "IBM SoftLayer 4.5"
+            ]
+          }
+        },
+        "hardware": {
+          "$id": "/properties/dependencies/properties/hardware",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/hardware/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "NFC Reader (chipset xxx)"
+            ]
+          }
+        }
+      }
+    },
+    "it": {
+      "$id": "/properties/it",
+      "type": "object",
+      "properties": {
+        "accessibile": {
+          "$id": "/properties/it/properties/accessibile",
+          "type": "boolean",
+          "title": "The Accessibile Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "riuso": {
+          "$id": "/properties/it/properties/riuso",
+          "type": "object",
+          "properties": {
+            "codiceIPA": {
+              "$id": "/properties/it/properties/riuso/properties/codiceIPA",
+              "type": "string",
+              "title": "The Codiceipa Schema ",
+              "default": "",
+              "examples": [
+                "http://w3id.org/italia/data/ipa/c_h501"
+              ]
+            },
+            "tag": {
+              "$id": "/properties/it/properties/riuso/properties/tag",
+              "type": "array",
+              "items": {
+                "$id": "/properties/it/properties/riuso/properties/tag/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "comune",
+                  "anagrafe",
+                  "cittadino"
+                ]
+              }
+            },
+            "categoria": {
+              "$id": "/properties/it/properties/riuso/properties/categoria",
+              "type": "string",
+              "title": "The Categoria Schema ",
+              "default": "",
+              "examples": [
+                "it-anagrafe"
+              ]
+            }
+          }
+        },
+        "pianoTriennale": {
+          "$id": "/properties/it/properties/pianoTriennale",
+          "type": "object",
+          "properties": {
+            "piattaformeAbilitanti": {
+              "$id": "/properties/it/properties/pianoTriennale/properties/piattaformeAbilitanti",
+              "type": "object",
+              "properties": {
+                "spid": {
+                  "$id": "/properties/it/properties/pianoTriennale/properties/piattaformeAbilitanti/properties/spid",
+                  "type": "boolean",
+                  "title": "The Spid Schema ",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "pagopa": {
+                  "$id": "/properties/it/properties/pianoTriennale/properties/piattaformeAbilitanti/properties/pagopa",
+                  "type": "boolean",
+                  "title": "The Pagopa Schema ",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "cie": {
+                  "$id": "/properties/it/properties/pianoTriennale/properties/piattaformeAbilitanti/properties/cie",
+                  "type": "boolean",
+                  "title": "The Cie Schema ",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "anpr": {
+                  "$id": "/properties/it/properties/pianoTriennale/properties/piattaformeAbilitanti/properties/anpr",
+                  "type": "boolean",
+                  "title": "The Anpr Schema ",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                }
+              }
+            },
+            "designers": {
+              "$id": "/properties/it/properties/pianoTriennale/properties/designers",
+              "type": "array",
+              "items": {
+                "$id": "/properties/it/properties/pianoTriennale/properties/designers/items",
+                "type": "object",
+                "properties": {
+                  "kits": {
+                    "$id": "/properties/it/properties/pianoTriennale/properties/designers/items/properties/kits",
+                    "type": "array",
+                    "items": {
+                      "$id": "/properties/it/properties/pianoTriennale/properties/designers/items/properties/kits/items",
+                      "type": "object",
+                      "properties": {
+                        "service-design": {
+                          "$id": "/properties/it/properties/pianoTriennale/properties/designers/items/properties/kits/items/properties/service-design",
+                          "type": "boolean",
+                          "title": "The Service-design Schema ",
+                          "default": false,
+                          "examples": [
+                            false
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "tema": {
+              "$id": "/properties/it/properties/pianoTriennale/properties/tema",
+              "type": "string",
+              "title": "The Tema Schema ",
+              "default": "",
+              "examples": [
+                "theme-school"
+              ]
+            },
+            "api": {
+              "$id": "/properties/it/properties/pianoTriennale/properties/api",
+              "type": "array",
+              "items": {
+                "$id": "/properties/it/properties/pianoTriennale/properties/api/items",
+                "type": "object",
+                "properties": {
+                  "uses": {
+                    "$id": "/properties/it/properties/pianoTriennale/properties/api/items/properties/uses",
+                    "type": "boolean",
+                    "title": "The Uses Schema ",
+                    "default": false,
+                    "examples": [
+                      true
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "publiccode-yaml-version"
+  ]
+}

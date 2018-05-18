@@ -1,55 +1,148 @@
-version: 0.0.1                     # publiccode YAML standard version 0.0.1
+publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+
+name: Medusa 
+applicationSuite: MegaProductivitySuite
+repoURL: "https://example.com/italia/repo.git"  # URL of this repository
+softwareVersion: "1.0"                                        # Last stable version
+releaseDate: 2017-04-15                               # Date of last stable software release
+logo: img/logo.jpg                                    # Logo (size > 500px)
+platforms:                   # or Windows, Mac, Linux, etc.
+  - android                   
+  - ios
+
+countriesSupported:        # Explicitly supported countries
+  - it
+  - de
+countriesNotSupported:     # Explicitly unsupported countries
+  - us
+
+softwareType:
+  softwareAddon: no
+  standalone: yes
+  library: no
+  configurationFiles: no
+  
+intendedAudience:
+  world: yes
+  institutionType: city
+  countries:
+    - it
+    - de
+
+usedBy:                        # Which other public administrations are known to use this software
+  - Comune di Firenze
+  - Comune di Roma
 
 legal:
-  authors-file: AUTHORS             # file listing copyright information
+  mainCopyrightOwner: Comune di Reggio Emilia and friends
+  repoOwner: Comune di Reggio Emilia # copyright owner
+  authorsFile: AUTHORS              # file listing copyright information
   license: AGPL-3.0-or-later        # SPDX expression of license
 
-maintainance:                        # Maintainance status as open-source software
-  - maintanance-type: commercial     # Whether there is a commercial contract of maintainance in place. No -> community
-    maintained-until: 2019-01-01     # If maintainance-type is commercial, then the maintenance contract is due
-    technical-contacts:              # Name of the people that are currently technically maintaining this software
+developmentStatus:
+  concept: no
+  development: yes
+  beta: no
+  stable: no
+  obsolete: no
+  
+maintenance: # Whether there is a commercial contract of maintainance in place. No -> community
+  internal: no
+  contract: no
+  community: yes
+  unmaintained: no
+  
+  until: "2019-01-01"
+  contacts:
     - name: Francesco Rossi
-      email: francesco.rossi@comune.reggioemilia.it
+      email: "francesco.rossi@comune.reggioemilia.it"
       affiliation: Comune di Reggio Emilia
+      phone: +39 231 13215112
+      leadMaintainer: yes
     - name: Dario Bianchi
-      email: dario.bianchi@fornitore.it
-      affiliation: Fornitore Privato Spa
+      email: "dario.bianchi@fornitore.it"
+      affiliation: Fornitore Privato S.P.A.
+      phone: +39 16 24231322
+      
+roadmap: "https://example.com/italia/medusa/roadmap" # Optional: link to a roadmap
 
-description:
-  - name: Medusa                                          # Short descriptive name
-    logo: img/logo.jpg                                    # Logo
-    shortdesc: A really interesting software.             # Max 100 characters
-    longdesc: >
-      Very long description of this software, also split
-      on multiple rows. You should note what the software
-      is and why one should need it.
+awards:
+  - 1st Price Software of the year
+
+localization:
+  # Does the software support, at least in the design, multiple languages?
+  localizationReady: yes
+  # Languages already available
+  availableLanguages:
+    - en
+    - it
+    - fr
+    - de
+  en:
+    localizedName: Medusa                                          # Short descriptive name
+    shortDesc: "A really interesting software."           # Max 100 characters
+    longDesc: >
+          Very long description of this software, also split
+          on multiple rows. You should note what the software
+          is and why one should need it.
     screenshots:                                          # Screen shots used to get a quick look&feel of the software
       - img/sshot1.jpg
       - img/sshot2.jpg
       - img/sshot3.jpg
     videos:                                               # Demo videos of the software
-      - https://youtube.com/xxxxxxxx 
-    version: "1.0"                                        # Last stable version
-    released: 2017-04-15                                  # Date of last stable software release 
-    platforms: web                    # or Windows, Mac, Linux, etc. 
-
-ita-pianotriennale:     # Aderenza al piano triennale. Chiave sotto namespace "ita-", quindi solo italiana
-  use-spid: yes         # yes, no, or "n/a" se il software non ha un login
-  use-pagopa: yes
-
-meta:                            # Meta information to help categorization of this software
-  - scope: ita
-    pa-type: city 
-    category: ita-anagrafe       # Category list in National Guidelines (possibly, per-country)
-    used-by:                     # Which other public administrations are known to use this software
-      - Comune di Firenze
-      - Comune di Roma 
+      - https://youtube.com/xxxxxxxx
+    featureList:
+       - Very important feature
+       - Will run without a problem
+       - Has zero bugs
+       - Solves all the problems of the world
+    documentation: "https://read.the.documentation/medusa/v1.0"
 
 dependencies:             # List of dependencies. The only mandatory list is the proprietary one
   open:                 # List of open dependencies. Optional
-    - MySQL
-  proprietary:          # List of proprietary software that must be bought to be able to use this software
+    - name: MySQL
+    	version: 
+      	greaterThan: 1.1
+        lesserThan: 1.3
+      optional: yes
+    - name: PostgreSQL
+    	version: 3.2
+      optional: yes
+  # List of proprietary software which is a dependency for using this product. This includes runtime dependencies
+  proprietary:          
     - Oracle 11.4
     - IBM SoftLayer 4.5
   hardware:             # List of special hardware required. Optional.
-    - NFC Reader (chipset xxx) 
+    - NFC Reader (chipset xxx)
+
+it:
+  accessibile: yes # Rispetta i requisiti di legge in materia di accessibilità?
+  
+  riuso:
+    # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
+    codiceIPA: http://w3id.org/italia/data/ipa/c_h501            
+    tag:
+      - comune
+      - anagrafe
+      - cittadino
+      
+    categoria: it-anagrafe          # Category list in National Guidelines (possibly, per-country)
+
+  pianoTriennale:
+    piattaformeAbilitanti:
+      spid: yes
+      pagopa: yes
+      cie: yes
+      anpr: yes
+
+    designers:
+      - kits:
+        - service-design: no
+        - ui: yes
+        - webtoolkit: yes
+
+    tema: theme-school
+
+    api:
+      - uses: yes
+      - exports: yes
