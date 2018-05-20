@@ -17,7 +17,7 @@ laws or regulations. The provided extension mechanism is the usage
 of country-specific sections.
 
 All country-specific sections are contained in a section named with the two-letter lowercase [ISO 3166-1 alpha-2 country code](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-For instance `spid` is a property for Italian softare declaring whether the software is integrated with the Italian Public Identification System.
+For instance `spid` is a property for Italian software declaring whether the software is integrated with the Italian Public Identification System.
 
 If a software is compliant I will find:
 ```
@@ -177,7 +177,7 @@ help building catalogs of open software.
 
 Each tag must be in Unicode lowercase, and should not contain
 any Unicode whitespace character. The suggested character to
-separate multiple word is `-` (single dash).
+separate multiple words is `-` (single dash).
 
 ### Key `freeTags/[lang]`
 
@@ -202,7 +202,7 @@ freeTags:
 
 Each tag must be in Unicode lowercase, and should not contain
 any Unicode whitespace character. The suggested character to
-separate multiple word is `-` (single dash).
+separate multiple words is `-` (single dash).
 
 ### Key `usedBy`
 
@@ -234,7 +234,7 @@ The keys are:
   * `concept` - The software is just a "concept". No actual code may have been produced, and the repository could simply be a placeholder.
   * `development` - Some effort has gone into the development of the software, but the code is not ready for the end user, even in a preliminary version (beta or alpha) to be tested by end users.
   * `beta` - The software is in the testing phase (alpha or beta). At this stage, the software might or might not have had a preliminary public release.
-  * `stable` - The software has seen a first public release, and is ready to be used in a production environment.
+  * `stable` - The software has seen a first public release and is ready to be used in a production environment.
   * `obsolete` - The software is no longer maintained or kept up to date. All of the source code is archived and kept for historical reasons.
 
 ## Section `softwareType`
@@ -270,7 +270,7 @@ It might be the original suite for which the software is an addon, or simply the
 * Values: see [pa-types.md](pa-types.md)
 * Example: `"city"`
 
-Public software could be very specific in scope, because there is a large set of tasks that are specific to each type of
+Public software could be very specific in scope because there is a large set of tasks that are specific to each type of
 administration. For instance, many softwares that are used in schools
 are probably not useful in hospitals.
 If you want to explicitly mark some software as only useful
@@ -286,7 +286,7 @@ specification.
 * Type: array of strings
 * Presence: optional
 
-This key explicitly includes certain countries in the intended audience, i.e. the software was explicitly claims compliance with specific processes, technologies or laws. All countries are specified using lowercase
+This key explicitly includes certain countries in the intended audience, i.e. the software explicitly claims compliance with specific processes, technologies or laws. All countries are specified using lowercase
 ISO 3166-1 alpha-2 two-letter country codes.
 
 ### Key `intendedAudience/unsupportedCountries`
@@ -300,7 +300,7 @@ ISO 3166-1 alpha-2 two-letter country codes.
 
 ## Section `description`
 
-This section contains general description on the software. Parsers
+This section contains a general description of the software. Parsers
 can use this section for instance to create a web page describing
 the software.
 
@@ -347,7 +347,7 @@ allowed.
 
 This key contains a longer description of the software, between 500
 and 10000 chars. It is meant to provide an overview of the capabilities
-of the software for a potential users. The audience for this text
+of the software for a potential user. The audience for this text
 should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
@@ -455,7 +455,7 @@ Vimeo.
 
 * Type: array of strings
 
-An list of awards won by the software.
+A list of awards won by the software.
 
 ## Section `legal`
 
@@ -565,7 +565,7 @@ This section provides an overview of the localization features of the software.
 * Type: boolean
 * Presence: mandatory
 
-If `yes`, the software has infrastructure in place or is othewise designed to be multilingual. It does not need to be available in more than one language.
+If `yes`, the software has infrastructure in place or is otherwise designed to be multilingual. It does not need to be available in more than one language.
 
 ## Key `localisation/availableLanguages`
 
