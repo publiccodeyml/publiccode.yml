@@ -379,6 +379,30 @@ Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.
 
+### Key `description/[lang]/apiDocumentation`
+
+* Type: URL
+* Presence: optional
+
+This key contains a reference to the API documentation of the software. The value must be a URL to a
+hosted version of the documentation.
+
+It is suggested that the URL points to a hosted version of the
+documentation that is immediately readable through a common web browser.
+The documentation should be rendered in HTML and browsable like a website
+(with a navigation index, a search bar, etc.), and if there is a reference
+or test deployment, possibly offer an interactive interface (e.g. Swagger).
+
+If the documentation is instead available only as a document, put a direct
+view/download link as URL in this key. You should commit the document as
+part of the source code repository, and then link to it using the code
+hosting source browser URL (eg: GitHub URL to the file). Prefer using
+open formats like PDF or ODT for maximum interoperability.
+
+Whichever the format for the documentation, remember to make its source
+files available under an open license, possibly by committing them as
+part of the repository itself.
+
 ### Key `description/[lang]/featureList`
 
 * Type: array of strings
