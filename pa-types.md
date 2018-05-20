@@ -9,11 +9,11 @@ must contain a value from this list.
 
 Value | Description
 ----- | -----------
-`city` | City
-`health` | Health service
-`police` | Police forces
-`school` | School of any level
-`university` | University of any level
+`cities` | City
+`health-services` | Health service
+`police-forces` | Police forces
+`schools` | School of any level
+`universities` | University of any level
 
 ### Italy
 
