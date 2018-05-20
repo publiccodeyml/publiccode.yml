@@ -15,8 +15,6 @@ platforms:
   - android
   - ios
 
-api: "https://read.the.api.doc/"
-
 tags:
   - content-management
   - artificial-intelligence
@@ -64,6 +62,8 @@ description:
           is and why one should need it.
 
     documentation: "https://read.the.documentation/medusa/v1.0"
+    apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
+    
     featureList:
        - Very important feature
        - Will run without a problem
