@@ -596,7 +596,7 @@ A `dependency` is a complex object. The properties are the following:
   * `versionMin` - the first compatible version
   * `versionMax` - the latest compatible version
   * `version` - the only major version for which the software is compatible. It assumes compatibility with all patches and bugfixes later applied to this version.
-  * `optional` - whether the dependency is optional or mandatory
+  * `optional` - whether the dependency is optional or mandatory
 
 ### Complex versioning
 
