@@ -7,7 +7,7 @@ landingURL: "https://example.com/italia/medusa"
 
 isBasedOn: "https://github.com/italia/otello.git"
 softwareVersion: "1.0"
-releaseDate: 2017-04-15
+releaseDate: "2017-04-15"
 logo: img/logo.svg
 monochromeLogo: img/logo-mono.svg
 
@@ -18,9 +18,9 @@ platforms:
 api: "https://read.the.api.doc/"
 
 tags:
-  - cms
-  - productivity
-  - it-portale-trasparenza
+  - content-management
+  - artificial-intelligence
+  - museum
 
 freeTags:
   eng:
@@ -48,7 +48,7 @@ intendedAudience:
     - cities
     - health-services
     - it-ag-agricolo
-  countries: # FIXME ISO 3166-1 alpha-2 + EU
+  countries:
     - it
     - de
   unsupportedCountries:
