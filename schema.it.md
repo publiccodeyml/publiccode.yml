@@ -52,12 +52,12 @@ Il parser applicherà il corretto prefisso al valore dato a questa chiave per cr
 
 ## Sezione `designKit`
 
-### Chiave `designKit/serviceDesign`
+### Chiave `designKit/seo`
 
 * Tipo: booleano
 * Presenza: opzionale
 
-Se presente e impostato a `yes`, il software ha utilizzato, in fase di progettazione, il kit di Service Design di [Designers Italia](https://designers.italia.it).
+Se presente e impostato a `yes`, il software ha utilizzato, in fase di progettazione, il kit di SEO di [Designers Italia](https://designers.italia.it).
 
 ### Chiave `designKit/ui`
 
@@ -66,9 +66,17 @@ Se presente e impostato a `yes`, il software ha utilizzato, in fase di progettaz
 
 Se presente e impostato a `yes`, il software ha utilizzato, in fase di progettazione, il kit UI di [Designers Italia](https://designers.italia.it).
 
-### Chiave `designKit/webToolkit`
+### Chiave `designKit/web`
 
 * Tipo: booleano
 * Presenza: opzionale
 
 Se presente e impostato a `yes`, il software utilizza il kit per lo sviluppo web di [Designers Italia](https://designers.italia.it).
+
+
+### Chiave `designKit/content`
+
+* Tipo: booleano
+* Presenza: opzionale
+
+Se presente e impostato a `yes`, il software ha utilizzato, in fase di progettazione, il kit per la scrittura del contenuto di [Designers Italia](https://designers.italia.it).

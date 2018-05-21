@@ -63,7 +63,7 @@ description:
 
     documentation: "https://read.the.documentation/medusa/v1.0"
     apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
-    
+
     featureList:
        - Very important feature
        - Will run without a problem
@@ -147,6 +147,7 @@ ita:
   anpr: yes
 
   designKit:
-    - serviceDesign: no
+    - seo: no
     - ui: yes
-    - webToolkit: yes
+    - web: yes
+    - content: no
