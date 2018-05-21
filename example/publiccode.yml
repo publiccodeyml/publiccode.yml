@@ -147,7 +147,7 @@ ita:
   anpr: yes
 
   designKit:
-    - seo: no
-    - ui: yes
-    - web: yes
-    - content: no
+    seo: no
+    ui: yes
+    web: yes
+    content: no
