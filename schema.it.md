@@ -6,7 +6,7 @@
 * Tipo: booleano
 * Presenza: opzionale
 
-Se presente e impostato a `yes`, il software segue le linee guida di design, in particolare le leggi in merito all'accessibilità.
+Se presente e impostato a `yes`, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design.
 
 ### Chiave `spid`
 
