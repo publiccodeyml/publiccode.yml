@@ -37,7 +37,7 @@ This document contains a controlled list of tags usable to categorize the softwa
 | identity | identity management |
 | instant-messaging | an instant messaging client |
 | library | a library software |
-| medical-software | medical software |
+| medical | medical software |
 | monitor | monitor application/applet that monitors some resource or activity |
 | museum | museum software |
 | music | musical software |
