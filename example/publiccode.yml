@@ -138,7 +138,6 @@ it:
   interoperabile: yes
 
   riuso:
-    # Codice IPA della PA che ha pubblicato questo repo (repo-owner)
     codiceIPA: c_h501
 
   spid: yes
