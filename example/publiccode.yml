@@ -133,7 +133,7 @@ dependencies:
     - name: NFC Reader
       optional: yes
 
-ita:
+it:
   accessibile: yes
   interoperabile: yes
 
