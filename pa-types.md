@@ -1,6 +1,6 @@
 ## Public administration types
 
-The key `meta/pa-type` defines the types of public administration which is
+The key `intendedAudience/onlyFor` defines the types of public administration which is
 expected to use this software. This document contains a list of allowed
 values for that key. While the key is optional, if it is specified it
 must contain a value from this list.
