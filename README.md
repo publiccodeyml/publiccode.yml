@@ -24,11 +24,11 @@ The `publiccode.yml` file is meant to solve these problems. It is an easily read
 
 The format should both be able to easily be added to any new project, as well as grow with the project as it grows beyond the original context it was developed in.
 
+## Finding projects
 
+You can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
 
-## Finding projects with a `publiccode.yml`
-
-You can find all `publiccode.yml` files on [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
+* [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
 
 ## Contributing
 
