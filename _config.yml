@@ -13,3 +13,6 @@ include:
 
 # Use the Foundation For Public Code Jekyll theme`
 remote_theme: publiccodenet/jekyll-theme
+
+# Enable Table of Contents displaying
+toc: true
