@@ -6,8 +6,8 @@
 
 A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
+This alpha is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
-The first draft of the implementation has been created by the [Italian Digital Transformation Team](https://teamdigitale.governo.it).
 
 ## Goals
 
