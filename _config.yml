@@ -5,6 +5,7 @@
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
+  - jemoji
 
 # Also render the README to HTML even if there is an index.md
 include:
