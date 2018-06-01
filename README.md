@@ -8,29 +8,23 @@ A metadata description standard for public software and policy repositories that
 
 This alpha is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
+## What this file is for
 
-## Goals
+Many great software projects are developed by public administrations, however reuse of these projects is very limited. Some of the reasons for low uptake of these projects is a lack of discoverability and that it is hard to find out what project can actually work in the context of a different public administration.
 
-We want to make the following discoverable:
+The `publiccode.yml` file is meant to solve these problems. It is an easily readable file for civil servants that are trying to figure out whether a project will work for them, and easily readable for computers. It contains information such as:
 
-* The codebase is public and open source
-* The title and description of the project or product in English
-* The title and description of the project or product in other languages
+* The title and description of the project or product in English and/or other languages
 * The status of development, e.g. 'concept', 'alpha', 'beta', 'released', 'deprecated'
-* Other project or product assets available (in multiple languages if applicable)
 * By what organisation this project is developed
 * Who is caring for the maintenance and when this runs out
 * Who to contact for technical or support inquiries
-* Who the software is used by
 * What national and local legal frameworks this project or product works in
-* What classification the software has in local contexts (one or multiple)
 * What proprietary software dependencies this project or product has
 
 The format should both be able to easily be added to any new project, as well as grow with the project as it grows beyond the original context it was developed in.
 
-The standard needs strong versioning in development and should develop freely with the needs of the community.
 
-The file should be lintable with a simple tool for compliance.
 
 ## Finding projects with a `publiccode.yml`
 
