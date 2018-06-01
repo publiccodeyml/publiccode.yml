@@ -39,7 +39,7 @@ You can find all `publiccode.yml` files on [GitHub Search `filename:publiccode.y
 
 ## Contributing
 
-Feel free to submit Pull Requests and to file Issues.
+Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 
 ## Website
 
