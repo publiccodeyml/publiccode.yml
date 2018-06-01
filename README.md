@@ -6,6 +6,12 @@
 
 A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
+* [Schema](schema.md)
+* [Italian extension to the schema](schema.it.md)
+* [List of acceptable tags](tags.md)
+* [How to work with forks and variants](forks.md)
+* [Example](example/publiccode.yml)
+
 This alpha is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
 ## What this file is for
