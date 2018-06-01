@@ -2,7 +2,7 @@
 
 :warning: :warning: This standard is under heavy development :warning: :warning:
 
-Status: **Alpha**
+![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
 
 A metadata description standard for public software and policy repositories.
 
