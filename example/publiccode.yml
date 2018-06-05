@@ -134,8 +134,12 @@ dependencies:
       optional: yes
 
 it:
-  accessibile: yes
-  interoperabile: yes
+
+  conformita:
+    accessibile: yes
+    interoperabile: yes
+    sicuro: yes
+    privacy: yes
 
   riuso:
     codiceIPA: c_h501

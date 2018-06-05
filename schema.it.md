@@ -1,6 +1,10 @@
 # `publiccode.yml` - Estensioni italiane
 
 
+## Sezione `conformita`
+
+TODO: documentazione
+
 ### Chiave `accessibile`
 
 * Tipo: booleano
