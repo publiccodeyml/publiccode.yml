@@ -19,6 +19,8 @@ Se presente e impostato a `yes`, il software è conforme alle leggi in materia d
 
 Se presente e impostato a `yes`, il software è conforme alle [linee guida sull'interoperabilità](https://lg-modellointeroperabilita.readthedocs.io/it/latest/).
 
+Riferimento normativo: [Art. 73 del CAD](http://cad.readthedocs.io/it/v2017-12-13/_rst/capo8_art73.html).
+
 
 ### Chiave `conforme/sicuro`
 
