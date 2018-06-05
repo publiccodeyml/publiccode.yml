@@ -55,7 +55,12 @@ intendedAudience:
 description:
   eng:
     localisedName: Medusa
-    shortDescription: "A really interesting software."
+    genericName: Text Editor
+    shortDescription: >
+          This description can have a maximum 150
+          characters long. We should not fill the
+          remaining space with "Lorem Ipsum". End
+
     longDescription: >
           Very long description of this software, also split
           on multiple rows. You should note what the software

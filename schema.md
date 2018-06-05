@@ -262,9 +262,7 @@ The keys are:
   * `stable` - The software has seen a first public release and is ready to be used in a production environment.
   * `obsolete` - The software is no longer maintained or kept up to date. All of the source code is archived and kept for historical reasons.
 
-## Section `softwareType`
-
-### Key `softwareType/type`
+## Key `softwareType`
 
 * Type: enumerated string
 * Presence: mandatory
@@ -345,10 +343,20 @@ the name most people usually refer to the software. In case the software
 has both an internal "code" name and a commercial name, use the
 commercial name.
 
+### Key `description/[lang]/genericName`
+
+* Type: string (max 35 chars)
+* Presence: mandatory
+* Example: "Text Editor"
+
+This key is the "Generic name", which refers to the specific category to which the software belongs.
+You can usually find the generic name in the presentation of the software, when you write: "Software xxx is a yyy"
+Notable examples include "Text Editor", "Word Processor", "Web Browser", "Chat" and so on...
+The generic name can be up to 35 characters long.
 
 ### Key `description/[lang]/shortDescription`
 
-* Type: multi-language string (max 150 chars)
+* Type: string (max 150 chars)
 * Presence: mandatory
 * Example: `"Advanced booking system for hospitals"`
 
@@ -358,7 +366,7 @@ allowed.
 
 ### Key `description/[lang]/longDescription`
 
-* Type: multi-language string (min 500 chars, max 10000 chars)
+* Type: string (min 500 chars, max 10000 chars)
 * Presence: mandatory (for at least one language)
 
 This key contains a longer description of the software, between 500
