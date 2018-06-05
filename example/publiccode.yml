@@ -11,6 +11,11 @@ releaseDate: "2017-04-15"
 logo: img/logo.svg
 monochromeLogo: img/logo-mono.svg
 
+inputTypes:
+  - text/plain
+outputTypes:
+  - text/plain
+
 platforms:
   - android
   - ios
