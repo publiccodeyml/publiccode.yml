@@ -277,15 +277,6 @@ The keys are:
   * `library` - The software contains a library or an SDK to make it easier to third party developers to create new products.
   * `configurationFiles` - The software does not contain executable script but a set of configuration files. They may document how to obtain a certain deployment. They could be in the form of plain configuration files, bash scripts, ansible playbooks, Dockerfiles, or other instruction sets.
 
-### Key `softwareType/isRelatedTo`
-
-* Type: array of strings
-* Presence: optional (highly suggested if `type` is not `standalone`)
-
-If `softwareType` is not `standalone`, a list of repositories (which may or may not contain a `publiccode.yml` file) closely related to the software.
-
-It might be the original suite for which the software is an addon, or simply the repositories for which the software provides the configuration files.
-
 ## Section `intendedAudience`
 
 ### Key `intendedAudience/onlyFor`

@@ -39,12 +39,7 @@ roadmap: "https://example.com/italia/medusa/roadmap"
 
 developmentStatus: development
 
-softwareType:
-  type: "standalone"
-  isRelatedTo:
-    - "https://example.com/italia/software1.git"
-    - "https://example.com/italia/software2.git"
-    - "https://example.com/italia/software3.git"
+softwareType: "standalone"
 
 intendedAudience:
   onlyFor:
