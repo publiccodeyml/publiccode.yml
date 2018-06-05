@@ -140,7 +140,7 @@ dependencies:
 
 it:
 
-  conformita:
+  conforme:
     accessibile: yes
     interoperabile: yes
     sicuro: yes

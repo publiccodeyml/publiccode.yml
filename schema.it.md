@@ -1,16 +1,39 @@
 # `publiccode.yml` - Estensioni italiane
 
 
-## Sezione `conformita`
+## Sezione `conforme`
 
 TODO: documentazione
 
-### Chiave `accessibile`
+### Chiave `conforme/accessibile`
 
 * Tipo: booleano
 * Presenza: opzionale
 
-Se presente e impostato a `yes`, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design.
+Se presente e impostato a `yes`, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle [linee guida di design](http://design-italia.readthedocs.io/it/stable/).
+
+### Chiave `conforme/interoperabile`
+
+* Tipo: booleano
+* Presenza: opzionale
+
+Se presente e impostato a `yes`, il software è conforme alle [linee guida sull'interoperabilità](https://lg-modellointeroperabilita.readthedocs.io/it/latest/).
+
+
+### Chiave `conforme/sicuro`
+
+* Tipo: booleano
+* Presenza: opzionale
+
+Se presente e impostato a `yes`, il software è conforme alle [Misure minime di sicurezza ICT per le Pubbliche amministrazioni](http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf).
+
+
+### Chiave `conforme/privacy`
+
+* Tipo: booleano
+* Presenza: opzionale
+
+Se presente e impostato a `yes`, il software rispetta le [linee guida del Garante per la protezione dei dati personali](https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/1772725).
 
 ### Chiave `spid`
 
