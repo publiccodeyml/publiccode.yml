@@ -337,7 +337,7 @@ commercial name.
 * Example: `"Advanced booking system for hospitals"`
 
 This key contains a short description of the software. It should be
-a single line containing a single sentence. Maximum 100 characters are
+a single line containing a single sentence. Maximum 150 characters are
 allowed.
 
 ### Key `description/[lang]/longDescription`
