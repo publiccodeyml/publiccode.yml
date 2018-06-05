@@ -144,6 +144,8 @@ it:
   pagopa: yes
   cie: yes
   anpr: yes
+  ecosistemi:
+    - scuola
 
   designKit:
     seo: no

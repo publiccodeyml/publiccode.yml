@@ -50,6 +50,28 @@ Questa chiave rappresenta il codice dell'amministrazione all'interno dell'Indice
 
 Il parser applicherà il corretto prefisso al valore dato a questa chiave per creare un'URI identificativa, una volta che questo sarà definito. L'URI sarà riconducibile a http://w3id.org/italia/data secondo la politica degli URI adottata in ambito [DAF](https://developers.italia.it/it/daf).
 
+### Chiave `ecosistemi`
+
+* Tipo: lista enumerata
+* Presenza: opzionale
+
+L'elenco di [Ecosistemi del Piano Triennale](http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html) per il quale il software è rilevante.
+
+L'elenco degli ecosistemi possibili è il seguente:
+
+* sanita
+* welfare
+* finanza-pubblica
+* scuola
+* istruzione-superiore-ricerca
+* difesa-sicurezza-soccorso-legalita
+* giustizia
+* infrastruttura-logistica
+* sviluppo-sostenibilita
+* beni-culturali-turismo
+* agricoltura
+* italia-europa-mondo
+
 ## Sezione `designKit`
 
 ### Chiave `designKit/seo`
