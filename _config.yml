@@ -5,6 +5,7 @@
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
+  - jemoji
 
 # Also render the README to HTML even if there is an index.md
 include:
@@ -12,3 +13,6 @@ include:
 
 # Use the Foundation For Public Code Jekyll theme`
 remote_theme: publiccodenet/jekyll-theme
+
+# Enable Table of Contents displaying
+toc: true
