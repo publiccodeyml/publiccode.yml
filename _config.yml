@@ -14,5 +14,9 @@ include:
 # Use the Foundation For Public Code Jekyll theme`
 remote_theme: publiccodenet/jekyll-theme
 
+# Error on docker environment: "Specify using PAGES_REPO_NWO environment variables"
+# https://github.com/jekyll/jekyll/issues/4705
+repository: publiccodenet/publiccode.yml
+
 # Enable Table of Contents displaying
 toc: true
