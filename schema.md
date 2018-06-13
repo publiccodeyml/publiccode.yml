@@ -213,7 +213,7 @@ This key contains a list of free tags that can be applied to a software.
 
 Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
 
-The language is specified using [ISO 639-3 alpha-3 codes](https://en.wikipedia.org/wiki/ISO_639-3).
+The language is specified using [ISO 639-2 alpha-3 codes](https://en.wikipedia.org/wiki/ISO_639-2).
 
 *Example:*
 
@@ -318,7 +318,7 @@ This section contains a general description of the software. Parsers
 can use this section for instance to create a web page describing
 the software.
 
-**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes) by creating a section with that name.
+**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes) by creating a section with that name.
 
 An example for English:
 ```.yaml
@@ -593,12 +593,12 @@ If `yes`, the software has infrastructure in place or is otherwise designed to b
 
 ## Key `localisation/availableLanguages`
 
-* Type: list of [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) alpha-3 codes
+* Type: list of [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes
 * Presence: mandatory
 
 If present, this is the list of languages in which the software is available. Of course, this list will contain at least one language.
 
-See also: https://en.wikipedia.org/wiki/ISO_639-3
+See also: https://en.wikipedia.org/wiki/ISO_639-2
 
 ### Section `dependencies`
 
