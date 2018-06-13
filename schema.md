@@ -600,7 +600,7 @@ If present, this is the list of languages in which the software is available. Of
 
 See also: https://en.wikipedia.org/wiki/ISO_639-2
 
-### Section `dependencies`
+### Section `dependsOn`
 
 This section provides an overview on the system-level dependencies
 required to install and use this software.
@@ -610,25 +610,25 @@ libraries being used), and focus only on runtime and/or system-level
 dependencies that must be installed and maintained separately. For
 instance, a database is a good example of such dependencies.
 
-### Key `dependencies/open`
+### Key `dependsOn/open`
 
-* Type: array of Dependencies (see below)
+* Type: array of `dependency` (see below)
 * Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
 
-### Key `dependencies/proprietary`
+### Key `dependsOn/proprietary`
 
-* Type: array of Dependencies (see below)
+* Type: array of `dependency` (see below)
 * Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under a proprietary license.
 
-### Key `dependencies/hardware`
+### Key `dependsOn/hardware`
 
-* Type: array of Dependencies (see below)
+* Type: array of `dependency` (see below)
 * Presence: optional
 
 This key contains a list of hardware dependencies that must be owned

@@ -121,7 +121,7 @@ localisation:
     - fra
     - deu
 
-dependencies:
+dependsOn:
   open:
     - name: MySQL
       versionMin: "1.1"
