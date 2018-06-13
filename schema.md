@@ -204,30 +204,7 @@ Each tag must be in Unicode lowercase, and should not contain
 any Unicode whitespace character. The suggested character to
 separate multiple words is `-` (single dash).
 
-### Key `freeTags/[lang]`
-
-* Type: array of strings
-* Presence: optional
-
-This key contains a list of free tags that can be applied to a software.
-
-Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
-
-The language is specified using [ISO 639-2 alpha-3 codes](https://en.wikipedia.org/wiki/ISO_639-2).
-
-*Example:*
-
-```.yaml
-freeTags:
-  eng:
-    - english-free-tag
-  ita:
-    - tag-libero-italiano
-```
-
-Each tag must be in Unicode lowercase, and should not contain
-any Unicode whitespace character. The suggested character to
-separate multiple words is `-` (single dash).
+See also: `description/[lang]/freeTags/`
 
 ### Key `usedBy`
 
@@ -426,6 +403,31 @@ open formats like PDF or ODT for maximum interoperability.
 Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.
+
+### Key `description/[lang]/freeTags/`
+
+* Type: array of strings
+* Presence: optional
+
+This key contains a list of free tags that can be applied to a software.
+
+Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
+
+The language is specified using [ISO 639-2 alpha-3 codes](https://en.wikipedia.org/wiki/ISO_639-2).
+
+*Example:*
+
+```.yaml
+freeTags:
+  eng:
+    - english-free-tag
+  ita:
+    - tag-libero-italiano
+```
+
+Each tag must be in Unicode lowercase, and should not contain
+any Unicode whitespace character. The suggested character to
+separate multiple words is `-` (single dash).
 
 ### Key `description/[lang]/featureList`
 
