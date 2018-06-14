@@ -507,7 +507,7 @@ file, you can point to it through `legal/authorsFile`.
 ### Key `legal/repoOwner`
 
 * Type: string
-* Presence: mandatory
+* Presence: optional
 * Example: `"City of Amsterdam"`
 
 This string describes the entity that owns this repository; this might
