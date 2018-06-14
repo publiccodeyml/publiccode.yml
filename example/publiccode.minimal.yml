@@ -4,12 +4,6 @@ name: Medusa
 url: "https://example.com/italia/medusa.git"
 softwareVersion: "dev"
 releaseDate: "2017-04-15"
-
-inputTypes:
-  - application/x.empty
-outputTypes:
-  - application/x.empty
-
 platforms:
   - web
 
