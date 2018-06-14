@@ -167,7 +167,7 @@ format; raster formats are only allowed as a fallback. In this case, they should
 
 A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
 
-In case the software does not support any input, use `application/x-empty`.
+In case the software does not support any input, use `application/x.empty`.
 
 ### Key `outputTypes`
 
@@ -178,7 +178,7 @@ In case the software does not support any input, use `application/x-empty`.
 
 A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
 
-In case the software does not support any output, use `application/x-empty`.
+In case the software does not support any output, use `application/x.empty`.
 
 ### Key `platforms`
 
