@@ -468,6 +468,7 @@ Vimeo.
 ### Key `description/[lang]/awards`
 
 * Type: array of strings
+* Presence: optional
 
 A list of awards won by the software.
 
