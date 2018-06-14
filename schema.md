@@ -151,17 +151,10 @@ width.
 A monochromatic (black) logo. The logo should be in vector
 format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of width.
 
-### Key `inputFormats`
-
-* Type: enumerated string or array of enumerated strings
-* Presence: mandatory
-* Values: `web`, `windows`, `mac`, `linux`, `ios`, `android`. Human readable values outside this list are allowed.
-* Example: `web`
-
 ### Key `inputTypes`
 
 * Type: array of enumerated strings
-* Presence: mandatory
+* Presence: optional
 * Values: as per RFC 6838
 * Example: `text/plain`
 
@@ -172,7 +165,7 @@ In case the software does not support any input, use `application/x.empty`.
 ### Key `outputTypes`
 
 * Type: array of enumerated strings
-* Presence: mandatory
+* Presence: optional
 * Values: as per RFC 6838
 * Example: `text/plain`
 
