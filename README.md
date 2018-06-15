@@ -1,43 +1,48 @@
-# `publiccode.yml` standard
+# The `publiccode.yml` standard
 
-Status: **Alpha**
+:warning: :warning: This standard is under heavy development :warning: :warning:
 
-A metadata description standard for public software and policy repositories.
+![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
 
-The goal of this standard is to make public software, such as the software developed by public administrations and public organisations, easily discoverable.
+A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
-The first draft of the implementation has been created by the [Italian Digital Transformation Team](https://teamdigitale.governo.it).
+* [Schema](schema.md)
+* [Italian extension to the schema](schema.it.md)
+* [List of acceptable tags](tags.md)
+* [How to work with forks and variants](forks.md)
+* [Example](example/publiccode.yml)
 
-## Goals
+This alpha is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
-We want to make the following discoverable:
+## What this file is for
 
-* The codebase is public and open source
-* The title and description of the project or product in English
-* The title and description of the project or product in other languages
+Many great software projects are developed by public administrations, however reuse of these projects is very limited. Some of the reasons for low uptake of these projects is a lack of discoverability and that it is hard to find out what project can actually work in the context of a different public administration.
+
+The `publiccode.yml` file is meant to solve these problems. It is an easily readable file for civil servants that are trying to figure out whether a project will work for them, and easily readable for computers. It contains information such as:
+
+* The title and description of the project or product in English and/or other languages
 * The status of development, e.g. 'concept', 'alpha', 'beta', 'released', 'deprecated'
-* Other project or product assets available (in multiple languages if applicable)
 * By what organisation this project is developed
 * Who is caring for the maintenance and when this runs out
 * Who to contact for technical or support inquiries
-* Who the software is used by
 * What national and local legal frameworks this project or product works in
-* What classification the software has in local contexts (one or multiple)
 * What proprietary software dependencies this project or product has
 
 The format should both be able to easily be added to any new project, as well as grow with the project as it grows beyond the original context it was developed in.
 
-The standard needs strong versioning in development and should develop freely with the needs of the community.
+## Finding projects
 
-The file should be lintable with a simple tool for compliance.
+You can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
 
-## Finding projects with a `publiccode.yml`
-
-You can find all `publiccode.yml` files on [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
+* [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
 
 ## Contributing
 
-Feel free to submit Pull Requests and to file Issues.
+Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
+
+## Website
+
+The website at <https://yml.publiccode.net/> is automatically generated from the `master` branch of the [`publiccode.yml` repository](https://github.com/publiccodenet/publiccode.yml) using [GitHub pages](https://pages.github.com) and its static site generator [Jekyll](https://jekyllrb.com) and the [Foundation For Public Code jekyll theme](https://github.com/publiccodenet/jekyll-theme).
 
 ## Licence
 

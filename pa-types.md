@@ -1,6 +1,6 @@
 ## Public administration types
 
-The key `meta/pa-type` defines the types of public administration which is
+The key `intendedAudience/onlyFor` defines the types of public administration which is
 expected to use this software. This document contains a list of allowed
 values for that key. While the key is optional, if it is specified it
 must contain a value from this list.
@@ -9,11 +9,11 @@ must contain a value from this list.
 
 Value | Description
 ----- | -----------
-`city` | City
-`hospital` | Hospital
-`police` | Police forces
-`school` | School of any level
-`university` | University of any level
+`cities` | City
+`health-services` | Health service
+`police-forces` | Police forces
+`schools` | School of any level
+`universities` | University of any level
 
 ### Italy
 
@@ -60,12 +60,12 @@ Value | Description
 	>Enti di Regolazione dei Servizi Idrici e o dei Rifiuti
 	Enti e Istituzioni di Ricerca Pubblici
 	Enti Pubblici Non Economici
-	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali 
+	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali
 	>Federazioni Nazionali, Ordini, Collegi e Consigli Professionali
 	>Fondazioni Lirico, Sinfoniche
 	>Istituti Zooprofilattici Sperimentali
 	Organi Costituzionali e di Rilievo Costituzionale
 	>Parchi Nazionali, Consorzi e Enti Gestori di Parchi e Aree Naturali Protette
-	
+
 	>Teatri Stabili ad Iniziativa Pubblica
 -->

@@ -44,7 +44,7 @@ If your documentation and code have passed human review, it is merged.
 
 Your ideas, documentation and code have become an integral part of this project. You are the Open Source hero we need! 
 
-In fact, feel free to open a PR to add your name to the [`AUTHORS`](AUTHORS) file and get eternal attribution.
+In fact, feel free to open a PR to add your name to the [`AUTHORS`](AUTHORS.md) file and get eternal attribution.
 
 ---
 

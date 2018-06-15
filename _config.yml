@@ -1,0 +1,22 @@
+# The title of the website, if left empty this will default to the repository name
+# title: Foundation For Public Code
+
+# Jekyll plugins that are supported by GitHub pages
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jemoji
+
+# Also render the README to HTML even if there is an index.md
+include:
+  - README.md
+
+# Use the Foundation For Public Code Jekyll theme`
+remote_theme: publiccodenet/jekyll-theme
+
+# Error on docker environment: "Specify using PAGES_REPO_NWO environment variables"
+# https://github.com/jekyll/jekyll/issues/4705
+repository: publiccodenet/publiccode.yml
+
+# Enable Table of Contents displaying
+toc: true

@@ -63,13 +63,13 @@ contributing upstream; the author might still plan to contribute the
 modifications upstream, or even being in the process of doing so.
 Thus, even if the fork will eventually be merged upstream, it might
 make sense to mark it as a variant during the process, so that others
-might discover it and benefit from the .
+might discover it and benefit from it.
 
 ### Parsers
 
 Parsers **SHOULD** identify a variant by noticing that the top-level
 `url` key matches to the repository in which the `publiccode.yml`
-is found, **AND** a top-level `upstreamUrl` exists and points to
+is found, **AND** a top-level `isBasedOn` exists and points to
 a different repository.
 
 Parsers should expect and analyze other differences in `publiccode.yml`
@@ -83,7 +83,7 @@ user-visible differences.
 Authors that are willing to publish a fork as a variant **MUST**
 at least:
 
-* Add a key `upstreamUrl` pointing to one or more upstream
+* Add a key `isBasedOn` pointing to one or more upstream
   repositories from which this variant is derived.
 * Change the value for `url` to point to the repository
   holding the variant.
