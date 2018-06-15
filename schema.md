@@ -457,7 +457,7 @@ Screenshots can be of any shape and size; the suggested formats are:
 
 This key contains one or multiple URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
-overview on how the software looks like and how it works. Videos should
+overview on how the software looks like and how it works. Videos must
 be hosted on a video sharing website that supports the
 [oEmbed](https://oembed.com) standard; popular options are YouTube and
 Vimeo.
