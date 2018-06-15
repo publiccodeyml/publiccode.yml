@@ -92,7 +92,7 @@ parser or an author.
 * Presence: optional
 * Example: `"https://example.com/italia/medusa"`
 
-If the previous URL does not serve a human readable page, but only serves source code to a source control client, with this key you have an option to specify a landing page. This page, ideally, is where your users will land when they will click a button labeled something like "Go to the application Source Code".
+If the `url` parameter does not serve a human readable or browsable page, but only serves source code to a source control client, with this key you have an option to specify a landing page. This page, ideally, is where your users will land when they will click a button labeled something like "Go to the application source code". In case the product provides an automated graphical installer, this URL can point to a page which contains a reference to the source code but also offers the download of such an installer.
 
 ### Key `isBasedOn`
 
@@ -160,7 +160,7 @@ format; raster formats are only allowed as a fallback. In this case, they should
 
 A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
 
-In case the software does not support any input, use `application/x.empty`.
+In case the software does not support any input, you can skip this field or use `application/x.empty`.
 
 ### Key `outputTypes`
 
@@ -171,7 +171,7 @@ In case the software does not support any input, use `application/x.empty`.
 
 A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
 
-In case the software does not support any output, use `application/x.empty`.
+In case the software does not support any output, you can skip this field or use `application/x.empty`.
 
 ### Key `platforms`
 
