@@ -21,6 +21,8 @@ platforms:
 
 # Allowed values are accessible here:
 # http://w3id.org/publiccode/version/0.1/tags.html
+# Only stick to these tags! If you need additional tags (localised),
+# you can add them under the description/freeTags key
 tags:
   - texteditor
 
