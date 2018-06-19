@@ -51,7 +51,7 @@ Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 
 ## Website
 
-The website at <https://yml.publiccode.net/> is automatically generated from the `master` branch of the [`publiccode.yml` repository](https://github.com/publiccodenet/publiccode.yml) using [GitHub pages](https://pages.github.com) and its static site generator [Jekyll](https://jekyllrb.com) and the [Foundation For Public Code jekyll theme](https://github.com/publiccodenet/jekyll-theme).
+The website at <https://w3id.org/publiccode/> is automatically generated from the `master` branch of the [`publiccode.yml` repository](https://github.com/publiccodenet/publiccode.yml) using [GitHub pages](https://pages.github.com) and its static site generator [Jekyll](https://jekyllrb.com) and the [Foundation For Public Code jekyll theme](https://github.com/publiccodenet/jekyll-theme).
 
 ## Licence
 
