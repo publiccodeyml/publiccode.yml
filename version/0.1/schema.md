@@ -1,10 +1,9 @@
-# `publiccode.yml` standard
+# `publiccode.yml` version 0.1 - The main schema
+
+[< Back to the list of documents](index.html)
 
 This document contains an informal description of the schema of
 `publiccode.yml`.
-
-Version: 0.1-alpha1
-This file needs to be converted to JSON-Schema.
 
 ## Structure
 

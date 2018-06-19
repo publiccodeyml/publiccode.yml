@@ -1,9 +1,11 @@
-# `publiccode.yml` - Estensioni italiane
+# `publiccode.yml` version 0.1 - Estensioni italiane
 
+[< Back to the list of documents](index.html)
 
 ## Sezione `conforme`
 
-TODO: documentazione
+Questa sezione contiene delle chiavi per autodichiarare la conformità con la
+normativa vigente, rispetto ad alcune sezioni.
 
 ### Chiave `conforme/accessibile`
 

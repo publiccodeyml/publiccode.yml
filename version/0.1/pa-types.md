@@ -1,4 +1,6 @@
-## Public administration types
+# `publiccode.yml` version 0.1 - Public administration types
+
+[< Back to the list of documents](index.html)
 
 The key `intendedAudience/onlyFor` defines the types of public administration which is
 expected to use this software. This document contains a list of allowed
