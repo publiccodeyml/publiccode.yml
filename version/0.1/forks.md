@@ -1,8 +1,8 @@
-# Forks and variants
+[< Back to version 0.1 documentation](index.html)
 
 Version: 0.1. This page is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
 
-[< Back to version 0.1 documentation](index.html)
+# Forks and variants
 
 This document describes how to best handle software forks in the
 context of updating `publiccode.yml`. We define two different
