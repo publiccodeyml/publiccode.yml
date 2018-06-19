@@ -1,4 +1,4 @@
-#Public code: Development version
+# Public code: Development version
 
 This is the development version of the Public Code specification.
 

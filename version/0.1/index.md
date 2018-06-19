@@ -1,4 +1,4 @@
-#Public code: Version 0.1
+#  Public code: Version 0.1
 
 
 This is the release of version 0.1 of the Public Code specification.
