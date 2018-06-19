@@ -1,15 +1,18 @@
 #  Public code: Version 0.1
 
 
-This is the release of version 0.1 of the Public Code specification.
+This is the release of version 0.1 of the Public Code specification. This release happened on the 20th June 2018.
 
-It is considered to be an alpha version and the stability of this release is not guaranteed.
+A PublicCode file written following this specification is guaranteed to remain compatible with all parsers implementing any 0.x release.
 
-For more information on release numbering see [SemVer.org](https://semver.org/).
+For more information on version numbering see [SemVer.org](https://semver.org/).
 
+## Schema documentation
 * [Schema](schema.md)
 * [Italian extension to the schema](schema.it.md)
 * [List of acceptable tags](tags.md)
+# Other concepts
 * [How to work with forks and variants](forks.md)
+## Examples
 * [Minimal Example](example/publiccode.minimal.yml)
 * [Full Example](example/publiccode.yml)
