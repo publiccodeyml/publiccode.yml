@@ -1,8 +1,6 @@
+[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+
 # The main schema
-
-Version: 0.1
-
-[< Back to version 0.1 documentation](index.html)
 
 This document the description of the schema of
 `publiccode.yml`.

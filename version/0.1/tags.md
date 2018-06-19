@@ -1,8 +1,6 @@
+[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+
 # List of acceptable tags
-
-Version: 0.1
-
-[< Back to version 0.1 documentation](index.html)
 
 This document contains a controlled list of tags usable to categorize the software.
 

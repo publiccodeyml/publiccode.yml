@@ -1,8 +1,6 @@
+[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+
 # Estensioni italiane
-
-Version: 0.1
-
-[< Back to version 0.1 documentation](index.html)
 
 ## Sezione `conforme`
 
