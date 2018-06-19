@@ -2,7 +2,7 @@
 
 
 ![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
-![Build status](https://travis-ci.com/publiccodenet/publiccode.yml.svg?branch=master)
+[![Build status](https://travis-ci.com/publiccodenet/publiccode.yml.svg?branch=master)](https://travis-ci.com/publiccodenet/publiccode.yml)
 
 A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
