@@ -5,4 +5,4 @@ set -e # halt script on error
 bundle exec jekyll build
 
 # Check for broken links and missing alt tags, ignore edit links to GitHub as they might not exist yet
-bundle exec htmlproofer --url-ignore "/github.com/(.*)/edit/" ./_site
+bundle exec htmlproofer --url-ignore "/github.com/(.*)/edit/" --url-ignore "www.agid.gov.it" ./_site
