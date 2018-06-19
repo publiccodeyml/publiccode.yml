@@ -11,8 +11,10 @@ For more information on version numbering see [SemVer.org](https://semver.org/).
 * [Schema](schema.md)
 * [Italian extension to the schema](schema.it.md)
 * [List of acceptable tags](tags.md)
-# Other concepts
+
+## Concepts and lexicon
 * [How to work with forks and variants](forks.md)
+
 ## Examples
 * [Minimal Example](example/publiccode.minimal.yml)
 * [Full Example](example/publiccode.yml)
