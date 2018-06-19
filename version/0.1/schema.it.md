@@ -1,6 +1,8 @@
-# `publiccode.yml` version 0.1 - Estensioni italiane
+# Estensioni italiane
 
-[< Back to the list of documents](index.html)
+Version: 0.1
+
+[< Back to version 0.1 documentation](index.html)
 
 ## Sezione `conforme`
 

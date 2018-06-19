@@ -1,6 +1,8 @@
-# `publiccode.yml` - Forks and variants
+# Forks and variants
 
-[< Back to the list of documents](index.html)
+Version: 0.1
+
+[< Back to version 0.1 documentation](index.html)
 
 This document describes how to best handle software forks in the
 context of updating `publiccode.yml`. We define two different

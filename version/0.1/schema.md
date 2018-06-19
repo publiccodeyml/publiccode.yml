@@ -1,8 +1,10 @@
-# The main schema - `publiccode.yml` v0.1
+# The main schema
 
-[< Back to `publiccode.yml`: version 0.1](index.html)
+Version: 0.1
 
-This document contains an informal description of the schema of
+[< Back to version 0.1 documentation](index.html)
+
+This document the description of the schema of
 `publiccode.yml`.
 
 ## Structure
