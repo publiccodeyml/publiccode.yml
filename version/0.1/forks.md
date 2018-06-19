@@ -1,7 +1,4 @@
-[< Back to version 0.1 documentation](index.html)
-
-Version: 0.1. This page is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
--------
+[< Back to version 0.1 documentation](index.html) -- part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
 
 # Forks and variants
 
