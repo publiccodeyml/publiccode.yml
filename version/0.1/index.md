@@ -1,7 +1,7 @@
 #  Public code: Version 0.1
 
 
-This is the release of version 0.1 of the Public Code specification. This release happened on the 20th June 2018.
+This is the release of version 0.1 of the Public Code specification. Version 0.1 was released on the 20th June 2018.
 
 A PublicCode file written following this specification is guaranteed to remain compatible with all parsers implementing any 0.x release.
 
