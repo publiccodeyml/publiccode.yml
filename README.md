@@ -8,16 +8,11 @@ A metadata description standard for public software and policy repositories that
 
 **Latest release:  [Version 0.1](version/0.1)**
 
+[See all versions](version)
+
 This project follows the Semantic Versioning.
 
 For more information see [SemVer.org](https://semver.org/).
-
-## Official Releases
-### 0.x
-* [Version 0.1](version/0.1)
-
-### Development
-* [Development](version/development)
 
 The PublicCode specification is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
@@ -39,7 +34,7 @@ The format should both be able to easily be added to any new project, as well as
 
 ## Finding projects
 
-You can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
+Finding projects depends on how the serch API is structured for every hosting platform. For example, you can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
 
 * [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
 
