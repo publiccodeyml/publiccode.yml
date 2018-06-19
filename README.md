@@ -10,7 +10,7 @@ A metadata description standard for public software and policy repositories that
 
 This project follows the Semantic Versioning.
 
-For more information see https://semver.org/
+For more information see [SemVer.org](https://semver.org/).
 
 ## Series 0.x
 * [Version 0.1](version/0.1)

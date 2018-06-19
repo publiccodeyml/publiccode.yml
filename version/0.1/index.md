@@ -5,7 +5,7 @@ This is the release of version 0.1 of the Public Code specification.
 
 It is considered to be an alpha version and the stability of this release is not guaranteed.
 
-For more information on release numbering see https://semver.org/
+For more information on release numbering see [SemVer.org](https://semver.org/).
 
 * [Schema](schema.md)
 * [Italian extension to the schema](schema.it.md)
