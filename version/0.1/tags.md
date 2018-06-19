@@ -1,4 +1,5 @@
-# `publiccode.yml` version 0.1 - List of acceptable tags
+# List of acceptable tags
+## `publiccode.yml` v0.1
 
 [< Back to the list of documents](index.html)
 

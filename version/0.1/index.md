@@ -1,5 +1,4 @@
-#  Public code: Version 0.1
-
+# `publiccode.yml`: version 0.1
 
 This is the release of version 0.1 of the Public Code specification. Version 0.1 was released on the 20th June 2018.
 
