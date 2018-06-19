@@ -1,0 +1,46 @@
+publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+
+name: Medusa
+url: "https://example.com/italia/medusa.git"
+softwareVersion: "dev"
+releaseDate: "2017-04-15"
+platforms:
+  - web
+
+tags:
+  - texteditor
+
+developmentStatus: development
+
+softwareType: "standalone"
+
+description:
+  eng:
+    localisedName: Medusa
+    genericName: Text Editor
+    shortDescription: >
+          A rather short description which
+          is probably useless
+
+    longDescription: >
+          Very long description of this software, also split
+          on multiple rows. You should note what the software
+          is and why one should need it. We can potentially
+          have many pages of text here.
+
+    featureList:
+       - Just one feature
+
+legal:
+  license: AGPL-3.0-or-later
+
+maintenance:
+  type: "community"
+
+  contacts:
+    - name: Francesco Rossi
+
+localisation:
+  localisationReady: yes
+  availableLanguages:
+    - eng
