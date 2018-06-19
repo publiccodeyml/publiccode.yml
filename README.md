@@ -1,8 +1,9 @@
 # The `publiccode.yml` standard
 
-:warning: :warning: This standard is under heavy development :warning: :warning:
+Latest release: 0.1
 
 ![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
+![Build status](https://travis-ci.com/publiccodenet/publiccode.yml.svg?branch=master)
 
 A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
@@ -12,7 +13,7 @@ A metadata description standard for public software and policy repositories that
 * [How to work with forks and variants](forks.md)
 * [Example](example/publiccode.yml)
 
-This alpha is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
+The PublicCode specification is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 
 ## What this file is for
 
@@ -21,12 +22,12 @@ Many great software projects are developed by public administrations, however re
 The `publiccode.yml` file is meant to solve these problems. It is an easily readable file for civil servants that are trying to figure out whether a project will work for them, and easily readable for computers. It contains information such as:
 
 * The title and description of the project or product in English and/or other languages
-* The status of development, e.g. 'concept', 'alpha', 'beta', 'released', 'deprecated'
+* The status of development, e.g. `concept`, `development`, `beta`, `stable`, `obsolete`
 * By what organisation this project is developed
 * Who is caring for the maintenance and when this runs out
 * Who to contact for technical or support inquiries
 * What national and local legal frameworks this project or product works in
-* What proprietary software dependencies this project or product has
+* What software dependencies this project or product has
 
 The format should both be able to easily be added to any new project, as well as grow with the project as it grows beyond the original context it was developed in.
 
@@ -35,6 +36,8 @@ The format should both be able to easily be added to any new project, as well as
 You can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
 
 * [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
+
+The Italian Digital Transformation Team is also working on providing a scanner which looks for all PublicCode files on all publicly accessible websites, and exposing them as open data.
 
 ## Contributing
 
