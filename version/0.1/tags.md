@@ -1,7 +1,6 @@
-# List of acceptable tags
-## `publiccode.yml` v0.1
+# List of acceptable tags - v0.1
 
-[< Back to the list of documents](index.html)
+[< Back to `publiccode.yml`: version 0.1](index.html)
 
 This document contains a controlled list of tags usable to categorize the software.
 

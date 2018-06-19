@@ -1,5 +1,4 @@
-# The main schema
-## `publiccode.yml` v0.1
+# The main schema - `publiccode.yml` v0.1
 
 [< Back to `publiccode.yml`: version 0.1](index.html)
 
