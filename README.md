@@ -1,17 +1,22 @@
 # The `publiccode.yml` standard
 
-Latest release: 0.1
 
 ![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
 ![Build status](https://travis-ci.com/publiccodenet/publiccode.yml.svg?branch=master)
 
 A metadata description standard for public software and policy repositories that is easy to use both for developers and less technical people in order to make the software developed by public administrations and public organisations easily discoverable.
 
-* [Schema](schema.md)
-* [Italian extension to the schema](schema.it.md)
-* [List of acceptable tags](tags.md)
-* [How to work with forks and variants](forks.md)
-* [Example](example/publiccode.yml)
+**Latest release:  [Version 0.1](version/0.1)**
+
+This project follows the Semantic Versioning.
+
+For more information see https://semver.org/
+
+## Series 0.x
+* [Version 0.1](version/0.1)
+
+## Development
+* [Development](version/development)
 
 The PublicCode specification is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
 

@@ -7,4 +7,4 @@ For more information see https://semver.org/
 * [Version 0.1](0.1)
 
 ## Development
-* [Development](development/schema.md)
+* [Development](development)
