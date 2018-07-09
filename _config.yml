@@ -11,7 +11,7 @@ plugins:
 include:
   - README.md
 
-# Use the Italia Jekyll theme
+# Use the Teamdigitale PublicCode Jekyll theme
 remote_theme: teamdigitale/publiccode-jekyll-theme
 
 # Error on docker environment: "Specify using PAGES_REPO_NWO environment variables"
