@@ -12,7 +12,7 @@ include:
   - README.md
 
 # Use the Italia Jekyll theme
-remote_theme: ggentili/Italia-Design-Jekyll-Theme
+remote_theme: teamdigitale/publiccode-jekyll-theme
 
 # Error on docker environment: "Specify using PAGES_REPO_NWO environment variables"
 # https://github.com/jekyll/jekyll/issues/4705
