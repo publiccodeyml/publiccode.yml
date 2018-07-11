@@ -34,7 +34,7 @@ The format should both be able to easily be added to any new project, as well as
 
 ## Finding projects
 
-Finding projects depends on how the serch API is structured for every hosting platform. For example, you can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
+Finding projects depends on how the search API is structured for every hosting platform. For example, you can find all `publiccode.yml` on GitHub files by searching using the frontend or the API.
 
 * [GitHub Search `filename:publiccode.yml`](https://github.com/search?utf8=%E2%9C%93&q=filename%3Apubliccode.yml&type=)
 
