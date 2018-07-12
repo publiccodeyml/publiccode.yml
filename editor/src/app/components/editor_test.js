@@ -1,48 +1,20 @@
 import React, { Component, Fragment } from "react";
-
-import { yamlData, versionsUrl, repositoryUrl } from "../contents/constants";
 import { notify, clearNotifications } from "../store/notifications";
-import { saveYaml, setVersions } from "../store/cache";
+import langs from "../contents/langs";
+import tags from "../contents/tags";
+import { yamlData, versionsUrl, repositoryUrl } from "../contents/constants";
+import Form from "react-jsonschema-form";
 import { connect } from "react-redux";
+import SimpleForm from "./simpleForm";
 
 import Schema from "../contents/schema";
 import cleanDeep from "clean-deep";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
-import renderField from "../form/renderField";
-import buildSyncValidation from "../form/buildSyncValidation";
-
-import { initialize, submit } from "redux-form";
-
-import { DefaultTheme } from "../form";
-import { reduxForm } from "redux-form";
-
-import myTheme from "../form/widgets/";
-import compileSchema from "../form/compileSchema";
-import langs from "../contents/langs";
-import tags from "../contents/tags";
-import validator from "validator";
-import Toolbar from "./toolbar";
-
-import _ from "lodash";
-import u from "updeep";
-import Ajv from "ajv";
-
-const jsonData = require("../schema.json");
-const APP_FORM = "appForm";
-const ajv = new Ajv({
-  errorDataPath: "property",
-  allErrors: true,
-  jsonPointers: false
-});
-let schema = {};
-let defaultValues = {};
-let tag_names = tags.map(t => t.tag);
-let tag_descrs = tags.map(t => t.descr);
+import copy from "copy-to-clipboard";
 
 const mapStateToProps = state => {
   return {
-    notifications: state.notifications,
-    cache: state.cache
+    notifications: state.notifications
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -80,168 +52,6 @@ export default class Index extends Component {
     $('[data-toggle="collapse"]').collapse();
 
     // this.setState({ yaml: yamlData });
-
-    let versions = ["development", "0.1"];
-    this.getSchema(versions);
-  }
-
-  getSchema(versions) {
-    console.log(versions);
-    let customMeta = {
-      definitions: {
-        publiccodeYamlVersion: {
-          widget: "choice-multiple-expanded"
-        },
-        descriptionPerLang: {
-          properties: {
-            longDescription: {
-              widget: "editor"
-            }
-          }
-        },
-        landingURL: {
-          widget: "url"
-        },
-        releaseDate: {
-          widget: "date"
-        },
-        developmentStatus: {
-          widget: "choice-multiple-expanded"
-        },
-        softwareType: {
-          widget: "choice-multiple-expanded"
-        }
-      }
-    };
-
-    let custom_props = {
-      publiccodeYamlVersion: {
-        type: "array",
-        uniqueItems: true,
-        items: {
-          type: "string",
-          title: "Version",
-          enum: versions
-        }
-      },
-      softwareDescription: {
-        type: "array",
-        uniqueItems: true,
-        items: {
-          type: "object",
-          properties: {
-            language: {
-              type: "string",
-              title: "Language",
-              enum: langs
-            },
-            description: { $ref: "#/definitions/descriptionPerLang" }
-          },
-          required: ["language", "description"]
-        }
-      }
-    };
-    delete jsonData.$schema;
-    delete jsonData.id;
-
-    let data = jsonData;
-    //data = Object.assign({}, custom_props, data);
-    let custom_field_keys = _.keys(custom_props);
-    custom_field_keys.map(k => {
-      data.properties[k] = custom_props[k];
-    });
-    data = u(customMeta, data);
-
-    console.log("DATA", data);
-    let obj = jsyaml.load(JSON.stringify(data));
-
-    schema = compileSchema(obj);
-    console.log("COMPILED SCHEMA", obj);
-    this.setState({ loading: false });
-  }
-
-  submit(data) {
-    this.notify();
-    console.log("SUBMIT");
-
-    data = cleanDeep(data);
-    console.log(data);
-    //REFORMAT CUSTOM FIELDS DATA
-    try {
-      let yaml = jsyaml.dump(data);
-      this.setState({ yaml, error: null });
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  onLoad(formData, yaml) {
-    console.log("loaded", yaml, formData);
-    this.setState({ formData, yaml });
-  }
-
-  notify(title = "hey", msg = "ciao", millis = 3000) {
-    this.props.notify({ title, msg, millis });
-  }
-
-  BaseForm(props) {
-    const {
-      schema,
-      handleSubmit,
-      theme,
-      error,
-      submitting,
-      context,
-      load,
-      pristine
-    } = props;
-
-    return (
-      <form className="form" onSubmit={handleSubmit}>
-        <div>{error && <strong>{error}</strong>}</div>
-        {renderField(schema, null, theme || DefaultTheme, "", context)}
-        {/*!error && (
-          <button
-            className="btn btn-primary"
-            type="submit"
-            disabled={submitting}
-          >
-            Submit
-          </button>
-        )*/}
-      </form>
-    );
-  }
-
-  renderForm() {
-    const { loading } = this.state;
-    if (loading) return <div>Loading...</div>;
-    console.log("COMPILED SCHEMA", schema);
-    const initialValues = defaultValues;
-    const MyForm = reduxForm({
-      form: APP_FORM,
-      validate: buildSyncValidation(schema),
-      initialValues: initialValues
-    })(this.BaseForm);
-
-    return (
-      <MyForm
-        renderFields={renderField}
-        formKey={APP_FORM}
-        schema={schema}
-        theme={myTheme}
-        initialValues={initialValues}
-        onSubmit={this.submit}
-      />
-    );
-  }
-
-  reset(data) {
-    if (!data) {
-      data = defaultValues;
-    }
-    console.log("RESET", data);
-    this.props.initialize(APP_FORM, data);
   }
 
   _renderForm() {
@@ -350,6 +160,30 @@ export default class Index extends Component {
           </div>
         </div>
       </form>
+    );
+  }
+
+  log(data) {
+    console.log.bind(console, JSON.stringify(data));
+  }
+
+  submit(data) {
+    let { formData } = data;
+    let obj = cleanDeep(data.formData);
+    let yaml = jsyaml.dump(obj);
+    this.setState({ yaml, formData });
+  }
+
+  renderForm() {
+    let { formData } = this.state;
+    return (
+      <SimpleForm
+        schema={Schema.schema}
+        uiSchema={Schema.uiSchema}
+        submit={this.submit.bind(this)}
+        errors={this.log.bind(this)}
+        formData={formData}
+      />
     );
   }
 

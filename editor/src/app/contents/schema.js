@@ -25,8 +25,7 @@ const initialValues = {
   releaseDate: moment().format(date_format)
 };
 
-const schema = null;
-const _schema = {
+const schema  = {
   title: "publiccode",
   type: "object",
   definitions: {
@@ -388,21 +387,20 @@ const _schema = {
   ]
 };
 
-const uiSchema = null;
-// const uiSchema = {
-//   releaseDate: {
-//     "ui:widget": "date"
-//   },
-//   url: {
-//     "ui:widget": "uri"
-//   },
-//   developmentStatus: {
-//     "ui:widget": "checkboxes"
-//   },
-//   softwareType: {
-//     "ui:widget": "checkboxes"
-//   }
-// };
+const uiSchema = {
+  releaseDate: {
+    "ui:widget": "date"
+  },
+  url: {
+    "ui:widget": "uri"
+  },
+  developmentStatus: {
+    "ui:widget": "checkboxes"
+  },
+  softwareType: {
+    "ui:widget": "checkboxes"
+  }
+};
 
 const metaSchema = {
   description: {

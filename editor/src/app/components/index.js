@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import Schema from "../contents/schema";
 import cleanDeep from "clean-deep";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
-import renderField from "../myform/renderField";
-import buildSyncValidation from "../myform/buildSyncValidation";
+import renderField from "../form/renderField";
+import buildSyncValidation from "../form/buildSyncValidation";
 
 import { initialize, submit } from "redux-form";
 import { notify, clearNotifications } from "../store/notifications";
-import { DefaultTheme } from "../myform";
+import { saveYaml, setVersions } from "../store/cache";
+import { DefaultTheme } from "../form";
 import { reduxForm } from "redux-form";
 import { connect } from "react-redux";
 
-import myTheme from "../myform/widgets/";
-import compileSchema from "../myform/compileSchema";
+import myTheme from "../form/widgets/";
+import compileSchema from "../form/compileSchema";
 import langs from "../contents/langs";
 import tags from "../contents/tags";
 import validator from "validator";
@@ -30,17 +31,19 @@ const ajv = new Ajv({
   jsonPointers: false
 });
 let schema = {};
-
 let tag_names = tags.map(t => t.tag);
 let tag_descrs = tags.map(t => t.descr);
 
 const mapStateToProps = state => {
   return {
-    notifications: state.notifications
+    notifications: state.notifications,
+    cache: state.cache
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
+    saveYaml: data => dispatch(saveYaml(data)),
+    setVersions: data => dispatch(setVersions(data)),
     notify: (type, data) => dispatch(notify(type, data)),
     clearNotifications: (type, data) =>
       dispatch(clearNotifications(type, data)),
@@ -107,7 +110,6 @@ export default class Index extends Component {
     };
 
     let custom_props = {
-
       publiccodeYamlVersion: {
         type: "array",
         uniqueItems: true,

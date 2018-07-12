@@ -42,16 +42,6 @@ const Liform = props => {
   );
 };
 
-Liform.propTypes = {
-  schema: PropTypes.object,
-  onSubmit: PropTypes.func,
-  initialValues: PropTypes.object,
-  syncValidation: PropTypes.func,
-  formKey: PropTypes.string,
-  baseForm: PropTypes.func,
-  context: PropTypes.object,
-  ajv: PropTypes.object
-};
 
 export default Liform;
 
