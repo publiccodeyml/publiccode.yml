@@ -1,0 +1,44 @@
+$mq-size: 640px;
+$primary: #111;
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136
+);
+
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700");
+@import "node_modules/bootstrap/scss/bootstrap";
+/* @import "./bsi.scss";*/
+@import "./glyphicons/glyphicons.css";
+@import "./system_font.scss";
+@import "./transitions.scss";
+@import "./snackbar.scss";
+@import "./notify.scss";
+
+@import "./wrapper.scss";
+@import "./content.scss";
+@import "./sidebar.scss";
+@import "./block.scss";
+
+* {
+  font-family: "Titillium Web", "Roboto Mono", "system", sans-serif;
+}
+
+/*
+.sidebar__code {
+  border: 1px solid #00ff80;
+}
+.content__main{
+  border: 1px solid green;
+}
+.block__wrapper {
+  border: 1px solid purple;
+}
+
+.block{
+   border: 1px solid blue;
+}
+.block__item {
+  border: 1px solid red;
+}
+*/
