@@ -20,4 +20,4 @@ Last command is to run the app locally .
 
 #### PREVIEW
 
-You can preview this app on [https://publiccode.surge.sh](https://publiccode.surge.sh/\](https://publiccode.surge.sh/)
+You can preview this app on [https://publiccode.surge.sh](https://publiccode.surge.sh)
