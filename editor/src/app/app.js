@@ -6,7 +6,6 @@ import Layout from "./components/_layout";
 // import Index from "./components/index";
 import Index from "./components/editor";
 
-
 import "bootstrap";
 import $ from "jquery";
 window.jQuery = $;

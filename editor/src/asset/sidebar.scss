@@ -18,9 +18,29 @@
 }
 
 .sidebar__footer {
-  height: 106px;
+  height: $foot-bar-h;
   background-color: #0066cc;
   color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sidebar__footer_item {
+  line-height: 40px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  a {
+    color: #fff;
+  }
+  .span {
+    margin-right: 2px;
+  }
+  .action {
+    margin-left: 2px;
+  }
 }
 
 .sidebar__code {
@@ -34,6 +54,7 @@
     color: #00ff80;
     font-family: "Roboto Mono";
     font-size: 12px;
+
     line-height: 24px;
   }
 }

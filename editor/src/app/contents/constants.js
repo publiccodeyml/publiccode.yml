@@ -1,6 +1,6 @@
-export const repository_name = "publiccodenet/publiccode.yml";
-export const repository = `https://github.com/${repository_name}`;
-export const versionsUrl = `https://api.github.com/repos/${repository_name}/contents/version`;
+ let {REPOSITORY} = process.env;
+export const repositoryUrl = `https://github.com/${REPOSITORY}`;
+export const versionsUrl = `https://api.github.com/repos/${REPOSITORY}/contents/version`;
 export const yamlData = `
 publiccode-yaml-version: 'http://w3id.org/publiccode/version/0.1'
 name: 'vivvio'

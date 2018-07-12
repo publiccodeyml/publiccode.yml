@@ -208,26 +208,7 @@ export default class Index extends Component {
     return <div className="content__foot" />;
   }
 
-  render() {
-    return (
-      <div className="wrapper">
-        <div className="content">
-          {this.renderHead()}
-          <div className="content__main">
-            <div className="block">
-              <div className="item">uno;</div>
-              <div className="item">due</div>
-              <div className="item">tre</div>
-            </div>
-          </div>
-          <div className="content__foot">FOOTER</div>
-        </div>
-        <div className="sidebar">SIDEBAR</div>
-      </div>
-    );
-  }
-
-  _render() {
+   render() {
     let { yaml } = this.state;
     return (
       <div className="row">

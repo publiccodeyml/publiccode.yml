@@ -3,8 +3,6 @@ import "../../asset/style.scss";
 
 import ReactNotify from "react-notify";
 import { connect } from "react-redux";
-import Header from "./_header";
-import Footer from "./_footer";
 
 @connect(state => {
   return {

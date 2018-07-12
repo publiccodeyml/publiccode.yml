@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { notify, clearNotifications } from "../store/notifications";
 import langs from "../contents/langs";
 import tags from "../contents/tags";
-import { yamlData, repository } from "../contents/constants";
+import { yamlData, versionsUrl, repositoryUrl } from "../contents/constants";
 
 import { connect } from "react-redux";
 
@@ -18,9 +18,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 const getReleases = () => {
-  const url =
-    "https://api.github.com/repos/publiccodenet/publiccode.yml/contents/version";
-  return fetch(url)
+  return fetch(versionsUrl)
     .then(res => res.json())
     .then(data => data.map(d => d.name));
 };
@@ -40,11 +38,13 @@ export default class Index extends Component {
   }
 
   async componentDidMount() {
-    let versions = await getReleases();
-    console.log("VERSIONS", versions);
+    // let versions = await getReleases();
+    // console.log("VERSIONS", versions);
 
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
+    $('[data-toggle="collapse"]').collapse();
+
 
     this.setState({ yaml: yamlData });
   }
@@ -108,11 +108,10 @@ export default class Index extends Component {
           </div>
         </div>
 
-          <div className="block_heading">
-            <div className="block_heading_oval">2</div>
-            <div className="block_heading_title">Informazioni Addizionali</div>
-          </div>
-
+        <div className="block_heading">
+          <div className="block_heading_oval">2</div>
+          <div className="block_heading_title">Informazioni Addizionali</div>
+        </div>
 
         <div className="block">
           <div className="block__item">
@@ -163,13 +162,26 @@ export default class Index extends Component {
     return (
       <div className="content__head">
         <div className="content__head__title">Public Code</div>
-        <div className="content__head__help"><a href={repository} target='_blank'>Need help?</a></div>
+        <div className="content__head__help">
+          <a href={repositoryUrl} target="_blank">
+            Need help?
+          </a>
+        </div>
       </div>
     );
   }
 
   renderFoot() {
-    return <div className="content__foot">Footer</div>;
+    return (
+      <div className="content__foot">
+        <div className="content__foot_item" >Reset</div>
+        <div className="content__foot_item">
+          <button className="btn btn-lg btn-outline-primary">Reset</button>
+          <button className="btn btn-lg btn-primary">Generate</button>
+        </div>
+        <div className="content__foot_item" >Clone Language</div>
+      </div>
+    );
   }
 
   renderSidebar() {
@@ -184,7 +196,26 @@ export default class Index extends Component {
           </pre>
         </div>
 
-        <div className="sidebar__footer">YAML</div>
+        <div className="sidebar__footer">
+          <div className="sidebar__footer_item">
+            <a href="#">
+              <span className="glyphicon glyphicon-copy" />
+              <span className="action">Copy</span>
+            </a>
+          </div>
+          <div className="sidebar__footer_item">
+            <a href="#">
+              <span className="glyphicon glyphicon-open-file" />
+              <span className="action">Upload</span>
+            </a>
+          </div>
+          <div className="sidebar__footer_item">
+            <a href="#">
+              <span className="glyphicon glyphicon-save-file" />
+              <span className="action">Download</span>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

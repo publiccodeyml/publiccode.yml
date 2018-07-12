@@ -1,16 +1,23 @@
-##PUBLICCODE.YML EDITOR
+# PUBLICCODE.YML EDITOR
 
 Scope of this project is to provide an interface to easily generate a well-done (formatted and validated) file publiccode.yml
 
-###SETUP
+#### SETUP
 
-You will need `npm` or `yarn` command installed to setup this web app.
+You will need [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/lang/en/) command installed to setup this web app.
 
 First clone or download the repository,
 
-then from a shell run `yarn install` to install dependencies,
+then from a shell run
 
-Now to run the app locally `yarn dev` .
+```
+cd editor
+yarn install //or npm install
+yarn dev //or npm run dev
+```
 
-###PREVIEW
-+You can preview this app on [https://publiccode.surge.sh/](https://publiccode.surge.sh/) .
+Last command is to run the app locally .
+
+#### PREVIEW
+
+You can preview this app on [https://publiccode.surge.sh](https://publiccode.surge.sh/\](https://publiccode.surge.sh/)

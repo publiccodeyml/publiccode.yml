@@ -1,5 +1,9 @@
+$content-pad-horiz: 2em;
+$content-head-h: 120px;
+
 .content__head {
-  height: 130px;
+  padding: 0 $content-pad-horiz;
+  height: $content-head-h;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +11,6 @@
   margin-bottom: 20px;
 }
 .content__head__title {
-  margin: 10px;
   color: #0066cc;
   font-family: "Titillium Web";
   font-size: 52px;
@@ -27,18 +30,12 @@
   }
 }
 
-.content__foot {
-  height: 106px;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #e8e8e8;
-  margin-top: 20px;
-}
-
 .content__main {
+  padding: 0 $content-pad-horiz;
   flex: 1;
   overflow: auto;
 }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -47,6 +44,26 @@
   order: 0;
 }
 
+.content__foot {
+  padding: 0 $content-pad-horiz;
+  height: $foot-bar-h;
+
+  border-top: 1px solid #e8e8e8;
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.content__foot_item {
+  flex: 1;
+  text-align: center;
+  button {
+    margin: 0 10px;
+  }
+}
 
 @media all and (max-width: $mq-size) {
   .content__head,
