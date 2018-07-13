@@ -70,7 +70,6 @@
     "react-collapsible": "^2.2.0",
     "react-dom": "^16.4.0",
     "react-draft-wysiwyg": "^1.12.13",
-    "react-jsonschema-form": "^1.0.3",
     "react-notify": "^3.0.0",
     "react-redux": "^5.0.7",
     "react-rte": "^0.16.1",
