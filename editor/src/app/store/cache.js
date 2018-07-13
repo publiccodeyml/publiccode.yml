@@ -4,8 +4,8 @@ export const SET_YAML = "SET_YAML";
 export const RESET_YAML = "RESET_YAML";
 export const SET_VERSIONS = "SET_VERSIONS";
 
-export const save = createAction(SET_YAML);
-export const clear = createAction(RESET_YAML);
+export const saveYaml = createAction(SET_YAML);
+export const clearYaml = createAction(RESET_YAML);
 export const setVersions = createAction(SET_VERSIONS);
 
 const initialState = {

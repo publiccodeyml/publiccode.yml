@@ -195,15 +195,6 @@ export default class Index extends Component {
       <form className="form" onSubmit={handleSubmit}>
         <div>{error && <strong>{error}</strong>}</div>
         {renderField(schema, null, theme || DefaultTheme, "", context)}
-        {/*!error && (
-          <button
-            className="btn btn-primary"
-            type="submit"
-            disabled={submitting}
-          >
-            Submit
-          </button>
-        )*/}
       </form>
     );
   }

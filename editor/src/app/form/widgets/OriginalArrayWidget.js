@@ -20,15 +20,43 @@ const renderArrayFields = (
     return _times(count, idx => {
       return (
         <div key={idx}>
-          <div className="float-right">
-            <a
+          <div className="btn-group float-right ">
+            {idx !== count - 1 && count > 1 ? (
+              <button
+                className="btn btn-primary"
+                onClick={e => {
+                  e.preventDefault();
+                  swap(idx, idx + 1);
+                }}
+              >
+                <span className="glyphicon glyphicon-arrow-down" />
+              </button>
+            ) : (
+              ""
+            )}
+            {idx !== 0 && count > 1 ? (
+              <button
+                className="btn btn-primary"
+                onClick={e => {
+                  e.preventDefault();
+                  swap(idx, idx - 1);
+                }}
+              >
+                <span className="glyphicon glyphicon-arrow-up" />
+              </button>
+            ) : (
+              ""
+            )}
+
+            <button
+              className="btn btn-danger"
               onClick={e => {
                 e.preventDefault();
                 remove(idx);
               }}
             >
-              <span className="glyphicon glyphicon-remove" />
-            </a>
+              <span className="glyphicon glyphicon-trash" />
+            </button>
           </div>
           {renderField(
             { ...schema, showLabel: false },

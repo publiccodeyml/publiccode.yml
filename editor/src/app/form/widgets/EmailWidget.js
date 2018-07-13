@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BaseInputWidget from "./BaseInputWidget";
+import BaseInputWidget from "./";
 
 const EmailWidget = props => {
   return <BaseInputWidget type="email" {...props} />;

@@ -19,7 +19,7 @@ let softwareType_list = [
 ];
 
 const initialValues = {
-  name: "PROOOOVAAAA",
+  name: "PUBLICCODE",
   license: "MIT",
   optional: false,
   releaseDate: moment().format(date_format)
