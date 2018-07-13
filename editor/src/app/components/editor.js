@@ -12,9 +12,10 @@ import {
   repositoryUrl
 } from "../contents/constants";
 import { data } from "../contents/data";
-
+import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import RemoteSubmitButton from "./remoteSubmit";
+import copy from "copy-to-clipboard";
 
 const mapStateToProps = state => {
   return {
@@ -57,9 +58,32 @@ export default class Index extends Component {
 
   async componentDidMount() {
     this.initBootstrap();
-    // let versions = await getReleases();
-    // console.log("VERSIONS", versions);
-    // this.setState({ yaml: yamlData });
+  }
+
+  load(files) {
+    console.log("LOAD", files);
+    const reader = new FileReader();
+    const that = this;
+    let { onLoad } = this.props;
+    reader.onload = function() {
+      let yaml = reader.result;
+      let formData = jsyaml.load(yaml);
+      that.setState({ formData, yaml });
+      that.reset(formData);
+      document.getElementById("load_yaml").value = "";
+    };
+    reader.readAsText(files[0]);
+  }
+
+  download(data) {
+    const blob = new Blob([data], {
+      type: "text/yaml;charset=utf-8;"
+    });
+    let blobURL = window.URL.createObjectURL(blob);
+    let tempLink = document.createElement("a");
+    tempLink.href = blobURL;
+    tempLink.setAttribute("download", "pubbliccode.yml");
+    tempLink.click();
   }
 
   renderHead() {
@@ -110,19 +134,25 @@ export default class Index extends Component {
           <div className="sidebar__footer_item">
             <a href="#">
               <span className="glyphicon glyphicon-copy" />
-              <span className="action">Copy</span>
+              <span className="action" onClick={() => copy(yaml)}>Copy</span>
             </a>
           </div>
           <div className="sidebar__footer_item">
+           <input
+            id="load_yaml"
+            type="file"
+            style={{display:"none"}}
+            onChange={e => this.load(e.target.files)}
+          />
             <a href="#">
               <span className="glyphicon glyphicon-open-file" />
-              <span className="action">Upload</span>
+              <span className="action" onClick={()=>document.getElementById('load_yaml').click()}>Upload</span>
             </a>
           </div>
           <div className="sidebar__footer_item">
             <a href="#">
               <span className="glyphicon glyphicon-save-file" />
-              <span className="action">Download</span>
+              <span className="action" onClick={() => this.download(yaml)}>Download</span>
             </a>
           </div>
         </div>
@@ -131,6 +161,12 @@ export default class Index extends Component {
   }
   showResults(values) {
     console.log("VALUES", values);
+    try {
+      let yaml = jsyaml.dump(values);
+      this.setState({ yaml, error: null });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   render() {
