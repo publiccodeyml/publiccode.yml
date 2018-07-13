@@ -25,9 +25,11 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
+    initialize: (name, data) => dispatch(initialize(name, data)),
+    submit: name => dispatch(submit(name)),
     reset: name => dispatch(reset(name)),
     notify: (type, data) => dispatch(notify(type, data)),
-    clearNotifications: (type, data) => dispatch(clearNotifications(type, data))
+    setVersions: data => dispatch(setVersions(data))
   };
 };
 const getReleases = () => {
@@ -134,31 +136,65 @@ export default class Index extends Component {
           <div className="sidebar__footer_item">
             <a href="#">
               <span className="glyphicon glyphicon-copy" />
-              <span className="action" onClick={() => copy(yaml)}>Copy</span>
+              <span className="action" onClick={() => copy(yaml)}>
+                Copy
+              </span>
             </a>
           </div>
           <div className="sidebar__footer_item">
-           <input
-            id="load_yaml"
-            type="file"
-            style={{display:"none"}}
-            onChange={e => this.load(e.target.files)}
-          />
+            <input
+              id="load_yaml"
+              type="file"
+              style={{ display: "none" }}
+              onChange={e => this.load(e.target.files)}
+            />
             <a href="#">
               <span className="glyphicon glyphicon-open-file" />
-              <span className="action" onClick={()=>document.getElementById('load_yaml').click()}>Upload</span>
+              <span
+                className="action"
+                onClick={() => document.getElementById("load_yaml").click()}
+              >
+                Upload
+              </span>
             </a>
           </div>
           <div className="sidebar__footer_item">
             <a href="#">
               <span className="glyphicon glyphicon-save-file" />
-              <span className="action" onClick={() => this.download(yaml)}>Download</span>
+              <span className="action" onClick={() => this.download(yaml)}>
+                Download
+              </span>
             </a>
           </div>
         </div>
       </div>
     );
   }
+
+  strip(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
+
+  validate(values) {
+    console.log("VALIDATE", values);
+    const errors = {};
+
+    let info = values.info ? this.strip(values.info).trim() : null;
+    console.log("INFO", info);
+    if (!info || info.length < 1) {
+      console.log("ERROR INFO");
+      errors.info = "Required";
+    }
+
+    if (!values.softwareVersion) {
+      errors.softwareVersion = "Required";
+    }
+
+    return errors;
+  }
+
   showResults(values) {
     console.log("VALUES", values);
     try {
@@ -175,7 +211,11 @@ export default class Index extends Component {
         <div className="content">
           {this.renderHead()}
           <div className="content__main">
-            <EditorForm onSubmit={this.showResults.bind(this)} data={data} />
+            <EditorForm
+              onSubmit={this.showResults.bind(this)}
+              data={data}
+              validate={this.validate.bind(this)}
+            />
           </div>
           {this.renderFoot()}
         </div>
