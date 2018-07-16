@@ -113,14 +113,13 @@ export const data = [
       },
       {
         title: "softwareType",
+        label: "softwareType",
         type: "array",
         uniqueItems: true,
-        label: "softwareType",
         description:
           "Allowed values: standalone, addon, library, configurationFiles",
         examples: ["standalone"],
         items: {
-          title: "item",
           type: "string",
           enum: ["standalone", "addon", "library", "configurationFiles"]
         },

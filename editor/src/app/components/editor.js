@@ -43,6 +43,7 @@ const getReleases = () => {
   mapDispatchToProps
 )
 export default class Index extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +60,7 @@ export default class Index extends Component {
   }
 
   async componentDidMount() {
-    this.initBootstrap();
+   // this.initBootstrap();
   }
 
   load(files) {
@@ -180,7 +181,6 @@ export default class Index extends Component {
   validate(values) {
     console.log("VALIDATE", values);
     const errors = {};
-
     let info = values.info ? this.strip(values.info).trim() : null;
     console.log("INFO", info);
     if (!info || info.length < 1) {

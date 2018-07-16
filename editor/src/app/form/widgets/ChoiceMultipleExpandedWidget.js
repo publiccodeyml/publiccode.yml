@@ -9,12 +9,13 @@ const zipObject = (props, values) =>
   );
 
 const changeValue = (checked, item, onChange, currentValue = []) => {
+  console.log("CURRENT ITEM", item, "CURRENT VALUE", currentValue);
   if (checked) {
     if (currentValue.indexOf(checked) === -1) {
       return onChange([...currentValue, item]);
     }
   } else {
-    return onChange(currentValue.filter(items => it === item));
+    return onChange(currentValue.filter(it => it != item));
   }
   return onChange(currentValue);
 };
@@ -31,28 +32,30 @@ const renderChoice = field => {
   return (
     <div className={className}>
       <label className="control-label" htmlFor={"field-" + field.name}>
-        {field.label}  {field.required ? "*" : ""}
+        {field.label} {field.required ? "*" : ""}
       </label>
-      {Object.entries(selectOptions).map(([value, name]) => (
-        <div className="checkbox" key={value}>
-          <label>
-            <input
-              type="checkbox"
-              value={value}
-              checked={field.input.value.indexOf(value) !== -1}
-              onChange={e =>
-                changeValue(
-                  e.target.checked,
-                  value,
-                  field.input.onChange,
-                  field.input.value
-                )
-              }
-            />
-            {name}
-          </label>
-        </div>
-      ))}
+      {Object.entries(selectOptions).map(([value, name]) => {
+        return (
+          <div className="checkbox" key={value}>
+            <label>
+              <input
+                type="checkbox"
+                value={value}
+                checked={field.input.value.indexOf(value) !== -1}
+                onChange={e =>
+                  changeValue(
+                    e.target.checked,
+                    value,
+                    field.input.onChange,
+                    field.input.value
+                  )
+                }
+              />
+              {name}
+            </label>
+          </div>
+        );
+      })}
 
       {field.meta.touched &&
         field.meta.error && (
