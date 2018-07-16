@@ -16,8 +16,8 @@ import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import RemoteSubmitButton from "./remoteSubmit";
 import copy from "copy-to-clipboard";
-
-const available_languages = ["ita", "eng"];
+import _ from "lodash";
+const available_languages = ["ita", "eng", "fra"];
 
 const mapStateToProps = state => {
   return {
@@ -30,7 +30,6 @@ const mapDispatchToProps = dispatch => {
   return {
     initialize: (name, data) => dispatch(initialize(name, data)),
     submit: name => dispatch(submit(name)),
-    reset: name => dispatch(reset(name)),
     notify: (type, data) => dispatch(notify(type, data)),
     setVersions: data => dispatch(setVersions(data))
   };
@@ -53,10 +52,10 @@ export default class Index extends Component {
       yaml: null,
       formData: null,
       loading: false,
-      languages: ["ita"],
+      languages: [],
       values: {},
       currentValues: {},
-      currentLanguage: "ita"
+      currentLanguage: null
     };
   }
 
@@ -80,7 +79,7 @@ export default class Index extends Component {
       let yaml = reader.result;
       let formData = jsyaml.load(yaml);
       that.setState({ formData, yaml });
-      that.reset(formData);
+      that.initialize(formData, null);
       document.getElementById("load_yaml").value = "";
     };
     reader.readAsText(files[0]);
@@ -110,20 +109,34 @@ export default class Index extends Component {
     );
   }
 
+  // getDescriptionGroup(data) {
+  //   let result = _
+  //     .chain(data)
+  //     .groupBy("group")
+  //     .map((values, group) => ({ values, group }))
+  //     .value();
+  // }
+
   renderFoot() {
     return (
       <div className="content__foot">
         <div className="content__foot_item">
           <button
             className="btn btn-lg btn-outline-primary"
-            onClick={() => this.props.reset(APP_FORM)}
+            onClick={() => this.props.initialize(APP_FORM,null)}
           >
             Reset
           </button>
         </div>
         <div className="content__foot_item" />
         <div className="content__foot_item">
-          <RemoteSubmitButton className="btn btn-lg btn-primary" />
+          <button
+            type="button"
+            className="btn btn-lg btn-primary"
+            onClick={() => this.props.submit(APP_FORM)}
+          >
+            Submit
+          </button>
         </div>
       </div>
     );
@@ -142,6 +155,10 @@ export default class Index extends Component {
           return (
             <div key={lng} className={cn}>
               <a onClick={() => this.switchLang(lng)}>{lng}</a>
+              <span
+                className="glyphicon glyphicon-remove"
+                onClick={() => this.removeLang(lng)}
+              />
             </div>
           );
         })}
@@ -231,12 +248,12 @@ export default class Index extends Component {
 
   validate(values) {
     this.setState({ currentValues: values });
-    console.log("VALIDATE", values);
+    // console.log("VALIDATE", values);
     const errors = {};
     let info = values.info ? this.strip(values.info).trim() : null;
-    console.log("INFO", info);
+    // console.log("INFO", info);
     if (!info || info.length < 1) {
-      console.log("ERROR INFO");
+      // console.log("ERROR INFO");
       errors.info = "Required";
     }
 
@@ -247,24 +264,45 @@ export default class Index extends Component {
     return errors;
   }
 
+  removeLang(lng) {
+    let { values, languages, currentValues, currentLanguage } = this.state;
+    //remove contents of lang
+    delete values[currentLanguage];
+    //remove  lang from list
+    languages.splice(languages.indexOf(lng),1)
+
+    //manage state to move on other key
+    let k0 = values ? _.keys(values)[0] : null;
+    currentLanguage = k0 ? k0 : null;
+    currentValues = currentLanguage
+      ? Object.assign({}, values[currentLanguage])
+      : null;
+
+    this.setState({ values, languages, currentValues, currentLanguage });
+    this.props.initialize(APP_FORM, currentValues);
+  }
+
   switchLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
 
-    if (lng == currentLanguage) return;
-    //save current language
-    values[currentLanguage] = Object.assign({}, currentValues);
-    currentLanguage = lng;
-    if (languages.indexOf(lng) > -1) {
-      // load lang values
-      console.log("found lang");
-      currentValues = Object.assign({}, currentValues);
-    } else {
-      //clone first and add language
-      console.log("lang not found");
-      languages.push(lng);
-      currentValues = {};
-    }
+    //if (lng == currentLanguage) return;
 
+    //save current language data
+    values[currentLanguage] = Object.assign({}, currentValues);
+
+    if (languages.indexOf(lng) > -1) {
+      // load previous lang data
+      currentValues = Object.assign({}, values[lng]);
+    } else {
+      //clone current data and  then add language
+      languages.push(lng);
+      currentValues = Object.assign({}, values[currentLanguage]);
+    }
+    //move to current lang
+    currentLanguage = lng;
+
+
+    //update state
     this.setState({ values, languages, currentValues, currentLanguage });
     this.props.initialize(APP_FORM, currentValues);
   }
@@ -280,19 +318,23 @@ export default class Index extends Component {
   }
 
   render() {
+    let { currentLanguage } = this.state;
     return (
       <Fragment>
         <div className="content">
           {this.renderHead()}
           {this.langSwitcher()}
+
           <div className="content__main">
-            <EditorForm
-              onSubmit={this.showResults.bind(this)}
-              data={data}
-              validate={this.validate.bind(this)}
-            />
+            {currentLanguage && (
+              <EditorForm
+                onSubmit={this.showResults.bind(this)}
+                data={data}
+                validate={this.validate.bind(this)}
+              />
+            )}
           </div>
-          {this.renderFoot()}
+          {currentLanguage && this.renderFoot()}
         </div>
         {this.renderSidebar()}
       </Fragment>

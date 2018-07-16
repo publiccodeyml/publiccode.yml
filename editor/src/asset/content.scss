@@ -16,11 +16,19 @@ $content-head-h: 120px;
   height: 70px;
   width: 150px;
   text-align: center;
+
+  .glyphicon {
+    font-size: 15px;
+    margin-left:10px;
+    color: #111;
+  }
 }
 
 .language-switcher__item--selected {
   border-bottom: 1px solid #0066cc;
 }
+
+
 
 .content__head {
   padding: 0 $content-pad-horiz;

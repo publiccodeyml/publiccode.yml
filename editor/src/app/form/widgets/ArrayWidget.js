@@ -27,7 +27,7 @@ const renderArrayFields = (
                 remove(idx);
               }}
             >
-              <span className="glyphicon glyphicon-remove" />
+              <span className="block__array__remove glyphicon glyphicon-remove" />
             </a>
           </div>
           {renderField(
@@ -47,7 +47,7 @@ const renderArrayFields = (
 
 const renderInput = field => {
   const className = classNames([
-    "arrayType",
+    "block__array",
     { "has-error": field.meta.submitFailed && field.meta.error }
   ]);
 

@@ -50,8 +50,24 @@
 }
 
 .block__object {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #e8e8e8;
   flex: 1 0 100%;
+}
+
+.block__array__remove {
+  top: 35px;
+}
+
+.block__item--full .block__array {
+  .block__array__remove {
+    top: 10px;
+    right: 20px;
+  }
+  .block {
+    color: #5c6f82;
+    background-color: #f6f8f8;
+    border-bottom: 1px solid #e8e8e8;
+  }
 }
 
 .block__item--full {

@@ -12,12 +12,11 @@ import _ from "lodash";
 
 export const data = [
   {
-    title: "Informazioni",
+    title: "Main Infos",
     index: 1,
     items: [
       {
-        title: "info",
-        label: "Informazioni",
+        title: "Summary",
         descr: "informazioni varie",
         type: "string",
         cn: "block__item--full",
@@ -25,6 +24,7 @@ export const data = [
       },
       {
         type: "array",
+        cn: "block__item--full",
         title: "contacts",
         description:
           "One or more contacts maintaining this software. This key describes the technical people currently responsible for maintaining the software. All contacts need to be a physical person, not a company or an organisation. if somebody is acting as a representative of an institution, it must be listed within the affiliation of the contact. In case of a commercial agreement (or a chain of such agreements), specify the final entities actually contracted to deliver the maintenance. Do not specify the software owner unless it is technically involved with the maintenance of the product as well.",

@@ -4,11 +4,15 @@ import classNames from "classnames";
 import { Field } from "redux-form";
 import RichTextEditor from "react-rte";
 
+const emptyVal = RichTextEditor.createEmptyValue();
+
 class MyEditor extends Component {
   constructor(props) {
     super(props);
+    //let value = this.props.value  ? RichTextEditor.createValueFromString(this.props.val, "html") : emptyVal;
+    let value = emptyVal;
     this.state = {
-      value: RichTextEditor.createEmptyValue()
+      value
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -16,7 +20,20 @@ class MyEditor extends Component {
   onChange(value) {
     this.setState({ value });
     if (this.props.onChange) {
-      this.props.onChange(value.toString("html"));
+      if (value == null) this.props.onChange("");
+      else this.props.onChange(value.toString("html"));
+    }
+  }
+
+  componentWillReceiveProps(next) {
+    if (!next.value) {
+      this.setState({ value: emptyVal });
+    } else {
+      let html = RichTextEditor.createValueFromString(next.value, "html");
+      if (html._cache.html != this.state.value._cache.html) {
+        // console.log("TRANSFORMED", html, "STATE", this.state.value);
+        this.setState({ value: html });
+      }
     }
   }
 
@@ -55,7 +72,7 @@ const renderInput = field => {
           <span className="help-block">{field.meta.error}</span>
         )}
       {field.description && (
-          <small className="form-text text-muted">{field.description}</small>
+        <small className="form-text text-muted">{field.description}</small>
       )}
     </div>
   );
