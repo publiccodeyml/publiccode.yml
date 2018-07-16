@@ -17,12 +17,15 @@ import EditorForm from "./editorForm";
 import RemoteSubmitButton from "./remoteSubmit";
 import copy from "copy-to-clipboard";
 
+const available_languages = ["ita", "eng"];
+
 const mapStateToProps = state => {
   return {
     notifications: state.notifications,
     cache: state.cache
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     initialize: (name, data) => dispatch(initialize(name, data)),
@@ -32,6 +35,7 @@ const mapDispatchToProps = dispatch => {
     setVersions: data => dispatch(setVersions(data))
   };
 };
+
 const getReleases = () => {
   return fetch(versionsUrl)
     .then(res => res.json())
@@ -43,24 +47,28 @@ const getReleases = () => {
   mapDispatchToProps
 )
 export default class Index extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       yaml: null,
       formData: null,
-      loading: false
+      loading: false,
+      languages: ["ita"],
+      values: {},
+      currentValues: {},
+      currentLanguage: "ita"
     };
   }
 
   initBootstrap() {
-    $('[data-toggle="tooltip"]').tooltip();
-    $('[data-toggle="popover"]').popover();
-    $('[data-toggle="collapse"]').collapse();
+    // $('[data-toggle="tooltip"]').tooltip();
+    // $('[data-toggle="popover"]').popover();
+    // $('[data-toggle="collapse"]').collapse();
+    $('[ data-toggle="dropdown"]').dropdown();
   }
 
   async componentDidMount() {
-   // this.initBootstrap();
+    this.initBootstrap();
   }
 
   load(files) {
@@ -116,6 +124,49 @@ export default class Index extends Component {
         <div className="content__foot_item" />
         <div className="content__foot_item">
           <RemoteSubmitButton className="btn btn-lg btn-primary" />
+        </div>
+      </div>
+    );
+  }
+
+  langSwitcher() {
+    let { languages, currentLanguage } = this.state;
+
+    return (
+      <div className="language-switcher">
+        {languages.map(lng => {
+          let cn = "language-switcher__item";
+          if (lng == currentLanguage) {
+            cn += " language-switcher__item--selected";
+          }
+          return (
+            <div key={lng} className={cn}>
+              <a onClick={() => this.switchLang(lng)}>{lng}</a>
+            </div>
+          );
+        })}
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            + Add Language
+          </button>
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {available_languages.map(lng => (
+              <a
+                key={lng}
+                className="dropdown-item"
+                onClick={() => this.switchLang(lng)}
+              >
+                {lng}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -179,6 +230,7 @@ export default class Index extends Component {
   }
 
   validate(values) {
+    this.setState({ currentValues: values });
     console.log("VALIDATE", values);
     const errors = {};
     let info = values.info ? this.strip(values.info).trim() : null;
@@ -193,6 +245,28 @@ export default class Index extends Component {
     }
 
     return errors;
+  }
+
+  switchLang(lng) {
+    let { values, languages, currentValues, currentLanguage } = this.state;
+
+    if (lng == currentLanguage) return;
+    //save current language
+    values[currentLanguage] = Object.assign({}, currentValues);
+    currentLanguage = lng;
+    if (languages.indexOf(lng) > -1) {
+      // load lang values
+      console.log("found lang");
+      currentValues = Object.assign({}, currentValues);
+    } else {
+      //clone first and add language
+      console.log("lang not found");
+      languages.push(lng);
+      currentValues = {};
+    }
+
+    this.setState({ values, languages, currentValues, currentLanguage });
+    this.props.initialize(APP_FORM, currentValues);
   }
 
   showResults(values) {
@@ -210,6 +284,7 @@ export default class Index extends Component {
       <Fragment>
         <div className="content">
           {this.renderHead()}
+          {this.langSwitcher()}
           <div className="content__main">
             <EditorForm
               onSubmit={this.showResults.bind(this)}
