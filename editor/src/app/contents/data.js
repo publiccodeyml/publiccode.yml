@@ -47,15 +47,11 @@ export const elements = () => myElements;
 ------------------------------------
 name
 applicationSuite
-
 summary_shortDescription
-
 publiccodeYamlVersion
 releaseDate
-
 legal_repoOwner
 landingURL
-
 isBasedOn
 tags
 
@@ -66,16 +62,12 @@ roadmap
 summary_documentation
 url
 softwareVersion
-
 developmentStatus
 softwareType
-
 inputTypes
 outputTypes
-
 platforms
 usedBy
-
 summary_featureList
 summary_freeTags
 
@@ -92,26 +84,23 @@ summary_awards
 ------------------------------------
 # SUMMARY 3
 ------------------------------------
-
 summary_longDescription
 summary_apiDocumentation
-
 intendedAudience_onlyFor
-
 intendedAudience_countries
 intendedAudience_unsupportedCountries
-
 localisation_localisationReady
 localisation_availableLanguages
-
 dependsOn
 
+------------------------------------
 # LEGAL 4
 ------------------------------------
 legal_license
 legal_mainCopyrightOwner
 legal_authorsFile
 
+------------------------------------
 # MAINTENANCE 5
 ------------------------------------
 maintenance_type

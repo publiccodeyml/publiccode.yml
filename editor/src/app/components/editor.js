@@ -18,6 +18,7 @@ import copy from "copy-to-clipboard";
 import _ from "lodash";
 import u from "updeep";
 import validator from "validator";
+import cleanDeep from "clean-deep";
 //import available_languages from "../contents/langs";
 const available_languages = ["ita", "eng", "fra", "zho"];
 
@@ -304,22 +305,21 @@ export default class Index extends Component {
       return u(values[lng], acc);
     }, {});
 
+    //GROUP FIELDS
+    let obj = Object.assign({}, merge);
     groups.forEach(group => {
-      console.log("GROUP", group);
+      let sub = this.extractGroup(obj, group);
+      if (sub) {
+        obj = this.cleanupGroup(obj, group);
+        obj[group] = sub;
+      }
     });
 
-    // //REMOVE SUMMARY
-    // merge = this.cleanupGroup(merge,"summary");
-    // let grouped_stuff = groups.reduce((obj, group) => {
-    //   obj = extractGroup();
-    //   return obj;
-    // });
-
-    //READD SUMMARY
-    merge.summary = summary;
+    //REPLACE SUMMARY
+    obj.summary = summary;
 
     //SET  TIMESTAMP
-    this.showResults(merge);
+    this.showResults(cleanDeep(obj));
   }
 
   showResults(values) {
@@ -333,8 +333,8 @@ export default class Index extends Component {
   }
 
   validate(values) {
-    this.setState({ currentValues: values });
 
+    this.setState({ currentValues: values });
     let allFields = elements();
     let errors = {};
 
