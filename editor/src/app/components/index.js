@@ -30,6 +30,7 @@ const ajv = new Ajv({
   allErrors: true,
   jsonPointers: false
 });
+
 let schema = {};
 let tag_names = tags.map(t => t.tag);
 let tag_descrs = tags.map(t => t.descr);

@@ -119,7 +119,10 @@ export default class Index extends Component {
         <div className="content__foot_item">
           <button
             className="btn btn-lg btn-outline-primary"
-            onClick={() => this.props.initialize(APP_FORM, null)}
+            onClick={() => {
+              this.props.initialize(APP_FORM, null);
+              this.setState({ yaml: null });
+            }}
           >
             Reset
           </button>
@@ -333,7 +336,6 @@ export default class Index extends Component {
   }
 
   validate(values) {
-
     this.setState({ currentValues: values });
     let allFields = elements();
     let errors = {};
@@ -387,11 +389,9 @@ export default class Index extends Component {
 
     //remove contents of lang
     delete values[lng];
-    console.log("values", values);
 
     //remove  lang from list
     languages.splice(languages.indexOf(lng), 1);
-    console.log("languages", languages);
 
     //manage state to move on other key
     let k0 = values ? Object.keys(values)[0] : null;
@@ -400,16 +400,12 @@ export default class Index extends Component {
       ? Object.assign({}, values[currentLanguage])
       : null;
 
-    console.log("currentLanguage", currentLanguage);
-    console.log("currentValues", currentValues);
-
     this.setState({ values, languages, currentValues, currentLanguage });
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
   switchLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
-
     if (!lng || lng === currentLanguage) return;
 
     //save current language data
@@ -441,6 +437,7 @@ export default class Index extends Component {
       currentLanguage,
       search: null
     });
+
     this.props.initialize(APP_FORM, currentValues);
   }
 
