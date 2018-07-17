@@ -1,4 +1,4 @@
-import elems from "./elems";
+import { elems, countries } from "./elems";
 
 const sections = [
   "Main information",
@@ -6,19 +6,31 @@ const sections = [
   "Multimedia",
   "Summary",
   "Legal",
-  "Maintenance"
+  "Maintenance",
+  "Country Specific"
 ];
 
-export const data = sections.map((s, i) => {
-  console.log(`section ${s} INDEX ${i}`);
+let myElements = [];
 
+export const data = sections.map((s, i) => {
+  //console.log(`section ${s} INDEX ${i}`);
+  let items = elems.filter(obj => obj.section === i);
+
+  //add properties  to items
+  items = items.map(i => {
+    let group = i.group ? `${i.group}_` : "";
+    i.id = `${i.section}_${group}${i.title}`;
+    return i;
+  });
+  myElements = _.concat(myElements, items);
   return {
     title: s,
     index: i + 1,
-    items: elems.filter(obj => obj.section === i)
+    items
   };
 });
 
+export const elements = () => myElements;
 
 /*
 ------------------------------------

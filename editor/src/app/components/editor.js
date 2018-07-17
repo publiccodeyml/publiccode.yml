@@ -11,13 +11,14 @@ import {
   versionsUrl,
   repositoryUrl
 } from "../contents/constants";
-import { data } from "../contents/data";
+import { data, elements } from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import RemoteSubmitButton from "./remoteSubmit";
 import copy from "copy-to-clipboard";
 import _ from "lodash";
-const available_languages = ["ita", "eng", "fra"];
+//import available_languages from "../contents/langs";
+const available_languages = ["ita", "eng", "fra", "zho"];
 
 const mapStateToProps = state => {
   return {
@@ -49,6 +50,7 @@ export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      search: null,
       yaml: null,
       formData: null,
       loading: false,
@@ -123,7 +125,7 @@ export default class Index extends Component {
         <div className="content__foot_item">
           <button
             className="btn btn-lg btn-outline-primary"
-            onClick={() => this.props.initialize(APP_FORM,null)}
+            onClick={() => this.props.initialize(APP_FORM, null)}
           >
             Reset
           </button>
@@ -143,7 +145,10 @@ export default class Index extends Component {
   }
 
   langSwitcher() {
-    let { languages, currentLanguage } = this.state;
+    let { languages, currentLanguage, search } = this.state;
+    let results = available_languages;
+    if (search)
+      results = available_languages.filter(name => name.indexOf(search) > -1);
 
     return (
       <div className="language-switcher">
@@ -174,15 +179,26 @@ export default class Index extends Component {
             + Add Language
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {available_languages.map(lng => (
-              <a
-                key={lng}
-                className="dropdown-item"
-                onClick={() => this.switchLang(lng)}
-              >
-                {lng}
-              </a>
-            ))}
+            <div className="form-group">
+              <input
+                type="text"
+                name="search"
+                className="form-control"
+                placeholder="search..."
+                onChange={e => this.setState({ search: e.target.value })}
+              />
+            </div>
+            <div className="scroll">
+              {results.map(lng => (
+                <a
+                  key={lng}
+                  className="dropdown-item"
+                  onClick={() => this.switchLang(lng)}
+                >
+                  {lng}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -246,30 +262,47 @@ export default class Index extends Component {
     return tmp.textContent || tmp.innerText || "";
   }
 
-  validate(values) {
-    this.setState({ currentValues: values });
-    // console.log("VALIDATE", values);
-    const errors = {};
-    let info = values.info ? this.strip(values.info).trim() : null;
-    // console.log("INFO", info);
-    if (!info || info.length < 1) {
-      // console.log("ERROR INFO");
-      errors.info = "Required";
-    }
+  generate(formValues) {
+    console.log("GENERATE", formValues);
+    let { values } = this.state;
+    Object.propertis.map(p => {
+      console.log(p);
+    });
 
-    if (!values.softwareVersion) {
-      errors.softwareVersion = "Required";
-    }
+    //MERGE VALUES
+    //SET  TIMESTAMP
+    let merge = this.showResults(merge);
+  }
+
+  validate(values) {
+    console.log("elements", elements());
+    this.setState({ currentValues: values });
+    console.log("VALIDATE", values);
+
+    const errors = {};
+    // let info = values.info ? this.strip(values.info).trim() : null;
+    // // console.log("INFO", info);
+    // if (!info || info.length < 1) {
+    //   // console.log("ERROR INFO");
+    //   errors.info = "Required";
+    // }
+    // if (!values.softwareVersion) {
+    //   errors.softwareVersion = "Required";
+    // }
 
     return errors;
   }
 
   removeLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
+
     //remove contents of lang
-    delete values[currentLanguage];
+    delete values[lng];
+    console.log("values", values);
+
     //remove  lang from list
-    languages.splice(languages.indexOf(lng),1)
+    languages.splice(languages.indexOf(lng), 1);
+    console.log("languages", languages);
 
     //manage state to move on other key
     let k0 = values ? _.keys(values)[0] : null;
@@ -278,17 +311,21 @@ export default class Index extends Component {
       ? Object.assign({}, values[currentLanguage])
       : null;
 
+    console.log("currentLanguage", currentLanguage);
+    console.log("currentValues", currentValues);
+
     this.setState({ values, languages, currentValues, currentLanguage });
-    this.props.initialize(APP_FORM, currentValues);
+    this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
   switchLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
 
-    //if (lng == currentLanguage) return;
+    if (!lng || lng === currentLanguage) return;
 
     //save current language data
-    values[currentLanguage] = Object.assign({}, currentValues);
+    if (currentLanguage)
+      values[currentLanguage] = Object.assign({}, currentValues);
 
     if (languages.indexOf(lng) > -1) {
       // load previous lang data
@@ -296,14 +333,21 @@ export default class Index extends Component {
     } else {
       //clone current data and  then add language
       languages.push(lng);
-      currentValues = Object.assign({}, values[currentLanguage]);
+      currentValues = {};
+      if (currentLanguage && values[currentLanguage])
+        currentValues = Object.assign({}, values[currentLanguage]);
     }
     //move to current lang
     currentLanguage = lng;
 
-
     //update state
-    this.setState({ values, languages, currentValues, currentLanguage });
+    this.setState({
+      values,
+      languages,
+      currentValues,
+      currentLanguage,
+      search: null
+    });
     this.props.initialize(APP_FORM, currentValues);
   }
 
@@ -328,7 +372,7 @@ export default class Index extends Component {
           <div className="content__main">
             {currentLanguage && (
               <EditorForm
-                onSubmit={this.showResults.bind(this)}
+                onSubmit={this.generate.bind(this)}
                 data={data}
                 validate={this.validate.bind(this)}
               />

@@ -69,7 +69,7 @@ const renderInput = field => {
           field.fields.swap(a, b);
         }
       )}
-      <a href="#" className="control-link" onClick={() => field.fields.push()}>
+      <a href="#" className="link" onClick={() => field.fields.push()}>
         Add new
       </a>
     </div>

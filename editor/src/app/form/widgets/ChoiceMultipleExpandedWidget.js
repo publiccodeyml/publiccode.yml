@@ -36,23 +36,22 @@ const renderChoice = field => {
       </label>
       {Object.entries(selectOptions).map(([value, name]) => {
         return (
-          <div className="checkbox" key={value}>
-            <label>
-              <input
-                type="checkbox"
-                value={value}
-                checked={field.input.value.indexOf(value) !== -1}
-                onChange={e =>
-                  changeValue(
-                    e.target.checked,
-                    value,
-                    field.input.onChange,
-                    field.input.value
-                  )
-                }
-              />
-              {name}
-            </label>
+          <div className="form-check" key={value}>
+            <input
+              type="checkbox"
+              className="form-check-input"
+              value={value}
+              checked={field.input.value.indexOf(value) !== -1}
+              onChange={e =>
+                changeValue(
+                  e.target.checked,
+                  value,
+                  field.input.onChange,
+                  field.input.value
+                )
+              }
+            />
+            <label className="form-check-label">{name}</label>
           </div>
         );
       })}

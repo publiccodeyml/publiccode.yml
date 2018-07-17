@@ -20,18 +20,19 @@ const renderChoice = field => {
   return (
     <div className={className}>
       <label className="control-label" htmlFor={"field-" + field.name}>
-        {field.label}  {field.required ? "*" : ""}
+        {field.label} {field.required ? "*" : ""}
       </label>
       {Object.entries(selectOptions).map(([value, name]) => (
-        <div className="radio" key={value}>
-          <label>
+        <div className="form-check" key={value}>
             <input
+              className="form-check-input"
               type="radio"
               name={field.input.name}
               value={value}
               checked={field.input.value === value}
               onChange={e => field.input.onChange(value)}
             />
+          <label className="form-check-label">
             {name}
           </label>
         </div>
@@ -42,7 +43,7 @@ const renderChoice = field => {
           <span className="help-block">{field.meta.error}</span>
         )}
       {field.description && (
-        <span className="help-block">{field.description}</span>
+          <small className="form-text text-muted">{field.description}</small>
       )}
     </div>
   );

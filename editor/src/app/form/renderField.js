@@ -14,6 +14,15 @@ const guessWidget = (fieldSchema, theme) => {
   return fieldSchema.type || "object";
 };
 
+
+export const isRequired = (schema, fieldName) => {
+  if (!schema.required) {
+    return false;
+  }
+  return (schema.required === true) || schema.required.indexOf(fieldName) !== -1;
+};
+
+
 const renderField = (
   fieldSchema,
   fieldName,
@@ -28,19 +37,18 @@ const renderField = (
   }
 
   const widget = guessWidget(fieldSchema, theme);
-
   if (!theme[widget]) {
     throw new Error("liform: " + widget + " is not defined in the theme");
   }
 
-  const newFieldName = prefix ? prefix + fieldName : fieldName;
 
+  const newFieldName = prefix ? prefix + fieldName : fieldName;
+  let lbl = fieldSchema.label || fieldSchema.title || fieldName;
   let obj = React.createElement(theme[widget], {
     key: fieldName,
     fieldName: widget === "oneOf" ? fieldName : newFieldName,
-    label:
-      fieldSchema.showLabel === false ? "" : fieldSchema.title || fieldName,
-    required: required,
+    label:   lbl  ,
+    required: required ,
     schema: fieldSchema,
     theme,
     context,

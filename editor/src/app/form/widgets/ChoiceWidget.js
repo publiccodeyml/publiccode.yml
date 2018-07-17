@@ -45,7 +45,7 @@ const renderSelect = field => {
           <span className="help-block">{field.meta.error}</span>
         )}
       {field.description && (
-        <span className="help-block">{field.description}</span>
+         <small className="form-text text-muted">{field.description}</small>
       )}
     </div>
   );

@@ -36,9 +36,7 @@ const renderBlockItems = (items, id) => {
     if (item.type === "object") cn = "block__object";
     return (
       <div className={cn} key={`block_${id}_item_${i}`}>
-        <div className="form-group">
-          {renderField(item, item.title, Widgets)}
-        </div>
+          {renderField(item, item.title, Widgets, "", {}, item.required===true)}
       </div>
     );
   });
