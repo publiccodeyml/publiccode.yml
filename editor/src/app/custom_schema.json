@@ -62,7 +62,7 @@
     "intendedAudience": {
       "$ref": "#/definitions/intendedAudience"
     },
-    "softwareDescription": {
+    "summary": {
       "$ref": "#/definitions/descriptionPerLang"
     },
     "legal": {
@@ -86,7 +86,7 @@
     "tags",
     "developmentStatus",
     "softwareType",
-    "softwareDescription",
+    "summary",
     "legal"
   ],
   "definitions": {

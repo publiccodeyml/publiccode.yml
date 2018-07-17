@@ -62,8 +62,8 @@
     "intendedAudience": {
       "$ref": "#/definitions/intendedAudience"
     },
-    "softwareDescription": {
-      "title": "softwareDescription",
+    "summary": {
+      "title": "summary",
       "type": "array",
       "items": {
         "anyOf": [
@@ -5161,7 +5161,7 @@
     "tags",
     "developmentStatus",
     "softwareType",
-    "softwareDescription",
+    "summary",
     "legal"
   ],
   "definitions": {

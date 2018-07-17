@@ -36,7 +36,7 @@ const renderBlockItems = (items, id) => {
     if (item.type === "object") cn = "block__object";
     return (
       <div className={cn} key={`block_${id}_item_${i}`}>
-          {renderField(item, item.title, Widgets, "", {}, item.required===true)}
+        {renderField(item, item.title, Widgets, "", {}, item.required === true)}
       </div>
     );
   });
@@ -55,8 +55,13 @@ const renderBlocks = blocks => {
 };
 
 const EditForm = props => {
-  const { handleSubmit, pristine, reset, submitting, data } = props;
-  return <form onSubmit={handleSubmit}>{renderBlocks(data)}</form>;
+  const { handleSubmit, pristine, reset, submitting, data, error } = props;
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>{renderBlocks(data)}</form>
+      {error && <strong>{error}</strong>}
+    </div>
+  );
 };
 
 export default reduxForm({

@@ -11,10 +11,9 @@ import {
   versionsUrl,
   repositoryUrl
 } from "../contents/constants";
-import { data, elements } from "../contents/data";
+import { data, elements, groups } from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
-import RemoteSubmitButton from "./remoteSubmit";
 import copy from "copy-to-clipboard";
 import _ from "lodash";
 import u from "updeep";
@@ -265,19 +264,60 @@ export default class Index extends Component {
     return result;
   }
 
+  extractGroup(items, group) {
+    let field_names = Object.keys(items);
+    let filtered = field_names.filter(item => item.startsWith(group));
+    let obj = filtered.reduce((acc, name) => {
+      let key = name.split("_")[1];
+      let value = items[name];
+      acc[key] = value;
+      return acc;
+    }, {});
+    return obj;
+  }
+
+  getSummary(values) {
+    if (!values) return;
+    let obj = this.extractGroup(values, "summary_");
+    return obj;
+  }
+
+  cleanupGroup(data, group) {
+    return _.omitBy(data, (value, key) => {
+      return _.startsWith(key, `${group}_`);
+    });
+  }
+
   generate(formValues) {
     let { values, currentLanguage } = this.state;
     values[currentLanguage] = formValues;
+    let langs = Object.keys(values);
 
-    console.log("GENERATE", values);
-    let langs = _.keys(values);
+    //GET SUMMARY BEFORE MERGE
+    let summary = langs.reduce((obj, lng) => {
+      obj[lng] = this.getSummary(values[lng], lng);
+      return obj;
+    }, {});
 
+    //MERGE ALL
     let merge = langs.reduce((acc, lng) => {
-      console.log(values[lng]);
       return u(values[lng], acc);
     }, {});
 
-    //MERGE VALUES
+    groups.forEach(group => {
+      console.log("GROUP", group);
+    });
+
+    // //REMOVE SUMMARY
+    // merge = this.cleanupGroup(merge,"summary");
+    // let grouped_stuff = groups.reduce((obj, group) => {
+    //   obj = extractGroup();
+    //   return obj;
+    // });
+
+    //READD SUMMARY
+    merge.summary = summary;
+
     //SET  TIMESTAMP
     this.showResults(merge);
   }
@@ -293,33 +333,50 @@ export default class Index extends Component {
   }
 
   validate(values) {
-    console.log("elements", elements());
     this.setState({ currentValues: values });
-    const errors = {};
 
-    let required = elements().filter(obj => obj.required === true);
-//    console.log("VALIDATE", required);
-    required.map(rf=>{
-          let content = null;
-          let field = rf.title;
-          if(rf.widget==="editor"){
-            content = values[field]? this.strip(values[field]).trim() : null;
-          }else{
-            content = values[field]
-          }
+    let allFields = elements();
+    let errors = {};
 
-          if(!content){
-            errors[field] = "Required";
-          }
+    //CHECK REQUIRED FIELDS
+    let required = allFields.filter(obj => obj.required === true);
+    required.map(rf => {
+      let content = null;
+      let field = rf.title;
+      if (rf.widget === "editor") {
+        content = values[field] ? this.strip(values[field]).trim() : null;
+      } else {
+        content = values[field];
+      }
+      if (!content) {
+        errors[field] = "Required\n";
+      }
     });
+
+    Object.keys(values).map(field => {
+      console.log("check field", field);
+      let obj = allFields.find(item => item.title == field);
+      console.log(obj);
+      if (obj && obj.widget) {
+        let widget = obj.widget;
+        let value = values[field];
+        if (widget == "url" && !validator.isURL(value)) {
+          errors[field] = "Not a valid Url";
+        } else if (widget == "email" && !validator.isEmail(value)) {
+          errors[field] = "Not a valid email";
+        }
+      }
+    });
+
+    let required_sub = allFields.filter(
+      obj => obj.required && _.isArray(obj.required)
+    );
+    console.log(("required_sub", required_sub));
     // let info = values.info ? this.strip(values.info).trim() : null;
     // // console.log("INFO", info);
     // if (!info || info.length < 1) {
     //   // console.log("ERROR INFO");
     //   errors.info = "Required";
-    // }
-    // if (!values.softwareVersion) {
-    //   errors.softwareVersion = "Required";
     // }
 
     return errors;
@@ -337,7 +394,7 @@ export default class Index extends Component {
     console.log("languages", languages);
 
     //manage state to move on other key
-    let k0 = values ? _.keys(values)[0] : null;
+    let k0 = values ? Object.keys(values)[0] : null;
     currentLanguage = k0 ? k0 : null;
     currentValues = currentLanguage
       ? Object.assign({}, values[currentLanguage])
@@ -366,8 +423,12 @@ export default class Index extends Component {
       //clone current data and  then add language
       languages.push(lng);
       currentValues = {};
-      if (currentLanguage && values[currentLanguage])
-        currentValues = Object.assign({}, values[currentLanguage]);
+      if (currentLanguage && values[currentLanguage]) {
+        let clonedValues = _.omitBy(values[currentLanguage], (value, key) => {
+          return _.startsWith(key, "summary_");
+        });
+        currentValues = Object.assign({}, clonedValues);
+      }
     }
     //move to current lang
     currentLanguage = lng;

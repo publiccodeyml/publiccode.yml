@@ -9,6 +9,13 @@ const sections = [
   "Maintenance"
 ];
 
+export const  groups = [
+  "summary",
+  "maintenance",
+  "legal",
+  "intendedAudience",
+  "localisation"
+];
 //,"Country Specific"
 
 let myElements = [];

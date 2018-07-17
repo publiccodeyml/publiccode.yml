@@ -1,0 +1,10 @@
+- country specific subform
+- transform on load to groups
+- get groups dinamically
+- hide description after tot and display info button
+- big tooltip, or info overlay
+- notification feedback on error
+- display errors number
+- show * on required object items
+- validate object items
+- custom validation rules on fields values
