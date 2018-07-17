@@ -6,9 +6,10 @@ const sections = [
   "Multimedia",
   "Summary",
   "Legal",
-  "Maintenance",
-  "Country Specific"
+  "Maintenance"
 ];
+
+//,"Country Specific"
 
 let myElements = [];
 
@@ -20,6 +21,7 @@ export const data = sections.map((s, i) => {
   items = items.map(i => {
     let group = i.group ? `${i.group}_` : "";
     i.id = `${i.section}_${group}${i.title}`;
+    i.title = `${group}${i.title}`;
     return i;
   });
   myElements = _.concat(myElements, items);

@@ -17,6 +17,8 @@ import EditorForm from "./editorForm";
 import RemoteSubmitButton from "./remoteSubmit";
 import copy from "copy-to-clipboard";
 import _ from "lodash";
+import u from "updeep";
+import validator from "validator";
 //import available_languages from "../contents/langs";
 const available_languages = ["ita", "eng", "fra", "zho"];
 
@@ -110,14 +112,6 @@ export default class Index extends Component {
       </div>
     );
   }
-
-  // getDescriptionGroup(data) {
-  //   let result = _
-  //     .chain(data)
-  //     .groupBy("group")
-  //     .map((values, group) => ({ values, group }))
-  //     .value();
-  // }
 
   renderFoot() {
     return (
@@ -262,24 +256,62 @@ export default class Index extends Component {
     return tmp.textContent || tmp.innerText || "";
   }
 
+  getGrouped(data) {
+    let result = _
+      .chain(data)
+      .groupBy("group")
+      .map((values, group) => ({ values, group }))
+      .value();
+    return result;
+  }
+
   generate(formValues) {
-    console.log("GENERATE", formValues);
-    let { values } = this.state;
-    Object.propertis.map(p => {
-      console.log(p);
-    });
+    let { values, currentLanguage } = this.state;
+    values[currentLanguage] = formValues;
+
+    console.log("GENERATE", values);
+    let langs = _.keys(values);
+
+    let merge = langs.reduce((acc, lng) => {
+      console.log(values[lng]);
+      return u(values[lng], acc);
+    }, {});
 
     //MERGE VALUES
     //SET  TIMESTAMP
-    let merge = this.showResults(merge);
+    this.showResults(merge);
+  }
+
+  showResults(values) {
+    console.log("VALUES", values);
+    try {
+      let yaml = jsyaml.dump(values);
+      this.setState({ yaml, error: null });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   validate(values) {
     console.log("elements", elements());
     this.setState({ currentValues: values });
-    console.log("VALIDATE", values);
-
     const errors = {};
+
+    let required = elements().filter(obj => obj.required === true);
+//    console.log("VALIDATE", required);
+    required.map(rf=>{
+          let content = null;
+          let field = rf.title;
+          if(rf.widget==="editor"){
+            content = values[field]? this.strip(values[field]).trim() : null;
+          }else{
+            content = values[field]
+          }
+
+          if(!content){
+            errors[field] = "Required";
+          }
+    });
     // let info = values.info ? this.strip(values.info).trim() : null;
     // // console.log("INFO", info);
     // if (!info || info.length < 1) {
@@ -349,16 +381,6 @@ export default class Index extends Component {
       search: null
     });
     this.props.initialize(APP_FORM, currentValues);
-  }
-
-  showResults(values) {
-    console.log("VALUES", values);
-    try {
-      let yaml = jsyaml.dump(values);
-      this.setState({ yaml, error: null });
-    } catch (e) {
-      console.error(e);
-    }
   }
 
   render() {
