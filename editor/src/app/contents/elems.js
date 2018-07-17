@@ -471,9 +471,9 @@ export const elems = [
           description:
             "This key contains an explicit affiliation information for the technical contact. In case of multiple maintainers, this can be used to create a relation between each technical contact and each maintainer entity. It can contain for instance a company name, an association name, etc."
         }
-      }
+      },
+      required: ["name"]
     },
-    required: ["name"],
     section: 5,
     group: "maintenance",
     required: true,
@@ -517,12 +517,12 @@ export const elems = [
             "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.",
           widget: "url"
         }
-      }
+      },
+      required: ["name", "until"]
     },
     section: 5,
     group: "maintenance",
-    cn: "block__item--full",
-    required: ["name", "until"]
+    cn: "block__item--full"
   },
 
   {

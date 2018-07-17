@@ -36,7 +36,7 @@ const renderField = (
 
   const widget = guessWidget(schema, theme);
   if (!theme[widget]) {
-    throw new Error("liform: " + widget + " is not defined in the theme");
+    throw new Error(widget + " is not defined in the theme");
   }
 
   const newFieldName = prefix ? prefix + fieldName : fieldName;

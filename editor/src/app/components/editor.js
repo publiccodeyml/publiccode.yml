@@ -81,6 +81,13 @@ export default class Index extends Component {
     let { onLoad } = this.props;
     reader.onload = function() {
       let yaml = reader.result;
+
+      //TRANSFORM DATA BACK:
+      //- sgroup results
+      //- get summary x langs
+      //- popolate values
+      //- popolate formdata
+
       let formData = jsyaml.load(yaml);
       that.setState({ formData, yaml });
       that.initialize(formData, null);
@@ -280,6 +287,28 @@ export default class Index extends Component {
     return obj;
   }
 
+  flatGroup(data, group) {
+    if (!data[group]) return null;
+    let g = Object.assign({}, data[group]);
+    delete data[group];
+    let flatten = Object.keys(g).reduce((obj, key) => {
+      obj[`${group}_${key}`] = g[key];
+      return obj;
+    }, {});
+    return object.assign(flatten, data);
+  }
+
+  parseSummary(data) {
+    if (!data.summary) return null;
+    let { summary } = data;
+
+    let languages = Object.keys(summary);
+    let currentLanguage = languages[0];
+
+    //this.setState({languages})
+
+  }
+
   getSummary(values) {
     if (!values) return;
     let obj = this.extractGroup(values, "summary_");
@@ -341,6 +370,7 @@ export default class Index extends Component {
     let errors = {};
 
     //CHECK REQUIRED FIELDS
+    /*
     let required = allFields.filter(obj => obj.required === true);
     required.map(rf => {
       let content = null;
@@ -354,11 +384,13 @@ export default class Index extends Component {
         errors[field] = "Required\n";
       }
     });
+    */
+    console.log("values", values);
 
     Object.keys(values).map(field => {
-      console.log("check field", field);
       let obj = allFields.find(item => item.title == field);
-      console.log(obj);
+
+      console.log(field, "TYPE", obj.type, "REQUIRED", obj.required);
       if (obj && obj.widget) {
         let widget = obj.widget;
         let value = values[field];
@@ -370,15 +402,13 @@ export default class Index extends Component {
       }
     });
 
-    let required_sub = allFields.filter(
-      obj => obj.required && _.isArray(obj.required)
-    );
-    console.log(("required_sub", required_sub));
-    // let info = values.info ? this.strip(values.info).trim() : null;
-    // // console.log("INFO", info);
-    // if (!info || info.length < 1) {
+    // let objects = allFields.filter(obj => obj.type == "object");
+    // console.log(("objects", objects));
+
+    // let summary_longDescription = values.summary_longDescription ? this.strip(values.summary_longDescription).trim() : null;
+    // if (!summary_longDescription || summary_longDescription.length < 1) {
     //   // console.log("ERROR INFO");
-    //   errors.info = "Required";
+    //   errors.summary_longDescription = "Required";
     // }
 
     return errors;

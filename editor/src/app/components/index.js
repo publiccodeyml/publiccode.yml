@@ -5,6 +5,13 @@ import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import renderField from "../form/renderField";
 import buildSyncValidation from "../form/buildSyncValidation";
 
+import {
+  APP_FORM,
+  yamlData,
+  versionsUrl,
+  repositoryUrl
+} from "../contents/constants";
+
 import { initialize, submit } from "redux-form";
 import { notify, clearNotifications } from "../store/notifications";
 import { saveYaml, setVersions } from "../store/cache";
@@ -18,7 +25,6 @@ import langs from "../contents/langs";
 import tags from "../contents/tags";
 import validator from "validator";
 import Toolbar from "./toolbar";
-
 import _ from "lodash";
 import u from "updeep";
 import Ajv from "ajv";
@@ -53,9 +59,8 @@ const mapDispatchToProps = dispatch => {
   };
 };
 const getReleases = () => {
-  const url =
-    "https://api.github.com/repos/publiccodenet/publiccode.yml/contents/version";
-  return fetch(url)
+
+  return fetch(versionsUrl)
     .then(res => res.json())
     .then(data => data.map(d => d.name));
 };
