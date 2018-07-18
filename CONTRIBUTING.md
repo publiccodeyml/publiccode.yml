@@ -8,7 +8,7 @@ We love issues and pull requests from everyone.
 
 ## Problems, suggestions and questions in Issues
 
-Please help development by reporting problems, suggesting changes and asking questions. To do this, you can [create a GitHub Issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for publiccode.yml](https://github.com/publiccodenet/publiccode.yml/issues).
+Please help development by reporting problems, suggesting changes and asking questions. To do this, you can [create a GitHub Issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for publiccode.yml](https://github.com/italia/publiccode.yml/issues).
 
 You don't need to change any of our code or documentation to be a contributor!
 
