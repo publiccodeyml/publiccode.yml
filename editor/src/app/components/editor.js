@@ -19,7 +19,13 @@ import _ from "lodash";
 import u from "updeep";
 import validator from "validator";
 import cleanDeep from "clean-deep";
+import Ajv from "ajv";
 //import available_languages from "../contents/langs";
+const ajv = new Ajv({
+  errorDataPath: "property",
+  allErrors: true,
+  jsonPointers: false
+});
 const available_languages = ["ita", "eng", "fra", "zho"];
 
 const mapStateToProps = state => {
@@ -59,7 +65,9 @@ export default class Index extends Component {
       languages: [],
       values: {},
       currentValues: {},
-      currentLanguage: null
+      currentLanguage: null,
+      country: null,
+      error: 0
     };
   }
 
@@ -128,7 +136,9 @@ export default class Index extends Component {
             className="btn btn-lg btn-outline-primary"
             onClick={() => {
               this.props.initialize(APP_FORM, null);
-              this.setState({ yaml: null });
+              let values = Object.assign({}, this.state.values);
+              delete values[this.state.currentLanguage];
+              this.setState({ yaml: null, currentValues: null, values });
             }}
           >
             Reset
@@ -306,7 +316,6 @@ export default class Index extends Component {
     let currentLanguage = languages[0];
 
     //this.setState({languages})
-
   }
 
   getSummary(values) {
@@ -364,71 +373,130 @@ export default class Index extends Component {
     }
   }
 
-  validate(values) {
-    this.setState({ currentValues: values });
-    let allFields = elements();
+
+  checkField(field, obj, value, required) {
+    console.log("CHECK", field, "TYPE", obj.type, "REQUIRED", obj.required);
+
+    if (required && !value) return "required.";
+
+    if (obj && obj.widget) {
+      let widget = obj.widget;
+
+      if (
+        widget &&
+        widget === "editor" &&
+        validator.isEmpty(this.strip(value).trim())
+      )
+        return "values required.";
+
+      if (widget == "url" && !validator.isURL(value)) {
+        return "Not a valid Url";
+      } else if (widget == "email" && !validator.isEmail(value)) {
+        return "Not a valid email";
+      }
+    }
+
+    if (obj && obj.type === "email" && value && !validator.isEmail(value)) {
+      return "Not a valid email";
+    }
+
+    return null;
+  }
+
+  validate(contents) {
     let errors = {};
+    let { values, currentLanguage, country } = this.state;
+    console.log("VALIDATE", contents);
 
     //CHECK REQUIRED FIELDS
-    /*
-    let required = allFields.filter(obj => obj.required === true);
+    let allFields = elements(country);
+    let required = allFields.filter(obj => obj.required);
     required.map(rf => {
       let content = null;
       let field = rf.title;
-      if (rf.widget === "editor") {
-        content = values[field] ? this.strip(values[field]).trim() : null;
-      } else {
-        content = values[field];
-      }
-      if (!content) {
-        errors[field] = "Required\n";
-      }
-    });
-    */
-    console.log("values", values);
-
-    Object.keys(values).map(field => {
       let obj = allFields.find(item => item.title == field);
+      if (rf.widget && rf.widget === "editor") {
+        content = contents[field] ? this.strip(contents[field]).trim() : null;
+      } else {
+        content = contents[field];
+      }
 
-      console.log(field, "TYPE", obj.type, "REQUIRED", obj.required);
-      if (obj && obj.widget) {
-        let widget = obj.widget;
-        let value = values[field];
-        if (widget == "url" && !validator.isURL(value)) {
-          errors[field] = "Not a valid Url";
-        } else if (widget == "email" && !validator.isEmail(value)) {
-          errors[field] = "Not a valid email";
+      //REQUIRED BLOCKS
+      if (!content) {
+        if (obj.type == "array" && obj.items.type == "object") {
+          errors[field] = { _error: "Required" };
+        } else {
+          errors[field] = "Required.";
         }
       }
     });
 
-    // let objects = allFields.filter(obj => obj.type == "object");
-    // console.log(("objects", objects));
+    //VALIDATE TYPES AND SUBOBJECT
+    Object.keys(contents).map(field => {
+      let obj = allFields.find(item => item.title == field);
+      let obj_values = contents[field];
 
-    // let summary_longDescription = values.summary_longDescription ? this.strip(values.summary_longDescription).trim() : null;
-    // if (!summary_longDescription || summary_longDescription.length < 1) {
-    //   // console.log("ERROR INFO");
-    //   errors.summary_longDescription = "Required";
-    // }
+      //VALIDATE ARRAY OF OBJS
+      if (
+        obj &&
+        obj.type === "array" &&
+        obj.items.type === "object" &&
+        obj.items.required &&
+        obj_values
+      ) {
+        let requiredFields = obj.items.required;
+        let members = obj_values;
+        let membersArrayErrors = [];
+        members.forEach((member, index) => {
+          let memberErrors = {};
+          requiredFields.forEach(rf => {
+            if (!member || !member[rf]) {
+              memberErrors[rf] = "Required";
+              membersArrayErrors[index] = memberErrors;
+            }
+          });
+        });
+        if (membersArrayErrors.length) {
+          errors[field] = membersArrayErrors;
+        }
+
+        console.log("membersArrayErrors", membersArrayErrors);
+      } else {
+        //VALIDATE SIMPLE FIELDS
+        let e = this.checkField(field, obj, obj_values, obj.required);
+        if (e) errors[field] = e;
+      }
+    });
+
+    values[currentLanguage] = contents;
+    this.setState({ currentValues: contents, values, error: errors.length });
 
     return errors;
   }
 
   removeLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
-
+    console.log("before delete all values are  ", values);
+    console.log("REMOVE LNG", lng, "FROM", languages);
     //remove contents of lang
     delete values[lng];
-
     //remove  lang from list
     languages.splice(languages.indexOf(lng), 1);
-
+    console.log("so now languages are ", languages);
     //manage state to move on other key
-    let k0 = values ? Object.keys(values)[0] : null;
+    let k0 = Object.keys(values) ? Object.keys(values)[0] : null;
+    console.log("k0 ", k0);
     currentLanguage = k0 ? k0 : null;
+    if (!currentLanguage) {
+      currentLanguage = languages ? languages[0] : null;
+    }
     currentValues = currentLanguage
       ? Object.assign({}, values[currentLanguage])
       : null;
+
+    console.log("new currentLanguage is ", currentLanguage);
+    console.log("currentValues are  ", currentValues);
+    console.log("all values are  ", values);
 
     this.setState({ values, languages, currentValues, currentLanguage });
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});

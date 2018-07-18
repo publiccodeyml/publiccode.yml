@@ -42,10 +42,13 @@ const renderSelect = field => {
 
       {field.meta.touched &&
         field.meta.error && (
-          <span className="help-block">{field.meta.error}</span>
+          <div className="help-block">{field.meta.error}</div>
         )}
+
       {field.description && (
-         <small className="form-text text-muted">{field.description}</small>
+
+          <small className="form-text text-muted">{field.description}</small>
+
       )}
     </div>
   );

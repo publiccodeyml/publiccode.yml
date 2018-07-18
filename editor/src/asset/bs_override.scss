@@ -4,7 +4,6 @@ $theme-colors: (
   "danger": #ff4136
 );
 
-
 input[type="date"],
 input[type="datetime-local"],
 input[type="email"],
@@ -53,6 +52,7 @@ textarea.form-control {
 .control-link,
 .help-block {
   color: #5c6f82;
+  display: block;
 }
 
 .has-error {
@@ -60,5 +60,3 @@ textarea.form-control {
     color: #ff4136;
   }
 }
-
-

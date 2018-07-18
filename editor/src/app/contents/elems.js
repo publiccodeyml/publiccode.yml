@@ -448,8 +448,7 @@ export const elems = [
           title: "name",
           label: "Name",
           description:
-            " mandatory - This key contains the full name of one of the technical contacts. It must be a real person; do NOT populate this key with generic contact information, company departments, associations, etc.",
-          required: true
+            " mandatory - This key contains the full name of one of the technical contacts. It must be a real person; do NOT populate this key with generic contact information, company departments, associations, etc."
         },
         email: {
           type: "string",
@@ -476,8 +475,8 @@ export const elems = [
     },
     section: 5,
     group: "maintenance",
-    required: true,
-    cn: "block__item--full"
+    cn: "block__item--full",
+    required: true
   },
   {
     title: "contractors",
@@ -497,8 +496,7 @@ export const elems = [
           title: "name",
           label: "Name",
           description:
-            "mandatory - The name of the contractor, whether it's a company or a physical person.",
-          required: true
+            "mandatory - The name of the contractor, whether it's a company or a physical person."
         },
         until: {
           type: "string",
@@ -506,8 +504,7 @@ export const elems = [
           label: "Until",
           description:
             " mandatory - This is a date (YYYY-MM-DD). This key must contain the date at which the maintenance is going to end. In case of community maintenance, the value should not be more than 2 years in the future, and thus will need to be regularly updated as the community continues working on the project.",
-          widget: "date",
-          required: true
+          widget: "date"
         },
         website: {
           type: "string",
@@ -553,7 +550,6 @@ export const elems = [
           title: "name",
           label: "Name",
           type: "string",
-          required: true,
           description:
             "mandatory - The name of the dependency (e.g. MySQL, NFC Reader)"
         },
@@ -582,9 +578,9 @@ export const elems = [
           type: "boolean",
           description: "whether the dependency is optional or mandatory"
         }
-      }
+      },
+      required: ["name", "type"]
     },
-    required: ["name", "type"],
     section: 4,
     cn: "block__item--full"
   }

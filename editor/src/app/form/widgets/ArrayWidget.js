@@ -56,7 +56,7 @@ const renderInput = field => {
       <legend className="control-label">{field.label}</legend>
       {field.meta.submitFailed &&
         field.meta.error && (
-          <span className="help-block">{field.meta.error}</span>
+          <div className="help-block">{field.meta.error}</div>
         )}
       {renderArrayFields(
         field.fields.length,

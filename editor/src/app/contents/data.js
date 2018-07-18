@@ -9,7 +9,7 @@ const sections = [
   "Maintenance"
 ];
 
-export const  groups = [
+export const groups = [
   "summary",
   "maintenance",
   "legal",
@@ -23,7 +23,6 @@ let myElements = [];
 export const data = sections.map((s, i) => {
   //console.log(`section ${s} INDEX ${i}`);
   let items = elems.filter(obj => obj.section === i);
-
   //add properties  to items
   items = items.map(i => {
     let group = i.group ? `${i.group}_` : "";
@@ -39,7 +38,14 @@ export const data = sections.map((s, i) => {
   };
 });
 
-export const elements = () => myElements;
+export const elements = (countryCode = null) => {
+  let country = null;
+  if (countryCode) {
+    country = countries[countryCode];
+  }
+  if (country) myElements.country = country;
+  return myElements;
+};
 
 /*
 ------------------------------------

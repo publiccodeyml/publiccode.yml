@@ -5418,7 +5418,7 @@
             "This key contains an explicit affiliation information for the technical contact. In case of multiple maintainers, this can be used to create a relation between each technical contact and each maintainer entity. It can contain for instance a company name, an association name, etc."
         }
       },
-      "required": ["email"]
+      "required": ["name"]
     },
     "contractor": {
       "title": "contractor",
