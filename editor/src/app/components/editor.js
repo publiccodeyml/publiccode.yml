@@ -82,10 +82,12 @@ export default class Index extends Component {
 
   async componentDidMount() {
     this.initBootstrap();
-    let { country } = this.state;
+    this.init();
+  }
 
+  init(country = null) {
     let { elements, blocks } = getData(country);
-    this.setState({ elements, blocks })
+    this.setState({ elements, blocks });
   }
 
   load(files) {
@@ -230,11 +232,11 @@ export default class Index extends Component {
     let countries = ["uk", "us", "it"];
 
     return (
-      <div className="language-switcher">
+      <div className="country-switcher">
         {country && (
           <div
             key={country}
-            className="language-switcher__item language-switcher__item--selected"
+            className="country-switcher__item country-switcher__item--selected"
           >
             <a href="#">{country}</a>
           </div>
@@ -257,7 +259,7 @@ export default class Index extends Component {
                 <a
                   key={c}
                   className="dropdown-item"
-                  onClick={() => this.setState({ country: c })}
+                  onClick={() => this.switchCountry(c)}
                 >
                   {c}
                 </a>
@@ -561,6 +563,13 @@ export default class Index extends Component {
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
+  switchCountry(country) {
+    let { currentValues } = this.state;
+    this.setState({ country });
+    this.init(country);
+    this.props.initialize(APP_FORM, currentValues);
+  }
+
   switchLang(lng) {
     let { values, languages, currentValues, currentLanguage } = this.state;
     if (!lng || lng === currentLanguage) return;
@@ -597,9 +606,9 @@ export default class Index extends Component {
 
     this.props.initialize(APP_FORM, currentValues);
   }
-
+// this.countrySwitcher()
   render() {
-    let { currentLanguage, data } = this.state;
+    let { currentLanguage, blocks } = this.state;
 
     return (
       <Fragment>
@@ -612,12 +621,11 @@ export default class Index extends Component {
               blocks && (
                 <EditorForm
                   onSubmit={this.generate.bind(this)}
-                  data={data}
+                  data={blocks}
                   validate={this.validate.bind(this)}
                 />
               )}
           </div>
-          {currentLanguage && this.countrySwitcher()}
           {currentLanguage && this.renderFoot()}
         </div>
         {this.renderSidebar()}

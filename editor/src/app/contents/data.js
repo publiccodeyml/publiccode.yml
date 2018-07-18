@@ -6,8 +6,7 @@ const sections = [
   "Multimedia",
   "Summary",
   "Legal",
-  "Maintenance",
-  "Country"
+  "Maintenance"
 ];
 
 export const groups = [
