@@ -1,0 +1,62 @@
+$primary: #111;
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136
+);
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+select.form-control,
+textarea.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #5c6f82;
+  border-radius: 0;
+  outline: 0;
+  height: 2.5rem;
+  width: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 700;
+  color: #5c6f82;
+}
+
+.has-error {
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  select.form-control,
+  textarea.form-control {
+    border-bottom: 1px solid #ff4136;
+  }
+}
+
+.control-label,
+.control-link,
+.help-block {
+  color: #5c6f82;
+  display: block;
+}
+
+.has-error {
+  .help-block {
+    color: #ff4136;
+  }
+}

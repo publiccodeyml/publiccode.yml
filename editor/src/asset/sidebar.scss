@@ -1,0 +1,80 @@
+.sidebar {
+  background-color: #00264d;
+  color: #fff;
+  flex: 2 1 0;
+  order: 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sidebar__title {
+  padding: 1em;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.sidebar__footer {
+  height: $foot-bar-h;
+  background-color: #0066cc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sidebar__footer_item {
+  line-height: 40px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  a {
+    color: #fff;
+  }
+  .span {
+    margin-right: 2px;
+  }
+  .action {
+    margin-left: 2px;
+  }
+}
+
+.sidebar__code {
+  flex: 8 0 0;
+  width: 100%;
+  overflow: auto;
+  color: #00ff80;
+
+  pre {
+    padding: 10px;
+    color: #00ff80;
+    font-family: "Roboto Mono";
+    font-size: 12px;
+
+    line-height: 24px;
+  }
+}
+
+.sidebar__overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  grid-column: 1/3;
+  grid-row: 1/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+@media all and (max-width: $mq-size) {
+  .sidebar {
+    order: 0;
+    min-height: 100px;
+  }
+}
