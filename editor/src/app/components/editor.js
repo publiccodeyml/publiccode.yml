@@ -302,15 +302,17 @@ export default class Index extends Component {
               style={{ display: "none" }}
               onChange={e => this.load(e.target.files)}
             />
-            <a href="#">
-              <span className="glyphicon glyphicon-open-file" />
-              <span
-                className="action"
-                onClick={() => document.getElementById("load_yaml").click()}
-              >
-                Upload
-              </span>
-            </a>
+            {false && (
+              <a href="#">
+                <span className="glyphicon glyphicon-open-file" />
+                <span
+                  className="action"
+                  onClick={() => document.getElementById("load_yaml").click()}
+                >
+                  Upload
+                </span>
+              </a>
+            )}
           </div>
           <div className="sidebar__footer_item">
             <a href="#">
@@ -606,7 +608,7 @@ export default class Index extends Component {
 
     this.props.initialize(APP_FORM, currentValues);
   }
-// this.countrySwitcher()
+  // this.countrySwitcher()
   render() {
     let { currentLanguage, blocks } = this.state;
 
