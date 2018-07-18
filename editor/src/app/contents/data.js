@@ -1,4 +1,4 @@
-import { elems, countries } from "./elems";
+import { elems, countryElems } from "./elems";
 
 const sections = [
   "Main information",
@@ -8,54 +8,21 @@ const sections = [
   "Legal",
   "Maintenance"
 ];
-
-export const groups = [
+const groups = [
   "summary",
   "maintenance",
   "legal",
   "intendedAudience",
   "localisation"
 ];
-//,"Country Specific"
 
-let myElements = [];
+const countries = ["uk", "us", "it"];
 
-export const data = (countryCode = null) => {
-  let allFields = getAllFields(countryCode);
-  console.log("allFields", allFields);
-  return sections.map((s, i) => {
-    // console.log(`section ${s} INDEX ${i}`);
-    let items = allFields.filter(obj => obj.section === i);
-    //add properties  to items
-    items = items.map(i => {
-      let group = i.group ? `${i.group}_` : "";
-      i.id = `${i.section}_${group}${i.title}`;
-      i.title = `${group}${i.title}`;
-      return i;
-    });
-    myElements = _.concat(myElements, items);
-    return {
-      title: s,
-      index: i + 1,
-      items
-    };
-  });
-};
-
-const getAllFields = (countryCode = null) => {
-  console.log("GET ALL FIELDS", countryCode);
-  let country = null;
-  if (countryCode) {
-    country = countries.find(c => c.code == countryCode);
-  }
-  if (country) return _.concat(elems, country.elems);
-  return elems;
-};
 
 export function getData(countryCode = null) {
   console.log("GET DATA");
   let allFields = elems;
-  let country = countries.find(c => c.code == countryCode);
+  let country = countryElems.find(c => c.code == countryCode);
   if (country && country.elems) {
     allFields = _.concat(elems, country.elems);
   }
@@ -80,17 +47,11 @@ export function getData(countryCode = null) {
     };
   });
 
-  return { elements, blocks, countryCode };
+  if (countryCode && groups.indexOf(countryCode) === -1) {
+    groups.push[countryCode];
+  }
+  return { elements, blocks, groups, countries };
 }
-
-// export const elements = (countryCode = null) => {
-//   // let country = null;
-//   // if (countryCode) {
-//   //   country = countries[countryCode];
-//   // }
-//   // if (country) return [...myElements, ...country];
-//   return myElements;
-// };
 
 /*
 ------------------------------------

@@ -11,7 +11,7 @@ import {
   versionsUrl,
   repositoryUrl
 } from "../contents/constants";
-import { getData, data, elements, groups } from "../contents/data";
+import { getData } from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import copy from "copy-to-clipboard";
@@ -80,14 +80,15 @@ export default class Index extends Component {
     $('[ data-toggle="dropdown"]').dropdown();
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.initBootstrap();
     this.init();
   }
 
-  init(country = null) {
+  initData(country = null) {
+
     let { elements, blocks } = getData(country);
-    this.setState({ elements, blocks });
+    this.setState({ elements, blocks, groups, countries, country });
   }
 
   load(files) {
@@ -229,7 +230,6 @@ export default class Index extends Component {
 
   countrySwitcher() {
     let { country } = this.state;
-    let countries = ["uk", "us", "it"];
 
     return (
       <div className="country-switcher">
@@ -565,10 +565,9 @@ export default class Index extends Component {
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
-  switchCountry(country) {
+  async switchCountry(country) {
     let { currentValues } = this.state;
-    this.setState({ country });
-    this.init(country);
+    await this.initData(country);
     this.props.initialize(APP_FORM, currentValues);
   }
 
@@ -608,7 +607,7 @@ export default class Index extends Component {
 
     this.props.initialize(APP_FORM, currentValues);
   }
-  // this.countrySwitcher()
+  //
   render() {
     let { currentLanguage, blocks } = this.state;
 
@@ -627,6 +626,7 @@ export default class Index extends Component {
                   validate={this.validate.bind(this)}
                 />
               )}
+            {this.countrySwitcher()}
           </div>
           {currentLanguage && this.renderFoot()}
         </div>

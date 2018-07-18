@@ -586,19 +586,20 @@ export const elems = [
   }
 ];
 
-export const countries = [
+export const countryElems = [
   {
     code: "uk",
     name: "United Kingdom",
     elems: [
       {
-        title: "fake",
-        label: "Fake UK",
+        title: "sample",
+        label: "sample UK",
         type: "string",
         description:
-          "This key contains the fake version of the country specific subschema.",
+          "This key contains the sample version of the country specific subschema.",
         section: 6,
-        required: true
+        required: true,
+        group: "uk"
       }
     ]
   },
@@ -607,13 +608,14 @@ export const countries = [
     name: "United States",
     elems: [
       {
-        title: "fake",
-        label: "Fake USA",
+        title: "sample",
+        label: "sample USA",
         type: "string",
         description:
-          "This key contains the fake version of the country specific subschema.",
+          "This key contains the sample version of the country specific subschema.",
         section: 6,
-        required: true
+        required: true,
+        group: "us"
       }
     ]
   },
@@ -623,7 +625,7 @@ export const countries = [
     elems: [
       {
         section: 6,
-
+        group: "it",
         title: "conforme",
         type: "object",
         properties: {
@@ -655,7 +657,7 @@ export const countries = [
       },
       {
         section: 6,
-
+        group: "it",
         title: "spid",
         type: "boolean",
         description:
@@ -663,7 +665,7 @@ export const countries = [
       },
       {
         section: 6,
-
+        group: "it",
         title: "cie",
         type: "boolean",
         description:
@@ -671,7 +673,7 @@ export const countries = [
       },
       {
         section: 6,
-
+        group: "it",
         title: "anpr",
         type: "boolean",
         description:
@@ -679,6 +681,7 @@ export const countries = [
       },
       {
         section: 6,
+        group: "it",
         title: "pagopa",
         type: "boolean",
         description:
