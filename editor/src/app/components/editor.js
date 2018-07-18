@@ -11,7 +11,7 @@ import {
   versionsUrl,
   repositoryUrl
 } from "../contents/constants";
-import { data, elements, groups } from "../contents/data";
+import { getData, data, elements, groups } from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import copy from "copy-to-clipboard";
@@ -67,7 +67,9 @@ export default class Index extends Component {
       currentValues: {},
       currentLanguage: null,
       country: null,
-      error: 0
+      error: null,
+      blocks: null,
+      elements: null
     };
   }
 
@@ -80,6 +82,12 @@ export default class Index extends Component {
 
   async componentDidMount() {
     this.initBootstrap();
+    this.init();
+  }
+
+  init(country = null) {
+    let { elements, blocks } = getData(country);
+    this.setState({ elements, blocks });
   }
 
   load(files) {
@@ -219,11 +227,58 @@ export default class Index extends Component {
     );
   }
 
+  countrySwitcher() {
+    let { country } = this.state;
+    let countries = ["uk", "us", "it"];
+
+    return (
+      <div className="country-switcher">
+        {country && (
+          <div
+            key={country}
+            className="country-switcher__item country-switcher__item--selected"
+          >
+            <a href="#">{country}</a>
+          </div>
+        )}
+
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Select Country
+          </button>
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div className="scroll">
+              {countries.map(c => (
+                <a
+                  key={c}
+                  className="dropdown-item"
+                  onClick={() => this.switchCountry(c)}
+                >
+                  {c}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   renderSidebar() {
-    let { yaml } = this.state;
+    let { yaml, error, loading } = this.state;
+    console.log(error);
     return (
       <div className="sidebar">
-        <div className="sidebar__title">File YAML</div>
+        <div className="sidebar__title">
+          File YAML {loading && <span className="loading">...</span>}
+        </div>
 
         <div className="sidebar__code">
           <pre>
@@ -247,15 +302,17 @@ export default class Index extends Component {
               style={{ display: "none" }}
               onChange={e => this.load(e.target.files)}
             />
-            <a href="#">
-              <span className="glyphicon glyphicon-open-file" />
-              <span
-                className="action"
-                onClick={() => document.getElementById("load_yaml").click()}
-              >
-                Upload
-              </span>
-            </a>
+            {false && (
+              <a href="#">
+                <span className="glyphicon glyphicon-open-file" />
+                <span
+                  className="action"
+                  onClick={() => document.getElementById("load_yaml").click()}
+                >
+                  Upload
+                </span>
+              </a>
+            )}
           </div>
           <div className="sidebar__footer_item">
             <a href="#">
@@ -373,10 +430,13 @@ export default class Index extends Component {
     }
   }
 
+  fakeLoading() {
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 1000);
+  }
 
   checkField(field, obj, value, required) {
-    console.log("CHECK", field, "TYPE", obj.type, "REQUIRED", obj.required);
-
     if (required && !value) return "required.";
 
     if (obj && obj.widget) {
@@ -405,16 +465,15 @@ export default class Index extends Component {
 
   validate(contents) {
     let errors = {};
-    let { values, currentLanguage, country } = this.state;
-    console.log("VALIDATE", contents);
+    let { values, currentLanguage, country, elements } = this.state;
 
     //CHECK REQUIRED FIELDS
-    let allFields = elements(country);
-    let required = allFields.filter(obj => obj.required);
+
+    let required = elements.filter(obj => obj.required);
     required.map(rf => {
       let content = null;
       let field = rf.title;
-      let obj = allFields.find(item => item.title == field);
+      let obj = elements.find(item => item.title == field);
       if (rf.widget && rf.widget === "editor") {
         content = contents[field] ? this.strip(contents[field]).trim() : null;
       } else {
@@ -433,7 +492,7 @@ export default class Index extends Component {
 
     //VALIDATE TYPES AND SUBOBJECT
     Object.keys(contents).map(field => {
-      let obj = allFields.find(item => item.title == field);
+      let obj = elements.find(item => item.title == field);
       let obj_values = contents[field];
 
       //VALIDATE ARRAY OF OBJS
@@ -459,8 +518,6 @@ export default class Index extends Component {
         if (membersArrayErrors.length) {
           errors[field] = membersArrayErrors;
         }
-
-        console.log("membersArrayErrors", membersArrayErrors);
       } else {
         //VALIDATE SIMPLE FIELDS
         let e = this.checkField(field, obj, obj_values, obj.required);
@@ -469,7 +526,13 @@ export default class Index extends Component {
     });
 
     values[currentLanguage] = contents;
-    this.setState({ currentValues: contents, values, error: errors.length });
+    this.setState({
+      currentValues: contents,
+      values,
+      error: errors,
+      loading: true
+    });
+    this.fakeLoading();
 
     return errors;
   }
@@ -500,6 +563,13 @@ export default class Index extends Component {
 
     this.setState({ values, languages, currentValues, currentLanguage });
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
+  }
+
+  switchCountry(country) {
+    let { currentValues } = this.state;
+    this.setState({ country });
+    this.init(country);
+    this.props.initialize(APP_FORM, currentValues);
   }
 
   switchLang(lng) {
@@ -538,9 +608,10 @@ export default class Index extends Component {
 
     this.props.initialize(APP_FORM, currentValues);
   }
-
+  // this.countrySwitcher()
   render() {
-    let { currentLanguage } = this.state;
+    let { currentLanguage, blocks } = this.state;
+
     return (
       <Fragment>
         <div className="content">
@@ -548,13 +619,14 @@ export default class Index extends Component {
           {this.langSwitcher()}
 
           <div className="content__main">
-            {currentLanguage && (
-              <EditorForm
-                onSubmit={this.generate.bind(this)}
-                data={data}
-                validate={this.validate.bind(this)}
-              />
-            )}
+            {currentLanguage &&
+              blocks && (
+                <EditorForm
+                  onSubmit={this.generate.bind(this)}
+                  data={blocks}
+                  validate={this.validate.bind(this)}
+                />
+              )}
           </div>
           {currentLanguage && this.renderFoot()}
         </div>

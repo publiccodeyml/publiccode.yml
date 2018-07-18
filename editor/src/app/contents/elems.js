@@ -594,7 +594,7 @@ export const countries = [
       {
         title: "fake",
         label: "Fake UK",
-        type: "String",
+        type: "string",
         description:
           "This key contains the fake version of the country specific subschema.",
         section: 6,
@@ -609,7 +609,7 @@ export const countries = [
       {
         title: "fake",
         label: "Fake USA",
-        type: "String",
+        type: "string",
         description:
           "This key contains the fake version of the country specific subschema.",
         section: 6,
@@ -622,6 +622,8 @@ export const countries = [
     name: "italia",
     elems: [
       {
+        section: 6,
+
         title: "conforme",
         type: "object",
         properties: {
@@ -652,24 +654,31 @@ export const countries = [
         }
       },
       {
+        section: 6,
+
         title: "spid",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con SPID - il Sistema Pubblico di Identità Digitale."
       },
       {
+        section: 6,
+
         title: "cie",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con la Carta di Identità Elettronica."
       },
       {
+        section: 6,
+
         title: "anpr",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con ANPR."
       },
       {
+        section: 6,
         title: "pagopa",
         type: "boolean",
         description:

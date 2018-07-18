@@ -1,18 +1,15 @@
 {
-  "name": "publiccode",
+  "name": "publiccode-editor",
   "version": "0.0.1",
+  "license": "CC0 1.0 Universal",
   "description": "[License](./LICENSE)",
   "scripts": {
     "dev": "webpack-dev-server --port 3000",
     "build": "webpack",
     "test": "jest --watch"
   },
-  "keywords": [
-    "publiccode",
-    "editor"
-  ],
+  "keywords": ["publiccode", "editor"],
   "author": "Lorenzo Ponticelli <point.point@gmail.com>",
-  "license": "WTFPL",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
