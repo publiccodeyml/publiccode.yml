@@ -6,7 +6,8 @@ const sections = [
   "Multimedia",
   "Summary",
   "Legal",
-  "Maintenance"
+  "Maintenance",
+  "Country"
 ];
 
 export const groups = [
@@ -20,32 +21,77 @@ export const groups = [
 
 let myElements = [];
 
-export const data = sections.map((s, i) => {
-  //console.log(`section ${s} INDEX ${i}`);
-  let items = elems.filter(obj => obj.section === i);
-  //add properties  to items
-  items = items.map(i => {
-    let group = i.group ? `${i.group}_` : "";
-    i.id = `${i.section}_${group}${i.title}`;
-    i.title = `${group}${i.title}`;
-    return i;
+export const data = (countryCode = null) => {
+  let allFields = getAllFields(countryCode);
+  console.log("allFields", allFields);
+  return sections.map((s, i) => {
+    // console.log(`section ${s} INDEX ${i}`);
+    let items = allFields.filter(obj => obj.section === i);
+    //add properties  to items
+    items = items.map(i => {
+      let group = i.group ? `${i.group}_` : "";
+      i.id = `${i.section}_${group}${i.title}`;
+      i.title = `${group}${i.title}`;
+      return i;
+    });
+    myElements = _.concat(myElements, items);
+    return {
+      title: s,
+      index: i + 1,
+      items
+    };
   });
-  myElements = _.concat(myElements, items);
-  return {
-    title: s,
-    index: i + 1,
-    items
-  };
-});
+};
 
-export const elements = (countryCode = null) => {
+const getAllFields = (countryCode = null) => {
+  console.log("GET ALL FIELDS", countryCode);
   let country = null;
   if (countryCode) {
-    country = countries[countryCode];
+    country = countries.find(c => c.code == countryCode);
   }
-  if (country) myElements.country = country;
-  return myElements;
+  if (country) return _.concat(elems, country.elems);
+  return elems;
 };
+
+export function getData(countryCode = null) {
+  console.log("GET DATA");
+  let allFields = elems;
+  let country = countries.find(c => c.code == countryCode);
+  if (country && country.elems) {
+    allFields = _.concat(elems, country.elems);
+  }
+  console.log("allFields", allFields.length);
+
+  let elements = [];
+  let blocks = sections.map((s, i) => {
+    // console.log(`section ${s} INDEX ${i}`);
+    let items = allFields.filter(obj => obj.section === i);
+    //add properties  to items
+    items = items.map(i => {
+      let group = i.group ? `${i.group}_` : "";
+      i.id = `${i.section}_${group}${i.title}`;
+      i.title = `${group}${i.title}`;
+      return i;
+    });
+    elements = _.concat(elements, items);
+    return {
+      title: s,
+      index: i + 1,
+      items
+    };
+  });
+
+  return { elements, blocks, countryCode };
+}
+
+// export const elements = (countryCode = null) => {
+//   // let country = null;
+//   // if (countryCode) {
+//   //   country = countries[countryCode];
+//   // }
+//   // if (country) return [...myElements, ...country];
+//   return myElements;
+// };
 
 /*
 ------------------------------------
