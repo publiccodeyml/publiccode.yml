@@ -31,7 +31,8 @@ const available_languages = ["ita", "eng", "fra", "zho"];
 const mapStateToProps = state => {
   return {
     notifications: state.notifications,
-    cache: state.cache
+    cache: state.cache,
+    form: state.form
   };
 };
 
@@ -39,7 +40,7 @@ const mapDispatchToProps = dispatch => {
   return {
     initialize: (name, data) => dispatch(initialize(name, data)),
     submit: name => dispatch(submit(name)),
-    notify: (type, data) => dispatch(notify(type, data)),
+    notify: data => dispatch(notify(data)),
     setVersions: data => dispatch(setVersions(data))
   };
 };
@@ -80,15 +81,29 @@ export default class Index extends Component {
     $('[ data-toggle="dropdown"]').dropdown();
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.initBootstrap();
-    this.init();
+    await this.initData();
   }
 
-  initData(country = null) {
-
-    let { elements, blocks } = getData(country);
+  async initData(country = null) {
+    let { elements, blocks, groups, countries } = await getData(country);
     this.setState({ elements, blocks, groups, countries, country });
+  }
+
+  parseYml(yaml) {
+    let obj = jsyaml.load(yaml);
+    that.setState({ yaml });
+    that.initialize(APP_FORM, null);
+
+    //TRANSFORM DATA BACK:
+    //- sgroup results
+    //- get summary x langs
+    //- popolate values
+    //- popolate formdata
+
+    //let formData = this.transform(obj);
+    // that.setState({ formData, yaml });
   }
 
   load(files) {
@@ -98,16 +113,7 @@ export default class Index extends Component {
     let { onLoad } = this.props;
     reader.onload = function() {
       let yaml = reader.result;
-
-      //TRANSFORM DATA BACK:
-      //- sgroup results
-      //- get summary x langs
-      //- popolate values
-      //- popolate formdata
-
-      let formData = jsyaml.load(yaml);
-      that.setState({ formData, yaml });
-      that.initialize(formData, null);
+      that.parseYml(yaml);
       document.getElementById("load_yaml").value = "";
     };
     reader.readAsText(files[0]);
@@ -158,7 +164,10 @@ export default class Index extends Component {
           <button
             type="button"
             className="btn btn-lg btn-primary"
-            onClick={() => this.props.submit(APP_FORM)}
+            onClick={() => {
+              this.props.submit(APP_FORM);
+              this.submitFeedback();
+            }}
           >
             Submit
           </button>
@@ -229,19 +238,9 @@ export default class Index extends Component {
   }
 
   countrySwitcher() {
-    let { country } = this.state;
-
+    let { country, countries } = this.state;
     return (
       <div className="country-switcher">
-        {country && (
-          <div
-            key={country}
-            className="country-switcher__item country-switcher__item--selected"
-          >
-            <a href="#">{country}</a>
-          </div>
-        )}
-
         <div className="dropdown">
           <button
             className="btn btn-secondary dropdown-toggle"
@@ -251,19 +250,20 @@ export default class Index extends Component {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Select Country
+            {country ? "Switch" : "Select"} Country
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="scroll">
-              {countries.map(c => (
-                <a
-                  key={c}
-                  className="dropdown-item"
-                  onClick={() => this.switchCountry(c)}
-                >
-                  {c}
-                </a>
-              ))}
+              {countries &&
+                countries.map(c => (
+                  <a
+                    key={c}
+                    className="dropdown-item"
+                    onClick={() => this.switchCountry(c)}
+                  >
+                    {c}
+                  </a>
+                ))}
             </div>
           </div>
         </div>
@@ -273,13 +273,27 @@ export default class Index extends Component {
 
   renderSidebar() {
     let { yaml, error, loading } = this.state;
-    console.log(error);
+    //console.log(error);
+
+    //let cn = error? "sidebar__error":"sidebar__code"
+    //: <i>{validator.isObject(error[e]) ? "" : error[e]}</i>
     return (
       <div className="sidebar">
         <div className="sidebar__title">
           File YAML {loading && <span className="loading">...</span>}
         </div>
 
+        {error && (
+          <div className="sidebar__error">
+            <ul>
+              {Object.keys(error).map((e, i) => (
+                <li key={i}>
+                  {e}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="sidebar__code">
           <pre>
             <code>{yaml}</code>
@@ -387,8 +401,45 @@ export default class Index extends Component {
     });
   }
 
+  submitFeedback() {
+    const { form } = this.props;
+    const myform = form[APP_FORM];
+    const errors = myform.syncErrors ? myform.syncErrors : null;
+    console.log("FEEDBACK", errors);
+
+    const type = errors ? _.keys(errors).length : 0;
+    const msg = errors ? "There are some errors" : "Success";
+    console.log(type, msg);
+
+    this.props.notify({
+      type,
+      title: "",
+      msg: errors ? "There are some errors" : "Success",
+      millis: 3000
+    });
+
+    // Scroll to first error
+
+    // if (errors) {
+    // let key = Object.keys(errors).reduce((k, l) => {
+    //   return document.getElementsByName(k)[0].offsetTop <
+    //     document.getElementsByName(l)[0].offsetTop
+    //     ? k
+    //     : l;
+    // });
+    //window.scrollTo(0, document.getElementsByName(k0)[0].offsetTop - 100);
+    // $("html, body").animate(
+    //   {
+    //     scrollTop: $(".has_error:visible:first").offset().top
+    //   },
+    //   500
+    // );
+    // }
+    this.setState({ error: errors });
+  }
+
   generate(formValues) {
-    let { values, currentLanguage } = this.state;
+    let { values, currentLanguage, groups, country } = this.state;
     values[currentLanguage] = formValues;
     let langs = Object.keys(values);
 
@@ -405,7 +456,13 @@ export default class Index extends Component {
 
     //GROUP FIELDS
     let obj = Object.assign({}, merge);
-    groups.forEach(group => {
+    let allGroups = groups;
+    if (country) {
+      allGroups = [...groups, country];
+    }
+    delete allGroups.summary;
+    console.log("ALL GROUPS", allGroups);
+    allGroups.forEach(group => {
       let sub = this.extractGroup(obj, group);
       if (sub) {
         obj = this.cleanupGroup(obj, group);
@@ -417,7 +474,8 @@ export default class Index extends Component {
     obj.summary = summary;
 
     //SET  TIMESTAMP
-    this.showResults(cleanDeep(obj));
+    //this.showResults(cleanDeep(obj));
+    this.showResults(obj);
   }
 
   showResults(values) {
@@ -465,7 +523,7 @@ export default class Index extends Component {
 
   validate(contents) {
     let errors = {};
-    let { values, currentLanguage, country, elements } = this.state;
+    let { values, currentLanguage, elements } = this.state;
 
     //CHECK REQUIRED FIELDS
 
@@ -479,7 +537,6 @@ export default class Index extends Component {
       } else {
         content = contents[field];
       }
-
       //REQUIRED BLOCKS
       if (!content) {
         if (obj.type == "array" && obj.items.type == "object") {
@@ -494,43 +551,46 @@ export default class Index extends Component {
     Object.keys(contents).map(field => {
       let obj = elements.find(item => item.title == field);
       let obj_values = contents[field];
-
       //VALIDATE ARRAY OF OBJS
-      if (
-        obj &&
-        obj.type === "array" &&
-        obj.items.type === "object" &&
-        obj.items.required &&
-        obj_values
-      ) {
-        let requiredFields = obj.items.required;
-        let members = obj_values;
-        let membersArrayErrors = [];
-        members.forEach((member, index) => {
-          let memberErrors = {};
-          requiredFields.forEach(rf => {
-            if (!member || !member[rf]) {
-              memberErrors[rf] = "Required";
-              membersArrayErrors[index] = memberErrors;
-            }
-          });
-        });
-        if (membersArrayErrors.length) {
-          errors[field] = membersArrayErrors;
-        }
+      if (!obj) {
+        console.log("skipped ", field);
       } else {
-        //VALIDATE SIMPLE FIELDS
-        let e = this.checkField(field, obj, obj_values, obj.required);
-        if (e) errors[field] = e;
+        if (
+          obj.type === "array" &&
+          obj.items.type === "object" &&
+          obj.items.required &&
+          obj_values
+        ) {
+          let requiredFields = obj.items.required;
+          let members = obj_values;
+          let membersArrayErrors = [];
+          members.forEach((member, index) => {
+            let memberErrors = {};
+            requiredFields.forEach(rf => {
+              if (!member || !member[rf]) {
+                memberErrors[rf] = "Required";
+                membersArrayErrors[index] = memberErrors;
+              }
+            });
+          });
+          if (membersArrayErrors.length) {
+            errors[field] = membersArrayErrors;
+          }
+        } else {
+          //VALIDATE SIMPLE FIELDS
+          let e = this.checkField(field, obj, obj_values, obj.required);
+          if (e) errors[field] = e;
+        }
       }
     });
 
+    //UPDATE STATUS
     values[currentLanguage] = contents;
     this.setState({
       currentValues: contents,
       values,
-      error: errors,
-      loading: true
+      loading: true,
+      error: null
     });
     this.fakeLoading();
 
@@ -626,7 +686,7 @@ export default class Index extends Component {
                   validate={this.validate.bind(this)}
                 />
               )}
-            {this.countrySwitcher()}
+            {currentLanguage && this.countrySwitcher()}
           </div>
           {currentLanguage && this.renderFoot()}
         </div>

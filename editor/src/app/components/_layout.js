@@ -17,8 +17,23 @@ export default class Layout extends Component {
       nextProps.notifications.item
     ) {
       let n = nextProps.notifications.item;
+      console.log("Notification", n);
+      let type = { n };
       let { title, msg, millis } = n;
-      this.refs.notificator.success(title, msg, millis);
+      if (type === 0)
+        this.refs.notificator.success(
+          title ? title : "",
+          msg,
+          millis ? millis : 3000
+        );
+      else
+        this.refs.notificator.error(
+          title ? title : "",
+          msg,
+          millis ? millis : 3000
+        );
+      //this.refs.notificator.success(title, msg, millis);
+      //else this.refs.notificator.error(title, msg, millis);
     }
   }
   render() {

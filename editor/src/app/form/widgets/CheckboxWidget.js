@@ -11,15 +11,16 @@ const renderInput = field => {
   return (
     <div className={className}>
       <div className="form-check">
-          <input
-            {...field.input}
-             className="form-check-input"
-            type="checkbox"
-            required={field.required}
-            id={"field-" + field.name}
-          />{" "}
+        <input
+          {...field.input}
+
+          className="form-check-input"
+          type="checkbox"
+          required={field.required}
+          id={"field-" + field.name}
+        />{" "}
         <label className="form-check-label">
-          {field.label}  {field.required ? "*" : ""}
+          {field.label} {field.required ? "*" : ""}
         </label>
       </div>
       {field.meta.touched &&
@@ -27,7 +28,7 @@ const renderInput = field => {
           <span className="help-block">{field.meta.error}</span>
         )}
       {field.description && (
-          <small className="form-text text-muted">{field.description}</small>
+        <small className="form-text text-muted">{field.description}</small>
       )}
     </div>
   );

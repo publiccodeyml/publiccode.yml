@@ -15,6 +15,26 @@ let softwareType_list = [
   "configurationFiles"
 ];
 
+export const sections = [
+  "Main information",
+  "Specification",
+  "Multimedia",
+  "Summary",
+  "Legal",
+  "Maintenance",
+  "Country Specific"
+];
+
+export const groups = [
+  "summary",
+  "maintenance",
+  "legal",
+  "intendedAudience",
+  "localisation"
+];
+
+export const countries = ["uk", "us", "it"];
+
 export const elems = [
   {
     title: "publiccodeYamlVersion",
@@ -585,12 +605,39 @@ export const elems = [
     cn: "block__item--full"
   }
 ];
-
+/*
+,
+  {
+    type: "array",
+    title: "country",
+    label: "Choose Country",
+    description: "chooose a country",
+    items: {
+      type: "string",
+      enum: ["it", "uk", "us"]
+    },
+    section: 6,
+    cn: "block__item--full"
+  }
+  */
 export const countryElems = [
   {
     code: "uk",
     name: "United Kingdom",
     elems: [
+      {
+        type: "array",
+        title: "platforms",
+        label: "Platforms",
+        description:
+          "Values: web, windows, mac, linux, ios, android. Human readable values outside this list are allowed",
+        examples: ["android", "ios"],
+        items: {
+          type: "string",
+          enum: ["web", "windows", "mac", "linux", "ios", "android"]
+        },
+        section: 1
+      },
       {
         title: "sample",
         label: "sample UK",
@@ -627,28 +674,34 @@ export const countryElems = [
         section: 6,
         group: "it",
         title: "conforme",
+        label: "Conforme",
         type: "object",
+        required: ["accessibile", "interoperabile", "sicuro", "privacy"],
         properties: {
           accessibile: {
             title: "accessibile",
+            label: "Accessibile",
             type: "boolean",
             description:
               "Se presente e impostato a yes, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design."
           },
           interoperabile: {
             title: "interoperabile",
+            label: "interoperabile",
             type: "boolean",
             description:
               "Se presente e impostato a yes, il software è conforme alle linee guida sull'interoperabilità.Riferimento normativo: Art. 73 del CAD."
           },
           sicuro: {
             title: "sicuro",
+            label: "Sicuro",
             type: "boolean",
             description:
               "Se presente e impostato a yes, il software è conforme alle Misure minime di sicurezza ICT per le Pubbliche amministrazioni."
           },
           privacy: {
             title: "privacy",
+            label: "Privacy",
             type: "boolean",
             description:
               "Se presente e impostato a yes, il software rispetta le linee guida del Garante per la protezione dei dati personali."
@@ -659,6 +712,7 @@ export const countryElems = [
         section: 6,
         group: "it",
         title: "spid",
+        label: "SPID",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con SPID - il Sistema Pubblico di Identità Digitale."
@@ -667,6 +721,7 @@ export const countryElems = [
         section: 6,
         group: "it",
         title: "cie",
+        label: "CIE",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con la Carta di Identità Elettronica."
@@ -675,6 +730,7 @@ export const countryElems = [
         section: 6,
         group: "it",
         title: "anpr",
+        label: "ANPR",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con ANPR."
@@ -683,6 +739,7 @@ export const countryElems = [
         section: 6,
         group: "it",
         title: "pagopa",
+        label: "PagoPA",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software si interfaccia con PagoPA."
@@ -705,3 +762,71 @@ let val = [
   "agricoltura",
   "italia-europa-mondo"
 ];
+
+/*
+------------------------------------
+# MAIN INFORMATION 0
+------------------------------------
+name
+applicationSuite
+summary_shortDescription
+publiccodeYamlVersion
+releaseDate
+legal_repoOwner
+landingURL
+isBasedOn
+tags
+
+------------------------------------
+# SPECIFICATION 1
+------------------------------------
+roadmap
+summary_documentation
+url
+softwareVersion
+developmentStatus
+softwareType
+inputTypes
+outputTypes
+platforms
+usedBy
+summary_featureList
+summary_freeTags
+
+------------------------------------
+# MULTIMEDIA 2
+------------------------------------
+summary_screenshots
+summary_videos
+logo
+monochromeLogo
+summary_localisedName
+summary_awards
+
+------------------------------------
+# SUMMARY 3
+------------------------------------
+summary_longDescription
+summary_apiDocumentation
+intendedAudience_onlyFor
+intendedAudience_countries
+intendedAudience_unsupportedCountries
+localisation_localisationReady
+localisation_availableLanguages
+dependsOn
+
+------------------------------------
+# LEGAL 4
+------------------------------------
+legal_license
+legal_mainCopyrightOwner
+legal_authorsFile
+
+------------------------------------
+# MAINTENANCE 5
+------------------------------------
+maintenance_type
+maintenance_contractors
+maintenance_contacts
+
+*/
