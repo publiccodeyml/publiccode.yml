@@ -1,38 +1,54 @@
-import { elems, countryElems, countries, groups, sections } from "./elems";
+import { fields, countrySpec, countries, groups, sections } from "./elems";
 
 export const getData = (countryCode = null) => {
-  return new Promise((resolve, reject) => {
-    console.log("GET DATA");
-    let allFields = elems;
-    let country = countryElems.find(c => c.code == countryCode);
-    if (country && country.elems) {
-      allFields = _.concat(elems, country.elems);
-    }
-    console.log("allFields", allFields.length);
+  //return new Promise((resolve, reject) => {
+  console.log("countryCode", countryCode);
+  const countryFields = getCountryElements(countryCode);
+  console.log("countryFields", countryFields);
 
-    let elements = [];
-    let blocks = sections.map((s, i) => {
-      // console.log(`section ${s} INDEX ${i}`);
-      let items = allFields.filter(obj => obj.section === i);
-      //add properties  to items
-      items = items.map(i => {
-        let group = i.group ? `${i.group}_` : "";
-        i.id = `${i.section}_${group}${i.title}`;
-        i.title = `${group}${i.title}`;
-        return i;
-      });
-      elements = _.concat(elements, items);
-      return {
-        title: s,
-        index: i + 1,
-        items
-      };
+  const allFields = getAllFields(fields, countryFields);
+  const blocks = generateBlocks(allFields);
+  const elements = generateElements(blocks);
+
+  const obj = { blocks, elements, groups, countries };
+  console.log(obj);
+  return obj;
+  //resolve(obj);
+  //});
+};
+
+const generateBlocks = allFields => {
+  return sections.map((s, i) => {
+    let fields = allFields.filter(obj => obj.section === i);
+    let items = fields.map(i => {
+      let prefix = i.group ? `${i.group}_` : "";
+      if (!i.title.includes(prefix)) i.title = `${prefix}${i.title}`;
+      return i;
     });
-
-    // if (countryCode && groups.indexOf(countryCode) < 0) {
-    //   console.log("AD GROUP", countryCode);
-    //   groups.push[countryCode];
-    // }
-    resolve({ elements, blocks, groups, countries });
+    // console.log("items", items);
+    return {
+      title: s,
+      index: i + 1,
+      items
+    };
   });
+};
+
+const generateElements = blocks => {
+  return blocks.reduce((merge, block) => {
+    merge = [...merge, ...block.items];
+    return merge;
+  }, []);
+};
+
+const getCountryElements = (countryCode = null) => {
+  let country = countrySpec.find(c => c.code == countryCode);
+  console.log("country", country);
+  if (country) return country.fields;
+  return null;
+};
+
+const getAllFields = (generic, countryFields = null) => {
+  if (countryFields) return [...generic, ...countryFields];
+  return generic;
 };

@@ -35,7 +35,7 @@ export const groups = [
 
 export const countries = ["uk", "us", "it"];
 
-export const elems = [
+export const fields = [
   {
     title: "publiccodeYamlVersion",
     label: "Publiccode Yaml Version",
@@ -620,11 +620,11 @@ export const elems = [
     cn: "block__item--full"
   }
   */
-export const countryElems = [
+export const countrySpec = [
   {
     code: "uk",
     name: "United Kingdom",
-    elems: [
+    fields: [
       {
         type: "array",
         title: "platforms",
@@ -653,7 +653,7 @@ export const countryElems = [
   {
     code: "us",
     name: "United States",
-    elems: [
+    fields: [
       {
         title: "sample",
         label: "sample USA",
@@ -669,7 +669,7 @@ export const countryElems = [
   {
     code: "it",
     name: "italia",
-    elems: [
+    fields: [
       {
         section: 6,
         group: "it",

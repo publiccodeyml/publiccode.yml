@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
-import { initialize, submit, reset } from "redux-form";
+import { initialize, submit } from "redux-form";
 import buildSyncValidation from "../form/buildSyncValidation";
 import { notify, clearNotifications } from "../store/notifications";
 import { saveYaml, setVersions } from "../store/cache";
@@ -20,6 +20,12 @@ import u from "updeep";
 import validator from "validator";
 import cleanDeep from "clean-deep";
 import Ajv from "ajv";
+
+import img_x from "../../asset/img/x.svg";
+import img_copy from "../../asset/img/copy.svg";
+import img_upload from "../../asset/img/upload.svg";
+import img_download from "../../asset/img/download.svg";
+
 //import available_languages from "../contents/langs";
 const ajv = new Ajv({
   errorDataPath: "property",
@@ -81,20 +87,20 @@ export default class Index extends Component {
     $('[ data-toggle="dropdown"]').dropdown();
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.initBootstrap();
-    await this.initData();
+    this.initData();
   }
 
-  async initData(country = null) {
-    let { elements, blocks, groups, countries } = await getData(country);
+  initData(country = null) {
+    let { elements, blocks, groups, countries } = getData(country);
     this.setState({ elements, blocks, groups, countries, country });
   }
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
-    that.setState({ yaml });
-    that.initialize(APP_FORM, null);
+    this.setState({ yaml });
+    this.initialize(APP_FORM, null);
 
     //TRANSFORM DATA BACK:
     //- sgroup results
@@ -104,6 +110,19 @@ export default class Index extends Component {
 
     //let formData = this.transform(obj);
     // that.setState({ formData, yaml });
+  }
+
+  reset() {
+    this.props.initialize(APP_FORM, null);
+    let values = Object.assign({}, this.state.values);
+    delete values[this.state.currentLanguage];
+    this.setState({
+      error: null,
+      yaml: null,
+      currentValues: null,
+      values
+    });
+    this.props.notify({ type: "info", msg: "Reset" });
   }
 
   load(files) {
@@ -149,12 +168,7 @@ export default class Index extends Component {
         <div className="content__foot_item">
           <button
             className="btn btn-lg btn-outline-primary"
-            onClick={() => {
-              this.props.initialize(APP_FORM, null);
-              let values = Object.assign({}, this.state.values);
-              delete values[this.state.currentLanguage];
-              this.setState({ yaml: null, currentValues: null, values });
-            }}
+            onClick={() => this.reset()}
           >
             Reset
           </button>
@@ -285,13 +299,12 @@ export default class Index extends Component {
 
         {error && (
           <div className="sidebar__error">
-            <ul>
-              {Object.keys(error).map((e, i) => (
-                <li key={i}>
-                  {e}
-                </li>
-              ))}
-            </ul>
+            {Object.keys(error).map((e, i) => (
+              <div key={i}>
+                <img src={img_x} />
+                {e}
+              </div>
+            ))}
           </div>
         )}
         <div className="sidebar__code">
@@ -303,8 +316,18 @@ export default class Index extends Component {
         <div className="sidebar__footer">
           <div className="sidebar__footer_item">
             <a href="#">
-              <span className="glyphicon glyphicon-copy" />
-              <span className="action" onClick={() => copy(yaml)}>
+              <img src={img_copy} alt="copy" />
+              <span
+                className="action"
+                onClick={() => {
+                  copy(yaml);
+                  this.props.notify({
+                    type: "info",
+                    title: "",
+                    msg: "Copied to clipboard"
+                  });
+                }}
+              >
                 Copy
               </span>
             </a>
@@ -316,21 +339,22 @@ export default class Index extends Component {
               style={{ display: "none" }}
               onChange={e => this.load(e.target.files)}
             />
-            {false && (
-              <a href="#">
-                <span className="glyphicon glyphicon-open-file" />
-                <span
-                  className="action"
-                  onClick={() => document.getElementById("load_yaml").click()}
-                >
-                  Upload
-                </span>
-              </a>
-            )}
+
+            <a href="#">
+              {false && <span className="glyphicon glyphicon-open-file" />}
+              <img src={img_upload} alt="upload" />
+              <span
+                className="action"
+                onClick={() => document.getElementById("load_yaml").click()}
+              >
+                Upload
+              </span>
+            </a>
           </div>
           <div className="sidebar__footer_item">
             <a href="#">
-              <span className="glyphicon glyphicon-save-file" />
+              {false && <span className="glyphicon glyphicon-save-file" />}
+              <img src={img_download} alt="dowload" />
               <span className="action" onClick={() => this.download(yaml)}>
                 Download
               </span>
@@ -403,18 +427,23 @@ export default class Index extends Component {
 
   submitFeedback() {
     const { form } = this.props;
+    let { yaml } = this.state;
     const myform = form[APP_FORM];
     const errors = myform.syncErrors ? myform.syncErrors : null;
     console.log("FEEDBACK", errors);
 
-    const type = errors ? _.keys(errors).length : 0;
+    const type = errors ? _.keys(errors).length : "success";
     const msg = errors ? "There are some errors" : "Success";
     console.log(type, msg);
+
+    if (errors) {
+      yaml = null;
+    }
 
     this.props.notify({
       type,
       title: "",
-      msg: errors ? "There are some errors" : "Success",
+      msg: errors ? "There are some errors" : "Generated",
       millis: 3000
     });
 
@@ -435,7 +464,7 @@ export default class Index extends Component {
     //   500
     // );
     // }
-    this.setState({ error: errors });
+    this.setState({ error: errors, yaml });
   }
 
   generate(formValues) {
@@ -539,7 +568,8 @@ export default class Index extends Component {
       }
       //REQUIRED BLOCKS
       if (!content) {
-        if (obj.type == "array" && obj.items.type == "object") {
+        //(obj.type == "array" && obj.items.type == "object")
+        if (obj.type == "object" || obj.type == "array") {
           errors[field] = { _error: "Required" };
         } else {
           errors[field] = "Required.";
@@ -553,8 +583,6 @@ export default class Index extends Component {
       let obj_values = contents[field];
       //VALIDATE ARRAY OF OBJS
       if (!obj) {
-        console.log("skipped ", field);
-      } else {
         if (
           obj.type === "array" &&
           obj.items.type === "object" &&
@@ -625,9 +653,9 @@ export default class Index extends Component {
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
-  async switchCountry(country) {
+  switchCountry(country) {
     let { currentValues } = this.state;
-    await this.initData(country);
+    this.initData(country);
     this.props.initialize(APP_FORM, currentValues);
   }
 

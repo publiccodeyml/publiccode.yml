@@ -18,22 +18,26 @@ export default class Layout extends Component {
     ) {
       let n = nextProps.notifications.item;
       console.log("Notification", n);
-      let type = { n };
-      let { title, msg, millis } = n;
-      if (type === 0)
+      let { type, title, msg, millis } = n;
+      if (type == "success") {
         this.refs.notificator.success(
           title ? title : "",
           msg,
-          millis ? millis : 3000
+          millis ? millis : 2000
         );
-      else
+      } else if (type == "info") {
+        this.refs.notificator.info(
+          title ? title : "",
+          msg,
+          millis ? millis : 2000
+        );
+      } else {
         this.refs.notificator.error(
           title ? title : "",
           msg,
           millis ? millis : 3000
         );
-      //this.refs.notificator.success(title, msg, millis);
-      //else this.refs.notificator.error(title, msg, millis);
+      }
     }
   }
   render() {
