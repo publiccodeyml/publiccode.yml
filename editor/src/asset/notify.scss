@@ -6,8 +6,8 @@
   align-items: flex-start;
   align-content: flex-start;
   position: fixed;
-  top: 60px;
-  left: 60px;
+  top: 35px;
+  right: 30%;
   z-index: 9000;
 }
 
@@ -16,6 +16,7 @@
   margin: 5px 10px;
   color: #fff;
   border-radius: 5px;
+  text-align: center;
 }
 
 .notify-item:hover {
@@ -26,18 +27,20 @@
 .notify-item > p {
   margin: 10px;
   opacity: 0.8;
-}
-
-.notify-item.success {
-  background-color: rgba(23, 23, 23, 0.7);
-}
-
-.notify-item.error {
-  background-color: rgba(203, 100, 94, 0.8);
+  text-align: center;
 }
 
 .notify-item.info {
-  background-color: rgba(33, 150, 243, 0.8);
+  background-color: rgba(0, 102, 204, 1);
+}
+
+.notify-item.success {
+  background-color: rgba(23, 23, 23, 0.9);
+}
+
+.notify-item.error {
+  background-color: rgb(232, 8, 0.9);
+  color: #fff;
 }
 
 .notify-title {

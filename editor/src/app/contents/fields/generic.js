@@ -1,4 +1,4 @@
-import tags from "./tags";
+import tags from "../tags";
 let tag_names = tags.map(t => t.tag);
 let tag_descrs = tags.map(t => t.descr);
 let developmentStatus_list = [
@@ -15,7 +15,7 @@ let softwareType_list = [
   "configurationFiles"
 ];
 
-export const elems = [
+const fields = [
   {
     title: "publiccodeYamlVersion",
     label: "Publiccode Yaml Version",
@@ -586,119 +586,4 @@ export const elems = [
   }
 ];
 
-export const countries = [
-  {
-    code: "uk",
-    name: "United Kingdom",
-    elems: [
-      {
-        title: "fake",
-        label: "Fake UK",
-        type: "string",
-        description:
-          "This key contains the fake version of the country specific subschema.",
-        section: 6,
-        required: true
-      }
-    ]
-  },
-  {
-    code: "us",
-    name: "United States",
-    elems: [
-      {
-        title: "fake",
-        label: "Fake USA",
-        type: "string",
-        description:
-          "This key contains the fake version of the country specific subschema.",
-        section: 6,
-        required: true
-      }
-    ]
-  },
-  {
-    code: "it",
-    name: "italia",
-    elems: [
-      {
-        section: 6,
-
-        title: "conforme",
-        type: "object",
-        properties: {
-          accessibile: {
-            title: "accessibile",
-            type: "boolean",
-            description:
-              "Se presente e impostato a yes, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design."
-          },
-          interoperabile: {
-            title: "interoperabile",
-            type: "boolean",
-            description:
-              "Se presente e impostato a yes, il software è conforme alle linee guida sull'interoperabilità.Riferimento normativo: Art. 73 del CAD."
-          },
-          sicuro: {
-            title: "sicuro",
-            type: "boolean",
-            description:
-              "Se presente e impostato a yes, il software è conforme alle Misure minime di sicurezza ICT per le Pubbliche amministrazioni."
-          },
-          privacy: {
-            title: "privacy",
-            type: "boolean",
-            description:
-              "Se presente e impostato a yes, il software rispetta le linee guida del Garante per la protezione dei dati personali."
-          }
-        }
-      },
-      {
-        section: 6,
-
-        title: "spid",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software si interfaccia con SPID - il Sistema Pubblico di Identità Digitale."
-      },
-      {
-        section: 6,
-
-        title: "cie",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software si interfaccia con la Carta di Identità Elettronica."
-      },
-      {
-        section: 6,
-
-        title: "anpr",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software si interfaccia con ANPR."
-      },
-      {
-        section: 6,
-        title: "pagopa",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software si interfaccia con PagoPA."
-      }
-    ]
-  }
-];
-
-let val = [
-  "sanita",
-  "welfare",
-  "finanza-pubblica",
-  "scuola",
-  "istruzione-superiore-ricerca",
-  "difesa-sicurezza-soccorso-legalita",
-  "giustizia",
-  "infrastruttura-logistica",
-  "sviluppo-sostenibilita",
-  "beni-culturali-turismo",
-  "agricoltura",
-  "italia-europa-mondo"
-];
+export default fields;
