@@ -99,17 +99,81 @@ export default class Index extends Component {
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
-    this.setState({ yaml, error: null });
-    this.initialize(APP_FORM, null);
+
+    console.log(obj);
 
     //TRANSFORM DATA BACK:
-    //- sgroup results
-    //- get summary x langs
-    //- popolate values
-    //- popolate formdata
 
-    //let formData = this.transform(obj);
-    // that.setState({ formData, yaml });
+    let { groups, countries } = this.state;
+    delete groups.summary;
+
+    //- for each country check if data
+    let countryCode = null;
+    countries.forEach(cc => {
+      if (obj[cc]) {
+        groups.push(cc);
+        countryCode = cc;
+      }
+    });
+    //- for each group get keys and readd with prefix
+    groups.forEach(group => {
+      if (obj[group]) {
+        Object.keys(obj[group]).forEach(k => {
+          obj[`${group}_${k}`] = obj[group][k];
+        });
+        delete obj[group];
+      }
+    });
+
+    //- get summary keys to detect langs
+    let lang_contents = {};
+    let langs = [];
+    if (obj.summary) {
+      Object.map(obj.summary).forEach(k => {
+        langs.push(k);
+        lang_contents[k] = {};
+        let lng = obj.summary[k];
+        //for each language, get fields prefix with summary group
+        Object.keys(lng).forEach(key => {
+          lang_contents[k][`summary_${key}`] = lng[key];
+        });
+      });
+    }
+    delete obj.summary;
+
+    let values = {};
+    let currentValues;
+    let currentLanguage;
+    let error = null;
+    //merge values per each language
+    if (langs) {
+      langs.forEach(lang => {
+        values[lang] = Object.assign({}, contents[lang], obj);
+      });
+      currentLanguage = langs[0];
+      currentValues = values[currentLanguage];
+    } else {
+      values = obj;
+      currentValues = obj;
+    }
+
+    console.log("VALUES", obj);
+
+    //TODO Remov fields not in list
+    let state = {
+      yaml,
+      error,
+      currentLanguage,
+      currentValues,
+      values,
+      country: countryCode
+    };
+    console.log(state);
+    //update state
+    this.setState(state);
+
+    //laod values
+    this.props.initialize(APP_FORM, currentValues);
   }
 
   reset() {
