@@ -99,7 +99,7 @@ export default class Index extends Component {
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
-    this.setState({ yaml });
+    this.setState({ yaml, error: null });
     this.initialize(APP_FORM, null);
 
     //TRANSFORM DATA BACK:
@@ -127,6 +127,17 @@ export default class Index extends Component {
 
   load(files) {
     console.log("LOAD", files);
+    if (!files || !files[0]) {
+      this.props.notify({ type: 1, msg: "File not found" });
+      return;
+    }
+    let ext = files[0].name.split(".")[1];
+
+    if (ext != "yml") {
+      this.props.notify({ type: 1, msg: "File type not supported" });
+      return;
+    }
+
     const reader = new FileReader();
     const that = this;
     let { onLoad } = this.props;
