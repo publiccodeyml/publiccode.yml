@@ -1,4 +1,4 @@
-publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+publiccodeYamlVersion: "http://w3id.org/publiccode/version/0.2"
 
 name: Medusa
 applicationSuite: MegaProductivitySuite
@@ -92,7 +92,7 @@ maintenance:
 
   contractors:
     - name: "Fornitore Privato SPA"
-      website: "https://privatecompany.com"
+      url: "https://privatecompany.com"
       until: "2019-01-01"
 
   contacts:
