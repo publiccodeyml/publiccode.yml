@@ -481,10 +481,8 @@ export default class Index extends Component {
   parseSummary(data) {
     if (!data.summary) return null;
     let { summary } = data;
-
     let languages = Object.keys(summary);
     let currentLanguage = languages[0];
-
     //this.setState({languages})
   }
 
@@ -505,8 +503,6 @@ export default class Index extends Component {
     let { yaml } = this.state;
     const myform = form[APP_FORM];
     const errors = myform.syncErrors ? myform.syncErrors : null;
-    console.log("FEEDBACK", errors);
-
     const type = errors ? _.keys(errors).length : "success";
     const msg = errors ? "There are some errors" : "Success";
     console.log(type, msg);
@@ -565,7 +561,6 @@ export default class Index extends Component {
       allGroups = [...groups, country];
     }
     delete allGroups.summary;
-    console.log("ALL GROUPS", allGroups);
     allGroups.forEach(group => {
       let sub = this.extractGroup(obj, group);
       if (sub) {
@@ -578,8 +573,8 @@ export default class Index extends Component {
     obj.summary = summary;
 
     //SET  TIMESTAMP
-    //this.showResults(cleanDeep(obj));
-    this.showResults(obj);
+    this.showResults(cleanDeep(obj));
+    //this.showResults(obj);
   }
 
   showResults(values) {

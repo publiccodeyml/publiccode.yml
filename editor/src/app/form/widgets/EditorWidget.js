@@ -9,8 +9,11 @@ const emptyVal = RichTextEditor.createEmptyValue();
 class MyEditor extends Component {
   constructor(props) {
     super(props);
-    //let value = this.props.value  ? RichTextEditor.createValueFromString(this.props.val, "html") : emptyVal;
+    //let value = this.props.value  ? RichTextEditor.createValueFromString(this.props.value, "html") : emptyVal;
     let value = emptyVal;
+    if (this.props.value) {
+      value = RichTextEditor.createValueFromString(this.props.value, "html");
+    }
     this.state = {
       value
     };
@@ -28,12 +31,12 @@ class MyEditor extends Component {
   componentWillReceiveProps(next) {
     if (!next.value) {
       this.setState({ value: emptyVal });
-    } else {
-      let html = RichTextEditor.createValueFromString(next.value, "html");
-      if (html._cache.html != this.state.value._cache.html) {
-        // console.log("TRANSFORMED", html, "STATE", this.state.value);
-        this.setState({ value: html });
-      }
+      // } else {
+      //   let html = RichTextEditor.createValueFromString(next.value, "html");
+      //   if (html._cache.html != this.state.value._cache.html) {
+      //     console.log("TRANSFORMED", html, "STATE", this.state.value);
+      //     this.setState({ value: html });
+      //   }
     }
   }
 
