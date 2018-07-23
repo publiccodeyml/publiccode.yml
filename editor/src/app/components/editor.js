@@ -99,16 +99,10 @@ export default class Index extends Component {
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
-
     //TRANSFORM DATA BACK:
-
     let { groups, available_countries } = this.state;
-    console.log("groups 0", groups);
-
     let index = groups.indexOf("summary");
     if (index !== -1) groups.splice(index, 1);
-
-    console.log("groups 1", groups);
     //- for each country check if data
     let country = null;
     available_countries.forEach(cc => {
@@ -117,9 +111,6 @@ export default class Index extends Component {
         country = cc;
       }
     });
-    console.log("groups 2", groups);
-    console.log("country", country);
-
     //- for each group get keys and readd with prefix
     groups.forEach(group => {
       if (obj[group]) {
@@ -129,25 +120,23 @@ export default class Index extends Component {
         delete obj[group];
       }
     });
-
     //- get summary keys to detect langs
     let lang_contents = {};
     let languages = [];
     if (obj.summary) {
       console.log("summary ", obj.summary);
 
-      Object.keys(obj.summary).forEach(k => {
-        languages.push(k);
-        lang_contents[k] = {};
-        let lng = obj.summary[k];
+      Object.keys(obj.summary).forEach(language_key => {
+        languages.push(language_key);
+        lang_contents[language_key] = {};
+        let lng = obj.summary[language_key];
         //for each language, get fields prefix with summary group
         Object.keys(lng).forEach(key => {
-          lang_contents[k][`summary_${key}`] = lng[key];
+          lang_contents[language_key][`summary_${key}`] = lng[key];
         });
       });
     }
     delete obj.summary;
-
     console.log("languages", languages);
     console.log("lang_contents", lang_contents);
 
