@@ -100,8 +100,6 @@ export default class Index extends Component {
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
 
-    //console.log(obj);
-
     //TRANSFORM DATA BACK:
 
     let { groups, available_countries } = this.state;
@@ -134,12 +132,12 @@ export default class Index extends Component {
 
     //- get summary keys to detect langs
     let lang_contents = {};
-    let langs = [];
+    let languages = [];
     if (obj.summary) {
       console.log("summary ", obj.summary);
 
       Object.keys(obj.summary).forEach(k => {
-        langs.push(k);
+        languages.push(k);
         lang_contents[k] = {};
         let lng = obj.summary[k];
         //for each language, get fields prefix with summary group
@@ -150,7 +148,7 @@ export default class Index extends Component {
     }
     delete obj.summary;
 
-    console.log("langs", langs);
+    console.log("languages", languages);
     console.log("lang_contents", lang_contents);
 
     let currentValues;
@@ -159,11 +157,11 @@ export default class Index extends Component {
     //merge values per each language
     let values = {};
 
-    if (langs) {
-      langs.forEach(lang => {
+    if (languages) {
+      languages.forEach(lang => {
         values[lang] = Object.assign(obj, lang_contents[lang]);
       });
-      currentLanguage = "" + langs[0];
+      currentLanguage = "" + languages[0];
       currentValues = Object.assign({}, values[currentLanguage]);
     } else {
       values = Object.assign({}, obj);
@@ -183,7 +181,8 @@ export default class Index extends Component {
       currentLanguage,
       currentValues,
       values,
-      country
+      country,
+      languages
     };
     console.log("STATE", state);
     //update state
