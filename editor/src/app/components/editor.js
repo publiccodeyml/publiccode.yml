@@ -26,13 +26,13 @@ import img_copy from "../../asset/img/copy.svg";
 import img_upload from "../../asset/img/upload.svg";
 import img_download from "../../asset/img/download.svg";
 
+const available_languages = ["ita", "eng", "fra", "zho"];
 //import available_languages from "../contents/langs";
 const ajv = new Ajv({
   errorDataPath: "property",
   allErrors: true,
   jsonPointers: false
 });
-const available_languages = ["ita", "eng", "fra", "zho"];
 
 const mapStateToProps = state => {
   return {
@@ -93,28 +93,35 @@ export default class Index extends Component {
   }
 
   initData(country = null) {
-    let { elements, blocks, groups, countries } = getData(country);
-    this.setState({ elements, blocks, groups, countries, country });
+    let { elements, blocks, groups, available_countries } = getData(country);
+    this.setState({ elements, blocks, groups, available_countries, country });
   }
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
 
-    console.log(obj);
+    //console.log(obj);
 
     //TRANSFORM DATA BACK:
 
-    let { groups, countries } = this.state;
-    delete groups.summary;
+    let { groups, available_countries } = this.state;
+    console.log("groups 0", groups);
 
+    let index = groups.indexOf("summary");
+    if (index !== -1) groups.splice(index, 1);
+
+    console.log("groups 1", groups);
     //- for each country check if data
-    let countryCode = null;
-    countries.forEach(cc => {
+    let country = null;
+    available_countries.forEach(cc => {
       if (obj[cc]) {
         groups.push(cc);
-        countryCode = cc;
+        country = cc;
       }
     });
+    console.log("groups 2", groups);
+    console.log("country", country);
+
     //- for each group get keys and readd with prefix
     groups.forEach(group => {
       if (obj[group]) {
@@ -129,7 +136,9 @@ export default class Index extends Component {
     let lang_contents = {};
     let langs = [];
     if (obj.summary) {
-      Object.map(obj.summary).forEach(k => {
+      console.log("summary ", obj.summary);
+
+      Object.keys(obj.summary).forEach(k => {
         langs.push(k);
         lang_contents[k] = {};
         let lng = obj.summary[k];
@@ -141,39 +150,46 @@ export default class Index extends Component {
     }
     delete obj.summary;
 
-    let values = {};
+    console.log("langs", langs);
+    console.log("lang_contents", lang_contents);
+
     let currentValues;
     let currentLanguage;
     let error = null;
     //merge values per each language
+    let values = {};
+
     if (langs) {
       langs.forEach(lang => {
-        values[lang] = Object.assign({}, contents[lang], obj);
+        values[lang] = Object.assign(obj, lang_contents[lang]);
       });
-      currentLanguage = langs[0];
-      currentValues = values[currentLanguage];
+      currentLanguage = "" + langs[0];
+      currentValues = Object.assign({}, values[currentLanguage]);
     } else {
-      values = obj;
-      currentValues = obj;
+      values = Object.assign({}, obj);
+      currentValues = Object.assign({}, obj);
     }
 
-    console.log("VALUES", obj);
+    console.log("VALUES", values);
+    console.log("currentLanguage", currentLanguage);
+    console.log("currentValues", currentValues);
 
-    //TODO Remov fields not in list
+    this.props.initialize(APP_FORM, currentValues);
+
+    //TODO Remove fields not in list
     let state = {
       yaml,
       error,
       currentLanguage,
       currentValues,
       values,
-      country: countryCode
+      country
     };
-    console.log(state);
+    console.log("STATE", state);
     //update state
     this.setState(state);
 
     //laod values
-    this.props.initialize(APP_FORM, currentValues);
   }
 
   reset() {
@@ -327,7 +343,7 @@ export default class Index extends Component {
   }
 
   countrySwitcher() {
-    let { country, countries } = this.state;
+    let { country, available_countries } = this.state;
     return (
       <div className="country-switcher">
         <div className="dropdown">
@@ -343,8 +359,8 @@ export default class Index extends Component {
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="scroll">
-              {countries &&
-                countries.map(c => (
+              {available_countries &&
+                available_countries.map(c => (
                   <a
                     key={c}
                     className="dropdown-item"
@@ -639,7 +655,7 @@ export default class Index extends Component {
       //REQUIRED BLOCKS
       if (!content) {
         //(obj.type == "array" && obj.items.type == "object")
-        if (obj.type == "object" || obj.type == "array") {
+        if (obj && (obj.type == "object" || obj.type == "array")) {
           errors[field] = { _error: "Required" };
         } else {
           errors[field] = "Required.";
@@ -652,7 +668,7 @@ export default class Index extends Component {
       let obj = elements.find(item => item.title == field);
       let obj_values = contents[field];
       //VALIDATE ARRAY OF OBJS
-      if (!obj) {
+      if (obj) {
         if (
           obj.type === "array" &&
           obj.items.type === "object" &&

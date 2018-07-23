@@ -1,13 +1,13 @@
 import data from "./fields";
-const { fields, sections, groups, countries, countrySpec } = data;
+const { fields, sections, groups, available_countries, countrySpec } = data;
+
 export const getData = (countryCode = null) => {
   //return new Promise((resolve, reject) => {
   const countryFields = getCountryElements(countryCode);
   const allFields = getAllFields(fields, countryFields);
   const blocks = generateBlocks(allFields);
   const elements = generateElements(blocks);
-  const obj = { blocks, elements, groups, countries };
-  console.log(obj);
+  const obj = { blocks, elements, groups, available_countries };
   return obj;
   //resolve(obj);
   //});

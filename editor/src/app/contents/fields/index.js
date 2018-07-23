@@ -38,16 +38,17 @@ const countrySpec = [
     fields: it
   }
 ];
-const countries = countrySpec.map(country => country.code);
+const available_countries = countrySpec.map(country => country.code);
 
 const data = {
   fields,
   countrySpec,
   sections,
   groups,
-  countries
+  available_countries
 };
 export default data;
+
 /*
 ------------------------------------
 # MAIN INFORMATION 0
