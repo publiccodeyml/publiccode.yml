@@ -112,7 +112,7 @@ export default class Index extends Component {
       }
     });
     //- for each group get keys and readd with prefix
-    groups.forEach(group => {
+    groups.map(group => {
       if (obj[group]) {
         Object.keys(obj[group]).forEach(k => {
           obj[`${group}_${k}`] = obj[group][k];
@@ -121,63 +121,68 @@ export default class Index extends Component {
       }
     });
     //- get summary keys to detect langs
-    let lang_contents = {};
+    let values = {};
     let languages = [];
     if (obj.summary) {
       console.log("summary ", obj.summary);
-
-      Object.keys(obj.summary).forEach(language_key => {
+      Object.keys(obj.summary).map(language_key => {
         languages.push(language_key);
-        lang_contents[language_key] = {};
+        values[language_key] = {};
         let lng = obj.summary[language_key];
         //for each language, get fields prefix with summary group
-        Object.keys(lng).forEach(key => {
-          lang_contents[language_key][`summary_${key}`] = lng[key];
+        Object.keys(lng).map(key => {
+          values[language_key][`summary_${key}`] = lng[key];
         });
       });
     }
     delete obj.summary;
     console.log("languages", languages);
-    console.log("lang_contents", lang_contents);
+    console.log("values 0", values);
 
-    let currentValues;
-    let currentLanguage;
-    let error = null;
     //merge values per each language
-    let values = {};
 
     if (languages) {
+      // languages.map(lang => {
+      //   values[lang] = Object.assign(lang_contents[lang], obj);
+      // });
+
       languages.forEach(lang => {
-        values[lang] = Object.assign(obj, lang_contents[lang]);
+        values[lang] = u(obj, values[lang]);
       });
-      currentLanguage = "" + languages[0];
-      currentValues = Object.assign({}, values[currentLanguage]);
+      console.log("VALUES 1", values);
     } else {
       values = Object.assign({}, obj);
-      currentValues = Object.assign({}, obj);
     }
 
-    console.log("VALUES", values);
-    console.log("currentLanguage", currentLanguage);
-    console.log("currentValues", currentValues);
+    let error = null;
+    let currentValues = null;
+    let currentLanguage = languages ? languages[0] : null;
+    if (currentLanguage) currentValues = values[currentLanguage];
 
-    this.props.initialize(APP_FORM, currentValues);
+    console.log("VALUES 2", values);
 
     //TODO Remove fields not in list
-    let state = {
+    //update state
+
+    this.setState({
       yaml,
       error,
-      currentLanguage,
-      currentValues,
-      values,
-      country,
-      languages
-    };
-    console.log("STATE", state);
-    //update state
-    this.setState(state);
+      languages,
+      values
+    });
 
     //laod values
+    // if (country) {
+    //   this.switchCountry(country);
+    // } else {
+    //this.props.initialize(APP_FORM, currentValues);
+    // }
+
+    this.switchLang(currentLanguage);
+    if (country) this.switchCountry(country);
+
+    console.log("VALUES 3", values);
+    console.log("FINE");
   }
 
   reset() {
