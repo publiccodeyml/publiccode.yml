@@ -13,7 +13,7 @@ const renderInput = field => {
       <div className="form-check">
         <input
           {...field.input}
-
+          defaultChecked={field.value}
           className="form-check-input"
           type="checkbox"
           required={field.required}

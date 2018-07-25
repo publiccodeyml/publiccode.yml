@@ -366,6 +366,7 @@ const fields = [
     type: "array",
     items: {
       type: "string",
+      title: "tag",
       enum: tag_names,
       enum_titles: tag_descrs
     },

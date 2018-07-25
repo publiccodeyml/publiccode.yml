@@ -4,6 +4,8 @@ import { DefaultTheme as Widgets } from "../form";
 import { APP_FORM } from "../contents/constants";
 import renderField from "../form/renderField";
 
+import Collapse, { Panel } from "rc-collapse";
+
 const guessWidget = (fieldSchema, theme) => {
   if (fieldSchema.widget) {
     return fieldSchema.widget;
@@ -42,23 +44,63 @@ const renderBlockItems = (items, id) => {
   });
 };
 
-const renderBlocks = blocks => {
-  return blocks.map((block, i) => (
-    <div className="block__wrapper" key={`block_${i}`}>
-      <div className="block_heading">
-        <div className="block_heading_oval">{block.index}</div>
-        <div className="block_heading_title">{block.title}</div>
-      </div>
-      <div className="block">{renderBlockItems(block.items, i)}</div>
-    </div>
-  ));
+// const renderBlocks = blocks => {
+//   return blocks.map((block, i) => (
+//     <div className="block__wrapper" key={`block_${i}`}>
+//       <div className="block_heading">
+//         <div className="block_heading_oval">{block.index}</div>
+//         <div className="block_heading_title">{block.title}</div>
+//       </div>
+//       <div className="block collapse" data-parent="#accordion">
+//         {renderBlockItems(block.items, i)}
+//       </div>
+//     </div>
+//   ));
+// };
+
+const renderBlocks = (blocks, activeSection) => {
+  return blocks.map((block, i) => {
+    let cn = activeSection == i ? "block_heading--active" : null;
+    return (
+      <Panel
+        className="block__wrapper"
+        key={i}
+
+        header={`${block.index}. ${block.title}`}
+      >
+        <div className="block">{renderBlockItems(block.items, i)}</div>
+      </Panel>
+    );
+  });
 };
 
 const EditForm = props => {
-  const { handleSubmit, pristine, reset, submitting, data, error } = props;
+  const {
+    handleSubmit,
+    pristine,
+    reset,
+    submitting,
+    data,
+    error,
+    activeSection
+  } = props;
+
+  let params = {
+    accordion: true,
+    defaultActiveKey: "0"
+  };
+
+  if (activeSection) {
+    params.activeKey = activeSection == -1 ? null : activeSection;
+  }
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>{renderBlocks(data)}</form>
+      <form onSubmit={handleSubmit}>
+        <Collapse onChange={props.onAccordion} {...params}>
+          {renderBlocks(data, activeSection)}
+        </Collapse>
+      </form>
       {error && <strong>{error}</strong>}
     </div>
   );

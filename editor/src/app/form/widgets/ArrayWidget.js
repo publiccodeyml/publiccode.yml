@@ -53,7 +53,9 @@ const renderInput = field => {
 
   return (
     <div className={className}>
-      <legend className="control-label">{field.label}</legend>
+      <legend className="control-label">
+        {field.label} {field.schema.required ? "*" : ""}
+      </legend>
       {field.meta.submitFailed &&
         field.meta.error && (
           <div className="help-block">{field.meta.error}</div>
