@@ -82,7 +82,7 @@ export default class Index extends Component {
   }
 
   initBootstrap() {
-    $('[data-toggle="tooltip"]').tooltip();
+    // $('[data-toggle="tooltip"]').tooltip();
     // $('[data-toggle="popover"]').popover();
     // $('[data-toggle="collapse"]').collapse();
     $('[data-toggle="dropdown"]').dropdown();

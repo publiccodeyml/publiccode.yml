@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { Field } from "redux-form";
+import Info from "./Info";
 
 const zipObject = (props, values) =>
   props.reduce(
@@ -24,17 +25,15 @@ const renderChoice = field => {
       </label>
       {Object.entries(selectOptions).map(([value, name]) => (
         <div className="form-check" key={value}>
-            <input
-              className="form-check-input"
-              type="radio"
-              name={field.input.name}
-              value={value}
-              checked={field.input.value === value}
-              onChange={e => field.input.onChange(value)}
-            />
-          <label className="form-check-label">
-            {name}
-          </label>
+          <input
+            className="form-check-input"
+            type="radio"
+            name={field.input.name}
+            value={value}
+            checked={field.input.value === value}
+            onChange={e => field.input.onChange(value)}
+          />
+          <label className="form-check-label">{name}</label>
         </div>
       ))}
 
@@ -42,9 +41,7 @@ const renderChoice = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && (
-          <small className="form-text text-muted">{field.description}</small>
-      )}
+      {field.description && <Info description={field.description} />}
     </div>
   );
 };

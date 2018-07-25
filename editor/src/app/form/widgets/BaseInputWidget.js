@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { Field } from "redux-form";
 import Info from "./Info";
 
-// required={field.required}
 const renderInput = field => {
   const className = classNames([
     "form-group",

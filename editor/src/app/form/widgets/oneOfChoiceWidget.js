@@ -4,7 +4,8 @@ import classNames from "classnames";
 import { change } from "redux-form";
 import { connect } from "react-redux";
 import renderField from "../renderField";
-import { map as _map} from "lodash";
+import { map as _map } from "lodash";
+import Info from "./Info";
 
 class OneOfChoiceWidget extends Component {
   constructor(props) {
@@ -43,9 +44,7 @@ class OneOfChoiceWidget extends Component {
           })}
         </select>
         <div>{this.renderOption()}</div>
-        {field.description && (
-          <span className="help-block">{field.description}</span>
-        )}
+        {field.description && <Info description={field.description} />}
       </div>
     );
   }

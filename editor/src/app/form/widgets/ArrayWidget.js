@@ -5,6 +5,7 @@ import { FieldArray } from "redux-form";
 import { times as _times } from "lodash";
 import ChoiceWidget from "./ChoiceWidget";
 import classNames from "classnames";
+import Info from "./Info";
 
 const renderArrayFields = (
   count,
@@ -74,6 +75,7 @@ const renderInput = field => {
       <a href="#" className="link" onClick={() => field.fields.push()}>
         Add new
       </a>
+      {field.description && <Info description={field.description} />}
     </div>
   );
 };

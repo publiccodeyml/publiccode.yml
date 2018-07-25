@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import { zipObject as _zipObject, map as _map } from "lodash";
+import Info from "./Info";
 
 const renderSelect = field => {
   const className = classNames([
@@ -45,11 +46,7 @@ const renderSelect = field => {
           <div className="help-block">{field.meta.error}</div>
         )}
 
-      {field.description && (
-
-          <small className="form-text text-muted">{field.description}</small>
-
-      )}
+      {field.description && <Info description={field.description} />}
     </div>
   );
 };
