@@ -1,34 +1,11 @@
 $content-pad-horiz: 2em;
 $content-head-h: 120px;
 
-.language-switcher {
-  display: flex;
-  border-bottom: 1px solid #e8e8e8;
-  margin-bottom: 20px;
-  display: flex;
-  padding: 0 $content-pad-horiz;
-}
-
-.language-switcher__item {
-  font-size: 24px;
-  color: #0066cc;
-  margin-right: 10px;
-  height: 70px;
-  width: 150px;
-  text-align: center;
-
-  .glyphicon {
-    font-size: 15px;
-    margin-left:10px;
-    color: #111;
+.field_info {
+  span {
+    margin-right: 5px;
   }
 }
-
-.language-switcher__item--selected {
-  border-bottom: 1px solid #0066cc;
-}
-
-
 
 .content__head {
   padding: 0 $content-pad-horiz;

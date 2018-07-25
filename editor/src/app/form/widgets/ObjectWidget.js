@@ -5,7 +5,11 @@ import renderFields from "../renderFields";
 const Widget = props => {
   return (
     <div className="block">
-      {props.label && <legend className='control-label'>{props.label}</legend>}
+      {props.label && (
+        <legend className="control-label">
+          {props.label} {props.schema.required ? "*" : ""}
+        </legend>
+      )}
       {renderFields(
         props.schema,
         props.theme,

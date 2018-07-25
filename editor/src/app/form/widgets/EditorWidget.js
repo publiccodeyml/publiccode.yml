@@ -3,36 +3,49 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import RichTextEditor from "react-rte";
+import Info from "./Info";
 
 const emptyVal = RichTextEditor.createEmptyValue();
 
 class MyEditor extends Component {
   constructor(props) {
     super(props);
-    //let value = this.props.value  ? RichTextEditor.createValueFromString(this.props.val, "html") : emptyVal;
-    let value = emptyVal;
+    //let value = this.props.value  ? RichTextEditor.createValueFromString(this.props.value, "html") : emptyVal;
+    let text = emptyVal;
+    if (this.props.value) {
+      text = RichTextEditor.createValueFromString(this.props.value, "html");
+    }
     this.state = {
-      value
+      text,
+      reset: false
     };
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(value) {
-    this.setState({ value });
+  onChange(val) {
+    let { text } = this.state;
+    console.log("onChange");
     if (this.props.onChange) {
-      if (value == null) this.props.onChange("");
-      else this.props.onChange(value.toString("html"));
+      if (val == null) this.props.onChange("");
+      else this.props.onChange(val.toString("html"));
     }
+
+    this.setState({ text: val });
   }
 
   componentWillReceiveProps(next) {
     if (!next.value) {
-      this.setState({ value: emptyVal });
+      console.log("RESET  ");
+      this.setState({ text: emptyVal, reset: true });
     } else {
-      let html = RichTextEditor.createValueFromString(next.value, "html");
-      if (html._cache.html != this.state.value._cache.html) {
-        // console.log("TRANSFORMED", html, "STATE", this.state.value);
-        this.setState({ value: html });
+      if (next.pristine && next.initial) {
+        console.log("INITIAL  ");
+
+        let next_html = RichTextEditor.createValueFromString(
+          next.initial,
+          "html"
+        );
+        this.setState({ text: next_html });
       }
     }
   }
@@ -41,7 +54,7 @@ class MyEditor extends Component {
     return (
       <RichTextEditor
         className="RichTextEditor"
-        value={this.state.value}
+        value={this.state.text}
         onChange={this.onChange}
       />
     );
@@ -59,8 +72,9 @@ const renderInput = field => {
       <label className="control-label" htmlFor={"field-" + field.name}>
         {field.label} {field.required ? "*" : ""}
       </label>
-
       <MyEditor
+        pristine={field.meta.pristine}
+        initial={field.meta.initial}
         {...field.input}
         className="form-control RichTextEditor"
         id={"field-" + field.fieldName}
@@ -71,9 +85,7 @@ const renderInput = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && (
-        <small className="form-text text-muted">{field.description}</small>
-      )}
+      {field.description && <Info description={field.description} />}
     </div>
   );
 };

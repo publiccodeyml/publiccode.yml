@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import DateSelector from "./DateSelector";
+import Info from "./Info";
 
 // produces an array [start..end-1]
 const range = (start, end) =>
@@ -162,9 +163,7 @@ class CompatibleDateTime extends React.Component {
           field.meta.error && (
             <span className="help-block">{field.meta.error}</span>
           )}
-        {field.description && (
-          <span className="help-block">{field.description}</span>
-        )}
+        {field.description && <Info description={field.description} />}
       </div>
     );
   }

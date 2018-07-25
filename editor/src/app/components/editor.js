@@ -25,14 +25,15 @@ import img_x from "../../asset/img/x.svg";
 import img_copy from "../../asset/img/copy.svg";
 import img_upload from "../../asset/img/upload.svg";
 import img_download from "../../asset/img/download.svg";
+import img_dots from "../../asset/img/dots.svg";
 
+const available_languages = ["ita", "eng", "fra", "zho"];
 //import available_languages from "../contents/langs";
 const ajv = new Ajv({
   errorDataPath: "property",
   allErrors: true,
   jsonPointers: false
 });
-const available_languages = ["ita", "eng", "fra", "zho"];
 
 const mapStateToProps = state => {
   return {
@@ -67,7 +68,6 @@ export default class Index extends Component {
     this.state = {
       search: null,
       yaml: null,
-      formData: null,
       loading: false,
       languages: [],
       values: {},
@@ -76,7 +76,8 @@ export default class Index extends Component {
       country: null,
       error: null,
       blocks: null,
-      elements: null
+      elements: null,
+      activeSection: 0
     };
   }
 
@@ -84,39 +85,35 @@ export default class Index extends Component {
     // $('[data-toggle="tooltip"]').tooltip();
     // $('[data-toggle="popover"]').popover();
     // $('[data-toggle="collapse"]').collapse();
-    $('[ data-toggle="dropdown"]').dropdown();
+    $('[data-toggle="dropdown"]').dropdown();
   }
 
   componentDidMount() {
-    this.initBootstrap();
     this.initData();
   }
 
   initData(country = null) {
-    let { elements, blocks, groups, countries } = getData(country);
-    this.setState({ elements, blocks, groups, countries, country });
+    let { elements, blocks, groups, available_countries } = getData(country);
+    this.setState({ elements, blocks, groups, available_countries, country });
+    this.initBootstrap();
   }
 
   parseYml(yaml) {
     let obj = jsyaml.load(yaml);
-
-    console.log(obj);
-
     //TRANSFORM DATA BACK:
-
-    let { groups, countries } = this.state;
-    delete groups.summary;
-
+    let { groups, available_countries } = this.state;
+    let index = groups.indexOf("summary");
+    if (index !== -1) groups.splice(index, 1);
     //- for each country check if data
-    let countryCode = null;
-    countries.forEach(cc => {
+    let country = null;
+    available_countries.forEach(cc => {
       if (obj[cc]) {
         groups.push(cc);
-        countryCode = cc;
+        country = cc;
       }
     });
     //- for each group get keys and readd with prefix
-    groups.forEach(group => {
+    groups.map(group => {
       if (obj[group]) {
         Object.keys(obj[group]).forEach(k => {
           obj[`${group}_${k}`] = obj[group][k];
@@ -124,69 +121,80 @@ export default class Index extends Component {
         delete obj[group];
       }
     });
-
     //- get summary keys to detect langs
-    let lang_contents = {};
-    let langs = [];
+    let values = {};
+    let languages = [];
     if (obj.summary) {
-      Object.map(obj.summary).forEach(k => {
-        langs.push(k);
-        lang_contents[k] = {};
-        let lng = obj.summary[k];
+      console.log("summary ", obj.summary);
+      Object.keys(obj.summary).map(language_key => {
+        languages.push(language_key);
+        values[language_key] = {};
+        let lng = obj.summary[language_key];
         //for each language, get fields prefix with summary group
-        Object.keys(lng).forEach(key => {
-          lang_contents[k][`summary_${key}`] = lng[key];
+        Object.keys(lng).map(key => {
+          values[language_key][`summary_${key}`] = lng[key];
         });
       });
     }
     delete obj.summary;
+    console.log("languages", languages);
+    console.log("values 0", values);
 
-    let values = {};
-    let currentValues;
-    let currentLanguage;
-    let error = null;
     //merge values per each language
-    if (langs) {
-      langs.forEach(lang => {
-        values[lang] = Object.assign({}, contents[lang], obj);
+    if (languages) {
+      languages.forEach(lang => {
+        values[lang] = u(obj, values[lang]);
       });
-      currentLanguage = langs[0];
-      currentValues = values[currentLanguage];
     } else {
-      values = obj;
-      currentValues = obj;
+      values = Object.assign({}, obj);
     }
 
-    console.log("VALUES", obj);
+    let error = null;
+    let currentValues = null;
+    let currentLanguage = languages ? languages[0] : null;
+    if (currentLanguage) currentValues = values[currentLanguage];
 
-    //TODO Remov fields not in list
-    let state = {
+    //TODO Remove fields not in list
+    //update state
+
+    this.setState({
       yaml,
       error,
-      currentLanguage,
-      currentValues,
-      values,
-      country: countryCode
-    };
-    console.log(state);
-    //update state
-    this.setState(state);
+      languages,
+      values
+    });
 
     //laod values
-    this.props.initialize(APP_FORM, currentValues);
+    // if (country) {
+    //   this.switchCountry(country);
+    // } else {
+    //this.props.initialize(APP_FORM, currentValues);
+    // }
+    console.log("PARSE VALUES", values);
+
+    this.switchLang(currentLanguage);
+    if (country) this.switchCountry(country);
   }
 
   reset() {
     this.props.initialize(APP_FORM, null);
-    let values = Object.assign({}, this.state.values);
-    delete values[this.state.currentLanguage];
     this.setState({
-      error: null,
+      search: null,
       yaml: null,
-      currentValues: null,
-      values
+      loading: false,
+      languages: [],
+      values: {},
+      currentValues: {},
+      currentLanguage: null,
+      country: null,
+      error: null,
+      blocks: null,
+      elements: null,
+      collapse: false,
+      activeSection: null
     });
     this.props.notify({ type: "info", msg: "Reset" });
+    this.initData();
   }
 
   load(files) {
@@ -205,6 +213,7 @@ export default class Index extends Component {
     const reader = new FileReader();
     const that = this;
     let { onLoad } = this.props;
+    this.reset();
     reader.onload = function() {
       let yaml = reader.result;
       that.parseYml(yaml);
@@ -258,7 +267,7 @@ export default class Index extends Component {
               this.submitFeedback();
             }}
           >
-            Submit
+            Generate
           </button>
         </div>
       </div>
@@ -290,7 +299,7 @@ export default class Index extends Component {
         })}
         <div className="dropdown">
           <button
-            className="btn btn-secondary dropdown-toggle"
+            className="btn btn-link dropdown-toggle language-switcher__link"
             type="button"
             id="dropdownMenuButton"
             data-toggle="dropdown"
@@ -327,7 +336,7 @@ export default class Index extends Component {
   }
 
   countrySwitcher() {
-    let { country, countries } = this.state;
+    let { country, available_countries } = this.state;
     return (
       <div className="country-switcher">
         <div className="dropdown">
@@ -343,8 +352,8 @@ export default class Index extends Component {
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="scroll">
-              {countries &&
-                countries.map(c => (
+              {available_countries &&
+                available_countries.map(c => (
                   <a
                     key={c}
                     className="dropdown-item"
@@ -369,7 +378,7 @@ export default class Index extends Component {
     return (
       <div className="sidebar">
         <div className="sidebar__title">
-          File YAML {loading && <span className="loading">...</span>}
+          File YAML {loading && <img src={img_dots} className="loading" />}
         </div>
 
         {error && (
@@ -481,10 +490,8 @@ export default class Index extends Component {
   parseSummary(data) {
     if (!data.summary) return null;
     let { summary } = data;
-
     let languages = Object.keys(summary);
     let currentLanguage = languages[0];
-
     //this.setState({languages})
   }
 
@@ -505,8 +512,6 @@ export default class Index extends Component {
     let { yaml } = this.state;
     const myform = form[APP_FORM];
     const errors = myform.syncErrors ? myform.syncErrors : null;
-    console.log("FEEDBACK", errors);
-
     const type = errors ? _.keys(errors).length : "success";
     const msg = errors ? "There are some errors" : "Success";
     console.log(type, msg);
@@ -542,9 +547,12 @@ export default class Index extends Component {
     this.setState({ error: errors, yaml });
   }
 
-  generate(formValues) {
+  generate() {
     let { values, currentLanguage, groups, country } = this.state;
-    values[currentLanguage] = formValues;
+
+    //values[currentLanguage] = formValues;
+    console.log("GENERATE VALUES", values);
+
     let langs = Object.keys(values);
 
     //GET SUMMARY BEFORE MERGE
@@ -565,7 +573,6 @@ export default class Index extends Component {
       allGroups = [...groups, country];
     }
     delete allGroups.summary;
-    console.log("ALL GROUPS", allGroups);
     allGroups.forEach(group => {
       let sub = this.extractGroup(obj, group);
       if (sub) {
@@ -644,7 +651,7 @@ export default class Index extends Component {
       //REQUIRED BLOCKS
       if (!content) {
         //(obj.type == "array" && obj.items.type == "object")
-        if (obj.type == "object" || obj.type == "array") {
+        if (obj && (obj.type == "object" || obj.type == "array")) {
           errors[field] = { _error: "Required" };
         } else {
           errors[field] = "Required.";
@@ -657,7 +664,7 @@ export default class Index extends Component {
       let obj = elements.find(item => item.title == field);
       let obj_values = contents[field];
       //VALIDATE ARRAY OF OBJS
-      if (!obj) {
+      if (obj) {
         if (
           obj.type === "array" &&
           obj.items.type === "object" &&
@@ -759,20 +766,33 @@ export default class Index extends Component {
     //move to current lang
     currentLanguage = lng;
 
+    let search = null;
+    let activeSection = -1;
+    if (languages && languages.length == 1) {
+      activeSection = 0;
+    }
+
     //update state
     this.setState({
       values,
       languages,
       currentValues,
       currentLanguage,
-      search: null
+      search,
+      activeSection
     });
 
     this.props.initialize(APP_FORM, currentValues);
   }
   //
+
+  onAccordion(activeSection) {
+    console.log("activeSection", activeSection);
+    this.setState({ activeSection: activeSection });
+  }
+
   render() {
-    let { currentLanguage, blocks } = this.state;
+    let { currentLanguage, blocks, activeSection } = this.state;
 
     return (
       <Fragment>
@@ -784,6 +804,8 @@ export default class Index extends Component {
             {currentLanguage &&
               blocks && (
                 <EditorForm
+                  activeSection={activeSection}
+                  onAccordion={this.onAccordion.bind(this)}
                   onSubmit={this.generate.bind(this)}
                   data={blocks}
                   validate={this.validate.bind(this)}

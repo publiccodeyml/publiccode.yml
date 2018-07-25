@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
+import Info from "./Info";
 
-// required={field.required}
 const renderInput = field => {
   const className = classNames([
     "form-group",
@@ -26,9 +26,7 @@ const renderInput = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && (
-        <small className="form-text text-muted">{field.description}</small>
-      )}
+      {field.description && <Info description={field.description} />}
     </div>
   );
 };
