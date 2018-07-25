@@ -1,8 +1,11 @@
 $content-pad-horiz: 2em;
 $content-head-h: 120px;
 
-
-
+.field_info {
+  span {
+    margin-right: 5px;
+  }
+}
 
 .content__head {
   padding: 0 $content-pad-horiz;
