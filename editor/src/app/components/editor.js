@@ -370,7 +370,7 @@ export default class Index extends Component {
   }
 
   renderSidebar() {
-    let { yaml, error, loading } = this.state;
+    let { yaml, error, loading, values } = this.state;
     //console.log(error);
 
     //let cn = error? "sidebar__error":"sidebar__code"
@@ -393,7 +393,10 @@ export default class Index extends Component {
         )}
         <div className="sidebar__code">
           <pre>
-            <code>{yaml}</code>
+            <code>
+              {JSON.stringify(values)}
+              {yaml}
+            </code>
           </pre>
         </div>
 
@@ -547,32 +550,38 @@ export default class Index extends Component {
     this.setState({ error: errors, yaml });
   }
 
-  generate() {
+  generate(formValues) {
     let { values, currentLanguage, groups, country } = this.state;
 
-    //values[currentLanguage] = formValues;
+    values[currentLanguage] = formValues;
     console.log("GENERATE VALUES", values);
 
     let langs = Object.keys(values);
+    console.log("langs", langs);
 
     //GET SUMMARY BEFORE MERGE
     let summary = langs.reduce((obj, lng) => {
       obj[lng] = this.getSummary(values[lng], lng);
       return obj;
     }, {});
+    console.log("summary", summary);
 
     //MERGE ALL
     let merge = langs.reduce((acc, lng) => {
       return u(values[lng], acc);
     }, {});
+    console.log("merge", merge);
 
     //GROUP FIELDS
     let obj = Object.assign({}, merge);
+    obj = this.cleanupGroup(obj, "summary");
+
     let allGroups = groups;
     if (country) {
       allGroups = [...groups, country];
     }
     delete allGroups.summary;
+
     allGroups.forEach(group => {
       let sub = this.extractGroup(obj, group);
       if (sub) {
@@ -585,8 +594,8 @@ export default class Index extends Component {
     obj.summary = summary;
 
     //SET  TIMESTAMP
-    //this.showResults(cleanDeep(obj));
-    this.showResults(obj);
+    this.showResults(cleanDeep(obj));
+    //this.showResults(obj);
   }
 
   showResults(values) {
