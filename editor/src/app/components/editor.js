@@ -35,6 +35,8 @@ const ajv = new Ajv({
   jsonPointers: false
 });
 
+let defaultGroups = null;
+
 const mapStateToProps = state => {
   return {
     notifications: state.notifications,
@@ -94,6 +96,9 @@ export default class Index extends Component {
 
   initData(country = null) {
     let { elements, blocks, groups, available_countries } = getData(country);
+    if (!defaultGroups) {
+      defaultGroups = groups;
+    }
     this.setState({ elements, blocks, groups, available_countries, country });
     this.initBootstrap();
   }
@@ -161,7 +166,8 @@ export default class Index extends Component {
       yaml,
       error,
       languages,
-      values
+      values,
+      country
     });
 
     //laod values
@@ -551,10 +557,11 @@ export default class Index extends Component {
   }
 
   generate(formValues) {
-    let { values, currentLanguage, groups, country } = this.state;
+    let { values, currentLanguage, country } = this.state;
 
     values[currentLanguage] = formValues;
     console.log("GENERATE VALUES", values);
+    console.log("country", country);
 
     let langs = Object.keys(values);
     console.log("langs", langs);
@@ -576,13 +583,16 @@ export default class Index extends Component {
     let obj = Object.assign({}, merge);
     obj = this.cleanupGroup(obj, "summary");
 
-    let allGroups = groups;
-    if (country) {
-      allGroups = [...groups, country];
-    }
-    delete allGroups.summary;
+    let groups = Object.assign({}, defaultGroups);
+    console.log("allGroups", groups);
 
-    allGroups.forEach(group => {
+    if (country) {
+      groups = [...groups, country];
+    }
+    delete groups.summary;
+    console.log("groups", groups);
+
+    groups.forEach(group => {
       let sub = this.extractGroup(obj, group);
       if (sub) {
         obj = this.cleanupGroup(obj, group);
