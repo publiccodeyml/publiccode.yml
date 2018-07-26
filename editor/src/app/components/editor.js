@@ -270,7 +270,9 @@ export default class Index extends Component {
             className="btn btn-lg btn-primary"
             onClick={() => {
               this.props.submit(APP_FORM);
-              this.submitFeedback();
+              setTimeout(() => {
+                this.submitFeedback();
+              }, 300);
             }}
           >
             Generate
@@ -381,6 +383,9 @@ export default class Index extends Component {
 
     //let cn = error? "sidebar__error":"sidebar__code"
     //: <i>{validator.isObject(error[e]) ? "" : error[e]}</i>
+
+    // {JSON.stringify(values)}
+
     return (
       <div className="sidebar">
         <div className="sidebar__title">
@@ -399,10 +404,7 @@ export default class Index extends Component {
         )}
         <div className="sidebar__code">
           <pre>
-            <code>
-              {JSON.stringify(values)}
-              {yaml}
-            </code>
+            <code>{yaml}</code>
           </pre>
         </div>
 
@@ -523,7 +525,8 @@ export default class Index extends Component {
     const errors = myform.syncErrors ? myform.syncErrors : null;
     const type = errors ? _.keys(errors).length : "success";
     const msg = errors ? "There are some errors" : "Success";
-    console.log(type, msg);
+
+    console.log(type, msg, errors);
 
     if (errors) {
       yaml = null;
@@ -583,7 +586,7 @@ export default class Index extends Component {
     let obj = Object.assign({}, merge);
     obj = this.cleanupGroup(obj, "summary");
 
-    let groups = Object.assign({}, defaultGroups);
+    let groups = defaultGroups;
     console.log("allGroups", groups);
 
     if (country) {
