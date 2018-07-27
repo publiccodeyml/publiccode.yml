@@ -1,13 +1,18 @@
 import data from "./fields";
+
 const { fields, sections, groups, available_countries, countrySpec } = data;
 
+//export groups;
+export const SUMMARY = "description";
+export const DEPENDSON = "dependsOn"
+export const GROUPS = groups;
 export const getData = (countryCode = null) => {
   //return new Promise((resolve, reject) => {
   const countryFields = getCountryElements(countryCode);
   const allFields = getAllFields(fields, countryFields);
   const blocks = generateBlocks(allFields);
   const elements = generateElements(blocks);
-  const obj = { blocks, elements, groups, available_countries };
+  const obj = { blocks, elements, available_countries };
   return obj;
   //resolve(obj);
   //});

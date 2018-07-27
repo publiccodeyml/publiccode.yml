@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
 import { initialize, submit } from "redux-form";
-import buildSyncValidation from "../form/buildSyncValidation";
 import { notify, clearNotifications } from "../store/notifications";
 import { saveYaml, setVersions } from "../store/cache";
 import {
@@ -11,7 +10,7 @@ import {
   versionsUrl,
   repositoryUrl
 } from "../contents/constants";
-import { getData } from "../contents/data";
+import { getData, SUMMARY, GROUPS } from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 import EditorForm from "./editorForm";
 import copy from "copy-to-clipboard";
@@ -27,15 +26,13 @@ import img_upload from "../../asset/img/upload.svg";
 import img_download from "../../asset/img/download.svg";
 import img_dots from "../../asset/img/dots.svg";
 
-const available_languages = ["ita", "eng", "fra", "zho"];
-//import available_languages from "../contents/langs";
+//const available_languages = ["ita", "eng", "fra", "zho"];
+import available_languages from "../contents/langs";
 const ajv = new Ajv({
   errorDataPath: "property",
   allErrors: true,
   jsonPointers: false
 });
-
-let defaultGroups = null;
 
 const mapStateToProps = state => {
   return {
@@ -95,19 +92,28 @@ export default class Index extends Component {
   }
 
   initData(country = null) {
-    let { elements, blocks, groups, available_countries } = getData(country);
-    if (!defaultGroups) {
-      defaultGroups = groups;
-    }
-    this.setState({ elements, blocks, groups, available_countries, country });
+    let { elements, blocks,  available_countries } = getData(country);
+    this.setState({ elements, blocks, available_countries, country });
     this.initBootstrap();
   }
 
   parseYml(yaml) {
-    let obj = jsyaml.load(yaml);
+    let obj = null;
+    console.log("PARSE YML");
+    try {
+      obj = jsyaml.load(yaml);
+    } catch (e) {
+      console.log("ERROR LOAD YML", e);
+    }
+    console.log("lplp", obj);
+    if (!obj) {
+      alert("error");
+      return;
+    }
     //TRANSFORM DATA BACK:
-    let { groups, available_countries } = this.state;
-    let index = groups.indexOf("summary");
+    let groups = GROUPS.slice(0);
+    let { available_countries } = this.state;
+    let index = groups.indexOf(SUMMARY);
     if (index !== -1) groups.splice(index, 1);
     //- for each country check if data
     let country = null;
@@ -126,22 +132,22 @@ export default class Index extends Component {
         delete obj[group];
       }
     });
-    //- get summary keys to detect langs
+    //- get SUMMARY keys to detect langs
     let values = {};
     let languages = [];
-    if (obj.summary) {
-      console.log("summary ", obj.summary);
-      Object.keys(obj.summary).map(language_key => {
+    if (obj[SUMMARY]) {
+      console.log(SUMMARY, obj[SUMMARY]);
+      Object.keys(obj[SUMMARY]).map(language_key => {
         languages.push(language_key);
         values[language_key] = {};
-        let lng = obj.summary[language_key];
-        //for each language, get fields prefix with summary group
+        let lng = obj[SUMMARY][language_key];
+        //for each language, get fields prefix with SUMMARY group
         Object.keys(lng).map(key => {
-          values[language_key][`summary_${key}`] = lng[key];
+          values[language_key][`${SUMMARY}_${key}`] = lng[key];
         });
       });
     }
-    delete obj.summary;
+    delete obj[SUMMARY];
     console.log("languages", languages);
     console.log("values 0", values);
 
@@ -499,16 +505,15 @@ export default class Index extends Component {
   }
 
   parseSummary(data) {
-    if (!data.summary) return null;
-    let { summary } = data;
-    let languages = Object.keys(summary);
+    if (!data[SUMMARY]) return null;
+    let languages = Object.keys(data[SUMMARY]);
     let currentLanguage = languages[0];
     //this.setState({languages})
   }
 
   getSummary(values) {
     if (!values) return;
-    let obj = this.extractGroup(values, "summary_");
+    let obj = this.extractGroup(values, SUMMARY + "_");
     return obj;
   }
 
@@ -584,15 +589,15 @@ export default class Index extends Component {
 
     //GROUP FIELDS
     let obj = Object.assign({}, merge);
-    obj = this.cleanupGroup(obj, "summary");
+    obj = this.cleanupGroup(obj, SUMMARY);
 
-    let groups = defaultGroups;
+    let groups = GROUPS.slice(0);
     console.log("allGroups", groups);
 
     if (country) {
       groups = [...groups, country];
     }
-    delete groups.summary;
+    delete groups[SUMMARY];
     console.log("groups", groups);
 
     groups.forEach(group => {
@@ -604,7 +609,7 @@ export default class Index extends Component {
     });
 
     //REPLACE SUMMARY
-    obj.summary = summary;
+    obj[SUMMARY] = summary;
 
     //SET  TIMESTAMP
     this.showResults(cleanDeep(obj));
@@ -780,7 +785,7 @@ export default class Index extends Component {
       currentValues = {};
       if (currentLanguage && values[currentLanguage]) {
         let clonedValues = _.omitBy(values[currentLanguage], (value, key) => {
-          return _.startsWith(key, "summary_");
+          return _.startsWith(key, SUMMARY + "_");
         });
         currentValues = Object.assign({}, clonedValues);
       }
