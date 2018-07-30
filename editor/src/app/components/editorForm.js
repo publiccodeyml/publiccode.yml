@@ -3,32 +3,21 @@ import { Field, reduxForm } from "redux-form";
 import { DefaultTheme as Widgets } from "../form";
 import { APP_FORM } from "../contents/constants";
 import renderField from "../form/renderField";
-
+import CountrySwitcher from "./countrySwitcher";
 import Collapse, { Panel } from "rc-collapse";
 
-const guessWidget = (fieldSchema, theme) => {
-  if (fieldSchema.widget) {
-    return fieldSchema.widget;
-  } else if (fieldSchema.hasOwnProperty("enum")) {
-    return "choice";
-  } else if (fieldSchema.hasOwnProperty("oneOf")) {
-    return "oneOf";
-  } else if (theme[fieldSchema.format]) {
-    return fieldSchema.format;
-  }
-  return fieldSchema.type || "object";
-};
+import { getFieldByTitle } from "../contents/data";
 
-const getField = obj => {
-  let name = guessWidget(obj, Widgets);
-
-  return React.createElement(Widgets[name], {
-    key: obj.title,
-    fieldName: obj.title,
-    label: obj.label,
-    schema: obj,
-    required: obj.required
-  });
+const renderBlocksSimple = blocks => {
+  return blocks.map((block, i) => (
+    <div className="block__wrapper" key={`block_${i}`}>
+      <div className="block_heading">
+        <div className="block_heading_oval">{block.index}</div>
+        <div className="block_heading_title">{block.title}</div>
+      </div>
+      <div className="block collapse">{renderBlockItems(block.items, i)}</div>
+    </div>
+  ));
 };
 
 const renderBlockItems = (items, id) => {
@@ -44,30 +33,17 @@ const renderBlockItems = (items, id) => {
   });
 };
 
-// const renderBlocks = blocks => {
-//   return blocks.map((block, i) => (
-//     <div className="block__wrapper" key={`block_${i}`}>
-//       <div className="block_heading">
-//         <div className="block_heading_oval">{block.index}</div>
-//         <div className="block_heading_title">{block.title}</div>
-//       </div>
-//       <div className="block collapse" data-parent="#accordion">
-//         {renderBlockItems(block.items, i)}
-//       </div>
-//     </div>
-//   ));
-// };
-
-const renderBlocks = (blocks, activeSection) => {
+const renderBlocks = (blocks, activeSection, countryProps) => {
   return blocks.map((block, i) => {
+    let last = blocks.length === i + 1;
     let cn = activeSection == i ? "block_heading--active" : null;
     return (
       <Panel
         className="block__wrapper"
         key={i}
-
         header={`${block.index}. ${block.title}`}
       >
+        {last && <CountrySwitcher {...countryProps} />}
         <div className="block">{renderBlockItems(block.items, i)}</div>
       </Panel>
     );
@@ -81,9 +57,14 @@ const EditForm = props => {
     reset,
     submitting,
     data,
-    error,
-    activeSection
+    errors,
+    activeSection,
+    country,
+    switchCountry,
+    allFields
   } = props;
+
+  let countryProps = { country, switchCountry };
 
   let params = {
     accordion: true,
@@ -94,14 +75,25 @@ const EditForm = props => {
     params.activeKey = activeSection == -1 ? null : activeSection;
   }
 
+  console.log("ERORRS", errors);
+  if (errors) {
+    let sections = Object.keys(errors).reduce((s, e) => {
+      let field = getFieldByTitle(allFields, e);
+      if (s.indexOf(field.section) < 0) {
+        s.push(field.section);
+      }
+      return s;
+    }, []);
+    console.log("ERORRS SECTIONS", sections);
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <Collapse onChange={props.onAccordion} {...params}>
-          {renderBlocks(data, activeSection)}
+          {renderBlocks(data, activeSection, countryProps)}
         </Collapse>
       </form>
-      {error && <strong>{error}</strong>}
     </div>
   );
 };

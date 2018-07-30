@@ -17,7 +17,6 @@ export default class Layout extends Component {
       nextProps.notifications.item
     ) {
       let n = nextProps.notifications.item;
-      console.log("Notification", n);
       let { type, title, msg, millis } = n;
       if (type == "success") {
         this.refs.notificator.success(

@@ -29,6 +29,7 @@ const renderField = (
   context = {},
   required = false
 ) => {
+
   if (schema.hasOwnProperty("allOf")) {
     schema = { ...schema, ...deepmerge.all(schema.allOf) };
     delete schema.allOf;
