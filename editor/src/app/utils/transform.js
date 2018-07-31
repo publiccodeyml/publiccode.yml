@@ -148,15 +148,15 @@ export const transformBack = obj => {
 
   //TODO Remove fields not in list
 
-  return { languages, values };
+  return { languages, values, country };
 };
 
-export const transform = values => {
+export const transform = (values, country) => {
   let langs = Object.keys(values);
 
   //GET SUMMARY BEFORE MERGE
   let summary = langs.reduce((obj, lng) => {
-    obj[lng] = ft.getSummary(values[lng], lng);
+    obj[lng] = getSummary(values[lng], lng);
     return obj;
   }, {});
 
@@ -167,10 +167,10 @@ export const transform = values => {
 
   //GROUP FIELDS
   let obj = Object.assign({}, merge);
-  obj = ft.cleanupGroup(obj, SUMMARY);
+  obj = cleanupGroup(obj, SUMMARY);
 
   //DEPENS ON strip type and reorganize in subtype objects
-  obj = ft.transformDepensOn(obj);
+  obj = transformDepensOn(obj);
 
   let groups = GROUPS.slice(0);
   if (country) {
@@ -180,9 +180,9 @@ export const transform = values => {
 
   //REPLACE GROUPS
   groups.forEach(group => {
-    let sub = ft.extractGroup(obj, group);
+    let sub = extractGroup(obj, group);
     if (sub) {
-      obj = ft.cleanupGroup(obj, group);
+      obj = cleanupGroup(obj, group);
       obj[group] = sub;
     }
   });

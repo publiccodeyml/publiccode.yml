@@ -92,13 +92,18 @@ export default class Index extends Component {
 
     let obj = null;
     console.log("PARSE YML");
-    obj = jsyaml.load(yaml);
+    try {
+      obj = jsyaml.load(yaml);
+    } catch (e) {
+      alert("Error loading yaml");
+      return;
+    }
     if (!obj) {
       alert("Error loading yaml");
       return;
     }
     //TODO VALIDATE WITH SCHEMA
-    let { languages, values } = ft.transformBack(obj);
+    let { languages, values, country } = ft.transformBack(obj);
     let error = null;
     let currentValues = null;
     let currentLanguage = languages ? languages[0] : null;
