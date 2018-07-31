@@ -61,7 +61,6 @@ export default class Index extends Component {
       currentValues: {},
       currentLanguage: null,
       country: null,
-      error: null,
       blocks: null,
       elements: null,
       activeSection: 0,
@@ -91,7 +90,6 @@ export default class Index extends Component {
     //HAS STATE
 
     let obj = null;
-    console.log("PARSE YML");
     try {
       obj = jsyaml.load(yaml);
     } catch (e) {
@@ -104,7 +102,7 @@ export default class Index extends Component {
     }
     //TODO VALIDATE WITH SCHEMA
     let { languages, values, country } = ft.transformBack(obj);
-    let error = null;
+
     let currentValues = null;
     let currentLanguage = languages ? languages[0] : null;
     if (currentLanguage) currentValues = values[currentLanguage];
@@ -112,7 +110,6 @@ export default class Index extends Component {
     //UPDATE STATE
     this.setState({
       yaml,
-      error,
       languages,
       values,
       country
@@ -126,8 +123,8 @@ export default class Index extends Component {
   generate(formValues) {
     //has state
     let { values, currentLanguage, country } = this.state;
-    values[currentLanguage] = formValues;
-    let obj = ft.transform(values);
+    //values[currentLanguage] = formValues;
+    let obj = ft.transform(values, country);
 
     //SET  TIMESTAMP
     this.showResults(obj);
@@ -138,7 +135,7 @@ export default class Index extends Component {
     //has state
     try {
       let yaml = jsyaml.dump(values);
-      this.setState({ yaml, error: null });
+      this.setState({ yaml });
     } catch (e) {
       console.error(e);
     }
@@ -146,49 +143,21 @@ export default class Index extends Component {
 
   submitFeedback() {
     //has state
+    const title = "";
+    const millis = 3000;
     const { form } = this.props;
     let { yaml } = this.state;
-    const myform = form[APP_FORM];
-    const errors = myform.syncErrors ? myform.syncErrors : null;
-    const type = errors ? _.keys(errors).length : "success";
-    const msg = errors ? "There are some errors" : "Success";
-
-    //console.log(type, msg, errors);
-
-    if (errors) {
+    let type = "success";
+    let msg = "Success";
+    if (form[APP_FORM].syncErrors) {
+      type = "error";
+      msg = "There are some errors";
       yaml = null;
     }
 
-    this.props.notify({
-      type,
-      title: "",
-      msg: errors ? "There are some errors" : "Generated",
-      millis: 3000
-    });
-
+    this.props.notify({ type, title, msg, millis });
     //this.scrollToError(errors)
-
-    this.setState({ error: errors, yaml });
-  }
-
-  scrollToError(errors) {
-    //has dom
-    // Scroll to first error
-    // if (errors) {
-    // let key = Object.keys(errors).reduce((k, l) => {
-    //   return document.getElementsByName(k)[0].offsetTop <
-    //     document.getElementsByName(l)[0].offsetTop
-    //     ? k
-    //     : l;
-    // });
-    //window.scrollTo(0, document.getElementsByName(k0)[0].offsetTop - 100);
-    // $("html, body").animate(
-    //   {
-    //     scrollTop: $(".has_error:visible:first").offset().top
-    //   },
-    //   500
-    // );
-    // }
+    this.setState({ yaml });
   }
 
   fakeLoading() {
@@ -251,10 +220,9 @@ export default class Index extends Component {
 
   renderSidebar() {
     //c with state
-    let { yaml, error, loading, values, allFields } = this.state;
+    let { yaml, loading, values, allFields } = this.state;
     let props = {
       yaml,
-      error,
       loading,
       values,
       allFields,
@@ -335,7 +303,6 @@ export default class Index extends Component {
     if (languages && languages.length == 1) {
       activeSection = 0;
     }
-
     //update state
     this.setState({
       values,
@@ -358,7 +325,6 @@ export default class Index extends Component {
 
   onAccordion(activeSection) {
     //has state
-    // console.log("activeSection", activeSection);
     this.setState({ activeSection: activeSection });
   }
 
@@ -372,10 +338,14 @@ export default class Index extends Component {
     } = this.state;
 
     let errors = null;
+    let submitFailed = false;
+    let { form } = this.props;
 
-    if (this.props && this.props.form) {
-      let myform = this.props.form[APP_FORM];
-      errors = myform && myform.syncErrors ? myform.syncErrors : null;
+    if (form && form[APP_FORM]) {
+      errors =
+        form[APP_FORM] && form[APP_FORM].syncErrors
+          ? form[APP_FORM].syncErrors
+          : null;
     }
 
     return (

@@ -513,7 +513,7 @@ const fields = [
           label: "website",
           description:
             "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.",
-          widget: "website"
+          widget: "url"
         }
       },
       required: ["name", "until"]
@@ -543,7 +543,7 @@ const fields = [
           items: {
             type: "string"
           },
-          enum: ["open", "propietary", "hardware"],
+          enum: ["open", "proprietary", "hardware"],
           uniqueItems: true,
           widget: "choice-expanded"
         },

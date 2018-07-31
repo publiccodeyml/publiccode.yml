@@ -1,3 +1,16 @@
+.error-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  color: #ff0000;
+}
+
 .rc-collapse {
   background-color: #fff;
   border-radius: 3px;
@@ -18,6 +31,7 @@
   text-indent: 16px;
   cursor: pointer;
   border-bottom: 1px solid #e5e5e5;
+  background: #fff;
 }
 .rc-collapse > .rc-collapse-item > .rc-collapse-header .arrow {
   display: inline-block;
@@ -58,15 +72,32 @@
   margin-right: 6px;
 }
 
-.rc-collapse-item .rc-collapse-header {
+.rc-collapse-item > .rc-collapse-header {
   font-family: "Titillium Web";
   font-size: 18px;
   color: #0073e6;
   background: #fff;
 }
 
-.rc-collapse-item-active .rc-collapse-header {
-  background: #0066cc;
+.rc-collapse > .rc-collapse-item-active > .rc-collapse-header {
   color: #fff;
   border-bottom: none;
+  background: #0066cc;
 }
+
+/*
+.rc-collapse
+  > .rc-collapse-item
+  .rc-collapse-item-active
+  .error
+  > .rc-collapse-header {
+  color: #fff;
+  background: red;
+  border: 1px solid red;
+}
+
+.rc-collapse-item .rc-collapse-header .error {
+  color: #ff0000;
+}
+
+*/

@@ -4,7 +4,7 @@ import { submit } from "redux-form";
 import { APP_FORM } from "../contents/constants";
 
 function mapStateToProps(state) {
-  return {};
+  return { form: state.form };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -23,8 +23,7 @@ export default class foot extends Component {
   }
 
   render() {
-    let { yaml, error, loading, values } = this.props;
-    //console.log(error);
+    let { yaml, error, loading, values, form } = this.props;
     return (
       <div className="content__foot">
         <div className="content__foot_item">
@@ -54,3 +53,4 @@ export default class foot extends Component {
     );
   }
 }
+//   disabled={form[APP_FORM].submitFailed && form[APP_FORM].syncErrors}

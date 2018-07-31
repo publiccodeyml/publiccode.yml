@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Field, reduxForm } from "redux-form";
 import { DefaultTheme as Widgets } from "../form";
 import { APP_FORM } from "../contents/constants";
 import renderField from "../form/renderField";
 import CountrySwitcher from "./countrySwitcher";
 import Collapse, { Panel } from "rc-collapse";
-
+import img_x from "../../asset/img/x.svg";
 import { getFieldByTitle } from "../contents/data";
 
 const renderBlocksSimple = blocks => {
@@ -33,15 +33,34 @@ const renderBlockItems = (items, id) => {
   });
 };
 
-const renderBlocks = (blocks, activeSection, countryProps) => {
+const renderHeader = props => {
+  return (
+    <span className={`clearfix ${props.hasError ? "error" : ""}`}>
+      {props.block.index}. {props.block.title}
+      {props.hasError && (
+        <span className="float-right error-info">
+          <img src={img_x} />
+        </span>
+      )}
+    </span>
+  );
+};
+
+const renderBlocks = (
+  blocks,
+  activeSection,
+  countryProps,
+  sectionsWithErrors
+) => {
   return blocks.map((block, i) => {
     let last = blocks.length === i + 1;
-    let cn = activeSection == i ? "block_heading--active" : null;
+    //let cn = activeSection == i ? "block_heading--active" : '';
+    let hasError = sectionsWithErrors.indexOf(i) >= 0;
     return (
       <Panel
-        className="block__wrapper"
+        className={`block__wrapper`}
         key={i}
-        header={`${block.index}. ${block.title}`}
+        header={renderHeader({ block, hasError, activeSection })}
       >
         {last && <CountrySwitcher {...countryProps} />}
         <div className="block">{renderBlockItems(block.items, i)}</div>
@@ -61,7 +80,8 @@ const EditForm = props => {
     activeSection,
     country,
     switchCountry,
-    allFields
+    allFields,
+    submitFailed
   } = props;
 
   let countryProps = { country, switchCountry };
@@ -75,23 +95,23 @@ const EditForm = props => {
     params.activeKey = activeSection == -1 ? null : activeSection;
   }
 
-  console.log("ERORRS", errors);
-  if (errors) {
-    let sections = Object.keys(errors).reduce((s, e) => {
+  let sectionsWithErrors = [];
+  //submitFailed &&
+  if (submitFailed && errors) {
+    sectionsWithErrors = Object.keys(errors).reduce((s, e) => {
       let field = getFieldByTitle(allFields, e);
       if (s.indexOf(field.section) < 0) {
         s.push(field.section);
       }
       return s;
     }, []);
-    console.log("ERORRS SECTIONS", sections);
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <Collapse onChange={props.onAccordion} {...params}>
-          {renderBlocks(data, activeSection, countryProps)}
+          {renderBlocks(data, activeSection, countryProps, sectionsWithErrors)}
         </Collapse>
       </form>
     </div>

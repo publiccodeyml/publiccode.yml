@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import copy from "copy-to-clipboard";
 import { notify } from "../store/notifications";
-
+import { APP_FORM } from "../contents/constants";
 import img_x from "../../asset/img/x.svg";
 import img_copy from "../../asset/img/copy.svg";
 import img_upload from "../../asset/img/upload.svg";
@@ -12,7 +12,7 @@ import img_dots from "../../asset/img/dots.svg";
 import { getLabel } from "../contents/data";
 
 function mapStateToProps(state) {
-  return {};
+  return { form: state.form };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -25,6 +25,8 @@ const mapDispatchToProps = dispatch => {
   mapStateToProps,
   mapDispatchToProps
 )
+
+
 export default class sidebar extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +35,6 @@ export default class sidebar extends Component {
   load(files) {
     const { onLoad, onReset } = this.props;
     //has dom
-    console.log("LOAD", files);
     if (!files || !files[0]) {
       this.props.notify({ type: 1, msg: "File not found" });
       return;
@@ -70,29 +71,44 @@ export default class sidebar extends Component {
   }
 
   render() {
-    let { yaml, error, loading, values, allFields } = this.props;
+    let { yaml, loading, values, allFields, form } = this.props;
+    let errors = null;
+    let fail = false;
+    if (form && form[APP_FORM]) {
+      errors =
+        form[APP_FORM] && form[APP_FORM].syncErrors
+          ? form[APP_FORM].syncErrors
+          : null;
+      fail = form[APP_FORM].submitFailed ? form[APP_FORM].submitFailed : false;
+
+    }
 
     return (
       <div className="sidebar">
         <div className="sidebar__title">
-          File YAML {loading && <img src={img_dots} className="loading" />}
+          {fail == true ? "Errors" : "File YAML"}
+          {loading && <img src={img_dots} className="loading" />}
         </div>
 
-        {error && (
-          <div className="sidebar__error">
-            {Object.keys(error).map((e, i) => (
-              <div key={i}>
-                <img src={img_x} />
-                {getLabel(allFields, e)}
-              </div>
-            ))}
+        {fail &&
+          errors && (
+            <div className="sidebar__error">
+              {Object.keys(errors).map((e, i) => (
+                <div key={i}>
+                  <img src={img_x} />
+                  {getLabel(allFields, e)}
+                </div>
+              ))}
+            </div>
+          )}
+
+        {!(fail && errors) && (
+          <div className="sidebar__code">
+            <pre>
+              <code>{yaml}</code>
+            </pre>
           </div>
         )}
-        <div className="sidebar__code">
-          <pre>
-            <code>{yaml}</code>
-          </pre>
-        </div>
 
         <div className="sidebar__footer">
           <div className="sidebar__footer_item">

@@ -122,7 +122,6 @@ export const transformBack = obj => {
   let values = {};
   let languages = [];
   if (obj[SUMMARY]) {
-    console.log(SUMMARY, obj[SUMMARY]);
     Object.keys(obj[SUMMARY]).map(language_key => {
       languages.push(language_key);
       values[language_key] = {};
@@ -134,8 +133,6 @@ export const transformBack = obj => {
     });
   }
   delete obj[SUMMARY];
-  console.log("languages", languages);
-  console.log("values 0", values);
 
   //merge values per each language
   if (languages) {
@@ -149,6 +146,24 @@ export const transformBack = obj => {
   //TODO Remove fields not in list
 
   return { languages, values, country };
+};
+
+const transformBooleanValues = obj => {
+  Object.keys(obj).forEach(k => {
+    if (typeof obj[k] === "object" && !Array.isArray(obj[k])) {
+      obj[k] = transformBooleanValues(Object.assign({}, obj[k]));
+    } else if (
+      !Array.isArray(obj[k]) &&
+      (obj[k] == true ||
+        obj[k] == false ||
+        obj[k] == "true" ||
+        obj[k] == "false")
+    ) {
+      if (obj[k] == true || obj[k] == "true") obj[k] = "yes";
+      else delete obj[k];
+    }
+  });
+  return obj;
 };
 
 export const transform = (values, country) => {
@@ -189,6 +204,9 @@ export const transform = (values, country) => {
 
   //REPLACE SUMMARY
   obj[SUMMARY] = summary;
+
+  //TRANSFORM  TRUE IN YES
+  obj = transformBooleanValues(Object.assign({}, obj));
 
   return cleanDeep(obj);
 };

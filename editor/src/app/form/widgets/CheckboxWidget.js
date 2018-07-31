@@ -14,7 +14,7 @@ const renderInput = field => {
       <div className="form-check">
         <input
           {...field.input}
-          checked={field.input.value == true}
+          checked={field.input.value == true || field.input.value == 'yes'}
           className="form-check-input"
           type="checkbox"
           required={field.required}
