@@ -14,12 +14,12 @@ const renderInput = field => {
       <div className="form-check">
         <input
           {...field.input}
-          defaultChecked={field.value}
+          checked={field.input.value == true || field.input.value == 'yes'}
           className="form-check-input"
           type="checkbox"
           required={field.required}
           id={"field-" + field.name}
-        />{" "}
+        />
         <label className="form-check-label">
           {field.label} {field.required ? "*" : ""}
         </label>

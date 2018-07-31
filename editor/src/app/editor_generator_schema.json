@@ -5,8 +5,8 @@
   "type": "object",
   "id": "publiccode",
   "properties": {
-    "publiccodeYamlVersion": {
-      "$ref": "#/definitions/publiccodeYamlVersion"
+    "publiccode-yaml-version": {
+      "$ref": "#/definitions/publiccode-yaml-version"
     },
     "name": {
       "$ref": "#/definitions/name"
@@ -62,8 +62,8 @@
     "intendedAudience": {
       "$ref": "#/definitions/intendedAudience"
     },
-    "summary": {
-      "$ref": "#/definitions/descriptionPerLang"
+    "description": {
+      "$ref": "#/definitions/description"
     },
     "legal": {
       "$ref": "#/definitions/legal"
@@ -79,19 +79,19 @@
     }
   },
   "required": [
-    "publiccodeYamlVersion",
+    "publiccode-yaml-version",
     "name",
     "url",
     "releaseDate",
     "tags",
     "developmentStatus",
     "softwareType",
-    "summary",
+    "description",
     "legal"
   ],
   "definitions": {
-    "publiccodeYamlVersion": {
-      "title": "publiccodeYamlVersion",
+    "publiccode-yaml-version": {
+      "title": "publiccode-yaml-version",
       "type": "array",
       "uniqueItems": true,
       "items": {
@@ -513,7 +513,7 @@
         }
       }
     },
-    "descriptionPerLang": {
+    "description": {
       "title": "Description per Language",
       "description":
         "A set of fields to describe in language the current software",

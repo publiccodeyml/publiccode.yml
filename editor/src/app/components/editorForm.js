@@ -1,34 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Field, reduxForm } from "redux-form";
 import { DefaultTheme as Widgets } from "../form";
 import { APP_FORM } from "../contents/constants";
 import renderField from "../form/renderField";
-
+import CountrySwitcher from "./countrySwitcher";
 import Collapse, { Panel } from "rc-collapse";
+import img_x from "../../asset/img/x.svg";
+import { getFieldByTitle } from "../contents/data";
 
-const guessWidget = (fieldSchema, theme) => {
-  if (fieldSchema.widget) {
-    return fieldSchema.widget;
-  } else if (fieldSchema.hasOwnProperty("enum")) {
-    return "choice";
-  } else if (fieldSchema.hasOwnProperty("oneOf")) {
-    return "oneOf";
-  } else if (theme[fieldSchema.format]) {
-    return fieldSchema.format;
-  }
-  return fieldSchema.type || "object";
-};
-
-const getField = obj => {
-  let name = guessWidget(obj, Widgets);
-
-  return React.createElement(Widgets[name], {
-    key: obj.title,
-    fieldName: obj.title,
-    label: obj.label,
-    schema: obj,
-    required: obj.required
-  });
+const renderBlocksSimple = blocks => {
+  return blocks.map((block, i) => (
+    <div className="block__wrapper" key={`block_${i}`}>
+      <div className="block_heading">
+        <div className="block_heading_oval">{block.index}</div>
+        <div className="block_heading_title">{block.title}</div>
+      </div>
+      <div className="block collapse">{renderBlockItems(block.items, i)}</div>
+    </div>
+  ));
 };
 
 const renderBlockItems = (items, id) => {
@@ -44,30 +33,36 @@ const renderBlockItems = (items, id) => {
   });
 };
 
-// const renderBlocks = blocks => {
-//   return blocks.map((block, i) => (
-//     <div className="block__wrapper" key={`block_${i}`}>
-//       <div className="block_heading">
-//         <div className="block_heading_oval">{block.index}</div>
-//         <div className="block_heading_title">{block.title}</div>
-//       </div>
-//       <div className="block collapse" data-parent="#accordion">
-//         {renderBlockItems(block.items, i)}
-//       </div>
-//     </div>
-//   ));
-// };
+const renderHeader = props => {
+  return (
+    <span className={`clearfix ${props.hasError ? "error" : ""}`}>
+      {props.block.index}. {props.block.title}
+      {props.hasError && (
+        <span className="float-right error-info">
+          <img src={img_x} />
+        </span>
+      )}
+    </span>
+  );
+};
 
-const renderBlocks = (blocks, activeSection) => {
+const renderBlocks = (
+  blocks,
+  activeSection,
+  countryProps,
+  sectionsWithErrors
+) => {
   return blocks.map((block, i) => {
-    let cn = activeSection == i ? "block_heading--active" : null;
+    let last = blocks.length === i + 1;
+    //let cn = activeSection == i ? "block_heading--active" : '';
+    let hasError = sectionsWithErrors.indexOf(i) >= 0;
     return (
       <Panel
-        className="block__wrapper"
+        className={`block__wrapper`}
         key={i}
-
-        header={`${block.index}. ${block.title}`}
+        header={renderHeader({ block, hasError, activeSection })}
       >
+        {last && <CountrySwitcher {...countryProps} />}
         <div className="block">{renderBlockItems(block.items, i)}</div>
       </Panel>
     );
@@ -81,9 +76,15 @@ const EditForm = props => {
     reset,
     submitting,
     data,
-    error,
-    activeSection
+    errors,
+    activeSection,
+    country,
+    switchCountry,
+    allFields,
+    submitFailed
   } = props;
+
+  let countryProps = { country, switchCountry };
 
   let params = {
     accordion: true,
@@ -94,14 +95,25 @@ const EditForm = props => {
     params.activeKey = activeSection == -1 ? null : activeSection;
   }
 
+  let sectionsWithErrors = [];
+  //submitFailed &&
+  if (submitFailed && errors) {
+    sectionsWithErrors = Object.keys(errors).reduce((s, e) => {
+      let field = getFieldByTitle(allFields, e);
+      if (s.indexOf(field.section) < 0) {
+        s.push(field.section);
+      }
+      return s;
+    }, []);
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <Collapse onChange={props.onAccordion} {...params}>
-          {renderBlocks(data, activeSection)}
+          {renderBlocks(data, activeSection, countryProps, sectionsWithErrors)}
         </Collapse>
       </form>
-      {error && <strong>{error}</strong>}
     </div>
   );
 };

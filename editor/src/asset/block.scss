@@ -8,6 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  min-height: 250px;
 }
 
 .block_heading_oval {
@@ -25,6 +26,8 @@
   align-items: center;
 }
 
+
+
 .block_heading_title {
   padding-left: 10px;
   color: #000000;
@@ -34,7 +37,7 @@
   line-height: 28px;
 }
 
- .block_heading {
+.block_heading {
   height: 50px;
   display: flex;
   flex-direction: row;

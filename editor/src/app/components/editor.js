@@ -2,38 +2,31 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
 import { initialize, submit } from "redux-form";
-import buildSyncValidation from "../form/buildSyncValidation";
 import { notify, clearNotifications } from "../store/notifications";
 import { saveYaml, setVersions } from "../store/cache";
+import { APP_FORM, yamlData, versionsUrl } from "../contents/constants";
 import {
-  APP_FORM,
-  yamlData,
-  versionsUrl,
-  repositoryUrl
-} from "../contents/constants";
-import { getData } from "../contents/data";
+  getData,
+  SUMMARY,
+  GROUPS,
+  AVAILABLE_COUNTRIES
+} from "../contents/data";
 import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
-import EditorForm from "./editorForm";
-import copy from "copy-to-clipboard";
+
 import _ from "lodash";
 import u from "updeep";
 import validator from "validator";
 import cleanDeep from "clean-deep";
-import Ajv from "ajv";
 
-import img_x from "../../asset/img/x.svg";
-import img_copy from "../../asset/img/copy.svg";
-import img_upload from "../../asset/img/upload.svg";
-import img_download from "../../asset/img/download.svg";
-import img_dots from "../../asset/img/dots.svg";
+import Head from "./head";
+import Foot from "./foot";
+import EditorForm from "./editorForm";
 
-const available_languages = ["ita", "eng", "fra", "zho"];
-//import available_languages from "../contents/langs";
-const ajv = new Ajv({
-  errorDataPath: "property",
-  allErrors: true,
-  jsonPointers: false
-});
+import LanguageSwitcher from "./languageSwitcher";
+import Sidebar from "./sidebar";
+
+import * as ft from "../utils/transform";
+import * as fv from "../utils/validate";
 
 const mapStateToProps = state => {
   return {
@@ -52,12 +45,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const getReleases = () => {
-  return fetch(versionsUrl)
-    .then(res => res.json())
-    .then(data => data.map(d => d.name));
-};
-
 @connect(
   mapStateToProps,
   mapDispatchToProps
@@ -74,10 +61,10 @@ export default class Index extends Component {
       currentValues: {},
       currentLanguage: null,
       country: null,
-      error: null,
       blocks: null,
       elements: null,
-      activeSection: 0
+      activeSection: 0,
+      allFields: null
     };
   }
 
@@ -93,90 +80,115 @@ export default class Index extends Component {
   }
 
   initData(country = null) {
-    let { elements, blocks, groups, available_countries } = getData(country);
-    this.setState({ elements, blocks, groups, available_countries, country });
+    //has state
+    let { elements, blocks, allFields } = getData(country);
+    this.setState({ elements, blocks, country, allFields });
     this.initBootstrap();
   }
 
   parseYml(yaml) {
-    let obj = jsyaml.load(yaml);
-    //TRANSFORM DATA BACK:
-    let { groups, available_countries } = this.state;
-    let index = groups.indexOf("summary");
-    if (index !== -1) groups.splice(index, 1);
-    //- for each country check if data
-    let country = null;
-    available_countries.forEach(cc => {
-      if (obj[cc]) {
-        groups.push(cc);
-        country = cc;
-      }
-    });
-    //- for each group get keys and readd with prefix
-    groups.map(group => {
-      if (obj[group]) {
-        Object.keys(obj[group]).forEach(k => {
-          obj[`${group}_${k}`] = obj[group][k];
-        });
-        delete obj[group];
-      }
-    });
-    //- get summary keys to detect langs
-    let values = {};
-    let languages = [];
-    if (obj.summary) {
-      console.log("summary ", obj.summary);
-      Object.keys(obj.summary).map(language_key => {
-        languages.push(language_key);
-        values[language_key] = {};
-        let lng = obj.summary[language_key];
-        //for each language, get fields prefix with summary group
-        Object.keys(lng).map(key => {
-          values[language_key][`summary_${key}`] = lng[key];
-        });
-      });
-    }
-    delete obj.summary;
-    console.log("languages", languages);
-    console.log("values 0", values);
+    //HAS STATE
 
-    //merge values per each language
-    if (languages) {
-      languages.forEach(lang => {
-        values[lang] = u(obj, values[lang]);
-      });
-    } else {
-      values = Object.assign({}, obj);
+    let obj = null;
+    try {
+      obj = jsyaml.load(yaml);
+    } catch (e) {
+      alert("Error loading yaml");
+      return;
     }
+    if (!obj) {
+      alert("Error loading yaml");
+      return;
+    }
+    //TODO VALIDATE WITH SCHEMA
+    let { languages, values, country } = ft.transformBack(obj);
 
-    let error = null;
     let currentValues = null;
     let currentLanguage = languages ? languages[0] : null;
     if (currentLanguage) currentValues = values[currentLanguage];
 
-    //TODO Remove fields not in list
-    //update state
-
+    //UPDATE STATE
     this.setState({
       yaml,
-      error,
       languages,
-      values
+      values,
+      country
     });
 
-    //laod values
-    // if (country) {
-    //   this.switchCountry(country);
-    // } else {
-    //this.props.initialize(APP_FORM, currentValues);
-    // }
-    console.log("PARSE VALUES", values);
-
+    //RESET FORM
     this.switchLang(currentLanguage);
     if (country) this.switchCountry(country);
   }
 
+  generate(formValues) {
+    //has state
+    let { values, currentLanguage, country } = this.state;
+    //values[currentLanguage] = formValues;
+    let obj = ft.transform(values, country);
+
+    //SET  TIMESTAMP
+    this.showResults(obj);
+    //this.showResults(obj);
+  }
+
+  showResults(values) {
+    //has state
+    try {
+      let yaml = jsyaml.dump(values);
+      this.setState({ yaml });
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  submitFeedback() {
+    //has state
+    const title = "";
+    const millis = 3000;
+    const { form } = this.props;
+    let { yaml } = this.state;
+    let type = "success";
+    let msg = "Success";
+    if (form[APP_FORM].syncErrors) {
+      type = "error";
+      msg = "There are some errors";
+      yaml = null;
+    }
+
+    this.props.notify({ type, title, msg, millis });
+    //this.scrollToError(errors)
+    this.setState({ yaml });
+  }
+
+  fakeLoading() {
+    //has state
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 1000);
+  }
+
+  validate(contents) {
+    //has state
+    let errors = {};
+    let { values, currentLanguage, elements } = this.state;
+    //CHECK REQUIRED FIELDS
+    errors = fv.validateRequired(contents, elements, errors);
+    //VALIDATE TYPES AND SUBOBJECT
+    errors = fv.validateSubTypes(contents, elements, errors);
+    //UPDATE STATE
+    values[currentLanguage] = contents;
+    this.setState({
+      currentValues: contents,
+      values,
+      loading: true,
+      error: null
+    });
+    this.fakeLoading();
+    return errors;
+  }
+
   reset() {
+    //has state
     this.props.initialize(APP_FORM, null);
     this.setState({
       search: null,
@@ -197,528 +209,52 @@ export default class Index extends Component {
     this.initData();
   }
 
-  load(files) {
-    console.log("LOAD", files);
-    if (!files || !files[0]) {
-      this.props.notify({ type: 1, msg: "File not found" });
-      return;
-    }
-    let ext = files[0].name.split(".")[1];
-
-    if (ext != "yml") {
-      this.props.notify({ type: 1, msg: "File type not supported" });
-      return;
-    }
-
-    const reader = new FileReader();
-    const that = this;
-    let { onLoad } = this.props;
-    this.reset();
-    reader.onload = function() {
-      let yaml = reader.result;
-      that.parseYml(yaml);
-      document.getElementById("load_yaml").value = "";
-    };
-    reader.readAsText(files[0]);
-  }
-
-  download(data) {
-    const blob = new Blob([data], {
-      type: "text/yaml;charset=utf-8;"
-    });
-    let blobURL = window.URL.createObjectURL(blob);
-    let tempLink = document.createElement("a");
-    tempLink.href = blobURL;
-    tempLink.setAttribute("download", "pubbliccode.yml");
-    tempLink.click();
-  }
-
-  renderHead() {
-    return (
-      <div className="content__head">
-        <div className="content__head__title">Public Code</div>
-        <div className="content__head__help">
-          <a href={repositoryUrl} target="_blank">
-            Need help?
-          </a>
-        </div>
-      </div>
-    );
-  }
-
   renderFoot() {
-    return (
-      <div className="content__foot">
-        <div className="content__foot_item">
-          <button
-            className="btn btn-lg btn-outline-primary"
-            onClick={() => this.reset()}
-          >
-            Reset
-          </button>
-        </div>
-        <div className="content__foot_item" />
-        <div className="content__foot_item">
-          <button
-            type="button"
-            className="btn btn-lg btn-primary"
-            onClick={() => {
-              this.props.submit(APP_FORM);
-              this.submitFeedback();
-            }}
-          >
-            Generate
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  langSwitcher() {
-    let { languages, currentLanguage, search } = this.state;
-    let results = available_languages;
-    if (search)
-      results = available_languages.filter(name => name.indexOf(search) > -1);
-
-    return (
-      <div className="language-switcher">
-        {languages.map(lng => {
-          let cn = "language-switcher__item";
-          if (lng == currentLanguage) {
-            cn += " language-switcher__item--selected";
-          }
-          return (
-            <div key={lng} className={cn}>
-              <a onClick={() => this.switchLang(lng)}>{lng}</a>
-              <span
-                className="glyphicon glyphicon-remove"
-                onClick={() => this.removeLang(lng)}
-              />
-            </div>
-          );
-        })}
-        <div className="dropdown">
-          <button
-            className="btn btn-link dropdown-toggle language-switcher__link"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            + Add Language
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div className="form-group">
-              <input
-                type="text"
-                name="search"
-                className="form-control"
-                placeholder="search..."
-                onChange={e => this.setState({ search: e.target.value })}
-              />
-            </div>
-            <div className="scroll">
-              {results.map(lng => (
-                <a
-                  key={lng}
-                  className="dropdown-item"
-                  onClick={() => this.switchLang(lng)}
-                >
-                  {lng}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  countrySwitcher() {
-    let { country, available_countries } = this.state;
-    return (
-      <div className="country-switcher">
-        <div className="dropdown">
-          <button
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            {country ? "Switch" : "Select"} Country
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div className="scroll">
-              {available_countries &&
-                available_countries.map(c => (
-                  <a
-                    key={c}
-                    className="dropdown-item"
-                    onClick={() => this.switchCountry(c)}
-                  >
-                    {c}
-                  </a>
-                ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    //c
+    let props = {
+      reset: this.reset.bind(this),
+      submitFeedback: this.submitFeedback.bind(this)
+    };
+    return <Foot {...props} />;
   }
 
   renderSidebar() {
-    let { yaml, error, loading } = this.state;
-    //console.log(error);
-
-    //let cn = error? "sidebar__error":"sidebar__code"
-    //: <i>{validator.isObject(error[e]) ? "" : error[e]}</i>
-    return (
-      <div className="sidebar">
-        <div className="sidebar__title">
-          File YAML {loading && <img src={img_dots} className="loading" />}
-        </div>
-
-        {error && (
-          <div className="sidebar__error">
-            {Object.keys(error).map((e, i) => (
-              <div key={i}>
-                <img src={img_x} />
-                {e}
-              </div>
-            ))}
-          </div>
-        )}
-        <div className="sidebar__code">
-          <pre>
-            <code>{yaml}</code>
-          </pre>
-        </div>
-
-        <div className="sidebar__footer">
-          <div className="sidebar__footer_item">
-            <a href="#">
-              <img src={img_copy} alt="copy" />
-              <span
-                className="action"
-                onClick={() => {
-                  copy(yaml);
-                  this.props.notify({
-                    type: "info",
-                    title: "",
-                    msg: "Copied to clipboard"
-                  });
-                }}
-              >
-                Copy
-              </span>
-            </a>
-          </div>
-          <div className="sidebar__footer_item">
-            <input
-              id="load_yaml"
-              type="file"
-              style={{ display: "none" }}
-              onChange={e => this.load(e.target.files)}
-            />
-
-            <a href="#">
-              {false && <span className="glyphicon glyphicon-open-file" />}
-              <img src={img_upload} alt="upload" />
-              <span
-                className="action"
-                onClick={() => document.getElementById("load_yaml").click()}
-              >
-                Upload
-              </span>
-            </a>
-          </div>
-          <div className="sidebar__footer_item">
-            <a href="#">
-              {false && <span className="glyphicon glyphicon-save-file" />}
-              <img src={img_download} alt="dowload" />
-              <span className="action" onClick={() => this.download(yaml)}>
-                Download
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  strip(html) {
-    var tmp = document.createElement("DIV");
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
-  }
-
-  getGrouped(data) {
-    let result = _
-      .chain(data)
-      .groupBy("group")
-      .map((values, group) => ({ values, group }))
-      .value();
-    return result;
-  }
-
-  extractGroup(items, group) {
-    let field_names = Object.keys(items);
-    let filtered = field_names.filter(item => item.startsWith(group));
-    let obj = filtered.reduce((acc, name) => {
-      let key = name.split("_")[1];
-      let value = items[name];
-      acc[key] = value;
-      return acc;
-    }, {});
-    return obj;
-  }
-
-  flatGroup(data, group) {
-    if (!data[group]) return null;
-    let g = Object.assign({}, data[group]);
-    delete data[group];
-    let flatten = Object.keys(g).reduce((obj, key) => {
-      obj[`${group}_${key}`] = g[key];
-      return obj;
-    }, {});
-    return object.assign(flatten, data);
-  }
-
-  parseSummary(data) {
-    if (!data.summary) return null;
-    let { summary } = data;
-    let languages = Object.keys(summary);
-    let currentLanguage = languages[0];
-    //this.setState({languages})
-  }
-
-  getSummary(values) {
-    if (!values) return;
-    let obj = this.extractGroup(values, "summary_");
-    return obj;
-  }
-
-  cleanupGroup(data, group) {
-    return _.omitBy(data, (value, key) => {
-      return _.startsWith(key, `${group}_`);
-    });
-  }
-
-  submitFeedback() {
-    const { form } = this.props;
-    let { yaml } = this.state;
-    const myform = form[APP_FORM];
-    const errors = myform.syncErrors ? myform.syncErrors : null;
-    const type = errors ? _.keys(errors).length : "success";
-    const msg = errors ? "There are some errors" : "Success";
-    console.log(type, msg);
-
-    if (errors) {
-      yaml = null;
-    }
-
-    this.props.notify({
-      type,
-      title: "",
-      msg: errors ? "There are some errors" : "Generated",
-      millis: 3000
-    });
-
-    // Scroll to first error
-
-    // if (errors) {
-    // let key = Object.keys(errors).reduce((k, l) => {
-    //   return document.getElementsByName(k)[0].offsetTop <
-    //     document.getElementsByName(l)[0].offsetTop
-    //     ? k
-    //     : l;
-    // });
-    //window.scrollTo(0, document.getElementsByName(k0)[0].offsetTop - 100);
-    // $("html, body").animate(
-    //   {
-    //     scrollTop: $(".has_error:visible:first").offset().top
-    //   },
-    //   500
-    // );
-    // }
-    this.setState({ error: errors, yaml });
-  }
-
-  generate() {
-    let { values, currentLanguage, groups, country } = this.state;
-
-    //values[currentLanguage] = formValues;
-    console.log("GENERATE VALUES", values);
-
-    let langs = Object.keys(values);
-
-    //GET SUMMARY BEFORE MERGE
-    let summary = langs.reduce((obj, lng) => {
-      obj[lng] = this.getSummary(values[lng], lng);
-      return obj;
-    }, {});
-
-    //MERGE ALL
-    let merge = langs.reduce((acc, lng) => {
-      return u(values[lng], acc);
-    }, {});
-
-    //GROUP FIELDS
-    let obj = Object.assign({}, merge);
-    let allGroups = groups;
-    if (country) {
-      allGroups = [...groups, country];
-    }
-    delete allGroups.summary;
-    allGroups.forEach(group => {
-      let sub = this.extractGroup(obj, group);
-      if (sub) {
-        obj = this.cleanupGroup(obj, group);
-        obj[group] = sub;
-      }
-    });
-
-    //REPLACE SUMMARY
-    obj.summary = summary;
-
-    //SET  TIMESTAMP
-    //this.showResults(cleanDeep(obj));
-    this.showResults(obj);
-  }
-
-  showResults(values) {
-    console.log("VALUES", values);
-    try {
-      let yaml = jsyaml.dump(values);
-      this.setState({ yaml, error: null });
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  fakeLoading() {
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 1000);
-  }
-
-  checkField(field, obj, value, required) {
-    if (required && !value) return "required.";
-
-    if (obj && obj.widget) {
-      let widget = obj.widget;
-
-      if (
-        widget &&
-        widget === "editor" &&
-        validator.isEmpty(this.strip(value).trim())
-      )
-        return "values required.";
-
-      if (widget == "url" && !validator.isURL(value)) {
-        return "Not a valid Url";
-      } else if (widget == "email" && !validator.isEmail(value)) {
-        return "Not a valid email";
-      }
-    }
-
-    if (obj && obj.type === "email" && value && !validator.isEmail(value)) {
-      return "Not a valid email";
-    }
-
-    return null;
-  }
-
-  validate(contents) {
-    let errors = {};
-    let { values, currentLanguage, elements } = this.state;
-
-    //CHECK REQUIRED FIELDS
-
-    let required = elements.filter(obj => obj.required);
-    required.map(rf => {
-      let content = null;
-      let field = rf.title;
-      let obj = elements.find(item => item.title == field);
-      if (rf.widget && rf.widget === "editor") {
-        content = contents[field] ? this.strip(contents[field]).trim() : null;
-      } else {
-        content = contents[field];
-      }
-      //REQUIRED BLOCKS
-      if (!content) {
-        //(obj.type == "array" && obj.items.type == "object")
-        if (obj && (obj.type == "object" || obj.type == "array")) {
-          errors[field] = { _error: "Required" };
-        } else {
-          errors[field] = "Required.";
-        }
-      }
-    });
-
-    //VALIDATE TYPES AND SUBOBJECT
-    Object.keys(contents).map(field => {
-      let obj = elements.find(item => item.title == field);
-      let obj_values = contents[field];
-      //VALIDATE ARRAY OF OBJS
-      if (obj) {
-        if (
-          obj.type === "array" &&
-          obj.items.type === "object" &&
-          obj.items.required &&
-          obj_values
-        ) {
-          let requiredFields = obj.items.required;
-          let members = obj_values;
-          let membersArrayErrors = [];
-          members.forEach((member, index) => {
-            let memberErrors = {};
-            requiredFields.forEach(rf => {
-              if (!member || !member[rf]) {
-                memberErrors[rf] = "Required";
-                membersArrayErrors[index] = memberErrors;
-              }
-            });
-          });
-          if (membersArrayErrors.length) {
-            errors[field] = membersArrayErrors;
-          }
-        } else {
-          //VALIDATE SIMPLE FIELDS
-          let e = this.checkField(field, obj, obj_values, obj.required);
-          if (e) errors[field] = e;
-        }
-      }
-    });
-
-    //UPDATE STATUS
-    values[currentLanguage] = contents;
-    this.setState({
-      currentValues: contents,
+    //c with state
+    let { yaml, loading, values, allFields } = this.state;
+    let props = {
+      yaml,
+      loading,
       values,
-      loading: true,
-      error: null
-    });
-    this.fakeLoading();
+      allFields,
+      onLoad: this.parseYml.bind(this),
+      onReset: this.reset.bind(this)
+    };
+    return <Sidebar {...props} />;
+  }
 
-    return errors;
+  langSwitcher() {
+    //c with state
+    let { languages, currentLanguage, search } = this.state;
+    let props = {
+      languages,
+      currentLanguage,
+      search,
+      switchLang: this.switchLang.bind(this),
+      removeLang: this.removeLang.bind(this),
+      onSearch: this.onSearch.bind(this)
+    };
+    return <LanguageSwitcher {...props} />;
   }
 
   removeLang(lng) {
+    //has state
     let { values, languages, currentValues, currentLanguage } = this.state;
-    console.log("before delete all values are  ", values);
-    console.log("REMOVE LNG", lng, "FROM", languages);
     //remove contents of lang
     delete values[lng];
     //remove  lang from list
     languages.splice(languages.indexOf(lng), 1);
-    console.log("so now languages are ", languages);
     //manage state to move on other key
     let k0 = Object.keys(values) ? Object.keys(values)[0] : null;
-    console.log("k0 ", k0);
     currentLanguage = k0 ? k0 : null;
     if (!currentLanguage) {
       currentLanguage = languages ? languages[0] : null;
@@ -726,22 +262,18 @@ export default class Index extends Component {
     currentValues = currentLanguage
       ? Object.assign({}, values[currentLanguage])
       : null;
-
-    console.log("new currentLanguage is ", currentLanguage);
-    console.log("currentValues are  ", currentValues);
-    console.log("all values are  ", values);
-
     this.setState({ values, languages, currentValues, currentLanguage });
     this.props.initialize(APP_FORM, currentValues ? currentValues : {});
   }
 
-  switchCountry(country) {
-    let { currentValues } = this.state;
-    this.initData(country);
-    this.props.initialize(APP_FORM, currentValues);
+  onSearch(search) {
+    this.setState({
+      search
+    });
   }
 
   switchLang(lng) {
+    //has state
     let { values, languages, currentValues, currentLanguage } = this.state;
     if (!lng || lng === currentLanguage) return;
 
@@ -758,7 +290,7 @@ export default class Index extends Component {
       currentValues = {};
       if (currentLanguage && values[currentLanguage]) {
         let clonedValues = _.omitBy(values[currentLanguage], (value, key) => {
-          return _.startsWith(key, "summary_");
+          return _.startsWith(key, SUMMARY + "_");
         });
         currentValues = Object.assign({}, clonedValues);
       }
@@ -771,7 +303,6 @@ export default class Index extends Component {
     if (languages && languages.length == 1) {
       activeSection = 0;
     }
-
     //update state
     this.setState({
       values,
@@ -784,22 +315,44 @@ export default class Index extends Component {
 
     this.props.initialize(APP_FORM, currentValues);
   }
-  //
+
+  switchCountry(country) {
+    //has state
+    let { currentValues } = this.state;
+    this.initData(country);
+    this.props.initialize(APP_FORM, currentValues);
+  }
 
   onAccordion(activeSection) {
-    console.log("activeSection", activeSection);
+    //has state
     this.setState({ activeSection: activeSection });
   }
 
   render() {
-    let { currentLanguage, blocks, activeSection } = this.state;
+    let {
+      currentLanguage,
+      blocks,
+      activeSection,
+      country,
+      allFields
+    } = this.state;
+
+    let errors = null;
+    let submitFailed = false;
+    let { form } = this.props;
+
+    if (form && form[APP_FORM]) {
+      errors =
+        form[APP_FORM] && form[APP_FORM].syncErrors
+          ? form[APP_FORM].syncErrors
+          : null;
+    }
 
     return (
       <Fragment>
         <div className="content">
-          {this.renderHead()}
+          <Head />
           {this.langSwitcher()}
-
           <div className="content__main">
             {currentLanguage &&
               blocks && (
@@ -809,9 +362,12 @@ export default class Index extends Component {
                   onSubmit={this.generate.bind(this)}
                   data={blocks}
                   validate={this.validate.bind(this)}
+                  country={country}
+                  switchCountry={this.switchCountry.bind(this)}
+                  errors={errors}
+                  allFields={allFields}
                 />
               )}
-            {currentLanguage && this.countrySwitcher()}
           </div>
           {currentLanguage && this.renderFoot()}
         </div>

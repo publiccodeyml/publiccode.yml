@@ -17,7 +17,7 @@ let softwareType_list = [
 
 const fields = [
   {
-    title: "publiccodeYamlVersion",
+    title: "publiccode-yaml-version",
     label: "Publiccode Yaml Version",
     type: "array",
     description: "This key contains the version of the publicode definition.",
@@ -83,7 +83,7 @@ const fields = [
     type: "string",
     description: "localisedName",
     section: 2,
-    group: "summary"
+    group: "description"
   },
   {
     title: "shortDescription",
@@ -91,7 +91,7 @@ const fields = [
     type: "string",
     description: "A short description is isRequired",
     section: 0,
-    group: "summary",
+    group: "description",
     required: true
   },
   {
@@ -100,7 +100,7 @@ const fields = [
     type: "string",
     description: "A long description is isRequired",
     section: 3,
-    group: "summary",
+    group: "description",
     widget: "editor",
     required: true,
     cn: "block__item--full"
@@ -111,13 +111,13 @@ const fields = [
     type: "string",
     description: "link to documentation",
     section: 1,
-    group: "summary"
+    group: "description"
   },
   {
     title: "apiDocumentation",
     label: "API Documentation",
     section: 3,
-    group: "summary",
+    group: "description",
     type: "string",
     description: "link to the api documentation"
   },
@@ -125,7 +125,7 @@ const fields = [
     title: "freeTags",
     label: "Free Tags",
     section: 1,
-    group: "summary",
+    group: "description",
     type: "array",
     description: "a list of tags",
     items: {
@@ -143,7 +143,7 @@ const fields = [
       title: "feature"
     },
     section: 1,
-    group: "summary"
+    group: "description"
   },
   {
     title: "screenshots",
@@ -155,7 +155,7 @@ const fields = [
       title: "screenshot"
     },
     section: 2,
-    group: "summary"
+    group: "description"
   },
   {
     title: "videos",
@@ -167,7 +167,7 @@ const fields = [
       title: "video"
     },
     section: 2,
-    group: "summary"
+    group: "description"
   },
   {
     title: "awards",
@@ -179,7 +179,7 @@ const fields = [
       title: "award"
     },
     section: 2,
-    group: "summary"
+    group: "description"
   },
   {
     title: "isBasedOn",
@@ -507,10 +507,10 @@ const fields = [
             " mandatory - This is a date (YYYY-MM-DD). This key must contain the date at which the maintenance is going to end. In case of community maintenance, the value should not be more than 2 years in the future, and thus will need to be regularly updated as the community continues working on the project.",
           widget: "date"
         },
-        url: {
+        website: {
           type: "string",
-          title: "url",
-          label: "url",
+          title: "website",
+          label: "website",
           description:
             "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.",
           widget: "url"
@@ -543,7 +543,7 @@ const fields = [
           items: {
             type: "string"
           },
-          enum: ["open", "propietary", "hardware"],
+          enum: ["open", "proprietary", "hardware"],
           uniqueItems: true,
           widget: "choice-expanded"
         },
