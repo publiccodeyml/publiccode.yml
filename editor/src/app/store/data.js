@@ -31,7 +31,7 @@ const reducer = handleActions(
         yml: null
       };
     },
-     ON_CHANGE_LANGUAGE: (state, action) => {
+    ON_CHANGE_LANGUAGE: (state, action) => {
       return {
         ...state,
         yml: null
