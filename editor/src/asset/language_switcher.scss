@@ -5,19 +5,30 @@
   display: flex;
   padding: 0 $content-pad-horiz;
 }
-
+.language-switcher__link,
 .language-switcher__item {
-  font-size: 24px;
+  font-size: 18px;
   color: #0066cc;
   margin-right: 10px;
   height: 70px;
   width: 150px;
   text-align: center;
 
+  a {
+    text-transform: capitalize;
+  }
+
   .glyphicon {
     font-size: 15px;
     margin-left: 10px;
     color: #111;
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    cursor: pointer;
   }
 }
 
@@ -27,5 +38,6 @@
 
 .language-switcher__link {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #0066cc;
 }

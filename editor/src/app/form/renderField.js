@@ -29,7 +29,6 @@ const renderField = (
   context = {},
   required = false
 ) => {
-
   if (schema.hasOwnProperty("allOf")) {
     schema = { ...schema, ...deepmerge.all(schema.allOf) };
     delete schema.allOf;
@@ -42,6 +41,7 @@ const renderField = (
 
   const newFieldName = prefix ? prefix + fieldName : fieldName;
 
+  let showLabel = schema.showLabel == false ? false : true;
   let lbl = schema.label || schema.title || fieldName;
   let obj = React.createElement(theme[widget], {
     key: fieldName,
@@ -53,7 +53,8 @@ const renderField = (
     context,
     prefix,
     id: schema.id,
-    group: schema.group
+    group: schema.group,
+    showLabel
   });
 
   return obj;

@@ -9,6 +9,7 @@ import img_upload from "../../asset/img/upload.svg";
 import img_download from "../../asset/img/download.svg";
 import img_dots from "../../asset/img/dots.svg";
 import img_xx from "../../asset/img/xx.svg";
+
 import { getRemoteYml } from "../utils/calls";
 import { getLabel } from "../contents/data";
 
@@ -166,7 +167,7 @@ export default class sidebar extends Component {
                     className="btn btn-primary btn-block"
                     onClick={() => document.getElementById("load_yaml").click()}
                   >
-                    <img src={img_upload} alt="upload" />BROWSE
+                    <img src={img_upload} alt="upload" />Browse
                   </button>
                 </div>
               </div>
@@ -185,7 +186,7 @@ export default class sidebar extends Component {
                       onChange={e => this.handleChange(e)}
                     />
                     <button type="submit" className="btn btn-primary">
-                      <img src={img_upload} alt="upload" />LOAD
+                      <img src={img_upload} alt="upload" />Load
                     </button>
                   </form>
                 </div>

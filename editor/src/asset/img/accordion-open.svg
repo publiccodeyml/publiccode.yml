@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DataDisplay/Accordion/_/items/left/active_bg" transform="translate(-824.000000, -25.000000)" fill="#FFFFFF">
+            <g id="Group" transform="translate(824.000000, 25.000000)">
+                <polygon id="icon" transform="translate(6.500000, 4.000000) rotate(-180.000000) translate(-6.500000, -4.000000) " points="11.4725 3.55271368e-15 6.5 4.94466937 1.5275 3.55271368e-15 0 1.52226721 6.5 8 13 1.52226721"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

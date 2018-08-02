@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>option-nonselected</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,0 C4.95,0 0,4.95 0,11 C0,17.05 4.95,22 11,22 C17.05,22 22,17.05 22,11 C22,4.95 17.05,0 11,0 L11,0 Z M11,19.8 C6.16,19.8 2.2,15.84 2.2,11 C2.2,6.16 6.16,2.2 11,2.2 C15.84,2.2 19.8,6.16 19.8,11 C19.8,15.84 15.84,19.8 11,19.8 L11,19.8 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Data-entry/input-button/radio/Light_bg/off" transform="translate(-1.000000, -1.000000)">
+            <rect id="bg" x="0" y="0" width="24" height="24"></rect>
+            <g id="Colors/Light_bg/neutral-210/A-07" transform="translate(1.000000, 1.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#5C6F82" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)" fill="#5C6F82" id="Rectangle-2-Copy-24">
+                    <g transform="translate(-1.000000, -1.000000)">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

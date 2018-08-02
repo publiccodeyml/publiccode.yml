@@ -11,9 +11,12 @@ const renderInput = field => {
   ]);
   return (
     <div className={className}>
-      <label className="control-label" htmlFor={field.id}>
-        {field.label} {field.required ? "*" : ""}
-      </label>
+
+      {field.showLabel && (
+        <label className="control-label" htmlFor={field.id}>
+          {field.label} {field.required ? "*" : ""}
+        </label>
+      )}
 
       <input
         {...field.input}
@@ -43,6 +46,7 @@ const BaseInputWidget = props => {
       description={props.schema.description}
       type={props.type}
       normalize={props.normalizer}
+      {...props}
     />
   );
 };

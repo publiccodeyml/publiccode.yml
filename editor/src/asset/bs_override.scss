@@ -18,7 +18,7 @@ select.form-control,
 textarea.form-control {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #5c6f82;
+  border-bottom: 1px solid #797979;
   border-radius: 0;
   outline: 0;
   height: 2.5rem;
@@ -27,7 +27,7 @@ textarea.form-control {
   box-shadow: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  font-weight: 700;
+  font-weight: 600;
   color: #5c6f82;
 }
 
@@ -59,4 +59,13 @@ textarea.form-control {
   .help-block {
     color: #ff4136;
   }
+}
+
+input[type="checkbox"] {
+  border-radius: 4px;
+  border-size: 2px;
+  border-color: #5768f4;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
 }

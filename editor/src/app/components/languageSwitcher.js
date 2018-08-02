@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import available_languages from "../contents/langs";
 //const available_languages = ["ita", "eng", "fra", "zho"];
+import img_close from "../../asset/img/close.svg";
 
 export default class languageSwitcher extends Component {
 
@@ -25,24 +26,20 @@ export default class languageSwitcher extends Component {
           return (
             <div key={lng} className={cn}>
               <a onClick={() => this.props.switchLang(lng)}>{lng}</a>
-              <span
-                className="glyphicon glyphicon-remove"
-                onClick={() => this.props.removeLang(lng)}
-              />
+             <img src={img_close} onClick={() => this.props.removeLang(lng)}/>
             </div>
           );
         })}
         <div className="dropdown">
-          <button
-            className="btn btn-link dropdown-toggle language-switcher__link"
-            type="button"
+          <div
+            className="language-switcher__item"
             id="dropdownMenuButton"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
-            + Add Language
-          </button>
+           <a> + Add Language </a>
+          </div>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="form-group">
               <input
