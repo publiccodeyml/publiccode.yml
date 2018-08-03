@@ -4,7 +4,6 @@ import available_languages from "../contents/langs";
 import img_close from "../../asset/img/close.svg";
 
 export default class languageSwitcher extends Component {
-
   constructor(props) {
     super(props);
   }
@@ -26,7 +25,7 @@ export default class languageSwitcher extends Component {
           return (
             <div key={lng} className={cn}>
               <a onClick={() => this.props.switchLang(lng)}>{lng}</a>
-             <img src={img_close} onClick={() => this.props.removeLang(lng)}/>
+              <img src={img_close} onClick={() => this.props.removeLang(lng)} />
             </div>
           );
         })}
@@ -38,19 +37,23 @@ export default class languageSwitcher extends Component {
             aria-haspopup="true"
             aria-expanded="false"
           >
-           <a> + Add Language </a>
+            <a> + Add Language </a>
           </div>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div
+            className="dropdown-menu language-filter"
+            aria-labelledby="dropdownMenuButton"
+          >
             <div className="form-group">
               <input
                 type="text"
                 name="search"
-                className="form-control"
-                placeholder="search..."
+                className="form-control language-filter__input"
+                placeholder="Search"
                 onChange={e => this.props.onSearch(e.target.value)}
               />
             </div>
-            <div className="scroll">
+
+            <div className="language-filter__content">
               {results.map(lng => (
                 <a
                   key={lng}

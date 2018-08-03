@@ -37,9 +37,6 @@ export const validateRequired = (contents, elements, errors) => {
     let content = null;
     let field = rf.title;
     let obj = elements.find(item => item.title == field);
-    if (rf.widget && rf.widget === "tags") {
-      console.log("VALUES", contents[field]);
-    }
     if (rf.widget && rf.widget === "editor") {
       content = contents[field] ? strip(contents[field]).trim() : null;
     } else {

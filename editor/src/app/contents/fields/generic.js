@@ -267,7 +267,8 @@ const fields = [
       type: "string",
       enum: ["web", "windows", "mac", "linux", "ios", "android"]
     },
-    section: 1
+    section: 1,
+    widget: "tags"
   },
   {
     type: "string",
@@ -306,6 +307,22 @@ const fields = [
       "Some open-source softwares adopt a convention of identify the copyright holders through a file that lists all the entities that own the copyright. This is common in projects strongly backed by a community where there are many external contributors and no clear single/main copyright owner. In such cases, this key can be used to refer to the authors file, using a path relative to the root of the repository.",
     section: 4,
     group: "legal"
+  },
+  {
+    title: "tags",
+    label: "Tags",
+    description:
+      "A list of words that can be used to describe the software and can help building catalogs of open software. Each tag must be in Unicode lowercase, and should not contain any Unicode whitespace character. The suggested character to separate multiple words is - (single dash). See also: description/[lang]/freeTags/",
+    type: "array",
+    items: {
+      type: "string",
+      title: "tag",
+      enum: tag_names,
+      enum_titles: tag_descrs
+    },
+    section: 3,
+    required: true,
+    widget: "tags"
   },
   {
     title: "onlyFor",
@@ -358,22 +375,7 @@ const fields = [
     },
     section: 1
   },
-  {
-    title: "tags",
-    label: "Tags",
-    description:
-      "A list of words that can be used to describe the software and can help building catalogs of open software. Each tag must be in Unicode lowercase, and should not contain any Unicode whitespace character. The suggested character to separate multiple words is - (single dash). See also: description/[lang]/freeTags/",
-    type: "array",
-    items: {
-      type: "string",
-      title: "tag",
-      enum: tag_names,
-      enum_titles: tag_descrs
-    },
-    section: 0,
-    required: true,
-    widget: "tags"
-  },
+
   {
     title: "inputTypes",
     label: "Input Types",

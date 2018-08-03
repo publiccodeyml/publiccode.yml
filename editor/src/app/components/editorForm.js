@@ -58,7 +58,8 @@ const renderBlocks = (
     let hasError = sectionsWithErrors.indexOf(i) >= 0;
     return (
       <Panel
-        className={`block__wrapper`}
+        className={`block__wrapper section_${i}`}
+        id={`section_${i}`}
         key={i}
         header={renderHeader({ block, hasError, activeSection })}
       >
@@ -92,7 +93,7 @@ const EditForm = props => {
   };
 
   if (activeSection) {
-    params.activeKey = activeSection == -1 ? null : activeSection;
+    params.activeKey = activeSection == -1 ? "0" : activeSection;
   }
 
   let sectionsWithErrors = [];

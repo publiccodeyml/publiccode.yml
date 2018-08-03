@@ -41,3 +41,18 @@
   margin-bottom: 10px;
   color: #0066cc;
 }
+
+.language-filter {
+  margin-top: -20px;
+  width: 250px;
+  height: 400px;
+}
+
+.language-filter__input {
+  border-bottom: 1px solid #0066cc;
+}
+
+.language-filter__content {
+  overflow-y: scroll;
+  height: 300px;
+}

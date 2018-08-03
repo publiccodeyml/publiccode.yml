@@ -7,7 +7,7 @@ const sections = [
   "Main information",
   "Specification",
   "Multimedia",
-  "Summary",
+  "Description",
   "Legal",
   "Maintenance",
   "Country Specific"

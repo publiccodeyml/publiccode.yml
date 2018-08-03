@@ -77,6 +77,7 @@ export default class Index extends Component {
 
   componentDidMount() {
     this.initData();
+    this.switchLang("eng");
   }
 
   initData(country = null) {
@@ -325,6 +326,17 @@ export default class Index extends Component {
 
   onAccordion(activeSection) {
     //has state
+
+    let offset = activeSection * 56;
+    let currentScroll = document.getElementById(`content__main`).scrollTop;
+    let diff = currentScroll - offset;
+
+    if (diff > 0) {
+      console.info("diff", diff);
+      document.getElementById(`content__main`).scrollTop = offset;
+    } else {
+      console.warn("inviewport");
+    }
     this.setState({ activeSection: activeSection });
   }
 
@@ -353,7 +365,7 @@ export default class Index extends Component {
         <div className="content">
           <Head />
           {this.langSwitcher()}
-          <div className="content__main">
+          <div className="content__main" id="content__main">
             {currentLanguage &&
               blocks && (
                 <EditorForm

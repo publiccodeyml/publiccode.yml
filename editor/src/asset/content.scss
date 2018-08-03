@@ -38,6 +38,8 @@ $content-head-h: 120px;
   padding: 0 $content-pad-horiz;
   flex: 1;
   overflow: auto;
+  top: 0;
+  transition: top 0.8s ease 0s;
 }
 
 .content {
