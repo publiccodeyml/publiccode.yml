@@ -139,7 +139,7 @@ export default class sidebar extends Component {
               </div>
             )}
           {!(fail && errors) && (
-            <div className="sidebar__code"><pre><code>{yaml}</code></pre></div>
+            <div className="sidebar__code"><pre><code>{'\n'}{yaml}</code></pre></div>
           )}
         </div>
 
