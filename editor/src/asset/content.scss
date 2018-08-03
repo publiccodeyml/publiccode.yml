@@ -7,6 +7,9 @@ $content-head-h: 120px;
   }
 }
 
+.RichTextEditor{
+    min-height: 600px;
+}
 .content__head {
   padding: 0 $content-pad-horiz;
   height: $content-head-h;

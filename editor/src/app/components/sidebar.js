@@ -64,15 +64,14 @@ export default class sidebar extends Component {
   }
 
   load(files) {
-    this.showDialog(false);
     const { onLoad, onReset } = this.props;
     //has dom
     if (!files || !files[0]) {
       this.props.notify({ type: 1, msg: "File not found" });
       return;
     }
-    let ext = files[0].name.split(".")[1];
-
+    // let ext = files[0].name.split(".")[1];
+    let ext = files[0].name.split(/[. ]+/).pop();
     if (ext != "yml") {
       this.props.notify({ type: 1, msg: "File type not supported" });
       return;
@@ -82,10 +81,12 @@ export default class sidebar extends Component {
     const that = this;
 
     onReset();
+
     reader.onload = function() {
       let yaml = reader.result;
       onLoad(yaml);
       document.getElementById("load_yaml").value = "";
+      that.showDialog(false);
     };
     reader.readAsText(files[0]);
   }
@@ -107,6 +108,7 @@ export default class sidebar extends Component {
     let { yaml, loading, values, allFields, form } = this.props;
     let errors = null;
     let fail = false;
+
     if (form && form[APP_FORM]) {
       errors =
         form[APP_FORM] && form[APP_FORM].syncErrors
@@ -123,6 +125,8 @@ export default class sidebar extends Component {
         </div>
 
         <div className="sidebar__body">
+          {!fail &&
+            !yaml && <div className="sidebar__info">No code generated.</div>}
           {fail &&
             errors && (
               <div className="sidebar__error">
@@ -134,13 +138,8 @@ export default class sidebar extends Component {
                 ))}
               </div>
             )}
-
           {!(fail && errors) && (
-            <div className="sidebar__code">
-              <pre>
-                <code>{yaml}</code>
-              </pre>
-            </div>
+            <div className="sidebar__code"><pre><code>{yaml}</code></pre></div>
           )}
         </div>
 
