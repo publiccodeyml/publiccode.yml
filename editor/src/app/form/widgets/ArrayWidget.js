@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import renderField from "../renderField";
-import { FieldArray } from "redux-form";
+import { FieldArray, Field } from "redux-form";
 import { times as _times } from "lodash";
 import ChoiceWidget from "./ChoiceWidget";
 import classNames from "classnames";
 import Info from "./Info";
+import img_close from "../../../asset/img/close.svg";
 
 const renderArrayFields = (
   count,
@@ -28,7 +29,7 @@ const renderArrayFields = (
                 remove(idx);
               }}
             >
-              <span className="block__array__remove glyphicon glyphicon-remove" />
+              <img src={img_close} />
             </a>
           </div>
           {renderField(
@@ -54,9 +55,11 @@ const renderInput = field => {
 
   return (
     <div className={className}>
-      <legend className="control-label">
-        {field.label} {field.schema.required ? "*" : ""}
-      </legend>
+      {field.showLabel && (
+        <label className="control-label">
+          {field.label} {field.schema.required ? "*" : ""}
+        </label>
+      )}
       {field.meta.submitFailed &&
         field.meta.error && (
           <div className="help-block">{field.meta.error}</div>
@@ -91,9 +94,11 @@ const CollectionWidget = props => {
       values={props.values}
       theme={props.theme}
       context={props.context}
+      {...props}
     />
   );
 };
+
 
 const ArrayWidget = props => {
   // Arrays are tricky because they can be multiselects or collections

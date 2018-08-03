@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
+import { Multiselect } from "react-widgets";
 import Info from "./Info";
 
 const renderInput = field => {
@@ -9,22 +10,20 @@ const renderInput = field => {
     "form-group",
     { "has-error": field.meta.touched && field.meta.error }
   ]);
+
   return (
     <div className={className}>
+      <label className="control-label" htmlFor={"field-" + field.name}>
+        {field.label} {field.required ? "*" : ""}
+      </label>
 
-      {field.showLabel && (
-        <label className="control-label" htmlFor={field.id}>
-          {field.label} {field.required ? "*" : ""}
-        </label>
-      )}
-
-      <input
+      <Multiselect
         {...field.input}
-        type={field.type}
-        required={field.required}
-        className="form-control"
-        placeholder={field.placeholder}
+        onBlur={() => field.input.onBlur()}
+        value={field.input.value || []}
+        data={field.schema.items.enum}
       />
+
       {field.meta.touched &&
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
@@ -34,7 +33,7 @@ const renderInput = field => {
   );
 };
 
-const BaseInputWidget = props => {
+const editorWidget = props => {
   return (
     <Field
       component={renderInput}
@@ -44,21 +43,18 @@ const BaseInputWidget = props => {
       id={"field-" + props.fieldName}
       placeholder={props.schema.default}
       description={props.schema.description}
-      type={props.type}
-      normalize={props.normalizer}
       {...props}
     />
   );
 };
 
-BaseInputWidget.propTypes = {
+editorWidget.propTypes = {
   schema: PropTypes.object.isRequired,
-  type: PropTypes.string.isRequired,
-  required: PropTypes.bool,
   fieldName: PropTypes.string,
   label: PropTypes.string,
-  normalizer: PropTypes.func,
-  description: PropTypes.string
+  theme: PropTypes.object,
+  multiple: PropTypes.bool,
+  required: PropTypes.bool
 };
 
-export default BaseInputWidget;
+export default editorWidget;

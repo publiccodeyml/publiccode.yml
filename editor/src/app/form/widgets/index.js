@@ -22,8 +22,11 @@ import CompatibleDateTimeWidget from "./CompatibleDateTimeWidget";
 import FileWidget from "./FileWidget";
 import OneOfChoiceWidget from "./oneOfChoiceWidget";
 import EditorWidget from "./EditorWidget";
+import TagWidget from "./TagWidget";
 
 export default {
+  editor: EditorWidget,
+  tags: TagWidget,
   object: ObjectWidget,
   string: StringWidget,
   textarea: TextareaWidget,
@@ -47,6 +50,5 @@ export default {
   "compatible-date": CompatibleDateWidget,
   "compatible-datetime": CompatibleDateTimeWidget,
   file: FileWidget,
-  oneOf: OneOfChoiceWidget,
-  editor: EditorWidget
+  oneOf: OneOfChoiceWidget
 };

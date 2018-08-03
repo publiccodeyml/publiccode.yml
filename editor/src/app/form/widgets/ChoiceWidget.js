@@ -16,9 +16,13 @@ const renderSelect = field => {
   const selectOptions = _zipObject(options, optionNames);
   return (
     <div className={className}>
-      <label className="control-label" htmlFor={"field-" + field.name}>
-        {field.label}
-      </label>
+
+      {field.showLabel && (
+        <label className="control-label" htmlFor={"field-" + field.name}>
+          {field.label} {field.schema.required ? "*" : ""}
+        </label>
+      )}
+
       <select
         {...field.input}
         className="form-control"
@@ -63,6 +67,7 @@ const ChoiceWidget = props => {
       description={props.schema.description}
       schema={props.schema}
       multiple={props.multiple}
+      {...props}
     />
   );
 };

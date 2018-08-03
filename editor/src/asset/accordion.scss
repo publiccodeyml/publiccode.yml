@@ -85,6 +85,11 @@
   background: #0066cc;
 }
 
+.rc-collapse > .rc-collapse-item-active > .rc-collapse-header-error {
+  color: #fff;
+  border-bottom: none;
+  background: #F83E5A;
+}
 /*
 .rc-collapse
   > .rc-collapse-item

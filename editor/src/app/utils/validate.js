@@ -59,6 +59,7 @@ export const validateSubTypes = (contents, elements, errors) => {
   Object.keys(contents).map(field => {
     let obj = elements.find(item => item.title == field);
     let obj_values = contents[field];
+
     //VALIDATE ARRAY OF OBJS
     if (obj) {
       if (
