@@ -6,6 +6,8 @@ import renderField from "../form/renderField";
 import CountrySwitcher from "./countrySwitcher";
 import Collapse, { Panel } from "rc-collapse";
 import img_x from "../../asset/img/x.svg";
+import img_accordion_open from "../../asset/img/accordion-open.svg";
+import img_accordion_closed from "../../asset/img/accordion-closed.svg";
 import { getFieldByTitle } from "../contents/data";
 
 const renderBlocksSimple = blocks => {
@@ -34,9 +36,13 @@ const renderBlockItems = (items, id) => {
 };
 
 const renderHeader = props => {
+  let img_arrow = img_accordion_closed;
+  if (props.activeSection == (props.block.index-1)) {
+    img_arrow = img_accordion_open;
+  }
   return (
     <span className={`clearfix ${props.hasError ? "error" : ""}`}>
-      {props.block.index}. {props.block.title}
+      <img src={img_arrow} /> {props.block.index}. {props.block.title}
       {props.hasError && (
         <span className="float-right error-info">
           <img src={img_x} />
@@ -56,11 +62,18 @@ const renderBlocks = (
     let last = blocks.length === i + 1;
     //let cn = activeSection == i ? "block_heading--active" : '';
     let hasError = sectionsWithErrors.indexOf(i) >= 0;
+    let c = {
+      showArrow: false
+    };
+    if (hasError) {
+      c.headerClass = "rc-collapse-header-error";
+    }
     return (
       <Panel
         className={`block__wrapper section_${i}`}
         id={`section_${i}`}
         key={i}
+        {...c}
         header={renderHeader({ block, hasError, activeSection })}
       >
         {last && <CountrySwitcher {...countryProps} />}
