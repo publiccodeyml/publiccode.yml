@@ -371,7 +371,8 @@ const fields = [
       enum_titles: tag_descrs
     },
     section: 0,
-    required: true
+    required: true,
+    widget: "tags"
   },
   {
     title: "inputTypes",

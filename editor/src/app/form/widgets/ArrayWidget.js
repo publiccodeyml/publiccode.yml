@@ -99,46 +99,6 @@ const CollectionWidget = props => {
   );
 };
 
-const renderMultiselect = field => {
-  const className = classNames([
-    "block__array",
-    { "has-error": field.meta.submitFailed && field.meta.error }
-  ]);
-
-  return (
-    <div className={className}>
-      <legend className="control-label">
-        {field.label} {field.schema.required ? "*" : ""}
-      </legend>
-      {field.meta.submitFailed &&
-        field.meta.error && (
-          <div className="help-block">{field.meta.error}</div>
-        )}
-      <input
-        {...field.input}
-        type={field.type}
-        required={field.required}
-        className="form-control"
-        placeholder={field.placeholder}
-      />
-      {field.description && <Info description={field.description} />}
-    </div>
-  );
-};
-
-const TagAutocomplete = props => {
-  return (
-    <div>
-      <label>Hobbies</label>
-      {/* <Field
-        name="hobbies"
-        component={renderMultiselect}
-        data={["Guitar", "Cycling", "Hiking"]}
-      />*/}
-      <pre>{JSON.stringify(props, null, 2)}</pre>
-    </div>
-  );
-};
 
 const ArrayWidget = props => {
   // Arrays are tricky because they can be multiselects or collections
@@ -152,8 +112,6 @@ const ArrayWidget = props => {
       schema: props.schema.items,
       multiple: true
     });
-    // } else if (props.schema.items.hasOwnProperty("enum") && props.schema.items.type === "string") {
-    //   return TagAutocomplete(props);
   } else {
     return CollectionWidget(props);
   }

@@ -37,6 +37,9 @@ export const validateRequired = (contents, elements, errors) => {
     let content = null;
     let field = rf.title;
     let obj = elements.find(item => item.title == field);
+    if (rf.widget && rf.widget === "tags") {
+      console.log("VALUES", contents[field]);
+    }
     if (rf.widget && rf.widget === "editor") {
       content = contents[field] ? strip(contents[field]).trim() : null;
     } else {
@@ -59,6 +62,7 @@ export const validateSubTypes = (contents, elements, errors) => {
   Object.keys(contents).map(field => {
     let obj = elements.find(item => item.title == field);
     let obj_values = contents[field];
+
     //VALIDATE ARRAY OF OBJS
     if (obj) {
       if (
