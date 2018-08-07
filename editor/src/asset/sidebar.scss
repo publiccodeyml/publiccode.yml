@@ -24,6 +24,14 @@
   line-height: 28px;
 }
 
+.sidebar__info {
+  font-size: 14px;
+  line-height: 28px;
+  color: #fff;
+  margin-left: 20px;
+  opacity: 0.3;
+}
+
 .sidebar__prefooter {
   z-index: 10;
   position: absolute;
@@ -37,6 +45,11 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
+  img {
+    height: 16px;
+    margin-right: 5px;
+  }
 }
 .sidebar__prefooter__close {
   margin-top: 5px;
@@ -141,6 +154,11 @@
     margin-left: 2px;
     line-height: 24px;
     font-size: 16px;
+  }
+
+  img {
+    height: 20px;
+    margin-right: 2px;
   }
 }
 

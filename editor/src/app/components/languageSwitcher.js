@@ -29,7 +29,7 @@ export default class languageSwitcher extends Component {
             </div>
           );
         })}
-        <div className="dropdown">
+        <div className="dropdown language-filter__dropdown">
           <div
             className="language-switcher__item"
             id="dropdownMenuButton"
@@ -57,7 +57,7 @@ export default class languageSwitcher extends Component {
               {results.map(lng => (
                 <a
                   key={lng}
-                  className="dropdown-item"
+                  className="dropdown-item language-filter__content__item"
                   onClick={() => this.props.switchLang(lng)}
                 >
                   {lng}

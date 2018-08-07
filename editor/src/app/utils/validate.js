@@ -1,6 +1,47 @@
 import validator from "validator";
 import u from "updeep";
 import _ from "lodash";
+import compileSchema from "../form/compileSchema";
+import Ajv from "ajv";
+const ajv = new Ajv({
+  errorDataPath: "property",
+  allErrors: true,
+  jsonPointers: false
+});
+const yamlJsonScehma = require("../yaml_validation_schema.json");
+const editorJsonScehma = require("../editor_generator_schema.json");
+
+export const trnsformSchema = values => {
+  return new Promise((resolve, reject) => {
+    console.log("editorJsonScehma", editorJsonScehma);
+    delete yamlJsonScehma.$schema;
+    delete yamlJsonScehma.id;
+
+    const schema = compileSchema(yamlJsonScehma);
+    if (!schema) reject(null);
+
+    console.log("compiled schema", schema);
+    resolve(schema);
+  });
+};
+
+export const validatePubliccodeYml = values => {
+  return new Promise((resolve, reject) => {
+    console.log("validatePubliccodeYml", yamlJsonScehma);
+    delete yamlJsonScehma.$schema;
+    delete yamlJsonScehma.id;
+    const schema = compileSchema(yamlJsonScehma);
+    console.log("compiled scehma", schema);
+    const valid = ajv.validate(schema, values);
+    if (valid) {
+      console.log("schema is valid");
+      resolve(null);
+    }
+    const errors = ajv.errors;
+    console.log("errors", errors);
+    resolve(errors);
+  });
+};
 
 const strip = html => {
   var tmp = document.createElement("DIV");

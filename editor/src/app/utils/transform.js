@@ -142,10 +142,21 @@ export const transformBack = obj => {
   } else {
     values = Object.assign({}, obj);
   }
-
   //TODO Remove fields not in list
-
   return { languages, values, country };
+};
+
+const cleanupFields = (element, obj) => {
+  let availableKeys = Object.keys(element);
+  Object.keys(obj).forEach(k => {
+    if (availableKeys.indexOf(k) == 0 || typeof obj[k] != element[k].type) {
+      delete obj[k];
+    }
+    if (typeof obj[k] === "object" && !Array.isArray(obj[k])) {
+      obj[k] = transformBooleanValues(element[k], Object.assign({}, obj[k]));
+    }
+  });
+  return obj;
 };
 
 const transformBooleanValues = obj => {

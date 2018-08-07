@@ -30,7 +30,7 @@ const it = [
       },
       interoperabile: {
         title: "interoperabile",
-        label: "interoperabile",
+        label: "Interoperabile",
         type: "boolean",
         description:
           "Se presente e impostato a yes, il software è conforme alle linee guida sull'interoperabilità.Riferimento normativo: Art. 73 del CAD."

@@ -5,7 +5,7 @@ import { notify } from "../store/notifications";
 import { APP_FORM } from "../contents/constants";
 import img_x from "../../asset/img/x.svg";
 import img_copy from "../../asset/img/copy.svg";
-import img_upload from "../../asset/img/upload.svg";
+import img_upload from "../../asset/img/load.svg";
 import img_download from "../../asset/img/download.svg";
 import img_dots from "../../asset/img/dots.svg";
 import img_xx from "../../asset/img/xx.svg";
@@ -98,9 +98,16 @@ export default class sidebar extends Component {
     });
     let blobURL = window.URL.createObjectURL(blob);
     let tempLink = document.createElement("a");
+    tempLink.style="display:none";
+    tempLink.download= "pubbliccode.yml";
     tempLink.href = blobURL;
     tempLink.setAttribute("download", "pubbliccode.yml");
+    document.body.appendChild(tempLink);
     tempLink.click();
+    setTimeout(function(){
+        document.body.removeChild(tempLink);
+        window.URL.revokeObjectURL(blobURL);
+    }, 1000);
   }
 
   render() {
