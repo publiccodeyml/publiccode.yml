@@ -14,11 +14,12 @@ input[type="tel"],
 input[type="text"],
 input[type="time"],
 input[type="url"],
+input[type="date"],
 select.form-control,
 textarea.form-control {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #797979;
+  border-bottom: 1px solid #979797;
   border-radius: 0;
   outline: 0;
   height: 2.5rem;
@@ -28,7 +29,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   font-weight: 600;
-  color: #5c6f82;
+  color: #17324d;
 }
 
 .has-error {
@@ -42,32 +43,57 @@ textarea.form-control {
   input[type="text"],
   input[type="time"],
   input[type="url"],
+  input[type="date"],
   select.form-control,
   textarea.form-control {
-    border-bottom: 1px solid #F83E5A;
+    border-bottom: 1px solid #f83e5a;
   }
 }
 
 .control-label,
 .control-link,
-.help-block {
-  color: #5c6f82;
+legend {
+  color: #5a768a;
+  font-weight: 400;
   display: block;
+  font-size: 18px;
+}
+legend{
+  padding:0 10px!important;
+}
+
+.form-check-label {
+  color: #5a768a;
+  font-weight: 400;
+  display: block;
+  font-size: 16px;
+}
+// .help-block {
+//   display: block;
+// }
+
+.help-block,
+.help-block small,
+.help-block .form-text .text-muted {
+  font-size: 14px;
+  color: #5a768a;
+  font-weight: 400;
+  display: inline;
 }
 
 .has-error {
   .help-block {
-    color: #F83E5A;
+    background-color: #f83e5a;
+    padding: 0px 12px;
+    color: #fff;
   }
 }
 
-input[type="checkbox"] {
-  border-radius: 4px;
-  border-size: 2px;
-  border-color: #5768f4;
-  background-color: #fff;
-  width: 20px;
-  height: 20px;
-}
-
-
+// input[type="checkbox"] {
+//   border-radius: 4px;
+//   border-size: 2px;
+//   border-color: #5768f4;
+//   background-color: #fff;
+//   width: 20px;
+//   height: 20px;
+// }

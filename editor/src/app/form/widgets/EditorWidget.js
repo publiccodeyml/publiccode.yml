@@ -53,7 +53,9 @@ class MyEditor extends Component {
   render() {
     return (
       <RichTextEditor
-        className="RichTextEditor"
+        className="editor__component"
+        toolbarClassName="editor__toolbar"
+        editorClassName="editor__content"
         value={this.state.text}
         onChange={this.onChange}
       />
@@ -63,7 +65,8 @@ class MyEditor extends Component {
 
 const renderInput = field => {
   const className = classNames([
-    "form-group",
+
+    "form-group editor__widget",
     { "has-error": field.meta.touched && field.meta.error }
   ]);
 
@@ -72,15 +75,17 @@ const renderInput = field => {
       <label className="control-label" htmlFor={"field-" + field.name}>
         {field.label} {field.required ? "*" : ""}
       </label>
-      <MyEditor
-        pristine={field.meta.pristine}
-        initial={field.meta.initial}
-        {...field.input}
-        className="form-control RichTextEditor"
-        id={"field-" + field.fieldName}
-        required={field.required}
-        placeholder={field.placeholder}
-      />
+      <div className="form-control editor__wrapper">
+        <MyEditor
+
+          pristine={field.meta.pristine}
+          initial={field.meta.initial}
+          {...field.input}
+          id={"field-" + field.fieldName}
+          required={field.required}
+          placeholder={field.placeholder}
+        />
+      </div>
       {field.meta.touched &&
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>

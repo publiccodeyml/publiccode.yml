@@ -17,6 +17,42 @@ const it = [
   {
     section: 6,
     group: "it",
+    title: "spid",
+    label: "SPID",
+    type: "boolean",
+    description:
+      "Se presente e impostato a yes, il software si interfaccia con SPID - il Sistema Pubblico di Identità Digitale."
+  },
+  {
+    section: 6,
+    group: "it",
+    title: "cie",
+    label: "CIE",
+    type: "boolean",
+    description:
+      "Se presente e impostato a yes, il software si interfaccia con la Carta di Identità Elettronica."
+  },
+  {
+    section: 6,
+    group: "it",
+    title: "anpr",
+    label: "ANPR",
+    type: "boolean",
+    description:
+      "Se presente e impostato a yes, il software si interfaccia con ANPR."
+  },
+  {
+    section: 6,
+    group: "it",
+    title: "pagopa",
+    label: "PagoPA",
+    type: "boolean",
+    description:
+      "Se presente e impostato a yes, il software si interfaccia con PagoPA."
+  },
+  {
+    section: 6,
+    group: "it",
     title: "conforme",
     label: "Conforme",
     type: "object",
@@ -51,42 +87,7 @@ const it = [
       }
     }
   },
-  {
-    section: 6,
-    group: "it",
-    title: "spid",
-    label: "SPID",
-    type: "boolean",
-    description:
-      "Se presente e impostato a yes, il software si interfaccia con SPID - il Sistema Pubblico di Identità Digitale."
-  },
-  {
-    section: 6,
-    group: "it",
-    title: "cie",
-    label: "CIE",
-    type: "boolean",
-    description:
-      "Se presente e impostato a yes, il software si interfaccia con la Carta di Identità Elettronica."
-  },
-  {
-    section: 6,
-    group: "it",
-    title: "anpr",
-    label: "ANPR",
-    type: "boolean",
-    description:
-      "Se presente e impostato a yes, il software si interfaccia con ANPR."
-  },
-  {
-    section: 6,
-    group: "it",
-    title: "pagopa",
-    label: "PagoPA",
-    type: "boolean",
-    description:
-      "Se presente e impostato a yes, il software si interfaccia con PagoPA."
-  },
+
   {
     section: 6,
     group: "it",

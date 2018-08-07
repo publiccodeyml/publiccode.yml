@@ -9,12 +9,12 @@ const ReadMore = props => {
 const ellipsis = descr => {
   let partial = descr;
   if (descr.length > MAX_LEN) {
-    partial = descr.substring(0, 55) + "...";
+    partial = descr.substring(0, MAX_LEN-1) + "...";
   }
   return partial;
 };
 
-const MAX_LEN = 50;
+const MAX_LEN = 100;
 
 const Info = props => {
   if (!props.description) return null;

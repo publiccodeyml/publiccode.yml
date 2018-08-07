@@ -56,7 +56,7 @@ export const checkField = (field, obj, value, required) => {
     let widget = obj.widget;
 
     if (widget && widget === "editor" && validator.isEmpty(strip(value).trim()))
-      return "values required.";
+      return "This property is required.";
 
     if (widget == "url" && !validator.isURL(value)) {
       return "Not a valid Url";
@@ -87,9 +87,9 @@ export const validateRequired = (contents, elements, errors) => {
     if (!content) {
       //(obj.type == "array" && obj.items.type == "object")
       if (obj && (obj.type == "object" || obj.type == "array")) {
-        errors[field] = { _error: "Required" };
+        errors[field] = { _error: "This property is required" };
       } else {
-        errors[field] = "Required.";
+        errors[field] = "This property is required.";
       }
     }
   });
@@ -116,7 +116,7 @@ export const validateSubTypes = (contents, elements, errors) => {
           let memberErrors = {};
           requiredFields.forEach(rf => {
             if (!member || !member[rf]) {
-              memberErrors[rf] = "Required";
+              memberErrors[rf] = "This property is required";
               membersArrayErrors[index] = memberErrors;
             }
           });
