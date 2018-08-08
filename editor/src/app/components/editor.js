@@ -22,6 +22,7 @@ import cleanDeep from "clean-deep";
 import Head from "./head";
 import Foot from "./foot";
 import EditorForm from "./editorForm";
+import InfoBox from "./InfoBox";
 
 import LanguageSwitcher from "./languageSwitcher";
 import Sidebar from "./sidebar";
@@ -183,10 +184,14 @@ export default class Index extends Component {
     //has state
     let errors = {};
     let { values, currentLanguage, elements } = this.state;
+
     //CHECK REQUIRED FIELDS
-    errors = fv.validateRequired(contents, elements, errors);
+    let required = fv.validateRequired(contents, elements);
     //VALIDATE TYPES AND SUBOBJECT
-    errors = fv.validateSubTypes(contents, elements, errors);
+    let objs_n_arrays = fv.validateSubTypes(contents, elements);
+    errors = Object.assign(required, objs_n_arrays);
+    // console.log(errors);
+
     //UPDATE STATE
     values[currentLanguage] = contents;
     this.setState({
@@ -394,6 +399,7 @@ export default class Index extends Component {
               )}
           </div>
           {currentLanguage && this.renderFoot()}
+          <InfoBox />
         </div>
         {this.renderSidebar()}
       </Fragment>

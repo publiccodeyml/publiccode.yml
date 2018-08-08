@@ -53,4 +53,4 @@ export default class foot extends Component {
     );
   }
 }
-//   disabled={form[APP_FORM].submitFailed && form[APP_FORM].syncErrors}
+//disabled={form[APP_FORM].submitFailed && form[APP_FORM].syncErrors}

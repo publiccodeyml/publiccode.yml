@@ -5,7 +5,7 @@ import { change } from "redux-form";
 import { connect } from "react-redux";
 import renderField from "../renderField";
 import { map as _map } from "lodash";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 class OneOfChoiceWidget extends Component {
   constructor(props) {

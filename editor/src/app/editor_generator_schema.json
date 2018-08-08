@@ -222,31 +222,21 @@
       "description": "A link to a public roadmap of the software."
     },
     "developmentStatus": {
-      "type": "array",
-      "uniqueItems": true,
+      "type": "string",
       "title": "developmentStatus",
       "description":
         "Allowed values: concept, development, beta, stable, obsolete",
-      "examples": [""],
-      "items": {
-        "type": "string",
-        "enum": ["concept", "development", "beta", "stable", "obsolete"]
-      },
-      "widget": "choice-multiple-expanded"
+      "enum": ["concept", "development", "beta", "stable", "obsolete"],
+      "widget": "choice-expanded"
     },
     "softwareType": {
-      "type": "array",
-      "uniqueItems": true,
+      "type": "string",
       "title": "softwareType",
       "description":
         "Allowed values: standalone, addon, library, configurationFiles",
       "examples": ["standalone"],
-      "items": {
-        "title": "item",
-        "type": "string",
-        "enum": ["standalone", "addon", "library", "configurationFiles"]
-      },
-      "widget": "choice-multiple-expanded"
+      "enum": ["standalone", "addon", "library", "configurationFiles"],
+      "widget": "choice-expanded"
     },
     "intendedAudience": {
       "title": "intended audience",
@@ -338,7 +328,8 @@
           "title": "Email",
           "description":
             "This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like info@acme.inc. ",
-          "examples": ["lou.reed@acme.inc"]
+          "examples": ["lou.reed@acme.inc"],
+          "widget": "email"
         },
         "phone": {
           "type": "string",
@@ -376,7 +367,8 @@
           "type": "string",
           "title": "website",
           "description":
-            "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website."
+            "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.",
+          "widget": "url"
         }
       }
     },

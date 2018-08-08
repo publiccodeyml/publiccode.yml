@@ -8,6 +8,7 @@ $mq-size: 640px;
   font-family: "Titillium Web", "Roboto Mono", "system", sans-serif;
 }
 
+@import "./info_box.scss";
 @import "./editor_widget.scss";
 @import "./editor_buttons.scss";
 

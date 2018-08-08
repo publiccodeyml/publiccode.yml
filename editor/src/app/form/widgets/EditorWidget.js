@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import RichTextEditor from "react-rte";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const emptyVal = RichTextEditor.createEmptyValue();
 
@@ -65,7 +65,6 @@ class MyEditor extends Component {
 
 const renderInput = field => {
   const className = classNames([
-
     "form-group editor__widget",
     { "has-error": field.meta.touched && field.meta.error }
   ]);

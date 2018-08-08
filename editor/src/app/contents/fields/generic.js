@@ -36,14 +36,13 @@ const fields = async () => {
     {
       title: "publiccode-yaml-version",
       label: "Publiccode Yaml Version",
-      type: "array",
+      type: "string",
       description: "This key contains the version of the publicode definition.",
       items: {
         type: "string"
       },
       section: 0,
       required: true,
-      uniqueItems: true,
       enum: versions,
       widget: "choice-expanded"
     },
@@ -244,34 +243,25 @@ const fields = async () => {
     {
       title: "developmentStatus",
       label: "Development Status",
-      type: "array",
+
+      type: "string",
       description:
         "Allowed values: concept, development, beta, stable, obsolete",
-      items: {
-        type: "string",
-        enum: developmentStatus_list
-      },
-      uniqueItems: true,
+      enum: developmentStatus_list,
       section: 1,
       required: true,
-      widget: "choice-multiple-expanded"
+      widget: "choice-expanded"
     },
     {
       title: "softwareType",
       label: "Software Type",
-      type: "array",
-      uniqueItems: true,
+      type: "string",
       description:
         "Allowed values: standalone, addon, library, configurationFiles",
-
-      items: {
-        title: "item",
-        type: "string",
-        enum: softwareType_list
-      },
+      enum: softwareType_list,
       section: 1,
       required: true,
-      widget: "choice-multiple-expanded"
+      widget: "choice-expanded"
     },
 
     {
@@ -476,6 +466,7 @@ const fields = async () => {
             type: "string",
             title: "Email",
             label: "Email",
+            widget: "email",
             description:
               "This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like info@acme.inc. "
           },

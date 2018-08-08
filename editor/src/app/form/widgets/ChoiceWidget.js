@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import { zipObject as _zipObject, map as _map } from "lodash";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const renderSelect = field => {
   const className = classNames([
