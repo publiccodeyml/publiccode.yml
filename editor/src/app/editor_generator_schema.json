@@ -92,20 +92,17 @@
   "definitions": {
     "publiccode-yaml-version": {
       "title": "publiccode-yaml-version",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "title": "Version",
-        "enum": ["developmnet", "0.1"]
-      },
+      "label": "publiccode-yaml-version",
+      "type": "string",
+      "enum": ["developmnet", "0.1"],
       "description":
         "This key contains the version of the publicode definition.",
       "widget": "choice-multiple-expanded"
     },
     "name": {
       "type": "string",
-      "title": "The Name",
+      "title": "Name",
+      "label": "Name",
       "description":
         "This key contains the name of the software. It contains the (short) public name of the product, which can be localised in the specific localisation section. It should be the name most people usually refer to the software. In case the software has both an internal 'code' name and a commercial name, use the commercial name.",
       "examples": ["Medusa"]

@@ -18,8 +18,14 @@ const renderArrayFields = (
   swap
 ) => {
   const prefix = fieldName + ".";
+
   if (count) {
     return _times(count, idx => {
+      let isSummary = false;
+      if (idx != count - 1) {
+        isSummary = true;
+      }
+      schema.isSummary = isSummary;
       return (
         <div key={idx}>
           <div className="float-right">

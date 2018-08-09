@@ -81,6 +81,7 @@ export default class Index extends Component {
   async componentDidMount() {
     await this.initData();
     this.switchLang("eng");
+    this.switchCountry("it");
   }
 
   async initData(country = null) {

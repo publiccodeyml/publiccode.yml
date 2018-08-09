@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import copy from "copy-to-clipboard";
+import validator from "validator";
 import { notify } from "../store/notifications";
 import { APP_FORM } from "../contents/constants";
 import img_x from "../../asset/img/x.svg";
@@ -51,6 +52,17 @@ export default class sidebar extends Component {
     const { onLoad, onReset } = this.props;
     let { remoteYml } = this.state;
     this.showDialog(false);
+
+    if (!remoteYml || !validator.isURL(remoteYml)) {
+      this.props.notify({ type: 1, msg: "Not a valid url" });
+    }
+
+    let ext = remoteYml.split(/[. ]+/).pop();
+    if (ext != "yml" && ext != "yaml") {
+      this.props.notify({ type: 1, msg: "File type not supported" });
+      return;
+    }
+
     onReset();
 
     let yaml = null;
@@ -72,7 +84,7 @@ export default class sidebar extends Component {
     }
     // let ext = files[0].name.split(".")[1];
     let ext = files[0].name.split(/[. ]+/).pop();
-    if (ext != "yml") {
+    if (ext != "yml" && ext != "yaml") {
       this.props.notify({ type: 1, msg: "File type not supported" });
       return;
     }
@@ -98,15 +110,15 @@ export default class sidebar extends Component {
     });
     let blobURL = window.URL.createObjectURL(blob);
     let tempLink = document.createElement("a");
-    tempLink.style="display:none";
-    tempLink.download= "pubbliccode.yml";
+    tempLink.style = "display:none";
+    tempLink.download = "pubbliccode.yml";
     tempLink.href = blobURL;
     tempLink.setAttribute("download", "pubbliccode.yml");
     document.body.appendChild(tempLink);
     tempLink.click();
-    setTimeout(function(){
-        document.body.removeChild(tempLink);
-        window.URL.revokeObjectURL(blobURL);
+    setTimeout(function() {
+      document.body.removeChild(tempLink);
+      window.URL.revokeObjectURL(blobURL);
     }, 1000);
   }
 
@@ -146,7 +158,14 @@ export default class sidebar extends Component {
               </div>
             )}
           {!(fail && errors) && (
-            <div className="sidebar__code"><pre><code>{'\n'}{yaml}</code></pre></div>
+            <div className="sidebar__code">
+              <pre>
+                <code>
+                  {"\n"}
+                  {yaml}
+                </code>
+              </pre>
+            </div>
           )}
         </div>
 
@@ -161,6 +180,7 @@ export default class sidebar extends Component {
             <input
               id="load_yaml"
               type="file"
+              accept=".yml, .yaml"
               style={{ display: "none" }}
               onChange={e => this.load(e.target.files)}
             />
