@@ -34,7 +34,12 @@ const renderInput = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };

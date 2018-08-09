@@ -7,6 +7,7 @@ export const show = createAction(SHOW_INFO);
 export const hide = createAction(HIDE_INFO);
 
 const initialState = {
+  title: null,
   description: null,
   visible: false
 };
@@ -17,7 +18,8 @@ const reducer = handleActions(
       console.log(action);
       return {
         ...state,
-        description: action.payload,
+        title: action.payload.title,
+        description: action.payload.description,
         visible: true
       };
     },

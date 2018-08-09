@@ -28,14 +28,17 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-@connect(mapStateToProps,mapDispatchToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps
+)
 export default class InfoBox extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    if (!this.props.description) return null;
-    let { description } = this.props;
+    if (!(this.props.title || this.props.description)) return null;
+    let { title, description } = this.props;
     let partial = ellipsis(description);
     return (
       <div className="field_info">
@@ -48,7 +51,7 @@ export default class InfoBox extends Component {
                 className="link"
                 onClick={() => {
                   console.log("CLICK", description);
-                  this.props.show(description);
+                  this.props.show({  title,  description });
                 }}
               >
                 Read more

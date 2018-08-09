@@ -44,7 +44,7 @@ class OneOfChoiceWidget extends Component {
           })}
         </select>
         <div>{this.renderOption()}</div>
-        {field.description && <Info description={field.description} />}
+        {field.description && <Info title={field.label?field.label:field.fieldName} description={field.description} />}
       </div>
     );
   }

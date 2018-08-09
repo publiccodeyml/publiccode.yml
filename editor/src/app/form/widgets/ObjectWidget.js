@@ -7,12 +7,9 @@ const Widget = props => {
     <div className="block">
       {props.showLabel &&
         props.label && (
-
             <legend className="control-label">
               {props.label} {props.schema.required ? "*" : ""}
             </legend>
-
-
         )}
       {renderFields(
         props.schema,

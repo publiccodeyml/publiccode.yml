@@ -26,7 +26,7 @@ export default class InfoBox extends Component {
     super(props);
   }
   render() {
-    const { description, visible } = this.props.infobox;
+    const { title, description, visible } = this.props.infobox;
     const className = classNames([
       "info__box",
       { info__box__visible: visible }
@@ -45,7 +45,11 @@ export default class InfoBox extends Component {
               <img src={img_close} />
             </a>
           </div>
-          <div className="info__box__content">{description}</div>
+
+          <div className="info__box__content">
+            <p className="info__box__title">{title}</p>
+            <p>{description}</p>
+          </div>
         </div>
       </div>
     );

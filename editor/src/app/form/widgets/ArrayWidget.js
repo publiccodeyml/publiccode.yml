@@ -77,7 +77,12 @@ const renderInput = field => {
           Add new
         </a>
       </div>
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };

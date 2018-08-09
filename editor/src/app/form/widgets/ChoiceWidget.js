@@ -16,7 +16,6 @@ const renderSelect = field => {
   const selectOptions = _zipObject(options, optionNames);
   return (
     <div className={className}>
-
       {field.showLabel && (
         <label className="control-label" htmlFor={"field-" + field.name}>
           {field.label} {field.schema.required ? "*" : ""}
@@ -50,7 +49,12 @@ const renderSelect = field => {
           <div className="help-block">{field.meta.error}</div>
         )}
 
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };
