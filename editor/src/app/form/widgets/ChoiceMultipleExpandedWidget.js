@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { Field } from "redux-form";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const zipObject = (props, values) =>
   props.reduce(
@@ -61,7 +61,12 @@ const renderChoice = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };

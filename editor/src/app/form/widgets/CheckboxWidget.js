@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const renderInput = field => {
   const className = classNames([
@@ -14,7 +14,7 @@ const renderInput = field => {
       <div className="form-check">
         <input
           {...field.input}
-          checked={field.input.value == true || field.input.value == 'yes'}
+          checked={field.input.value == true || field.input.value == "yes"}
           className="form-check-input"
           type="checkbox"
           required={field.required}
@@ -29,7 +29,12 @@ const renderInput = field => {
           <span className="help-block">{field.meta.error}</span>
         )}
 
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import data from "./fields";
+import data, { fieldsAsync } from "./fields";
 
-const { fields, sections, groups, available_countries, countrySpec } = data;
+const { sections, groups, available_countries, countrySpec } = data;
 
 //export groups;
 export const SUMMARY = "description";
@@ -10,16 +10,14 @@ export const GROUPS = groups;
 export const SECTIONS = sections;
 export const AVAILABLE_COUNTRIES = available_countries;
 
-export const getData = (countryCode = null) => {
-  // return new Promise((resolve, reject) => {
+export const getData = async (countryCode = null) => {
+  const fields = await fieldsAsync();
   const countryFields = getCountryElements(countryCode);
   const allFields = getAllFields(fields, countryFields);
   const blocks = generateBlocks(allFields);
   const elements = generateElements(blocks);
   const obj = { blocks, elements, allFields };
   return obj;
-  //   resolve(obj);
-  // });
 };
 
 export const getFieldByTitle = (allFields, title) => {

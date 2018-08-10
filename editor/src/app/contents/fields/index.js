@@ -1,7 +1,7 @@
 import uk from "./uk";
 import us from "./us";
 import it from "./it";
-import fields from "./generic";
+import getFields from "./generic";
 
 const sections = [
   "Main information",
@@ -39,13 +39,15 @@ const countrySpec = [
   }
 ];
 const available_countries = countrySpec.map(country => country.code);
-
 const data = {
-  fields,
   countrySpec,
   sections,
   groups,
   available_countries
+};
+
+export const fieldsAsync = async () => {
+  return await getFields();
 };
 export default data;
 

@@ -7,9 +7,7 @@ $content-head-h: 120px;
   }
 }
 
-.RichTextEditor {
-  min-height: 300px;
-}
+
 .content__head {
   padding: 0 $content-pad-horiz;
   height: $content-head-h;
@@ -17,6 +15,7 @@ $content-head-h: 120px;
   justify-content: space-between;
   align-items: center;
 }
+
 .content__head__title {
   color: #0066cc;
   font-family: "Titillium Web";
@@ -28,13 +27,32 @@ $content-head-h: 120px;
 
 .content__head__help {
   margin: 10px 20px 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: right;
+
   a {
+    text-align: right;
     color: #5c6f82;
     font-family: "Titillium Web";
     font-size: 16px;
     font-weight: bold;
     line-height: 24px;
   }
+}
+
+.content__head__status {
+  align-self: flex-end;
+  color: #adadad;
+  font-family: "Titillium Web";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  text-align: right;
 }
 
 .content__main {
@@ -51,6 +69,7 @@ $content-head-h: 120px;
   background: #fff;
   flex: 5 1 0;
   order: 0;
+  position:relative;
 }
 
 .content__foot {
@@ -63,14 +82,13 @@ $content-head-h: 120px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .content__foot_item {
-  flex: 1;
   text-align: center;
   button {
-    margin: 0 10px;
+    margin: 0 20px;
   }
 }
 

@@ -5,7 +5,7 @@ import { FieldArray, Field } from "redux-form";
 import { times as _times } from "lodash";
 import ChoiceWidget from "./ChoiceWidget";
 import classNames from "classnames";
-import Info from "./Info";
+import Info from "../../components/Info";
 import img_close from "../../../asset/img/close.svg";
 
 const renderArrayFields = (
@@ -18,8 +18,14 @@ const renderArrayFields = (
   swap
 ) => {
   const prefix = fieldName + ".";
+
   if (count) {
     return _times(count, idx => {
+      let isSummary = false;
+      if (idx != count - 1) {
+        isSummary = true;
+      }
+      schema.isSummary = isSummary;
       return (
         <div key={idx}>
           <div className="float-right">
@@ -60,10 +66,7 @@ const renderInput = field => {
           {field.label} {field.schema.required ? "*" : ""}
         </label>
       )}
-      {field.meta.submitFailed &&
-        field.meta.error && (
-          <div className="help-block">{field.meta.error}</div>
-        )}
+      {field.meta.error && <div className="help-block">{field.meta.error}</div>}
       {renderArrayFields(
         field.fields.length,
         field.schema.items,
@@ -75,10 +78,17 @@ const renderInput = field => {
           field.fields.swap(a, b);
         }
       )}
-      <a href="#" className="link" onClick={() => field.fields.push()}>
-        Add new
-      </a>
-      {field.description && <Info description={field.description} />}
+      <div>
+        <a href="#" className="link" onClick={() => field.fields.push()}>
+          Add new
+        </a>
+      </div>
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };
@@ -98,7 +108,6 @@ const CollectionWidget = props => {
     />
   );
 };
-
 
 const ArrayWidget = props => {
   // Arrays are tricky because they can be multiselects or collections

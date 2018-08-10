@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { Field } from "redux-form";
 import DateSelector from "./DateSelector";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 // produces an array [start..end-1]
 const range = (start, end) =>

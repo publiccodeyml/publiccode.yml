@@ -2,16 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const renderInput = field => {
   const className = classNames([
     "form-group",
     { "has-error": field.meta.touched && field.meta.error }
   ]);
+
+  // let type = field.type;
+  // if (field.schema.widget) {
+  //   console.log("WIDGET", field.schema.widget);
+  // }
+
   return (
     <div className={className}>
-
       {field.showLabel && (
         <label className="control-label" htmlFor={field.id}>
           {field.label} {field.required ? "*" : ""}
@@ -29,7 +34,12 @@ const renderInput = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-      {field.description && <Info description={field.description} />}
+      {field.description && (
+        <Info
+          title={field.label ? field.label : field.name}
+          description={field.description}
+        />
+      )}
     </div>
   );
 };

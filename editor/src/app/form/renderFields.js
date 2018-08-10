@@ -5,7 +5,7 @@ export const isRequired = (schema, fieldName) => {
   if (!schema.required) {
     return false;
   }
-  return (schema.required === true) || schema.required.indexOf(fieldName) !== -1;
+  return schema.required === true || schema.required.indexOf(fieldName) !== -1;
 };
 
 const renderFields = (schema, theme, prefix = null, context = {}) => {
@@ -25,6 +25,9 @@ const renderFields = (schema, theme, prefix = null, context = {}) => {
   return props.map((item, i) => {
     const name = item.prop;
     const field = schema.properties[name];
+    if (schema.isSummary) {
+      field.isSummary = schema.isSummary;
+    }
 
     return (
       <div className="block__item" key={`obj_item_${i}`}>

@@ -17,43 +17,6 @@ const it = [
   {
     section: 6,
     group: "it",
-    title: "conforme",
-    label: "Conforme",
-    type: "object",
-    properties: {
-      accessibile: {
-        title: "accessibile",
-        label: "Accessibile",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design."
-      },
-      interoperabile: {
-        title: "interoperabile",
-        label: "interoperabile",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software è conforme alle linee guida sull'interoperabilità.Riferimento normativo: Art. 73 del CAD."
-      },
-      sicuro: {
-        title: "sicuro",
-        label: "Sicuro",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software è conforme alle Misure minime di sicurezza ICT per le Pubbliche amministrazioni."
-      },
-      privacy: {
-        title: "privacy",
-        label: "Privacy",
-        type: "boolean",
-        description:
-          "Se presente e impostato a yes, il software rispetta le linee guida del Garante per la protezione dei dati personali."
-      }
-    }
-  },
-  {
-    section: 6,
-    group: "it",
     title: "spid",
     label: "SPID",
     type: "boolean",
@@ -87,6 +50,44 @@ const it = [
     description:
       "Se presente e impostato a yes, il software si interfaccia con PagoPA."
   },
+  {
+    section: 6,
+    group: "it",
+    title: "conforme",
+    label: "Conforme",
+    type: "object",
+    properties: {
+      accessibile: {
+        title: "accessibile",
+        label: "Accessibile",
+        type: "boolean",
+        description:
+          "Se presente e impostato a yes, il software è conforme alle leggi in materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle linee guida di design."
+      },
+      interoperabile: {
+        title: "interoperabile",
+        label: "Interoperabile",
+        type: "boolean",
+        description:
+          "Se presente e impostato a yes, il software è conforme alle linee guida sull'interoperabilità.Riferimento normativo: Art. 73 del CAD."
+      },
+      sicuro: {
+        title: "sicuro",
+        label: "Sicuro",
+        type: "boolean",
+        description:
+          "Se presente e impostato a yes, il software è conforme alle Misure minime di sicurezza ICT per le Pubbliche amministrazioni."
+      },
+      privacy: {
+        title: "privacy",
+        label: "Privacy",
+        type: "boolean",
+        description:
+          "Se presente e impostato a yes, il software rispetta le linee guida del Garante per la protezione dei dati personali."
+      }
+    }
+  },
+
   {
     section: 6,
     group: "it",

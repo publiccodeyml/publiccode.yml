@@ -92,20 +92,17 @@
   "definitions": {
     "publiccode-yaml-version": {
       "title": "publiccode-yaml-version",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "title": "Version",
-        "enum": ["developmnet", "0.1"]
-      },
+      "label": "publiccode-yaml-version",
+      "type": "string",
+      "enum": ["developmnet", "0.1"],
       "description":
         "This key contains the version of the publicode definition.",
       "widget": "choice-multiple-expanded"
     },
     "name": {
       "type": "string",
-      "title": "The Name",
+      "title": "Name",
+      "label": "Name",
       "description":
         "This key contains the name of the software. It contains the (short) public name of the product, which can be localised in the specific localisation section. It should be the name most people usually refer to the software. In case the software has both an internal 'code' name and a commercial name, use the commercial name.",
       "examples": ["Medusa"]
@@ -222,31 +219,21 @@
       "description": "A link to a public roadmap of the software."
     },
     "developmentStatus": {
-      "type": "array",
-      "uniqueItems": true,
+      "type": "string",
       "title": "developmentStatus",
       "description":
         "Allowed values: concept, development, beta, stable, obsolete",
-      "examples": [""],
-      "items": {
-        "type": "string",
-        "enum": ["concept", "development", "beta", "stable", "obsolete"]
-      },
-      "widget": "choice-multiple-expanded"
+      "enum": ["concept", "development", "beta", "stable", "obsolete"],
+      "widget": "choice-expanded"
     },
     "softwareType": {
-      "type": "array",
-      "uniqueItems": true,
+      "type": "string",
       "title": "softwareType",
       "description":
         "Allowed values: standalone, addon, library, configurationFiles",
       "examples": ["standalone"],
-      "items": {
-        "title": "item",
-        "type": "string",
-        "enum": ["standalone", "addon", "library", "configurationFiles"]
-      },
-      "widget": "choice-multiple-expanded"
+      "enum": ["standalone", "addon", "library", "configurationFiles"],
+      "widget": "choice-expanded"
     },
     "intendedAudience": {
       "title": "intended audience",
@@ -338,7 +325,8 @@
           "title": "Email",
           "description":
             "This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like info@acme.inc. ",
-          "examples": ["lou.reed@acme.inc"]
+          "examples": ["lou.reed@acme.inc"],
+          "widget": "email"
         },
         "phone": {
           "type": "string",
@@ -376,7 +364,8 @@
           "type": "string",
           "title": "website",
           "description":
-            "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website."
+            "This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.",
+          "widget": "url"
         }
       }
     },

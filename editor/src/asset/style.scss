@@ -8,6 +8,10 @@ $mq-size: 640px;
   font-family: "Titillium Web", "Roboto Mono", "system", sans-serif;
 }
 
+@import "./info_box.scss";
+@import "./editor_widget.scss";
+@import "./editor_buttons.scss";
+
 // @import "./bsi.scss";
 @import "./bs_override.scss";
 @import "node_modules/bootstrap/scss/bootstrap";
@@ -16,6 +20,7 @@ $mq-size: 640px;
 @import "./transitions.scss";
 @import "./snackbar.scss";
 @import "./notify.scss";
+
 
 @import "./wrapper.scss";
 @import "./content.scss";

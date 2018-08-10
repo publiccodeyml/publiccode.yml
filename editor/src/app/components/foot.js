@@ -28,17 +28,17 @@ export default class foot extends Component {
       <div className="content__foot">
         <div className="content__foot_item">
           <button
-            className="btn btn-lg btn-outline-primary"
+            className="editor_button  editor_button--custom"
             onClick={() => this.props.reset()}
           >
             Reset
           </button>
         </div>
-        <div className="content__foot_item" />
         <div className="content__foot_item">
           <button
             type="button"
-            className="btn btn-lg btn-primary"
+            className="editor_button  editor_button--primary"
+
             onClick={() => {
               this.props.submit(APP_FORM);
               setTimeout(() => {
@@ -53,4 +53,4 @@ export default class foot extends Component {
     );
   }
 }
-//   disabled={form[APP_FORM].submitFailed && form[APP_FORM].syncErrors}
+//disabled={form[APP_FORM].submitFailed && form[APP_FORM].syncErrors}

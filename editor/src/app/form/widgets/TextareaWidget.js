@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Field } from "redux-form";
-import Info from "./Info";
+import Info from "../../components/Info";
 
 const renderInput = field => {
   const className = classNames([
@@ -25,7 +25,7 @@ const renderInput = field => {
         field.meta.error && (
           <span className="help-block">{field.meta.error}</span>
         )}
-       {field.description && <Info description={field.description} />}
+       {field.description && <Info title={field.label?field.label:field.name} description={field.description} />}
     </div>
   );
 };

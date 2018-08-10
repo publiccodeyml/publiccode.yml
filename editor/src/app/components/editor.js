@@ -15,12 +15,14 @@ import jsyaml from "../../../node_modules/js-yaml/dist/js-yaml.js";
 
 import _ from "lodash";
 import u from "updeep";
-import validator from "validator";
+import moment from "moment";
+
 import cleanDeep from "clean-deep";
 
 import Head from "./head";
 import Foot from "./foot";
 import EditorForm from "./editorForm";
+import InfoBox from "./InfoBox";
 
 import LanguageSwitcher from "./languageSwitcher";
 import Sidebar from "./sidebar";
@@ -64,7 +66,8 @@ export default class Index extends Component {
       blocks: null,
       elements: null,
       activeSection: 0,
-      allFields: null
+      allFields: null,
+      lastGen: null
     };
   }
 
@@ -75,24 +78,28 @@ export default class Index extends Component {
     $('[data-toggle="dropdown"]').dropdown();
   }
 
-  componentDidMount() {
-    this.initData();
+  async componentDidMount() {
+    await this.initData();
     this.switchLang("eng");
+    this.switchCountry("it");
   }
 
-  initData(country = null) {
+  async initData(country = null) {
     //has state
-    let { elements, blocks, allFields } = getData(country);
+    console.log("initData");
+    let { elements, blocks, allFields } = await getData(country);
     this.setState({ elements, blocks, country, allFields });
     this.initBootstrap();
   }
 
   parseYml(yaml) {
     //HAS STATE
-
+    this.setState({ loading: true });
     let obj = null;
     try {
       obj = jsyaml.load(yaml);
+      // let errors =   fv.validatePubliccodeYml(obj);
+      // if (errors) alert(errors);
     } catch (e) {
       alert("Error loading yaml");
       return;
@@ -113,7 +120,8 @@ export default class Index extends Component {
       yaml,
       languages,
       values,
-      country
+      country,
+      loading: false
     });
 
     //RESET FORM
@@ -122,10 +130,15 @@ export default class Index extends Component {
   }
 
   generate(formValues) {
+    let lastGen = moment();
+    this.setState({ loading: true, lastGen });
     //has state
     let { values, currentLanguage, country } = this.state;
     //values[currentLanguage] = formValues;
     let obj = ft.transform(values, country);
+
+    // let errors = await fv.validatePubliccodeYml(obj);
+    // if (errors) alert(errors);
 
     //SET  TIMESTAMP
     this.showResults(obj);
@@ -136,7 +149,7 @@ export default class Index extends Component {
     //has state
     try {
       let yaml = jsyaml.dump(values);
-      this.setState({ yaml });
+      this.setState({ yaml, loading: false });
     } catch (e) {
       console.error(e);
     }
@@ -172,10 +185,14 @@ export default class Index extends Component {
     //has state
     let errors = {};
     let { values, currentLanguage, elements } = this.state;
+
     //CHECK REQUIRED FIELDS
-    errors = fv.validateRequired(contents, elements, errors);
+    let required = fv.validateRequired(contents, elements);
     //VALIDATE TYPES AND SUBOBJECT
-    errors = fv.validateSubTypes(contents, elements, errors);
+    let objs_n_arrays = fv.validateSubTypes(contents, elements);
+    errors = Object.assign(required, objs_n_arrays);
+    // console.log(errors);
+
     //UPDATE STATE
     values[currentLanguage] = contents;
     this.setState({
@@ -188,7 +205,7 @@ export default class Index extends Component {
     return errors;
   }
 
-  reset() {
+  async reset() {
     //has state
     this.props.initialize(APP_FORM, null);
     this.setState({
@@ -207,7 +224,7 @@ export default class Index extends Component {
       activeSection: null
     });
     this.props.notify({ type: "info", msg: "Reset" });
-    this.initData();
+    await this.initData();
   }
 
   renderFoot() {
@@ -317,10 +334,10 @@ export default class Index extends Component {
     this.props.initialize(APP_FORM, currentValues);
   }
 
-  switchCountry(country) {
+  async switchCountry(country) {
     //has state
     let { currentValues } = this.state;
-    this.initData(country);
+    await this.initData(country);
     this.props.initialize(APP_FORM, currentValues);
   }
 
@@ -346,7 +363,8 @@ export default class Index extends Component {
       blocks,
       activeSection,
       country,
-      allFields
+      allFields,
+      lastGen
     } = this.state;
 
     let errors = null;
@@ -363,7 +381,7 @@ export default class Index extends Component {
     return (
       <Fragment>
         <div className="content">
-          <Head />
+          <Head lastGen={lastGen} />
           {this.langSwitcher()}
           <div className="content__main" id="content__main">
             {currentLanguage &&
@@ -382,6 +400,7 @@ export default class Index extends Component {
               )}
           </div>
           {currentLanguage && this.renderFoot()}
+          <InfoBox />
         </div>
         {this.renderSidebar()}
       </Fragment>
