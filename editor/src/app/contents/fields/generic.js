@@ -102,7 +102,7 @@ const fields = async () => {
       group: "description"
     },
     {
-      title: "shortDescription",
+      title: "summary",
       label: "Short Description",
       type: "string",
       description: "A short description is isRequired",

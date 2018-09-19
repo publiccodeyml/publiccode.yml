@@ -51,7 +51,7 @@ description:
   eng:
     localisedName: Medusa
     genericName: Text Editor
-    shortDescription: >
+    summary: >
           This description can have a maximum 150
           characters long. We should not fill the
           remaining space with "Lorem Ipsum". End

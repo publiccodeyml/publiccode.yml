@@ -57,7 +57,7 @@ export default data;
 ------------------------------------
 name
 applicationSuite
-summary_shortDescription
+summary_summary
 publiccodeYamlVersion
 releaseDate
 legal_repoOwner

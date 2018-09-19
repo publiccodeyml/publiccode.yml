@@ -5577,9 +5577,9 @@
           "title": "localisedName",
           "description": "localisedName"
         },
-        "shortDescription": {
+        "summary": {
           "type": "string",
-          "title": "shortDescription",
+          "title": "summary",
           "description": "A short description is required"
         },
         "longDescription": {
@@ -5644,7 +5644,7 @@
           }
         }
       },
-      "required": ["longDescription", "shortDescription"]
+      "required": ["longDescription", "summary"]
     }
   }
 }
