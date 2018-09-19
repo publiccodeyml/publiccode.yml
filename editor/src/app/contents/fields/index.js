@@ -78,7 +78,7 @@ inputTypes
 outputTypes
 platforms
 usedBy
-summary_featureList
+summary_features
 summary_freeTags
 
 ------------------------------------

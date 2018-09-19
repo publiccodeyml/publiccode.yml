@@ -150,7 +150,7 @@ const fields = async () => {
       }
     },
     {
-      title: "featureList",
+      title: "features",
       label: "Feature List",
       type: "array",
       description: "a list of feature that the sw has",

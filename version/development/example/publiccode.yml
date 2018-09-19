@@ -67,7 +67,7 @@ description:
     freeTags:
        - an-english-tag
 
-    featureList:
+    features:
        - Very important feature
        - Will run without a problem
        - Has zero bugs

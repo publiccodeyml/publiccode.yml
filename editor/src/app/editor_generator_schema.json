@@ -544,9 +544,9 @@
             "type": "string"
           }
         },
-        "featureList": {
+        "features": {
           "type": "array",
-          "title": "featureList",
+          "title": "features",
           "description": "a list of feature that the sw has",
           "items": {
             "type": "string",
