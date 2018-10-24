@@ -40,6 +40,10 @@ Finding projects depends on how the search API is structured for every hosting p
 
 The Italian Digital Transformation Team is also working on providing a scanner which looks for all PublicCode files on all publicly accessible websites, and exposing them as open data.
 
+## Live editor / Demo
+
+You can find a live instance of the editor [here](http://publiccode.surge.sh/)
+
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
