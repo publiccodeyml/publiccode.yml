@@ -1,4 +1,12 @@
-publiccodeYamlVersion: "http://w3id.org/publiccode/version/0.2"
+### publiccode.minimal.yml
+#
+# This is a full example of a publiccode.yml file, i.e. it tries to include
+# a meaningul value for all keys specified in the documentation.
+#
+# Full documentation for the schema is accessible at the URL
+#   http://w3id.org/publiccode/version/0.1
+
+publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
 
 name: Medusa
 applicationSuite: MegaProductivitySuite
@@ -21,6 +29,9 @@ platforms:
   - ios
 
 # For a list of allowed values, check out w3id.org/publiccode/version/0.1/tags.html
+#
+# Only stick to these tags! If you need additional tags (localised),
+# you have the chance of adding them under the description/freeTags key
 tags:
   - content-management
   - artificial-intelligence
@@ -92,7 +103,7 @@ maintenance:
 
   contractors:
     - name: "Fornitore Privato SPA"
-      url: "https://privatecompany.com"
+      website: "https://privatecompany.com"
       until: "2019-01-01"
 
   contacts:
