@@ -1,6 +1,6 @@
-# Public code: Development version
+# publiccode.yml: Development version
 
-This is the development version of the Public Code specification.
+This is the development version of the `publiccode.yml` specification.
 
 * [Schema](schema.md)
 * [Italian extension to the schema](schema.it.md)
