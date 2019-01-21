@@ -1,0 +1,65 @@
+### publiccode.minimal.yml
+#
+# This is a minimal example, i.e. it only contains values for the keys which
+# are specified as mandatory in the specification
+#
+# All the documentation for the schema is accessible at the URL
+#   http://w3id.org/publiccode/version/0.1
+
+publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+
+name: Medusa
+url: "https://example.com/italia/medusa.git"
+softwareVersion: "dev"
+releaseDate: "2017-04-15"
+
+# You can use any string, but it's better if you stick to
+# values suggested:
+# http://yml.publiccode.net/version/0.1/schema.html#key-platforms
+platforms:
+  - web
+
+# Allowed values are accessible here:
+# http://w3id.org/publiccode/version/0.1/tags.html
+#
+# Only stick to these tags! If you need additional tags (localised),
+# you have the chance of adding them under the description/freeTags key
+tags:
+  - texteditor
+
+developmentStatus: development
+
+softwareType: "standalone"
+
+description:
+  ## This example uses English: you can use any language you want
+  eng:
+    localisedName: Medusa
+    genericName: Text Editor
+    shortDescription: >
+          A rather short description which
+          is probably useless
+
+    longDescription: >
+          Very long description of this software, also split
+          on multiple rows. You should note what the software
+          is and why one should need it. We can potentially
+          have many pages of text here.
+
+    featureList:
+       - Just one feature
+
+legal:
+  # The license is an SPDX expression, and may not be a single license
+  license: AGPL-3.0-or-later
+
+maintenance:
+  type: "community"
+
+  contacts:
+    - name: Francesco Rossi
+
+localisation:
+  localisationReady: yes
+  availableLanguages:
+    - eng
