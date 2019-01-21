@@ -1,4 +1,0 @@
-{
-  "presets": ["env", "react", "stage-3"],
-  "plugins": ["transform-async-to-generator", "transform-runtime", "transform-decorators-legacy"]
-}
