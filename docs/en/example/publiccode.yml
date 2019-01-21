@@ -135,27 +135,3 @@ dependsOn:
   hardware:
     - name: NFC Reader
       optional: yes
-
-it:
-
-  conforme:
-    accessibile: yes
-    interoperabile: yes
-    sicuro: yes
-    privacy: yes
-
-  riuso:
-    codiceIPA: c_h501
-
-  spid: yes
-  pagopa: yes
-  cie: yes
-  anpr: yes
-  ecosistemi:
-    - scuola
-
-  designKit:
-    seo: no
-    ui: yes
-    web: yes
-    content: no
