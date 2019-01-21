@@ -1,6 +1,4 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
-
-# Public administration types
+## Public administration types
 
 The key `intendedAudience/onlyFor` defines the types of public administration which is
 expected to use this software. This document contains a list of allowed

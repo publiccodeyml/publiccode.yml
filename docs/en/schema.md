@@ -1,9 +1,10 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+# `publiccode.yml` standard
 
-# The main schema
-
-This document the description of the schema of
+This document contains an informal description of the schema of
 `publiccode.yml`.
+
+Version: 0.1-alpha1
+This file needs to be converted to JSON-Schema.
 
 ## Structure
 

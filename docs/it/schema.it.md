@@ -1,11 +1,9 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+# `publiccode.yml` - Estensioni italiane
 
-# Estensioni italiane
 
 ## Sezione `conforme`
 
-Questa sezione contiene delle chiavi per autodichiarare la conformità con la
-normativa vigente, rispetto ad alcune sezioni.
+TODO: documentazione
 
 ### Chiave `conforme/accessibile`
 
