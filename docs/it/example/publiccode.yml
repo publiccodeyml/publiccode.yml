@@ -20,7 +20,7 @@ platforms:
   - android
   - ios
 
-# For a list of allowed values, check out w3id.org/publiccode/version/0.1/tags.html
+# Per una lista di valori consentiti, controlla w3id.org/publiccode/version/0.1/tags.html
 tags:
   - content-management
   - artificial-intelligence
@@ -82,7 +82,7 @@ description:
        - 1st Price Software of the year
 
 legal:
-  license: AGPL-3.0-or-later        # SPDX expression of license
+  license: AGPL-3.0-or-later        # Licenza in formato SPDX 
   mainCopyrightOwner: City of Chicago
   repoOwner: City of Chicago
   authorsFile: AUTHORS
