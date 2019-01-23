@@ -1,0 +1,8 @@
+document:
+  name: publiccode.yml Standard 
+  description: |
+    This documentation contains the `publiccode.yml` standard. 
+  tags:
+    - publiccode.yml 
+    - standard 
+    - interoperability 
