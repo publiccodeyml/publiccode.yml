@@ -1,37 +1,50 @@
 # The `publiccode.yml` standard
 
-![Repo Status: Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
+![Repo Status:
+Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
 
 A metadata description standard for public software and policy repositories
 that is easy to use both for developers and people with less technical
 background, in order to make the software developed by Public Administrations
 and Public Organisations easily discoverable.
 
-**Latest release:  [Version 0.1](https://github.com/italia/publiccode.yml/releases/latest)**
+**Latest release:  [Version
+0.1](https://github.com/italia/publiccode.yml/releases/latest)**
 
 [See all versions](https://github.com/italia/publiccode.yml/releases)
 
-This project follows the Semantic Versioning.
+This project follows the Semantic Versioning.  For more information see
+[SemVer.org](https://semver.org/).
 
-For more information see [SemVer.org](https://semver.org/).
+Furthermore, the project uses branches and tags in the following way:
+* The `master` branch contains the latest stable version of the standard.
+* The `development` branch contains the improvements proposed for the next
+  version. 
+* GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
+  contains all the released versions of the standard. Releases are done
+  following the tag version for consistency (e.g., tag v0.1 implies release
+  v0.1).
 
-The PublicCode specification is developed by the [Italian Digital Transformation Team](https://teamdigitale.governo.it) and the [Authors](AUTHORS.md).
+The PublicCode specification is developed by the [Italian Digital
+Transformation Team](https://teamdigitale.governo.it) and the
+[Authors](AUTHORS.md).
 
 ## What this file is for
 
 Many great software projects are developed by public administrations, however
 reuse of these projects is very limited. Some of the reasons for low uptake of
-such projects is a lack of discoverability and that it is hard to find out
-what project can actually work in the context of a different public
-administration.
+such projects is a lack of discoverability and that it is hard to find out what
+project can actually work in the context of a different public administration.
 
-The `publiccode.yml` file is meant to solve all those problems. As such, it is an easily
-readable file for civil servants that are trying to figure out whether
-a project will work for them, and easily readable for computers as well. It contains
-information such as:
+The `publiccode.yml` file is meant to solve all those problems. As such, it is
+an easily readable file for civil servants that are trying to figure out
+whether a project will work for them, and easily readable for computers as
+well. It contains information such as:
 
-* the title and description of the project or product in English and/or other languages;
-* the development status, e.g. `concept`, `development`, `beta`, `stable`, `obsolete`;
+* the title and description of the project or product in English and/or other
+  languages;
+* the development status, e.g. `concept`, `development`, `beta`, `stable`,
+  `obsolete`;
 * which organisation developed the project;
 * who is caring for the maintenance and when this expires; 
 * who to contact for technical or support inquiries;
@@ -49,7 +62,8 @@ Finding projects depends on how the search API is structured for every hosting
 platform. For example, you can find all `publiccode.yml` on GitHub files by
 searching using the frontend or the API.
 
-* [GitHub Search `filename:publiccode.yml path:/`](https://github.com/search?q=filename%3Apubliccode.yml+path%3A%2F)
+* [GitHub Search `filename:publiccode.yml
+  path:/`](https://github.com/search?q=filename%3Apubliccode.yml+path%3A%2F)
 
 The Italian Digital Transformation Team is also working on providing a scanner
 which looks for all publiccode files on all publicly accessible websites, and
