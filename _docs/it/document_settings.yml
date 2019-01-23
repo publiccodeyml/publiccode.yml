@@ -1,9 +1,0 @@
-document:
-  name: publiccode.yml Standard 
-  description: |
-    Questa documentazione contiene gli estremi dello standard publiccode.yml
-  tags:
-    - publiccode.yml 
-    - standard 
-    - interoperability 
-    - riuso
