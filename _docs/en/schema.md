@@ -1,9 +1,6 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
-
 # The main schema
 
-This document the description of the schema of
-`publiccode.yml`.
+This document the description of the `publiccode.yml` schema.
 
 ## Structure
 
@@ -36,14 +33,14 @@ files.
 
 ## Top-level section
 
-### Key `publiccode-yaml-version`
+### Key `publiccodeYamlVersion`
 
 * Type: string
 * Presence: mandatory
-* Example: `"http://w3id.org/publiccode/version/0.1"`
+* Example: `"0.1"`
 
 This key specifies the version to which the current `publiccode.yml`
-adheres to, for forward compatibility. Current version is `0.1`.
+adheres to, for forward compatibility. 
 
 ### Key `name`
 
@@ -294,7 +291,7 @@ the software.
 **Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes) by creating a section with that name.
 
 An example for English:
-```.yaml
+```.yml
 description:
   eng:
     shortDescription: ...
@@ -638,7 +635,7 @@ A `dependency` is a complex object. The properties are the following:
 It is of course possible to use the various keys to specify a complex compatibility matrix.
 
 *Ex. 1*
-```.yaml
+```.yml
 - name: PostgreSQL
   version: 3.2
   optional: yes
@@ -646,7 +643,7 @@ It is of course possible to use the various keys to specify a complex compatibil
 This snippet marks an optional dependency on PostgreSQL exactly version 3.2.
 
 *Ex. 2*
-```.yaml
+```.yml
 - name: MySQL
   versionMin: 1.1
   versionMax: 1.3
