@@ -12,8 +12,11 @@ sense in specific countries, such as declaring compliance with local
 laws or regulations. The provided extension mechanism is the usage
 of country-specific sections.
 
-All country-specific sections are contained in a section named with the two-letter lowercase [ISO 3166-1 alpha-2 country code](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-For instance `spid` is a property for Italian software declaring whether the software is integrated with the Italian Public Identification System.
+All country-specific extensions are contained in a section named with the
+two-letter lowercase [ISO 3166-1 alpha-2 country
+code](https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+For instance `spid` is a property for Italian software declaring whether the
+software is integrated with the Italian Public Identification System.
 
 If a software is compliant I will find:
 ```
@@ -21,19 +24,19 @@ it:
   spid: yes
 ```
 
-Notice that country-specific keys within international sections are
-not allowed. Countries that want to extend the format should add one
-or many country-specific sections instead.
+Notice that country-specific extensions within international sections are
+not allowed. Countries that want to extend the format should add a
+country-specific section instead.
 
-Documentation for country specific sections is maintained in separate
-files.
+Documentation for the keys contained in a country specific section is
+maintained in separate files.
 
 * Italy: [Italian extensions](schema.it.md)
 
 
 ## Top-level section
 
-### Key `publiccodeYamlVersion`
+### Key `publiccodeYmlVersion`
 
 * Type: string
 * Presence: mandatory
@@ -105,7 +108,7 @@ specified repositories.
 ### Key `softwareVersion`
 
 * Type: string
-* Presence: mandatory
+* Presence: optional 
 * Example: `"1.0"`, `"dev"`
 
 This key contains the latest stable version number of the software.
@@ -128,12 +131,12 @@ and thus the version number is present.
 
 ### Key `logo`
 
-* Type: string (path to file)
+* Type: string (relative path to file or absolute URL)
 * Presence: optional
 * Acceptable formats: SVG, SVGZ, PNG
 * Example: `img/logo.svg`
 
-This key contains the logo of the software. Logos should be in vector
+This key contains the path to the logo of the software. Logos should be in vector
 format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of
 width.
 
@@ -288,7 +291,7 @@ This section contains a general description of the software. Parsers
 can use this section for instance to create a web page describing
 the software.
 
-**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes) by creating a section with that name.
+**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes) by creating a sub-section with that name.
 
 An example for English:
 ```.yml
@@ -298,7 +301,7 @@ description:
     longDescription: ...
 ```
 
-In the following part of the document, all keys are assumed to be in a section with the name of the language (we will note this with `[lang]`).
+In the following part of the document, all keys are assumed to be in a sub-section with the name of the language (we will note this with `[lang]`).
 
 **Note:** It is mandatory to have *at least* one language in this section. All other languages are optional.
 
@@ -458,6 +461,9 @@ be hosted on a video sharing website that supports the
 [oEmbed](https://oembed.com) standard; popular options are YouTube and
 Vimeo.
 
+Since videos are an integral part of the documentation, it is recommended to
+publish them with an open license. 
+
 ### Key `description/[lang]/awards`
 
 * Type: array of strings
@@ -573,7 +579,8 @@ This section provides an overview of the localization features of the software.
 * Type: boolean
 * Presence: mandatory
 
-If `yes`, the software has infrastructure in place or is otherwise designed to be multilingual. It does not need to be available in more than one language.
+If `yes`, the software has infrastructure in place or is otherwise designed to
+be multilingual. It does not need to be available in more than one language.
 
 ## Key `localisation/availableLanguages`
 
@@ -581,8 +588,6 @@ If `yes`, the software has infrastructure in place or is otherwise designed to b
 * Presence: mandatory
 
 If present, this is the list of languages in which the software is available. Of course, this list will contain at least one language.
-
-See also: https://en.wikipedia.org/wiki/ISO_639-2
 
 ### Section `dependsOn`
 
