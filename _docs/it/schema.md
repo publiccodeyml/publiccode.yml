@@ -270,7 +270,7 @@ Le chiavi sono:
 
 ## Chiave `softwareType`
 
-* Tipo: string
+* Tipo: stringa
 * Presenza: obbligatoria
 * Valori permessi: `standalone`, `addon`, `library`, `configurationFiles`
 
