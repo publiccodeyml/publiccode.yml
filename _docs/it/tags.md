@@ -1,6 +1,6 @@
 # `publiccode.yml` - Lista dei tag accettati 
 
-Questo documento contiene una lista controllata di tag utilizzabili per
+Questo documento contiene un vocabolario controllato di tag utilizzabili per
 categorizzare il software. 
 
 |Tag|description|

@@ -3,7 +3,8 @@
 
 ## Sezione `conforme`
 
-TODO: documentazione
+Questa sezione contiene delle chiavi per auto dichiarare la conformità con la
+normativa vigente, rispetto ad alcune sezioni.
 
 ### Chiave `conforme/accessibile`
 

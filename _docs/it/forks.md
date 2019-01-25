@@ -18,7 +18,7 @@ dagli sviluppatori come il primo passo per lavorare ad un contributo su un
 Visto il modo in cui il sistema di *forking* funziona su GitHub ed altre
 piattaforme simili, gli sviluppatori pubblicano i propri fork sotto forma di
 copie perfette del software originale, quindi includendo anche il file
-`publiccode.yml`. Comunque, i parser devono essere in grado di distinguere
+`publiccode.yml` originale. I parser devono essere in grado di distinguere
 questi fork tecnici dalla *code base* originale. 
 
 ### Parser
@@ -39,10 +39,10 @@ repository originale.
 
 
 Non c'è una chiave specifica per contrassegnare un fork come tecnico. Questa
-è una scelta consapevole di design perchè non vogliamo che gli autori di un
-fork tecnico siano consapevoli del file `publiccode.yml` e necessariamente
-consapevoli di come doverlo modificare. Il design corrent non richiede che
-questi autori facciano alcunchè. 
+è una scelta consapevole di design perché non vogliamo che gli autori di un
+fork tecnico debbano necessariamente essere consapevoli del file `publiccode.yml` e 
+di come doverlo modificare. Il design corrente non richiede che
+questi autori facciano alcunché. 
 
 ## Varianti software 
 
@@ -58,7 +58,7 @@ altre persone.
 
 Contrassegnare un fork come una variante **non** pregiudica la volontà di
 contribuire upstream; l'autore potrebbe comunque voler contribuire upstream
-o essere in attesa di farlo. Perciò, anche se la fork alla fine verrà inclusa
+o essere in attesa di farlo. Perciò, anche se il fork alla fine verrà inclusa
 (merge) upstream, potrebbe aver senso contrassegnarla come una variante durante
 queste fasi di lavoro intermedie, in modo tale che anche altri possano trovarla
 e beneficiarne. 
@@ -71,7 +71,7 @@ risiede, **E** una chiave top-level `isBasedOn` esiste e punta ad un altro
 repository. 
 
 I parser dovrebbero aspettarsi e analizzare altre differenze nelle due varianti
-dei file `publiccode.yml`. In modo specifico, la chiave `description/features`
+dei file `publiccode.yml`. In particolare, la chiave `description/features`
 è pensata per essere comparata tra diverse varianti in modo da identificare
 e visualizzare le differenze lato utente. 
 

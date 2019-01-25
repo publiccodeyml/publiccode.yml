@@ -1,13 +1,13 @@
 ## Tipi di Pubbliche Amministrazioni 
 
 La chiave `intendedAudience/onlyFor` definisce i tipi di Pubblica
-Amministrazione che dovrebbero usare il software. Questo documento contiene una
+Amministrazione a cui il software è destinato. Questo documento contiene una
 lista di valori consentiti per questa chiave. Questa chiave è opzionale ma, se
 specificata, deve contenere un valore valido appartenente a questa lista.
 
 ### Internazionale 
 
-Value | Description
+Valore | Descrizione
 ----- | -----------
 `cities` | Città 
 `health-services` | Servizi sanitari
@@ -17,7 +17,7 @@ Value | Description
 
 ### Italia
 
-Value | Description
+Valore | Descrizione
 ----- | -----------
 `it-ag-turismo` | Agenzie ed Enti per il Turismo
 `it-ag-lavoro` | Agenzie ed Enti Regionali del Lavoro
