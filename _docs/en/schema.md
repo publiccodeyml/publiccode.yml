@@ -1,6 +1,6 @@
 # The main schema
 
-This document the description of the `publiccode.yml` schema.
+This document represents the description of the `publiccode.yml` schema.
 
 ## Structure
 
