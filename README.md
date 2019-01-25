@@ -73,6 +73,13 @@ exposing them as open data.
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 
+This repository is structured in order to be compatible with the `Docs Italia`
+platform. As such, the markdown content in the relevant folders will be
+compiled and rendered on top of that platform. The `Docs Italia` platform is
+able to handle different releases and localised versions of the same file
+drawing from the document's GitHub repository. As such, the platform is to be
+considered the default landing page for the project.
+
 ## Licence
 
 Licenced under the [CC-0](LICENSE)
