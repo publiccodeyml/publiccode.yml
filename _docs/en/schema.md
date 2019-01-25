@@ -410,7 +410,7 @@ Each tag must be in Unicode lowercase, and should not contain
 any Unicode whitespace character. The suggested character to
 separate multiple words is `-` (single dash).
 
-### Key `description/[lang]/featureList`
+### Key `description/[lang]/features`
 
 * Type: array of strings
 * Presence: mandatory (for at least one language)
