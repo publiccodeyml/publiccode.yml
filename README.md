@@ -40,7 +40,6 @@ The `publiccode.yml` file is meant to solve all those problems. As such, it is
 an easily readable file for civil servants that are trying to figure out
 whether a project will work for them, and easily readable for computers as
 well. It contains information such as:
-
 * the title and description of the project or product in English and/or other
   languages;
 * the development status, e.g. `concept`, `development`, `beta`, `stable`,
