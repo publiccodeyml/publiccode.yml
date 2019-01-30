@@ -24,34 +24,39 @@ letto facilmente sia dai dipendenti pubblici, che vogliono capire se
 possono beneficiare dall’adozione di un dato software, che da un
 calcolatore elettronico.
 
-Tra le informazioni contenute in questo file vi sono: \* il titolo e la
-descrizione del progetto o prodotto in inglese e/o altre lingue; \* lo
-stato dello sviluppo ad es., ``concept``, ``development``, ``beta``,
-``stable``, ``obsolete``; \* i riferimenti dell’organizzazione che ha
-sviluppato il progetto; \* chi si sta occupando della sua manutenzione e
-quando il rapporto finirà; \* chi contattare per domande di tipo tecnico
-o di supporto; \* per quale quadro giuridico è stato pensato questo
-progetto o prodotto; \* quali dipendenze software esistono. e molte
-altre informazioni rilevanti.
+Tra le informazioni contenute in questo file vi sono: 
+
+* il titolo e la descrizione del progetto o prodotto in inglese e/o altre lingue; 
+* lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``,
+  ``stable``, ``obsolete``; 
+* i riferimenti dell’organizzazione che ha sviluppato il progetto; 
+* chi si sta occupando della sua manutenzione e quando il rapporto finirà; 
+* chi contattare per domande di tipo tecnico o di supporto; 
+* per quale quadro giuridico è stato pensato questo progetto o prodotto; 
+* quali dipendenze software esistono
+  
+e molte altre informazioni rilevanti.
 
 Il formato del file ``publiccode.yml`` è pensato per essere rapidamente
 aggiunto ad ogni nuovo progetto e potrà crescere ed adattarsi ai
 cambiamenti di contesto.
 
-| In aggiunta, il *Team per la Trasformazione Digitale* sta lavorando
-  per realizzare uno *scanner* in grado di cercare tutti i file
-  ``publiccode.yml`` presenti all’interno dei repository di codice
-  sorgente accessibili pubblicamente, per poi elencarli e pubblicarli
-  sotto forma di open data. In tal modo, sarà dunque popolato il
-  catalogo del riuso del software per la Pubblica Amministrazione.
-| Inoltre, il Team sta realizzando degli strumenti di supporto, come ad
-  esempio un editor, che permettano di generare e/o validare un file
-  ``publiccode.yml`` attraverso delle interfacce grafiche quindi
-  facilitando anche il compito in fase di creazione.
+In aggiunta, il *Team per la Trasformazione Digitale* sta lavorando per
+realizzare uno *scanner* in grado di cercare tutti i file ``publiccode.yml``
+presenti all’interno dei repository di codice sorgente accessibili
+pubblicamente, per poi elencarli e pubblicarli sotto forma di open data. In tal
+modo, sarà dunque popolato il catalogo del riuso del software per la Pubblica
+Amministrazione.  Inoltre, il Team sta realizzando degli strumenti di supporto,
+come ad esempio un editor, che permettano di generare e/o validare un file
+``publiccode.yml`` attraverso delle interfacce grafiche quindi facilitando
+anche il compito in fase di creazione.
 
-.. toctree:: :maxdepth: 2
+.. toctree:: 
+   :maxdepth: 2
 
-Schema dello standard <_docs/it/schema.md> Estensioni italiane
-<_docs/it/schema.it.md> Fork e Varianti <_docs/it/forks.md> Tipi di
-Pubbliche Amministrazioni <_docs/it/pa-types.md> Lista dei tag accettati
-<_docs/it/tags.md> Strumenti di supporto <_docs/it/strumenti.md>
+   Schema dello standard <_docs/it/schema.md> 
+   Estensioni italiane <_docs/it/schema.it.md> 
+   Fork e Varianti <_docs/it/forks.md> 
+   Tipi di Pubbliche Amministrazioni <_docs/it/pa-types.md> 
+   Lista dei tag accettati <_docs/it/tags.md> 
+   Strumenti di supporto <_docs/it/strumenti.md>

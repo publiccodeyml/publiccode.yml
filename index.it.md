@@ -30,7 +30,8 @@ Tra le informazioni contenute in questo file vi sono:
 * chi si sta occupando della sua manutenzione e quando il rapporto finirà;
 * chi contattare per domande di tipo tecnico o di supporto;
 * per quale quadro giuridico è stato pensato questo progetto o prodotto;
-* quali dipendenze software esistono.  e molte altre informazioni rilevanti. 
+* quali dipendenze software esistono
+e molte altre informazioni rilevanti. 
 
 Il formato del file `publiccode.yml` è pensato per essere rapidamente aggiunto
 ad ogni nuovo progetto e potrà crescere ed adattarsi ai cambiamenti di
