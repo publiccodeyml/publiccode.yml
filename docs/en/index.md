@@ -1,8 +1,7 @@
-# `publiccode.yml`: version 0.1
+# `publiccode.yml`
 
-This is the release of version 0.1 of the Public Code specification. Version 0.1 was released on the 20th June 2018.
-
-A PublicCode file written following this specification is guaranteed to remain compatible with all parsers implementing any 0.x release.
+A PublicCode file written following this specification is guaranteed to remain
+compatible with all parsers implementing any 0.x release.
 
 For more information on version numbering see [SemVer.org](https://semver.org/).
 

@@ -51,9 +51,10 @@ adheres to, for forward compatibility.
 * Presence: mandatory
 * Example: "Medusa"
 
-This key contains the name of the software. It contains the (short) public name of the product, which can be localised in the specific `localisation` section. It should be
-the name most people usually refer to the software. In case the software
-has both an internal "code" name and a commercial name, use the
+This key contains the name of the software. It contains the (short) public name
+of the product, which can be localised in the specific `localisation` section.
+It should be the name most people usually refer to the software. In case the
+software has both an internal "code" name and a commercial name, use the
 commercial name.
 
 ### Key `applicationSuite`
@@ -70,9 +71,10 @@ This key contains the name of the "suite" to which the software belongs.
 * Presence: mandatory
 * Example: `"https://example.com/italia/medusa.git"`
 
-A unique identifier for this software. This string must be a URL to the source code repository (git, svn, ...) in which the software is
-published. If the repository is available under multiple protocols,
-prefer HTTP/HTTPS URLs which don't require user authentication.
+A unique identifier for this software. This string must be a URL to the source
+code repository (git, svn, ...) in which the software is published. If the
+repository is available under multiple protocols, prefer HTTP/HTTPS URLs which
+don't require user authentication.
 
 Forks created for the purpose of contributing upstreams should not
 modify this file; this helps software parsing `publiccode.yml` to
@@ -91,7 +93,13 @@ parser or an author.
 * Presence: optional
 * Example: `"https://example.com/italia/medusa"`
 
-If the `url` parameter does not serve a human readable or browsable page, but only serves source code to a source control client, with this key you have an option to specify a landing page. This page, ideally, is where your users will land when they will click a button labeled something like "Go to the application source code". In case the product provides an automated graphical installer, this URL can point to a page which contains a reference to the source code but also offers the download of such an installer.
+If the `url` parameter does not serve a human readable or browsable page, but
+only serves source code to a source control client, with this key you have an
+option to specify a landing page. This page, ideally, is where your users will
+land when they will click a button labeled something like "Go to the
+application source code". In case the product provides an automated graphical
+installer, this URL can point to a page which contains a reference to the
+source code but also offers the download of such an installer.
 
 ### Key `isBasedOn`
 
@@ -99,7 +107,9 @@ If the `url` parameter does not serve a human readable or browsable page, but on
 * Presence: optional
 * Example: `"https://github.com/italia/otello.git"`
 
-In case this software is a variant or a fork of another software, which might or might not contain a `publiccode.yml` file, this key will contain the `url` of the original project(s).
+In case this software is a variant or a fork of another software, which might
+or might not contain a `publiccode.yml` file, this key will contain the `url`
+of the original project(s).
 
 The existence of this key identifies the
 fork as a [software variant](forks.md), descending from the
@@ -136,9 +146,9 @@ and thus the version number is present.
 * Acceptable formats: SVG, SVGZ, PNG
 * Example: `img/logo.svg`
 
-This key contains the path to the logo of the software. Logos should be in vector
-format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of
-width.
+This key contains the path to the logo of the software. Logos should be in
+vector format; raster formats are only allowed as a fallback. In this case,
+they should be transparent PNGs, minimum 1000px of width.
 
 ### Key `monochromeLogo`
 
@@ -148,7 +158,8 @@ width.
 * Example: `img/logo-mono.svg`
 
 A monochromatic (black) logo. The logo should be in vector
-format; raster formats are only allowed as a fallback. In this case, they should be transparent PNGs, minimum 1000px of width.
+format; raster formats are only allowed as a fallback. In this case, they
+should be transparent PNGs, minimum 1000px of width.
 
 ### Key `inputTypes`
 
@@ -157,9 +168,12 @@ format; raster formats are only allowed as a fallback. In this case, they should
 * Values: as per RFC 6838
 * Example: `text/plain`
 
-A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
+A list of Media Types (MIME Types) as mandated in [RFC
+6838](https://tools.ietf.org/html/rfc6838) which the application can handle as
+output.
 
-In case the software does not support any input, you can skip this field or use `application/x.empty`.
+In case the software does not support any input, you can skip this field or use
+`application/x.empty`.
 
 ### Key `outputTypes`
 
@@ -168,15 +182,19 @@ In case the software does not support any input, you can skip this field or use 
 * Values: as per RFC 6838
 * Example: `text/plain`
 
-A list of Media Types (MIME Types) as mandated in [RFC 6838](https://tools.ietf.org/html/rfc6838) which the application can handle as output.
+A list of Media Types (MIME Types) as mandated in [RFC
+6838](https://tools.ietf.org/html/rfc6838) which the application can handle as
+output.
 
-In case the software does not support any output, you can skip this field or use `application/x.empty`.
+In case the software does not support any output, you can skip this field or
+use `application/x.empty`.
 
 ### Key `platforms`
 
 * Type: enumerated string or array of strings
 * Presence: mandatory
-* Values: `web`, `windows`, `mac`, `linux`, `ios`, `android`. Human readable values outside this list are allowed.
+* Values: `web`, `windows`, `mac`, `linux`, `ios`, `android`. Human readable
+  values outside this list are allowed.
 * Example: `web`
 
 This key specifies which platform the software runs on. It is meant
@@ -207,7 +225,9 @@ See also: `description/[lang]/freeTags/`
 * Type: array of strings
 * Presence: optional
 
-A list of the names of prominent public administrations (that will serve as "testimonials") that are currently known to the software maintainer to be using this software.
+A list of the names of prominent public administrations (that will serve as
+"testimonials") that are currently known to the software maintainer to be using
+this software.
 
 Parsers are encouraged to enhance this list also with other information
 that can obtain independently; for instance, a fork of a software,
@@ -243,10 +263,19 @@ The keys are:
 
 The keys are:
 
-  * `standalone` - The software is a standalone, self-contained package. Most software will be of this type. Part of this category is software that can run on a desktop computer (e.g. as an executable), as a cloud-based application, as a network service or even as a set of cloud services or microservices.
-  * `softwareAddon` - The software is an addon, such as a plugin or a theme, for a more complex software (e.g. a CMS or an office suite).
-  * `library` - The software contains a library or an SDK to make it easier to third party developers to create new products.
-  * `configurationFiles` - The software does not contain executable script but a set of configuration files. They may document how to obtain a certain deployment. They could be in the form of plain configuration files, bash scripts, ansible playbooks, Dockerfiles, or other instruction sets.
+  * `standalone` - The software is a standalone, self-contained package. Most
+    software will be of this type. Part of this category is software that can
+    run on a desktop computer (e.g. as an executable), as a cloud-based
+    application, as a network service or even as a set of cloud services or
+    microservices.
+  * `softwareAddon` - The software is an addon, such as a plugin or a theme,
+    for a more complex software (e.g. a CMS or an office suite).
+  * `library` - The software contains a library or an SDK to make it easier to
+    third party developers to create new products.
+  * `configurationFiles` - The software does not contain executable script but
+    a set of configuration files. They may document how to obtain a certain
+    deployment. They could be in the form of plain configuration files, bash
+    scripts, ansible playbooks, Dockerfiles, or other instruction sets.
 
 ## Section `intendedAudience`
 
@@ -257,13 +286,15 @@ The keys are:
 * Values: see [pa-types.md](pa-types.md)
 * Example: `"city"`
 
-Public software could be very specific in scope because there is a large set of tasks that are specific to each type of
+Public software could be very specific in scope because there is a large set of
+tasks that are specific to each type of
 administration. For instance, many softwares that are used in schools
 are probably not useful in hospitals.
 If you want to explicitly mark some software as only useful
 to certain types of administrations, you should add them to this key.
 
-The list of allowed values is defined in [pa-types.md](pa-types.md), and can be country-specific.
+The list of allowed values is defined in [pa-types.md](pa-types.md), and can be
+country-specific.
 
 This list can evolve at any time, separately from the version of this
 specification.
@@ -273,7 +304,9 @@ specification.
 * Type: array of strings
 * Presence: optional
 
-This key explicitly includes certain countries in the intended audience, i.e. the software explicitly claims compliance with specific processes, technologies or laws. All countries are specified using lowercase
+This key explicitly includes certain countries in the intended audience, i.e.
+the software explicitly claims compliance with specific processes, technologies
+or laws. All countries are specified using lowercase
 ISO 3166-1 alpha-2 two-letter country codes.
 
 ### Key `intendedAudience/unsupportedCountries`
@@ -281,7 +314,9 @@ ISO 3166-1 alpha-2 two-letter country codes.
 * Type: array of strings
 * Presence: optional
 
-This key explicitly marks countries as NOT supported. This might be the case if there is a conflict between how software is working and a specific law, process or technology. All countries are specified using lowercase
+This key explicitly marks countries as NOT supported. This might be the case if
+there is a conflict between how software is working and a specific law, process
+or technology. All countries are specified using lowercase
 ISO 3166-1 alpha-2 two-letter country codes.
 
 
@@ -291,7 +326,10 @@ This section contains a general description of the software. Parsers
 can use this section for instance to create a web page describing
 the software.
 
-**Note** Since all the strings contained in this section are user-visible and written in a specific language, you **must** specify the language you are editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes) by creating a sub-section with that name.
+**Note** Since all the strings contained in this section are user-visible and
+written in a specific language, you **must** specify the language you are
+editing the text in (using [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2)
+alpha-3 codes) by creating a sub-section with that name.
 
 An example for English:
 ```.yml
@@ -301,9 +339,11 @@ description:
     longDescription: ...
 ```
 
-In the following part of the document, all keys are assumed to be in a sub-section with the name of the language (we will note this with `[lang]`).
+In the following part of the document, all keys are assumed to be in
+a sub-section with the name of the language (we will note this with `[lang]`).
 
-**Note:** It is mandatory to have *at least* one language in this section. All other languages are optional.
+**Note:** It is mandatory to have *at least* one language in this section. All
+other languages are optional.
 
 ### Key `description/[lang]/localisedName`
 
@@ -311,7 +351,8 @@ In the following part of the document, all keys are assumed to be in a sub-secti
 * Presence: optional
 * Example: "Medusa"
 
-This key is an opportunity to localise the name in a specific language. It contains the (short) public name of the product. It should be
+This key is an opportunity to localise the name in a specific language. It
+contains the (short) public name of the product. It should be
 the name most people usually refer to the software. In case the software
 has both an internal "code" name and a commercial name, use the
 commercial name.
@@ -322,10 +363,11 @@ commercial name.
 * Presence: mandatory
 * Example: "Text Editor"
 
-This key is the "Generic name", which refers to the specific category to which the software belongs.
-You can usually find the generic name in the presentation of the software, when you write: "Software xxx is a yyy"
-Notable examples include "Text Editor", "Word Processor", "Web Browser", "Chat" and so on...
-The generic name can be up to 35 characters long.
+This key is the "Generic name", which refers to the specific category to which
+the software belongs.  You can usually find the generic name in the
+presentation of the software, when you write: "Software xxx is a yyy" Notable
+examples include "Text Editor", "Word Processor", "Web Browser", "Chat" and so
+on...  The generic name can be up to 35 characters long.
 
 ### Key `description/[lang]/shortDescription`
 
@@ -349,7 +391,8 @@ should be that of users of the software, not developers. You can think
 of this text as the description of the software that would be in its
 website (if the software had one).
 
-This description can contain some basic markdown: `*italic*`, `**bold**`, bullet points and `[links](#)`.
+This description can contain some basic markdown: `*italic*`, `**bold**`,
+bullet points and `[links](#)`.
 
 ### Key `description/[lang]/documentation`
 
@@ -381,11 +424,11 @@ part of the repository itself.
 * Type: URL
 * Presence: optional
 
-This key contains a reference to the API documentation of the software. The value must be a URL to a
-hosted version of the documentation.
+This key contains a reference to the API documentation of the software. The
+value must be a URL to a hosted version of the documentation.
 
-It is suggested that the URL points to a hosted version of the
-documentation that is immediately readable through a common web browser.
+It is suggested that the URL points to a hosted version of the documentation
+that is immediately readable through a common web browser.
 The documentation should be rendered in HTML and browsable like a website
 (with a navigation index, a search bar, etc.), and if there is a reference
 or test deployment, possibly offer an interactive interface (e.g. Swagger).
@@ -407,11 +450,13 @@ part of the repository itself.
 
 This key contains a list of free tags that can be applied to a software.
 
-Since they contain values that do not have an official translation, and as such only make sense to a human in a specific language, tags are written in a specific language.
+Since they contain values that do not have an official translation, and as such
+only make sense to a human in a specific language, tags are written in
+a specific language.
 
-Each tag must be in Unicode lowercase, and should not contain
-any Unicode whitespace character. The suggested character to
-separate multiple words is `-` (single dash).
+Each tag must be in Unicode lowercase, and should not contain any Unicode
+whitespace character. The suggested character to separate multiple words is `-`
+(single dash).
 
 ### Key `description/[lang]/features`
 
@@ -419,11 +464,14 @@ separate multiple words is `-` (single dash).
 * Presence: mandatory (for at least one language)
 
 This key contains a list of software features, describing what capabilities
-the software allows to do. The audience for this text should be that of public decision makers who will be commissioning the software. The features should thus not target developers: instead of listing technical features referring
-to implementation details, prefer listing user-visible functionalities of the software.
+the software allows to do. The audience for this text should be that of public
+decision makers who will be commissioning the software. The features should
+thus not target developers: instead of listing technical features referring to
+implementation details, prefer listing user-visible functionalities of the
+software.
 
-While the key is mandatory, there is no mandatory minimum or maximum number
-of features that should be listed in this key. Each feature must use a maximum
+While the key is mandatory, there is no mandatory minimum or maximum number of
+features that should be listed in this key. Each feature must use a maximum
 of 100 characters.
 
 The suggested number of features to list is between 5 and 20, depending on the
@@ -553,7 +601,9 @@ or more people that donate their time to the project;
 * Type: array of Contractor (see below)
 * Presence: mandatory (if `maintainance/type` is `contract`)
 
-This key describes the entity or entities, if any, that are currently contracted for maintaining the software. They can be companies, organizations, or other collective names.
+This key describes the entity or entities, if any, that are currently
+contracted for maintaining the software. They can be companies, organizations,
+or other collective names.
 
 ### Key `maintenance/contacts`
 
@@ -563,11 +613,13 @@ This key describes the entity or entities, if any, that are currently contracted
 One or more contacts maintaining this software.
 
 This key describes the technical people currently responsible for maintaining
-the software. All contacts need to be a physical person, not a company or an organisation. if somebody is acting as a representative of an institution, it must be listed within the `affiliation` of the contact.
+the software. All contacts need to be a physical person, not a company or an
+organisation. If somebody is acting as a representative of an institution, it
+must be listed within the `affiliation` of the contact.
 
-In case of a commercial agreement (or a chain of such agreements),
-specify the final entities actually contracted to deliver the
-maintenance. Do not specify the software owner unless it is technically
+In case of a commercial agreement (or a chain of such agreements), specify the
+final entities actually contracted to deliver the maintenance. Do not specify
+the software owner unless it is technically
 involved with the maintenance of the product as well.
 
 ## Section `localisation`
@@ -587,7 +639,8 @@ be multilingual. It does not need to be available in more than one language.
 * Type: list of [ISO 639-2](https://en.wikipedia.org/wiki/ISO_639-2) alpha-3 codes
 * Presence: mandatory
 
-If present, this is the list of languages in which the software is available. Of course, this list will contain at least one language.
+If present, this is the list of languages in which the software is available.
+Of course, this list will contain at least one language.
 
 ### Section `dependsOn`
 
@@ -632,12 +685,15 @@ A `dependency` is a complex object. The properties are the following:
   * `name` - **mandatory** - The name of the dependency (e.g. MySQL, NFC Reader)
   * `versionMin` - the first compatible version
   * `versionMax` - the latest compatible version
-  * `version` - the only major version for which the software is compatible. It assumes compatibility with all patches and bugfixes later applied to this version.
+  * `version` - the only major version for which the software is compatible. It
+    assumes compatibility with all patches and bugfixes later applied to this
+    version.
   * `optional` - whether the dependency is optional or mandatory
 
 ### Complex versioning
 
-It is of course possible to use the various keys to specify a complex compatibility matrix.
+It is of course possible to use the various keys to specify a complex
+compatibility matrix.
 
 *Ex. 1*
 ```.yml
@@ -659,19 +715,35 @@ This snippet marks a mandatory dependency on MySQL, allowing any version between
 
 A Contact is an object with the following properties:
 
-* `name` - **mandatory** - This key contains the full name of one of the technical contacts. It must be a real person; do NOT populate this key with generic contact information, company departments, associations, etc.
-* `email` - This key contains the e-mail address of the technical contact. It must be an email address of where the technical contact can be directly reached; do NOT populate this key with mailing-lists or generic contact points like "info@acme.inc". The e-mail address must not be obfuscated. To improve resistance against e-mail collection, use `\x64` to replace `@`, as allowed by the YAML specification.
+* `name` - **mandatory** - This key contains the full name of one of the
+  technical contacts. It must be a real person; do NOT populate this key with
+  generic contact information, company departments, associations, etc.
+* `email` - This key contains the e-mail address of the technical contact. It
+  must be an email address of where the technical contact can be directly
+  reached; do NOT populate this key with mailing-lists or generic contact
+  points like "info@acme.inc". The e-mail address must not be obfuscated. To
+  improve resistance against e-mail collection, use `\x64` to replace `@`, as
+  allowed by the YAML specification.
 * `phone` - phone number (with international prefix)
-* `affiliation` - This key contains an explicit affiliation information for the technical contact. In case of multiple maintainers, this can be used to create a relation between each technical contact and each maintainer entity. It can contain for instance a company name, an association
-name, etc.
+* `affiliation` - This key contains an explicit affiliation information for the
+  technical contact. In case of multiple maintainers, this can be used to
+  create a relation between each technical contact and each maintainer entity.
+  It can contain for instance a company name, an association name, etc.
 
 ### Contractor
 
 A Contractor is an object with the following properties:
 
-* `name` - **mandatory** - The name of the contractor, whether it's a company or a physical person.
-* `until` - **mandatory**  - This is a date (YYYY-MM-DD). This key must contain the date at which the maintenance is going to end. In case of community maintenance, the value should not be more than 2 years in the future, and thus will need to be regularly updated as the community continues working on the project.
-* `website` -  This key points to the maintainer website. It can either point to the main institutional website, or to a more project-specific page or website.
+* `name` - **mandatory** - The name of the contractor, whether it's a company
+  or a physical person.
+* `until` - **mandatory**  - This is a date (YYYY-MM-DD). This key must contain
+  the date at which the maintenance is going to end. In case of community
+  maintenance, the value should not be more than 2 years in the future, and
+  thus will need to be regularly updated as the community continues working on
+  the project.
+* `website` -  This key points to the maintainer website. It can either point
+  to the main institutional website, or to a more project-specific page or
+  website.
 
 ### Dates
 

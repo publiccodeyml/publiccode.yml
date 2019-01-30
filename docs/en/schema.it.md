@@ -1,2 +1,2 @@
-Placeholder for [schema.it.md](../it/schama.it.md).
+Placeholder for [schema.it.md](../it/schema.it.md).
 
