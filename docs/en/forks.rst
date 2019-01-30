@@ -91,7 +91,7 @@ Authors
 Authors that are willing to publish a fork as a variant **MUST** at
 least:
 
--  Add a key ``isBasedOn`` pointing to one or more upstream repositories
+-  add a key ``isBasedOn`` pointing to one or more upstream repositories
    from which this variant is derived.
 -  Change the value for ``url`` to point to the repository holding the
    variant.
@@ -102,7 +102,7 @@ least:
 
 Moreover, authors **SHOULD** evaluate the following changes:
 
--  Add the features that differentiate the variant to the
+-  add the features that differentiate the variant to the
    ``description/features`` key. Existing features **SHOULD NOT** be
    edited or removed from this list unless they have been removed from
    the variant, to allow parsers to easily compare feature lists.

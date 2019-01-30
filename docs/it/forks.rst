@@ -17,7 +17,7 @@ mantenere una variante alternativa del software originale.
 Nel contesto di un sistema di controllo distribuito e piattaforme di
 hosting di codice collaborative quali GitHub, lo strumento del *fork* è
 quasi sempre usato dagli sviluppatori come il primo passo per lavorare
-ad un contributo su un
+ad un contributo su una *code base* già esistente inviando *pull request*.
 
 Visto il modo in cui il sistema di *forking* funziona su GitHub ed altre
 piattaforme simili, gli sviluppatori pubblicano i propri fork sotto
