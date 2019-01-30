@@ -1,4 +1,4 @@
-publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+publiccodeYmlVersion: "0.1"
 
 name: Medusa
 applicationSuite: MegaProductivitySuite
@@ -20,7 +20,6 @@ platforms:
   - android
   - ios
 
-# For a list of allowed values, check out w3id.org/publiccode/version/0.1/tags.html
 tags:
   - content-management
   - artificial-intelligence
@@ -67,7 +66,7 @@ description:
     freeTags:
        - an-english-tag
 
-    featureList:
+    features:
        - Very important feature
        - Will run without a problem
        - Has zero bugs
@@ -82,7 +81,7 @@ description:
        - 1st Price Software of the year
 
 legal:
-  license: AGPL-3.0-or-later        # SPDX expression of license
+  license: AGPL-3.0-or-later
   mainCopyrightOwner: City of Chicago
   repoOwner: City of Chicago
   authorsFile: AUTHORS

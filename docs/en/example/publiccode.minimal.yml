@@ -1,4 +1,4 @@
-publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+publiccodeYmlVersion: "0.1"
 
 name: Medusa
 url: "https://example.com/italia/medusa.git"
@@ -28,7 +28,7 @@ description:
           is and why one should need it. We can potentially
           have many pages of text here.
 
-    featureList:
+    features:
        - Just one feature
 
 legal:
