@@ -1,6 +1,4 @@
-# publiccode.yml: Versione in Sviluppo
-
-Questa è la versione in sviluppo delle specifiche `publiccode.yml`.
+# publiccode.yml
 
 * [Schema](schema.md)
 * [Estension italiane dello schema](schema.it.md)

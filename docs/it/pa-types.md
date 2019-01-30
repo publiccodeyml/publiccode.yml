@@ -54,19 +54,3 @@ Valore | Descrizione
 `it-afam` | Istituzioni per l'Alta Formazione Artistica, Musicale e Coreutica
 `school` | Istituti di Istruzione Statale di Ogni Ordine e Grado
 `university` | Università e Istituti di Istruzione Universitaria Pubblici
-
-<!--
-	>Unioni di Comuni e loro Consorzi e Associazioni
-	>Enti di Regolazione dei Servizi Idrici e o dei Rifiuti
-	Enti e Istituzioni di Ricerca Pubblici
-	Enti Pubblici Non Economici
-	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali
-	>Federazioni Nazionali, Ordini, Collegi e Consigli Professionali
-	>Fondazioni Lirico, Sinfoniche
-	>Istituti Zooprofilattici Sperimentali
-	Organi Costituzionali e di Rilievo Costituzionale
-	>Parchi Nazionali, Consorzi e Enti Gestori di Parchi e Aree Naturali Protette
-
-	>Teatri Stabili ad Iniziativa Pubblica
--->
-
