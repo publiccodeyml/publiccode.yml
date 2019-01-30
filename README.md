@@ -40,7 +40,6 @@ The `publiccode.yml` file is meant to solve all those problems. As such, it is
 an easily readable file for civil servants that are trying to figure out
 whether a project will work for them, and easily readable for computers as
 well. It contains information such as:
-
 * the title and description of the project or product in English and/or other
   languages;
 * the development status, e.g. `concept`, `development`, `beta`, `stable`,
@@ -72,6 +71,13 @@ exposing them as open data.
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
+
+This repository is structured in order to be compatible with the `Docs Italia`
+platform. As such, the markdown content in the relevant folders will be
+compiled and rendered on top of that platform. The `Docs Italia` platform is
+able to handle different releases and localised versions of the same file
+drawing from the document's GitHub repository. As such, the platform is to be
+considered the default landing page for the project.
 
 ## Licence
 
