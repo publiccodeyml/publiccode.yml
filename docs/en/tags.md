@@ -1,5 +1,3 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
-
 # List of acceptable tags
 
 This document contains a controlled list of tags usable to categorize the software.
@@ -72,4 +70,5 @@ This document contains a controlled list of tags usable to categorize the softwa
 | whistleblowing | software for whistleblowing / anticorruption |
 | word-processor | a word processor |
 
-This tag list is partly based on Freedesktop.org's latest [Desktop Menu Specification](https://standards.freedesktop.org/menu-spec/latest/).
+This tag list is partly based on Freedesktop.org's latest [Desktop Menu
+Specification](https://standards.freedesktop.org/menu-spec/latest/).

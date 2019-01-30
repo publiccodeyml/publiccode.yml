@@ -1,25 +1,23 @@
-[< Back to version 0.1](index.html) -- this file is part of the [`publiccode.yml` specification](http://w3id.org/publiccode/).
+## Tipi di Pubbliche Amministrazioni 
 
-# Public administration types
+La chiave `intendedAudience/onlyFor` definisce i tipi di Pubblica
+Amministrazione a cui il software è destinato. Questo documento contiene una
+lista di valori consentiti per questa chiave. Questa chiave è opzionale ma, se
+specificata, deve contenere un valore valido appartenente a questa lista.
 
-The key `intendedAudience/onlyFor` defines the types of public administration which is
-expected to use this software. This document contains a list of allowed
-values for that key. While the key is optional, if it is specified it
-must contain a value from this list.
+### Internazionale 
 
-### International
-
-Value | Description
+Valore | Descrizione
 ----- | -----------
-`cities` | City
-`health-services` | Health service
-`police-forces` | Police forces
-`schools` | School of any level
-`universities` | University of any level
+`cities` | Città 
+`health-services` | Servizi sanitari
+`police-forces` | Forze di Polizia
+`schools` | Scuola di ogni ordine e grado 
+`universities` | Università di ogni tipo
 
-### Italy
+### Italia
 
-Value | Description
+Valore | Descrizione
 ----- | -----------
 `it-ag-turismo` | Agenzie ed Enti per il Turismo
 `it-ag-lavoro` | Agenzie ed Enti Regionali del Lavoro
@@ -56,18 +54,3 @@ Value | Description
 `it-afam` | Istituzioni per l'Alta Formazione Artistica, Musicale e Coreutica
 `school` | Istituti di Istruzione Statale di Ogni Ordine e Grado
 `university` | Università e Istituti di Istruzione Universitaria Pubblici
-
-<!--
-	>Unioni di Comuni e loro Consorzi e Associazioni
-	>Enti di Regolazione dei Servizi Idrici e o dei Rifiuti
-	Enti e Istituzioni di Ricerca Pubblici
-	Enti Pubblici Non Economici
-	Enti Pubblici Produttori di Servizi Assistenziali, Ricreativi e Culturali
-	>Federazioni Nazionali, Ordini, Collegi e Consigli Professionali
-	>Fondazioni Lirico, Sinfoniche
-	>Istituti Zooprofilattici Sperimentali
-	Organi Costituzionali e di Rilievo Costituzionale
-	>Parchi Nazionali, Consorzi e Enti Gestori di Parchi e Aree Naturali Protette
-
-	>Teatri Stabili ad Iniziativa Pubblica
--->

@@ -1,8 +1,8 @@
-publiccode-yaml-version: "http://w3id.org/publiccode/version/0.1"
+publiccodeYmlVersion: "0.1"
 
 name: Medusa
 url: "https://example.com/italia/medusa.git"
-softwareVersion: "dev"
+softwareVersion: "dev"    # Optional
 releaseDate: "2017-04-15"
 platforms:
   - web
@@ -16,7 +16,7 @@ softwareType: "standalone"
 
 description:
   eng:
-    localisedName: Medusa
+    localisedName: medusa   # Optional
     genericName: Text Editor
     shortDescription: >
           A rather short description which
@@ -28,7 +28,7 @@ description:
           is and why one should need it. We can potentially
           have many pages of text here.
 
-    featureList:
+    features:
        - Just one feature
 
 legal:
