@@ -45,7 +45,7 @@ in file separati.
 Sezioni Top-Level
 -----------------
 
-Chiave ``publiccode-yml-version``
+Chiave ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa
