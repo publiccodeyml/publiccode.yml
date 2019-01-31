@@ -1,3 +1,5 @@
+.. _`tags-list`:
+
 List of acceptable tags
 =======================
 

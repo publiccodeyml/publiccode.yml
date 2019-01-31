@@ -1,3 +1,5 @@
+.. _pa-types:
+
 Tipi di Pubbliche Amministrazioni
 =================================
 

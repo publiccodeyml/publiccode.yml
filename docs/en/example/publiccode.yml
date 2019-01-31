@@ -91,6 +91,7 @@ maintenance:
 
   contractors:
     - name: "Fornitore Privato SPA"
+      email: "dario.bianchi@fornitore.it"
       website: "https://privatecompany.com"
       until: "2019-01-01"
 
@@ -99,16 +100,6 @@ maintenance:
       email: "francesco.rossi@comune.reggioemilia.it"
       affiliation: Comune di Reggio Emilia
       phone: +39 231 13215112
-
-    - name: Dario Bianchi
-      email: "dario.bianchi@fornitore.it"
-      affiliation: Fornitore Privato S.P.A.
-      phone: +39 16 24231322
-
-    - name: Giancarlo Verdi
-      email: "dario.bianchi@fornitore.it"
-      affiliation: Fornitore Privato S.P.A.
-      phone: +39 16 24231322
 
 localisation:
   localisationReady: yes

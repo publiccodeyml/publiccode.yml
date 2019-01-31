@@ -1,11 +1,14 @@
-``publiccode.yml`` - Fork e varianti
+.. _fork-varianti:
+
+Fork e varianti
 ====================================
 
-Questo documento descrive come gestire l’aggiornamento di
-``publiccode.yml`` nel contesto di un software fork. Per questioni di
-chiarezza, qui di seguito distinguiamo le due possibilità: fork tecnici
-e varianti software.
+Come già accennato precedentemente, il fork di un progetto software può essere
+inteso in modo diverso a seconda dello scopo finale di tale diramazione.
+Per questioni di chiarezza, qui di seguito distinguiamo le due possibilità:
+fork tecnici e varianti software.
 
+.. _fork-tecnici:
 Fork tecnici (i.e. pubblicare patch)
 ------------------------------------
 
