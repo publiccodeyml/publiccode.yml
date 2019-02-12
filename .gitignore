@@ -8,3 +8,6 @@ _site
 
 # Windows generic
 Thumbs.db
+
+# Swap files
+*.swp

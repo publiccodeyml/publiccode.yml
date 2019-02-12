@@ -1,3 +1,5 @@
+.. _pa-types:
+
 Public administration types
 ===========================
 

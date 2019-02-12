@@ -1,52 +1,18 @@
-``publiccode.yml`` standard
+Lo standard
 ===========================
 
-Questo documento contiene una descrizione informale dello schema di
-``publiccode.yml``.
+La struttura di un file ``publiccode.yml`` prevede l'esistenza di chiavi
+top-level e sezioni che possono contenere al proprio interno altre chiavi. 
+Lo standard ha rilevanza internazionale ma è possibile dichiarare una sezione
+dedicata per le chiavi relative ad un Paese specifico (si veda
+:ref:`estensioni-paese` per maggiori dettagli). 
 
-Versione: development
+Estensioni Top-Level
+--------------------
 
-Struttura
----------
-
-Estensioni Specifiche per Paese
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mentre lo standard è strutturato per essere significativo a livello
-internazionale, vi sono informazioni addizionali che possono essere
-aggiunte a livello nazionale, come ad esempio una dichiarazione di
-compatibilità con una legge locale. Il meccanismo di estensione fornito
-prevede l’utilizzo di sezioni specifiche per ogni Paese
-(*country-specific*).
-
-Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione
-denominata con l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,
-``spid`` è una proprietà definita per i software italiani per la
-dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di
-Identità Digitale.
-
-Dunque, se un software è compatibile, troveremo:
-
-::
-
-   it:
-     spid: yes
-
-Nota bene che le chiavi *country-specific* **non** sono valide
-all’interno delle sezioni internazionali. I Paesi che vogliano estendere
-il formato dovrebbero aggiungere una sezione dedicata.
-
-La documentazione per queste estensioni *country-specific* è mantenuta
-in file separati.
-
--  Italia: `Estensioni Italiane <schema.it.md>`__
-
-Sezioni Top-Level
------------------
 
 Chiave ``publiccodeYmlVersion``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
@@ -94,12 +60,12 @@ l’autenticazione.
 
 I fork creati con lo scopo di contribuire *upstream* non devono
 modificare questo file; questo aiuta i software che fanno il parsing di
-``publiccode.yml`` a saltare immediatamente i `fork
-tecnici <forks.md>`__. Al contrario, un fork completo che sarà mantenuto
+``publiccode.yml`` a saltare immediatamente i fork tecnici. Al
+contrario, un fork completo che sarà mantenuto
 in modo separato rispetto al software originale, dovrebbe modificare
 questa linea per essere trattato come una variante distinta.
 
-Vedi `Fork e Varianti <forks.md>`__ per una descrizione completa del
+Vedi :ref:`fork-varianti` per una descrizione completa del
 significato di variante software e di come gestire i fork sia lato
 parser che lato autore.
 
@@ -131,8 +97,8 @@ Nel caso in cui questo software sia una variante o un fork di un altro
 software, che opzionalmente può contenere un file ``publiccode.yml``,
 questa chiave conterrà la ``url`` di uno o più progetti originali.
 
-L’esistenza di questa chiave identifica il fork come una `variante
-software <forks.md>`__, discendente dal repository specificato.
+L’esistenza di questa chiave identifica il fork come una variante (vedi
+:ref:`fork-varianti`), discendente dal repository specificato.
 
 Chiave ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,7 +207,7 @@ Chiave ``tags``
 
 -  Tipo: array di stringhe
 -  Presenza: obbligatoria
--  Valori accettabili: vedi `Lista dei tag accettati <tags.md>`__
+-  Valori accettabili: vedi :ref:`lista-tags` 
 
 Una lista di parole che possono essere usate per descrivere il software
 e possono aiutare a costruire il catalogo di software open.
@@ -276,59 +242,66 @@ Chiave ``roadmap``
 Un link ad una *roadmap* pubblica del software.
 
 Chiave ``developmentStatus``
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Valori permessi: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-Le chiavi sono: \* ``concept`` - Il software è solo un “concept”. Non è
-stato sviluppato codice e il repository potrebbe semplicemente essere un
-placeholder. \* ``development`` - Qualche sforzo è stato fatto in
-direzione dello sviluppo del software ma il codice non è pronto per
-l’utenza finale, nemmeno in una versione preliminare (beta o alpha) per
-essere testato dall’utenza. \* ``beta`` - Il software è in fase di
-testing (alpha o beta). In questo stage, il software potrebbe aver o non
-aver ancora avuto una release pubblica preliminare. \* ``stable`` - Il
-software ha già avuto una prima release pubblica ed è pronto per essere
-usato in un contesto di produzione. \* ``obsolete`` - Il software non è
-più mantenuto o aggiornato. Tutto il codice sorgente è archiviato e
-tenuto per ragioni di storico.
+Le chiavi sono: 
+
+-  ``concept`` - Il software è solo un “concept”. Non è
+   stato sviluppato codice e il repository potrebbe semplicemente essere un
+   placeholder.  
+-  ``development`` - Qualche sforzo è stato fatto in
+   direzione dello sviluppo del software ma il codice non è pronto per
+   l’utenza finale, nemmeno in una versione preliminare (beta o alpha) per
+   essere testato dall’utenza. 
+-  ``beta`` - Il software è in fase di
+   testing (alpha o beta). In questo stage, il software potrebbe aver o non
+   aver ancora avuto una release pubblica preliminare. 
+-  ``stable`` - Il software ha già avuto una prima release pubblica ed è pronto
+   per essere usato in un contesto di produzione. 
+-  ``obsolete`` - Il software non è più mantenuto o aggiornato. Tutto il codice
+   sorgente è archiviato e tenuto per ragioni di storico.
 
 Chiave ``softwareType``
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Valori permessi: ``standalone``, ``addon``, ``library``,
    ``configurationFiles``
 
-Le chiavi sono: \* ``standalone`` - Il software è un pacchetto
-*self-contained*, *standalone*. La maggior parte del software sarà di
-questo tipo. Pare di questa categoria di software potrà essere eseguita
-su un computer desktop (e.g., un eseguibile), come un’applicazione
-*cloud-based*, come un servizio di rete o anche come un set di servizi
-cloud o microservizi. \* ``softwareAddon`` - Il software è un *addon*,
-come ad esempio un plugin o un tema, per un software più complesso
-(e.g., un CMS o una suite per ufficio). \* ``library`` - Il software
-contiene una libreria o una SDK che permette uno sviluppo più semplice
-per sviluppatori di terze parti per la creazione di nuovi prodotti. \*
-``configurationFiles`` - Il software non contiene script eseguibili ma
-una serie di file di configurazione. Questi potrebbero documentare come
-ottenere un certo tipo di *deployment*. Potrebbero avere la forma di
-semplici file di configurazione, script bash, playbook ansible,
-Dockerfile, o altri set di istruzioni.
+Le chiavi sono: 
+-  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
+   La maggior parte del software sarà di questo tipo. Pare di questa categoria
+   di software potrà essere eseguita
+   su un computer desktop (e.g., un eseguibile), come un’applicazione
+   *cloud-based*, come un servizio di rete o anche come un set di servizi
+   cloud o microservizi. 
+-  ``softwareAddon`` - Il software è un *addon*,
+   come ad esempio un plugin o un tema, per un software più complesso
+   (e.g., un CMS o una suite per ufficio). 
+-  ``library`` - Il software
+   contiene una libreria o una SDK che permette uno sviluppo più semplice
+   per sviluppatori di terze parti per la creazione di nuovi prodotti.
+-  ``configurationFiles`` - Il software non contiene script eseguibili ma
+   una serie di file di configurazione. Questi potrebbero documentare come
+   ottenere un certo tipo di *deployment*. Potrebbero avere la forma di
+   semplici file di configurazione, script bash, playbook ansible,
+   Dockerfile, o altri set di istruzioni.
 
 Sezione ``intendedAudience``
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Chiave ``intendedAudience/onlyFor``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa numerata o array di stringhe
 -  Presenza: opzionale
--  Valori: vedi `pa-types.md <pa-types.md>`__
+-  Valori: vedi :ref:`pa-types` 
 -  Esempio: ``"city"``
 
 Il software pubblico potrebbe avere una portata molto specifica perché
@@ -338,14 +311,14 @@ probabilmente non sono utili all’interno degli ospedali. Se si volesse
 indicare che un software è unicamente utile in qualche tipo di
 amministrazione, bisognerebbe aggiungerle a questa lista.
 
-La lista di valori permessi è definita in `pa-types.md <pa-types.md>`__,
+La lista di valori permessi è definita in :ref:`pa-types`, 
 e può essere specifica per ogni Paese (country-specific).
 
 La lista può evolvere in ogni momento, separatamente dalla versione di
 queste specifiche.
 
 Chiave ``intendedAudience/countries``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -357,7 +330,7 @@ usando *country code* a due lettere seguendo lo standard ISO 3166-1
 alpha-2.
 
 Chiave ``intendedAudience/unsupportedCountries``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -370,13 +343,13 @@ usando *country code* a due lettere seguendo lo standard ISO 3166-1
 alpha-2.
 
 Sezione ``description``
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa sezione contiene una descrizione generale del software. I parser
 possono usare questa sezione ad esempio per creare una pagina web che
 descriva il software.
 
-**Nota bene** Siccome tutte le stringhe contenute in questa sezione sono
+**Nota bene:** siccome tutte le stringhe contenute in questa sezione sono
 visibili all’utente e scritte in un linguaggio specifico, è
 **necessario** specificare il linguaggio con il quale si sta modificando
 il testo (usando i codici `ISO
@@ -396,11 +369,11 @@ Nel parti successive del documento, tutte le chiavi sono assunte essere
 all’interno di una sezione con il nome della lingua (annoteremo questo
 con ``[lang]``).
 
-**Nota bene** E’ obbligatorio avere *almeno* una lingua in questa
+**Nota bene:** è obbligatorio avere *almeno* una lingua in questa
 sezione. Tutte le altre lingue sono opzionali.
 
 Chiave ``description/[lang]/localisedName``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa
 -  Presenza: opzionale
@@ -414,7 +387,7 @@ sia un nome “interno” che uno commerciale, è preferibile utilizzare
 quello commerciale.
 
 Chiave ``description/[lang]/genericName``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (max 35 caratteri)
 -  Presenza: obbligatoria
@@ -429,7 +402,7 @@ nota includono “Editor di Testi”, “Word Processor”, “Web Browser”,
 caratteri.
 
 Chiave ``description/[lang]/shortDescription``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (max 150 caratteri)
 -  Presenza: obbligatoria
@@ -440,7 +413,7 @@ essere una singola linea contenente una singola frase. L’estensione
 massima consentita è di 150 caratteri.
 
 Chiave ``description/[lang]/longDescription``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (min 500 caratteri, max 10000 caratteri)
 -  Presenza: obbligatoria (almeno per una lingua)
@@ -457,7 +430,7 @@ Questa descrizione può contenere del Markdown base: ``*italic*``,
 ``**bold**``, elenchi puntati e ``[link](#)``.
 
 Chiave ``description/[lang]/documentation``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: URL
 -  Presenza: opzionale
@@ -486,7 +459,7 @@ aperta, possibilmente effettuandone un commit all’interno del repository
 stesso.
 
 Chiave ``description/[lang]/apiDocumentation``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: URL
 -  Presenza: opzionale
@@ -516,7 +489,7 @@ rilasciarne i sorgenti coperti da licenza aperta, possibilmente
 effettuandone un commit all’interno del repository stesso.
 
 Chiave ``description/[lang]/freeTags/``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -533,7 +506,7 @@ contenere alcun carattere Unicode di spazio. Il carattere suggerito per
 separare parole multiple è ``-`` (trattino singolo).
 
 Chiave ``description/[lang]/features``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: obbligatoria (almeno per una lingua)
@@ -555,7 +528,7 @@ una lista esaustiva, dal momento che gli utenti hanno sempre a
 disposizione la documentazione per reperire ulteriori informazioni.
 
 Chiave ``description/[lang]/screenshots``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe (percorsi)
 -  Presenza: opzionale
@@ -574,7 +547,7 @@ formati suggeriti sono:
 -  Mobile: 375x667 @2x
 
 Chiave ``description/[lang]/videos``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe (URL)
 -  Presenza: opzionale
@@ -586,12 +559,12 @@ essere usati per dare una rapida panoramica sull’aspetto e le
 funzionalità del software. I video devono essere ospitati su una
 piattaforma di video sharing che supporti lo standard
 `oEmbed <https://oembed.com>`__; le opzioni più popolari sono YouTube e
-Vimeo. **Nota bene** Dal momento che costituisce parte integrante della
+Vimeo. **Nota bene:** dal momento che costituisce parte integrante della
 documentazione, è opportuno che il video sia pubblicato con una licenza
 aperta.
 
 Chiave ``description/[lang]/awards``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -599,10 +572,10 @@ Chiave ``description/[lang]/awards``
 Una lista di premi assegnati al software.
 
 Sezione ``legal``
------------------
+~~~~~~~~~~~~~~~~~
 
 Chiave ``legal/license``
-~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
@@ -615,7 +588,7 @@ riguardo è possibile visitare la `documentazione
 SPDX <https://spdx.org/licenses/>`__.
 
 Chiave ``legal/mainCopyrightOwner``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa
 -  Presenza: opzionale
@@ -637,7 +610,7 @@ repository ha un file contenente il nome degli autori, è possibile
 puntare a quel file attraverso ``legal/authorsFile`` (vedi più sotto).
 
 Chiave ``legal/repoOwner``
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''
 
 -  Tipo: stringa
 -  Presenza: opzionale
@@ -649,7 +622,7 @@ stesso. Ad esempio, nel caso di un fork del software originale, il
 ``repoOwner`` è probabilmente diverso dal ``mainCopyrightOwner``.
 
 Chiave ``legal/authorsFile``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''
 
 -  Tipo: stringa (percorso al file)
 -  Presenza: opzionale
@@ -664,29 +637,31 @@ questa chiave può essere usata per riferirsi al suddetto file degli
 autori, usando un percorso relativo alla radice (root) del repository.
 
 Sezione ``maintenance``
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa sezione fornisce informazioni sullo stato di manutenzione del
 software, utile per valutare se il software è attivamente sviluppato o
 meno.
 
 Chiave ``maintenance/type``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''
 
 -  Tipo: enumerate
 -  Presenza: obbligatoria
 -  Valori: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
-Questa chiave descrive come il software è attualmente manutenuto. \*
-``"internal"`` significa che il software è manutenuto internamente dal
-proprietario del repository; \* ``"contract"`` significa che c’è un
-contratto commerciale che lega un’entità alla manutenzione del software;
-\* ``"community"`` significa che il software è attualmente manutenuto da
-una o più persone che offrono il loro tempo al progetto; \* ``"none"``
-significa che il software non è al momento manutenuto.
+Questa chiave descrive come il software è attualmente manutenuto.
+
+-  ``"internal"`` - significa che il software è manutenuto internamente dal
+   proprietario del repository; 
+-  ``"contract"`` - significa che c’è un contratto commerciale che lega un’entità
+   alla manutenzione del software;
+-  ``"community"`` - significa che il software è attualmente manutenuto da
+   una o più persone che offrono il loro tempo al progetto; 
+-  ``"none"`` - significa che il software non è al momento manutenuto.
 
 Chiave ``maintenance/contractors``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di Contractor (vedi sotto)
 -  Presenza: obbligatoria (se ``maintainance/type`` è ``contract``)
@@ -696,10 +671,10 @@ attualmente hanno un contratto di manutenzione del software. Queste
 possono essere aziende, organizzazioni o altri nomi collettivi.
 
 Chiave ``maintenance/contacts``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''
 
 -  Tipo: Lista di Contatti (vedi sotto)
--  Presenza: obbligatoria
+-  Presenza: obbligatoria (se e solo se ``maintainance/type`` **non è** ``contract``)
 
 Uno o più contatti di chi sta mantenendo il software.
 
@@ -716,13 +691,13 @@ meno che sia tecnicamente coinvolto anche nella manutenzione del
 prodotto.
 
 Sezione ``localisation``
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa sezione fornisce una panoramica sulle funzionalità di
 localizzazione del software.
 
 Chiave ``localisation/localisationReady``
------------------------------------------
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: obbligatoria
@@ -731,10 +706,10 @@ Se ``yes``, il software ha l’infrastruttura o è stato progettato per
 essere multi-lingua. Ad ogni modo, questo campo non pregiudica
 l’esistenza di una traduzione in altre lingue ma si riferisce
 esclusivamente all’aspetto tecnologico. Per l’elenco delle lingue
-disponibili si veda la chiave ``localisation\availableLanguages``.
+disponibili si veda la chiave ``localisation/availableLanguages``.
 
 Chiave ``localisation/availableLanguages``
-------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: lista di codici `ISO
    639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3
@@ -756,7 +731,7 @@ separatamente. Ad esempio, un database è un buon esempio di questo tipo
 di dipendenza.
 
 Chiave ``dependsOn/open``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''
 
 -  Tipo: array di ``dependency`` (vedi sotto)
 -  Presenza: opzionale
@@ -765,7 +740,7 @@ Questa chiave contiene una lista di dipendenze a runtime che sono
 distribuite con una licenza di tipo open-source.
 
 Chiave ``dependsOn/proprietary``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''
 
 -  Tipo: array di ``dependency`` (vedi sotto)
 -  Presenza: opzionale
@@ -774,9 +749,49 @@ Questa chiave contiene una lista di dipendenze a runtime che sono
 distribuite con una licenza proprietaria.
 
 Chiave ``dependsOn/hardware``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''
 
 -  Tipo: array di ``dependency`` (vedi sotto)
+
+This key contains a list of hardware dependencies that must be owned to use the
+software.
+
+.. _`estensioni-paese`:
+
+Estensioni Specifiche per Paese
+-------------------------------
+
+Mentre lo standard è strutturato per essere significativo a livello
+internazionale, vi sono informazioni addizionali che possono essere
+aggiunte a livello nazionale, come ad esempio una dichiarazione di
+compatibilità con una legge locale. Il meccanismo di estensione fornito
+prevede l’utilizzo di sezioni specifiche per ogni Paese
+(*country-specific*).
+
+Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione
+denominata con l’\ `ISO 3166-1 alpha-2 country
+code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,
+``spid`` è una proprietà definita per i software italiani per la
+dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di
+Identità Digitale.
+
+Dunque, se un software è compatibile, troveremo:
+
+::
+
+   it:
+     spid: yes
+
+Nota bene che le chiavi *country-specific* **non** sono valide
+all’interno delle sezioni internazionali. I Paesi che vogliano estendere
+il formato dovrebbero aggiungere una sezione dedicata.
+
+La documentazione per queste estensioni *country-specific* è mantenuta
+in file separati.
+
+-  Italia: :ref:`estensioni-italiane`. 
+
+
 
 Formati di dato speciali
 ------------------------
@@ -804,7 +819,7 @@ matrice di compatibilità complessa.
 
 *Ex. 1*
 
-.. code:: .yaml
+.. code:: yaml
 
    - name: PostgreSQL
      version: 3.2
@@ -815,7 +830,7 @@ nell’esattezza la sua versione 3.2.
 
 *Ex. 2*
 
-.. code:: .yaml
+.. code:: yaml
 
    - name: MySQL
      versionMin: 1.1
@@ -860,6 +875,13 @@ Un Contractor è un oggetto con le seguenti proprietà:
    essere maggiore di 2 anni nel futuro, e quindi deve essere
    regolarmente aggiornata man mano che la community continua a lavorare
    al progetto.
+-  ``email`` - Questa chiave contiene l’indirizzo email del contatto
+   tecnico. Deve essere un indirizzo email per il contatto diretto con
+   il tecnico; NON popolare questa chiave con mailing-list o punti di
+   contatto generico tipo “info@acme.inc”. Questo indirizzo email non
+   deve essere offuscato. Per migliorare la resistenza contro la
+   raccolta di indirizzi email, usare ``\x64`` per sostituire ``@``,
+   siccome questo è permesso dalle specifiche YAML.
 -  ``website`` - Questa chiave punta al sito del maintainer. Può puntare
    al principale sito istituzionale, o ad una pagina o sito più
    specifica.
@@ -869,5 +891,5 @@ Data
 
 Tutte le date in ``publiccode.yml`` devono aderire al formato
 “YYYY-MM-DD” che è una delle codifiche permesse dal ISO8601. **Nota
-bene:** Questa è l’unica codifica permessa, quindi non sono consentiti
+bene:** questa è l’unica codifica permessa, quindi non sono consentiti
 gli altri formati previsti da ISO8601.

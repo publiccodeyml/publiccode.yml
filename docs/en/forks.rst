@@ -1,9 +1,12 @@
+.. _forks-and-variants:
+
 Forks and variants
 ==================
 
-This document describes how to best handle software forks in the context
-of updating ``publiccode.yml``. We define two different semantics that
-require different handling: technical forks and software variants.
+As already cited before, a fork may have two different forms based on the final
+aim. As such, in order to make it clear how to handle the
+`publiccode.yml` in both cases, below we define two different
+semantics: technical forks and software variants.
 
 Technical forks (i.e. to publish patches)
 -----------------------------------------

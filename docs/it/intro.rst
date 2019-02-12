@@ -1,5 +1,5 @@
-Lo Standard ``publiccode.yml``
-==============================
+Descrizione
+------------
 
 ``publiccode.yml`` è uno standard di descrizione di metadati ideato per
 essere inserito in repository contenenti software pubblici. Questo
@@ -51,12 +51,4 @@ come ad esempio un editor, che permettano di generare e/o validare un file
 ``publiccode.yml`` attraverso delle interfacce grafiche quindi facilitando
 anche il compito in fase di creazione.
 
-.. toctree:: 
-   :maxdepth: 2
 
-   Schema dello standard <_docs/it/schema.md> 
-   Estensioni italiane <_docs/it/schema.it.md> 
-   Fork e Varianti <_docs/it/forks.md> 
-   Tipi di Pubbliche Amministrazioni <_docs/it/pa-types.md> 
-   Lista dei tag accettati <_docs/it/tags.md> 
-   Strumenti di supporto <_docs/it/strumenti.md>
