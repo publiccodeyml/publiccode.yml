@@ -664,7 +664,7 @@ Chiave ``maintenance/contractors``
 ''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di Contractor (vedi sotto)
--  Presenza: obbligatoria (se ``maintainance/type`` è ``contract``)
+-  Presenza: obbligatoria (se ``maintainance/type`` **è** ``contract``)
 
 Questa chiave descrive l’entità o le entità, se ce ne sono, che
 attualmente hanno un contratto di manutenzione del software. Queste
@@ -674,7 +674,7 @@ Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
 -  Tipo: Lista di Contatti (vedi sotto)
--  Presenza: obbligatoria (se e solo se ``maintainance/type`` **non è** ``contract``)
+-  Presenza: obbligatoria (se ``maintainance/type`` **è** ``internal`` oppure ``community``)
 
 Uno o più contatti di chi sta mantenendo il software.
 
