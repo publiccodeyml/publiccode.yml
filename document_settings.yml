@@ -1,7 +1,7 @@
 document:
   name: Standard publiccode.yml
   description: |
-    Questa è la documentazione relativa allo standard `publiccode.yml`.
+    Questo documento contiene la documentazione relativa allo standard publiccode.yml.
   tags:
     - publiccode.yml 
     - standard 
