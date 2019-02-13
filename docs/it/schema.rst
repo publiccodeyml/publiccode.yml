@@ -139,6 +139,8 @@ Questa chiave contiene il logo del software. I loghi dovrebbero essere
 tutti in formato vettoriale; i formati raster sono solo accettabili come
 fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
+**Nota bene:** Il file deve risiedere all'interno del repository. 
+Il percorso indicato può essere relativo oppure assoluto. 
 
 Chiave ``monochromeLogo``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,6 +154,8 @@ Un logo monocromatico (nero). Il logo dovrebbe essere in formato
 vettoriale; i formati raster sono solo accettabili come fallback. In
 questo caso, dovrebbero essere PNG trasparenti, con una larghezza minima
 di 1000px.
+**Nota bene:** Il file deve risiedere all'interno del repository. 
+Il percorso indicato può essere relativo oppure assoluto. 
 
 Chiave ``inputTypes``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -538,7 +542,7 @@ Chiave ``description/[lang]/screenshots``
 Questa chiave contiene uno o più percorsi a file che mostrano immagini
 del software (screenshot). Queste ultime hanno lo scopo di dare una panoramica
 dell’aspetto del software e del suo funzionamento. 
-**NB:** I file devono risiedere all'interno del repository. 
+**Nota bene:** I file devono risiedere all'interno del repository. 
 Il percorso indicato può essere relativo oppure assoluto. 
 
 
@@ -632,12 +636,14 @@ Chiave ``legal/authorsFile``
 -  Esempio: ``"doc/AUTHORS.txt"``
 
 Qualche software open-source adotta una convenzione che identifica il
-proprietario del copyright attraverso un file elencante tutte le entità
+detentore del copyright attraverso un file elencante tutte le entità
 che possiedono il copyright. Questo è comune nei progetti fortemente
 sostenuti dalla community ove esistono diversi contributori esterni e
-non c’è un chiaro singolo possessore del copyright. In questi casi,
+non c’è un chiaro singolo detentore del copyright. In questi casi,
 questa chiave può essere usata per riferirsi al suddetto file degli
 autori, usando un percorso relativo alla radice (root) del repository.
+**Nota bene:** Il file deve risiedere all'interno del repository. 
+Il percorso indicato può essere relativo oppure assoluto. 
 
 Sezione ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
