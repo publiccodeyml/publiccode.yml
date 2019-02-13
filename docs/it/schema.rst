@@ -535,9 +535,12 @@ Chiave ``description/[lang]/screenshots``
 -  Formati: PNG, JPG
 -  Esempio: ``"data/screenshots/configuration.png"``
 
-Questa chiave contienete uno o più percorsi a file che mostrano immagini
-del software (screenshot). Queste ultime hanno lo scopo di dare un’idea
-veloce dell’aspetto del software e del suo funzionamento.
+Questa chiave contiene uno o più percorsi a file che mostrano immagini
+del software (screenshot). Queste ultime hanno lo scopo di dare una panoramica
+dell’aspetto del software e del suo funzionamento. 
+**NB:** I file devono risiedere all'interno del repository. 
+Il percorso indicato può essere relativo oppure assoluto. 
+
 
 Queste immagini possono essere di qualsiasi formato e dimensione; i
 formati suggeriti sono:
