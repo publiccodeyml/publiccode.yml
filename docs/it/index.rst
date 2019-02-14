@@ -10,5 +10,5 @@ Lo Standard ``publiccode.yml``
    forks.md
    pa-types.md
    tags.md 
-   strumenti.md
+   tools.md
    example.rst
