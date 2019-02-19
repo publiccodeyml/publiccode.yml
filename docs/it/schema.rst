@@ -135,9 +135,12 @@ Chiave ``logo``
 -  Formati accettabili: SVG, SVGZ, PNG
 -  Esempio: ``img/logo.svg``
 
-Questa chiave contiene il logo del software. I loghi dovrebbero essere
-tutti in formato vettoriale; i formati raster sono solo accettabili come
-fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
+Questa chiave indica il logo del software. Il valore può essere il percorso
+relativo al file a partire dalla root del repository, oppure una URL assoluta
+che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
+all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
+come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
 
 Chiave ``monochromeLogo``
@@ -148,10 +151,14 @@ Chiave ``monochromeLogo``
 -  Formati accettabili: SVG, SVGZ, PNG
 -  Esempio: ``img/logo-mono.svg``
 
-Un logo monocromatico (nero). Il logo dovrebbe essere in formato
-vettoriale; i formati raster sono solo accettabili come fallback. In
-questo caso, dovrebbero essere PNG trasparenti, con una larghezza minima
-di 1000px.
+Questa chiave indica il logo monocromatico (nero) del software. Il valore può
+essere il percorso
+relativo al file a partire dalla root del repository, oppure una URL assoluta
+che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
+all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
+come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
+larghezza minima di 1000px.
 
 Chiave ``inputTypes``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -535,9 +542,12 @@ Chiave ``description/[lang]/screenshots``
 -  Formati: PNG, JPG
 -  Esempio: ``"data/screenshots/configuration.png"``
 
-Questa chiave contienete uno o più percorsi a file che mostrano immagini
-del software (screenshot). Queste ultime hanno lo scopo di dare un’idea
-veloce dell’aspetto del software e del suo funzionamento.
+Questa chiave indica una o più immagini del software (screenshot). Queste
+hanno lo scopo di dare una panoramica dell'aspetto del software e del
+suo funzionamento. Il valore può essere il percorso relativo al file a partire
+dalla root del repository, oppure una URL assoluta che punta all'immagine in
+versione raw. In entrambi i casi, il file deve risiedere all'interno del
+medesimo repository che contiene il publiccode.yml.  
 
 Queste immagini possono essere di qualsiasi formato e dimensione; i
 formati suggeriti sono:
@@ -629,10 +639,10 @@ Chiave ``legal/authorsFile``
 -  Esempio: ``"doc/AUTHORS.txt"``
 
 Qualche software open-source adotta una convenzione che identifica il
-proprietario del copyright attraverso un file elencante tutte le entità
+detentore del copyright attraverso un file elencante tutte le entità
 che possiedono il copyright. Questo è comune nei progetti fortemente
 sostenuti dalla community ove esistono diversi contributori esterni e
-non c’è un chiaro singolo possessore del copyright. In questi casi,
+non c’è un chiaro singolo detentore del copyright. In questi casi,
 questa chiave può essere usata per riferirsi al suddetto file degli
 autori, usando un percorso relativo alla radice (root) del repository.
 
@@ -664,7 +674,7 @@ Chiave ``maintenance/contractors``
 ''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di Contractor (vedi sotto)
--  Presenza: obbligatoria (se ``maintainance/type`` è ``contract``)
+-  Presenza: obbligatoria (se ``maintainance/type`` **è** ``contract``)
 
 Questa chiave descrive l’entità o le entità, se ce ne sono, che
 attualmente hanno un contratto di manutenzione del software. Queste
@@ -674,7 +684,7 @@ Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
 -  Tipo: Lista di Contatti (vedi sotto)
--  Presenza: obbligatoria (se e solo se ``maintainance/type`` **non è** ``contract``)
+-  Presenza: obbligatoria (se ``maintainance/type`` **è** ``internal`` oppure ``community``)
 
 Uno o più contatti di chi sta mantenendo il software.
 

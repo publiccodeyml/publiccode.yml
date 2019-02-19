@@ -160,6 +160,10 @@ Key ``logo``
 This key contains the path to the logo of the software. Logos should be
 in vector format; raster formats are only allowed as a fallback. In this
 case, they should be transparent PNGs, minimum 1000px of width.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the logo in raw
+version. In both cases, the file must reside inside the same repository where
+the publiccode.yml file is stored.
 
 Key ``monochromeLogo``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -172,6 +176,10 @@ Key ``monochromeLogo``
 A monochromatic (black) logo. The logo should be in vector format;
 raster formats are only allowed as a fallback. In this case, they should
 be transparent PNGs, minimum 1000px of width.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the logo in raw
+version. In both cases, the file must reside inside the same repository where
+the publiccode.yml file is stored.
 
 Key ``inputTypes``
 ~~~~~~~~~~~~~~~~~~
@@ -536,6 +544,10 @@ Key ``description/[lang]/screenshots``
 This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
 looks like and how it works.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the screenshot in raw
+version. In both cases, the file must reside inside the same repository where
+the publiccode.yml file is stored.
 
 Screenshots can be of any shape and size; the suggested formats are:
 
@@ -655,7 +667,7 @@ Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
 -  Type: array of Contractor (see below)
--  Presence: mandatory (if ``maintainance/type`` is ``contract``)
+-  Presence: mandatory (if ``maintainance/type`` **is** ``contract``)
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -665,7 +677,7 @@ Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
 -  Type: List of Contacts (see below)
--  Presence: mandatory (if ``maintainance/type`` **is not** ``contract``)
+-  Presence: mandatory (if ``maintainance/type`` **is** ``internal`` or ``community``)
 
 One or more contacts maintaining this software.
 
