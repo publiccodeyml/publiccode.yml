@@ -135,12 +135,13 @@ Chiave ``logo``
 -  Formati accettabili: SVG, SVGZ, PNG
 -  Esempio: ``img/logo.svg``
 
-Questa chiave contiene il logo del software. I loghi dovrebbero essere
-tutti in formato vettoriale; i formati raster sono solo accettabili come
-fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
+Questa chiave indica il logo del software. Il valore può essere il percorso
+relativo al file a partire dalla root del repository, oppure una URL assoluta
+che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
+all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
+come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
-**Nota bene:** Il file deve risiedere all'interno del repository. 
-Il percorso indicato può essere relativo oppure assoluto. 
 
 Chiave ``monochromeLogo``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,12 +151,14 @@ Chiave ``monochromeLogo``
 -  Formati accettabili: SVG, SVGZ, PNG
 -  Esempio: ``img/logo-mono.svg``
 
-Un logo monocromatico (nero). Il logo dovrebbe essere in formato
-vettoriale; i formati raster sono solo accettabili come fallback. In
-questo caso, dovrebbero essere PNG trasparenti, con una larghezza minima
-di 1000px.
-**Nota bene:** Il file deve risiedere all'interno del repository. 
-Il percorso indicato può essere relativo oppure assoluto. 
+Questa chiave indica il logo monocromatico (nero) del software. Il valore può
+essere il percorso
+relativo al file a partire dalla root del repository, oppure una URL assoluta
+che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
+all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
+come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
+larghezza minima di 1000px.
 
 Chiave ``inputTypes``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -539,12 +542,12 @@ Chiave ``description/[lang]/screenshots``
 -  Formati: PNG, JPG
 -  Esempio: ``"data/screenshots/configuration.png"``
 
-Questa chiave contiene uno o più percorsi a file che mostrano immagini
-del software (screenshot). Queste ultime hanno lo scopo di dare una panoramica
-dell’aspetto del software e del suo funzionamento. 
-**Nota bene:** I file devono risiedere all'interno del repository. 
-Il percorso indicato può essere relativo oppure assoluto. 
-
+Questa chiave indica uno o più immagini del software (screenshot). Queste
+hanno lo scopo di dare una panoramica dell'aspetto del software e del
+suo funzionamento. Il valore può essere il percorso relativo al file a partire
+dalla root del repository, oppure una URL assoluta che punta al logo in
+versione raw. In entrambi i casi, il file deve risiedere all'interno del
+medesimo repository che contiene il publiccode.yml.  
 
 Queste immagini possono essere di qualsiasi formato e dimensione; i
 formati suggeriti sono:
@@ -642,8 +645,6 @@ sostenuti dalla community ove esistono diversi contributori esterni e
 non c’è un chiaro singolo detentore del copyright. In questi casi,
 questa chiave può essere usata per riferirsi al suddetto file degli
 autori, usando un percorso relativo alla radice (root) del repository.
-**Nota bene:** Il file deve risiedere all'interno del repository. 
-Il percorso indicato può essere relativo oppure assoluto. 
 
 Sezione ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
