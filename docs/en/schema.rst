@@ -163,7 +163,7 @@ case, they should be transparent PNGs, minimum 1000px of width.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
-the publiccode.yml file is stored.
+the ``publiccode.yml`` file is stored.
 
 Key ``monochromeLogo``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -179,7 +179,7 @@ be transparent PNGs, minimum 1000px of width.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
-the publiccode.yml file is stored.
+the ``publiccode.yml`` file is stored.
 
 Key ``inputTypes``
 ~~~~~~~~~~~~~~~~~~
@@ -547,7 +547,7 @@ looks like and how it works.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the screenshot in raw
 version. In both cases, the file must reside inside the same repository where
-the publiccode.yml file is stored.
+the ``publiccode.yml`` file is stored.
 
 Screenshots can be of any shape and size; the suggested formats are:
 

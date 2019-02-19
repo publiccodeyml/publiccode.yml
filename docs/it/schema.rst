@@ -138,7 +138,7 @@ Chiave ``logo``
 Questa chiave indica il logo del software. Il valore può essere il percorso
 relativo al file a partire dalla root del repository, oppure una URL assoluta
 che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
-all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
 dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
 come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
@@ -155,7 +155,7 @@ Questa chiave indica il logo monocromatico (nero) del software. Il valore può
 essere il percorso
 relativo al file a partire dalla root del repository, oppure una URL assoluta
 che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
-all'interno del medesimo repository che contiene il publiccode.yml.  Il logo
+all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
 dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
 come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
@@ -365,14 +365,14 @@ sezione con quel nome.
 
 Un esempio per l’italiano:
 
-.. code:: .yml
+.. code:: .yaml
 
    description:
      ita:
        shortDescription: ...
        longDescription: ...
 
-Nel parti successive del documento, tutte le chiavi sono assunte essere
+Nelle parti successive del documento, tutte le chiavi sono assunte essere
 all’interno di una sezione con il nome della lingua (annoteremo questo
 con ``[lang]``).
 
@@ -547,7 +547,7 @@ hanno lo scopo di dare una panoramica dell'aspetto del software e del
 suo funzionamento. Il valore può essere il percorso relativo al file a partire
 dalla root del repository, oppure una URL assoluta che punta all'immagine in
 versione raw. In entrambi i casi, il file deve risiedere all'interno del
-medesimo repository che contiene il publiccode.yml.  
+medesimo repository che contiene il ``publiccode.yml``.  
 
 Queste immagini possono essere di qualsiasi formato e dimensione; i
 formati suggeriti sono:
