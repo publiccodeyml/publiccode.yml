@@ -711,12 +711,13 @@ than one language.
 Key ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
 
--  Type: list of `ISO 639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__
-   alpha-3 codes
+-  Type: list of IETF BCP 47 language tags
 -  Presence: mandatory
 
 If present, this is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
+The primary language subtag cannot be omitted, as mandated by the 
+`BCP47 <https://tools.ietf.org/html/bcp47>`__.
 
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
