@@ -545,7 +545,7 @@ This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
 looks like and how it works.
 The key value can be the relative path to the file starting from the root of
-the repository, or it can be an absolute URL pointing to the logo in raw
+the repository, or it can be an absolute URL pointing to the screenshot in raw
 version. In both cases, the file must reside inside the same repository where
 the publiccode.yml file is stored.
 
