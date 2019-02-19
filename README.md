@@ -1,7 +1,5 @@
 # The `publiccode.yml` standard
 
-![Repo Status:
-Alpha](https://img.shields.io/badge/status-alpha-lightgrey.svg?longCache=true&style=plastic)
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
 
@@ -83,4 +81,4 @@ considered the default landing page for the project.
 
 ## Licence
 
-Licenced under the [CC-0](LICENSE)
+Licenced under the [CC-0](LICENSE).
