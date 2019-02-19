@@ -545,7 +545,7 @@ Chiave ``description/[lang]/screenshots``
 Questa chiave indica uno o più immagini del software (screenshot). Queste
 hanno lo scopo di dare una panoramica dell'aspetto del software e del
 suo funzionamento. Il valore può essere il percorso relativo al file a partire
-dalla root del repository, oppure una URL assoluta che punta al logo in
+dalla root del repository, oppure una URL assoluta che punta all'immagine in
 versione raw. In entrambi i casi, il file deve risiedere all'interno del
 medesimo repository che contiene il publiccode.yml.  
 
