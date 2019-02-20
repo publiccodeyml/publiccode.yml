@@ -1,17 +1,11 @@
 .. _estensioni-italiane:
 
-Estensioni italiane
-========================================
+Chiavi e Sezioni italiane
+-------------------------
 
-Estensioni
-----------
-
-Tutte le estensioni elencate qui di seguito sono specifiche per un Paese e, di
+Tutte le estensioni elencate qui di seguito sono specifiche per l'Italia e, di
 conseguenza, devono essere inserite in una sezione denominata con 
-l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. 
-In questo caso, siccome le sezioni e chiavi seguenti sono italiane,
-è necessario utilizzare il codice `it`.
+il codice ``it``.
 
 Sezione ``conforme``
 ~~~~~~~~~~~~~~~~~~~~

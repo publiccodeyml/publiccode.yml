@@ -5,10 +5,10 @@ The ``publiccode.yml`` Standard
    :numbered:
 
    intro.rst
-   schema.md
-   schema.it.md
-   forks.md
-   pa-types.md
-   tags.md 
-   tools.md
+   schema.rst
+   country.rst
+   forks.rst
+   pa-types.rst
+   tags.rst 
+   tools.rst
    example.rst

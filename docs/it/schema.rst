@@ -1,5 +1,5 @@
 Lo standard
-===========================
+===========
 
 La struttura di un file ``publiccode.yml`` prevede l'esistenza di chiavi
 top-level e sezioni che possono contenere al proprio interno altre chiavi. 
@@ -7,9 +7,8 @@ Lo standard ha rilevanza internazionale ma è possibile dichiarare una sezione
 dedicata per le chiavi relative ad un Paese specifico (si veda
 :ref:`estensioni-paese` per maggiori dettagli). 
 
-Estensioni Top-Level
---------------------
-
+Chiavi e Sezioni Top-Level
+--------------------------
 
 Chiave ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -282,22 +281,22 @@ Chiave ``softwareType``
    ``configurationFiles``
 
 Le chiavi sono: 
+
 -  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
-   La maggior parte del software sarà di questo tipo. Pare di questa categoria
-   di software potrà essere eseguita
-   su un computer desktop (e.g., un eseguibile), come un’applicazione
-   *cloud-based*, come un servizio di rete o anche come un set di servizi
-   cloud o microservizi. 
+   La maggior parte del software sarà di questo tipo. I software
+   appartenenti a questa categoria potrebbero essere eseguiti
+   su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
+   *cloud-based* o servizi di rete, oppure set di microservizi. 
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
 -  ``library`` - Il software
-   contiene una libreria o una SDK che permette uno sviluppo più semplice
-   per sviluppatori di terze parti per la creazione di nuovi prodotti.
+   contiene una libreria o una SDK che facilita la creazione di nuovi prodotti
+   a sviluppatori di terze parti.
 -  ``configurationFiles`` - Il software non contiene script eseguibili ma
    una serie di file di configurazione. Questi potrebbero documentare come
-   ottenere un certo tipo di *deployment*. Potrebbero avere la forma di
-   semplici file di configurazione, script bash, playbook ansible,
+   ottenere un certo tipo di *deployment*. I suddetti file potrebbero avere la
+   forma di semplici file di configurazione, script bash, playbook ansible,
    Dockerfile, o altri set di istruzioni.
 
 Sezione ``intendedAudience``
@@ -768,42 +767,6 @@ Chiave ``dependsOn/hardware``
 
 This key contains a list of hardware dependencies that must be owned to use the
 software.
-
-.. _`estensioni-paese`:
-
-Estensioni Specifiche per Paese
--------------------------------
-
-Mentre lo standard è strutturato per essere significativo a livello
-internazionale, vi sono informazioni addizionali che possono essere
-aggiunte a livello nazionale, come ad esempio una dichiarazione di
-compatibilità con una legge locale. Il meccanismo di estensione fornito
-prevede l’utilizzo di sezioni specifiche per ogni Paese
-(*country-specific*).
-
-Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione
-denominata con l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,
-``spid`` è una proprietà definita per i software italiani per la
-dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di
-Identità Digitale.
-
-Dunque, se un software è compatibile, troveremo:
-
-::
-
-   it:
-     spid: yes
-
-Nota bene che le chiavi *country-specific* **non** sono valide
-all’interno delle sezioni internazionali. I Paesi che vogliano estendere
-il formato dovrebbero aggiungere una sezione dedicata.
-
-La documentazione per queste estensioni *country-specific* è mantenuta
-in file separati.
-
--  Italia: :ref:`estensioni-italiane`. 
-
 
 
 Formati di dato speciali
