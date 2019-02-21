@@ -1,0 +1,683 @@
+{
+  "title": "publiccode",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {
+        "legal": {},
+        "dependencies": {},
+        "version": {},
+        "tmpfs": {}
+  },
+  "properties": {
+    "publiccodeYmlVersion": {
+      "$id": "/properties/publiccodeYmlVersion",
+      "type": "string",
+      "title": "Specification Version",
+      "description": "This key specifies the version to which the current publiccode.yml adheres to, for forward compatibility.",
+      "default": "",
+      "examples": [
+        "0.1"
+      ]
+    },
+    "name": {
+      "$id": "/properties/name",
+      "type": "string",
+      "title": "The Schema Name",
+      "default": "",
+      "examples": [
+        "Medusa"
+      ]
+    },
+    "applicationSuite": {
+      "$id": "/properties/applicationSuite",
+      "type": "string",
+      "title": "The Application Suite",
+      "default": "",
+      "examples": [
+        "MegaProductivitySuite"
+      ]
+    },
+    "url": {
+      "$id": "/properties/url",
+      "type": "string",
+      "title": "The Repo URL",
+      "default": "",
+      "examples": [
+        "https://example.com/italia/medusa.git"
+      ]
+    },
+    "landingUrl": {
+      "$id": "/properties/landingURL",
+      "type": "string",
+      "title": "The Landing URL",
+      "default": "",
+      "examples": [
+        "https://example.com/italia/medusa"
+      ]
+    },
+    "isBasedOn": {
+      "$id": "/properties/isBasedOn",
+      "type": "string",
+      "title": "Identifies this project as a fork or software variant",
+      "default": "",
+      "examples": [
+        "https://github.com/italia/otello.git"
+      ]
+    },
+    "softwareVersion": {
+      "$id": "/properties/softwareVersion",
+      "type": "string",
+      "title": "The Software Version Schema",
+      "default": "",
+      "examples": [
+        "1.0"
+      ]
+    },
+    "releaseDate": {
+      "$id": "/properties/releaseDate",
+      "type": "string",
+      "title": "The Release Date Schema ",
+      "default": "",
+      "examples": [
+        "2017-04-15"
+      ]
+    },
+    "logo": {
+      "$id": "/properties/logo",
+      "type": "string",
+      "title": "The Logo Schema ",
+      "default": "",
+      "examples": [
+        "img/logo.jpg"
+      ]
+    },
+    "monochromeLogo": {
+      "$id": "/properties/monochromeLogo",
+      "type": "string",
+      "title": "The monochrome Logo",
+      "default": "",
+      "examples": [
+        "img/logo-mono.jpg"
+      ]
+    },
+   "inputTypes": {
+      "$id": "/properties/inputTypes",
+      "type": "array",
+      "title": "The supported Input Types",
+      "default": "",
+      "examples": [
+        "text/plain"
+      ]
+    },
+   "outputTypes": {
+      "$id": "/properties/outputTypes",
+      "type": "array",
+      "title": "The supported Output Types",
+      "default": "",
+      "examples": [
+        "text/plain"
+      ]
+    },
+    "platforms": {
+      "$id": "/properties/platforms",
+      "type": "array",
+      "items": {
+        "$id": "/properties/platforms/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "android",
+          "ios"
+        ]
+      }
+    },
+    "softwareType": {
+      "$id": "/properties/softwareType",
+      "type": "object",
+      "properties": {
+        "addon": {
+          "$id": "/properties/softwareType/properties/addon",
+          "type": "boolean",
+          "title": "The Software Addon Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "standalone": {
+          "$id": "/properties/softwareType/properties/standalone",
+          "type": "boolean",
+          "title": "The Standalone Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "library": {
+          "$id": "/properties/softwareType/properties/library",
+          "type": "boolean",
+          "title": "The Library Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "configurationFiles": {
+          "$id": "/properties/softwareType/properties/configurationFiles",
+          "type": "boolean",
+          "title": "The Configurationfiles Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "intendedAudience": {
+      "$id": "/properties/intendedAudience",
+      "type": "object",
+      "properties": {
+       "onlyFor": {
+          "$id": "/properties/intendedAudience/properties/institutionType",
+          "type": "string",
+          "title": "The institution type",
+          "description": "",
+          "default": "",
+          "examples": [
+            "city"
+          ]
+        },
+        "countries": {
+          "$id": "/properties/intendedAudience/properties/countries",
+          "type": "array",
+          "items": {
+            "$id": "/properties/intendedAudience/properties/countries/items",
+            "type": "string",
+            "title": "List of countries",
+            "description": "List of the countries",
+            "default": "",
+            "examples": [
+              "it",
+              "de"
+            ]
+          }
+        },
+        "unsupportedCountries": {
+          "$id": "/properties/intendedAudience/properties/unsupportedCountrieS",
+          "type": "array",
+          "items": {
+            "$id": "/properties/intendedAudience/properties/countries/items",
+            "type": "string",
+            "title": "List of countries",
+            "description": "List of the countries",
+            "default": "",
+            "examples": [
+              "fr"
+            ]
+          }
+        }
+      }
+    },
+    "usedBy": {
+      "$id": "/properties/usedBy",
+      "type": "array",
+      "items": {
+        "$id": "/properties/usedBy/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "Comune di Firenze",
+          "Comune di Roma"
+        ]
+      }
+    },
+    "legal": {
+      "$id": "/properties/legal",
+      "type": "object",
+      "properties": {
+        "mainCopyrightOwner": {
+          "$id": "/properties/legal/properties/mainCopyrightOwner",
+          "type": "string",
+          "title": "The Main Copyright Owner Schema ",
+          "default": "",
+          "examples": [
+            "Comune di Reggio Emilia and friends"
+          ]
+        },
+        "repoOwner": {
+          "$id": "/properties/legal/properties/repoOwner",
+          "type": "string",
+          "title": "The Repo Owner Schema ",
+          "default": "",
+          "examples": [
+            "Comune di Reggio Emilia"
+          ]
+        },
+        "authorsFile": {
+          "$id": "/properties/legal/properties/authorsFile",
+          "type": "string",
+          "title": "The Authorsfile Schema ",
+          "default": "",
+          "examples": [
+            "AUTHORS"
+          ]
+        },
+        "license": {
+          "$id": "/properties/legal/properties/license",
+          "type": "string",
+          "title": "The License Schema ",
+          "default": "",
+          "examples": [
+            "AGPL-3.0-or-later"
+          ]
+        }
+      }
+    },
+    "developmentStatus": {
+      "$id": "/properties/developmentStatus",
+      "type": "object",
+      "properties": {
+        "concept": {
+          "$id": "/properties/developmentStatus/properties/concept",
+          "type": "boolean",
+          "title": "The Concept Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "development": {
+          "$id": "/properties/developmentStatus/properties/development",
+          "type": "boolean",
+          "title": "The Development Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "beta": {
+          "$id": "/properties/developmentStatus/properties/beta",
+          "type": "boolean",
+          "title": "Whether the software is a beta",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "stable": {
+          "$id": "/properties/developmentStatus/properties/stable",
+          "type": "boolean",
+          "title": "The Stable Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "obsolete": {
+          "$id": "/properties/developmentStatus/properties/obsolete",
+          "type": "boolean",
+          "title": "The Obsolete Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "maintenance": {
+      "$id": "/properties/maintenance",
+      "type": "object",
+      "properties": {
+        "internal": {
+          "$id": "/properties/maintenance/properties/internal",
+          "type": "boolean",
+          "title": "The Internal Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "contract": {
+          "$id": "/properties/maintenance/properties/contract",
+          "type": "boolean",
+          "title": "The Contract Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "community": {
+          "$id": "/properties/maintenance/properties/community",
+          "type": "boolean",
+          "title": "The Community Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "unmaintained": {
+          "$id": "/properties/maintenance/properties/unmaintained",
+          "type": "boolean",
+          "title": "The Unmaintained Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "contacts": {
+          "$id": "/properties/maintenance/properties/contacts",
+          "type": "array",
+          "items": {
+            "$id": "/properties/maintenance/properties/contacts/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "Francesco Rossi"
+                ]
+              },
+              "email": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/email",
+                "type": "string",
+                "title": "The Email Schema ",
+                "default": "",
+                "examples": [
+                  "francesco.rossi@comune.reggioemilia.it"
+                ]
+              },
+              "affiliation": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/affiliation",
+                "type": "string",
+                "title": "The Affiliation Schema ",
+                "default": "",
+                "examples": [
+                  "Comune di Reggio Emilia"
+                ]
+              },
+              "phone": {
+                "$id": "/properties/maintenance/properties/contacts/items/properties/phone",
+                "type": "string",
+                "title": "The Phone Schema ",
+                "default": "",
+                "examples": [
+                  "+39 231 13215112"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "roadmap": {
+      "$id": "/properties/roadmap",
+      "type": "string",
+      "title": "The Roadmap Schema ",
+      "default": "",
+      "examples": [
+        "https://example.com/italia/medusa/roadmap"
+      ]
+    },
+    "awards": {
+      "$id": "/properties/awards",
+      "type": "array",
+      "items": {
+        "$id": "/properties/awards/items",
+        "type": "string",
+        "title": "The 0th Schema ",
+        "default": "",
+        "examples": [
+          "1st Price Software of the year"
+        ]
+      }
+    },
+    "localization": {
+      "$id": "/properties/localization",
+      "type": "object",
+      "properties": {
+        "localizationReady": {
+          "$id": "/properties/localization/properties/localizationReady",
+          "type": "boolean",
+          "title": "The Localizationready Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "availableLanguages": {
+          "$id": "/properties/localization/properties/availableLanguages",
+          "type": "array",
+          "items": {
+            "$id": "/properties/localization/properties/availableLanguages/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "ita",
+              "fra",
+              "deu"
+            ]
+          }
+        },
+        "it": {
+          "$id": "/properties/localization/properties/it",
+          "type": "object",
+          "properties": {
+            "localizedName": {
+              "$id": "/properties/localization/properties/it/properties/localizedName",
+              "type": "string",
+              "title": "The Localizedname Schema ",
+              "default": "",
+              "examples": [
+                "Medusa"
+              ]
+            },
+            "genericName": {
+              "$id": "/properties/localization/properties/it/properties/genericName",
+              "type": "string",
+              "title": "The Generic Name Schema ",
+              "default": "",
+              "examples": [
+                "Text Editor"
+              ]
+            },
+            "shortDescription": {
+              "$id": "/properties/localization/properties/it/properties/shortDesc",
+              "type": "string",
+              "title": "The Shortdesc Schema ",
+              "default": "",
+              "examples": [
+                "A really interesting software."
+              ]
+            },
+            "longDescription": {
+              "$id": "/properties/localization/properties/it/properties/longDesc",
+              "type": "string",
+              "title": "The Longdesc Schema ",
+              "default": "",
+              "examples": [
+                "Very long description of this software, also split on multiple rows. You should note what the software is and why one should need it.\n"
+              ]
+            },
+            "screenshots": {
+              "$id": "/properties/localization/properties/it/properties/screenshots",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/screenshots/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "img/sshot1.jpg",
+                  "img/sshot2.jpg",
+                  "img/sshot3.jpg"
+                ]
+              }
+            },
+            "videos": {
+              "$id": "/properties/localization/properties/it/properties/videos",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/videos/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "https://youtube.com/xxxxxxxx"
+                ]
+              }
+            },
+            "features": {
+              "$id": "/properties/localization/properties/it/properties/features",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/features/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "Very important feature",
+                  "Will run without a problem",
+                  "Has zero bugs",
+                  "Solves all the problems of the world"
+                ]
+              }
+            },
+            "freeTags": {
+              "$id": "/properties/localization/properties/it/properties/freeTags",
+              "type": "array",
+              "items": {
+                "$id": "/properties/localization/properties/it/properties/freeTags/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "un-tag-in-italiano"
+                ]
+              }
+            },
+
+            "documentation": {
+              "$id": "/properties/localization/properties/it/properties/documentation",
+              "type": "string",
+              "title": "The Documentation Schema ",
+              "default": "",
+              "examples": [
+                "https://read.the.documentation/medusa/v1.0"
+              ]
+            },
+            "apiDocumentation": {
+              "$id": "/properties/localization/properties/it/properties/apiDocumentation",
+              "type": "string",
+              "title": "The API Documentation Schema ",
+              "default": "",
+              "examples": [
+                "https://read.the.documentation/medusa/v1.0"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "$id": "/properties/dependencies",
+      "type": "object",
+      "properties": {
+        "open": {
+          "$id": "/properties/dependencies/properties/open",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/open/items",
+            "type": "object",
+            "properties": {
+              "name": {
+                "$id": "/properties/dependencies/properties/open/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "MySQL"
+                ]
+              },
+              "version": {
+                "$id": "/properties/dependencies/properties/open/items/properties/version",
+                "type": "object",
+                "properties": {
+                  "greaterThan": {
+                    "$id": "/properties/dependencies/properties/open/items/properties/version/properties/greaterThan",
+                    "type": "number",
+                    "title": "The Greaterthan Schema ",
+                    "default": 0,
+                    "examples": [
+                      1.100000023841858
+                    ]
+                  },
+                  "lesserThan": {
+                    "$id": "/properties/dependencies/properties/open/items/properties/version/properties/lesserThan",
+                    "type": "number",
+                    "title": "The Lesserthan Schema ",
+                    "default": 0,
+                    "examples": [
+                      1.2999999523162842
+                    ]
+                  }
+                }
+              },
+              "optional": {
+                "$id": "/properties/dependencies/properties/open/items/properties/optional",
+                "type": "boolean",
+                "title": "The Optional Schema ",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        },
+        "proprietary": {
+          "$id": "/properties/dependencies/properties/proprietary",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/proprietary/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "Oracle 11.4",
+              "IBM SoftLayer 4.5"
+            ]
+          }
+        },
+        "hardware": {
+          "$id": "/properties/dependencies/properties/hardware",
+          "type": "array",
+          "items": {
+            "$id": "/properties/dependencies/properties/hardware/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "NFC Reader (chipset xxx)"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "publiccodeYmlVersion",
+    "name",
+    "url",
+    "releaseDate",
+    "platforms",
+    "tags",
+    "developmentStatus",
+    "softwareType"
+  ]
+}
