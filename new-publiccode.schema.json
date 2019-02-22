@@ -678,6 +678,11 @@
     "platforms",
     "tags",
     "developmentStatus",
-    "softwareType"
-  ]
+    "softwareType",
+    "description/it/genericName",
+    "description/it/shortDescription",
+    "description/it/longDescription",
+    "description/it/features",
+    "legal/license",
+    "maintenance/type"
 }
