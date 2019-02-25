@@ -370,10 +370,10 @@ software.
 
 **Note:** since all the strings contained in this section are
 user-visible and written in a specific language, you **must** specify
-the language you are editing the text in (using the IETF BCP 47 specifications
-`BCP47 <https://tools.ietf.org/html/bcp47>`__) by
+the language you are editing the text in (using the IETF 
+`BCP 47 <https://tools.ietf.org/html/bcp47>`__ specifications) by
 creating a sub-section with that name. The primary language subtag cannot be
-omitted, as mandated by the BCP47.  
+omitted, as mandated by the BCP 47.  
 
 An example for English:
 
@@ -719,7 +719,7 @@ Key ``localisation/availableLanguages``
 If present, this is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the 
-`BCP47 <https://tools.ietf.org/html/bcp47>`__.
+`BCP 47 <https://tools.ietf.org/html/bcp47>`__.
 
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
