@@ -713,6 +713,7 @@ Key ``localisation/availableLanguages``
 
 -  Type: list of IETF BCP 47 language tags
 -  Presence: mandatory
+-  Example: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
 If present, this is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
