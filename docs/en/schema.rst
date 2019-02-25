@@ -370,16 +370,15 @@ software.
 
 **Note:** since all the strings contained in this section are
 user-visible and written in a specific language, you **must** specify
-the language you are editing the text in (using `ISO
-639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3 codes) by
+the language you are editing the text in (using the IETF BCP 47 specifications
+`BCP47 <https://tools.ietf.org/html/bcp47>`__) by
 creating a sub-section with that name.
-
-An example for English:
+For example:
 
 .. code:: yaml 
 
    description:
-     eng:
+     en:
        shortDescription: ...
        longDescription: ...
 
