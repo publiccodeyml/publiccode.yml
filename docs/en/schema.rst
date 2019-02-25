@@ -372,7 +372,9 @@ software.
 user-visible and written in a specific language, you **must** specify
 the language you are editing the text in (using the IETF BCP 47 specifications
 `BCP47 <https://tools.ietf.org/html/bcp47>`__) by
-creating a sub-section with that name.
+creating a sub-section with that name. The primary language subtag cannot be
+omitted, as mandated by the BCP47.  
+
 For example:
 
 .. code:: yaml 
