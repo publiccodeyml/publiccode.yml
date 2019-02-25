@@ -722,7 +722,7 @@ disponibili si veda la chiave ``localisation/availableLanguages``.
 Chiave ``localisation/availableLanguages``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: lista di *language tag* secondo IETF BCP 47
+-  Tipo: lista di *language tag* secondo le specifiche IETF BCP 47
 -  Presenza: obbligatoria
 -  Esempio: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
