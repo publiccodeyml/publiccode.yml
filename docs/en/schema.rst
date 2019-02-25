@@ -375,7 +375,7 @@ the language you are editing the text in (using the IETF BCP 47 specifications
 creating a sub-section with that name. The primary language subtag cannot be
 omitted, as mandated by the BCP47.  
 
-For example:
+An example for English:
 
 .. code:: yaml 
 
