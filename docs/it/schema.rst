@@ -359,7 +359,7 @@ descriva il software.
 **Nota bene:** siccome tutte le stringhe contenute in questa sezione sono
 visibili all’utente e scritte in un linguaggio specifico, è
 **necessario** specificare il linguaggio con il quale si sta modificando
-il testo. Per farlo è necessario creare una sezione dedicata al linguaggio
+il testo. Per farlo è necessario creare una sezione dedicata alla lingua
 seguendo le specifiche IETF `BCP 47 <https://tools.ietf.org/html/bcp47>`__. Si
 ricorda che il *primary language
 subtag* non può essere omesso, come specificato nel BCP 47. 
