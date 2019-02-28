@@ -359,16 +359,17 @@ descriva il software.
 **Nota bene:** siccome tutte le stringhe contenute in questa sezione sono
 visibili all’utente e scritte in un linguaggio specifico, è
 **necessario** specificare il linguaggio con il quale si sta modificando
-il testo (usando i codici `ISO
-639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3) creando una
-sezione con quel nome.
+il testo. Per farlo è necessario creare una sezione dedicata alla lingua
+seguendo le specifiche IETF `BCP 47 <https://tools.ietf.org/html/bcp47>`__. Si
+ricorda che il *primary language
+subtag* non può essere omesso, come specificato nel BCP 47. 
 
 Un esempio per l’italiano:
 
 .. code:: .yaml
 
    description:
-     ita:
+     it:
        shortDescription: ...
        longDescription: ...
 
@@ -721,12 +722,14 @@ disponibili si veda la chiave ``localisation/availableLanguages``.
 Chiave ``localisation/availableLanguages``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: lista di codici `ISO
-   639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3
+-  Tipo: lista di *language tag* secondo le specifiche IETF BCP 47
 -  Presenza: obbligatoria
+-  Esempio: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
 Se presente, questa è la lista di lingue in cui è disponibile il
 software. Ovviamente, questa lista dovrà contenere almeno una lingua.
+Si ricorda che il *primary language subtag* non può essere omesso, come
+specificato dal `BCP 47 <https://tools.ietf.org/html/bcp47>`__.
 
 Sezione ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~

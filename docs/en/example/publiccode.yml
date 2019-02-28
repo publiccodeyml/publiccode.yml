@@ -47,7 +47,7 @@ intendedAudience:
     - us
 
 description:
-  eng:
+  en:
     localisedName: Medusa
     genericName: Text Editor
     shortDescription: >
@@ -104,10 +104,10 @@ maintenance:
 localisation:
   localisationReady: yes
   availableLanguages:
-    - eng
-    - ita
-    - fra
-    - deu
+    - en
+    - it
+    - fr
+    - de
 
 dependsOn:
   open:
