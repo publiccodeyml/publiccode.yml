@@ -37,5 +37,4 @@ Indice dei contenuti
    forks.rst
    pa-types.rst
    tags.rst 
-   tools.rst
    example.rst
