@@ -1,9 +1,9 @@
 .. _`estensioni-paese`:
 
-Chiavi e Sezioni Specifiche per Paese
-=====================================
+Estensioni nazionali
+====================
 
-Mentre lo standard è strutturato per essere significativo a livello
+Mentre il core è strutturato per essere significativo a livello
 internazionale, vi sono informazioni addizionali che possono essere
 aggiunte a livello nazionale, come ad esempio una dichiarazione di
 compatibilità con una legge locale. Il meccanismo di estensione fornito
@@ -26,9 +26,6 @@ Dunque, se un software è compatibile, troveremo:
 
 Nota bene che le chiavi *country-specific* **non** sono valide
 all’interno delle sezioni internazionali. I Paesi che vogliano estendere
-il formato dovrebbero aggiungere una sezione dedicata.
-
-La documentazione per queste estensioni *country-specific* è mantenuta
-in file separati.
+il formato devono aggiungere una sezione dedicata.
 
 .. include:: schema.it.rst

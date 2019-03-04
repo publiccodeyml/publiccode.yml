@@ -1,7 +1,7 @@
 .. _estensioni-italiane:
 
-Chiavi e Sezioni italiane
--------------------------
+Italia
+------
 
 Tutte le estensioni elencate qui di seguito sono specifiche per l'Italia e, di
 conseguenza, devono essere inserite in una sezione denominata con 
