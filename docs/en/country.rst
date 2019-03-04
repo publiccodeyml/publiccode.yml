@@ -1,7 +1,7 @@
 .. _`country-extension`:
 
-Country-Specific Sections
-=========================
+Country-Specific Extensions
+===========================
 
 While the standard is structured to be meaningful on an international
 level, there are additional information that can be added that makes

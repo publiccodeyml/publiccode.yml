@@ -1,5 +1,5 @@
-The Standard
-============
+The Standard (core)
+===================
 
 This document represents the description of the ``publiccode.yml``
 schema.
