@@ -15,7 +15,7 @@ Tra le informazioni contenute in un ``publiccode.yml`` vi sono:
   ``stable``, ``obsolete``; 
 -  i riferimenti dell’organizzazione che ha sviluppato il progetto; 
 -  chi si sta occupando della sua manutenzione e quando il rapporto finirà; 
-* per quale quadro giuridico è stato pensato questo progetto o prodotto; 
+-  per quale quadro giuridico è stato pensato questo progetto o prodotto; 
 -  quali dipendenze software esistono.
   
 e molte altre informazioni rilevanti.
