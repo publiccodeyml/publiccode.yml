@@ -13,7 +13,7 @@ Tra le informazioni contenute in un ``publiccode.yml`` vi sono:
 - il titolo e la descrizione del progetto o prodotto (in una o più lingue); 
 * lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``,
   ``stable``, ``obsolete``; 
-* i riferimenti dell’organizzazione che ha sviluppato il progetto; 
+-  i riferimenti dell’organizzazione che ha sviluppato il progetto; 
 * chi si sta occupando della sua manutenzione e quando il rapporto finirà; 
 * per quale quadro giuridico è stato pensato questo progetto o prodotto; 
 * quali dipendenze software esistono.
