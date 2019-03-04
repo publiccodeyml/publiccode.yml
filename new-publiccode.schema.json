@@ -1,7 +1,6 @@
 {
-  "$hrefSchema": "http://json-schema.org/draft-07/hyper-schema",
   "title": "publiccode.yml definition schema",
-  "description": "",
+  "description": "This is the publiccode.yml JSON Schema",
   "type": "object",
   "id": "publiccode",
   "properties": {
@@ -89,8 +88,8 @@
                  "tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug",
                  "uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi",
                  "yo", "za", "zh", "zu"
-          ]
-        }
+        ]
+      }
     },
     "legal": {
       "$ref": "#/definitions/legal"
@@ -424,7 +423,7 @@
       "title": "localisation",
       "type": "object",
       "description":
-        "This section provides an overview of the localization features of the software.",
+        "This section provides an overview of the localisation features of the software.",
       "properties": {
         "localisationReady": {
           "type": "boolean",
