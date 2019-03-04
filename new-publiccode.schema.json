@@ -1,5 +1,5 @@
 {
-  "title": "publiccode.yml definition schema",
+  "title": "publiccode.ym definition schema",
   "description": "This is the publiccode.yml JSON Schema",
   "type": "object",
   "id": "publiccode",
@@ -123,48 +123,39 @@
     },
     "name": {
       "type": "string",
-      "title": "The Name",
-      "examples": ["Medusa"]
+      "title": "The Name"
     },
     "applicationSuite": {
       "type": "string",
-      "title": "applicationSuite",
-      "examples": ["MegaProductivitySuite"]
+      "title": "applicationSuite"
     },
     "url": {
       "type": "string",
-      "title": "url",
-      "examples": ["https://example.com/italia/medusa.git"]
+      "title": "url"
     },
     "landingURL": {
       "type": "string",
-      "title": "landingURL",
-      "examples": ["https://example.com/italia/medusa"]
+      "title": "landingURL"
     },
     "isBasedOn": {
       "type": "string",
-      "title": "isBasedOn",
-      "examples": ["https://github.com/italia/otello.git"]
+      "title": "isBasedOn"
     },
     "softwareVersion": {
       "type": "string",
-      "title": "softwareVersion",
-      "examples": ["1.0", "dev"]
+      "title": "softwareVersion"
     },
     "releaseDate": {
       "type": "string",
-      "title": "releaseDate",
-      "examples": ["2017-04-15"]
+      "title": "releaseDate"
     },
     "logo": {
       "type": "string",
-      "title": "logo",
-      "examples": ["img/logo.jpg"]
+      "title": "logo"
     },
     "monochromeLogo": {
       "type": "string",
-      "title": "monochromeLogo",
-      "examples": ["img/logo.jpg"]
+      "title": "monochromeLogo"
     },
     "inputTypes": {
       "title": "inputTypes",
@@ -183,7 +174,6 @@
     "platforms": {
       "type": "array",
       "title": "platforms",
-      "examples": ["android", "ios"],
       "items": {
         "type": "string",
         "enum": ["web", "windows", "mac", "linux", "ios", "android"]
@@ -199,7 +189,6 @@
     },
     "usedBy": {
       "title": "usedBy",
-      "examples": ["stripe"],
       "type": "array",
       "items": {
         "type": "string"
@@ -226,7 +215,6 @@
         "onlyFor": {
           "title": "only for",
           "type": "array",
-          "examples": ["city"],
           "items": {
             "type": "string"
           }
@@ -255,23 +243,19 @@
       "properties": {
         "license": {
           "type": "string",
-          "title": "license",
-          "examples": ["AGPL-3.0-or-later"]
+          "title": "license"
         },
         "mainCopyrightOwner": {
           "type": "string",
-          "title": "mainCopyrightOwner",
-          "examples": ["City of Amsterdam"]
+          "title": "mainCopyrightOwner"
         },
         "repoOwner": {
           "type": "string",
-          "title": "repoOwner",
-          "examples": ["City of Amsterdam"]
+          "title": "repoOwner"
         },
         "authorsFile": {
           "type": "string",
-          "title": "authorsFile",
-          "examples": ["authorsFile"]
+          "title": "authorsFile"
         }
       },
       "required": ["license", "repoOwner"]
@@ -286,8 +270,7 @@
         },
         "email": {
           "type": "string",
-          "title": "Email",
-          "examples": ["lou.reed@acme.inc"]
+          "title": "Email"
         },
         "phone": {
           "type": "string",
@@ -367,8 +350,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "title": "name",
-          "examples": ["MySQL", "NFC Reader"]
+          "title": "name"
         },
         "versionMin": {
           "type": "string",
@@ -442,7 +424,6 @@
         "freeTags": {
           "type": "array",
           "title": "freeTags",
-          "examples": ["webapp"],
           "items": {
             "title": "tag",
             "type": "string"
