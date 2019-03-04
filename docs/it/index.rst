@@ -10,7 +10,7 @@ Inserendo nella root di un repository un file chiamato ``publiccode.yml`` che de
 
 Tra le informazioni contenute in un ``publiccode.yml`` vi sono: 
 
-* il titolo e la descrizione del progetto o prodotto (in una o più lingue); 
+- il titolo e la descrizione del progetto o prodotto (in una o più lingue); 
 * lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``,
   ``stable``, ``obsolete``; 
 * i riferimenti dell’organizzazione che ha sviluppato il progetto; 
