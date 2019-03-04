@@ -6,7 +6,7 @@ conseguenza, riutilizzabili da altri enti.
 
 Inserendo nella root di un repository un file chiamato ``publiccode.yml`` che descrive le caratteristiche del software se ne agevola la comprensione ai tecnici e ai decisori pubblici interessati a valutarlo; al tempo stesso si permette di costruire strumenti automatici di indicizzazione, poiché il formato è facilmente leggibile sia da esseri umani sia da macchine.
 
-``publiccode.yml`` è obbligatorio per tutto il software pubblico sviluppato in Italia, come da [linee guida](https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/): questo consente al crawler automatico di Developers Italia di costituire il [catalogo del software a riuso](https://developers.italia.it/). Lo standard è tuttavia pensato in ottica internazionale, per cui tutte le specificità nazionali sono separate dal core e definite in apposite sezioni estensibili autonomamente dai governi nazionali.
+``publiccode.yml`` è obbligatorio per tutto il software pubblico sviluppato in Italia, come da `linee guida <https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__: questo consente al crawler automatico di Developers Italia di costituire il `catalogo del software a riuso <https://developers.italia.it/>`__. Lo standard è tuttavia pensato in ottica internazionale, per cui tutte le specificità nazionali sono separate dal core e definite in apposite sezioni estensibili autonomamente dai governi nazionali.
 
 Tra le informazioni contenute in un ``publiccode.yml`` vi sono: 
 
@@ -23,8 +23,8 @@ e molte altre informazioni rilevanti.
 Link utili
 ----------
 
-- [Maggiori informazioni sul riuso del software](https://developers.italia.it/it/riuso)
-- [Editor web per publiccode.yml](https://publiccode-editor.developers.italia.it/)
+- `Maggiori informazioni sul riuso del software <https://developers.italia.it/it/riuso>`__
+- `Editor web per publiccode.yml <https://publiccode-editor.developers.italia.it/`__
 
 Indice dei contenuti
 --------------------
