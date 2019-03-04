@@ -11,8 +11,7 @@ Inserendo nella root di un repository un file chiamato ``publiccode.yml`` che de
 Tra le informazioni contenute in un ``publiccode.yml`` vi sono: 
 
 - il titolo e la descrizione del progetto o prodotto (in una o più lingue); 
--  lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``,
-  ``stable``, ``obsolete``; 
+-  lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``; 
 -  i riferimenti dell’organizzazione che ha sviluppato il progetto; 
 -  chi si sta occupando della sua manutenzione e quando il rapporto finirà; 
 -  per quale quadro giuridico è stato pensato questo progetto o prodotto; 
@@ -24,7 +23,7 @@ Link utili
 ----------
 
 - `Maggiori informazioni sul riuso del software <https://developers.italia.it/it/riuso>`__
-- `Editor web per publiccode.yml <https://publiccode-editor.developers.italia.it/`__
+- `Editor web per publiccode.yml <https://publiccode-editor.developers.italia.it/>`__
 
 Indice dei contenuti
 --------------------

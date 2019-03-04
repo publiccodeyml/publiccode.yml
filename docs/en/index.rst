@@ -10,8 +10,7 @@ By including a ``publiccode.yml`` file in the root of a repository, and populati
 Details carried by a ``publiccode.yml`` file include: 
 
 - title and description of the project or product (in one or more languages); 
-- development state (e.g., ``concept``, ``development``, ``beta``,
-  ``stable``, ``obsolete``; 
+- development state (e.g., ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``; 
 - contacts of the entity who published the codebase; 
 - contacts of the maintainer, if any, including the expire date of the maintainance contract; 
 - information about the legal context for which the project or product was designed; 
