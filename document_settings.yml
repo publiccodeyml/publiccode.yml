@@ -1,9 +1,11 @@
 document:
-  name: Standard publiccode.yml
+  name: publiccode.yml
   description: |
-    Questo documento contiene la documentazione relativa allo standard publiccode.yml.
+    publiccode.yml è lo standard di metadatazione del software pubblico, richiesto dalle Linee Guida per l'Acquisizione e il Riuso del Software per la Pubblica Amministrazione.
   tags:
     - publiccode.yml 
     - standard 
     - interoperabilità
     - riuso
+    - software
+  
