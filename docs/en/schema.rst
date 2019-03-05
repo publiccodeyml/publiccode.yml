@@ -625,6 +625,7 @@ Key ``maintenance/type``
 -  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 This key describes how the software is currently maintained.
+
 -  ``"internal"`` - means that the software is internally maintained by the
    repository owner. 
 -  ``"contract"`` - means that there is a commercial
