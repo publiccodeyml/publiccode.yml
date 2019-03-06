@@ -285,7 +285,7 @@ Le chiavi sono:
    su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
    *cloud-based* o servizi di rete, oppure set di microservizi. 
    Se questa chiave viene selezionata, sarà necessario
-   specificare ulteriormente la natura del software utilizzando la chiave
+   specificare ulteriormente la natura del software utilizzando la  
    :ref:`standaloneType`.
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
@@ -312,10 +312,9 @@ Chiave ``standaloneType``
 Le chiavi sono:
 
 -  ``mobile`` - Il software è un'applicazione nativa per dispositivi mobile.
--  ``iot`` - Il software è adatto ad essere utilizzato nel contesto `Internet
-  of Things`.
+-  ``iot`` - Il software è adatto ad essere utilizzato nel contesto `Internet of Things`.
 -  ``desktop`` - Il software è tipicamente installato e utilizzato su un
-  sistema operativo desktop. 
+   sistema operativo desktop. 
 -  ``web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
 -  ``backend`` - Il software è un applicativo backend. 
 -  ``other``  - Il software ha una natura diversa rispetto a quanto specificato
@@ -323,27 +322,6 @@ Le chiavi sono:
 
 Sezione ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Chiave ``intendedAudience/onlyFor``
-'''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa numerata o array di stringhe
--  Presenza: opzionale
--  Valori: vedi :ref:`pa-types` 
--  Esempio: ``"city"``
-
-Il software pubblico potrebbe avere una portata molto specifica perché
-esiste un gran numero di task che sono specifici per ogni tipo di
-amministrazione. Ad esempio, molti software usati nelle scuole
-probabilmente non sono utili all’interno degli ospedali. Se si volesse
-indicare che un software è unicamente utile in qualche tipo di
-amministrazione, bisognerebbe aggiungerle a questa lista.
-
-La lista di valori permessi è definita in :ref:`pa-types`, 
-e può essere specifica per ogni Paese (country-specific).
-
-La lista può evolvere in ogni momento, separatamente dalla versione di
-queste specifiche.
 
 Chiave ``intendedAudience/countries``
 '''''''''''''''''''''''''''''''''''''
