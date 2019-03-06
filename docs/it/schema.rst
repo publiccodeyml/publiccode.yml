@@ -280,20 +280,13 @@ Chiave ``softwareType``
 Le chiavi sono: 
 
 -  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
-<<<<<<< HEAD
    La maggior parte del software sarà di questo tipo. I software
    appartenenti a questa categoria potrebbero essere eseguiti
    su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
    *cloud-based* o servizi di rete, oppure set di microservizi. 
-=======
-   La maggior parte del software sarà di questo tipo. Pare di questa categoria
-   di software potrà essere eseguita
-   su un computer desktop (e.g., un eseguibile), come un’applicazione
-   *cloud-based*, come un servizio di rete o anche come un set di servizi
-   cloud o microservizi. Se questa chiave viene selezionata, sarà necessario
+   Se questa chiave viene selezionata, sarà necessario
    specificare ulteriormente la natura del software utilizzando la chiave
    :ref:`standaloneType`__.
->>>>>>> bc09f95... Changed tags handling
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
