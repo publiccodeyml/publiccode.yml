@@ -349,7 +349,7 @@ usando *country code* a due lettere seguendo lo standard ISO 3166-1
 alpha-2.
 
 Chiave ``intendedAudience/scope``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -358,7 +358,7 @@ Chiave ``intendedAudience/scope``
 Questa chiave contiene una lista di tag che rappresentano il campo
 di applicazione del software.
 
-I tag consentiti sono elencati nella lista :ref:`scope-list`. 
+I tag consentiti sono elencati nella :ref:`scope-list`. 
 
 Sezione ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
