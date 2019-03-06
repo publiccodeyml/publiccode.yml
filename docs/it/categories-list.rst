@@ -9,104 +9,104 @@ per categorizzare il software.
 ==================================== ===========
 Tag                                  Description
 ==================================== ===========
-Accounting                          
-Agile Project Management            
-Applicant Tracking                  
-Application Development             
-Appointment Scheduling              
-Architecture                        
-Backup                              
-Billing and Invoicing               
-Blog                                
-Budgeting                           
-Business Intelligence               
-Business Process Management         
-CAD                                 
-Call Center Management              
-Cloud Management                    
-Collaboration                       
-Communications                      
-Compliance Management               
-Contact Management                  
-Content Management                  
-CRM                                 
-Customer Service & Support          
-Data Analytics                      
-Data Collection                     
-Data Visualization                  
-Digital Asset Management            
-Digital Citizenship                 
-Document Management                 
-Donor Management                    
-E-Commerce                          
-E-Signature                         
-Email Management                    
-Email Marketing                     
-Employee Management                 
-Enterprise Project Management       
-Enterprise Social Networking        
-ERP                                 
-Event Management                    
-Facility Management                 
-Feedback & Reviews Management       
-Financial Reporting                 
-Fleet Management                    
-Fundraising                         
-Gamification                        
-Geographic Information Systems - GIS
-Grant Management                    
-Graphic Design                      
-Help Desk                           
-HR                                  
-IDE                                 
-Identity Management                 
-Instant Messaging                   
-Inventory Management                
-IT Asset Management                 
-IT Development                      
-IT Management                       
-IT Security                         
-IT Service Management               
-Knowledge Management                
-Learning Management System - LMS    
-Marketing                           
-Mind Mapping                        
-Mobile Marketing                    
-Mobile Payment                      
-Network Management                  
-Office                              
-Online Booking                      
-Online Community                    
-Payment Gateway                     
-Payroll                             
-Predictive Analysis                 
-Procurement                         
-Productivity Suite                  
-Project Collaboration               
-Project Management                  
-Property Management                 
-Real Estate Management              
-Remote Support                      
-Resource Management                 
-Sales Management                    
-SEO                                 
-Service Desk                        
-Social Media Management             
-Survey                              
-Talent Management                   
-Task Management                     
-Taxes Management                    
-Test Management                     
-Time Management                     
-Time Tracking                       
-Translation                         
-Video Conferencing                  
-Video Editing                       
-Visitor Management                  
-VoIP                                
-Warehouse Management                
-Web Collaboration                   
-Web Conferencing                    
-Website Builder                     
-Workflow Management                 
+accounting                          
+agile Project Management            
+applicant Tracking                  
+application Development             
+appointment Scheduling              
+architecture                        
+backup                              
+billing and Invoicing               
+blog                                
+budgeting                           
+business Intelligence               
+business Process Management         
+cAD                                 
+call Center Management              
+cloud Management                    
+collaboration                       
+communications                      
+compliance Management               
+contact Management                  
+content Management                  
+cRM                                 
+customer Service & Support          
+data Analytics                      
+data Collection                     
+data Visualization                  
+digital Asset Management            
+digital Citizenship                 
+document Management                 
+donor Management                    
+e-Commerce                          
+e-Signature                         
+email Management                    
+email Marketing                     
+employee Management                 
+enterprise Project Management       
+enterprise Social Networking        
+eRP                                 
+event Management                    
+facility Management                 
+feedback & Reviews Management       
+financial Reporting                 
+fleet Management                    
+fundraising                         
+gamification                        
+geographic Information Systems - GIS
+grant Management                    
+graphic Design                      
+help Desk                           
+hR                                  
+iDE                                 
+identity Management                 
+instant Messaging                   
+inventory Management                
+iT Asset Management                 
+iT Development                      
+iT Management                       
+iT Security                         
+iT Service Management               
+knowledge Management                
+learning Management System - LMS    
+marketing                           
+mind Mapping                        
+mobile Marketing                    
+mobile Payment                      
+network Management                  
+office                              
+online Booking                      
+online Community                    
+payment Gateway                     
+payroll                             
+predictive Analysis                 
+procurement                         
+productivity Suite                  
+project Collaboration               
+project Management                  
+property Management                 
+real Estate Management              
+remote Support                      
+resource Management                 
+sales Management                    
+sEO                                 
+service Desk                        
+social Media Management             
+survey                              
+talent Management                   
+task Management                     
+taxes Management                    
+test Management                     
+time Management                     
+time Tracking                       
+translation                         
+video Conferencing                  
+video Editing                       
+visitor Management                  
+voIP                                
+warehouse Management                
+web Collaboration                   
+web Conferencing                    
+website Builder                     
+workflow Management                 
 ==================================== ===========
