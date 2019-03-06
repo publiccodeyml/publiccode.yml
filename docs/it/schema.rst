@@ -286,7 +286,7 @@ Le chiavi sono:
    *cloud-based* o servizi di rete, oppure set di microservizi. 
    Se questa chiave viene selezionata, sarà necessario
    specificare ulteriormente la natura del software utilizzando la chiave
-   :ref:`standaloneType`__.
+   :ref:`standaloneType`.
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
