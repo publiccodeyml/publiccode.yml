@@ -1,468 +1,482 @@
 {
-  "title": "publiccode.ym definition schema",
-  "description": "This is the publiccode.yml JSON Schema",
-  "type": "object",
-  "id": "publiccode",
-  "properties": {
-    "publiccodeYmlVersion": {
-      "$ref": "#/definitions/publiccodeYmlVersion"
-    },
-    "name": {
-      "$ref": "#/definitions/name"
-    },
-    "applicationSuite": {
-      "$ref": "#/definitions/applicationSuite"
-    },
-    "url": {
-      "$ref": "#/definitions/url"
-    },
-    "landingURL": {
-      "$ref": "#/definitions/landingURL"
-    },
-    "isBasedOn": {
-      "$ref": "#/definitions/isBasedOn"
-    },
-    "softwareVersion": {
-      "$ref": "#/definitions/softwareVersion"
-    },
-    "releaseDate": {
-      "$ref": "#/definitions/releaseDate"
-    },
-    "logo": {
-      "$ref": "#/definitions/logo"
-    },
-    "monochromeLogo": {
-      "$ref": "#/definitions/monochromeLogo"
-    },
-    "inputTypes": {
-      "$ref": "#/definitions/inputTypes"
-    },
-    "outputTypes": {
-      "$ref": "#/definitions/outputTypes"
-    },
-    "platforms": {
-      "$ref": "#/definitions/platforms"
-    },
-    "tags": {
-      "$ref": "#/definitions/tags"
-    },
-    "usedBy": {
-      "$ref": "#/definitions/usedBy"
-    },
-    "roadmap": {
-      "$ref": "#/definitions/roadmap"
-    },
-    "developmentStatus": {
-      "$ref": "#/definitions/developmentStatus"
-    },
-    "softwareType": {
-      "$ref": "#/definitions/softwareType"
-    },
-    "intendedAudience": {
-      "$ref": "#/definitions/intendedAudience"
-    },
-    "description": {
-      "title": "description",
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "#/definitions/descriptionPerLang"
-      },
-      "propertyNames":{
-        "enum": [
-                 "aa", "ab", "ae", "af", "ak", "am", "an", "ar", "as", "av",
-                 "ay", "az", "ba", "be", "bg", "bh", "bi", "bm", "bn", "bo",
-                 "br", "bs", "ca", "ce", "ch", "co", "cr", "cs", "cu", "cv",
-                 "cy", "da", "de", "dv", "dz", "ee", "el", "en", "eo", "es",
-                 "et", "eu", "fa", "ff", "fi", "fj", "fo", "fr", "fy", "ga",
-                 "gd", "gl", "gn", "gu", "gv", "ha", "he", "hi", "ho", "hr",
-                 "ht", "hu", "hy", "hz", "ia", "id", "ie", "ig", "ii", "ik",
-                 "io", "is", "it", "iu", "ja", "jv", "ka", "kg", "ki", "kj",
-                 "kk", "kl", "km", "kn", "ko", "kr", "ks", "ku", "kv", "kw",
-                 "ky", "la", "lb", "lg", "li", "ln", "lo", "lt", "lu", "lv",
-                 "mg", "mh", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my",
-                 "na", "nb", "nd", "ne", "ng", "nl", "nn", "no", "nr", "nv",
-                 "ny", "oc", "oj", "om", "or", "os", "pa", "pi", "pl", "ps",
-                 "pt", "qu", "rm", "rn", "ro", "ru", "rw", "sa", "sc", "sd",
-                 "se", "sg", "si", "sk", "sl", "sm", "sn", "so", "sq", "sr",
-                 "ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "ti",
-                 "tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug",
-                 "uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi",
-                 "yo", "za", "zh", "zu"
-        ]
-      }
-    },
-    "legal": {
-      "$ref": "#/definitions/legal"
-    },
-    "maintenance": {
-      "$ref": "#/definitions/maintenance"
-    },
-    "localisation": {
-      "$ref": "#/definitions/localisation"
-    },
-    "dependsOn": {
-      "$ref": "#/definitions/dependsOn"
-    }
-  },
-  "required": [
-    "publiccodeYmlVersion",
-    "name",
-    "url",
-    "releaseDate",
-    "tags",
-    "developmentStatus",
-    "softwareType",
-    "description",
-    "legal"
-  ],
-  "definitions": {
-    "publiccodeYmlVersion": {
-      "type": "string",
-      "title": "publiccodeYmlVersion",
-      "enum": ["development", "0.1"]
-    },
-    "name": {
-      "type": "string",
-      "title": "The Name"
-    },
-    "applicationSuite": {
-      "type": "string",
-      "title": "applicationSuite"
-    },
-    "url": {
-      "type": "string",
-      "title": "url"
-    },
-    "landingURL": {
-      "type": "string",
-      "title": "landingURL"
-    },
-    "isBasedOn": {
-      "type": "string",
-      "title": "isBasedOn"
-    },
-    "softwareVersion": {
-      "type": "string",
-      "title": "softwareVersion"
-    },
-    "releaseDate": {
-      "type": "string",
-      "title": "releaseDate"
-    },
-    "logo": {
-      "type": "string",
-      "title": "logo"
-    },
-    "monochromeLogo": {
-      "type": "string",
-      "title": "monochromeLogo"
-    },
-    "inputTypes": {
-      "title": "inputTypes",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "outputTypes": {
-      "title": "outputTypes",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "platforms": {
-      "type": "array",
-      "title": "platforms",
-      "items": {
-        "type": "string",
-        "enum": ["web", "windows", "mac", "linux", "ios", "android"]
-      }
-    },
-    "tags": {
-      "title": "tags",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": ["art", "backend"]
-      }
-    },
-    "usedBy": {
-      "title": "usedBy",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "roadmap": {
-      "type": "string",
-      "title": "roadmap"
-    },
-    "developmentStatus": {
-      "type": "string",
-      "title": "developmentStatus",
-      "enum": ["concept", "development", "beta", "stable", "obsolete"]
-    },
-    "softwareType": {
-      "type": "string",
-      "title": "softwareType",
-      "enum": ["standalone", "addon", "library", "configurationFiles"]
-    },
-    "intendedAudience": {
-      "title": "intended audience",
-      "type": "object",
-      "properties": {
-        "onlyFor": {
-          "title": "only for",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "countries": {
-          "title": "countries",
-          "type": "array",
-          "items": {
-            "title": "item",
-            "type": "string"
-          }
-        },
-        "unsupportedCountries": {
-          "title": "unsupportedCountries",
-          "type": "array",
-          "items": {
-            "title": "item",
-            "type": "string"
-          }
-        }
-      }
-    },
-    "legal": {
-      "title": "legal",
-      "type": "object",
-      "properties": {
-        "license": {
-          "type": "string",
-          "title": "license"
-        },
-        "mainCopyrightOwner": {
-          "type": "string",
-          "title": "mainCopyrightOwner"
-        },
-        "repoOwner": {
-          "type": "string",
-          "title": "repoOwner"
-        },
-        "authorsFile": {
-          "type": "string",
-          "title": "authorsFile"
-        }
-      },
-      "required": ["license", "repoOwner"]
-    },
-    "contact": {
-      "title": "contact",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "name"
-        },
-        "email": {
-          "type": "string",
-          "title": "Email"
-        },
-        "phone": {
-          "type": "string",
-          "title": "phone"
-        },
-        "affiliation": {
-          "type": "string",
-          "title": "affiliation"
-        }
-      },
-      "required": ["name"]
-    },
-    "contractor": {
-      "title": "contractor",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "name"
-        },
-        "until": {
-          "type": "string",
-          "title": "until"
-        },
-        "website": {
-          "type": "string",
-          "title": "website"
-        }
-      }
-    },
-    "maintenance": {
-      "title": "maintenance",
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "title": "type",
-          "enum": ["internal", "contract", "community", "none"]
-        },
-        "contractors": {
-          "type": "array",
-          "title": "contractors",
-          "items": {
-            "$ref": "#/definitions/contractor"
-          }
-        },
-        "contacts": {
-          "type": "array",
-          "title": "contacts",
-          "items": {
-            "$ref": "#/definitions/contact"
-          }
-        }
-      },
-      "required": ["contacts"]
-    },
-    "localisation": {
-      "title": "localisation",
-      "type": "object",
-      "properties": {
-        "localisationReady": {
-          "type": "boolean",
-          "title": "localisationReady"
-        },
-        "availableLanguages": {
-          "type": "array",
-          "title": "availableLanguages",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "dependency": {
-      "title": "dependency",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "name"
-        },
-        "versionMin": {
-          "type": "string",
-          "title": "versionMin"
-        },
-        "versionMax": {
-          "type": "string",
-          "title": "versionMax"
-        },
-        "version": {
-          "type": "string",
-          "title": "version"
-        },
-        "optional": {
-          "type": "boolean",
-          "title": "optional"
-        }
-      }
-    },
-    "dependsOn": {
-      "title": "dependsOn",
-      "type": "object",
-      "properties": {
-        "open": {
-          "title": "open",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/dependency"
-          }
-        },
-        "proprietary": {
-          "title": "propietary",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/dependency"
-          }
-        },
-        "hardware": {
-          "title": "hardware",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/dependency"
-          }
-        }
-      }
-    },
-    "descriptionPerLang": {
-      "title": "Description per Language",
-      "type": "object",
-      "properties": {
-        "localisedName": {
-          "type": "string",
-          "title": "localisedName"
-        },
-        "shortDescription": {
-          "type": "string",
-          "title": "shortDescription"
-        },
-        "longDescription": {
-          "type": "string",
-          "title": "longDescription"
-        },
-        "documentation": {
-          "type": "string",
-          "title": "documentation"
-        },
-        "apiDocumentation": {
-          "type": "string",
-          "title": "apiDocumentation"
-        },
-        "freeTags": {
-          "type": "array",
-          "title": "freeTags",
-          "items": {
-            "title": "tag",
-            "type": "string"
-          }
-        },
-        "features": {
-          "type": "array",
-          "title": "features",
-          "items": {
-            "type": "string",
-            "title": "feature"
-          }
-        },
-        "screenshots": {
-          "type": "array",
-          "title": "screenshots",
-          "items": {
-            "type": "string",
-            "title": "screenshot"
-          }
-        },
-        "videos": {
-          "type": "array",
-          "title": "videos",
-          "items": {
-            "type": "string",
-            "title": "video"
-          }
-        },
-        "awards": {
-          "type": "array",
-          "title": "awards",
-          "items": {
-            "type": "string",
-            "title": "award"
-          }
-        }
-      },
-      "required": ["longDescription", "shortDescription"]
-    }
-  }
+	"title": "publiccode.ym definition schema",
+	"description": "This is the publiccode.yml JSON Schema",
+	"type": "object",
+	"id": "publiccode",
+	"properties": {
+		"publiccodeYmlVersion": {
+			"$ref": "#/definitions/publiccodeYmlVersion"
+		},
+		"name": {
+			"$ref": "#/definitions/name"
+		},
+		"applicationSuite": {
+			"$ref": "#/definitions/applicationSuite"
+		},
+		"url": {
+			"$ref": "#/definitions/url"
+		},
+		"landingURL": {
+			"$ref": "#/definitions/landingURL"
+		},
+		"isBasedOn": {
+			"$ref": "#/definitions/isBasedOn"
+		},
+		"softwareVersion": {
+			"$ref": "#/definitions/softwareVersion"
+		},
+		"releaseDate": {
+			"$ref": "#/definitions/releaseDate"
+		},
+		"logo": {
+			"$ref": "#/definitions/logo"
+		},
+		"monochromeLogo": {
+			"$ref": "#/definitions/monochromeLogo"
+		},
+		"inputTypes": {
+			"$ref": "#/definitions/inputTypes"
+		},
+		"outputTypes": {
+			"$ref": "#/definitions/outputTypes"
+		},
+		"platforms": {
+			"$ref": "#/definitions/platforms"
+		},
+		"tags": {
+			"$ref": "#/definitions/tags"
+		},
+		"usedBy": {
+			"$ref": "#/definitions/usedBy"
+		},
+		"roadmap": {
+			"$ref": "#/definitions/roadmap"
+		},
+		"developmentStatus": {
+			"$ref": "#/definitions/developmentStatus"
+		},
+		"softwareType": {
+			"$ref": "#/definitions/softwareType"
+		},
+		"intendedAudience": {
+			"$ref": "#/definitions/intendedAudience"
+		},
+		"description": {
+			"title": "description",
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/descriptionPerLang"
+			},
+			"propertyNames": {
+				"enum": [
+					"aa", "ab", "ae", "af", "ak", "am", "an", "ar", "as", "av",
+					"ay", "az", "ba", "be", "bg", "bh", "bi", "bm", "bn", "bo",
+					"br", "bs", "ca", "ce", "ch", "co", "cr", "cs", "cu", "cv",
+					"cy", "da", "de", "dv", "dz", "ee", "el", "en", "eo", "es",
+					"et", "eu", "fa", "ff", "fi", "fj", "fo", "fr", "fy", "ga",
+					"gd", "gl", "gn", "gu", "gv", "ha", "he", "hi", "ho", "hr",
+					"ht", "hu", "hy", "hz", "ia", "id", "ie", "ig", "ii", "ik",
+					"io", "is", "it", "iu", "ja", "jv", "ka", "kg", "ki", "kj",
+					"kk", "kl", "km", "kn", "ko", "kr", "ks", "ku", "kv", "kw",
+					"ky", "la", "lb", "lg", "li", "ln", "lo", "lt", "lu", "lv",
+					"mg", "mh", "mi", "mk", "ml", "mn", "mr", "ms", "mt", "my",
+					"na", "nb", "nd", "ne", "ng", "nl", "nn", "no", "nr", "nv",
+					"ny", "oc", "oj", "om", "or", "os", "pa", "pi", "pl", "ps",
+					"pt", "qu", "rm", "rn", "ro", "ru", "rw", "sa", "sc", "sd",
+					"se", "sg", "si", "sk", "sl", "sm", "sn", "so", "sq", "sr",
+					"ss", "st", "su", "sv", "sw", "ta", "te", "tg", "th", "ti",
+					"tk", "tl", "tn", "to", "tr", "ts", "tt", "tw", "ty", "ug",
+					"uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi",
+					"yo", "za", "zh", "zu"
+				]
+			}
+		},
+		"legal": {
+			"$ref": "#/definitions/legal"
+		},
+		"maintenance": {
+			"$ref": "#/definitions/maintenance"
+		},
+		"localisation": {
+			"$ref": "#/definitions/localisation"
+		},
+		"dependsOn": {
+			"$ref": "#/definitions/dependsOn"
+		}
+	},
+	"required": [
+		"publiccodeYmlVersion",
+		"name",
+		"url",
+		"releaseDate",
+		"tags",
+		"developmentStatus",
+		"softwareType",
+		"description",
+		"legal"
+	],
+	"definitions": {
+		"publiccodeYmlVersion": {
+			"type": "string",
+			"title": "publiccodeYmlVersion",
+			"enum": ["development", "0.1"]
+		},
+		"name": {
+			"type": "string",
+			"title": "The Name"
+		},
+		"applicationSuite": {
+			"type": "string",
+			"title": "applicationSuite"
+		},
+		"url": {
+			"type": "string",
+			"title": "url"
+		},
+		"landingURL": {
+			"type": "string",
+			"title": "landingURL"
+		},
+		"isBasedOn": {
+			"type": "string",
+			"title": "isBasedOn"
+		},
+		"softwareVersion": {
+			"type": "string",
+			"title": "softwareVersion"
+		},
+		"releaseDate": {
+			"type": "string",
+			"title": "releaseDate"
+		},
+		"logo": {
+			"type": "string",
+			"title": "logo"
+		},
+		"monochromeLogo": {
+			"type": "string",
+			"title": "monochromeLogo"
+		},
+		"inputTypes": {
+			"title": "inputTypes",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"outputTypes": {
+			"title": "outputTypes",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"platforms": {
+			"type": "array",
+			"title": "platforms",
+			"items": {
+				"type": "string",
+				"enum": ["web", "windows", "mac", "linux", "ios", "android"]
+			}
+		},
+		"tags": {
+			"title": "tags",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["art", "backend"]
+			}
+		},
+		"usedBy": {
+			"title": "usedBy",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"roadmap": {
+			"type": "string",
+			"title": "roadmap"
+		},
+		"developmentStatus": {
+			"type": "string",
+			"title": "developmentStatus",
+			"enum": ["concept", "development", "beta", "stable", "obsolete"]
+		},
+		"softwareType": {
+			"type": "string",
+			"title": "softwareType",
+			"enum": ["standalone", "addon", "library", "configurationFiles"]
+		},
+		"intendedAudience": {
+			"title": "intended audience",
+			"type": "object",
+			"properties": {
+				"onlyFor": {
+					"title": "only for",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"countries": {
+					"title": "countries",
+					"type": "array",
+					"items": {
+						"title": "item",
+						"type": "string"
+					}
+				},
+				"unsupportedCountries": {
+					"title": "unsupportedCountries",
+					"type": "array",
+					"items": {
+						"title": "item",
+						"type": "string"
+					}
+				}
+			}
+		},
+		"legal": {
+			"title": "legal",
+			"type": "object",
+			"properties": {
+				"license": {
+					"type": "string",
+					"title": "license"
+				},
+				"mainCopyrightOwner": {
+					"type": "string",
+					"title": "mainCopyrightOwner"
+				},
+				"repoOwner": {
+					"type": "string",
+					"title": "repoOwner"
+				},
+				"authorsFile": {
+					"type": "string",
+					"title": "authorsFile"
+				}
+			},
+			"required": ["license", "repoOwner"]
+		},
+		"contact": {
+			"title": "contact",
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"title": "name"
+				},
+				"email": {
+					"type": "string",
+					"title": "Email"
+				},
+				"phone": {
+					"type": "string",
+					"title": "phone"
+				},
+				"affiliation": {
+					"type": "string",
+					"title": "affiliation"
+				}
+			},
+			"required": ["name"]
+		},
+		"contractor": {
+			"title": "contractor",
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"title": "name"
+				},
+				"until": {
+					"type": "string",
+					"title": "until"
+				},
+				"website": {
+					"type": "string",
+					"title": "website"
+				}
+			}
+		},
+		"maintenance": {
+			"title": "maintenance",
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"title": "type",
+					"enum": ["internal", "contract", "community", "none"]
+				},
+				"contractors": {
+					"type": "array",
+					"title": "contractors",
+					"items": {
+						"$ref": "#/definitions/contractor"
+					}
+				},
+				"contacts": {
+					"type": "array",
+					"title": "contacts",
+					"items": {
+						"$ref": "#/definitions/contact"
+					}
+				}
+			},
+			"required": ["contacts"]
+		},
+		"localisation": {
+			"title": "localisation",
+			"type": "object",
+			"properties": {
+				"localisationReady": {
+					"type": "boolean",
+					"title": "localisationReady"
+				},
+				"availableLanguages": {
+					"type": "array",
+					"title": "availableLanguages",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"dependency": {
+			"title": "dependency",
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"title": "name"
+				},
+				"versionMin": {
+					"type": "string",
+					"title": "versionMin"
+				},
+				"versionMax": {
+					"type": "string",
+					"title": "versionMax"
+				},
+				"version": {
+					"type": "string",
+					"title": "version"
+				},
+				"optional": {
+					"type": "boolean",
+					"title": "optional"
+				}
+			}
+		},
+		"dependsOn": {
+			"title": "dependsOn",
+			"type": "object",
+			"properties": {
+				"open": {
+					"title": "open",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/dependency"
+					}
+				},
+				"proprietary": {
+					"title": "propietary",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/dependency"
+					}
+				},
+				"hardware": {
+					"title": "hardware",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/dependency"
+					}
+				}
+			}
+		},
+		"descriptionPerLang": {
+			"title": "Description per Language",
+			"type": "object",
+			"properties": {
+				"localisedName": {
+					"type": "string",
+					"title": "localisedName"
+				},
+				"shortDescription": {
+					"type": "string",
+					"title": "shortDescription"
+				},
+				"longDescription": {
+					"type": "string",
+					"title": "longDescription"
+				},
+				"documentation": {
+					"type": "string",
+					"title": "documentation"
+				},
+				"apiDocumentation": {
+					"type": "string",
+					"title": "apiDocumentation"
+				},
+				"freeTags": {
+					"type": "array",
+					"title": "freeTags",
+					"items": {
+						"title": "tag",
+						"type": "string"
+					}
+				},
+				"features": {
+					"type": "array",
+					"title": "features",
+					"items": {
+						"type": "string",
+						"title": "feature"
+					}
+				},
+				"screenshots": {
+					"type": "array",
+					"title": "screenshots",
+					"items": {
+						"type": "string",
+						"title": "screenshot"
+					}
+				},
+				"videos": {
+					"type": "array",
+					"title": "videos",
+					"items": {
+						"type": "string",
+						"title": "video"
+					}
+				},
+				"awards": {
+					"type": "array",
+					"title": "awards",
+					"items": {
+						"type": "string",
+						"title": "award"
+					}
+				}
+			},
+			"required": ["longDescription", "shortDescription"]
+		}
+	},
+	"if": {
+		"properties": {
+			"maintenance": {
+				"properties": {
+					"type": {
+						"enum": ["contract"]
+					}
+				}
+			}
+		}
+	},
+	"then": {
+		"required": ["contractors"]
+	}
 }
