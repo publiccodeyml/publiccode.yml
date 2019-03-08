@@ -64,7 +64,7 @@ minime di sicurezza ICT per le Pubbliche
 amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__.
 
 Chiave ``conforme/gdpr``
-'''''''''''''''''''''''''''
+''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
