@@ -9,7 +9,7 @@ conseguenza, devono essere inserite in una sezione denominata con il codice
 seguendo lo standard ISO 3166-1 alpha-2.
 
 
-Chiave ``version``
+Chiave ``CountryExtensionVersion``
 ~~~~~~~~~~~~~~~~~~
 -  Tipo: stringa
 -  Presenza: obbligatoria
