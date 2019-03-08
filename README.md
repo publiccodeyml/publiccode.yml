@@ -3,6 +3,9 @@
 [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
+[![Docs
+Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)(https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
+[![Documentation](https://img.shields.io/badge/Documentation-Docs%20Italia-blue.svg)(https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
 
 > A metadata description standard for public software
 
