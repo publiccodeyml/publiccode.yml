@@ -30,7 +30,7 @@ compliance-management
 contact-management
 content-management
 CRM
-customer-service-&-support
+customer-service-and-support
 data-analytics
 data-collection
 data-visualization
