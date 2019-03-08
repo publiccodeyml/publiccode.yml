@@ -6,22 +6,21 @@ Lista delle categorie di software
 Qui di seguito è presentato un vocabolario controllato di tag utilizzabili
 per categorizzare il software.
 
-==================================== ===========
-Tag                                  Description
-==================================== ===========
+====================================
+Tag
+====================================
 accounting
 agile-project-management
 applicant-tracking
 application-development
 appointment-scheduling
-architecture
 backup
 billing-and-invoicing
 blog
 budgeting
 business-intelligence
 business-process-management
-CAD
+cad
 call-center-management
 cloud-management
 collaboration
@@ -29,7 +28,7 @@ communications
 compliance-management
 contact-management
 content-management
-CRM
+crm
 customer-service-and-support
 data-analytics
 data-collection
@@ -45,7 +44,7 @@ email-marketing
 employee-management
 enterprise-project-management
 enterprise-social-networking
-ERP
+erp
 event-management
 facility-management
 feedback-and-reviews-management
@@ -53,12 +52,12 @@ financial-reporting
 fleet-management
 fundraising
 gamification
-geographic-information-systems---gis
+geographic-information-systems
 grant-management
 graphic-design
 help-desk
-HR
-IDE
+hr
+ide
 identity-management
 instant-messaging
 inventory-management
@@ -68,7 +67,7 @@ it-management
 it-security
 it-service-management
 knowledge-management
-learning-management-system---lms
+learning-management-system
 marketing
 mind-mapping
 mobile-marketing
@@ -89,7 +88,7 @@ real-estate-management
 remote-support
 resource-management
 sales-management
-SEO
+seo
 service-desk
 social-media-management
 survey
@@ -103,10 +102,10 @@ translation
 video-conferencing
 video-editing
 visitor-management
-VoIP
+voip
 warehouse-management
 web-collaboration
 web-conferencing
 website-builder
 workflow-management
-==================================== ===========
+====================================
