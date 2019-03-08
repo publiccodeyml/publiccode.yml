@@ -1,3 +1,5 @@
+.. _core:
+
 The Standard (core)
 ===================
 
@@ -342,6 +344,7 @@ An example for English:
 
    description:
      en:
+       version: ...
        shortDescription: ...
        longDescription: ...
 
