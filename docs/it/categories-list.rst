@@ -48,7 +48,7 @@ enterprise-social-networking
 ERP
 event-management
 facility-management
-feedback-&-reviews-management
+feedback-and-reviews-management
 financial-reporting
 fleet-management
 fundraising
