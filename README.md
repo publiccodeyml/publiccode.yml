@@ -1,4 +1,6 @@
 # The `publiccode.yml` standard
+
+[![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
 
