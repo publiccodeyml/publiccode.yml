@@ -29,8 +29,8 @@ Sezione ``conforme``
 Questa sezione contiene delle chiavi per auto dichiarare la conformità
 con la normativa vigente, rispetto ad alcune sezioni.
 
-Chiave ``conforme/accessibile``
-'''''''''''''''''''''''''''''''
+Chiave ``conforme/lineeGuidaDesign``
+''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -40,8 +40,8 @@ materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__.
 
-Chiave ``conforme/interoperabile``
-''''''''''''''''''''''''''''''''''
+Chiave ``conforme/modelloInteroperabilita``
+'''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -53,8 +53,8 @@ sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-m
 Riferimento normativo: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__.
 
-Chiave ``conforme/sicuro``
-''''''''''''''''''''''''''
+Chiave ``conforme/misureMinimeSicurezza``
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -63,18 +63,19 @@ Se presente e impostato a ``yes``, il software è conforme alle `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__.
 
-Chiave ``conforme/privacy``
+Chiave ``conforme/gdpr``
 '''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software rispetta le `linee guida
-del Garante per la protezione dei dati
-personali <https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/1772725>`__.
+Se presente e impostato a ``yes``, il software rispetta il GDPR.
+
+Sezione ``piattaforme``
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Chiave ``spid``
-~~~~~~~~~~~~~~~
+'''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -84,7 +85,7 @@ Se presente e impostato a ``yes``, il software si interfaccia con `SPID
 Digitale <https://developers.italia.it/it/spid>`__.
 
 Chiave ``cie``
-~~~~~~~~~~~~~~
+''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -93,7 +94,7 @@ Se presente e impostato a ``yes``, il software si interfaccia con la
 Carta di Identità Elettronica.
 
 Chiave ``anpr``
-~~~~~~~~~~~~~~~
+'''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -101,38 +102,13 @@ Chiave ``anpr``
 Se presente e impostato a ``yes``, il software si interfaccia con ANPR.
 
 Chiave ``pagopa``
-~~~~~~~~~~~~~~~~~
+'''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
 
 Se presente e impostato a ``yes``, il software si interfaccia con
 PagoPA.
-
-Chiave ``ecosistemi``
-~~~~~~~~~~~~~~~~~~~~~
-
--  Tipo: lista enumerata
--  Presenza: opzionale
-
-L’elenco di `Ecosistemi del Piano
-Triennale <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
-per il quale il software è rilevante.
-
-L’elenco degli ecosistemi possibili è il seguente:
-
--  sanita
--  welfare
--  finanza-pubblica
--  scuola
--  istruzione-superiore-ricerca
--  difesa-sicurezza-soccorso-legalita
--  giustizia
--  infrastruttura-logistica
--  sviluppo-sostenibilita
--  beni-culturali-turismo
--  agricoltura
--  italia-europa-mondo
 
 Sezione ``riuso``
 ~~~~~~~~~~~~~~~~~
@@ -162,7 +138,7 @@ Chiave ``designKit/seo``
 
 Se presente e impostato a ``yes``, il software ha utilizzato, in fase di
 progettazione, il kit di SEO di `Designers
-Italia <https://docs.italia.it/italia/piano-triennale-ict/pianotriennale-ict-doc/it/stabile/doc/06_ecosistemi.html>`__.
+Italia <https://designers.italia.it>`__.
 
 Chiave ``designKit/ui``
 '''''''''''''''''''''''
