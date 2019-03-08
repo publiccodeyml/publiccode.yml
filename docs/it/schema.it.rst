@@ -4,8 +4,25 @@ Italia
 ------
 
 Tutte le estensioni elencate qui di seguito sono specifiche per l'Italia e, di
-conseguenza, devono essere inserite in una sezione denominata con 
-il codice ``it``.
+conseguenza, devono essere inserite in una sezione denominata con il codice
+``it``. Tutti i Paesi sono specificati usando *country code* a due lettere
+seguendo lo standard ISO 3166-1 alpha-2.
+
+
+Chiave ``version``
+~~~~~~~~~~~~~~~~~~
+-  Tipo: stringa
+-  Presenza: obbligatoria
+-  Esempio: ``"1.0"``
+
+Questa chiave specifica la versione alla quale il presente schema di estensioni
+aderisce, per una questione di compatibilità diretta. Ogni Paese può avere una
+versione dello schema delle estensioni dedicato.
+
+**Nota Bene:** il valore di questa chiave è diverso da quello contenuto nella
+chiave top-level ``publiccodeYmlVersion`` (vedi :ref:`core`). In questo modo,
+il versioning di ogni schema di estensioni è indipendente sia dalla versione
+core dello schema che da ogni altra estensione per Paese.
 
 Sezione ``conforme``
 ~~~~~~~~~~~~~~~~~~~~

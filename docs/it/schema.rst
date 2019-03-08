@@ -1,3 +1,5 @@
+.. _core:
+
 Lo standard (core)
 ==================
 
@@ -112,8 +114,8 @@ essere interpretata dal parser ma solamente visualizzata; i parser non
 devono assumere l’utilizzo del semantic versioning o altri specifici
 formati di versionamento.
 
-Questa chiave può essere omessa nel caso in cui il software sia in un
-Paese iniziale di sviluppo e non sia stato ancora rilasciato.
+Questa chiave può essere omessa nel caso in cui il software sia in una fase
+iniziale di sviluppo e non sia stato ancora rilasciato.
 
 Chiave ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -363,6 +365,7 @@ Un esempio per l’italiano:
 
    description:
      it:
+       version: 0.1
        shortDescription: ...
        longDescription: ...
 
