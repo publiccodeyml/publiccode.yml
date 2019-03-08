@@ -1,7 +1,22 @@
 # The `publiccode.yml` standard
-
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
+
+> A metadata description standard for public software
+
+---
+
+## Table of Contents
+
+- [Description](#description)
+- [What is this file for](#what-this-file-is-for)
+- [Finding Projects](#finding-projects)
+- [Versioning](#versioning)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+## Description
 
 A metadata description standard for public software and policy repositories
 that is easy to use both for developers and people with less technical
