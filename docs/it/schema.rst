@@ -280,11 +280,16 @@ Chiave ``softwareType``
 
 Le chiavi sono: 
 
--  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
-   La maggior parte del software sarà di questo tipo. I software
-   appartenenti a questa categoria potrebbero essere eseguiti
-   su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
-   *cloud-based* o servizi di rete, oppure set di microservizi. 
+-  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
+   Il software è un'applicazione nativa per dispositivi mobile.
+-  ``standalone/iot`` - Il software è adatto ad essere utilizzato nel contesto
+   `Internet of Things`.
+-  ``standalone/desktop`` - Il software è tipicamente installato e utilizzato su un
+   sistema operativo desktop. 
+-  ``standalone/web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
+-  ``standalone/backend`` - Il software è un applicativo backend. 
+-  ``standalone/other``  - Il software ha una natura diversa rispetto a quanto
+   specificato alle chiavi precedenti. 
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
@@ -296,16 +301,6 @@ Le chiavi sono:
    ottenere un certo tipo di *deployment*. I suddetti file potrebbero avere la
    forma di semplici file di configurazione, script bash, playbook ansible,
    Dockerfile, o altri set di istruzioni.
-Le chiavi sono:
-
--  ``mobile`` - Il software è un'applicazione nativa per dispositivi mobile.
--  ``iot`` - Il software è adatto ad essere utilizzato nel contesto `Internet of Things`.
--  ``desktop`` - Il software è tipicamente installato e utilizzato su un
-   sistema operativo desktop. 
--  ``web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
--  ``backend`` - Il software è un applicativo backend. 
--  ``other``  - Il software ha una natura diversa rispetto a quanto specificato
-   alle chiavi precedenti. 
 
 Sezione ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
