@@ -8,27 +8,6 @@ that is easy to use both for developers and people with less technical
 background, in order to make the software developed by Public Administrations
 and Public Organisations easily discoverable.
 
-**Latest release:  [Version
-0.1](https://github.com/italia/publiccode.yml/releases/latest)**
-
-[See all versions](https://github.com/italia/publiccode.yml/releases)
-
-This project follows the Semantic Versioning.  For more information see
-[SemVer.org](https://semver.org/).
-
-Furthermore, the project uses branches and tags in the following way:
-* The `master` branch contains the latest stable version of the standard.
-* The `development` branch contains the improvements proposed for the next
-  version. 
-* GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
-  contains all the released versions of the standard. Releases are done
-  following the tag version for consistency (e.g., tag v0.1 implies release
-  v0.1).
-
-The PublicCode specification is developed by the [Italian Digital
-Transformation Team](https://teamdigitale.governo.it) and the
-[Authors](AUTHORS.md).
-
 ## What this file is for
 
 Many great software projects are developed by public administrations, however
@@ -68,6 +47,44 @@ The Italian Digital Transformation Team is also working on providing a scanner
 which looks for all publiccode files on all publicly accessible websites, and
 exposing them as open data.
 
+## Versioning 
+
+**Latest release:  [Version
+0.1](https://github.com/italia/publiccode.yml/releases/latest)**
+
+[See all versions](https://github.com/italia/publiccode.yml/releases)
+
+This project follows the Semantic Versioning.  For more information see
+[SemVer.org](https://semver.org/).
+
+Furthermore, the project uses branches and tags in the following way:
+* The `master` branch contains the latest stable version of the standard.
+* The `development` branch contains the improvements proposed for the next
+  version. 
+* GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
+  contains all the released versions of the standard. Releases are done
+  following the tag version for consistency.
+
+However, since the repository contains both the core schema and the
+country-specific ones, it is necessary to further refine the versioning. 
+As such, each update at the core and/or to a country-specific extension will be
+tagged as follows:
+
+> core:x.y.z/<cc>:a.b.c
+
+where <cc> is the country code defined using one of the ISO 3166-1 alpha-2
+codes. 
+
+This versioning schema is fundamental in this project since the
+`publiccode.yml` file contains references to the core release in the
+`publiccodeYmlVersion` key and each country-specific schema contains
+a `version` key. 
+
+Examples of this versioning schema may be:
+
+* core:0.2/it:0.4
+* core:0.2/fr:1.1
+
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
@@ -78,6 +95,11 @@ compiled and rendered on top of that platform. The `Docs Italia` platform is
 able to handle different releases and localised versions of the same file
 drawing from the document's GitHub repository. As such, the platform is to be
 considered the default landing page for the project.
+
+## Authors
+The PublicCode specification is developed by the [Italian Digital
+Transformation Team](https://teamdigitale.governo.it) and the
+[Authors](AUTHORS.md).
 
 ## Licence
 
