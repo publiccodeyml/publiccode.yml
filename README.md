@@ -15,6 +15,7 @@ Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https:
 
 - [Description](#description)
 - [What is this file for](#what-this-file-is-for)
+- [Documentation](#documentation)
 - [Finding Projects](#finding-projects)
 - [Versioning](#versioning)
 - [Contributing](#contributing)
@@ -53,6 +54,15 @@ well. It contains information such as:
 The `publiccode.yml` file format should both be able to easily be added to any
 new project, as well as grow with the project as it expands beyond the original
 context it was developed in.
+
+## Documentation
+
+This repository is structured in order to be compatible with the [Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
+platform. As such, the content in the relevant folders will be
+compiled and rendered inside that platform. The `Docs Italia` platform is
+able to handle different releases and localised versions of the same file
+drawing from the document's GitHub repository. As such, the platform is to be
+considered the default landing page for the project.
 
 ## Finding projects
 
@@ -105,13 +115,6 @@ Examples of this versioning schema may be:
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
-
-This repository is structured in order to be compatible with the `Docs Italia`
-platform. As such, the markdown content in the relevant folders will be
-compiled and rendered on top of that platform. The `Docs Italia` platform is
-able to handle different releases and localised versions of the same file
-drawing from the document's GitHub repository. As such, the platform is to be
-considered the default landing page for the project.
 
 ## Authors
 The `publiccode.yml` specification is developed by the [Italian Digital
