@@ -66,8 +66,7 @@ exposing them as open data.
 
 ## Versioning 
 
-**Latest release:  [Version
-0.1](https://github.com/italia/publiccode.yml/releases/latest)**
+**Latest release: [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
 
 [See all versions](https://github.com/italia/publiccode.yml/releases)
 
