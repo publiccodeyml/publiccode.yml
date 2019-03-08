@@ -274,8 +274,9 @@ Chiave ``softwareType``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Valori permessi: ``standalone``, ``addon``, ``library``,
-   ``configurationFiles``
+-  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
+  ``standalon/desktop``, ``standalon/web``, ``standalone/backend``,
+  ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 Le chiavi sono: 
 
@@ -284,9 +285,6 @@ Le chiavi sono:
    appartenenti a questa categoria potrebbero essere eseguiti
    su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
    *cloud-based* o servizi di rete, oppure set di microservizi. 
-   Se questa chiave viene selezionata, sarà necessario
-   specificare ulteriormente la natura del software utilizzando la  
-   :ref:`standaloneType`.
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
@@ -298,17 +296,6 @@ Le chiavi sono:
    ottenere un certo tipo di *deployment*. I suddetti file potrebbero avere la
    forma di semplici file di configurazione, script bash, playbook ansible,
    Dockerfile, o altri set di istruzioni.
-
-.. _standaloneType:
-
-Chiave ``standaloneType``
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Tipo: stringa
-- Presenza: obbligatoria **se** ``softwareType`` **è** ``standalone``
-- Valori permessi: ``mobile``, ``iot``, ``desktop``, ``web``, ``backend``,
-  ``other``
-
 Le chiavi sono:
 
 -  ``mobile`` - Il software è un'applicazione nativa per dispositivi mobile.
