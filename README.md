@@ -66,9 +66,7 @@ exposing them as open data.
 
 ## Versioning 
 
-**Latest release: [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
-
-[See all versions](https://github.com/italia/publiccode.yml/releases)
+**Latest release:** [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases) [See all versions](https://github.com/italia/publiccode.yml/releases)
 
 This project follows the Semantic Versioning.  For more information see
 [SemVer.org](https://semver.org/).
@@ -98,8 +96,8 @@ a `version` key.
 
 Examples of this versioning schema may be:
 
-* core:0.2/it:0.4
-* core:0.2/fr:1.1
+> * core:0.2/it:0.4
+> * core:0.2/fr:1.1
 
 ## Contributing
 
@@ -113,7 +111,7 @@ drawing from the document's GitHub repository. As such, the platform is to be
 considered the default landing page for the project.
 
 ## Authors
-The PublicCode specification is developed by the [Italian Digital
+The `publiccode.yml` specification is developed by the [Italian Digital
 Transformation Team](https://teamdigitale.governo.it) and the
 [Authors](AUTHORS.md).
 
