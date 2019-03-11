@@ -16,7 +16,7 @@ Chiave ``countryExtensionVersion``
 -  Esempio: ``"1.0"``
 
 Questa chiave specifica la versione alla quale il presente schema di estensioni
-aderisce, per una questione di compatibilità diretta. Ogni Paese può avere una
+aderisce.
 versione dello schema delle estensioni dedicato.
 
 **Nota Bene:** il valore di questa chiave è indipendente da quello contenuto nella
