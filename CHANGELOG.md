@@ -21,7 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `maintainance/contacts` is now mandatory only if `maintainance/type` is `internal` or `community`.
 
 ### Removed
-- `pa-types` file 
 - `intendedAudience/onlyFor` key
 
 ## [0.1] - 2019-01-25
