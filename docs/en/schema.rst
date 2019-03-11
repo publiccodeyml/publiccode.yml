@@ -197,21 +197,18 @@ Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
 value can be used.
 
-Key ``tags``
-~~~~~~~~~~~~
+Key ``categories``
+~~~~~~~~~~~~~~~~~~
 
 -  Type: array of strings
 -  Presence: mandatory
--  Acceptable values: see :ref:`tags-list` 
+-  Acceptable values: see :ref:`categories-list` 
 
 A list of words that can be used to describe the software and can help
 building catalogs of open software.
 
-Each tag must be in Unicode lowercase, and should not contain any
-Unicode whitespace character. The suggested character to separate
-multiple words is ``-`` (single dash).
-
-See also: ``description/[lang]/freeTags/``
+The controlled vocabulary :ref:`categories-list` contains the list of allowed
+values.
 
 Key ``usedBy``
 ~~~~~~~~~~~~~~
@@ -264,16 +261,22 @@ Key ``softwareType``
 
 -  Type: enumerated string
 -  Presence: mandatory
--  Allowed values: ``standalone``, ``addon``, ``library``,
-   ``configurationFiles``
+-  Allowed values: ``standalone/mobile``, ``standalone/iot``,
+   ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
+   ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 The keys are:
 
--  ``standalone`` - The software is a standalone, self-contained
-   package. Most software will be of this type. Part of this category is
-   software that can run on a desktop computer (e.g. as an executable),
-   as a cloud-based application, as a network service or even as a set
-   of cloud services or microservices.
+-  ``standalone/mobile`` - The software is a standalone, self-contained
+   The software is a native mobile app.
+-  ``standalone/iot`` - The software is suitable for an IoT context.
+-  ``standalone/desktop`` - The software is typically installed and run in a  
+   a desktop operating system environment.
+-  ``standalone/web`` - The software represents a web application usable by
+   means of a browser. 
+-  ``standalone/backend`` - The software is a backend application.
+-  ``standalone/other`` - The software has a different nature from the once
+   listed above.  
 -  ``softwareAddon`` - The software is an addon, such as a plugin or a
    theme, for a more complex software (e.g. a CMS or an office suite).
 -  ``library`` - The software contains a library or an SDK to make it
@@ -286,27 +289,6 @@ The keys are:
 
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Key ``intendedAudience/onlyFor``
-''''''''''''''''''''''''''''''''
-
--  Type: enumerated string or array of strings
--  Presence: optional
--  Values: see :ref:`pa-types` 
--  Example: ``"city"``
-
-Public software could be very specific in scope because there is a large
-set of tasks that are specific to each type of administration. For
-instance, many softwares that are used in schools are probably not
-useful in hospitals. If you want to explicitly mark some software as
-only useful to certain types of administrations, you should add them to
-this key.
-
-The list of allowed values is defined in  :ref:`pa-types`,
-and can be country-specific.
-
-This list can evolve at any time, separately from the version of this
-specification.
 
 Key ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
@@ -329,6 +311,16 @@ This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
 lowercase ISO 3166-1 alpha-2 two-letter country codes.
+
+Key ``intendedAudience/scope``
+''''''''''''''''''''''''''''''
+
+-  Type: array of strings
+-  Presence: optional
+-  Acceptable values: see :ref:`scope-list` 
+
+This key contains a list of tags related to the field of application of
+the software. 
 
 Section ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -464,22 +456,6 @@ Prefer using open formats like PDF or ODT for maximum interoperability.
 Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.
-
-Key ``description/[lang]/freeTags/``
-''''''''''''''''''''''''''''''''''''
-
--  Type: array of strings
--  Presence: optional
-
-This key contains a list of free tags that can be applied to a software.
-
-Since they contain values that do not have an official translation, and
-as such only make sense to a human in a specific language, tags are
-written in a specific language.
-
-Each tag must be in Unicode lowercase, and should not contain any
-Unicode whitespace character. The suggested character to separate
-multiple words is ``-`` (single dash).
 
 Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''

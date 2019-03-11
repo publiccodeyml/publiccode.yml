@@ -36,7 +36,7 @@ Table of contents
    schema.rst
    country.rst
    forks.rst
-   pa-types.rst
-   tags.rst 
+   categories-list.rst
+   scope-list.rst
    tools.rst
    example.rst
