@@ -275,7 +275,7 @@ Chiave ``softwareType``
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
-  ``standalon/desktop``, ``standalon/web``, ``standalone/backend``,
+  ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
   ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 Le chiavi sono: 
