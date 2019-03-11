@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2] - 2019-03-11
 ### Added
-- Country Extension
+- A new `countryExtensionVersion` key was added under each country-specific extension, in order to separate their versioning from the core.
 - The `standalone` value for the `softwareType` key was deprecated in favor of more specific values: `standalone/desktop`, `standalone/web`, `standalone/backend`, `standalone/other`
 - `scope-list` file with new categories 
 - `intendedAudience/scope` key
