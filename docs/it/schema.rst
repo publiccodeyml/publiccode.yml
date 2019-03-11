@@ -208,7 +208,7 @@ Se possibile, usare i valori predefiniti. Se il software gira su una
 piattaforma per la quale un valore predefinito non è disponibile, un
 diverso valore può essere usato.
 
-Chiave ``category``
+Chiave ``categories``
 ~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
