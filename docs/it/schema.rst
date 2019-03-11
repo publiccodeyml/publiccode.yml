@@ -208,21 +208,18 @@ Se possibile, usare i valori predefiniti. Se il software gira su una
 piattaforma per la quale un valore predefinito non è disponibile, un
 diverso valore può essere usato.
 
-Chiave ``tags``
-~~~~~~~~~~~~~~~
+Chiave ``categories``
+~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
 -  Presenza: obbligatoria
--  Valori accettabili: vedi :ref:`lista-tags` 
+-  Valori accettabili: vedi :ref:`categories-list` 
 
 Una lista di parole che possono essere usate per descrivere il software
 e possono aiutare a costruire il catalogo di software open.
 
-Ogni tag deve essere in Unicode minuscolo, e non deve contenere alcun
-carattere di spazio Unicode. Il carattere suggerito per separare parole
-multiple è ``-`` (trattino singolo).
-
-Vedi anche: ``description/[lang]/freeTags/``
+Il vocabolario controllato :ref:`categories-list` presenta la lista dei valori
+accettabili. 
 
 Chiave ``usedBy``
 ~~~~~~~~~~~~~~~~~
@@ -277,16 +274,22 @@ Chiave ``softwareType``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Valori permessi: ``standalone``, ``addon``, ``library``,
-   ``configurationFiles``
+-  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
+  ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
+  ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 Le chiavi sono: 
 
--  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
-   La maggior parte del software sarà di questo tipo. I software
-   appartenenti a questa categoria potrebbero essere eseguiti
-   su un computer desktop (e.g., un eseguibile) oppure potrebbero essere
-   *cloud-based* o servizi di rete, oppure set di microservizi. 
+-  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
+   Il software è un'applicazione nativa per dispositivi mobile.
+-  ``standalone/iot`` - Il software è adatto ad essere utilizzato nel contesto
+   `Internet of Things`.
+-  ``standalone/desktop`` - Il software è tipicamente installato e utilizzato su un
+   sistema operativo desktop. 
+-  ``standalone/web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
+-  ``standalone/backend`` - Il software è un applicativo backend. 
+-  ``standalone/other``  - Il software ha una natura diversa rispetto a quanto
+   specificato alle chiavi precedenti. 
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
@@ -301,27 +304,6 @@ Le chiavi sono:
 
 Sezione ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Chiave ``intendedAudience/onlyFor``
-'''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa numerata o array di stringhe
--  Presenza: opzionale
--  Valori: vedi :ref:`pa-types` 
--  Esempio: ``"city"``
-
-Il software pubblico potrebbe avere una portata molto specifica perché
-esiste un gran numero di task che sono specifici per ogni tipo di
-amministrazione. Ad esempio, molti software usati nelle scuole
-probabilmente non sono utili all’interno degli ospedali. Se si volesse
-indicare che un software è unicamente utile in qualche tipo di
-amministrazione, bisognerebbe aggiungerle a questa lista.
-
-La lista di valori permessi è definita in :ref:`pa-types`, 
-e può essere specifica per ogni Paese (country-specific).
-
-La lista può evolvere in ogni momento, separatamente dalla versione di
-queste specifiche.
 
 Chiave ``intendedAudience/countries``
 '''''''''''''''''''''''''''''''''''''
@@ -347,6 +329,18 @@ conflitto tra la modalità di funzionamento del software ed una legge
 specifica, un processo o una tecnologia. Tutti i Paesi sono specificati
 usando *country code* a due lettere seguendo lo standard ISO 3166-1
 alpha-2.
+
+Chiave ``intendedAudience/scope``
+'''''''''''''''''''''''''''''''''
+
+-  Tipo: array di stringhe
+-  Presenza: opzionale
+-  Valori accettabili: vedi :ref:`scope-list` 
+
+Questa chiave contiene una lista di tag che rappresentano il campo
+di applicazione del software.
+
+I tag consentiti sono elencati nella :ref:`scope-list`. 
 
 Sezione ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -494,23 +488,6 @@ preferibile utilizzare formati aperti quali PDF o ODT per avere la
 Qualunque sia il formato della documentazione, è importante ricordare di
 rilasciarne i sorgenti coperti da licenza aperta, possibilmente
 effettuandone un commit all’interno del repository stesso.
-
-Chiave ``description/[lang]/freeTags/``
-'''''''''''''''''''''''''''''''''''''''
-
--  Tipo: array di stringhe
--  Presenza: opzionale
-
-Questa chiave contiene una lista di tag liberi che possono essere
-applicati al software.
-
-Siccome contengono valori che non hanno una traduzione ufficiale, e
-quindi hanno senso per un umano esclusivamente in una lingua specifica,
-i tag sono scritti in una lingua specifica.
-
-Ogni tag deve contenere caratteri minuscoli Unicode, e non deve
-contenere alcun carattere Unicode di spazio. Il carattere suggerito per
-separare parole multiple è ``-`` (trattino singolo).
 
 Chiave ``description/[lang]/features``
 ''''''''''''''''''''''''''''''''''''''

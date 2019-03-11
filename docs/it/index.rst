@@ -35,6 +35,6 @@ Indice dei contenuti
    schema.rst
    country.rst 
    forks.rst
-   pa-types.rst
-   tags.rst 
+   categories-list.rst
+   scope-list.rst
    example.rst
