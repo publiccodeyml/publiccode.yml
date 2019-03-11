@@ -19,7 +19,7 @@ platforms:
   - android
   - ios
 
-category:
+categories:
   - content-management
   - office
 
