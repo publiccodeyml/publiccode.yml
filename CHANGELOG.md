@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - country.rst dedicated
 
 ### Changed
-- `tags` key -> `categories`
+- `tags` was replaced by`categories` (with a different dictionary of values).
 - BCP47 is now used for languages instead of ISO 639-2, thus keys under `description` will now look like `en` instead of `eng`
 - `publiccode-yaml-version` -> `publiccodeYmlVersion`
 - All files ported to RST from previous MD
