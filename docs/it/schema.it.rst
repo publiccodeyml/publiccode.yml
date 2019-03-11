@@ -17,7 +17,6 @@ Chiave ``countryExtensionVersion``
 
 Questa chiave specifica la versione alla quale il presente schema di estensioni
 aderisce.
-versione dello schema delle estensioni dedicato.
 
 **Nota Bene:** il valore di questa chiave è indipendente da quello contenuto nella
 chiave top-level ``publiccodeYmlVersion`` (vedi :ref:`core`). In questo modo,
