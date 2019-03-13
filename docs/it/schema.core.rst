@@ -1,5 +1,7 @@
-Lo standard
-===========================
+.. _core:
+
+Lo standard (core)
+==================
 
 La struttura di un file ``publiccode.yml`` prevede l'esistenza di chiavi
 top-level e sezioni che possono contenere al proprio interno altre chiavi. 
@@ -7,9 +9,8 @@ Lo standard ha rilevanza internazionale ma è possibile dichiarare una sezione
 dedicata per le chiavi relative ad un Paese specifico (si veda
 :ref:`estensioni-paese` per maggiori dettagli). 
 
-Estensioni Top-Level
---------------------
-
+Chiavi e Sezioni Top-Level
+--------------------------
 
 Chiave ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,8 +114,8 @@ essere interpretata dal parser ma solamente visualizzata; i parser non
 devono assumere l’utilizzo del semantic versioning o altri specifici
 formati di versionamento.
 
-Questa chiave può essere omessa nel caso in cui il software sia in un
-Paese iniziale di sviluppo e non sia stato ancora rilasciato.
+Questa chiave può essere omessa nel caso in cui il software sia in una fase
+iniziale di sviluppo e non sia stato ancora rilasciato.
 
 Chiave ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -209,21 +210,18 @@ Se possibile, usare i valori predefiniti. Se il software gira su una
 piattaforma per la quale un valore predefinito non è disponibile, un
 diverso valore può essere usato.
 
-Chiave ``tags``
-~~~~~~~~~~~~~~~
+Chiave ``categories``
+~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
 -  Presenza: obbligatoria
--  Valori accettabili: vedi :ref:`lista-tags` 
+-  Valori accettabili: vedi :ref:`categories-list` 
 
 Una lista di parole che possono essere usate per descrivere il software
 e possono aiutare a costruire il catalogo di software open.
 
-Ogni tag deve essere in Unicode minuscolo, e non deve contenere alcun
-carattere di spazio Unicode. Il carattere suggerito per separare parole
-multiple è ``-`` (trattino singolo).
-
-Vedi anche: ``description/[lang]/freeTags/``
+Il vocabolario controllato :ref:`categories-list` presenta la lista dei valori
+accettabili. 
 
 Chiave ``usedBy``
 ~~~~~~~~~~~~~~~~~
@@ -278,51 +276,36 @@ Chiave ``softwareType``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Valori permessi: ``standalone``, ``addon``, ``library``,
-   ``configurationFiles``
+-  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
+  ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
+  ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 Le chiavi sono: 
--  ``standalone`` - Il software è un pacchetto  *self-contained*, *standalone*.
-   La maggior parte del software sarà di questo tipo. Pare di questa categoria
-   di software potrà essere eseguita
-   su un computer desktop (e.g., un eseguibile), come un’applicazione
-   *cloud-based*, come un servizio di rete o anche come un set di servizi
-   cloud o microservizi. 
+
+-  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
+   Il software è un'applicazione nativa per dispositivi mobile.
+-  ``standalone/iot`` - Il software è adatto ad essere utilizzato nel contesto
+   `Internet of Things`.
+-  ``standalone/desktop`` - Il software è tipicamente installato e utilizzato su un
+   sistema operativo desktop. 
+-  ``standalone/web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
+-  ``standalone/backend`` - Il software è un applicativo backend. 
+-  ``standalone/other``  - Il software ha una natura diversa rispetto a quanto
+   specificato alle chiavi precedenti. 
 -  ``softwareAddon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
 -  ``library`` - Il software
-   contiene una libreria o una SDK che permette uno sviluppo più semplice
-   per sviluppatori di terze parti per la creazione di nuovi prodotti.
+   contiene una libreria o una SDK che facilita la creazione di nuovi prodotti
+   a sviluppatori di terze parti.
 -  ``configurationFiles`` - Il software non contiene script eseguibili ma
    una serie di file di configurazione. Questi potrebbero documentare come
-   ottenere un certo tipo di *deployment*. Potrebbero avere la forma di
-   semplici file di configurazione, script bash, playbook ansible,
+   ottenere un certo tipo di *deployment*. I suddetti file potrebbero avere la
+   forma di semplici file di configurazione, script bash, playbook ansible,
    Dockerfile, o altri set di istruzioni.
 
 Sezione ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Chiave ``intendedAudience/onlyFor``
-'''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa numerata o array di stringhe
--  Presenza: opzionale
--  Valori: vedi :ref:`pa-types` 
--  Esempio: ``"city"``
-
-Il software pubblico potrebbe avere una portata molto specifica perché
-esiste un gran numero di task che sono specifici per ogni tipo di
-amministrazione. Ad esempio, molti software usati nelle scuole
-probabilmente non sono utili all’interno degli ospedali. Se si volesse
-indicare che un software è unicamente utile in qualche tipo di
-amministrazione, bisognerebbe aggiungerle a questa lista.
-
-La lista di valori permessi è definita in :ref:`pa-types`, 
-e può essere specifica per ogni Paese (country-specific).
-
-La lista può evolvere in ogni momento, separatamente dalla versione di
-queste specifiche.
 
 Chiave ``intendedAudience/countries``
 '''''''''''''''''''''''''''''''''''''
@@ -349,6 +332,18 @@ specifica, un processo o una tecnologia. Tutti i Paesi sono specificati
 usando *country code* a due lettere seguendo lo standard ISO 3166-1
 alpha-2.
 
+Chiave ``intendedAudience/scope``
+'''''''''''''''''''''''''''''''''
+
+-  Tipo: array di stringhe
+-  Presenza: opzionale
+-  Valori accettabili: vedi :ref:`scope-list` 
+
+Questa chiave contiene una lista di tag che rappresentano il campo
+di applicazione del software.
+
+I tag consentiti sono elencati nella :ref:`scope-list`. 
+
 Sezione ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -359,16 +354,17 @@ descriva il software.
 **Nota bene:** siccome tutte le stringhe contenute in questa sezione sono
 visibili all’utente e scritte in un linguaggio specifico, è
 **necessario** specificare il linguaggio con il quale si sta modificando
-il testo (usando i codici `ISO
-639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3) creando una
-sezione con quel nome.
+il testo. Per farlo è necessario creare una sezione dedicata alla lingua
+seguendo le specifiche IETF `BCP 47 <https://tools.ietf.org/html/bcp47>`__. Si
+ricorda che il *primary language
+subtag* non può essere omesso, come specificato nel BCP 47. 
 
 Un esempio per l’italiano:
 
 .. code:: .yaml
 
    description:
-     ita:
+     it:
        shortDescription: ...
        longDescription: ...
 
@@ -494,23 +490,6 @@ preferibile utilizzare formati aperti quali PDF o ODT per avere la
 Qualunque sia il formato della documentazione, è importante ricordare di
 rilasciarne i sorgenti coperti da licenza aperta, possibilmente
 effettuandone un commit all’interno del repository stesso.
-
-Chiave ``description/[lang]/freeTags/``
-'''''''''''''''''''''''''''''''''''''''
-
--  Tipo: array di stringhe
--  Presenza: opzionale
-
-Questa chiave contiene una lista di tag liberi che possono essere
-applicati al software.
-
-Siccome contengono valori che non hanno una traduzione ufficiale, e
-quindi hanno senso per un umano esclusivamente in una lingua specifica,
-i tag sono scritti in una lingua specifica.
-
-Ogni tag deve contenere caratteri minuscoli Unicode, e non deve
-contenere alcun carattere Unicode di spazio. Il carattere suggerito per
-separare parole multiple è ``-`` (trattino singolo).
 
 Chiave ``description/[lang]/features``
 ''''''''''''''''''''''''''''''''''''''
@@ -721,12 +700,14 @@ disponibili si veda la chiave ``localisation/availableLanguages``.
 Chiave ``localisation/availableLanguages``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: lista di codici `ISO
-   639-2 <https://en.wikipedia.org/wiki/ISO_639-2>`__ alpha-3
+-  Tipo: lista di *language tag* secondo le specifiche IETF BCP 47
 -  Presenza: obbligatoria
+-  Esempio: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
 Se presente, questa è la lista di lingue in cui è disponibile il
 software. Ovviamente, questa lista dovrà contenere almeno una lingua.
+Si ricorda che il *primary language subtag* non può essere omesso, come
+specificato dal `BCP 47 <https://tools.ietf.org/html/bcp47>`__.
 
 Sezione ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -765,42 +746,6 @@ Chiave ``dependsOn/hardware``
 
 This key contains a list of hardware dependencies that must be owned to use the
 software.
-
-.. _`estensioni-paese`:
-
-Estensioni Specifiche per Paese
--------------------------------
-
-Mentre lo standard è strutturato per essere significativo a livello
-internazionale, vi sono informazioni addizionali che possono essere
-aggiunte a livello nazionale, come ad esempio una dichiarazione di
-compatibilità con una legge locale. Il meccanismo di estensione fornito
-prevede l’utilizzo di sezioni specifiche per ogni Paese
-(*country-specific*).
-
-Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione
-denominata con l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,
-``spid`` è una proprietà definita per i software italiani per la
-dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di
-Identità Digitale.
-
-Dunque, se un software è compatibile, troveremo:
-
-::
-
-   it:
-     spid: yes
-
-Nota bene che le chiavi *country-specific* **non** sono valide
-all’interno delle sezioni internazionali. I Paesi che vogliano estendere
-il formato dovrebbero aggiungere una sezione dedicata.
-
-La documentazione per queste estensioni *country-specific* è mantenuta
-in file separati.
-
--  Italia: :ref:`estensioni-italiane`. 
-
 
 
 Formati di dato speciali

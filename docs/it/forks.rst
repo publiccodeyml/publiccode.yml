@@ -107,7 +107,7 @@ Gli autori che vorrebbero pubblicare un fork come una variante
 -  Rivisitare la sezione denominata ``maintenance`` per aggiornare lo
    stato di manutenzione della variante.
 
-Inoltre, gli autore **DOVREBBERO** valutare di fare anche i seguenti
+Inoltre, gli autori **DOVREBBERO** valutare di apportare anche i seguenti
 cambiamenti:
 
 -  Aggiungere le funzionalità che differenziano le varianti alla chiave

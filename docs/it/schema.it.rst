@@ -1,17 +1,27 @@
 .. _estensioni-italiane:
 
-Estensioni italiane
-========================================
+Italia
+------
 
-Estensioni
-----------
+Tutte le estensioni elencate qui di seguito sono specifiche per l'Italia e, di
+conseguenza, devono essere inserite in una sezione denominata con il codice
+``it``. Tutti i Paesi sono specificati usando *country code* a due lettere
+seguendo lo standard ISO 3166-1 alpha-2.
 
-Tutte le estensioni elencate qui di seguito sono specifiche per un Paese e, di
-conseguenza, devono essere inserite in una sezione denominata con 
-l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. 
-In questo caso, siccome le sezioni e chiavi seguenti sono italiane,
-è necessario utilizzare il codice `it`.
+
+Chiave ``countryExtensionVersion``
+~~~~~~~~~~~~~~~~~~
+-  Tipo: stringa
+-  Presenza: obbligatoria
+-  Esempio: ``"1.0"``
+
+Questa chiave specifica la versione alla quale il presente schema di estensioni
+aderisce.
+
+**Nota Bene:** il valore di questa chiave è indipendente da quello contenuto nella
+chiave top-level ``publiccodeYmlVersion`` (vedi :ref:`core`). In questo modo,
+il versioning di ogni schema di estensioni è indipendente sia dalla versione
+core dello schema che da ogni altra estensione per Paese.
 
 Sezione ``conforme``
 ~~~~~~~~~~~~~~~~~~~~

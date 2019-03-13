@@ -12,10 +12,10 @@ tags:
 
 developmentStatus: development
 
-softwareType: "standalone"
+softwareType: "standalone/desktop"
 
 description:
-  eng:
+  en:
     localisedName: medusa   # Optional
     genericName: Text Editor
     shortDescription: >
@@ -43,4 +43,4 @@ maintenance:
 localisation:
   localisationReady: yes
   availableLanguages:
-    - eng
+    - en

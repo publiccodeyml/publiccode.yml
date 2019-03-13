@@ -4,7 +4,6 @@ name: Medusa
 applicationSuite: MegaProductivitySuite
 url: "https://example.com/italia/medusa.git"
 landingURL: "https://example.com/italia/medusa"
-
 isBasedOn: "https://github.com/italia/otello.git"
 softwareVersion: "1.0"
 releaseDate: "2017-04-15"
@@ -20,10 +19,9 @@ platforms:
   - android
   - ios
 
-tags:
+categories:
   - content-management
-  - artificial-intelligence
-  - museum
+  - office
 
 usedBy:
   - Comune di Firenze
@@ -33,13 +31,11 @@ roadmap: "https://example.com/italia/medusa/roadmap"
 
 developmentStatus: development
 
-softwareType: "standalone"
+softwareType: "standalone/desktop"
 
 intendedAudience:
-  onlyFor:
-    - cities
-    - health-services
-    - it-ag-agricolo
+  scope:
+    - science-and-technology
   countries:
     - it
     - de
@@ -47,7 +43,7 @@ intendedAudience:
     - us
 
 description:
-  eng:
+  en:
     localisedName: Medusa
     genericName: Text Editor
     shortDescription: >
@@ -62,9 +58,6 @@ description:
 
     documentation: "https://read.the.documentation/medusa/v1.0"
     apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
-
-    freeTags:
-       - an-english-tag
 
     features:
        - Very important feature
@@ -104,10 +97,10 @@ maintenance:
 localisation:
   localisationReady: yes
   availableLanguages:
-    - eng
-    - ita
-    - fra
-    - deu
+    - en
+    - it
+    - fr
+    - de
 
 dependsOn:
   open:
@@ -127,6 +120,8 @@ dependsOn:
       optional: yes
 
 it:
+
+  countryExtensionVersion: 0.1
 
   conforme:
     accessibile: yes
