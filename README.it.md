@@ -104,9 +104,9 @@ le estensioni per ogni paese, è necessario adottare una strategia di versioning
 più raffinata. Per questo motivo, ogni update al core e/o ad un'estensione
 specifica per Paese, sarà taggata come segue:
 
-> core-x.y.z/<cc>-a.b.c
+> core-x.y.z/cc-a.b.c
 
-dove <cc> rappresenta il codice del paese presente nella chiave
+dove cc rappresenta il codice del paese presente nella chiave
 `countryExtensionVersion` dello schema modificato. 
 
 ## Come contribuire 
