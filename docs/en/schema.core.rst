@@ -244,6 +244,7 @@ Key ``developmentStatus``
    ``obsolete``
 
 The keys are: 
+
 -  ``concept`` - The software is just a “concept”. No
    actual code may have been produced, and the repository could simply be a
    placeholder. 
