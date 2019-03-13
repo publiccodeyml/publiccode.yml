@@ -361,7 +361,7 @@ subtag* non può essere omesso, come specificato nel BCP 47.
 
 Un esempio per l’italiano:
 
-.. code:: .yaml
+.. code:: yaml
 
    description:
      it:
