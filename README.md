@@ -99,7 +99,7 @@ country-specific ones, it is necessary to further refine the versioning.
 As such, each update at the core and/or to a country-specific extension will be
 tagged as follows:
 
-> core-x.y.z/cc-a.b.c
+> core-x.y.z;cc-a.b.c
 
 where cc is the country code defined in the `countryExtensionVersion` key. 
 
@@ -110,8 +110,8 @@ a `version` key.
 
 Examples of this versioning schema may be:
 
-> * core:0.2/it:0.4
-> * core:0.2/fr:1.1
+> * core:0.2;it:0.4
+> * core:0.2;fr:1.1
 
 ## Contributing
 
