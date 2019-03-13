@@ -120,27 +120,19 @@ dependsOn:
       optional: yes
 
 it:
-
-  countryExtensionVersion: 0.1
+  countryExtensionVersion: "0.1"
 
   conforme:
-    accessibile: yes
-    interoperabile: yes
-    sicuro: yes
-    privacy: yes
+    lineeGuidaDesign: yes
+    modelloInteroperabilita: yes
+    misureMinimeSicurezza: yes
+    gdpr: yes
+
+  piattaforme:
+    spid: yes
+    cie: yes
+    anpr: yes
+    pagopa: yes
 
   riuso:
     codiceIPA: c_h501
-
-  spid: yes
-  pagopa: yes
-  cie: yes
-  anpr: yes
-  ecosistemi:
-    - scuola
-
-  designKit:
-    seo: no
-    ui: yes
-    web: yes
-    content: no
