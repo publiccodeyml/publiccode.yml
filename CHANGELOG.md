@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.2] - 2019-03-11
+## [core-0.2] - 2019-03-11
 ### Added
 - A new `countryExtensionVersion` key was added under each country-specific extension, in order to separate their versioning from the core.
 - The `standalone` value for the `softwareType` key was deprecated in favor of more specific values: `standalone/mobile`, `standalone/iot`, `standalone/desktop`, `standalone/web`, `standalone/backend`, `standalone/other`
@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 - The `freeTags` key was removed.
 
-## [0.1] - 2019-01-25
+## [core-0.1] - 2019-01-25
 ### Added
 - Files for first release
 
