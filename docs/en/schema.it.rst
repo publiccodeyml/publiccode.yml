@@ -114,7 +114,7 @@ Key ``pagopa``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yest``, the software interfaces with pagoPA.
+If present and set to ``yes``, the software interfaces with pagoPA.
 
 Section ``riuso``
 ~~~~~~~~~~~~~~~~~
