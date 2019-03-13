@@ -106,7 +106,7 @@ Key ``anpr``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yest``, the software interfaces with ANPR.
+If present and set to ``yes``, the software interfaces with ANPR.
 
 Key ``pagopa``
 ''''''''''''
