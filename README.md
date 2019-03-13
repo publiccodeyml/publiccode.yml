@@ -9,6 +9,8 @@ Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https:
 
 > A metadata description standard for public software
 
+*Leggi questo documento in [Italiano](README.it.md)*
+
 ---
 
 ## Table of Contents
@@ -97,10 +99,9 @@ country-specific ones, it is necessary to further refine the versioning.
 As such, each update at the core and/or to a country-specific extension will be
 tagged as follows:
 
-> core:x.y.z/<cc>:a.b.c
+> core-x.y.z/cc-a.b.c
 
-where <cc> is the country code defined using one of the ISO 3166-1 alpha-2
-codes. 
+where cc is the country code defined in the `countryExtensionVersion` key. 
 
 This versioning schema is fundamental in this project since the
 `publiccode.yml` file contains references to the core release in the
