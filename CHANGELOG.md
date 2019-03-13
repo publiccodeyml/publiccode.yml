@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file.
 - `tags` was replaced by `categories` (with a different dictionary of values).
 - BCP47 is now used for languages instead of ISO 639-2, thus keys under `description` will now look like `en` instead of `eng`
 - `publiccode-yaml-version` was moved to `publiccodeYmlVersion` using camelCase
-- `maintainance/contacts` is now mandatory only if `maintainance/type` is `internal` or `community`.
+- `maintenance/contacts` is now mandatory only if `maintenance/type` is `internal` or `community`.
 - All files ported to RST from previous MD
 
 ### Removed
