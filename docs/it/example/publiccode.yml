@@ -121,6 +121,8 @@ dependsOn:
 
 it:
 
+  countryExtensionVersion: 0.1
+
   conforme:
     accessibile: yes
     interoperabile: yes
