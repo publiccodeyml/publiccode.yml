@@ -62,7 +62,7 @@ l’autenticazione.
 I fork creati con lo scopo di contribuire *upstream* non devono
 modificare questo file; questo aiuta i software che fanno il parsing di
 ``publiccode.yml`` a saltare immediatamente i fork tecnici. Al
-contrario, un fork completo che sarà mantenuto
+contrario, un fork completo che sarà manutenuto
 in modo separato rispetto al software originale, dovrebbe modificare
 questa linea per essere trattato come una variante distinta.
 
@@ -268,7 +268,7 @@ Le chiavi sono:
    aver ancora avuto una release pubblica preliminare. 
 -  ``stable`` - Il software ha già avuto una prima release pubblica ed è pronto
    per essere usato in un contesto di produzione. 
--  ``obsolete`` - Il software non è più mantenuto o aggiornato. Tutto il codice
+-  ``obsolete`` - Il software non è più manutenuto o aggiornato. Tutto il codice
    sorgente è archiviato e tenuto per ragioni di storico.
 
 Chiave ``softwareType``
@@ -277,8 +277,8 @@ Chiave ``softwareType``
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
-  ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
-  ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
+   ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
+   ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
 
 Le chiavi sono: 
 
@@ -642,6 +642,7 @@ Chiave ``maintenance/type``
 -  Valori: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 Questa chiave descrive come il software è attualmente manutenuto.
+Le chiavi sono:
 
 -  ``"internal"`` - significa che il software è manutenuto internamente dal
    proprietario del repository; 

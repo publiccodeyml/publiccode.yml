@@ -6,9 +6,10 @@ List of software categories
 Here follows a controlled vocabulary of useful tags for categorizing the
 software.
 
-===
-Tag
-===
+==========
+Valid Tags
+==========
+
 - accounting
 - agile-project-management
 - applicant-tracking

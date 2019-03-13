@@ -19,10 +19,12 @@ Identità Digitale.
 
 Dunque, se un software è compatibile, troveremo:
 
-.. code:: .yaml
+.. code:: yaml
 
    it:
-     spid: yes
+     countryExtensionVersion: "0.2"
+     piattaforme:
+        - spid: yes
 
 Nota bene che le chiavi *country-specific* **non** sono valide
 all’interno delle sezioni internazionali. I Paesi che vogliano estendere

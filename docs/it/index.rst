@@ -46,7 +46,6 @@ Indice dei contenuti
    :numbered:
 
    schema.core.rst
-   schema.it.rst
    country.rst 
    forks.rst
    categories-list.rst

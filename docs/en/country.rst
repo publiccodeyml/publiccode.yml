@@ -17,10 +17,12 @@ software is integrated with the Italian Public Identification System.
 
 If a software is compliant I will find:
 
-.. code:: .yaml
+.. code:: yaml
 
    it:
-     spid: yes
+     countryExtensionVersion: "0.2"
+     piattaforme:
+      - spid: yes
 
 Notice that country-specific extensions within international sections
 are not allowed. Countries that want to extend the format should add a
@@ -29,4 +31,4 @@ country-specific section instead.
 Documentation for the keys contained in a country specific section is
 maintained in separate files.
 
--  Italy: :ref:`italia-extensions`. 
+-  Italy: :ref:`italian-extensions`. 

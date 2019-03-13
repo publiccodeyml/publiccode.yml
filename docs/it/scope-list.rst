@@ -6,9 +6,10 @@ Lista dei campi di applicazione
 Qui di seguito è presentato un vocabolario controllato di tag utilizzabili
 per i campi di applicazione del software. 
 
-===
-Tag
-===
+==========
+Tag Validi
+==========
+
 - agriculture
 - culture
 - defence

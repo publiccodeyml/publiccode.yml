@@ -6,9 +6,10 @@ Scope list
 Here follows a controlled vocabulary of useful tags for categorizing the
 software.
 
-===
-Tag
-===
+==========
+Valid Tags
+==========
+
 - agriculture
 - culture
 - defence
