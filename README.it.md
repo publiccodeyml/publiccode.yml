@@ -9,6 +9,8 @@ Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https:
 
 > Uno standard di descrizione di metadati per software pubblico 
 
+*Read this in [English](README.md).*
+
 ---
 
 ## Table of Contents
