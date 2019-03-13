@@ -548,7 +548,9 @@ essere usati per dare una rapida panoramica sull’aspetto e le
 funzionalità del software. I video devono essere ospitati su una
 piattaforma di video sharing che supporti lo standard
 `oEmbed <https://oembed.com>`__; le opzioni più popolari sono YouTube e
-Vimeo. **Nota bene:** dal momento che costituisce parte integrante della
+Vimeo. 
+
+**Nota bene:** dal momento che costituisce parte integrante della
 documentazione, è opportuno che il video sia pubblicato con una licenza
 aperta.
 
