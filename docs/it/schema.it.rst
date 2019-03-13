@@ -1,4 +1,4 @@
-.. _estensioni-italiane:
+.. _italian-extensions:
 
 Italia
 ------
@@ -11,6 +11,7 @@ seguendo lo standard ISO 3166-1 alpha-2.
 
 Chiave ``countryExtensionVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Esempio: ``"1.0"``
@@ -110,18 +111,18 @@ Chiave ``pagopa``
 -  Presenza: opzionale
 
 Se presente e impostato a ``yes``, il software si interfaccia con
-PagoPA.
+pagoPA.
 
 Sezione ``riuso``
 ~~~~~~~~~~~~~~~~~
 
 Questa sezione contiene una serie di chiavi legate alla pubblicazione
-del software sul “`Catalogo del Riuso <https://developers.italia.it>`__”.
+del software sul `Catalogo del Riuso <https://developers.italia.it>`__.
 
 Chiave ``riuso/codiceIPA``
 ''''''''''''''''''''''''''
 
--  Tipo: stringa (codice IPA)
+-  Tipo: stringa (codice iPA)
 -  Presenza: obbligatoria se ``repoOwner`` è una Pubblica
    Amministrazione
 -  Esempio: ``c_h501``
