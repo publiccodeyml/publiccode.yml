@@ -10,7 +10,7 @@ seguendo lo standard ISO 3166-1 alpha-2.
 
 
 Chiave ``countryExtensionVersion``
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Esempio: ``"1.0"``
@@ -28,6 +28,8 @@ Sezione ``conforme``
 
 Questa sezione contiene delle chiavi per auto dichiarare la conformità
 con la normativa vigente, rispetto ad alcune sezioni.
+Se queste chiavi non vengono incluse, si intende che la conformità non è nota
+o non viene dichiarata.
 
 Chiave ``conforme/lineeGuidaDesign``
 ''''''''''''''''''''''''''''''''''''
