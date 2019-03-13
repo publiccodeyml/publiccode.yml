@@ -44,8 +44,8 @@ Table of contents
    :maxdepth: 2
    :numbered:
 
-   intro.rst
-   schema.rst
+   schema.core.rst
+   schema.it.rst
    country.rst
    forks.rst
    categories-list.rst
