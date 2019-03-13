@@ -120,7 +120,7 @@ Section ``riuso``
 ~~~~~~~~~~~~~~~~~
 
 This section contains a set of keys related to the publication of the software
-inside the `Catalogo del Riuso <https://developers.italia.it>`__.
+inside the reuse catalog of `Developers Italia <https://developers.italia.it>`__.
 
 Chiave ``riuso/codiceIPA``
 ''''''''''''''''''''''''''
