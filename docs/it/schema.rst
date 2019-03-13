@@ -209,7 +209,7 @@ piattaforma per la quale un valore predefinito non è disponibile, un
 diverso valore può essere usato.
 
 Chiave ``categories``
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
 -  Presenza: obbligatoria
