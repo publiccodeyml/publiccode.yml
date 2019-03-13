@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - The `conforme/accessibile` key becomes `conforme/lineeGuidaDesign` since it
   is more self-explanatory.
-- The `conferme/interoperabile` key becomes `conforme/modelloInteroperabilita`
+- The `conforme/interoperabile` key becomes `conforme/modelloInteroperabilita`
   since it is more self-explanatory.
 - The `conforme/sicuro` key becomes `conforme/misureMinimeSicurezza` since
   before it was rather vague and incomplete.
