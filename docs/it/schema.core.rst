@@ -361,7 +361,7 @@ subtag* non può essere omesso, come specificato nel BCP 47.
 
 Un esempio per l’italiano:
 
-.. code:: .yaml
+.. code:: yaml
 
    description:
      it:
@@ -548,7 +548,9 @@ essere usati per dare una rapida panoramica sull’aspetto e le
 funzionalità del software. I video devono essere ospitati su una
 piattaforma di video sharing che supporti lo standard
 `oEmbed <https://oembed.com>`__; le opzioni più popolari sono YouTube e
-Vimeo. **Nota bene:** dal momento che costituisce parte integrante della
+Vimeo. 
+
+**Nota bene:** dal momento che costituisce parte integrante della
 documentazione, è opportuno che il video sia pubblicato con una licenza
 aperta.
 
@@ -653,7 +655,7 @@ Chiave ``maintenance/contractors``
 ''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di Contractor (vedi sotto)
--  Presenza: obbligatoria (se ``maintainance/type`` **è** ``contract``)
+-  Presenza: obbligatoria (se ``maintenance/type`` **è** ``contract``)
 
 Questa chiave descrive l’entità o le entità, se ce ne sono, che
 attualmente hanno un contratto di manutenzione del software. Queste
@@ -663,7 +665,7 @@ Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
 -  Tipo: Lista di Contatti (vedi sotto)
--  Presenza: obbligatoria (se ``maintainance/type`` **è** ``internal`` oppure ``community``)
+-  Presenza: obbligatoria (se ``maintenance/type`` **è** ``internal`` oppure ``community``)
 
 Uno o più contatti di chi sta mantenendo il software.
 

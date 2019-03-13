@@ -244,6 +244,7 @@ Key ``developmentStatus``
    ``obsolete``
 
 The keys are: 
+
 -  ``concept`` - The software is just a “concept”. No
    actual code may have been produced, and the repository could simply be a
    placeholder. 
@@ -616,7 +617,7 @@ Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
 -  Type: array of Contractor (see below)
--  Presence: mandatory (if ``maintainance/type`` **is** ``contract``)
+-  Presence: mandatory (if ``maintenance/type`` **is** ``contract``)
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -626,7 +627,7 @@ Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
 -  Type: List of Contacts (see below)
--  Presence: mandatory (if ``maintainance/type`` **is** ``internal`` or ``community``)
+-  Presence: mandatory (if ``maintenance/type`` **is** ``internal`` or ``community``)
 
 One or more contacts maintaining this software.
 

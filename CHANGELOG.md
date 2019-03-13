@@ -1,6 +1,27 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [core-0.2/it-0.2] - 2019-03-13
+### Added
+- A new `piattaforme` section has been created to group the platforms inside of
+  it.
+
+### Changed
+- The `conforme/accessibile` key becomes `conforme/lineeGuidaDesign` since it
+  is more self-explanatory.
+- The `conforme/interoperabile` key becomes `conforme/modelloInteroperabilita`
+  since it is more self-explanatory.
+- The `conforme/sicuro` key becomes `conforme/misureMinimeSicurezza` since
+  before it was rather vague and incomplete.
+- The `conforme/privacy` key becomes `conforme/gdpr` since the `privacy` term
+  is quite vague and incomplete.
+
+### Removed
+- The `ecosistemi` key has been removed since its values are already present in
+  the `intendedAudience/scope` key.
+- The `designKit` section has been removed since we will track the design kits
+  usages by means of the crawler.
+
 ## [core-0.2] - 2019-03-11
 ### Added
 - A new `countryExtensionVersion` key was added under each country-specific extension, in order to separate their versioning from the core.
@@ -11,7 +32,7 @@ All notable changes to this project will be documented in this file.
 - `tags` was replaced by `categories` (with a different dictionary of values).
 - BCP47 is now used for languages instead of ISO 639-2, thus keys under `description` will now look like `en` instead of `eng`
 - `publiccode-yaml-version` was moved to `publiccodeYmlVersion` using camelCase
-- `maintainance/contacts` is now mandatory only if `maintainance/type` is `internal` or `community`.
+- `maintenance/contacts` is now mandatory only if `maintenance/type` is `internal` or `community`.
 - All files ported to RST from previous MD
 
 ### Removed
