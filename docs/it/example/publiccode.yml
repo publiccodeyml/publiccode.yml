@@ -120,7 +120,7 @@ dependsOn:
       optional: yes
 
 it:
-  countryExtensionVersion: "0.1"
+  countryExtensionVersion: "0.2"
 
   conforme:
     lineeGuidaDesign: yes
