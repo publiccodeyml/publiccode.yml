@@ -24,7 +24,7 @@ Key ``name``
 
 -  Type: string
 -  Presence: mandatory
--  Example: “Medusa”
+-  Example: ``"Medusa"``
 
 This key contains the name of the software. It contains the (short)
 public name of the product, which can be localised in the specific
@@ -37,7 +37,7 @@ Key ``applicationSuite``
 
 -  Type: string
 -  Presence: optional
--  Example: “MegaProductivitySuite”
+-  Example: ``"MegaProductivitySuite"``
 
 This key contains the name of the “suite” to which the software belongs.
 
@@ -126,7 +126,7 @@ Key ``logo``
 -  Type: string (relative path to file or absolute URL)
 -  Presence: optional
 -  Acceptable formats: SVG, SVGZ, PNG
--  Example: ``img/logo.svg``
+-  Example: ``"img/logo.svg"``
 
 This key contains the path to the logo of the software. Logos should be
 in vector format; raster formats are only allowed as a fallback. In this
@@ -142,7 +142,7 @@ Key ``monochromeLogo``
 -  Type: string (path to file)
 -  Presence: optional
 -  Acceptable formats: SVG, SVGZ, PNG
--  Example: ``img/logo-mono.svg``
+-  Example: ``"img/logo-mono.svg"``
 
 A monochromatic (black) logo. The logo should be in vector format;
 raster formats are only allowed as a fallback. In this case, they should
@@ -158,7 +158,7 @@ Key ``inputTypes``
 -  Type: array of enumerated strings
 -  Presence: optional
 -  Values: as per RFC 6838
--  Example: ``text/plain``
+-  Example: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
@@ -173,7 +173,7 @@ Key ``outputTypes``
 -  Type: array of enumerated strings
 -  Presence: optional
 -  Values: as per RFC 6838
--  Example: ``text/plain``
+-  Example: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
@@ -264,9 +264,9 @@ Key ``softwareType``
 
 -  Type: enumerated string
 -  Presence: mandatory
--  Allowed values: ``standalone/mobile``, ``standalone/iot``,
-   ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
-   ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
+-  Allowed values: ``"standalone/mobile"``, ``"standalone/iot"``,
+   ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
+   ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
 The keys are:
 
@@ -360,7 +360,7 @@ Key ``description/[lang]/localisedName``
 
 -  Type: string
 -  Presence: optional
--  Example: “Medusa”
+-  Example: ``"Medusa"``
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the
@@ -373,7 +373,7 @@ Key ``description/[lang]/genericName``
 
 -  Type: string (max 35 chars)
 -  Presence: mandatory
--  Example: “Text Editor”
+-  Example: ``"Text Editor"``
 
 This key is the “Generic name”, which refers to the specific category to
 which the software belongs. You can usually find the generic name in the
@@ -605,13 +605,13 @@ Key ``maintenance/type``
 
 This key describes how the software is currently maintained.
 
--  ``"internal"`` - means that the software is internally maintained by the
+-  ``internal`` - means that the software is internally maintained by the
    repository owner. 
--  ``"contract"`` - means that there is a commercial
+-  ``contract`` - means that there is a commercial
    contract that binds an entity to the maintenance of the software;
--  ``"community"`` - means that the software is currently maintained by one
+-  ``community`` - means that the software is currently maintained by one
    or more people that donate their time to the project; 
--  ``"none"`` - means that the software is not actively maintained.
+-  ``none`` - means that the software is not actively maintained.
 
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
@@ -737,7 +737,7 @@ compatibility matrix.
 .. code:: yaml
 
    - name: PostgreSQL
-     version: 3.2
+     version: "3.2"
      optional: yes
 
 This snippet marks an optional dependency on PostgreSQL exactly version
@@ -748,8 +748,8 @@ This snippet marks an optional dependency on PostgreSQL exactly version
 .. code:: yaml
 
    - name: MySQL
-     versionMin: 1.1
-     versionMax: 1.3
+     versionMin: "1.1"
+     versionMax: "1.3"
 
 This snippet marks a mandatory dependency on MySQL, allowing any version
 between 1.1 and 1.3.

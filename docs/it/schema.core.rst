@@ -134,7 +134,7 @@ Chiave ``logo``
 -  Tipo: stringa (percorso verso il file)
 -  Presenza: opzionale
 -  Formati accettabili: SVG, SVGZ, PNG
--  Esempio: ``img/logo.svg``
+-  Esempio: ``"img/logo.svg"``
 
 Questa chiave indica il logo del software. Il valore può essere il percorso
 relativo al file a partire dalla root del repository, oppure una URL assoluta
@@ -150,7 +150,7 @@ Chiave ``monochromeLogo``
 -  Tipo: stringa (percorso verso il file)
 -  Presenza: opzionale
 -  Formati accettabili: SVG, SVGZ, PNG
--  Esempio: ``img/logo-mono.svg``
+-  Esempio: ``"img/logo-mono.svg"``
 
 Questa chiave indica il logo monocromatico (nero) del software. Il valore può
 essere il percorso
@@ -167,7 +167,7 @@ Chiave ``inputTypes``
 -  Tipo: array di stringhe
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
--  Esempio: ``text/plain``
+-  Esempio: ``"text/plain"``
 
 Una lista di Media Types (MIME Types), come specificato dal `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere
@@ -182,7 +182,7 @@ Chiave ``outputTypes``
 -  Tipo: array di stringhe
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
--  Esempio: ``text/plain``
+-  Esempio: ``"text/plain"``
 
 Una lista di Media Types (MIME Types), come specificato dal `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere
@@ -276,9 +276,9 @@ Chiave ``softwareType``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Valori permessi: ``standalone/mobile``, ``standalone/iot``,
-   ``standalone/desktop``, ``standalone/web``, ``standalone/backend``,
-   ``standalone/other``, ``addon``, ``library``, ``configurationFiles``
+-  Valori permessi: ``"standalone/mobile"``, ``"standalone/iot"``,
+   ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
+   ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
 Le chiavi sono: 
 
@@ -380,7 +380,7 @@ Chiave ``description/[lang]/localisedName``
 
 -  Tipo: stringa
 -  Presenza: opzionale
--  Esempio: “Medusa”
+-  Esempio: ``"Medusa"``
 
 Questa chiave rappresenta un’opportunità di tradurre il nome in una
 lingua specifica. Contiene il nome pubblico (corto) del prodotto.
@@ -394,7 +394,7 @@ Chiave ``description/[lang]/genericName``
 
 -  Tipo: stringa (max 35 caratteri)
 -  Presenza: obbligatoria
--  Esempio: “Text Editor”
+-  Esempio: ``"Text Editor"``
 
 Questa chiave rappresenta il “Nome generico”, riferito alla categoria
 specifica alla quale il software appartiene. Normalmente è possibile
@@ -644,13 +644,13 @@ Chiave ``maintenance/type``
 Questa chiave descrive come il software è attualmente manutenuto.
 Le chiavi sono:
 
--  ``"internal"`` - significa che il software è manutenuto internamente dal
+-  ``internal`` - significa che il software è manutenuto internamente dal
    proprietario del repository; 
--  ``"contract"`` - significa che c’è un contratto commerciale che lega un’entità
+-  ``contract`` - significa che c’è un contratto commerciale che lega un’entità
    alla manutenzione del software;
--  ``"community"`` - significa che il software è attualmente manutenuto da
+-  ``community`` - significa che il software è attualmente manutenuto da
    una o più persone che offrono il loro tempo al progetto; 
--  ``"none"`` - significa che il software non è al momento manutenuto.
+-  ``none`` - significa che il software non è al momento manutenuto.
 
 Chiave ``maintenance/contractors``
 ''''''''''''''''''''''''''''''''''
@@ -780,7 +780,7 @@ matrice di compatibilità complessa.
 .. code:: yaml
 
    - name: PostgreSQL
-     version: 3.2
+     version: "3.2"
      opzionale: yes
 
 Questo snippet segnala una dipendenza opzionale verso PostgreSQL,
@@ -791,8 +791,8 @@ nell’esattezza la sua versione 3.2.
 .. code:: yaml
 
    - name: MySQL
-     versionMin: 1.1
-     versionMax: 1.3
+     versionMin: "1.1"
+     versionMax: "1.3"
 
 Questo snippet segnala una dipendenza obbligatoria verso MySQL,
 permettendo ogni versione tra la 1.1 e la 1.3.
