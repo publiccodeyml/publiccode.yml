@@ -50,3 +50,4 @@ Table of contents
    categories-list.rst
    scope-list.rst
    example.rst
+   CHANGELOG.rst
