@@ -51,3 +51,4 @@ Indice dei contenuti
    categories-list.rst
    scope-list.rst
    example.rst
+   ../../CHANGELOG.rst
