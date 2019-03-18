@@ -77,8 +77,8 @@ Se presente e impostato a ``yes``, il software rispetta il GDPR.
 Sezione ``piattaforme``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Chiave ``spid``
-'''''''''''''''
+Chiave ``piattaforme/spid``
+'''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -87,8 +87,8 @@ Se presente e impostato a ``yes``, il software si interfaccia con `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
-Chiave ``cie``
-''''''''''''''
+Chiave ``piattaforme/cie``
+''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -96,16 +96,16 @@ Chiave ``cie``
 Se presente e impostato a ``yes``, il software si interfaccia con la
 Carta di Identità Elettronica.
 
-Chiave ``anpr``
-'''''''''''''''
+Chiave ``piattaforme/anpr``
+'''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
 
 Se presente e impostato a ``yes``, il software si interfaccia con ANPR.
 
-Chiave ``pagopa``
-'''''''''''''''''
+Chiave ``piattaforme/pagopa``
+'''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale

@@ -80,8 +80,8 @@ If present and set to ``yes``, the software respects the GDPR.
 Section ``piattaforme``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Key ``spid``
-''''''''''''
+Key ``piattaforme/spid``
+''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -91,8 +91,8 @@ If present and set to ``yes``, the software interfaces with `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
-Key ``cie``
-'''''''''''
+Key ``piattaforme/cie``
+'''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -100,16 +100,16 @@ Key ``cie``
 If present and set to ``yes``, the software interfaces with the Italian
 electronic ID card (``Carta di Identità Elettronica``).
 
-Key ``anpr``
-''''''''''''
+Key ``piattaforme/anpr``
+''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
 
 If present and set to ``yes``, the software interfaces with ANPR.
 
-Key ``pagopa``
-''''''''''''
+Key ``piattafome/pagopa``
+'''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
