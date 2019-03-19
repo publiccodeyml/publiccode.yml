@@ -28,7 +28,4 @@ Notice that country-specific extensions within international sections
 are not allowed. Countries that want to extend the format should add a
 country-specific section instead.
 
-Documentation for the keys contained in a country specific section is
-maintained in separate files.
-
--  Italy: :ref:`italian-extensions`. 
+.. include:: schema.it.rst
