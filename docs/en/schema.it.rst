@@ -38,7 +38,7 @@ Key ``conforme/lineeGuidaDesign``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the Italian accessibility
+If present and set to ``true``, the software is compliant with the Italian accessibility
 laws (L. 4/2004), as further explained in the 
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
@@ -49,7 +49,7 @@ Key ``conforme/modelloInteroperatibilita``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the `linee
+If present and set to ``true``, the software is compliant with the `linee
 guida
 sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs>`__.
 
@@ -63,7 +63,7 @@ Key ``conforme/misureMinimeSicurezza``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the `Misure
+If present and set to ``true``, the software is compliant with the `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__ (Italian language). 
 
@@ -74,7 +74,7 @@ Key ``conforme/gdpr``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software respects the GDPR.
+If present and set to ``true``, the software respects the GDPR.
 
 
 Section ``piattaforme``
@@ -87,7 +87,7 @@ Key ``piattaforme/spid``
 - Presence: optional
 
 
-If present and set to ``yes``, the software interfaces with `SPID
+If present and set to ``true``, the software interfaces with `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
@@ -97,7 +97,7 @@ Key ``piattaforme/cie``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with the Italian
+If present and set to ``true``, the software interfaces with the Italian
 electronic ID card (``Carta di Identità Elettronica``).
 
 Key ``piattaforme/anpr``
@@ -106,7 +106,7 @@ Key ``piattaforme/anpr``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with ANPR.
+If present and set to ``true``, the software interfaces with ANPR.
 
 Key ``piattafome/pagopa``
 '''''''''''''''''''''''''
@@ -114,7 +114,7 @@ Key ``piattafome/pagopa``
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with pagoPA.
+If present and set to ``true``, the software interfaces with pagoPA.
 
 Section ``riuso``
 ~~~~~~~~~~~~~~~~~

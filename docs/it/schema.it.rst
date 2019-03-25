@@ -38,7 +38,7 @@ Chiave ``conforme/lineeGuidaDesign``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle leggi in
+Se presente e impostato a ``true``, il software è conforme alle leggi in
 materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__.
@@ -49,7 +49,7 @@ Chiave ``conforme/modelloInteroperabilita``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle `linee
+Se presente e impostato a ``true``, il software è conforme alle `linee
 guida
 sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs>`__.
 
@@ -62,7 +62,7 @@ Chiave ``conforme/misureMinimeSicurezza``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle `Misure
+Se presente e impostato a ``true``, il software è conforme alle `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__.
 
@@ -72,7 +72,7 @@ Chiave ``conforme/gdpr``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software rispetta il GDPR.
+Se presente e impostato a ``true``, il software rispetta il GDPR.
 
 Sezione ``piattaforme``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +83,7 @@ Chiave ``piattaforme/spid``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con `SPID
+Se presente e impostato a ``true``, il software si interfaccia con `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
@@ -93,7 +93,7 @@ Chiave ``piattaforme/cie``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con la
+Se presente e impostato a ``true``, il software si interfaccia con la
 Carta di Identità Elettronica.
 
 Chiave ``piattaforme/anpr``
@@ -102,7 +102,7 @@ Chiave ``piattaforme/anpr``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con ANPR.
+Se presente e impostato a ``true``, il software si interfaccia con ANPR.
 
 Chiave ``piattaforme/pagopa``
 '''''''''''''''''''''''''''''
@@ -110,7 +110,7 @@ Chiave ``piattaforme/pagopa``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con
+Se presente e impostato a ``true``, il software si interfaccia con
 pagoPA.
 
 Sezione ``riuso``

@@ -24,7 +24,7 @@ Dunque, se un software è compatibile, troveremo:
    it:
      countryExtensionVersion: "0.2"
      piattaforme:
-        - spid: yes
+        - spid: true 
 
 Nota bene che le chiavi *country-specific* **non** sono valide
 all’interno delle sezioni internazionali. I Paesi che vogliano estendere

@@ -22,7 +22,7 @@ If a software is compliant I will find:
    it:
      countryExtensionVersion: "0.2"
      piattaforme:
-      - spid: yes
+      - spid: true
 
 Notice that country-specific extensions within international sections
 are not allowed. Countries that want to extend the format should add a

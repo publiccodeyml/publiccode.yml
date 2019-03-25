@@ -694,7 +694,7 @@ Chiave ``localisation/localisationReady``
 -  Tipo: booleano
 -  Presenza: obbligatoria
 
-Se ``yes``, il software ha l’infrastruttura o è stato progettato per
+Se ``true``, il software ha l’infrastruttura o è stato progettato per
 essere multi-lingua. Ad ogni modo, questo campo non pregiudica
 l’esistenza di una traduzione in altre lingue ma si riferisce
 esclusivamente all’aspetto tecnologico. Per l’elenco delle lingue
@@ -781,7 +781,7 @@ matrice di compatibilità complessa.
 
    - name: PostgreSQL
      version: "3.2"
-     opzionale: yes
+     opzionale: true
 
 Questo snippet segnala una dipendenza opzionale verso PostgreSQL,
 nell’esattezza la sua versione 3.2.
