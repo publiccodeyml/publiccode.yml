@@ -1,90 +1,88 @@
 Changelog
 =========
 
-All notable changes to this project will be documented in this file.
+Tutti i cambiamenti di questo progetto saranno documentati in questo
+file.
 
 [core-0.2/it-0.2] - 2019-03-13
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Added
-'''''
+Aggiunte
+''''''''
 
--  A new ``piattaforme`` section has been created to group the platforms
-   inside of it.
+-  Una nuova sezione denominata ``piattaforme`` è stata creata.
 
-Changed
-'''''''
+Cambiamenti
+'''''''''''
 
--  The ``conforme/accessibile`` key becomes
-   ``conforme/lineeGuidaDesign`` since it is more self-explanatory.
--  The ``conforme/interoperabile`` key becomes
-   ``conforme/modelloInteroperabilita`` since it is more
-   self-explanatory.
--  The ``conforme/sicuro`` key becomes
-   ``conforme/misureMinimeSicurezza`` since before it was rather vague
-   and incomplete.
--  The ``conforme/privacy`` key becomes ``conforme/gdpr`` since the
-   ``privacy`` term is quite vague and incomplete.
+-  La chiave ``conforme/accessibile`` diventa ``conforme/lineeGuidaDesign``
+   siccome è più autoesplicativa.
+-  La chiave ``conforme/interoperabile`` diventa
+   ``conforme/modelloInteroperabilita`` siccome è più autoesplicativa.
+-  La chiave ``conforme/sicuro`` diventa
+   ``conforme/misureMinimeSicurezza`` siccome prima era vaga e incompleta. 
+-  La chiave ``conforme/privacy`` diventa ``conforme/gdpr`` siccome il termine
+   ``privacy`` è vago e incompleto.
 
-Removed
-'''''''
+Rimozioni
+'''''''''
 
--  The ``ecosistemi`` key has been removed since its values are already
-   present in the ``intendedAudience/scope`` key.
--  The ``designKit`` section has been removed since we will track the
-   design kits usages by means of the crawler.
+-  La chiave ``ecosistemi`` è stata rimossa siccome i suoi valori sono già
+   presenti all'interno della chiave ``intendedAudience/scope``. 
+-  La sezione ``designKit`` è stata rimossa siccome tracceremo l'utilizzo dei
+   design kit attraverso il crawler.
 
 [core-0.2] - 2019-03-11
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _added-1:
 
-Added
-'''''
+Aggiunte
+''''''''
 
--  A new ``countryExtensionVersion`` key was added under each
-   country-specific extension, in order to separate their versioning
-   from the core.
--  The ``standalone`` value for the ``softwareType`` key was deprecated
-   in favor of more specific values: ``standalone/mobile``,
+-  Una nuova chiave denominata ``countryExtensionVersion`` è stata aggiunta per
+   separarne il versionamento dal core.
+-  Il valore ``standalone`` per il ``softwareType`` è stato deprecato in favore
+   di valori più specifici quali: ``standalone/mobile``,
    ``standalone/iot``, ``standalone/desktop``, ``standalone/web``,
    ``standalone/backend``, ``standalone/other``
 
 .. _changed-1:
 
-Changed
-'''''''
+Cambiamenti
+'''''''''''
 
--  ``intendedAudience/onlyFor`` was renamed to
-   ``intendedAudience/scope`` (with a different dictionary of values).
--  ``tags`` was replaced by ``categories`` (with a different dictionary
-   of values).
--  BCP47 is now used for languages instead of ISO 639-2, thus keys under
-   ``description`` will now look like ``en`` instead of ``eng``
--  ``publiccode-yaml-version`` was moved to ``publiccodeYmlVersion``
-   using camelCase
--  ``maintenance/contacts`` is now mandatory only if
-   ``maintenance/type`` is ``internal`` or ``community``.
--  All files ported to RST from previous MD
+-  La chiave ``intendedAudience/onlyFor`` è stata rinominata in
+   ``intendedAudience/scope`` (con un diverso dizionario di valori).
+-  La chiave ``tags`` è stata sostituita da ``categories`` (con un diverso dizionario di
+   valori).
+-  BCP47 è ora utilizzato al posto dell'ISO 639-2, quindi le chiavi presenti
+   sotto a ``description`` appariranno ora come ``en`` invece che ``eng``
+-  La chiave ``publiccode-yaml-version`` è stata rinominata come ``publiccodeYmlVersion``
+   usando lo stile camelCase
+-  La chiave ``maintenance/contacts`` è ora obbligatoria se e solo se 
+   ``maintenance/type`` è ``internal`` oppure ``community``.
+-  Tutti i file sono stati portati al formato RST da MD. 
 
 .. _removed-1:
 
-Removed
-'''''''
+Rimozioni
+'''''''''
 
--  The ``freeTags`` key was removed.
+-  La chiave ``freeTags`` è stata rimossa. 
 
 [core-0.1] - 2019-01-25
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _added-2:
 
-Added
-'''''
+Aggiunte
+''''''''
 
--  Files for first release
+-  File per la prima release 
 
-The format is based on `Keep a
-Changelog <https://keepachangelog.com/en/1.0.0/>`__, and this project
-adheres to `Semantic
+Il formato del file è basato su `Keep a
+Changelog <https://keepachangelog.com/en/1.0.0/>`__, e questo progetto aderisce
+al 
+`Semantic
 Versioning <https://semver.org/spec/v2.0.0.html>`__.
