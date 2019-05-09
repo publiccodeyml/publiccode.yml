@@ -672,7 +672,7 @@ Uno o più contatti di chi sta mantenendo il software.
 
 Questa chiave descrive le persone tecniche che attualmente sono
 responsabili della manutenzione del software. Tutti i contatti devono
-essere di una persona fisica, non una un’azienda o un’organizzazione. Se
+essere di una persona fisica, non un’azienda o un’organizzazione. Se
 un contatto funge da rappresentante di un’istituzione, questo rapporto
 deve essere esplicitato attraverso la chiave ``affiliation``.
 
