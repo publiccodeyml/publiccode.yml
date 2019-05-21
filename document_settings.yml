@@ -1,5 +1,5 @@
 document:
-  name: publiccode.yml
+  name: Lo Standard publiccode.yml
   description: |
     publiccode.yml è lo standard di metadatazione del software pubblico, richiesto dalle Linee Guida per l'Acquisizione e il Riuso del Software per la Pubblica Amministrazione.
   tags:
