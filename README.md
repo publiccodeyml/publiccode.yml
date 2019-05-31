@@ -7,7 +7,8 @@
 Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
 [![Documentation](https://img.shields.io/badge/Documentation-Docs%20Italia-blue.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
 
-> A metadata description standard for public software
+> A metadata description standard for public software. Read this in [Docs
+> Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
 
 *Leggi questo documento in [Italiano](README.it.md)*
 
@@ -59,7 +60,7 @@ context it was developed in.
 
 ## Documentation
 
-This repository is structured in order to be compatible with the [Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
+This repository is structured in order to be compatible with the [Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
 platform. As such, the content in the relevant folders will be
 compiled and rendered inside that platform. The `Docs Italia` platform is
 able to handle different releases and localised versions of the same file

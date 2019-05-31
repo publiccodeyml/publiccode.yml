@@ -7,7 +7,9 @@
 Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
 [![Documentation](https://img.shields.io/badge/Documentation-Docs%20Italia-blue.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
 
-> Uno standard di descrizione di metadati per software pubblico 
+> Uno standard di descrizione di metadati per software pubblico. Leggi questo
+> documento su [Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/)
+
 
 *Read this in [English](README.md).*
 
