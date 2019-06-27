@@ -95,7 +95,7 @@ utente.
 Autori
 ~~~~~~
 
-Gli autori che vorrebbero pubblicare un fork come una variante
+Gli autori che vogliano pubblicare un fork come una variante
 **DEVONO** almeno:
 
 -  Aggiungere una chiave ``isBasedOn`` che punti a uno o più repository
