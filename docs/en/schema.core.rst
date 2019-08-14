@@ -53,9 +53,9 @@ source code repository (git, svn, …) in which the software is published.
 If the repository is available under multiple protocols, prefer
 HTTP/HTTPS URLs which don’t require user authentication.
 
-Forks created for the purpose of contributing upstreams should not
+Forks created for the purpose of contributing upstream should not
 modify this file; this helps software parsing ``publiccode.yml`` to
-immediately skips technical forks. On the contrary, a
+immediately skip technical forks. On the contrary, a
 complete fork that is meant to be maintained separately from the
 original software should modify this line, to give themselves the status
 of a different project.
@@ -377,7 +377,7 @@ Key ``description/[lang]/genericName``
 
 This key is the “Generic name”, which refers to the specific category to
 which the software belongs. You can usually find the generic name in the
-presentation of the software, when you write: “Software xxx is a yyy”
+presentation of the software, when you write: “Software xxx is a yyy”.
 Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
 “Chat” and so on… The generic name can be up to 35 characters long.
 
@@ -427,7 +427,7 @@ bar, etc.).
 If the documentation is instead available only as a document, put a
 direct view/download link as URL in this key. You should commit the
 document as part of the source code repository, and then link to it
-using the code hosting source browser URL (eg: GitHub URL to the file).
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
 Prefer using open formats like PDF or ODT for maximum interoperability.
 
 Whichever the format for the documentation, remember to make its source
@@ -453,7 +453,7 @@ reference or test deployment, possibly offer an interactive interface
 If the documentation is instead available only as a document, put a
 direct view/download link as URL in this key. You should commit the
 document as part of the source code repository, and then link to it
-using the code hosting source browser URL (eg: GitHub URL to the file).
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
 Prefer using open formats like PDF or ODT for maximum interoperability.
 
 Whichever the format for the documentation, remember to make its source
@@ -676,7 +676,7 @@ Section ``dependsOn``
 This section provides an overview on the system-level dependencies
 required to install and use this software.
 
-**NOTE:** do not list dependencies at the source code level (eg:
+**NOTE:** do not list dependencies at the source code level (e.g.:
 software libraries being used), and focus only on runtime and/or
 system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
