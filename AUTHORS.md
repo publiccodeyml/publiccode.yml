@@ -4,10 +4,9 @@ Although the publiccode.yml is released under CC-0, we list here the main contri
 
 ## [Italian Digital Transformation Team](https://teamdigitale.governo.it)
 
-* Giovanni Bajo <giovanni@teamdigitale.governo.it> (initial draft)
+* Giovanni Bajo <giovanni@teamdigitale.governo.it>
 * Riccardo Iaconelli <riccardo@teamdigitale.governo.it>
 * Alessandro Ranellucci <alranel@teamdigitale.governo.it>
-  
-## [Foundation For Public Code](https://publiccode.net)
+* Leonardo Favario <leonardo@teamdigitale.governo.it>
 
-* Boris van Hoytema <boris@publiccode.net>
+We'd also like to thank the following people for their input on the development of the format: Boris Van Hoytema, Italo Vignoli
