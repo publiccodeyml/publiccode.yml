@@ -92,7 +92,7 @@ maintenance:
     - name: Francesco Rossi
       email: "francesco.rossi@comune.reggioemilia.it"
       affiliation: Comune di Reggio Emilia
-      phone: +39 231 13215112
+      phone: "+39 231 13215112"
 
 localisation:
   localisationReady: yes
