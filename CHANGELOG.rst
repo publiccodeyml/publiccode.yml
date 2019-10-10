@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 Changed
 ~~~~~~~
 
--  Mandates phone numbers to be strings surrounded by double quotes
+-  Phone numbers have to be strings. If it is necessary, they can have double
+   quotes. 
 
 [core-0.2/it-0.2] - 2019-03-13
 ------------------------------
