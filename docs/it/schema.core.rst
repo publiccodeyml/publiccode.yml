@@ -814,7 +814,7 @@ Un Contatto è un oggetto con le seguenti proprietà:
    raccolta di indirizzi email, usare ``\x64`` per sostituire ``@``,
    siccome questo è permesso dalle specifiche YAML.
 -  ``phone`` - Numero telefonico (con prefisso internazionale). Questa chiave
-   deve essere una stringa delimitata da doppi apici.
+   deve essere una stringa.
 -  ``affiliation`` - Questa chiave contiene informazioni esplicite sui
    contatti tecnici. Nel caso esistano diversi maintainer, questa chiave
    può essere usata per creare relazioni tra diversi contatti tecnici e

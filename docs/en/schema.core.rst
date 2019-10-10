@@ -771,7 +771,7 @@ A Contact is an object with the following properties:
    collection, use ``\x64`` to replace ``@``, as allowed by the YAML
    specification.
 -  ``phone`` - phone number (with international prefix). This has to be
-   a string delimited by double quotes. 
+   a string. 
 -  ``affiliation`` - This key contains an explicit affiliation
    information for the technical contact. In case of multiple
    maintainers, this can be used to create a relation between each
