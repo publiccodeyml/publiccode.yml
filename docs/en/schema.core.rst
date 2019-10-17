@@ -61,7 +61,7 @@ original software should modify this line, to give themselves the status
 of a different project.
 
 See :ref:`forks-and-variants` for a complete description of what
-is a software variant and how to handle forked softwares as a parser or
+is a software variant and how to handle forked software as a parser or
 an author.
 
 Key ``landingURL``
@@ -162,7 +162,7 @@ Key ``inputTypes``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
-handle as output.
+handle as input.
 
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
@@ -469,7 +469,7 @@ Key ``description/[lang]/features``
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
 should be that of public decision makers who will be commissioning the
-software. The features should thus not target developers: instead of
+software. The features should thus not target developers; instead of
 listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
@@ -582,7 +582,7 @@ Key ``legal/authorsFile``
 -  Presence: optional
 -  Example: ``"doc/AUTHORS.txt"``
 
-Some open-source softwares adopt a convention of identify the copyright
+Some open-source software adopt a convention of identify the copyright
 holders through a file that lists all the entities that own the
 copyright. This is common in projects strongly backed by a community
 where there are many external contributors and no clear single/main
@@ -606,11 +606,11 @@ Key ``maintenance/type``
 This key describes how the software is currently maintained.
 
 -  ``internal`` - means that the software is internally maintained by the
-   repository owner. 
+   repository owner;
 -  ``contract`` - means that there is a commercial
    contract that binds an entity to the maintenance of the software;
 -  ``community`` - means that the software is currently maintained by one
-   or more people that donate their time to the project; 
+   or more people that donate their time to the project;
 -  ``none`` - means that the software is not actively maintained.
 
 Key ``maintenance/contractors``
