@@ -1,21 +1,22 @@
 .. _`country-extension`:
 
+Extensions spcécifiques à un pays
 Country-Specific Extensions
 ===========================
 
-While the standard is structured to be meaningful on an international
-level, there are additional information that can be added that makes
-sense in specific countries, such as declaring compliance with local
-laws or regulations. The provided extension mechanism is the usage of
-country-specific sections.
+Bien que la norme soit structurée pour avoir un sens sur le plan international, 
+on peut ajouter des informations supplémentaires qui ont une utilité dans 
+certains pays, comme la déclaration de conformité aux lois ou règlements. 
+Le mécanisme d'extension fourni est l'utilisation de sections spécifiques 
+à chaque pays.
 
-All country-specific extensions are contained in a section named with
-the two-letter lowercase `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. For instance
-``spid`` is a property for Italian software declaring whether the
-software is integrated with the Italian Public Identification System.
+Toutes les extensions spécifiques à un pays sont contenues dans une section
+nommée avec deux lettres minuscules `ISO 3166-1 alpha-2 country
+code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Pour le moment 
+``spid`` est une propriété pour un logiciel Italien  indiquant  si le logiciel
+est intégré au système italien d'identification publique.
 
-If a software is compliant I will find:
+Si un logiciel est conforme, je trouverai :
 
 .. code:: yaml
 
@@ -24,8 +25,10 @@ If a software is compliant I will find:
      piattaforme:
       - spid: yes
 
-Notice that country-specific extensions within international sections
-are not allowed. Countries that want to extend the format should add a
-country-specific section instead.
+
+Notez que les extensions spécifiques à un pays avec des sections 
+internationales ne sont pas autorisées. Les pays qui souhaitent 
+étendre le format devrait ajouter une section spécifique au pays 
+à la place.
 
 .. include:: schema.it.rst

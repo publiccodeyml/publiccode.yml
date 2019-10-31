@@ -1,43 +1,44 @@
 ``publiccode.yml``
 ==================
 
-``publiccode.yml`` is a metadata standard for repositories containing software
-developed or acquired by the Public Administration, aimed at making them easily
-discoverabile and thus reusable by other entities.
+``publiccode.yml`` est un standard de métadonnées pour les référentiels contenant des logiciels
+développés ou acquis par l’administration publique dans le but de faciliter leur
+recherche et donc réutilisable par d'autres entités.
 
-By including a ``publiccode.yml`` file in the root of a repository, and
-populating it with information about the software, technicians and civil
-servants can evaluate it. Automatic indexing tools can also be built, since the
-format is easily readable by both humans and machines.
+En incluant un fichier ``publiccode.yml`` à la racine d'un repository, et
+en le populant avec des informations à propos du logiciel, les techniciens
+et les fonctionnaires peuvent l'évaluer. Les outils d'indexation automatique peuvent
+aussi être créés, puisque ce format est facilement lisible par à la fois des humains 
+et des robots.
 
-``publiccode.yml`` is mandatory for all public software developed in Italy,
-according to the national `guidelines
+``publiccode.yml`` est obligatoire pour tous les logiciels publiques développés en Italie,
+d'après les `guidelines
 <https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
 this enables the Developers Italia crawler to build the national `software
-catalog <https://developers.italia.it/>`__. The standard is designed to be
-interoperable internationally, thus the country-specific keys are separated by
-the core part and are defined in specific sections that each government can
-rule.
+catalog <https://developers.italia.it/>`__ nationales. Le standard est fait pour 
+être interopérable internationalement, par conséquence les clés spécfiques aux pays 
+sont séparées par la partie centrale et définis dans des sections spécifiques que 
+chaque gouvernement peut diriger.
 
-Details carried by a ``publiccode.yml`` file include: 
+Les détails apportés par un fichier ``publiccode.yml`` inclus : 
 
-- title and description of the project or product (in one or more languages); 
-- development state (e.g., ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``; 
-- contacts of the entity who published the codebase; 
-- contacts of the maintainer, if any, including the expire date of the maintenance contract; 
-- information about the legal context for which the project or product was designed; 
-- dependencies.
+- titre et description du projet ou produit (dans un ou plusieurs languages);
+- l'état du développement, par exemple : ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``;
+- les conctacts de l'entité qui publie la codebase;
+- les contacts des mainteneurs, si il y en a, incluant la date d'expiration du contrat de maintenance;
+- des informations à propos du context légal pour lequel le projet ou le produit a été créé;
+- les dépendances
   
-and much more.
+et bien plus encore.
 
-See also
+Voir aussi
 ----------
 
-- `More information about software reuse <https://developers.italia.it/en/reuse>`__
-- `publiccode.yml web editor
+- `Plus d'informations à propos de la réutilisation d'un logiciel <https://developers.italia.it/en/reuse>`__
+- `publiccode.yml éditeur web
   <https://publiccode-editor.developers.italia.it/>`__
 
-Table of contents
+Table du contenu
 -----------------
 
 .. toctree:: 

@@ -1,13 +1,12 @@
 .. _scope-list:
 
-Scope list
+Liste du scope
 ==========
 
-Here follows a controlled vocabulary of useful tags for categorizing the
-software.
+Ici se trouve une liste contrôlée du vocabulaire des tags utiles pour catégoriser un logiciel.
 
 ==========
-Valid Tags
+Tags valides
 ==========
 
 - agriculture
