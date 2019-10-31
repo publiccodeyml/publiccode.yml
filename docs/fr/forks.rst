@@ -1,31 +1,31 @@
 .. _forks-and-variants:
 
-Forks and variants
+Forks et variantes
 ==================
 
-As already cited before, a fork may have two different forms based on the final
-aim. As such, in order to make it clear how to handle the
-`publiccode.yml` in both cases, below we define two different
-semantics: technical forks and software variants.
 
-Technical forks (i.e. to publish patches)
+Comme déjà mentionné précédemment, un fork peut avoir deux formes 
+différentes basées sur l'objectif. En tant que tel, afin de bien comprendre
+comment gérer les `publiccode.yml` dans les deux cas, nous définissons ci-dessous deux
+sémantique: forks techniques et variantes logicielles.
+
+Forks techniques (par exemple pour publier des patchs)
 -----------------------------------------
 
-A technical fork is a fork made by a developer for the purpose of
-working on the original code base or sending improvements to the
-original authors, without any explicit goal of creating and publishing
-an alternative variant of the original software.
+Un fork technique est un fork fait par un développeur dans le but de:
+travailler sur la base de code d'origine ou envoyer des améliorations aux
+auteurs originaux, sans objectif explicite de création et de publication
+une variante alternative du logiciel d'origine.
 
-In the context of distributed control systems and collaborative code
-hosting platforms like GitHub, forking is almost always used by
-developers as a step to work on a contribution on an existing codebase,
-by sending “pull requests”.
+Dans le contexte des systèmes de contrôle distribués et plates-formes d’hébergement 
+du code collaboratif comme GitHub, le forking est presque toujours utilisé par
+les développeurs comme une étape pour travailler sur une contribution sur une base de code existante,
+en envoyant des "pull-request".
 
-Because of the way forking works on GitHub and other platforms,
-developers publish their forks as perfect copies of the original
-software, thus including also ``publiccode.yml``. However, parsers need
-to be able to distinguish such technical forks from the original
-codebase.
+En raison de la façon dont le fork fonctionne sur GitHub et d’autres plateformes,
+les développeurs publient leurs forks comme des copies parfaites de l'original
+logiciel, incluant donc aussi ``publiccode.yml``. Cependant, les analyseurs ont besoin
+d'être capables de distinguer ces forks techniques de la code base originale.
 
 Parsers
 ~~~~~~~
