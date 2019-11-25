@@ -40,7 +40,7 @@ Clé ``applicationSuite``
 -  Présence: optionelle
 -  Exemple: ``"MegaProductivitySuite"``
 
-Cette clé contient le nom de la “suite” à laquelle appartient le logiciel.
+Cette clé contient le nom de la « suite » à laquelle appartient le logiciel.
 
 Clé ``url``
 ~~~~~~~~~~~
@@ -224,7 +224,7 @@ Clé ``usedBy``
 -  Présence: optionelle
 
 Une liste des noms des administrations publiques de premier plan (qui
-auront un rôle de “certification”) qui sont connues, des mainteneurs du
+auront un rôle de « certification ») qui sont connues, des mainteneurs du
 logiciel, comme étant des utilisateurs.
 
 Les programmes d'analyses syntaxiques sont encouragés pour permettre
@@ -251,7 +251,7 @@ Clé ``developmentStatus``
 
 Les clés sont: 
 
--  ``concept`` - Le logiciel est encore un “concept” : aucun code n’a été
+-  ``concept`` - Le logiciel est encore un « concept » : aucun code n’a été
 développé, et le dépôt peut exister symboliquement, dans l'attente.
 -  ``development`` - Des efforts ont été fournits quant au développement
 du logiciel, mais le code n’est pas prêt pour un utilisateurs final, pas même
@@ -376,7 +376,7 @@ Clé ``description/[lang]/localisedName``
 
 Cette clé représente l'occasion de traduire le nom dans une langue spécifique.
 Cette clé contient le nom public (abrégé) du produit. Il s'agit du nom
-auquel se réfère la majorité des persones. Si le logiciel a un nom de “code”
+auquel se réfère la majorité des persones. Si le logiciel a un nom de « code »
 en interne et une dénommination commerciale, il est préférable d'indiquer
 la dénommination commerciale.
 
@@ -387,12 +387,12 @@ Clé ``description/[lang]/genericName``
 -  Présence: obligatoire
 -  Exemple: ``"Text Editor"``
 
-Cette clé indique le “nom générique”, en référence à la catégorie spécifique
+Cette clé indique le « nom générique », en référence à la catégorie spécifique
 à laquelle le logiciel appartient. Le nom générique du logiciel se trouve 
 généralement dans la présentation du logiciel, lorsque vous écrivez :
-“Le logiciel xxx est un.e yyy”. Parmi les exemples notables, il est possible
-de mentionner “Éditeur de texte”, “Logiciel de traitement de texte”,
-“Moteur de recherche”, “Forum”, etc… Le nom générique peut comporter
+« Le logiciel xxx est un.e yyy ». Parmi les exemples notables, il est possible
+de mentionner « Éditeur de texte », « Logiciel de traitement de texte »,
+« Moteur de recherche », « Forum », etc… Le nom générique peut comporter
 jusqu’à 35 caractères.
 
 Clé ``description/[lang]/shortDescription``
