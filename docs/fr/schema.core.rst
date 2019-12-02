@@ -550,7 +550,7 @@ Clé ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
 -  Type: array of strings
--  Preéence: optionelle
+-  Présence: optionelle
 
 Une liste des récompenses obtenues par le logiciel.
 
@@ -560,7 +560,7 @@ Section ``legal``
 Clé ``legal/license``
 '''''''''''''''''''''
 
--  Type: chaînes de caractères
+-  Type: chaîne de caractères
 -  Présence: obligatoire
 -  Exemple: ``"AGPL-3.0-or-later"``
 
@@ -577,96 +577,68 @@ Clé ``legal/mainCopyrightOwner``
 -  Présence: optionelle
 -  Exemple: ``"City of Amsterdam"``
 
-This string describes the entity that owns the copyright on “most” of
-the code in the repository. Normally, this is the line that is reported
-with the copyright symbol at the top of most files in the repo.
+Cette chaîne décrit l'entité qui détient les droits d'auteur sur la "majorité" du code du dépôt. Normallement, il s'agit de la ligne affichée avec le symbole du *copyright* et située au début de la plupart des fichiers du dépôt.
 
-It is possible to list multiple owners if required so, using an English
-sentence. It is also possible to informally refer to a community of
-group of people like “Linus Torvalds and all Linux contributors”.
+Il est possible de lister plusieurs propriétaires si nécessaire, en utilisant une phrase en anglais. Il est également possible de faire référence à une communauté ou à un groupe de personnes tel que "Linus Torvalds et tous les contributeurs Linux".
 
-In case it is not possible to name a main copyright owner, it is
-possible to omit this key; in those cases, if the repo has a authors
-file, you can point to it through ``legal/authorsFile``.
+S'il est impossible d'identifier le principal détenteur du droit d'auteur, il est possible d'omettre cette clé. Dans ce cas, si le dépôt a un fichier contenant le nom des auteurs, il est possible de pointer vers ce fichier via ``legal/authorsFile`` (voir ci-dessous).
 
-Key ``legal/repoOwner``
+Clé ``legal/repoOwner``
 '''''''''''''''''''''''
 
--  Type: string
--  Presence: optional
--  Example: ``"City of Amsterdam"``
+-  Type: chaîne de caractères
+-  Présence: optionelle
+-  Exemple: ``"City of Amsterdam"``
 
-This string describes the entity that owns this repository; this might
-or might not be the same entity who owns the copyright on the code
-itself. For instance, in case of a fork of the original software, the
-``repoOwner`` is probably different from the ``mainCopyrightOwner``.
+Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) de la même entité qui détient le droit d'auteur sur le code. Par exemple, dans le cas d'un logiciel fourché, le ``repoOwner`` est probablement différent du ``mainCopyrightOwner``.
 
-Key ``legal/authorsFile``
+Clé ``legal/authorsFile``
 '''''''''''''''''''''''''
 
--  Type: string (path to file)
--  Presence: optional
--  Example: ``"doc/AUTHORS.txt"``
+-  Type: chaîne de caractères (chemin du fichier)
+-  Présence: optionelle
+-  Exemple: ``"doc/AUTHORS.txt"``
 
-Some open-source software adopt a convention of identify the copyright
-holders through a file that lists all the entities that own the
-copyright. This is common in projects strongly backed by a community
-where there are many external contributors and no clear single/main
-copyright owner. In such cases, this key can be used to refer to the
-authors file, using a path relative to the root of the repository.
+Certains logiciels au code source ouvert adoptent une convention qui identifie les détenteurs du droit d'auteur via un fichier répertoriant toutes les entités titulaires du droit d'auteur. Il s'agit d'une pratique courante dans le cadre de projets fortement soutenus par une communauté où il y a de nombreux contributeurs externes et pas de titulaires du droit d'auteur unique / principal. Dans ce cas, cette clé peut être utilisée pour faire référence au fichier *authors* susmentionné, en utilisant un chemin relatif vers la racine du dépôt.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This section provides information on the maintenance status of the
-software, useful to evaluate whether the software is actively developed
-or not.
+Cette section contient des informations sur l'état de maintenance du logiciel, utile pour évaluer si le logiciel est activement développé.
 
-Key ``maintenance/type``
+Clé ``maintenance/type``
 ''''''''''''''''''''''''
 
 -  Type: enumerate
--  Presence: mandatory
--  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
+-  Présence: obligatoire
+-  Valeurs: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
-This key describes how the software is currently maintained.
+Cette clé décrit la manière dont le logiciel est maintenu.
 
--  ``internal`` - means that the software is internally maintained by the
-   repository owner;
--  ``contract`` - means that there is a commercial
-   contract that binds an entity to the maintenance of the software;
--  ``community`` - means that the software is currently maintained by one
-   or more people that donate their time to the project;
--  ``none`` - means that the software is not actively maintained.
+-  ``internal`` - siginifie que le logiciel est maintenu en interne par le propriétaire du dépôt ;
+-  ``contract`` - signifie qu'il existe un contrat commercial liant une entité à la maintenance du logiciel ;
+-  ``community`` - signifie que le logiciel est actuellement maintenu par une ou plusieurs personnes qui donnent de leur temps au projet ;
+-  ``none`` - signifie que le logiciel n'est pas maintenu de façon active.
 
-Key ``maintenance/contractors``
+Clé ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: array of Contractor (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``contract``)
+-  Type: array of Contractor (voir ci-dessous)
+-  Présence: obligatoire (si ``maintenance/type`` **est** ``contract``)
 
-This key describes the entity or entities, if any, that are currently
-contracted for maintaining the software. They can be companies,
-organizations, or other collective names.
+Cette clé décrit la ou les entités actuellement sous contrat pour la maintenance du logiciel. Il peut s'agir d'entreprises, d'orgnisations ou d'autres collectifs.
 
-Key ``maintenance/contacts``
+Clé ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: List of Contacts (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``internal`` or ``community``)
+-  Type: Liste des Contacts (voir ci-desous)
+-  Présence: obligatoire (si ``maintenance/type`` **est** ``internal`` ou ``community``)
 
-One or more contacts maintaining this software.
+Un ou plusieurs contacts assurant la maintenance du logiciel. 
 
-This key describes the technical people currently responsible for
-maintaining the software. All contacts need to be a physical person, not
-a company or an organisation. If somebody is acting as a representative
-of an institution, it must be listed within the ``affiliation`` of the
-contact.
+Cette clé décrit les personnes techniques responsable de la maintenance du logiciel. Chaque contact doit être une personne physique et non une entrerpise ou une organisation. Si un contact agit comme représentant d'une institution, ce rapport doit être explicité à l'aide de la clé ``affiliation`` du contact (voir ci-desssous).
 
-In case of a commercial agreement (or a chain of such agreements),
-specify the final entities actually contracted to deliver the
-maintenance. Do not specify the software owner unless it is technically
-involved with the maintenance of the product as well.
+Dans le cas d'un accord commercial (ou d'une série d'accords semblables), il est nécessaire de spécifier les entités finales sous contrat, en charge de la maintenance du logiciel. Ne mentionné pas le propriétaire du logiciel, sauf s'il est techniquement impliqué dans la maintenance du produit. 
 
 Section ``localisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
