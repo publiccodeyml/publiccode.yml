@@ -5,7 +5,5 @@
 ## Review
 
 - [ ] Ensure your files are written following RST specs (*not MD!*)
-- [ ] Italian version
-- [ ] English version
-- [ ] Example files 
+- [ ] Update POT and PO files for translations (if it's a change to the standard)
 - [ ] Ask for review

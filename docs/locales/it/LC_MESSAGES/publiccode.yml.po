@@ -1,0 +1,3306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Python package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  Python\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-14 16:12+0100\n"
+"PO-Revision-Date: 2019-12-12 18:54+0100\n"
+"Last-Translator: \n"
+"Language: it\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../categories-list.rst:4
+msgid "List of software categories"
+msgstr "Lista delle categorie del software"
+
+#: ../../categories-list.rst:6 ../../scope-list.rst:6
+msgid ""
+"Here follows a controlled vocabulary of useful tags for categorizing the "
+"software."
+msgstr ""
+"Qui di seguito è presentato un vocabolario controllato di tag "
+"utilizzabili per categorizzare il software."
+
+#: ../../categories-list.rst:11 ../../scope-list.rst:11
+msgid "Valid Tags"
+msgstr "Tag Validi"
+
+#: ../../categories-list.rst:13
+msgid "accounting"
+msgstr "accounting"
+
+#: ../../categories-list.rst:14
+msgid "agile-project-management"
+msgstr "agile-project-management"
+
+#: ../../categories-list.rst:15
+msgid "applicant-tracking"
+msgstr "applicant-tracking"
+
+#: ../../categories-list.rst:16
+msgid "application-development"
+msgstr "application-development"
+
+#: ../../categories-list.rst:17
+msgid "appointment-scheduling"
+msgstr "appointment-scheduling"
+
+#: ../../categories-list.rst:18
+msgid "backup"
+msgstr "backup"
+
+#: ../../categories-list.rst:19
+msgid "billing-and-invoicing"
+msgstr "billing-and-invoicing"
+
+#: ../../categories-list.rst:20
+msgid "blog"
+msgstr "blog"
+
+#: ../../categories-list.rst:21
+msgid "budgeting"
+msgstr "budgeting"
+
+#: ../../categories-list.rst:22
+msgid "business-intelligence"
+msgstr "business-intelligence"
+
+#: ../../categories-list.rst:23
+msgid "business-process-management"
+msgstr "business-process-management"
+
+#: ../../categories-list.rst:24
+msgid "cad"
+msgstr "cad"
+
+#: ../../categories-list.rst:25
+msgid "call-center-management"
+msgstr "call-center-management"
+
+#: ../../categories-list.rst:26
+msgid "cloud-management"
+msgstr "cloud-management"
+
+#: ../../categories-list.rst:27
+msgid "collaboration"
+msgstr "collaboration"
+
+#: ../../categories-list.rst:28
+msgid "communications"
+msgstr "communications"
+
+#: ../../categories-list.rst:29
+msgid "compliance-management"
+msgstr "compliance-management"
+
+#: ../../categories-list.rst:30
+msgid "contact-management"
+msgstr "contact-management"
+
+#: ../../categories-list.rst:31
+msgid "content-management"
+msgstr "content-management"
+
+#: ../../categories-list.rst:32
+msgid "crm"
+msgstr "crm"
+
+#: ../../categories-list.rst:33
+msgid "customer-service-and-support"
+msgstr "customer-service-and-support"
+
+#: ../../categories-list.rst:34
+msgid "data-analytics"
+msgstr "data-analytics"
+
+#: ../../categories-list.rst:35
+msgid "data-collection"
+msgstr "data-collection"
+
+#: ../../categories-list.rst:36
+msgid "data-visualization"
+msgstr "data-visualization"
+
+#: ../../categories-list.rst:37
+msgid "digital-asset-management"
+msgstr "digital-asset-management"
+
+#: ../../categories-list.rst:38
+msgid "digital-citizenship"
+msgstr "digital-citizenship"
+
+#: ../../categories-list.rst:39
+msgid "document-management"
+msgstr "document-management"
+
+#: ../../categories-list.rst:40
+msgid "donor-management"
+msgstr "donor-management"
+
+#: ../../categories-list.rst:41
+msgid "e-commerce"
+msgstr "e-commerce"
+
+#: ../../categories-list.rst:42
+msgid "e-signature"
+msgstr "e-signature"
+
+#: ../../categories-list.rst:43
+msgid "email-management"
+msgstr "email-management"
+
+#: ../../categories-list.rst:44
+msgid "email-marketing"
+msgstr "email-marketing"
+
+#: ../../categories-list.rst:45
+msgid "employee-management"
+msgstr "employee-management"
+
+#: ../../categories-list.rst:46
+msgid "enterprise-project-management"
+msgstr "enterprise-project-management"
+
+#: ../../categories-list.rst:47
+msgid "enterprise-social-networking"
+msgstr "enterprise-social-networking"
+
+#: ../../categories-list.rst:48
+msgid "erp"
+msgstr "erp"
+
+#: ../../categories-list.rst:49
+msgid "event-management"
+msgstr "event-management"
+
+#: ../../categories-list.rst:50
+msgid "facility-management"
+msgstr "facility-management"
+
+#: ../../categories-list.rst:51
+msgid "feedback-and-reviews-management"
+msgstr "feedback-and-reviews-management"
+
+#: ../../categories-list.rst:52
+msgid "financial-reporting"
+msgstr "financial-reporting"
+
+#: ../../categories-list.rst:53
+msgid "fleet-management"
+msgstr "fleet-management"
+
+#: ../../categories-list.rst:54
+msgid "fundraising"
+msgstr "fundraising"
+
+#: ../../categories-list.rst:55
+msgid "gamification"
+msgstr "gamification"
+
+#: ../../categories-list.rst:56
+msgid "geographic-information-systems"
+msgstr "geographic-information-systems"
+
+#: ../../categories-list.rst:57
+msgid "grant-management"
+msgstr "grant-management"
+
+#: ../../categories-list.rst:58
+msgid "graphic-design"
+msgstr "graphic-design"
+
+#: ../../categories-list.rst:59
+msgid "help-desk"
+msgstr "help-desk"
+
+#: ../../categories-list.rst:60
+msgid "hr"
+msgstr "hr"
+
+#: ../../categories-list.rst:61
+msgid "ide"
+msgstr "ide"
+
+#: ../../categories-list.rst:62
+msgid "identity-management"
+msgstr "identity-management"
+
+#: ../../categories-list.rst:63
+msgid "instant-messaging"
+msgstr "instant-messaging"
+
+#: ../../categories-list.rst:64
+msgid "inventory-management"
+msgstr "inventory-management"
+
+#: ../../categories-list.rst:65
+msgid "it-asset-management"
+msgstr "it-asset-management"
+
+#: ../../categories-list.rst:66
+msgid "it-development"
+msgstr "it-development"
+
+#: ../../categories-list.rst:67
+msgid "it-management"
+msgstr "it-management"
+
+#: ../../categories-list.rst:68
+msgid "it-security"
+msgstr "it-security"
+
+#: ../../categories-list.rst:69
+msgid "it-service-management"
+msgstr "it-service-management"
+
+#: ../../categories-list.rst:70
+msgid "knowledge-management"
+msgstr "knowledge-management"
+
+#: ../../categories-list.rst:71
+msgid "learning-management-system"
+msgstr "learning-management-system"
+
+#: ../../categories-list.rst:72
+msgid "marketing"
+msgstr "marketing"
+
+#: ../../categories-list.rst:73
+msgid "mind-mapping"
+msgstr "mind-mapping"
+
+#: ../../categories-list.rst:74
+msgid "mobile-marketing"
+msgstr "mobile-marketing"
+
+#: ../../categories-list.rst:75
+msgid "mobile-payment"
+msgstr "mobile-payment"
+
+#: ../../categories-list.rst:76
+msgid "network-management"
+msgstr "network-management"
+
+#: ../../categories-list.rst:77
+msgid "office"
+msgstr "office"
+
+#: ../../categories-list.rst:78
+msgid "online-booking"
+msgstr "online-booking"
+
+#: ../../categories-list.rst:79
+msgid "online-community"
+msgstr "online-community"
+
+#: ../../categories-list.rst:80
+msgid "payment-gateway"
+msgstr "payment-gateway"
+
+#: ../../categories-list.rst:81
+msgid "payroll"
+msgstr "payroll"
+
+#: ../../categories-list.rst:82
+msgid "predictive-analysis"
+msgstr "predictive-analysis"
+
+#: ../../categories-list.rst:83
+msgid "procurement"
+msgstr "procurement"
+
+#: ../../categories-list.rst:84
+msgid "productivity-suite"
+msgstr "productivity-suite"
+
+#: ../../categories-list.rst:85
+msgid "project-collaboration"
+msgstr "project-collaboration"
+
+#: ../../categories-list.rst:86
+msgid "project-management"
+msgstr "project-management"
+
+#: ../../categories-list.rst:87
+msgid "property-management"
+msgstr "property-management"
+
+#: ../../categories-list.rst:88
+msgid "real-estate-management"
+msgstr "real-estate-management"
+
+#: ../../categories-list.rst:89
+msgid "remote-support"
+msgstr "remote-support"
+
+#: ../../categories-list.rst:90
+msgid "resource-management"
+msgstr "resource-management"
+
+#: ../../categories-list.rst:91
+msgid "sales-management"
+msgstr "sales-management"
+
+#: ../../categories-list.rst:92
+msgid "seo"
+msgstr "seo"
+
+#: ../../categories-list.rst:93
+msgid "service-desk"
+msgstr "service-desk"
+
+#: ../../categories-list.rst:94
+msgid "social-media-management"
+msgstr "social-media-management"
+
+#: ../../categories-list.rst:95
+msgid "survey"
+msgstr "survey"
+
+#: ../../categories-list.rst:96
+msgid "talent-management"
+msgstr "talent-management"
+
+#: ../../categories-list.rst:97
+msgid "task-management"
+msgstr "task-management"
+
+#: ../../categories-list.rst:98
+msgid "taxes-management"
+msgstr "taxes-management"
+
+#: ../../categories-list.rst:99
+msgid "test-management"
+msgstr "test-management"
+
+#: ../../categories-list.rst:100
+msgid "time-management"
+msgstr "time-management"
+
+#: ../../categories-list.rst:101
+msgid "time-tracking"
+msgstr "time-tracking"
+
+#: ../../categories-list.rst:102
+msgid "translation"
+msgstr "translation"
+
+#: ../../categories-list.rst:103
+msgid "video-conferencing"
+msgstr "video-conferencing"
+
+#: ../../categories-list.rst:104
+msgid "video-editing"
+msgstr "video-editing"
+
+#: ../../categories-list.rst:105
+msgid "visitor-management"
+msgstr "visitor-management"
+
+#: ../../categories-list.rst:106
+msgid "voip"
+msgstr "voip"
+
+#: ../../categories-list.rst:107
+msgid "warehouse-management"
+msgstr "warehouse-management"
+
+#: ../../categories-list.rst:108
+msgid "web-collaboration"
+msgstr "web-collaboration"
+
+#: ../../categories-list.rst:109
+msgid "web-conferencing"
+msgstr "web-conferencing"
+
+#: ../../categories-list.rst:110
+msgid "website-builder"
+msgstr "website-builder"
+
+#: ../../categories-list.rst:111
+msgid "workflow-management"
+msgstr "workflow-management"
+
+#: ../../country.rst:4
+msgid "Country-Specific Extensions"
+msgstr "Estensioni nazionali"
+
+#: ../../country.rst:6
+msgid ""
+"While the standard is structured to be meaningful on an international "
+"level, there are additional information that can be added that makes "
+"sense in specific countries, such as declaring compliance with local laws"
+" or regulations. The provided extension mechanism is the usage of "
+"country-specific sections."
+msgstr ""
+"Mentre il core è strutturato per essere significativo a livello\n"
+"internazionale, vi sono informazioni addizionali che possono essere\n"
+"aggiunte a livello nazionale, come ad esempio una dichiarazione di\n"
+"compatibilità con una legge locale. Il meccanismo di estensione fornito\n"
+"prevede l’utilizzo di sezioni specifiche per ogni Paese  (*country-"
+"specific*)."
+
+#: ../../country.rst:12
+msgid ""
+"All country-specific extensions are contained in a section named with the"
+" two-letter lowercase `ISO 3166-1 alpha-2 country code "
+"<https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. For instance "
+"``spid`` is a property for Italian software declaring whether the "
+"software is integrated with the Italian Public Identification System."
+msgstr ""
+"Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione\n"
+"denominata con l’\\ `ISO 3166-1 alpha-2 country\n"
+"code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,\n"
+"``spid`` è una proprietà definita per i software italiani per la\n"
+"dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di\n"
+"Identità Digitale."
+
+#: ../../country.rst:18
+msgid "If a software is compliant I will find:"
+msgstr "Dunque, se un software è compatibile, troveremo:"
+
+#: ../../country.rst:20
+msgid ""
+"it:\n"
+"  countryExtensionVersion: \"0.2\"\n"
+"  piattaforme:\n"
+"   - spid: yes"
+msgstr ""
+"it:\n"
+"  countryExtensionVersion: \"0.2\"\n"
+"  piattaforme:\n"
+"   - spid: yes"
+
+#: ../../country.rst:27
+msgid ""
+"Notice that country-specific extensions within international sections are"
+" not allowed. Countries that want to extend the format should add a "
+"country-specific section instead."
+msgstr ""
+"Nota bene che le chiavi *country-specific* **non** sono valide\n"
+"all’interno delle sezioni internazionali. I Paesi che vogliano estendere\n"
+"il formato devono aggiungere una sezione dedicata."
+
+#: ../../schema.it.rst:4
+msgid "Italy"
+msgstr "Italia"
+
+#: ../../schema.it.rst:6
+msgid ""
+"All the extensions listed below are specific for Italy and, as such, they"
+" must be inserted in a section named with the ``it`` code. Every Country "
+"is specified using a two letters *country code* following the ISO 3166-1 "
+"alpha-2 standard."
+msgstr ""
+"Tutte le estensioni elencate qui di seguito sono specifiche per l'Italia "
+"e, di\n"
+"conseguenza, devono essere inserite in una sezione denominata con il "
+"codice\n"
+"``it``. Tutti i Paesi sono specificati usando *country code* a due "
+"lettere\n"
+"seguendo lo standard ISO 3166-1 alpha-2."
+
+#: ../../schema.it.rst:12
+msgid "Key ``countryExtensionVersion``"
+msgstr "Chiave ``countryExtensionVersion``"
+
+#: ../../schema.core.rst:15 ../../schema.core.rst:25 ../../schema.core.rst:38
+#: ../../schema.core.rst:100 ../../schema.core.rst:233
+#: ../../schema.core.rst:361 ../../schema.core.rst:538
+#: ../../schema.core.rst:550 ../../schema.core.rst:569 ../../schema.it.rst:14
+msgid "Type: string"
+msgstr "Tipo: stringa"
+
+#: ../../schema.core.rst:16 ../../schema.core.rst:26 ../../schema.core.rst:48
+#: ../../schema.core.rst:116 ../../schema.core.rst:189
+#: ../../schema.core.rst:206 ../../schema.core.rst:242
+#: ../../schema.core.rst:266 ../../schema.core.rst:375
+#: ../../schema.core.rst:388 ../../schema.core.rst:539
+#: ../../schema.core.rst:603 ../../schema.core.rst:655
+#: ../../schema.core.rst:665 ../../schema.it.rst:15
+msgid "Presence: mandatory"
+msgstr "Presenza: obbligatoria"
+
+#: ../../schema.it.rst:16
+msgid "Example: ``\"1.0\"``"
+msgstr "Esempio: ``\"1.0\"``"
+
+#: ../../schema.it.rst:19
+msgid ""
+"This key specifies the version to which the current extension schema "
+"adheres to, for forward compatibility."
+msgstr ""
+"Questa chiave specifica la versione alla quale il presente schema di "
+"estensioni\n"
+"aderisce."
+
+#: ../../schema.it.rst:22
+msgid ""
+"Please note how the value of this key is independent from the top-level "
+"``publiccodeYmlVersion`` one (see :ref:`core`). In such a way, the "
+"extensions schema versioning is independent both from the core version of"
+" the schema and from every other Country."
+msgstr ""
+"**Nota Bene:** il valore di questa chiave è indipendente da quello "
+"contenuto nella\n"
+"chiave top-level ``publiccodeYmlVersion`` (vedi :ref:`core`). In questo "
+"modo,\n"
+"il versioning di ogni schema di estensioni è indipendente sia dalla "
+"versione\n"
+"core dello schema che da ogni altra estensione per Paese."
+
+#: ../../schema.it.rst:28
+msgid "Key ``conforme``"
+msgstr "Sezione ``conforme``"
+
+#: ../../schema.it.rst:30
+msgid ""
+"This section contains the keys for auto-declaring the compliance with the"
+" current legislation, with respect to the following sections. Not "
+"including these keys implies that the compliance is not known or not "
+"declared."
+msgstr ""
+"Questa sezione contiene delle chiavi per auto dichiarare la conformità\n"
+"con la normativa vigente, rispetto ad alcune sezioni.\n"
+"Se queste chiavi non vengono incluse, si intende che la conformità non è "
+"nota\n"
+"o non viene dichiarata."
+
+#: ../../schema.it.rst:36
+msgid "Key ``conforme/lineeGuidaDesign``"
+msgstr "Chiave ``conforme/lineeGuidaDesign``"
+
+#: ../../schema.core.rst:654 ../../schema.it.rst:38 ../../schema.it.rst:49
+#: ../../schema.it.rst:63 ../../schema.it.rst:74 ../../schema.it.rst:86
+#: ../../schema.it.rst:97 ../../schema.it.rst:106 ../../schema.it.rst:114
+msgid "Type: boolean"
+msgstr "Tipo: booleano"
+
+#: ../../schema.core.rst:39 ../../schema.core.rst:71 ../../schema.core.rst:87
+#: ../../schema.core.rst:101 ../../schema.core.rst:127
+#: ../../schema.core.rst:143 ../../schema.core.rst:159
+#: ../../schema.core.rst:174 ../../schema.core.rst:219
+#: ../../schema.core.rst:234 ../../schema.core.rst:300
+#: ../../schema.core.rst:311 ../../schema.core.rst:322
+#: ../../schema.core.rst:362 ../../schema.core.rst:415
+#: ../../schema.core.rst:441 ../../schema.core.rst:489
+#: ../../schema.core.rst:511 ../../schema.core.rst:528
+#: ../../schema.core.rst:551 ../../schema.core.rst:570
+#: ../../schema.core.rst:582 ../../schema.core.rst:689
+#: ../../schema.core.rst:698 ../../schema.core.rst:707 ../../schema.it.rst:39
+#: ../../schema.it.rst:50 ../../schema.it.rst:64 ../../schema.it.rst:75
+#: ../../schema.it.rst:87 ../../schema.it.rst:98 ../../schema.it.rst:107
+#: ../../schema.it.rst:115
+msgid "Presence: optional"
+msgstr "Presenza: opzionale"
+
+#: ../../schema.it.rst:41
+msgid ""
+"If present and set to ``yes``, the software is compliant with the Italian"
+" accessibility laws (L. 4/2004), as further explained in the `linee guida"
+" di design <https://docs.italia.it/italia/designers-italia/design-linee-"
+"guida-docs>`__ (Italian language)."
+msgstr ""
+"Se presente e impostato a ``yes``, il software è conforme alle leggi in\n"
+"materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle\n"
+"`linee guida di\n"
+"design <https://docs.italia.it/italia/designers-italia/design-linee-"
+"guida-docs>`__."
+
+#: ../../schema.it.rst:47
+msgid "Key ``conforme/modelloInteroperatibilita``"
+msgstr "Chiave ``conforme/modelloInteroperabilita``"
+
+#: ../../schema.it.rst:52
+msgid ""
+"If present and set to ``yes``, the software is compliant with the `linee "
+"guida sull’interoperabilità <https://docs.italia.it/italia/piano-"
+"triennale-ict/lg-modellointeroperabilita-docs>`__."
+msgstr ""
+"Se presente e impostato a ``yes``, il software è conforme alle `linee\n"
+"guida\n"
+"sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict"
+"/lg-modellointeroperabilita-docs>`__."
+
+#: ../../schema.it.rst:56
+msgid ""
+"Regulatory reference: `Art. 73 del CAD <https://docs.italia.it/italia"
+"/piano-triennale-ict/codice-amministrazione-digitale-"
+"docs/it/v2017-12-13/_rst/capo8_art73.html>`__ (Italian language)."
+msgstr ""
+"Riferimento normativo: `Art. 73 del\n"
+"CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-"
+"amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__."
+
+#: ../../schema.it.rst:61
+msgid "Key ``conforme/misureMinimeSicurezza``"
+msgstr "Chiave ``conforme/misureMinimeSicurezza``"
+
+#: ../../schema.it.rst:66
+msgid ""
+"If present and set to ``yes``, the software is compliant with the `Misure"
+" minime di sicurezza ICT per le Pubbliche amministrazioni "
+"<http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__"
+" (Italian language)."
+msgstr ""
+"Se presente e impostato a ``yes``, il software è conforme alle `Misure\n"
+"minime di sicurezza ICT per le Pubbliche\n"
+"amministrazioni "
+"<http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__."
+
+#: ../../schema.it.rst:72
+msgid "Key ``conforme/gdpr``"
+msgstr "Chiave ``conforme/gdpr``"
+
+#: ../../schema.it.rst:77
+msgid "If present and set to ``yes``, the software respects the GDPR."
+msgstr "Se presente e impostato a ``yes``, il software rispetta il GDPR."
+
+#: ../../schema.it.rst:81
+msgid "Section ``piattaforme``"
+msgstr "Sezione ``piattaforme``"
+
+#: ../../schema.it.rst:84
+msgid "Key ``piattaforme/spid``"
+msgstr "Chiave ``piattaforme/spid``"
+
+#: ../../schema.it.rst:90
+msgid ""
+"If present and set to ``yes``, the software interfaces with `SPID - il "
+"Sistema Pubblico di Identità Digitale "
+"<https://developers.italia.it/it/spid>`__."
+msgstr ""
+"Se presente e impostato a ``yes``, il software si interfaccia con `SPID\n"
+"- il Sistema Pubblico di Identità\n"
+"Digitale <https://developers.italia.it/it/spid>`__."
+
+#: ../../schema.it.rst:95
+msgid "Key ``piattaforme/cie``"
+msgstr "Chiave ``piattaforme/cie``"
+
+#: ../../schema.it.rst:100
+msgid ""
+"If present and set to ``yes``, the software interfaces with the Italian "
+"electronic ID card (``Carta di Identità Elettronica``)."
+msgstr ""
+"Se presente e impostato a ``yes``, il software si interfaccia con la\n"
+"Carta di Identità Elettronica."
+
+#: ../../schema.it.rst:104
+msgid "Key ``piattaforme/anpr``"
+msgstr "Chiave ``piattaforme/anpr``"
+
+#: ../../schema.it.rst:109
+msgid "If present and set to ``yes``, the software interfaces with ANPR."
+msgstr "Se presente e impostato a ``yes``, il software si interfaccia con ANPR."
+
+#: ../../schema.it.rst:112
+msgid "Key ``piattafome/pagopa``"
+msgstr "Chiave ``piattaforme/pagopa``"
+
+#: ../../schema.it.rst:117
+msgid "If present and set to ``yes``, the software interfaces with pagoPA."
+msgstr ""
+"Se presente e impostato a ``yes``, il software si interfaccia con\n"
+"pagoPA."
+
+#: ../../schema.it.rst:120
+msgid "Section ``riuso``"
+msgstr "Sezione ``riuso``"
+
+#: ../../schema.it.rst:122
+msgid ""
+"This section contains a set of keys related to the publication of the "
+"software inside the reuse catalog of `Developers Italia "
+"<https://developers.italia.it>`__."
+msgstr ""
+"Questa sezione contiene una serie di chiavi legate alla pubblicazione\n"
+"del software sul `Catalogo del Riuso <https://developers.italia.it>`__."
+
+#: ../../schema.it.rst:126
+msgid "Chiave ``riuso/codiceIPA``"
+msgstr "Chiave ``riuso/codiceIPA``"
+
+#: ../../schema.it.rst:128
+msgid "Type: string (iPA code)"
+msgstr "Tipo: stringa (codice iPA)"
+
+#: ../../schema.it.rst:129
+msgid "Presence: mandatory if ``repoOwner`` is a Public Administration"
+msgstr "Presenza: obbligatoria se ``repoOwner`` è una Pubblica Amministrazione"
+
+#: ../../schema.it.rst:130
+msgid "Example: ``c_h501``"
+msgstr "Esempio: ``c_h501``"
+
+#: ../../schema.it.rst:132
+msgid ""
+"This key represents the administration code inside the Public "
+"Administration index (codice IPA)."
+msgstr ""
+"Questa chiave rappresenta il codice dell’amministrazione all’interno\n"
+"dell’Indice delle Pubbliche Amministrazioni (codice IPA)."
+
+#: ../../example.rst:2
+msgid "Esempi"
+msgstr "Esempi"
+
+#: ../../example.rst:4
+msgid ""
+"Below there are two examples of `publiccode.yml` files, the first one "
+"represents the minimum configuration, which contains the mandatory "
+"fields, whilst the second one represents a more extended version."
+msgstr ""
+"Qui di seguito vi sono due esempi di file `publiccode.yml`, il primo\n"
+"rappresenta la configurazione minima, ovvero contiene i campi "
+"obbligatori,\n"
+"mentre il secondo è più esteso."
+
+#: ../../example.rst:9
+msgid "Minimum Version"
+msgstr "Versione Minima"
+
+#: ../../example.rst:11
+#, fuzzy
+msgid ""
+"publiccodeYmlVersion: \"0.2\"\n"
+"\n"
+"name: Medusa\n"
+"url: \"https://example.com/italia/medusa.git\"\n"
+"softwareVersion: \"dev\"    # Optional\n"
+"releaseDate: \"2017-04-15\"\n"
+"platforms:\n"
+"  - web\n"
+"\n"
+"categories:\n"
+"  - financial-reporting\n"
+"\n"
+"developmentStatus: development\n"
+"\n"
+"softwareType: \"standalone/desktop\"\n"
+"\n"
+"description:\n"
+"  en:\n"
+"    localisedName: medusa   # Optional\n"
+"    genericName: Text Editor\n"
+"    shortDescription: >\n"
+"          A rather short description which\n"
+"          is probably useless\n"
+"\n"
+"    longDescription: >\n"
+"          Very long description of this software, also split\n"
+"          on multiple rows. You should note what the software\n"
+"          is and why one should need it. We can potentially\n"
+"          have many pages of text here.\n"
+"\n"
+"    features:\n"
+"       - Just one feature\n"
+"\n"
+"legal:\n"
+"  license: AGPL-3.0-or-later\n"
+"\n"
+"maintenance:\n"
+"  type: \"community\"\n"
+"\n"
+"  contacts:\n"
+"    - name: Francesco Rossi\n"
+"\n"
+"localisation:\n"
+"  localisationReady: yes\n"
+"  availableLanguages:\n"
+"    - en"
+msgstr ""
+"publiccodeymlversion: \"0.2\"\n"
+"\n"
+"name: medusa\n"
+"url: \"https://example.com/italia/medusa.git\"\n"
+"softwareversion: \"dev\"    # optional\n"
+"releasedate: \"2017-04-15\"\n"
+"platforms:\n"
+"  - web\n"
+"\n"
+"categories:\n"
+"  - financial-reporting\n"
+"\n"
+"developmentstatus: development\n"
+"\n"
+"softwaretype: \"standalone/desktop\"\n"
+"\n"
+"description:\n"
+"  en:\n"
+"    localisedname: medusa   # optional\n"
+"    genericname: text editor\n"
+"    shortdescription: >\n"
+"          a rather short description which\n"
+"          is probably useless\n"
+"\n"
+"    longdescription: >\n"
+"          very long description of this software, also split\n"
+"          on multiple rows. you should note what the software\n"
+"          is and why one should need it. we can potentially\n"
+"          have many pages of text here.\n"
+"\n"
+"    features:\n"
+"       - just one feature\n"
+"\n"
+"legal:\n"
+"  license: agpl-3.0-or-later\n"
+"\n"
+"maintenance:\n"
+"  type: \"community\"\n"
+"\n"
+"  contacts:\n"
+"    - name: francesco rossi\n"
+"\n"
+"localisation:\n"
+"  localisationready: yes\n"
+"  availablelanguages:\n"
+"    - en\n"
+
+#: ../../example.rst:62
+msgid "Extended Version"
+msgstr "Versione Estesa"
+
+#: ../../example.rst:64
+#, fuzzy
+msgid ""
+"publiccodeYmlVersion: \"0.2\"\n"
+"\n"
+"name: Medusa\n"
+"applicationSuite: MegaProductivitySuite\n"
+"url: \"https://example.com/italia/medusa.git\"\n"
+"landingURL: \"https://example.com/italia/medusa\"\n"
+"isBasedOn: \"https://github.com/italia/otello.git\"\n"
+"softwareVersion: \"1.0\"\n"
+"releaseDate: \"2017-04-15\"\n"
+"logo: img/logo.svg\n"
+"monochromeLogo: img/logo-mono.svg\n"
+"\n"
+"inputTypes:\n"
+"  - text/plain\n"
+"outputTypes:\n"
+"  - text/plain\n"
+"\n"
+"platforms:\n"
+"  - android\n"
+"  - ios\n"
+"\n"
+"categories:\n"
+"  - content-management\n"
+"  - office\n"
+"\n"
+"usedBy:\n"
+"  - Comune di Firenze\n"
+"  - Comune di Roma\n"
+"\n"
+"roadmap: \"https://example.com/italia/medusa/roadmap\"\n"
+"\n"
+"developmentStatus: development\n"
+"\n"
+"softwareType: \"standalone/desktop\"\n"
+"\n"
+"intendedAudience:\n"
+"  scope:\n"
+"    - science-and-technology\n"
+"  countries:\n"
+"    - it\n"
+"    - de\n"
+"  unsupportedCountries:\n"
+"    - us\n"
+"\n"
+"description:\n"
+"  en:\n"
+"    localisedName: Medusa\n"
+"    genericName: Text Editor\n"
+"    shortDescription: >\n"
+"          This description can have a maximum 150\n"
+"          characters long. We should not fill the\n"
+"          remaining space with \"Lorem Ipsum\". End\n"
+"\n"
+"    longDescription: >\n"
+"          Very long description of this software, also split\n"
+"          on multiple rows. You should note what the software\n"
+"          is and why one should need it.\n"
+"\n"
+"    documentation: \"https://read.the.documentation/medusa/v1.0\"\n"
+"    apiDocumentation: \"https://read.the.api.doc/medusa/v1.0\"\n"
+"\n"
+"    features:\n"
+"       - Very important feature\n"
+"       - Will run without a problem\n"
+"       - Has zero bugs\n"
+"       - Solves all the problems of the world\n"
+"    screenshots:\n"
+"       - img/sshot1.jpg\n"
+"       - img/sshot2.jpg\n"
+"       - img/sshot3.jpg\n"
+"    videos:\n"
+"       - https://youtube.com/xxxxxxxx\n"
+"    awards:\n"
+"       - 1st Price Software of the year\n"
+"\n"
+"legal:\n"
+"  license: AGPL-3.0-or-later\n"
+"  mainCopyrightOwner: City of Chicago\n"
+"  repoOwner: City of Chicago\n"
+"  authorsFile: AUTHORS\n"
+"\n"
+"maintenance:\n"
+"  type: \"contract\"\n"
+"\n"
+"  contractors:\n"
+"    - name: \"Fornitore Privato SPA\"\n"
+"      email: \"dario.bianchi@fornitore.it\"\n"
+"      website: \"https://privatecompany.com\"\n"
+"      until: \"2019-01-01\"\n"
+"\n"
+"  contacts:\n"
+"    - name: Francesco Rossi\n"
+"      email: \"francesco.rossi@comune.reggioemilia.it\"\n"
+"      affiliation: Comune di Reggio Emilia\n"
+"      phone: \"+3923113215112\"\n"
+"\n"
+"localisation:\n"
+"  localisationReady: yes\n"
+"  availableLanguages:\n"
+"    - en\n"
+"    - it\n"
+"    - fr\n"
+"    - de\n"
+"\n"
+"dependsOn:\n"
+"  open:\n"
+"    - name: MySQL\n"
+"      versionMin: \"1.1\"\n"
+"      versionMax: \"1.3\"\n"
+"      optional: yes\n"
+"    - name: PostgreSQL\n"
+"      version: \"3.2\"\n"
+"      optional: yes\n"
+"  proprietary:\n"
+"    - name: Oracle\n"
+"      versionMin: \"11.4\"\n"
+"    - name: IBM SoftLayer\n"
+"  hardware:\n"
+"    - name: NFC Reader\n"
+"      optional: yes\n"
+"\n"
+"it:\n"
+"  countryExtensionVersion: \"0.2\"\n"
+"\n"
+"  conforme:\n"
+"    lineeGuidaDesign: yes\n"
+"    modelloInteroperabilita: yes\n"
+"    misureMinimeSicurezza: yes\n"
+"    gdpr: yes\n"
+"\n"
+"  piattaforme:\n"
+"    spid: yes\n"
+"    cie: yes\n"
+"    anpr: yes\n"
+"    pagopa: yes\n"
+"\n"
+"  riuso:\n"
+"    codiceIPA: c_h501"
+msgstr ""
+"publiccodeYmlVersion: \"0.2\"\n"
+"\n"
+"name: Medusa\n"
+"applicationSuite: MegaProductivitySuite\n"
+"url: \"https://example.com/italia/medusa.git\"\n"
+"landingURL: \"https://example.com/italia/medusa\"\n"
+"isBasedOn: \"https://github.com/italia/otello.git\"\n"
+"softwareVersion: \"1.0\"\n"
+"releaseDate: \"2017-04-15\"\n"
+"logo: img/logo.svg\n"
+"monochromeLogo: img/logo-mono.svg\n"
+"\n"
+"inputTypes:\n"
+"  - text/plain\n"
+"outputTypes:\n"
+"  - text/plain\n"
+"\n"
+"platforms:\n"
+"  - android\n"
+"  - ios\n"
+"\n"
+"categories:\n"
+"  - content-management\n"
+"  - office\n"
+"\n"
+"usedBy:\n"
+"  - Comune di Firenze\n"
+"  - Comune di Roma\n"
+"\n"
+"roadmap: \"https://example.com/italia/medusa/roadmap\"\n"
+"\n"
+"developmentStatus: development\n"
+"\n"
+"softwareType: \"standalone/desktop\"\n"
+"\n"
+"intendedAudience:\n"
+"  scope:\n"
+"    - science-and-technology\n"
+"  countries:\n"
+"    - it\n"
+"    - de\n"
+"  unsupportedCountries:\n"
+"    - us\n"
+"\n"
+"description:\n"
+"  en:\n"
+"    localisedName: Medusa\n"
+"    genericName: Text Editor\n"
+"    shortDescription: >\n"
+"          This description can have a maximum 150\n"
+"          characters long. We should not fill the\n"
+"          remaining space with \"Lorem Ipsum\". End\n"
+"\n"
+"    longDescription: >\n"
+"          Very long description of this software, also split\n"
+"          on multiple rows. You should note what the software\n"
+"          is and why one should need it.\n"
+"\n"
+"    documentation: \"https://read.the.documentation/medusa/v1.0\"\n"
+"    apiDocumentation: \"https://read.the.api.doc/medusa/v1.0\"\n"
+"\n"
+"    features:\n"
+"       - Very important feature\n"
+"       - Will run without a problem\n"
+"       - Has zero bugs\n"
+"       - Solves all the problems of the world\n"
+"    screenshots:\n"
+"       - img/sshot1.jpg\n"
+"       - img/sshot2.jpg\n"
+"       - img/sshot3.jpg\n"
+"    videos:\n"
+"       - https://youtube.com/xxxxxxxx\n"
+"    awards:\n"
+"       - 1st Price Software of the year\n"
+"\n"
+"legal:\n"
+"  license: AGPL-3.0-or-later\n"
+"  mainCopyrightOwner: City of Chicago\n"
+"  repoOwner: City of Chicago\n"
+"  authorsFile: AUTHORS\n"
+"\n"
+"maintenance:\n"
+"  type: \"contract\"\n"
+"\n"
+"  contractors:\n"
+"    - name: \"Fornitore Privato SPA\"\n"
+"      email: \"dario.bianchi@fornitore.it\"\n"
+"      website: \"https://privatecompany.com\"\n"
+"      until: \"2019-01-01\"\n"
+"\n"
+"  contacts:\n"
+"    - name: Francesco Rossi\n"
+"      email: \"francesco.rossi@comune.reggioemilia.it\"\n"
+"      affiliation: Comune di Reggio Emilia\n"
+"      phone: \"+3923113215112\"\n"
+"\n"
+"localisation:\n"
+"  localisationReady: yes\n"
+"  availableLanguages:\n"
+"    - en\n"
+"    - it\n"
+"    - fr\n"
+"    - de\n"
+"\n"
+"dependsOn:\n"
+"  open:\n"
+"    - name: MySQL\n"
+"      versionMin: \"1.1\"\n"
+"      versionMax: \"1.3\"\n"
+"      optional: yes\n"
+"    - name: PostgreSQL\n"
+"      version: \"3.2\"\n"
+"      optional: yes\n"
+"  proprietary:\n"
+"    - name: Oracle\n"
+"      versionMin: \"11.4\"\n"
+"    - name: IBM SoftLayer\n"
+"  hardware:\n"
+"    - name: NFC Reader\n"
+"      optional: yes\n"
+"\n"
+"it:\n"
+"  countryExtensionVersion: \"0.2\"\n"
+"\n"
+"  conforme:\n"
+"    lineeGuidaDesign: yes\n"
+"    modelloInteroperabilita: yes\n"
+"    misureMinimeSicurezza: yes\n"
+"    gdpr: yes\n"
+"\n"
+"  piattaforme:\n"
+"    spid: yes\n"
+"    cie: yes\n"
+"    anpr: yes\n"
+"    pagopa: yes\n"
+"\n"
+"  riuso:\n"
+"    codiceIPA: c_h501\n"
+
+#: ../../forks.rst:4
+msgid "Forks and variants"
+msgstr "Fork e varianti"
+
+#: ../../forks.rst:6
+msgid ""
+"As already cited before, a fork may have two different forms based on the"
+" final aim. As such, in order to make it clear how to handle the "
+"`publiccode.yml` in both cases, below we define two different semantics: "
+"technical forks and software variants."
+msgstr ""
+"Come già accennato precedentemente, il fork di un progetto software può "
+"essere\n"
+"inteso in modo diverso a seconda dello scopo finale di tale diramazione.\n"
+"Per questioni di chiarezza, qui di seguito distinguiamo le due "
+"possibilità:\n"
+"fork tecnici e varianti software."
+
+#: ../../forks.rst:12
+msgid "Technical forks (i.e. to publish patches)"
+msgstr "Fork tecnici (i.e. pubblicare patch)"
+
+#: ../../forks.rst:14
+msgid ""
+"A technical fork is a fork made by a developer for the purpose of working"
+" on the original code base or sending improvements to the original "
+"authors, without any explicit goal of creating and publishing an "
+"alternative variant of the original software."
+msgstr ""
+"Un fork tecnico è un fork eseguito da uno sviluppatore con lo scopo di\n"
+"lavorare sulla *code base* originale o per inviare miglioramenti agli\n"
+"autori del software originale, senza la finalità esplicita di creare e\n"
+"mantenere una variante alternativa del software originale."
+
+#: ../../forks.rst:19
+msgid ""
+"In the context of distributed control systems and collaborative code "
+"hosting platforms like GitHub, forking is almost always used by "
+"developers as a step to work on a contribution on an existing codebase, "
+"by sending “pull requests”."
+msgstr ""
+"Nel contesto di un sistema di controllo distribuito e piattaforme di\n"
+"hosting di codice collaborative quali GitHub, lo strumento del *fork* è\n"
+"quasi sempre usato dagli sviluppatori come il primo passo per lavorare\n"
+"ad un contributo su una *code base* già esistente inviando *pull request*."
+
+#: ../../forks.rst:24
+msgid ""
+"Because of the way forking works on GitHub and other platforms, "
+"developers publish their forks as perfect copies of the original "
+"software, thus including also ``publiccode.yml``. However, parsers need "
+"to be able to distinguish such technical forks from the original "
+"codebase."
+msgstr ""
+"Visto il modo in cui il sistema di *forking* funziona su GitHub ed altre\n"
+"piattaforme simili, gli sviluppatori pubblicano i propri fork sotto\n"
+"forma di copie perfette del software originale, quindi includendo anche\n"
+"il file ``publiccode.yml`` originale. I parser devono essere in grado di\n"
+"distinguere questi fork tecnici dalla *code base* originale."
+
+#: ../../forks.rst:31 ../../forks.rst:77
+msgid "Parsers"
+msgstr "Parser"
+
+#: ../../forks.rst:33
+msgid ""
+"Parsers **SHOULD** identify a technical fork by noticing that the top-"
+"level ``url`` key does not point to the repository in which the "
+"``publiccode.yml`` is found."
+msgstr ""
+"I *parser* **DOVREBBERO** identificare un fork tecnico notando che la\n"
+"chiave top-level ``url`` non punta al repository dove si trova il file\n"
+"``publiccode.yml``."
+
+#: ../../forks.rst:37
+msgid ""
+"Parsers **MIGHT** identify a technical fork also through metadata that "
+"might be exposed by the code hosting platform (eg: GitHub marks forks "
+"explicitly as forks)"
+msgstr ""
+"I *parser* **POTREBBERO** identificare un fork tecnico anche attraverso\n"
+"i metadati che potrebbero essere esposti dalla piattaforma di code\n"
+"hosting (e.g., GitHub contrassegna i fork esplicitamente come fork)."
+
+#: ../../forks.rst:42 ../../forks.rst:92
+msgid "Authors"
+msgstr "Autori"
+
+#: ../../forks.rst:44
+msgid ""
+"Authors of technical forks **SHOULD NOT** modify ``publiccode.yml`` in "
+"any way. Specifically, they **MUST NOT** modify the top-level ``url`` key"
+" that **MUST** continue pointing to the original repository."
+msgstr ""
+"Gli autori di un fork tecnico **NON DOVREBBERO** modificare il file\n"
+"``publiccode.yml`` in alcun modo. Più nello specifico, **NON DEVONO**\n"
+"modificare la chiave top-level ``url`` in quanto questa **DEVE**\n"
+"continuare a puntare al repository originale."
+
+#: ../../forks.rst:48
+msgid ""
+"There is no explicit key to mark a fork as a technical fork. This is a "
+"conscious design decision because we do not want authors of technical "
+"forks to be aware of ``publiccode.yml`` and necessarily be aware of how "
+"to modify it. The current design does not require authors to do anything."
+msgstr ""
+"Non c’è una chiave specifica per contrassegnare un fork come tecnico.\n"
+"Questa è una scelta consapevole di design perché non vogliamo che gli\n"
+"autori di un fork tecnico debbano necessariamente essere consapevoli del\n"
+"file ``publiccode.yml`` e di come doverlo modificare. Il design corrente\n"
+"non richiede che questi autori facciano alcunché."
+
+#: ../../forks.rst:55
+msgid "Software variants"
+msgstr "Varianti software"
+
+#: ../../forks.rst:57
+msgid ""
+"A software variant is a fork that is offered as an alternative to the "
+"original upstream software."
+msgstr ""
+"Una variante software è un fork che rappresenta una valida alternativa\n"
+"al software originale upstream."
+
+#: ../../forks.rst:60
+msgid ""
+"It contains modifications that are still not part of the upstream "
+"version, like more features, different dependencies, optimizations, etc."
+msgstr ""
+"Questa contiene modifiche che non sono ancora parte della versione\n"
+"upstream, come ad esempio più funzionalità, dipendenze diverse,\n"
+"ottimizzazioni, etc."
+
+#: ../../forks.rst:63
+msgid ""
+"By marking a fork as a variant, the author indicates that they believe "
+"that the variant includes a complete and working set of modifications "
+"that might be useful to other people."
+msgstr ""
+"Contrassegnando un fork come una variante, l’autore indica che questa\n"
+"variante include una serie di modifiche complete e funzionanti che\n"
+"potrebbero giovare ad altre persone."
+
+#: ../../forks.rst:67
+msgid ""
+"Marking a fork as a variant does **not** relate to the willingness of "
+"contributing upstream; the author might still plan to contribute the "
+"modifications upstream, or even being in the process of doing so. Thus, "
+"even if the fork will eventually be merged upstream, it might make sense "
+"to mark it as a variant during the process, so that others might discover"
+" it and benefit from it."
+msgstr ""
+"Contrassegnare un fork come una variante **non** pregiudica la volontà\n"
+"di contribuire upstream; l’autore potrebbe comunque voler contribuire\n"
+"upstream o essere in attesa di farlo. Perciò, anche se il fork alla fine\n"
+"verrà inclusa (merge) upstream, potrebbe aver senso contrassegnarla come\n"
+"una variante durante queste fasi di lavoro intermedie, in modo tale che\n"
+"anche altri possano trovarla e beneficiarne."
+
+#: ../../forks.rst:79
+msgid ""
+"Parsers **SHOULD** identify a variant by noticing that the top-level "
+"``url`` key matches to the repository in which the ``publiccode.yml`` is "
+"found, **AND** a top-level ``isBasedOn`` exists and points to a different"
+" repository."
+msgstr ""
+"I parser **DOVREBBERO** identificare una variante notando che la chiave\n"
+"top-level ``url`` è uguale al repository nel quale il file\n"
+"``publiccode.yml`` risiede, **E** una chiave top-level ``isBasedOn``\n"
+"esiste e punta ad un altro repository."
+
+#: ../../forks.rst:84
+msgid ""
+"Parsers should expect and analyze other differences in ``publiccode.yml``"
+" between variants of the software. Specifically ``description/features`` "
+"is designed to be compared across variants to identify and show user-"
+"visible differences."
+msgstr ""
+"I parser dovrebbero aspettarsi e analizzare altre differenze nelle due\n"
+"varianti dei file ``publiccode.yml``. In particolare, la chiave\n"
+"``description/features`` è pensata per essere comparata tra diverse\n"
+"varianti in modo da identificare e visualizzare le differenze lato\n"
+"utente."
+
+#: ../../forks.rst:94
+msgid "Authors that are willing to publish a fork as a variant **MUST** at least:"
+msgstr ""
+"Gli autori che vogliano pubblicare un fork come una variante\n"
+"**DEVONO** almeno:"
+
+#: ../../forks.rst:97
+msgid ""
+"add a key ``isBasedOn`` pointing to one or more upstream repositories "
+"from which this variant is derived."
+msgstr ""
+"aggiungere una chiave ``isBasedOn`` che punti a uno o più repository\n"
+"   upstream dai quali questa variante deriva."
+
+#: ../../forks.rst:99
+msgid ""
+"Change the value for ``url`` to point to the repository holding the "
+"variant."
+msgstr ""
+"Cambiare il valore di ``url`` per farla puntare al repository che\n"
+"   ospita la variante."
+
+#: ../../forks.rst:101
+msgid ""
+"Change the value for ``legal/repoOwner`` to refer to the themselves (the "
+"authors of the variant)."
+msgstr ""
+"Cambiare il valore di ``legal/repoOwner`` per identificarsi come\n"
+"   autori della variante."
+
+#: ../../forks.rst:103
+msgid ""
+"Revisit the ``maintenance`` section to refer to the maintenance status of"
+" the variant."
+msgstr ""
+"Rivisitare la sezione denominata ``maintenance`` per aggiornare lo\n"
+"   stato di manutenzione della variante."
+
+#: ../../forks.rst:106
+msgid "Moreover, authors **SHOULD** evaluate the following changes:"
+msgstr ""
+"Inoltre, gli autori **DOVREBBERO** valutare di apportare anche i seguenti"
+"\n"
+"cambiamenti:"
+
+#: ../../forks.rst:108
+msgid ""
+"add the features that differentiate the variant to the "
+"``description/features`` key. Existing features **SHOULD NOT** be edited "
+"or removed from this list unless they have been removed from the variant,"
+" to allow parsers to easily compare feature lists."
+msgstr ""
+"aggiungere le funzionalità che differenziano le varianti alla chiave\n"
+"   ``description/features``. Le funzionalità esistenti **NON\n"
+"   DOVREBBERO** essere modificate o rimosse da questa lista a meno che\n"
+"   esse siano state rimosse dalla variante, per permettere ai parser di\n"
+"   comparare facilmente la lista delle funzionalità."
+
+#: ../../index.rst:2
+msgid "``publiccode.yml``"
+msgstr "``publiccode.yml``"
+
+#: ../../index.rst:4
+msgid ""
+"``publiccode.yml`` is a metadata standard for repositories containing "
+"software developed or acquired by the Public Administration, aimed at "
+"making them easily discoverabile and thus reusable by other entities."
+msgstr ""
+"``publiccode.yml`` è uno standard di metadati ideato per essere inserito "
+"in\n"
+"repository contenenti software della Pubblica Amministrazione con lo "
+"scopo di\n"
+"renderli facilmente individuabili e, di conseguenza, riutilizzabili da "
+"altri\n"
+"enti."
+
+#: ../../index.rst:8
+msgid ""
+"By including a ``publiccode.yml`` file in the root of a repository, and "
+"populating it with information about the software, technicians and civil "
+"servants can evaluate it. Automatic indexing tools can also be built, "
+"since the format is easily readable by both humans and machines."
+msgstr ""
+"Inserendo nella root di un repository un file chiamato ``publiccode.yml``"
+" che\n"
+"descrive le caratteristiche del software se ne agevola la comprensione ai"
+"\n"
+"tecnici e ai decisori pubblici interessati a valutarlo; al tempo stesso "
+"si\n"
+"permette di costruire strumenti automatici di indicizzazione, poiché il "
+"formato\n"
+"è facilmente leggibile sia da esseri umani sia da macchine."
+
+#: ../../index.rst:13
+msgid ""
+"``publiccode.yml`` is mandatory for all public software developed in "
+"Italy, according to the national `guidelines <https://docs.italia.it/AgID"
+"/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-"
+"docs/>`__: this enables the Developers Italia crawler to build the "
+"national `software catalog <https://developers.italia.it/>`__. The "
+"standard is designed to be interoperable internationally, thus the "
+"country-specific keys are separated by the core part and are defined in "
+"specific sections that each government can rule."
+msgstr ""
+"``publiccode.yml`` è obbligatorio per tutto il software pubblico "
+"sviluppato in\n"
+"Italia, come da `linee guida\n"
+"<https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e"
+"-riuso-software-per-pa-docs/>`__:\n"
+"questo consente al crawler automatico di Developers Italia di costituire "
+"il\n"
+"`catalogo del software a riuso <https://developers.italia.it/>`__. Lo "
+"standard\n"
+"è tuttavia pensato in ottica internazionale, per cui tutte le specificità"
+"\n"
+"nazionali sono separate dal core e definite in apposite sezioni "
+"estensibili\n"
+"autonomamente dai governi nazionali."
+
+#: ../../index.rst:22
+msgid "Details carried by a ``publiccode.yml`` file include:"
+msgstr "Tra le informazioni contenute in un ``publiccode.yml`` vi sono:"
+
+#: ../../index.rst:24
+msgid ""
+"title and description of the project or product (in one or more "
+"languages);"
+msgstr "il titolo e la descrizione del progetto o prodotto (in una o più lingue);"
+
+#: ../../index.rst:25
+msgid ""
+"development state (e.g., ``concept``, ``development``, ``beta``, "
+"``stable``, ``obsolete``;"
+msgstr ""
+"lo stato dello sviluppo ad es., ``concept``, ``development``, ``beta``, "
+"``stable``, ``obsolete``;"
+
+#: ../../index.rst:26
+msgid "contacts of the entity who published the codebase;"
+msgstr "i riferimenti dell’organizzazione che ha sviluppato il progetto;"
+
+#: ../../index.rst:27
+msgid ""
+"contacts of the maintainer, if any, including the expire date of the "
+"maintenance contract;"
+msgstr "chi si sta occupando della sua manutenzione e quando il rapporto finirà;"
+
+#: ../../index.rst:28
+msgid ""
+"information about the legal context for which the project or product was "
+"designed;"
+msgstr "per quale quadro giuridico è stato pensato questo progetto o prodotto;"
+
+#: ../../index.rst:29
+msgid "dependencies."
+msgstr "quali dipendenze software esistono."
+
+#: ../../index.rst:31
+msgid "and much more."
+msgstr "e molte altre informazioni rilevanti."
+
+#: ../../index.rst:34
+msgid "See also"
+msgstr "Link utili"
+
+#: ../../index.rst:36
+msgid ""
+"`More information about software reuse "
+"<https://developers.italia.it/en/reuse>`__"
+msgstr ""
+"`Maggiori informazioni sul riuso del software "
+"<https://developers.italia.it/it/riuso>`__"
+
+#: ../../index.rst:37
+msgid ""
+"`publiccode.yml web editor <https://publiccode-"
+"editor.developers.italia.it/>`__"
+msgstr ""
+"`Editor web per publiccode.yml <https://publiccode-"
+"editor.developers.italia.it/>`__"
+
+#: ../../index.rst:41
+msgid "Table of contents"
+msgstr "Indice dei contenuti"
+
+#: ../../schema.core.rst:4
+msgid "The Standard (core)"
+msgstr "Lo standard (core)"
+
+#: ../../schema.core.rst:6
+msgid "This document represents the description of the ``publiccode.yml`` schema."
+msgstr ""
+"La struttura di un file ``publiccode.yml`` prevede l'esistenza di chiavi\n"
+"top-level e sezioni che possono contenere al proprio interno altre "
+"chiavi. \n"
+"Lo standard ha rilevanza internazionale ma è possibile dichiarare una "
+"sezione\n"
+"dedicata per le chiavi relative ad un Paese specifico (si veda\n"
+":ref:`estensioni-paese` per maggiori dettagli)."
+
+#: ../../schema.core.rst:10
+msgid "Top-Level Keys and Sections"
+msgstr "Chiavi e Sezioni Top-Level"
+
+#: ../../schema.core.rst:13
+msgid "Key ``publiccodeYmlVersion``"
+msgstr "Chiave ``publiccodeYmlVersion``"
+
+#: ../../schema.core.rst:17
+msgid "Example: ``\"0.1\"``"
+msgstr "Esempio: ``\"0.1\"``"
+
+#: ../../schema.core.rst:19
+msgid ""
+"This key specifies the version to which the current ``publiccode.yml`` "
+"adheres to, for forward compatibility."
+msgstr ""
+"Questa chiave specifica la versione alla quale il presente\n"
+"``publiccode.yml`` aderisce, per una questione di compatibilità diretta."
+
+#: ../../schema.core.rst:23
+msgid "Key ``name``"
+msgstr "Chiave ``name``"
+
+#: ../../schema.core.rst:27 ../../schema.core.rst:363
+msgid "Example: ``\"Medusa\"``"
+msgstr "Esempio: ``\"Medusa\"``"
+
+#: ../../schema.core.rst:29
+msgid ""
+"This key contains the name of the software. It contains the (short) "
+"public name of the product, which can be localised in the specific "
+"``localisation`` section. It should be the name most people usually refer"
+" to the software. In case the software has both an internal “code” name "
+"and a commercial name, use the commercial name."
+msgstr ""
+"Questa chiave contiene il nome del software. Contiene il nome\n"
+"(abbreviato) pubblico del prodotto, che può essere tradotto nella\n"
+"sezione specifica chiamata ``localisation``. Dovrebbe essere il nome con\n"
+"il quale la maggior parte delle persone si riferisce al suddetto\n"
+"software. Nel caso in cui il software abbia sia un nome in “codice”\n"
+"interno che uno commerciale, è preferibile usare il nome commerciale."
+
+#: ../../schema.core.rst:36
+msgid "Key ``applicationSuite``"
+msgstr "Chiave ``applicationSuite``"
+
+#: ../../schema.core.rst:40
+msgid "Example: ``\"MegaProductivitySuite\"``"
+msgstr "Esempio: ``\"MegaProductivitySuite\"``"
+
+#: ../../schema.core.rst:42
+msgid "This key contains the name of the “suite” to which the software belongs."
+msgstr ""
+"Questa chiave contiene il nome della “suite” alla quale il software\n"
+"appartiene."
+
+#: ../../schema.core.rst:45
+msgid "Key ``url``"
+msgstr "Chiave ``url``"
+
+#: ../../schema.core.rst:47 ../../schema.core.rst:70
+msgid "Type: string (URL)"
+msgstr "Tipo: stringa (URL)"
+
+#: ../../schema.core.rst:49
+msgid "Example: ``\"https://example.com/italia/medusa.git\"``"
+msgstr "Esempio: ``\"https://example.com/italia/medusa.git\"``"
+
+#: ../../schema.core.rst:51
+msgid ""
+"A unique identifier for this software. This string must be a URL to the "
+"source code repository (git, svn, …) in which the software is published. "
+"If the repository is available under multiple protocols, prefer "
+"HTTP/HTTPS URLs which don’t require user authentication."
+msgstr ""
+"Un identificatore unico per questo software. Questa stringa deve essere\n"
+"una URL che punta al repository di codice sorgente (git, svn, …) nel\n"
+"quale il software è pubblicato. Se il repository è disponibile sotto\n"
+"diversi protocolli, preferire URL HTTP/HTTPS che non richiedono\n"
+"l’autenticazione."
+
+#: ../../schema.core.rst:56
+msgid ""
+"Forks created for the purpose of contributing upstream should not modify "
+"this file; this helps software parsing ``publiccode.yml`` to immediately "
+"skip technical forks. On the contrary, a complete fork that is meant to "
+"be maintained separately from the original software should modify this "
+"line, to give themselves the status of a different project."
+msgstr ""
+"I fork creati con lo scopo di contribuire *upstream* non devono\n"
+"modificare questo file; questo aiuta i software che fanno il parsing di\n"
+"``publiccode.yml`` a saltare immediatamente i fork tecnici. Al\n"
+"contrario, un fork completo che sarà manutenuto\n"
+"in modo separato rispetto al software originale, dovrebbe modificare\n"
+"questa linea per essere trattato come una variante distinta."
+
+#: ../../schema.core.rst:63
+msgid ""
+"See :ref:`forks-and-variants` for a complete description of what is a "
+"software variant and how to handle forked software as a parser or an "
+"author."
+msgstr ""
+"Vedi :ref:`fork-varianti` per una descrizione completa del\n"
+"significato di variante software e di come gestire i fork sia lato\n"
+"parser che lato autore."
+
+#: ../../schema.core.rst:68
+msgid "Key ``landingURL``"
+msgstr "Chiave ``landingURL``"
+
+#: ../../schema.core.rst:72
+msgid "Example: ``\"https://example.com/italia/medusa\"``"
+msgstr "Esempio: ``\"https://example.com/italia/medusa\"``"
+
+#: ../../schema.core.rst:74
+msgid ""
+"If the ``url`` parameter does not serve a human readable or browsable "
+"page, but only serves source code to a source control client, with this "
+"key you have an option to specify a landing page. This page, ideally, is "
+"where your users will land when they will click a button labeled "
+"something like “Go to the application source code”. In case the product "
+"provides an automated graphical installer, this URL can point to a page "
+"which contains a reference to the source code but also offers the "
+"download of such an installer."
+msgstr ""
+"Se la chiave ``url`` non porta ad una pagina leggibile da un umano, ma\n"
+"serve solo ad indirizzare un client di source control verso il codice\n"
+"sorgente, con questa chiave viene introdotta l’opzione di specificare la\n"
+"*landing page*. Questa pagina, idealmente, è il punto di arrivo\n"
+"dell’utente quando seleziona un pulsante chiamato, ad esempio, “Vai al\n"
+"codice sorgente dell’applicazione”. Nel caso in cui il prodotto preveda\n"
+"un installer grafico automatico, questa URL può puntare alla pagina\n"
+"contenente un riferimento al codice sorgente ma che offra anche la\n"
+"possibilità di scaricare tale installer."
+
+#: ../../schema.core.rst:84
+msgid "Key ``isBasedOn``"
+msgstr "Chiave ``isBasedOn``"
+
+#: ../../schema.core.rst:86
+msgid "Type: string or array of strings"
+msgstr "Tipo: stringa o array di stringhe"
+
+#: ../../schema.core.rst:88
+msgid "Example: ``\"https://github.com/italia/otello.git\"``"
+msgstr "Esempio: ``\"https://github.com/italia/otello.git\"``"
+
+#: ../../schema.core.rst:90
+msgid ""
+"In case this software is a variant or a fork of another software, which "
+"might or might not contain a ``publiccode.yml`` file, this key will "
+"contain the ``url`` of the original project(s)."
+msgstr ""
+"Nel caso in cui questo software sia una variante o un fork di un altro\n"
+"software, che opzionalmente può contenere un file ``publiccode.yml``,\n"
+"questa chiave conterrà la ``url`` di uno o più progetti originali."
+
+#: ../../schema.core.rst:94
+msgid ""
+"The existence of this key identifies the fork as a software variant, "
+"descending from the specified repositories."
+msgstr ""
+"L’esistenza di questa chiave identifica il fork come una variante (vedi\n"
+":ref:`fork-varianti`), discendente dal repository specificato."
+
+#: ../../schema.core.rst:98
+msgid "Key ``softwareVersion``"
+msgstr "Chiave ``softwareVersion``"
+
+#: ../../schema.core.rst:102
+msgid "Example: ``\"1.0\"``, ``\"dev\"``"
+msgstr "Esempio: ``\"1.0\"``, ``\"dev\"``"
+
+#: ../../schema.core.rst:104
+msgid ""
+"This key contains the latest stable version number of the software. The "
+"version number is a string that is not meant to be interpreted and parsed"
+" but just displayed; parsers should not assume semantic versioning or any"
+" other specific version format."
+msgstr ""
+"Questa chiave contiene il numero dell’ultima versione stabile del\n"
+"software. Il numero di versione è una stringa che non è pensata per\n"
+"essere interpretata dal parser ma solamente visualizzata; i parser non\n"
+"devono assumere l’utilizzo del semantic versioning o altri specifici\n"
+"formati di versionamento."
+
+#: ../../schema.core.rst:109
+msgid ""
+"The key can be omitted if the software is currently in initial "
+"development and has never been released yet."
+msgstr ""
+"Questa chiave può essere omessa nel caso in cui il software sia in una "
+"fase\n"
+"iniziale di sviluppo e non sia stato ancora rilasciato."
+
+#: ../../schema.core.rst:113
+msgid "Key ``releaseDate``"
+msgstr "Chiave ``releaseDate``"
+
+#: ../../schema.core.rst:115
+msgid "Type: string (date)"
+msgstr "Tipo: stringa (data)"
+
+#: ../../schema.core.rst:117
+msgid "Example: ``\"2017-04-15\"``"
+msgstr "Esempio: ``\"2017-04-15\"``"
+
+#: ../../schema.core.rst:119
+msgid ""
+"This key contains the date at which the latest version was released. This"
+" date is mandatory if the software has been released at least once and "
+"thus the version number is present."
+msgstr ""
+"Questa chiave contiene la data di ultimo rilascio del software. Questa\n"
+"data è obbligatoria se il software è stato rilasciato almeno una volta e\n"
+"dunque esiste un numero di versione."
+
+#: ../../schema.core.rst:124
+msgid "Key ``logo``"
+msgstr "Chiave ``logo``"
+
+#: ../../schema.core.rst:126
+msgid "Type: string (relative path to file or absolute URL)"
+msgstr "Tipo: stringa (percorso verso il file)"
+
+#: ../../schema.core.rst:128 ../../schema.core.rst:144
+msgid "Acceptable formats: SVG, SVGZ, PNG"
+msgstr "Formati accettabili: SVG, SVGZ, PNG"
+
+#: ../../schema.core.rst:129
+msgid "Example: ``\"img/logo.svg\"``"
+msgstr "Esempio: ``\"img/logo.svg\"``"
+
+#: ../../schema.core.rst:131
+msgid ""
+"This key contains the path to the logo of the software. Logos should be "
+"in vector format; raster formats are only allowed as a fallback. In this "
+"case, they should be transparent PNGs, minimum 1000px of width. The key "
+"value can be the relative path to the file starting from the root of the "
+"repository, or it can be an absolute URL pointing to the logo in raw "
+"version. In both cases, the file must reside inside the same repository "
+"where the ``publiccode.yml`` file is stored."
+msgstr ""
+"Questa chiave indica il logo del software. Il valore può essere il "
+"percorso\n"
+"relativo al file a partire dalla root del repository, oppure una URL "
+"assoluta\n"
+"che punta al logo in versione raw. In entrambi i casi, il file deve "
+"risiedere\n"
+"all'interno del medesimo repository che contiene il ``publiccode.yml``.  "
+"Il logo\n"
+"dovrebbe essere in formato vettoriale; i formati raster sono solo "
+"accettabili\n"
+"come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una"
+"\n"
+"larghezza minima di 1000px."
+
+#: ../../schema.core.rst:140
+msgid "Key ``monochromeLogo``"
+msgstr "Chiave ``monochromeLogo``"
+
+#: ../../schema.core.rst:142 ../../schema.core.rst:581
+msgid "Type: string (path to file)"
+msgstr "Tipo: stringa (percorso verso il file)"
+
+#: ../../schema.core.rst:145
+msgid "Example: ``\"img/logo-mono.svg\"``"
+msgstr "Presenza: opzionaleEsempio: ``\"img/logo-mono.svg\"``"
+
+#: ../../schema.core.rst:147
+msgid ""
+"A monochromatic (black) logo. The logo should be in vector format; raster"
+" formats are only allowed as a fallback. In this case, they should be "
+"transparent PNGs, minimum 1000px of width. The key value can be the "
+"relative path to the file starting from the root of the repository, or it"
+" can be an absolute URL pointing to the logo in raw version. In both "
+"cases, the file must reside inside the same repository where the "
+"``publiccode.yml`` file is stored."
+msgstr ""
+"Questa chiave indica il logo monocromatico (nero) del software. Il valore"
+" può\n"
+"essere il percorso\n"
+"relativo al file a partire dalla root del repository, oppure una URL "
+"assoluta\n"
+"che punta al logo in versione raw. In entrambi i casi, il file deve "
+"risiedere\n"
+"all'interno del medesimo repository che contiene il ``publiccode.yml``.  "
+"Il logo\n"
+"dovrebbe essere in formato vettoriale; i formati raster sono solo "
+"accettabili\n"
+"come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una"
+"\n"
+"larghezza minima di 1000px."
+
+#: ../../schema.core.rst:156
+msgid "Key ``inputTypes``"
+msgstr "Chiave ``inputTypes``"
+
+#: ../../schema.core.rst:158 ../../schema.core.rst:173
+msgid "Type: array of enumerated strings"
+msgstr "Tipo: array di stringhe"
+
+#: ../../schema.core.rst:160 ../../schema.core.rst:175
+msgid "Values: as per RFC 6838"
+msgstr "Valori: vedi RFC 6838"
+
+#: ../../schema.core.rst:161 ../../schema.core.rst:176
+msgid "Example: ``\"text/plain\"``"
+msgstr "Esempio: ``\"text/plain\"``"
+
+#: ../../schema.core.rst:163
+msgid ""
+"A list of Media Types (MIME Types) as mandated in `RFC 6838 "
+"<https://tools.ietf.org/html/rfc6838>`__ which the application can handle"
+" as input."
+msgstr ""
+"Una lista di Media Types (MIME Types), come specificato dal `RFC\n"
+"6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere\n"
+"gestiti in input dall’applicazione."
+
+#: ../../schema.core.rst:167
+msgid ""
+"In case the software does not support any input, you can skip this field "
+"or use ``application/x.empty``."
+msgstr ""
+"Nel caso in cui il software non supporti alcun input, è possibile\n"
+"saltare questo campo o usare ``application/x.empty``."
+
+#: ../../schema.core.rst:171
+msgid "Key ``outputTypes``"
+msgstr "Chiave ``outputTypes``"
+
+#: ../../schema.core.rst:178
+msgid ""
+"A list of Media Types (MIME Types) as mandated in `RFC 6838 "
+"<https://tools.ietf.org/html/rfc6838>`__ which the application can handle"
+" as output."
+msgstr ""
+"Una lista di Media Types (MIME Types), come specificato dal `RFC\n"
+"6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere\n"
+"gestiti in output dall’applicazione."
+
+#: ../../schema.core.rst:182
+msgid ""
+"In case the software does not support any output, you can skip this field"
+" or use ``application/x.empty``."
+msgstr ""
+"Nel caso in cui il software non supporti alcun output, è possibile\n"
+"saltare questo campo o usare ``application/x.empty``."
+
+#: ../../schema.core.rst:186
+msgid "Key ``platforms``"
+msgstr "Chiave ``platforms``"
+
+#: ../../schema.core.rst:188
+msgid "Type: enumerated string or array of strings"
+msgstr "Tipo: stringhe o array di stringhe"
+
+#: ../../schema.core.rst:190
+msgid ""
+"Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``, ``android``. "
+"Human readable values outside this list are allowed."
+msgstr ""
+"Valori: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,\n"
+"   ``android``. Valori leggibili da un umano al di fuori di questa lista\n"
+"   sono permessi."
+
+#: ../../schema.core.rst:192
+msgid "Example: ``web``"
+msgstr "Esempio: ``web``"
+
+#: ../../schema.core.rst:194
+msgid ""
+"This key specifies which platform the software runs on. It is meant to "
+"describe the platforms that users will use to access and operate the "
+"software, rather than the platform the software itself runs on."
+msgstr ""
+"Questa chiave specifica su quale piattaforma funziona il software. È\n"
+"pensata per descrivere le piattaforme che l’utente userà per accedere ed\n"
+"utilizzare il software, piuttosto che la piattaforma sul quale il\n"
+"software gira."
+
+#: ../../schema.core.rst:198
+msgid ""
+"Use the predefined values if possible. If the software runs on a platform"
+" for which a predefined value is not available, a different value can be "
+"used."
+msgstr ""
+"Se possibile, usare i valori predefiniti. Se il software gira su una\n"
+"piattaforma per la quale un valore predefinito non è disponibile, un\n"
+"diverso valore può essere usato."
+
+#: ../../schema.core.rst:203
+msgid "Key ``categories``"
+msgstr "Chiave ``categories``"
+
+#: ../../schema.core.rst:205 ../../schema.core.rst:218
+#: ../../schema.core.rst:299 ../../schema.core.rst:310
+#: ../../schema.core.rst:321 ../../schema.core.rst:466
+#: ../../schema.core.rst:527
+msgid "Type: array of strings"
+msgstr "Tipo: array di stringhe"
+
+#: ../../schema.core.rst:207
+msgid "Acceptable values: see :ref:`categories-list`"
+msgstr "Valori accettabili: vedi :ref:`categories-list`"
+
+#: ../../schema.core.rst:209
+msgid ""
+"A list of words that can be used to describe the software and can help "
+"building catalogs of open software."
+msgstr ""
+"Una lista di parole che possono essere usate per descrivere il software\n"
+"e possono aiutare a costruire il catalogo di software open."
+
+#: ../../schema.core.rst:212
+msgid ""
+"The controlled vocabulary :ref:`categories-list` contains the list of "
+"allowed values."
+msgstr ""
+"Il vocabolario controllato :ref:`categories-list` presenta la lista dei "
+"valori\n"
+"accettabili."
+
+#: ../../schema.core.rst:216
+msgid "Key ``usedBy``"
+msgstr "Chiave ``usedBy``"
+
+#: ../../schema.core.rst:221
+msgid ""
+"A list of the names of prominent public administrations (that will serve "
+"as “testimonials”) that are currently known to the software maintainer to"
+" be using this software."
+msgstr ""
+"Una lista di nome di prominenti Pubbliche Amministrazioni (che\n"
+"serviranno come “testimonial”) che il maintainer riconosce come\n"
+"utilizzatori attuali di questo software."
+
+#: ../../schema.core.rst:225
+msgid ""
+"Parsers are encouraged to enhance this list also with other information "
+"that can obtain independently; for instance, a fork of a software, owned "
+"by an administration, could be used as a signal of usage of the software."
+msgstr ""
+"I parser sono incoraggiati ad accrescere questa lista anche con altre\n"
+"informazioni che riescono ad ottenere in modo indipendente; ad esempio,\n"
+"il fork di un software, di proprietà di un’amministrazione, può essere\n"
+"usato come un segnale di uso del software."
+
+#: ../../schema.core.rst:231
+msgid "Key ``roadmap``"
+msgstr "Chiave ``roadmap``"
+
+#: ../../schema.core.rst:236
+msgid "A link to a public roadmap of the software."
+msgstr "Un link ad una *roadmap* pubblica del software."
+
+#: ../../schema.core.rst:239
+msgid "Key ``developmentStatus``"
+msgstr "Chiave ``developmentStatus``"
+
+#: ../../schema.core.rst:241 ../../schema.core.rst:265
+msgid "Type: enumerated string"
+msgstr "Tipo: stringa"
+
+#: ../../schema.core.rst:243
+msgid ""
+"Allowed values: ``concept``, ``development``, ``beta``, ``stable``, "
+"``obsolete``"
+msgstr ""
+"Valori permessi: ``concept``, ``development``, ``beta``, ``stable``,\n"
+"   ``obsolete``"
+
+#: ../../schema.core.rst:246 ../../schema.core.rst:271
+msgid "The keys are:"
+msgstr "Le chiavi sono:"
+
+#: ../../schema.core.rst:248
+msgid ""
+"``concept`` - The software is just a “concept”. No actual code may have "
+"been produced, and the repository could simply be a placeholder."
+msgstr ""
+"``concept`` - Il software è solo un “concept”. Non è\n"
+"   stato sviluppato codice e il repository potrebbe semplicemente essere "
+"un\n"
+"   placeholder."
+
+#: ../../schema.core.rst:251
+msgid ""
+"``development`` - Some effort has gone into the development of the "
+"software, but the code is not ready for the end user, even in a "
+"preliminary version (beta or alpha) to be tested by end users."
+msgstr ""
+"``development`` - Qualche sforzo è stato fatto in\n"
+"   direzione dello sviluppo del software ma il codice non è pronto per\n"
+"   l’utenza finale, nemmeno in una versione preliminare (beta o alpha) "
+"per\n"
+"   essere testato dall’utenza."
+
+#: ../../schema.core.rst:254
+msgid ""
+"``beta`` - The software is in the testing phase (alpha or beta). At this "
+"stage, the software might or might not have had a preliminary public "
+"release."
+msgstr ""
+"``beta`` - Il software è in fase di\n"
+"   testing (alpha o beta). In questo stage, il software potrebbe aver o "
+"non\n"
+"   aver ancora avuto una release pubblica preliminare."
+
+#: ../../schema.core.rst:257
+msgid ""
+"``stable`` - The software has seen a first public release and is ready to"
+" be used in a production environment."
+msgstr ""
+"``stable`` - Il software ha già avuto una prima release pubblica ed è "
+"pronto\n"
+"   per essere usato in un contesto di produzione."
+
+#: ../../schema.core.rst:259
+msgid ""
+"``obsolete`` - The software is no longer maintained or kept up to date. "
+"All of the source code is archived and kept for historical reasons."
+msgstr ""
+"``obsolete`` - Il software non è più manutenuto o aggiornato. Tutto il "
+"codice sorgente è archiviato e tenuto per ragioni di storico."
+
+#: ../../schema.core.rst:263
+msgid "Key ``softwareType``"
+msgstr "Chiave ``softwareType``"
+
+#: ../../schema.core.rst:267
+msgid ""
+"Allowed values: ``\"standalone/mobile\"``, ``\"standalone/iot\"``, "
+"``\"standalone/desktop\"``, ``\"standalone/web\"``, "
+"``\"standalone/backend\"``, ``\"standalone/other\"``, ``\"addon\"``, "
+"``\"library\"``, ``\"configurationFiles\"``"
+msgstr ""
+"Valori permessi: ``\"standalone/mobile\"``, ``\"standalone/iot\"``,\n"
+"   ``\"standalone/desktop\"``, ``\"standalone/web\"``, "
+"``\"standalone/backend\"``,\n"
+"   ``\"standalone/other\"``, ``\"addon\"``, ``\"library\"``, "
+"``\"configurationFiles\"``"
+
+#: ../../schema.core.rst:273
+msgid ""
+"``standalone/mobile`` - The software is a standalone, self-contained The "
+"software is a native mobile app."
+msgstr ""
+"``standalone/mobile`` - Il software è un pacchetto  *self-contained*, "
+"*standalone*. Il software è un'applicazione nativa per dispositivi "
+"mobile."
+
+#: ../../schema.core.rst:275
+msgid "``standalone/iot`` - The software is suitable for an IoT context."
+msgstr ""
+"``standalone/iot`` - Il software è adatto ad essere utilizzato nel "
+"contesto\n"
+"   `Internet of Things`."
+
+#: ../../schema.core.rst:276
+msgid ""
+"``standalone/desktop`` - The software is typically installed and run in a"
+" a desktop operating system environment."
+msgstr ""
+"``standalone/desktop`` - Il software è tipicamente installato e "
+"utilizzato su un\n"
+"   sistema operativo desktop."
+
+#: ../../schema.core.rst:278
+msgid ""
+"``standalone/web`` - The software represents a web application usable by "
+"means of a browser."
+msgstr ""
+"``standalone/web`` - Il software rappresenta un applicativo fruibile "
+"attraverso il web."
+
+#: ../../schema.core.rst:280
+msgid "``standalone/backend`` - The software is a backend application."
+msgstr "``standalone/backend`` - Il software è un applicativo backend."
+
+#: ../../schema.core.rst:281
+msgid ""
+"``standalone/other`` - The software has a different nature from the once "
+"listed above."
+msgstr ""
+"``standalone/other``  - Il software ha una natura diversa rispetto a "
+"quanto\n"
+"   specificato alle chiavi precedenti."
+
+#: ../../schema.core.rst:283
+msgid ""
+"``softwareAddon`` - The software is an addon, such as a plugin or a "
+"theme, for a more complex software (e.g. a CMS or an office suite)."
+msgstr ""
+"``softwareAddon`` - Il software è un *addon*,\n"
+"   come ad esempio un plugin o un tema, per un software più complesso\n"
+"   (e.g., un CMS o una suite per ufficio)."
+
+#: ../../schema.core.rst:285
+msgid ""
+"``library`` - The software contains a library or an SDK to make it easier"
+" to third party developers to create new products."
+msgstr ""
+"``library`` - Il software\n"
+"   contiene una libreria o una SDK che facilita la creazione di nuovi "
+"prodotti\n"
+"   a sviluppatori di terze parti."
+
+#: ../../schema.core.rst:287
+msgid ""
+"``configurationFiles`` - The software does not contain executable script "
+"but a set of configuration files. They may document how to obtain a "
+"certain deployment. They could be in the form of plain configuration "
+"files, bash scripts, ansible playbooks, Dockerfiles, or other instruction"
+" sets."
+msgstr ""
+"``configurationFiles`` - Il software non contiene script eseguibili ma\n"
+"   una serie di file di configurazione. Questi potrebbero documentare "
+"come\n"
+"   ottenere un certo tipo di *deployment*. I suddetti file potrebbero "
+"avere la\n"
+"   forma di semplici file di configurazione, script bash, playbook "
+"ansible,\n"
+"   Dockerfile, o altri set di istruzioni."
+
+#: ../../schema.core.rst:294
+msgid "Section ``intendedAudience``"
+msgstr "Sezione ``intendedAudience``"
+
+#: ../../schema.core.rst:297
+msgid "Key ``intendedAudience/countries``"
+msgstr "Chiave ``intendedAudience/countries``"
+
+#: ../../schema.core.rst:302
+msgid ""
+"This key explicitly includes certain countries in the intended audience, "
+"i.e. the software explicitly claims compliance with specific processes, "
+"technologies or laws. All countries are specified using lowercase ISO "
+"3166-1 alpha-2 two-letter country codes."
+msgstr ""
+"Questa chiave include in modo esplicito alcuni Paesi tra il pubblico\n"
+"previsto, i.e., il software rivendica esplicitamente la conformità con\n"
+"processi specifici, tecnologie o leggi. Tutti i Paesi sono specificati\n"
+"usando *country code* a due lettere seguendo lo standard ISO 3166-1\n"
+"alpha-2."
+
+#: ../../schema.core.rst:308
+msgid "Key ``intendedAudience/unsupportedCountries``"
+msgstr "Chiave ``intendedAudience/unsupportedCountries``"
+
+#: ../../schema.core.rst:313
+msgid ""
+"This key explicitly marks countries as NOT supported. This might be the "
+"case if there is a conflict between how software is working and a "
+"specific law, process or technology. All countries are specified using "
+"lowercase ISO 3166-1 alpha-2 two-letter country codes."
+msgstr ""
+"Questa chiave contrassegna esplicitamente i Paesi **NON** supportati.\n"
+"Questa situazione potrebbe verificarsi nel momento in cui esista un\n"
+"conflitto tra la modalità di funzionamento del software ed una legge\n"
+"specifica, un processo o una tecnologia. Tutti i Paesi sono specificati\n"
+"usando *country code* a due lettere seguendo lo standard ISO 3166-1\n"
+"alpha-2."
+
+#: ../../schema.core.rst:319
+msgid "Key ``intendedAudience/scope``"
+msgstr "Chiave ``intendedAudience/scope``"
+
+#: ../../schema.core.rst:323
+msgid "Acceptable values: see :ref:`scope-list`"
+msgstr "Valori accettabili: vedi :ref:`scope-list`"
+
+#: ../../schema.core.rst:325
+msgid ""
+"This key contains a list of tags related to the field of application of "
+"the software."
+msgstr ""
+"Questa chiave contiene una lista di tag che rappresentano il campo\n"
+"di applicazione del software."
+
+#: ../../schema.core.rst:329
+msgid "Section ``description``"
+msgstr "Sezione ``description``"
+
+#: ../../schema.core.rst:331
+msgid ""
+"This section contains a general description of the software. Parsers can "
+"use this section for instance to create a web page describing the "
+"software."
+msgstr ""
+"Questa sezione contiene una descrizione generale del software. I parser\n"
+"possono usare questa sezione ad esempio per creare una pagina web che\n"
+"descriva il software."
+
+#: ../../schema.core.rst:335
+msgid ""
+"**Note:** since all the strings contained in this section are user-"
+"visible and written in a specific language, you **must** specify the "
+"language you are editing the text in (using the IETF `BCP 47 "
+"<https://tools.ietf.org/html/bcp47>`__ specifications) by creating a sub-"
+"section with that name. The primary language subtag cannot be omitted, as"
+" mandated by the BCP 47."
+msgstr ""
+"**Nota bene:** siccome tutte le stringhe contenute in questa sezione sono"
+"\n"
+"visibili all’utente e scritte in un linguaggio specifico, è\n"
+"**necessario** specificare il linguaggio con il quale si sta modificando\n"
+"il testo. Per farlo è necessario creare una sezione dedicata alla lingua\n"
+"seguendo le specifiche IETF `BCP 47 "
+"<https://tools.ietf.org/html/bcp47>`__. Si\n"
+"ricorda che il *primary language\n"
+"subtag* non può essere omesso, come specificato nel BCP 47."
+
+#: ../../schema.core.rst:342
+msgid "An example for English:"
+msgstr "Un esempio per l’italiano:"
+
+#: ../../schema.core.rst:344
+msgid ""
+"description:\n"
+"  en:\n"
+"    shortDescription: ...\n"
+"    longDescription: ..."
+msgstr ""
+"description:\n"
+"  it:\n"
+"    shortDescription: ...\n"
+"    longDescription: ..."
+
+#: ../../schema.core.rst:351
+msgid ""
+"In the following part of the document, all keys are assumed to be in a "
+"sub-section with the name of the language (we will note this with "
+"``[lang]``)."
+msgstr ""
+"Nelle parti successive del documento, tutte le chiavi sono assunte essere"
+"\n"
+"all’interno di una sezione con il nome della lingua (annoteremo questo\n"
+"con ``[lang]``)."
+
+#: ../../schema.core.rst:355
+msgid ""
+"**Note:** it is mandatory to have *at least* one language in this "
+"section. All other languages are optional."
+msgstr ""
+"**Nota bene:** è obbligatorio avere *almeno* una lingua in questa\n"
+"sezione. Tutte le altre lingue sono opzionali."
+
+#: ../../schema.core.rst:359
+msgid "Key ``description/[lang]/localisedName``"
+msgstr "Chiave ``description/[lang]/localisedName``"
+
+#: ../../schema.core.rst:365
+msgid ""
+"This key is an opportunity to localise the name in a specific language. "
+"It contains the (short) public name of the product. It should be the name"
+" most people usually refer to the software. In case the software has both"
+" an internal “code” name and a commercial name, use the commercial name."
+msgstr ""
+"Questa chiave rappresenta un’opportunità di tradurre il nome in una\n"
+"lingua specifica. Contiene il nome pubblico (corto) del prodotto.\n"
+"Dovrebbe essere il nome con il quale la maggioranza delle persone\n"
+"normalmente si riferisce al software. Nel caso in cui il software abbia\n"
+"sia un nome “interno” che uno commerciale, è preferibile utilizzare\n"
+"quello commerciale."
+
+#: ../../schema.core.rst:372
+msgid "Key ``description/[lang]/genericName``"
+msgstr "Chiave ``description/[lang]/genericName``"
+
+#: ../../schema.core.rst:374
+msgid "Type: string (max 35 chars)"
+msgstr "Tipo: stringa (max 35 caratteri)"
+
+#: ../../schema.core.rst:376
+msgid "Example: ``\"Text Editor\"``"
+msgstr "Esempio: ``\"Text Editor\"``"
+
+#: ../../schema.core.rst:378
+msgid ""
+"This key is the “Generic name”, which refers to the specific category to "
+"which the software belongs. You can usually find the generic name in the "
+"presentation of the software, when you write: “Software xxx is a yyy”. "
+"Notable examples include “Text Editor”, “Word Processor”, “Web Browser”, "
+"“Chat” and so on… The generic name can be up to 35 characters long."
+msgstr ""
+"Questa chiave rappresenta il “Nome generico”, riferito alla categoria\n"
+"specifica alla quale il software appartiene. Normalmente è possibile\n"
+"trovare il nome generico nella presentazione del software, quando si\n"
+"scrive una frase del tipo: “Il software xxx è un yyy”. Esempi degni di\n"
+"nota includono “Editor di Testi”, “Word Processor”, “Web Browser”,\n"
+"“Chat” e così via. Il nome generico può avere una lunghezza fino a 35\n"
+"caratteri."
+
+#: ../../schema.core.rst:385
+msgid "Key ``description/[lang]/shortDescription``"
+msgstr "Chiave ``description/[lang]/shortDescription``"
+
+#: ../../schema.core.rst:387
+msgid "Type: string (max 150 chars)"
+msgstr "Tipo: stringa (max 150 caratteri)"
+
+#: ../../schema.core.rst:389
+msgid "Example: ``\"Advanced booking system for hospitals\"``"
+msgstr "Esempio: ``\"Sistema avanzato di prenotazione per ospedali\"``"
+
+#: ../../schema.core.rst:391
+msgid ""
+"This key contains a short description of the software. It should be a "
+"single line containing a single sentence. Maximum 150 characters are "
+"allowed."
+msgstr ""
+"Questa chiave contiene una breve descrizione del software. Dovrebbe\n"
+"essere una singola linea contenente una singola frase. L’estensione\n"
+"massima consentita è di 150 caratteri."
+
+#: ../../schema.core.rst:396
+msgid "Key ``description/[lang]/longDescription``"
+msgstr "Chiave ``description/[lang]/longDescription``"
+
+#: ../../schema.core.rst:398
+msgid "Type: string (min 500 chars, max 10000 chars)"
+msgstr "Tipo: stringa (min 500 caratteri, max 10000 caratteri)"
+
+#: ../../schema.core.rst:399 ../../schema.core.rst:467
+msgid "Presence: mandatory (for at least one language)"
+msgstr "Presenza: obbligatoria (almeno per una lingua)"
+
+#: ../../schema.core.rst:401
+msgid ""
+"This key contains a longer description of the software, between 500 and "
+"10000 chars. It is meant to provide an overview of the capabilities of "
+"the software for a potential user. The audience for this text should be "
+"that of users of the software, not developers. You can think of this text"
+" as the description of the software that would be in its website (if the "
+"software had one)."
+msgstr ""
+"Questa chiave contiene una descrizione più lunga del software, con una\n"
+"lunghezza che può variare da 500 a 1000 caratteri. Questa chiave è\n"
+"pensata per fornire una panoramica delle caratteristiche del software\n"
+"per un potenziale utente. Il destinatario di questo testo dovrebbe\n"
+"essere l’utente finale, non nello sviluppatore. E’ possibile pensare a\n"
+"questo testo come alla descrizione del software che potrebbe stare nel\n"
+"sito web (nel caso in cui il software ne possieda uno)."
+
+#: ../../schema.core.rst:408
+msgid ""
+"This description can contain some basic markdown: ``*italic*``, "
+"``**bold**``, bullet points and ``[links](#)``."
+msgstr ""
+"Questa descrizione può contenere del Markdown base: ``*italic*``,\n"
+"``**bold**``, elenchi puntati e ``[link](#)``."
+
+#: ../../schema.core.rst:412
+msgid "Key ``description/[lang]/documentation``"
+msgstr "Chiave ``description/[lang]/documentation``"
+
+#: ../../schema.core.rst:414 ../../schema.core.rst:440
+msgid "Type: URL"
+msgstr "Tipo: URL"
+
+#: ../../schema.core.rst:417
+msgid ""
+"This key contains a reference to the user-level (not developer-level) "
+"documentation of the software. The value must be a URL to a hosted "
+"version of the documentation."
+msgstr ""
+"Questa chiave contiene un riferimento alla documentazione lato utente\n"
+"(non lato sviluppatore) Questo valore deve essere una URL che punta ad\n"
+"una versione ospitata della documentazione."
+
+#: ../../schema.core.rst:421
+msgid ""
+"It is suggested that the URL points to a hosted version of the "
+"documentation that is immediately readable through a common web browser "
+"in both desktop and mobile format. The documentation should be rendered "
+"in HTML and browsable like a website (with a navigation index, a search "
+"bar, etc.)."
+msgstr ""
+"È suggerito che questa URL punti ad una versione ospitata della\n"
+"documentazione che sia direttamente leggibile utilizzando un comune web\n"
+"browser sia in formato desktop che mobile. La documentazione dovrebbe\n"
+"essere renderizzata in HTML e navigabile come un sito web (con un\n"
+"indice, una barra di ricerca, etc.)."
+
+#: ../../schema.core.rst:427 ../../schema.core.rst:453
+msgid ""
+"If the documentation is instead available only as a document, put a "
+"direct view/download link as URL in this key. You should commit the "
+"document as part of the source code repository, and then link to it using"
+" the code hosting source browser URL (e.g.: GitHub URL to the file). "
+"Prefer using open formats like PDF or ODT for maximum interoperability."
+msgstr ""
+"Se la documentazione dovesse invece essere disponibile esclusivamente\n"
+"sotto forma di documento, è possibile inserire il link diretto per\n"
+"vedere/scaricare tale documento, sotto forma di URL, in questa chiave.\n"
+"E’ consigliabile trattare la documentazione come parte del codice\n"
+"sorgente e dunque gestirla tramite commit sul repository del codice\n"
+"sorgente. In questo modo, sarà possibile fornire una URL diretta alla\n"
+"piattaforma di hosting del codice (ad es., GitHub URL al file). E’\n"
+"preferibile utilizzare formati aperti quali PDF o ODT per avere la\n"
+"massima interoperabilità."
+
+#: ../../schema.core.rst:433 ../../schema.core.rst:459
+msgid ""
+"Whichever the format for the documentation, remember to make its source "
+"files available under an open license, possibly by committing them as "
+"part of the repository itself."
+msgstr ""
+"Qualunque sia il formato della documentazione,\n"
+"è importante ricordare di rilasciarne i sorgenti coperti da licenza\n"
+"aperta, possibilmente effettuandone un commit all’interno del repository\n"
+"stesso."
+
+#: ../../schema.core.rst:438
+msgid "Key ``description/[lang]/apiDocumentation``"
+msgstr "Chiave ``description/[lang]/apiDocumentation``"
+
+#: ../../schema.core.rst:443
+msgid ""
+"This key contains a reference to the API documentation of the software. "
+"The value must be a URL to a hosted version of the documentation."
+msgstr ""
+"Questa chiave contiene un riferimento alla documentazione delle API del\n"
+"software. Il valore deve essere una URL verso una versione ospitata\n"
+"della documentazione."
+
+#: ../../schema.core.rst:446
+msgid ""
+"It is suggested that the URL points to a hosted version of the "
+"documentation that is immediately readable through a common web browser. "
+"The documentation should be rendered in HTML and browsable like a website"
+" (with a navigation index, a search bar, etc.), and if there is a "
+"reference or test deployment, possibly offer an interactive interface "
+"(e.g. Swagger)."
+msgstr ""
+"E’ suggerito che questa URL punti ad una versione ospitata della\n"
+"documentazione che sia direttamente leggibile utilizzando un comune web\n"
+"browser. La documentazione dovrebbe essere renderizzata in HTML e\n"
+"navigabile come un sito web (con un indice, una barra di ricerca, etc.),\n"
+"e se c’è un riferimento ad un deployment di prova, questo dovrebbe\n"
+"offrire un’interfaccia navigabile (e.g. Swagger)."
+
+#: ../../schema.core.rst:464
+msgid "Key ``description/[lang]/features``"
+msgstr "Chiave ``description/[lang]/features``"
+
+#: ../../schema.core.rst:469
+msgid ""
+"This key contains a list of software features, describing what "
+"capabilities the software allows to do. The audience for this text should"
+" be that of public decision makers who will be commissioning the "
+"software. The features should thus not target developers; instead of "
+"listing technical features referring to implementation details, prefer "
+"listing user-visible functionalities of the software."
+msgstr ""
+"Questa chiave contiene una lista di *feature* del software, che descriva\n"
+"le possibilità offerte dallo stesso. Il target di questo testo sono i\n"
+"decisori pubblici che potranno decidere di adottarlo o modificarlo. Per\n"
+"questo motivo, queste feature *non* devono riferirsi agli sviluppatori:\n"
+"invece di elencare le caratteristiche tecniche riferite ai dettagli\n"
+"implementativi, è preferibile elencare le funzionalità lato utente."
+
+#: ../../schema.core.rst:476
+msgid ""
+"While the key is mandatory, there is no mandatory minimum or maximum "
+"number of features that should be listed in this key. Each feature must "
+"use a maximum of 100 characters."
+msgstr ""
+"Anche se questa chiave è obbligatoria, non c’è un limite minimo o\n"
+"massimo sul numero di feature da elencare in questa chiave. Ogni feature\n"
+"deve però avere un massimo di 100 caratteri."
+
+#: ../../schema.core.rst:480
+msgid ""
+"The suggested number of features to list is between 5 and 20, depending "
+"on the software size and complexity. There is no need for exhaustiveness,"
+" as users can always read the documentation for additional information."
+msgstr ""
+"Il numero di feature suggerito da elencare è tra 5 e 20, a seconda della\n"
+"dimensione del software e della sua complessità. Non c’è bisogno di fare\n"
+"una lista esaustiva, dal momento che gli utenti hanno sempre a\n"
+"disposizione la documentazione per reperire ulteriori informazioni."
+
+#: ../../schema.core.rst:486
+msgid "Key ``description/[lang]/screenshots``"
+msgstr "Chiave ``description/[lang]/screenshots``"
+
+#: ../../schema.core.rst:488
+msgid "Type: array of strings (paths)"
+msgstr "Tipo: array di stringhe (percorsi)"
+
+#: ../../schema.core.rst:490
+msgid "Formats: PNG, JPG"
+msgstr "Formati: PNG, JPG"
+
+#: ../../schema.core.rst:491
+msgid "Example: ``\"data/screenshots/configuration.png\"``"
+msgstr "Esempio: ``\"data/screenshots/configuration.png\"``"
+
+#: ../../schema.core.rst:493
+msgid ""
+"This key contains one or multiple paths to files showing screenshots of "
+"the software. They are meant to give a quick idea on how the software "
+"looks like and how it works. The key value can be the relative path to "
+"the file starting from the root of the repository, or it can be an "
+"absolute URL pointing to the screenshot in raw version. In both cases, "
+"the file must reside inside the same repository where the "
+"``publiccode.yml`` file is stored."
+msgstr ""
+"Questa chiave indica una o più immagini del software (screenshot). Queste"
+"\n"
+"hanno lo scopo di dare una panoramica dell'aspetto del software e del\n"
+"suo funzionamento. Il valore può essere il percorso relativo al file a "
+"partire\n"
+"dalla root del repository, oppure una URL assoluta che punta all'immagine"
+" in\n"
+"versione raw. In entrambi i casi, il file deve risiedere all'interno del\n"
+"medesimo repository che contiene il ``publiccode.yml``."
+
+#: ../../schema.core.rst:501
+msgid "Screenshots can be of any shape and size; the suggested formats are:"
+msgstr ""
+"Queste immagini possono essere di qualsiasi formato e dimensione; i\n"
+"formati suggeriti sono:"
+
+#: ../../schema.core.rst:503
+msgid "Desktop: 1280x800 @1x"
+msgstr "Desktop: 1280x800 @1x"
+
+#: ../../schema.core.rst:504
+msgid "Tablet: 1024x768 @2x"
+msgstr "Tablet: 1024x768 @2x"
+
+#: ../../schema.core.rst:505
+msgid "Mobile: 375x667 @2x"
+msgstr "Mobile: 375x667 @2x"
+
+#: ../../schema.core.rst:508
+msgid "Key ``description/[lang]/videos``"
+msgstr "Chiave ``description/[lang]/videos``"
+
+#: ../../schema.core.rst:510
+msgid "Type: array of strings (URLs)"
+msgstr "Tipo: array di stringhe (URL)"
+
+#: ../../schema.core.rst:512
+msgid "Example: ``\"https://youtube.com/xxxxxxxx\"``"
+msgstr "Esempio: ``\"https://youtube.com/xxxxxxxx\"``"
+
+#: ../../schema.core.rst:514
+msgid ""
+"This key contains one or multiple URLs of videos showing how the software"
+" works. Like screenshots, videos should be used to give a quick overview "
+"on how the software looks like and how it works. Videos must be hosted on"
+" a video sharing website that supports the `oEmbed "
+"<https://oembed.com>`__ standard; popular options are YouTube and Vimeo."
+msgstr ""
+"Questa chiave contiene una o più URL di video che mostrano il\n"
+"funzionamento del software. Così come gli screenshot, i video dovrebbero\n"
+"essere usati per dare una rapida panoramica sull’aspetto e le\n"
+"funzionalità del software. I video devono essere ospitati su una\n"
+"piattaforma di video sharing che supporti lo standard\n"
+"`oEmbed <https://oembed.com>`__; le opzioni più popolari sono YouTube e\n"
+"Vimeo."
+
+#: ../../schema.core.rst:521
+msgid ""
+"Since videos are an integral part of the documentation, it is recommended"
+" to publish them with an open license."
+msgstr ""
+"**Nota bene:** dal momento che costituisce parte integrante della\n"
+"documentazione, è opportuno che il video sia pubblicato con una licenza\n"
+"aperta."
+
+#: ../../schema.core.rst:525
+msgid "Key ``description/[lang]/awards``"
+msgstr "Chiave ``description/[lang]/awards``"
+
+#: ../../schema.core.rst:530
+msgid "A list of awards won by the software."
+msgstr "Una lista di premi assegnati al software."
+
+#: ../../schema.core.rst:533
+msgid "Section ``legal``"
+msgstr "Sezione ``legal``"
+
+#: ../../schema.core.rst:536
+msgid "Key ``legal/license``"
+msgstr "Chiave ``legal/license``"
+
+#: ../../schema.core.rst:540
+msgid "Example: ``\"AGPL-3.0-or-later\"``"
+msgstr "Esempio: ``\"AGPL-3.0-or-later\"``"
+
+#: ../../schema.core.rst:542
+msgid ""
+"This string describes the license under which the software is "
+"distributed. The string must contain a valid SPDX expression, referring "
+"to one (or multiple) open-source license. Please refer to the `SPDX "
+"documentation <https://spdx.org/licenses/>`__ for further information."
+msgstr ""
+"Questa stringa descrive la licenza con cui il software è distribuito. La\n"
+"stringa deve contenere un’espressione SPDX valida che si riferisca ad\n"
+"una (o più) licenze open-source. Per avere ulteriori informazioni a\n"
+"riguardo è possibile visitare la `documentazione\n"
+"SPDX <https://spdx.org/licenses/>`__."
+
+#: ../../schema.core.rst:548
+msgid "Key ``legal/mainCopyrightOwner``"
+msgstr "Chiave ``legal/mainCopyrightOwner``"
+
+#: ../../schema.core.rst:552 ../../schema.core.rst:571
+msgid "Example: ``\"City of Amsterdam\"``"
+msgstr "Esempio: ``\"Città di Roma\"``"
+
+#: ../../schema.core.rst:554
+msgid ""
+"This string describes the entity that owns the copyright on “most” of the"
+" code in the repository. Normally, this is the line that is reported with"
+" the copyright symbol at the top of most files in the repo."
+msgstr ""
+"Questa stringa descrive l’entità che possiede il copyright sulla maggior\n"
+"parte del codice presente nel repository. Normalmente, questa è la linea\n"
+"che viene riportata con il simbolo di copyright all’inizio della maggior\n"
+"parte dei file nel repository."
+
+#: ../../schema.core.rst:558
+msgid ""
+"It is possible to list multiple owners if required so, using an English "
+"sentence. It is also possible to informally refer to a community of group"
+" of people like “Linus Torvalds and all Linux contributors”."
+msgstr ""
+"E’ possibile elencare diversi proprietari se necessario, usando una\n"
+"frase in inglese. E’ anche possibile riferirsi ad una community o ad un\n"
+"gruppo di persone come ad esempio “Linus Torvalds and all Linux\n"
+"contributors”."
+
+#: ../../schema.core.rst:562
+msgid ""
+"In case it is not possible to name a main copyright owner, it is possible"
+" to omit this key; in those cases, if the repo has a authors file, you "
+"can point to it through ``legal/authorsFile``."
+msgstr ""
+"Nel caso in cui non sia possibile individuare il maggior proprietario di\n"
+"copyright, è possibile omettere questa chiave; in questi casi, se il\n"
+"repository ha un file contenente il nome degli autori, è possibile\n"
+"puntare a quel file attraverso ``legal/authorsFile`` (vedi più sotto)."
+
+#: ../../schema.core.rst:567
+msgid "Key ``legal/repoOwner``"
+msgstr "Chiave ``legal/repoOwner``"
+
+#: ../../schema.core.rst:573
+msgid ""
+"This string describes the entity that owns this repository; this might or"
+" might not be the same entity who owns the copyright on the code itself. "
+"For instance, in case of a fork of the original software, the "
+"``repoOwner`` is probably different from the ``mainCopyrightOwner``."
+msgstr ""
+"Questa stringa descrive l’entità che possiede il repository; questa può\n"
+"essere o non essere la stessa che possiede il copyright del codice\n"
+"stesso. Ad esempio, nel caso di un fork del software originale, il\n"
+"``repoOwner`` è probabilmente diverso dal ``mainCopyrightOwner``."
+
+#: ../../schema.core.rst:579
+msgid "Key ``legal/authorsFile``"
+msgstr "Chiave ``legal/authorsFile``"
+
+#: ../../schema.core.rst:583
+msgid "Example: ``\"doc/AUTHORS.txt\"``"
+msgstr "Esempio: ``\"doc/AUTHORS.txt\"``"
+
+#: ../../schema.core.rst:585
+msgid ""
+"Some open-source software adopt a convention of identify the copyright "
+"holders through a file that lists all the entities that own the "
+"copyright. This is common in projects strongly backed by a community "
+"where there are many external contributors and no clear single/main "
+"copyright owner. In such cases, this key can be used to refer to the "
+"authors file, using a path relative to the root of the repository."
+msgstr ""
+"Qualche software open-source adotta una convenzione che identifica il\n"
+"detentore del copyright attraverso un file elencante tutte le entità\n"
+"che possiedono il copyright. Questo è comune nei progetti fortemente\n"
+"sostenuti dalla community ove esistono diversi contributori esterni e\n"
+"non c’è un chiaro singolo detentore del copyright. In questi casi,\n"
+"questa chiave può essere usata per riferirsi al suddetto file degli\n"
+"autori, usando un percorso relativo alla radice (root) del repository."
+
+#: ../../schema.core.rst:593
+msgid "Section ``maintenance``"
+msgstr "Sezione ``maintenance``"
+
+#: ../../schema.core.rst:595
+msgid ""
+"This section provides information on the maintenance status of the "
+"software, useful to evaluate whether the software is actively developed "
+"or not."
+msgstr ""
+"Questa sezione fornisce informazioni sullo stato di manutenzione del\n"
+"software, utile per valutare se il software è attivamente sviluppato o\n"
+"meno."
+
+#: ../../schema.core.rst:600
+msgid "Key ``maintenance/type``"
+msgstr "Chiave ``maintenance/type``"
+
+#: ../../schema.core.rst:602
+msgid "Type: enumerate"
+msgstr "Tipo: enumerate"
+
+#: ../../schema.core.rst:604
+msgid ""
+"Values: ``\"internal\"``, ``\"contract\"``, ``\"community\"``, "
+"``\"none\"``"
+msgstr ""
+"Valori: ``\"internal\"``, ``\"contract\"``, ``\"community\"``, "
+"``\"none\"``"
+
+#: ../../schema.core.rst:606
+msgid "This key describes how the software is currently maintained."
+msgstr "Questa chiave descrive come il software è attualmente manutenuto."
+
+#: ../../schema.core.rst:608
+msgid ""
+"``internal`` - means that the software is internally maintained by the "
+"repository owner;"
+msgstr ""
+"``internal`` - significa che il software è manutenuto internamente dal\n"
+"   proprietario del repository;"
+
+#: ../../schema.core.rst:610
+msgid ""
+"``contract`` - means that there is a commercial contract that binds an "
+"entity to the maintenance of the software;"
+msgstr ""
+"``contract`` - significa che c’è un contratto commerciale che lega "
+"un’entità\n"
+"   alla manutenzione del software;"
+
+#: ../../schema.core.rst:612
+msgid ""
+"``community`` - means that the software is currently maintained by one or"
+" more people that donate their time to the project;"
+msgstr ""
+"``community`` - significa che il software è attualmente manutenuto da\n"
+"   una o più persone che offrono il loro tempo al progetto;"
+
+#: ../../schema.core.rst:614
+msgid "``none`` - means that the software is not actively maintained."
+msgstr "``none`` - significa che il software non è al momento manutenuto."
+
+#: ../../schema.core.rst:617
+msgid "Key ``maintenance/contractors``"
+msgstr "Chiave ``maintenance/contractors``"
+
+#: ../../schema.core.rst:619
+msgid "Type: array of Contractor (see below)"
+msgstr "Tipo: array di Contractor (vedi sotto)"
+
+#: ../../schema.core.rst:620
+msgid "Presence: mandatory (if ``maintenance/type`` **is** ``contract``)"
+msgstr "Presenza: obbligatoria (se ``maintenance/type`` **è** ``contract``)"
+
+#: ../../schema.core.rst:622
+msgid ""
+"This key describes the entity or entities, if any, that are currently "
+"contracted for maintaining the software. They can be companies, "
+"organizations, or other collective names."
+msgstr ""
+"Questa chiave descrive l’entità o le entità, se ce ne sono, che\n"
+"attualmente hanno un contratto di manutenzione del software. Queste\n"
+"possono essere aziende, organizzazioni o altri nomi collettivi."
+
+#: ../../schema.core.rst:627
+msgid "Key ``maintenance/contacts``"
+msgstr "Chiave ``maintenance/contacts``"
+
+#: ../../schema.core.rst:629
+msgid "Type: List of Contacts (see below)"
+msgstr "Tipo: Lista di Contatti (vedi sotto)"
+
+#: ../../schema.core.rst:630
+msgid ""
+"Presence: mandatory (if ``maintenance/type`` **is** ``internal`` or "
+"``community``)"
+msgstr ""
+"Presenza: obbligatoria (se ``maintenance/type`` **è** ``internal`` oppure"
+" ``community``)"
+
+#: ../../schema.core.rst:632
+msgid "One or more contacts maintaining this software."
+msgstr "Uno o più contatti di chi sta mantenendo il software."
+
+#: ../../schema.core.rst:634
+msgid ""
+"This key describes the technical people currently responsible for "
+"maintaining the software. All contacts need to be a physical person, not "
+"a company or an organisation. If somebody is acting as a representative "
+"of an institution, it must be listed within the ``affiliation`` of the "
+"contact."
+msgstr ""
+"Questa chiave descrive le persone tecniche che attualmente sono\n"
+"responsabili della manutenzione del software. Tutti i contatti devono\n"
+"essere di una persona fisica, non un’azienda o un’organizzazione. Se\n"
+"un contatto funge da rappresentante di un’istituzione, questo rapporto\n"
+"deve essere esplicitato attraverso la chiave ``affiliation``."
+
+#: ../../schema.core.rst:640
+msgid ""
+"In case of a commercial agreement (or a chain of such agreements), "
+"specify the final entities actually contracted to deliver the "
+"maintenance. Do not specify the software owner unless it is technically "
+"involved with the maintenance of the product as well."
+msgstr ""
+"Nel caso di un accordo commerciale (o una catena di tali accordi),\n"
+"specificare le entità finali che sono effettivamente contrattate per\n"
+"fornire la manutenzione. Non specificare il proprietario del software a\n"
+"meno che sia tecnicamente coinvolto anche nella manutenzione del\n"
+"prodotto."
+
+#: ../../schema.core.rst:646
+msgid "Section ``localisation``"
+msgstr "Sezione ``localisation``"
+
+#: ../../schema.core.rst:648
+msgid ""
+"This section provides an overview of the localization features of the "
+"software."
+msgstr ""
+"Questa sezione fornisce una panoramica sulle funzionalità di\n"
+"localizzazione del software."
+
+#: ../../schema.core.rst:652
+msgid "Key ``localisation/localisationReady``"
+msgstr "Chiave ``localisation/localisationReady``"
+
+#: ../../schema.core.rst:657
+msgid ""
+"If ``yes``, the software has infrastructure in place or is otherwise "
+"designed to be multilingual. It does not need to be available in more "
+"than one language."
+msgstr ""
+"Se ``yes``, il software ha l’infrastruttura o è stato progettato per\n"
+"essere multi-lingua. Ad ogni modo, questo campo non pregiudica\n"
+"l’esistenza di una traduzione in altre lingue ma si riferisce\n"
+"esclusivamente all’aspetto tecnologico. Per l’elenco delle lingue\n"
+"disponibili si veda la chiave ``localisation/availableLanguages``."
+
+#: ../../schema.core.rst:662
+msgid "Key ``localisation/availableLanguages``"
+msgstr "Chiave ``localisation/availableLanguages``"
+
+#: ../../schema.core.rst:664
+msgid "Type: list of IETF BCP 47 language tags"
+msgstr ""
+"Tipo: lista di *language tag* secondo le specifiche IETF BCP 47\n"
+"-  Presenza: obbligatoria"
+
+#: ../../schema.core.rst:666
+msgid "Example: ``\"it\"``, ``\"en\"``, ``\"sl-IT-nedis\"``"
+msgstr "Esempio: ``\"it\"``, ``\"en\"``, ``\"sl-IT-nedis\"``"
+
+#: ../../schema.core.rst:668
+msgid ""
+"If present, this is the list of languages in which the software is "
+"available. Of course, this list will contain at least one language. The "
+"primary language subtag cannot be omitted, as mandated by the `BCP 47 "
+"<https://tools.ietf.org/html/bcp47>`__."
+msgstr ""
+"Se presente, questa è la lista di lingue in cui è disponibile il\n"
+"software. Ovviamente, questa lista dovrà contenere almeno una lingua.\n"
+"Si ricorda che il *primary language subtag* non può essere omesso, come\n"
+"specificato dal `BCP 47 <https://tools.ietf.org/html/bcp47>`__."
+
+#: ../../schema.core.rst:674
+msgid "Section ``dependsOn``"
+msgstr "Sezione ``dependsOn``"
+
+#: ../../schema.core.rst:676
+msgid ""
+"This section provides an overview on the system-level dependencies "
+"required to install and use this software."
+msgstr ""
+"Questa sezione fornisce una panoramica delle dipendenze a livello di\n"
+"sistema necessarie per installare ed utilizzare il software."
+
+#: ../../schema.core.rst:679
+msgid ""
+"**NOTE:** do not list dependencies at the source code level (e.g.: "
+"software libraries being used), and focus only on runtime and/or system-"
+"level dependencies that must be installed and maintained separately. For "
+"instance, a database is a good example of such dependencies."
+msgstr ""
+"**Nota bene:** non elencare le dipendenze a livello di codice sorgente\n"
+"(ad es., librerie software usate), e focalizza solo su dipendenze di\n"
+"sistema e/o a runtime che devono essere installate e manutenute\n"
+"separatamente. Ad esempio, un database è un buon esempio di questo tipo\n"
+"di dipendenza."
+
+#: ../../schema.core.rst:686
+msgid "Key ``dependsOn/open``"
+msgstr "Chiave ``dependsOn/open``"
+
+#: ../../schema.core.rst:688 ../../schema.core.rst:697
+#: ../../schema.core.rst:706
+msgid "Type: array of ``dependency`` (see below)"
+msgstr "Tipo: array di ``dependency`` (vedi sotto)"
+
+#: ../../schema.core.rst:691
+msgid ""
+"This key contains a list of runtime dependencies that are distributed "
+"under an open-source license."
+msgstr ""
+"Questa chiave contiene una lista di dipendenze a runtime che sono\n"
+"distribuite con una licenza di tipo open-source."
+
+#: ../../schema.core.rst:695
+msgid "Key ``dependsOn/proprietary``"
+msgstr "Chiave ``dependsOn/proprietary``"
+
+#: ../../schema.core.rst:700
+msgid ""
+"This key contains a list of runtime dependencies that are distributed "
+"under a proprietary license."
+msgstr ""
+"Questa chiave contiene una lista di dipendenze a runtime che sono\n"
+"distribuite con una licenza proprietaria."
+
+#: ../../schema.core.rst:704
+msgid "Key ``dependsOn/hardware``"
+msgstr "Chiave ``dependsOn/hardware``"
+
+#: ../../schema.core.rst:709
+msgid ""
+"This key contains a list of hardware dependencies that must be owned to "
+"use the software."
+msgstr ""
+"This key contains a list of hardware dependencies that must be owned to "
+"use the\n"
+"software."
+
+#: ../../schema.core.rst:713
+msgid "Special data formats"
+msgstr "Formati di dato speciali"
+
+#: ../../schema.core.rst:716
+msgid "Dependency"
+msgstr "Dependency"
+
+#: ../../schema.core.rst:718
+msgid "A ``dependency`` is a complex object. The properties are the following:"
+msgstr ""
+"Una ``dependency`` è un oggetto complesso. Le proprietà sono le\n"
+"seguenti:"
+
+#: ../../schema.core.rst:720
+msgid ""
+"``name`` - **mandatory** - The name of the dependency (e.g. MySQL, NFC "
+"Reader)"
+msgstr ""
+"``name`` - **obbligatoria** - Il nome della dipendenza (e.g. MySQL,\n"
+"   NFC Reader);"
+
+#: ../../schema.core.rst:722
+msgid "``versionMin`` - the first compatible version"
+msgstr "``versionMin`` - la prima versione compatibile;"
+
+#: ../../schema.core.rst:723
+msgid "``versionMax`` - the latest compatible version"
+msgstr "``versionMax`` - l’ultima versione compatibile;"
+
+#: ../../schema.core.rst:724
+msgid ""
+"``version`` - the only major version for which the software is "
+"compatible. It assumes compatibility with all patches and bugfixes later "
+"applied to this version."
+msgstr ""
+"``version`` - l’unica versione major con la quale il software è\n"
+"   compatibile. Si assume la compatibilità con tutte le *patch* e i\n"
+"   *bugfix* che saranno applicati successivamente a questa versione;"
+
+#: ../../schema.core.rst:727
+msgid "``optional`` - whether the dependency is optional or mandatory"
+msgstr "``opzionale`` - se la dipendenza è opzionale o obbligatoria."
+
+#: ../../schema.core.rst:730
+msgid "Complex versioning"
+msgstr "Versioning complesso"
+
+#: ../../schema.core.rst:732
+msgid ""
+"It is of course possible to use the various keys to specify a complex "
+"compatibility matrix."
+msgstr ""
+"E’ ovviamente possibile utilizzare le varie chiavi per specificare una\n"
+"matrice di compatibilità complessa."
+
+#: ../../schema.core.rst:735
+msgid "*Ex. 1*"
+msgstr "*Ex. 1*"
+
+#: ../../schema.core.rst:737
+msgid ""
+"- name: PostgreSQL\n"
+"  version: \"3.2\"\n"
+"  optional: yes"
+msgstr ""
+"- name: PostgreSQL\n"
+"  version: \"3.2\"\n"
+"  optional: yes"
+
+#: ../../schema.core.rst:743
+msgid ""
+"This snippet marks an optional dependency on PostgreSQL exactly version "
+"3.2."
+msgstr ""
+"Questo snippet segnala una dipendenza opzionale verso PostgreSQL,\n"
+"nell’esattezza la sua versione 3.2."
+
+#: ../../schema.core.rst:746
+msgid "*Ex. 2*"
+msgstr "*Ex. 2*"
+
+#: ../../schema.core.rst:748
+msgid ""
+"- name: MySQL\n"
+"  versionMin: \"1.1\"\n"
+"  versionMax: \"1.3\""
+msgstr ""
+"- name: MySQL\n"
+"  versionMin: \"1.1\"\n"
+"  versionMax: \"1.3\""
+
+#: ../../schema.core.rst:754
+msgid ""
+"This snippet marks a mandatory dependency on MySQL, allowing any version "
+"between 1.1 and 1.3."
+msgstr ""
+"Questo snippet segnala una dipendenza obbligatoria verso MySQL,\n"
+"permettendo ogni versione tra la 1.1 e la 1.3."
+
+#: ../../schema.core.rst:758
+msgid "Contact"
+msgstr "Contatto"
+
+#: ../../schema.core.rst:760
+msgid "A Contact is an object with the following properties:"
+msgstr "Un Contatto è un oggetto con le seguenti proprietà:"
+
+#: ../../schema.core.rst:762
+msgid ""
+"``name`` - **mandatory** - This key contains the full name of one of the "
+"technical contacts. It must be a real person; do NOT populate this key "
+"with generic contact information, company departments, associations, etc."
+msgstr ""
+"``name`` - **obbligatoria** - Questa chiave contiene il nome completo\n"
+"   di uno dei contatti tecnici. Deve essere una persona reale; NON\n"
+"   popolare questa chiave con informazioni di contatto generiche,\n"
+"   dipartimenti dell’azienda, associazioni, etc."
+
+#: ../../schema.core.rst:766 ../../schema.core.rst:793
+msgid ""
+"``email`` - This key contains the e-mail address of the technical "
+"contact. It must be an email address of where the technical contact can "
+"be directly reached; do NOT populate this key with mailing-lists or "
+"generic contact points like “info@acme.inc”. The e-mail address must not "
+"be obfuscated. To improve resistance against e-mail collection, use "
+"``\\x64`` to replace ``@``, as allowed by the YAML specification."
+msgstr ""
+"``email`` - Questa chiave contiene l’indirizzo email del contatto\n"
+"   tecnico. Deve essere un indirizzo email per il contatto diretto con\n"
+"   il tecnico; NON popolare questa chiave con mailing-list o punti di\n"
+"   contatto generico tipo “info@acme.inc”. Questo indirizzo email non\n"
+"   deve essere offuscato. Per migliorare la resistenza contro la\n"
+"   raccolta di indirizzi email, usare ``\\x64`` per sostituire ``@``,\n"
+"   siccome questo è permesso dalle specifiche YAML."
+
+#: ../../schema.core.rst:773
+msgid ""
+"``phone`` - phone number (with international prefix). This has to be a "
+"string."
+msgstr ""
+"``phone`` - Numero telefonico (con prefisso internazionale). Questa "
+"chiave\n"
+"   deve essere una stringa."
+
+#: ../../schema.core.rst:775
+msgid ""
+"``affiliation`` - This key contains an explicit affiliation information "
+"for the technical contact. In case of multiple maintainers, this can be "
+"used to create a relation between each technical contact and each "
+"maintainer entity. It can contain for instance a company name, an "
+"association name, etc."
+msgstr ""
+"``affiliation`` - Questa chiave contiene informazioni esplicite sui\n"
+"   contatti tecnici. Nel caso esistano diversi maintainer, questa chiave\n"
+"   può essere usata per creare relazioni tra diversi contatti tecnici e\n"
+"   entità di manutenzione. Ad esempio, può contenere il nome di\n"
+"   un’azienda, il nome di un’associazione, etc."
+
+#: ../../schema.core.rst:782
+msgid "Contractor"
+msgstr "Contractor"
+
+#: ../../schema.core.rst:784
+msgid "A Contractor is an object with the following properties:"
+msgstr "Un Contractor è un oggetto con le seguenti proprietà:"
+
+#: ../../schema.core.rst:786
+msgid ""
+"``name`` - **mandatory** - The name of the contractor, whether it’s a "
+"company or a physical person."
+msgstr ""
+"``name`` - **obbligatoria** - Il nome del contractor, sia esso\n"
+"   un’azienda o una persona fisica."
+
+#: ../../schema.core.rst:788
+msgid ""
+"``until`` - **mandatory** - This is a date (YYYY-MM-DD). This key must "
+"contain the date at which the maintenance is going to end. In case of "
+"community maintenance, the value should not be more than 2 years in the "
+"future, and thus will need to be regularly updated as the community "
+"continues working on the project."
+msgstr ""
+"``until`` - **obbligatoria** - Questa è una data (YYYY-MM-DD). Questa\n"
+"   chiave deve contenere una data alla quale la manutenzione finirà. Nel\n"
+"   caso di manutenzione gestita dalla community, questo valore non deve\n"
+"   essere maggiore di 2 anni nel futuro, e quindi deve essere\n"
+"   regolarmente aggiornata man mano che la community continua a lavorare\n"
+"   al progetto."
+
+#: ../../schema.core.rst:800
+msgid ""
+"``website`` - This key points to the maintainer website. It can either "
+"point to the main institutional website, or to a more project-specific "
+"page or website."
+msgstr ""
+"``website`` - Questa chiave punta al sito del maintainer. Può puntare\n"
+"   al principale sito istituzionale, o ad una pagina o sito più\n"
+"   specifica."
+
+#: ../../schema.core.rst:805
+msgid "Dates"
+msgstr "Date"
+
+#: ../../schema.core.rst:807
+#, fuzzy
+msgid ""
+"All dates in ``publiccode.yml`` must follow the format “YYYY-MM-DD”, "
+"which is one of the ISO8601 allowed formats. This is the only allowed "
+"format though, so not the full ISO8601 is allowed for the date keys."
+msgstr ""
+"Tutte le date in ``publiccode.yml`` devono aderire al formato\n"
+"“YYYY-MM-DD” che è uno dei formati permessi dal ISO8601. **Nota\n"
+"bene:** questo è l’unico formato permesso, quindi non sono consentiti\n"
+"gli altri formati previsti da ISO8601."
+
+#: ../../schema.core.rst:812
+msgid "Encoding"
+msgstr "Codifica"
+
+#: ../../schema.core.rst:813
+msgid "`publiccode.yml` **MUST** be UTF-8 encoded."
+msgstr "La codifica di ``publiccode.yml`` **DEVE** essere UTF-8."
+
+#: ../../scope-list.rst:4
+msgid "Scope list"
+msgstr "Lista dei campi di applicazione"
+
+#: ../../scope-list.rst:13
+msgid "agriculture"
+msgstr "agriculture"
+
+#: ../../scope-list.rst:14
+msgid "culture"
+msgstr "culture"
+
+#: ../../scope-list.rst:15
+msgid "defence"
+msgstr "defence"
+
+#: ../../scope-list.rst:16
+msgid "education"
+msgstr "education"
+
+#: ../../scope-list.rst:17
+msgid "emergency-services"
+msgstr "emergency-services"
+
+#: ../../scope-list.rst:18
+msgid "employment"
+msgstr "employment"
+
+#: ../../scope-list.rst:19
+msgid "energy"
+msgstr "energy"
+
+#: ../../scope-list.rst:20
+msgid "environment"
+msgstr "environment"
+
+#: ../../scope-list.rst:21
+msgid "finance-and-economic-development"
+msgstr "finance-and-economic-development"
+
+#: ../../scope-list.rst:22
+msgid "foreign-affairs"
+msgstr "foreign-affairs"
+
+#: ../../scope-list.rst:23
+msgid "government"
+msgstr "government"
+
+#: ../../scope-list.rst:24
+msgid "healthcare"
+msgstr "healthcare"
+
+#: ../../scope-list.rst:25
+msgid "infrastructures"
+msgstr "infrastructures"
+
+#: ../../scope-list.rst:26
+msgid "justice"
+msgstr "justice"
+
+#: ../../scope-list.rst:27
+msgid "local-authorities"
+msgstr "local-authorities"
+
+#: ../../scope-list.rst:28
+msgid "manufacturing"
+msgstr "manufacturing"
+
+#: ../../scope-list.rst:29
+msgid "research"
+msgstr "research"
+
+#: ../../scope-list.rst:30
+msgid "science-and-technology"
+msgstr "science-and-technology"
+
+#: ../../scope-list.rst:31
+msgid "security"
+msgstr "security"
+
+#: ../../scope-list.rst:32
+msgid "society"
+msgstr "society"
+
+#: ../../scope-list.rst:33
+msgid "sport"
+msgstr "sport"
+
+#: ../../scope-list.rst:34
+msgid "tourism"
+msgstr "tourism"
+
+#: ../../scope-list.rst:35
+msgid "transportation"
+msgstr "transportation"
+
+#: ../../scope-list.rst:36
+msgid "welfare"
+msgstr "welfare"
+
