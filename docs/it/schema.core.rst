@@ -849,6 +849,10 @@ Data
 ~~~~
 
 Tutte le date in ``publiccode.yml`` devono aderire al formato
-“YYYY-MM-DD” che è una delle codifiche permesse dal ISO8601. **Nota
-bene:** questa è l’unica codifica permessa, quindi non sono consentiti
+“YYYY-MM-DD” che è una dei formati permessi da ISO8601. **Nota
+bene:** questa è l’unico formato permesso, quindi non sono consentiti
 gli altri formati previsti da ISO8601.
+
+Codifica
+~~~~~~~~
+La codifica di ``publiccode.yml`` **DEVE** essere UTF-8.
