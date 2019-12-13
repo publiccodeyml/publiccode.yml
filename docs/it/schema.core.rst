@@ -850,7 +850,7 @@ Data
 
 Tutte le date in ``publiccode.yml`` devono aderire al formato
 “YYYY-MM-DD” che è uno dei formati permessi da ISO8601. **Nota
-bene:** questa è l’unico formato permesso, quindi non sono consentiti
+bene:** questo è l’unico formato permesso, quindi non sono consentiti
 gli altri formati previsti da ISO8601.
 
 Codifica
