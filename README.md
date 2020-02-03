@@ -114,6 +114,30 @@ Examples of this versioning schema may be:
 > * core:0.2;it:0.4
 > * core:0.2;fr:1.1
 
+## Translations
+
+Whenever the standard is updated, you need to update the POT and PO files by running:
+
+```
+$ make pot_merge_po
+```
+
+### Add a new translation
+
+To add a translation in a new language:
+
+```
+$ mkdir docs/locales/[LANG]
+```
+
+where `[LANG]` is the two characters ISO 639-1 language code (fe. `de` for German), and then:
+
+```
+$ make pot_merge_po
+```
+
+to create the PO file to translate at `docs/[LANG]/LC_MESSAGES/publiccode.yml.po`.
+
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).

@@ -11,3 +11,11 @@ Thumbs.db
 
 # Swap files
 *.swp
+
+# Sphinx build files.
+/docs/_build/*
+.doctrees
+!/docs/_build/gettext
+!/docs/_build/gettext/*.pot
+
+*.mo
