@@ -64,7 +64,7 @@ Chiave ``conforme/misureMinimeSicurezza``
 
 Se presente e impostato a ``yes``, il software è conforme alle `Misure
 minime di sicurezza ICT per le Pubbliche
-amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__.
+amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__.
 
 Chiave ``conforme/gdpr``
 ''''''''''''''''''''''''
