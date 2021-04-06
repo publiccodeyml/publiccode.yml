@@ -1,4 +1,4 @@
-Esempi
+Examples
 ==========================
 
 Below there are two examples of `publiccode.yml` files, the first one

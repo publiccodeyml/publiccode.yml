@@ -10,7 +10,7 @@ Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https:
 > A metadata description standard for public software.
 
 * Read documentation in [English](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
-* Leggi la documentazione in [italiano](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/)*
+* Leggi la documentazione in [italiano](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/)
 
 ---
 

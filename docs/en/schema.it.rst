@@ -65,7 +65,7 @@ Key ``conforme/misureMinimeSicurezza``
 
 If present and set to ``yes``, the software is compliant with the `Misure
 minime di sicurezza ICT per le Pubbliche
-amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__ (Italian language). 
+amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__ (Italian language).
 
 
 Key ``conforme/gdpr``
