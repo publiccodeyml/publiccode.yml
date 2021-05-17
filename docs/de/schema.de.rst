@@ -93,10 +93,10 @@ Feld ``ozg-id``
 OZG-ID: Leistung des Online Zugangsgesetzes
 
 
-Schlüssel ``leika-id``
+Feld ``leika-id``
 ''''''''''''''''''''''
 - Typ: string
-- Anzeige: optional
+- Anzeige: mandatory
 - Beispiel: 99094003140000
 
 LeiKa-Schlüssel
