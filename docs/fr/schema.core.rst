@@ -1,4 +1,3 @@
-
 .. _core:
 
 Le standard (coeur)
@@ -298,6 +297,7 @@ susmentionnés peuvent prendre la forme de simples fichiers de configuration,
 des scripts bash, de playbook ansible, de fichiers *dockerfiles*,
 ou d’autres jeux d’instructions.
 
+
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -336,6 +336,7 @@ Clé ``intendedAudience/scope``
 Cette clé contient la liste des catégories relatives au champ d’application
 du logiciel.
 
+
 Section ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -353,6 +354,7 @@ Veuillez noter que l'étiquette *primary language subtag* ne doit pas être
 omise, comme indiquée dans la BCP 47. 
 
 Un exemple pour le français:
+
 
 .. code:: yaml 
 
@@ -601,6 +603,7 @@ Clé ``legal/authorsFile``
 
 Certains logiciels au code source ouvert adoptent une convention qui identifie les détenteurs du droit d'auteur via un fichier répertoriant toutes les entités titulaires du droit d'auteur. Il s'agit d'une pratique courante dans le cadre de projets fortement soutenus par une communauté où il y a de nombreux contributeurs externes et pas de titulaires du droit d'auteur unique / principal. Dans ce cas, cette clé peut être utilisée pour faire référence au fichier *authors* susmentionné, en utilisant un chemin relatif vers la racine du dépôt.
 
+
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -663,6 +666,7 @@ Clé ``localisation/availableLanguages``
 
 Il s'agit de la liste des langues dans lesquelles le logiciel est disponible. Bien entendu, cette liste contiendra au moins une langue. Tel que spécifié dans la `BCP 47 <https://tools.ietf.org/html/bcp47>`__, la *primary language subtag* ne doit pas être omise.
 
+
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -713,6 +717,7 @@ Gestion de versions complexe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Il est bien sûr possible d'utiliser les différentes clés pour spécifier une matrice de compatibilité complexe. 
+
 
 *Ex. 1*
 
