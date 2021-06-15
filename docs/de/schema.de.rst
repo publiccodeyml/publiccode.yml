@@ -18,10 +18,8 @@ Schlüssel ``countryExtensionVersion``
 Dieser Schlüssel gibt die Version an, an die sich das aktuelle Erweiterungsschema hält,
 aus Gründen der Vorwärtskompatibilität.
 
-Bitte beachten Sie, dass der Wert dieses Schlüssels unabhängig von dem der obersten Ebene ist
-``publiccodeYmlVersion`` ist. Auf diese Weise ist die Erweiterung
-Schema-Versionierung sowohl von der Kernversion des Schemas als auch von
-von jedem anderen Land.
+Bitte beachten Sie, dass der Wert dieses Schlüssels unabhängig von dem der obersten Ebene ``publiccodeYmlVersion`` ist. Auf diese Weise ist die Erweiterung eine
+Schema-Versionierung sowohl von der Kernversion des Schemas als auch von jedem anderen Land.
 
 
 
@@ -90,13 +88,13 @@ Feld ``ozg-id``
 - Anzeige: optional
 - Beispiel: 99094003140000
 
-OZG-ID: Leistung des Online Zugangsgesetzes
+OZG-ID: Leistung des Online-Zugangsgesetzes
 
 
-Schlüssel ``leika-id``
+Feld ``leika-id``
 ''''''''''''''''''''''
 - Typ: string
-- Anzeige: optional
+- Anzeige: mandatory
 - Beispiel: 99094003140000
 
 LeiKa-Schlüssel
