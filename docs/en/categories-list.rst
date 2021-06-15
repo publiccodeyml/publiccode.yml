@@ -108,4 +108,5 @@ Valid Tags
 - web-collaboration
 - web-conferencing
 - website-builder
+- whistleblowing
 - workflow-management
