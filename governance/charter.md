@@ -15,6 +15,7 @@ All other tools are community-maintained.
 
 * 🇩🇰 Denmark: [@zorp](https://github.com/zorp) for OS2 Offentlig Digitaliseringsfællesskab
 * 🇫🇷 France: [@bzg](https://github.com/bzg) for Etalab (Direction interministérielle du numérique)
+* 🇩🇪 Germany: [@cknebel](https://github.com/cknebel) (publicplan GmbH)
 * 🇮🇱 Israel: [@ShimonShore](https://github.com/ShimonShore) (Israel Ministry of Science and
   Technology)
 * 🇮🇹 Italy: [@ruphy](https://github.com/ruphy) for DTD (Presidenza del Consiglio dei Ministri)
