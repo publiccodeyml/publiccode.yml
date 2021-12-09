@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Forks and variants &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. List of software categories" href="categories-list.html" />
+    <link rel="prev" title="2. Country-Specific Extensions" href="country.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="forks-and-variants-1">
+<span id="forks-and-variants"></span><h1><span class="section-number">3. </span>Forks and variants<a class="headerlink" href="#forks-and-variants-1" title="Permalink to this headline">¶</a></h1>
+<p>As already cited before, a fork may have two different forms based on the final
+aim. As such, in order to make it clear how to handle the
+<cite>publiccode.yml</cite> in both cases, below we define two different
+semantics: technical forks and software variants.</p>
+<section id="technical-forks-i-e-to-publish-patches">
+<h2><span class="section-number">3.1. </span>Technical forks (i.e. to publish patches)<a class="headerlink" href="#technical-forks-i-e-to-publish-patches" title="Permalink to this headline">¶</a></h2>
+<p>A technical fork is a fork made by a developer for the purpose of
+working on the original code base or sending improvements to the
+original authors, without any explicit goal of creating and publishing
+an alternative variant of the original software.</p>
+<p>In the context of distributed control systems and collaborative code
+hosting platforms like GitHub, forking is almost always used by
+developers as a step to work on a contribution on an existing codebase,
+by sending “pull requests”.</p>
+<p>Because of the way forking works on GitHub and other platforms,
+developers publish their forks as perfect copies of the original
+software, thus including also <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>. However, parsers need
+to be able to distinguish such technical forks from the original
+codebase.</p>
+<section id="parsers">
+<h3><span class="section-number">3.1.1. </span>Parsers<a class="headerlink" href="#parsers" title="Permalink to this headline">¶</a></h3>
+<p>Parsers <strong>SHOULD</strong> identify a technical fork by noticing that the
+top-level <code class="docutils literal notranslate"><span class="pre">url</span></code> key does not point to the repository in which the
+<code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is found.</p>
+<p>Parsers <strong>MIGHT</strong> identify a technical fork also through metadata that
+might be exposed by the code hosting platform (eg: GitHub marks forks
+explicitly as forks)</p>
+</section>
+<section id="authors">
+<h3><span class="section-number">3.1.2. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h3>
+<p>Authors of technical forks <strong>SHOULD NOT</strong> modify <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> in
+any way. Specifically, they <strong>MUST NOT</strong> modify the top-level <code class="docutils literal notranslate"><span class="pre">url</span></code>
+key that <strong>MUST</strong> continue pointing to the original repository.</p>
+<p>There is no explicit key to mark a fork as a technical fork. This is a
+conscious design decision because we do not want authors of technical
+forks to be aware of <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> and necessarily be aware of how
+to modify it. The current design does not require authors to do
+anything.</p>
+</section>
+</section>
+<section id="software-variants">
+<h2><span class="section-number">3.2. </span>Software variants<a class="headerlink" href="#software-variants" title="Permalink to this headline">¶</a></h2>
+<p>A software variant is a fork that is offered as an alternative to the
+original upstream software.</p>
+<p>It contains modifications that are still not part of the upstream
+version, like more features, different dependencies, optimizations, etc.</p>
+<p>By marking a fork as a variant, the author indicates that they believe
+that the variant includes a complete and working set of modifications
+that might be useful to other people.</p>
+<p>Marking a fork as a variant does <strong>not</strong> relate to the willingness of
+contributing upstream; the author might still plan to contribute the
+modifications upstream, or even being in the process of doing so. Thus,
+even if the fork will eventually be merged upstream, it might make sense
+to mark it as a variant during the process, so that others might
+discover it and benefit from it.</p>
+<section id="parsers-2">
+<span id="parsers-1"></span><h3><span class="section-number">3.2.1. </span>Parsers<a class="headerlink" href="#parsers-2" title="Permalink to this headline">¶</a></h3>
+<p>Parsers <strong>SHOULD</strong> identify a variant by noticing that the top-level
+<code class="docutils literal notranslate"><span class="pre">url</span></code> key matches to the repository in which the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is
+found, <strong>AND</strong> a top-level <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code> exists and points to a
+different repository.</p>
+<p>Parsers should expect and analyze other differences in
+<code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> between variants of the software. Specifically
+<code class="docutils literal notranslate"><span class="pre">description/features</span></code> is designed to be compared across variants to
+identify and show user-visible differences.</p>
+</section>
+<section id="authors-2">
+<span id="authors-1"></span><h3><span class="section-number">3.2.2. </span>Authors<a class="headerlink" href="#authors-2" title="Permalink to this headline">¶</a></h3>
+<p>Authors that are willing to publish a fork as a variant <strong>MUST</strong> at
+least:</p>
+<ul class="simple">
+<li><p>add a key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code> pointing to one or more upstream repositories
+from which this variant is derived.</p></li>
+<li><p>Change the value for <code class="docutils literal notranslate"><span class="pre">url</span></code> to point to the repository holding the
+variant.</p></li>
+<li><p>Change the value for <code class="docutils literal notranslate"><span class="pre">legal/repoOwner</span></code> to refer to the themselves
+(the authors of the variant).</p></li>
+<li><p>Revisit the <code class="docutils literal notranslate"><span class="pre">maintenance</span></code> section to refer to the maintenance
+status of the variant.</p></li>
+</ul>
+<p>Moreover, authors <strong>SHOULD</strong> evaluate the following changes:</p>
+<ul class="simple">
+<li><p>add the features that differentiate the variant to the
+<code class="docutils literal notranslate"><span class="pre">description/features</span></code> key. Existing features <strong>SHOULD NOT</strong> be
+edited or removed from this list unless they have been removed from
+the variant, to allow parsers to easily compare feature lists.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="schema.core.html">1. The Standard (core)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="country.html">2. Country-Specific Extensions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Forks and variants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#technical-forks-i-e-to-publish-patches">3.1. Technical forks (i.e. to publish patches)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-variants">3.2. Software variants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categories-list.html">4. List of software categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope-list.html">5. Scope list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">6. Examples</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="country.html" title="previous chapter"><span class="section-number">2. </span>Country-Specific Extensions</a></li>
+      <li>Next: <a href="categories-list.html" title="next chapter"><span class="section-number">4. </span>List of software categories</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/forks.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

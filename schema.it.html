@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Italy &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="italy">
+<span id="italian-extensions"></span><h1>Italy<a class="headerlink" href="#italy" title="Permalink to this headline">¶</a></h1>
+<p>All the extensions listed below are specific for Italy and, as such, they must
+be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code. Every Country is specified
+using a two letters <em>country code</em> following the ISO 3166-1 alpha-2 standard.</p>
+<section id="key-countryextensionversion">
+<h2>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
+</ul>
+<p>This key specifies the version to which the current extension schema adheres to,
+for forward compatibility.</p>
+<p>Please note how the value of this key is independent from the top-level
+<code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code> one (see <a class="reference internal" href="schema.core.html#core"><span class="std std-ref">The Standard (core)</span></a>). In such a way, the extensions
+schema versioning is independent both from the core version of the schema and
+from every other Country.</p>
+</section>
+<section id="key-conforme">
+<h2>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code><a class="headerlink" href="#key-conforme" title="Permalink to this headline">¶</a></h2>
+<p>This section contains the keys for auto-declaring the compliance with the
+current legislation, with respect to the following sections.
+Not including these keys implies that the compliance is not known or not
+declared.</p>
+<section id="key-conforme-lineeguidadesign">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code><a class="headerlink" href="#key-conforme-lineeguidadesign" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the Italian accessibility
+laws (L. 4/2004), as further explained in the
+<a class="reference external" href="https://docs.italia.it/italia/designers-italia/design-linee-guida-docs">linee guida di
+design</a> (Italian language).</p>
+</section>
+<section id="key-conforme-modellointeroperatibilita">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperatibilita</span></code><a class="headerlink" href="#key-conforme-modellointeroperatibilita" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs">linee
+guida
+sull’interoperabilità</a>.</p>
+<p>Regulatory reference: <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html">Art. 73 del
+CAD</a> (Italian language).</p>
+</section>
+<section id="key-conforme-misureminimesicurezza">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code><a class="headerlink" href="#key-conforme-misureminimesicurezza" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the <a class="reference external" href="https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict">Misure
+minime di sicurezza ICT per le Pubbliche
+amministrazioni</a> (Italian language).</p>
+</section>
+<section id="key-conforme-gdpr">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code><a class="headerlink" href="#key-conforme-gdpr" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software respects the GDPR.</p>
+</section>
+</section>
+<section id="section-piattaforme">
+<h2>Section <code class="docutils literal notranslate"><span class="pre">piattaforme</span></code><a class="headerlink" href="#section-piattaforme" title="Permalink to this headline">¶</a></h2>
+<section id="key-piattaforme-spid">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/spid</span></code><a class="headerlink" href="#key-piattaforme-spid" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with <a class="reference external" href="https://developers.italia.it/it/spid">SPID
+- il Sistema Pubblico di Identità
+Digitale</a>.</p>
+</section>
+<section id="key-piattaforme-cie">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/cie</span></code><a class="headerlink" href="#key-piattaforme-cie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with the Italian
+electronic ID card (<code class="docutils literal notranslate"><span class="pre">Carta</span> <span class="pre">di</span> <span class="pre">Identità</span> <span class="pre">Elettronica</span></code>).</p>
+</section>
+<section id="key-piattaforme-anpr">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/anpr</span></code><a class="headerlink" href="#key-piattaforme-anpr" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with ANPR.</p>
+</section>
+<section id="key-piattafome-pagopa">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code><a class="headerlink" href="#key-piattafome-pagopa" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with pagoPA.</p>
+</section>
+</section>
+<section id="section-riuso">
+<h2>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code><a class="headerlink" href="#section-riuso" title="Permalink to this headline">¶</a></h2>
+<p>This section contains a set of keys related to the publication of the software
+inside the reuse catalog of <a class="reference external" href="https://developers.italia.it">Developers Italia</a>.</p>
+<section id="chiave-riuso-codiceipa">
+<h3>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code><a class="headerlink" href="#chiave-riuso-codiceipa" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string (iPA code)</p></li>
+<li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is a Public Administration</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">c_h501</span></code></p></li>
+</ul>
+<p>This key represents the administration code inside the Public Administration
+index (codice IPA).</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schema.core.html">1. The Standard (core)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="country.html">2. Country-Specific Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forks.html">3. Forks and variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories-list.html">4. List of software categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope-list.html">5. Scope list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">6. Examples</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/schema.it.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

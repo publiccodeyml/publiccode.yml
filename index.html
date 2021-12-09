@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>publiccode.yml &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Standard (core)" href="schema.core.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="publiccode-yml">
+<h1><code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code><a class="headerlink" href="#publiccode-yml" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is a metadata standard for repositories containing software
+developed or acquired by the Public Administration, aimed at making them easily
+discoverable and thus reusable by other entities.</p>
+<p>By including a <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file in the root of a repository, and
+populating it with information about the software, technicians and civil
+servants can evaluate it. Automatic indexing tools can also be built, since the
+format is easily readable by both humans and machines.</p>
+<p><code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is mandatory for all public software developed in Italy,
+according to the national <a class="reference external" href="https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/">guidelines</a>:
+this enables the Developers Italia crawler to build the national <a class="reference external" href="https://developers.italia.it/">software
+catalog</a>. The standard is designed to be
+interoperable internationally, thus the country-specific keys are separated by
+the core part and are defined in specific sections that each government can
+rule.</p>
+<p>Details carried by a <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file include:</p>
+<ul class="simple">
+<li><p>title and description of the project or product (in one or more languages);</p></li>
+<li><p>development state (e.g., <code class="docutils literal notranslate"><span class="pre">concept</span></code>, <code class="docutils literal notranslate"><span class="pre">development</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">stable</span></code>, <code class="docutils literal notranslate"><span class="pre">obsolete</span></code>;</p></li>
+<li><p>contacts of the entity who published the codebase;</p></li>
+<li><p>contacts of the maintainer, if any, including the expire date of the maintenance contract;</p></li>
+<li><p>information about the legal context for which the project or product was designed;</p></li>
+<li><p>dependencies</p></li>
+</ul>
+<p>and much more.</p>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.italia.it/en/reuse">More information about software reuse</a></p></li>
+<li><p><a class="reference external" href="https://publiccode-editor.developers.italia.it/">publiccode.yml web editor</a></p></li>
+</ul>
+</section>
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schema.core.html">1. The Standard (core)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schema.core.html#top-level-keys-and-sections">1.1. Top-Level Keys and Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.core.html#special-data-formats">1.2. Special data formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="country.html">2. Country-Specific Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="country.html#italy">2.1. Italy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forks.html">3. Forks and variants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forks.html#technical-forks-i-e-to-publish-patches">3.1. Technical forks (i.e. to publish patches)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forks.html#software-variants">3.2. Software variants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="categories-list.html">4. List of software categories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="categories-list.html#valid-tags">4.1. Valid Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scope-list.html">5. Scope list</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scope-list.html#valid-tags">5.1. Valid Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">6. Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example.html#minimum-version">6.1. Minimum Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#extended-version">6.2. Extended Version</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schema.core.html">1. The Standard (core)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="country.html">2. Country-Specific Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forks.html">3. Forks and variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories-list.html">4. List of software categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope-list.html">5. Scope list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">6. Examples</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="schema.core.html" title="next chapter"><span class="section-number">1. </span>The Standard (core)</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
