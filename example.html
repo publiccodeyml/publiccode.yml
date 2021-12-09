@@ -1,609 +1,386 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Examples &#8212; publiccode.yml Standard  documentation</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
+      <title>6. Examples</title>
     
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
+      <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="5. Scope list" href="scope-list.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="5. Scope list" href="scope-list.html" /> 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
 
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
     
+      <span class="site-name">publiccode.yml Standard</span>
+    
+  </router-link>
 
-    <div class="container-xl">
-      <div class="row">
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">publiccode.yml Standard  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="schema.core.html">
-   1. The Standard (core)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="country.html">
-   2. Country-Specific Extensions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="forks.html">
-   3. Forks and variants
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="categories-list.html">
-   4. List of software categories
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="scope-list.html">
-   5. Scope list
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   6. Examples
-  </a>
- </li>
-</ul>
+          <navlinks>
+            
 
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#table-of-contents">table of contents</a></span>
+      </p>
+      <ul class="current">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/example.rst.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+          <li class="toctree-l1 ">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#minimum-version">
-   6.1. Minimum Version
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extended-version">
-   6.2. Extended Version
-  </a>
- </li>
-</ul>
+              <a href="schema.core.html" class="reference internal ">The Standard (core)</a>
+            
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            
+          </li>
+
         
-              <div>
+          <li class="toctree-l1 ">
+            
+              <a href="country.html" class="reference internal ">Country-Specific Extensions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="forks.html" class="reference internal ">Forks and variants</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="categories-list.html" class="reference internal ">List of software categories</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scope-list.html" class="reference internal ">Scope list</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Examples</a>
+            
+
+            
+              <ul>
                 
-  <div class="section" id="examples">
+                  <li class="toctree-l2"><a href="#minimum-version" class="reference internal">Minimum Version</a></li>
+                
+                  <li class="toctree-l2"><a href="#extended-version" class="reference internal">Extended Version</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">6. </span>Examples</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="scope-list.html"
+       title="previous chapter">← <span class="section-number">5. </span>Scope list</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="examples">
 <h1><span class="section-number">6. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
 <p>Below there are two examples of <cite>publiccode.yml</cite> files, the first one
 represents the minimum configuration, which contains the mandatory fields,
 whilst the second one represents a more extended version.</p>
-<div class="section" id="minimum-version">
+<section id="minimum-version">
 <h2><span class="section-number">6.1. </span>Minimum Version<a class="headerlink" href="#minimum-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">publiccodeYmlVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
-
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
-<span class="nt">url</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa.git&quot;</span>
-<span class="nt">softwareVersion</span><span class="p">:</span> <span class="s">&quot;dev&quot;</span>    <span class="c1"># Optional</span>
-<span class="nt">releaseDate</span><span class="p">:</span> <span class="s">&quot;2017-04-15&quot;</span>
-<span class="nt">platforms</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
-
-<span class="nt">categories</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">financial-reporting</span>
-
-<span class="nt">developmentStatus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
-
-<span class="nt">softwareType</span><span class="p">:</span> <span class="s">&quot;standalone/desktop&quot;</span>
-
-<span class="nt">description</span><span class="p">:</span>
-  <span class="nt">en</span><span class="p">:</span>
-    <span class="nt">localisedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">medusa</span>   <span class="c1"># Optional</span>
-    <span class="nt">genericName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Text Editor</span>
-    <span class="nt">shortDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
-          <span class="no">A rather short description which</span>
-          <span class="no">is probably useless</span>
-
-    <span class="nt">longDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
-          <span class="no">Very long description of this software, also split</span>
-          <span class="no">on multiple rows. You should note what the software</span>
-          <span class="no">is and why one should need it. We can potentially</span>
-          <span class="no">have many pages of text here.</span>
-
-    <span class="nt">features</span><span class="p">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Just one feature</span>
-
-<span class="nt">legal</span><span class="p">:</span>
-  <span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AGPL-3.0-or-later</span>
-
-<span class="nt">maintenance</span><span class="p">:</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;community&quot;</span>
-
-  <span class="nt">contacts</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Francesco Rossi</span>
-
-<span class="nt">localisation</span><span class="p">:</span>
-  <span class="nt">localisationReady</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class="nt">availableLanguages</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">publiccodeYmlVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
+<span class="linenos"> 4</span><span class="nt">url</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa.git&quot;</span>
+<span class="linenos"> 5</span><span class="nt">softwareVersion</span><span class="p">:</span> <span class="s">&quot;dev&quot;</span>    <span class="c1"># Optional</span>
+<span class="linenos"> 6</span><span class="nt">releaseDate</span><span class="p">:</span> <span class="s">&quot;2017-04-15&quot;</span>
+<span class="linenos"> 7</span><span class="nt">platforms</span><span class="p">:</span>
+<span class="linenos"> 8</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nt">categories</span><span class="p">:</span>
+<span class="linenos">11</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">financial-reporting</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="nt">developmentStatus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nt">softwareType</span><span class="p">:</span> <span class="s">&quot;standalone/desktop&quot;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="nt">description</span><span class="p">:</span>
+<span class="linenos">18</span>  <span class="nt">en</span><span class="p">:</span>
+<span class="linenos">19</span>    <span class="nt">localisedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">medusa</span>   <span class="c1"># Optional</span>
+<span class="linenos">20</span>    <span class="nt">genericName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Text Editor</span>
+<span class="linenos">21</span>    <span class="nt">shortDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+<span class="linenos">22</span>          <span class="no">A rather short description which</span>
+<span class="linenos">23</span>          <span class="no">is probably useless</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="nt">longDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+<span class="linenos">26</span>          <span class="no">Very long description of this software, also split</span>
+<span class="linenos">27</span>          <span class="no">on multiple rows. You should note what the software</span>
+<span class="linenos">28</span>          <span class="no">is and why one should need it. We can potentially</span>
+<span class="linenos">29</span>          <span class="no">have many pages of text here.</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>    <span class="nt">features</span><span class="p">:</span>
+<span class="linenos">32</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Just one feature</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="nt">legal</span><span class="p">:</span>
+<span class="linenos">35</span>  <span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AGPL-3.0-or-later</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="nt">maintenance</span><span class="p">:</span>
+<span class="linenos">38</span>  <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;community&quot;</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>  <span class="nt">contacts</span><span class="p">:</span>
+<span class="linenos">41</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Francesco Rossi</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="nt">localisation</span><span class="p">:</span>
+<span class="linenos">44</span>  <span class="nt">localisationReady</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">45</span>  <span class="nt">availableLanguages</span><span class="p">:</span>
+<span class="linenos">46</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
 </pre></div>
-</td></tr></table></div>
 </div>
-<div class="section" id="extended-version">
+</section>
+<section id="extended-version">
 <h2><span class="section-number">6.2. </span>Extended Version<a class="headerlink" href="#extended-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">publiccodeYmlVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
-
-<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
-<span class="nt">applicationSuite</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MegaProductivitySuite</span>
-<span class="nt">url</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa.git&quot;</span>
-<span class="nt">landingURL</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa&quot;</span>
-<span class="nt">isBasedOn</span><span class="p">:</span> <span class="s">&quot;https://github.com/italia/otello.git&quot;</span>
-<span class="nt">softwareVersion</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span>
-<span class="nt">releaseDate</span><span class="p">:</span> <span class="s">&quot;2017-04-15&quot;</span>
-<span class="nt">logo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">img/logo.svg</span>
-<span class="nt">monochromeLogo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">img/logo-mono.svg</span>
-
-<span class="nt">inputTypes</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">text/plain</span>
-<span class="nt">outputTypes</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">text/plain</span>
-
-<span class="nt">platforms</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">android</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ios</span>
-
-<span class="nt">categories</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content-management</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">office</span>
-
-<span class="nt">usedBy</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Firenze</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Roma</span>
-
-<span class="nt">roadmap</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa/roadmap&quot;</span>
-
-<span class="nt">developmentStatus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
-
-<span class="nt">softwareType</span><span class="p">:</span> <span class="s">&quot;standalone/desktop&quot;</span>
-
-<span class="nt">intendedAudience</span><span class="p">:</span>
-  <span class="nt">scope</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">science-and-technology</span>
-  <span class="nt">countries</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">it</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">de</span>
-  <span class="nt">unsupportedCountries</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">us</span>
-
-<span class="nt">description</span><span class="p">:</span>
-  <span class="nt">en</span><span class="p">:</span>
-    <span class="nt">localisedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
-    <span class="nt">genericName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Text Editor</span>
-    <span class="nt">shortDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
-          <span class="no">This description can have a maximum 150</span>
-          <span class="no">characters long. We should not fill the</span>
-          <span class="no">remaining space with &quot;Lorem Ipsum&quot;. End</span>
-
-    <span class="nt">longDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
-          <span class="no">Very long description of this software, also split</span>
-          <span class="no">on multiple rows. You should note what the software</span>
-          <span class="no">is and why one should need it.</span>
-
-    <span class="nt">documentation</span><span class="p">:</span> <span class="s">&quot;https://read.the.documentation/medusa/v1.0&quot;</span>
-    <span class="nt">apiDocumentation</span><span class="p">:</span> <span class="s">&quot;https://read.the.api.doc/medusa/v1.0&quot;</span>
-
-    <span class="nt">features</span><span class="p">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Very important feature</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Will run without a problem</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Has zero bugs</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Solves all the problems of the world</span>
-    <span class="nt">screenshots</span><span class="p">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot1.jpg</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot2.jpg</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot3.jpg</span>
-    <span class="nt">videos</span><span class="p">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://youtube.com/xxxxxxxx</span>
-    <span class="nt">awards</span><span class="p">:</span>
-       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1st Price Software of the year</span>
-
-<span class="nt">legal</span><span class="p">:</span>
-  <span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AGPL-3.0-or-later</span>
-  <span class="nt">mainCopyrightOwner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">City of Chicago</span>
-  <span class="nt">repoOwner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">City of Chicago</span>
-  <span class="nt">authorsFile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AUTHORS</span>
-
-<span class="nt">maintenance</span><span class="p">:</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;contract&quot;</span>
-
-  <span class="nt">contractors</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Fornitore</span><span class="nv"> </span><span class="s">Privato</span><span class="nv"> </span><span class="s">SPA&quot;</span>
-      <span class="nt">email</span><span class="p">:</span> <span class="s">&quot;dario.bianchi@fornitore.it&quot;</span>
-      <span class="nt">website</span><span class="p">:</span> <span class="s">&quot;https://privatecompany.com&quot;</span>
-      <span class="nt">until</span><span class="p">:</span> <span class="s">&quot;2019-01-01&quot;</span>
-
-  <span class="nt">contacts</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Francesco Rossi</span>
-      <span class="nt">email</span><span class="p">:</span> <span class="s">&quot;francesco.rossi@comune.reggioemilia.it&quot;</span>
-      <span class="nt">affiliation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Reggio Emilia</span>
-      <span class="nt">phone</span><span class="p">:</span> <span class="s">&quot;+3923113215112&quot;</span>
-
-<span class="nt">localisation</span><span class="p">:</span>
-  <span class="nt">localisationReady</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class="nt">availableLanguages</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">it</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fr</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">de</span>
-
-<span class="nt">dependsOn</span><span class="p">:</span>
-  <span class="nt">open</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MySQL</span>
-      <span class="nt">versionMin</span><span class="p">:</span> <span class="s">&quot;1.1&quot;</span>
-      <span class="nt">versionMax</span><span class="p">:</span> <span class="s">&quot;1.3&quot;</span>
-      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span>
-      <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.2&quot;</span>
-      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class="nt">proprietary</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Oracle</span>
-      <span class="nt">versionMin</span><span class="p">:</span> <span class="s">&quot;11.4&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">IBM SoftLayer</span>
-  <span class="nt">hardware</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NFC Reader</span>
-      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-
-<span class="nt">it</span><span class="p">:</span>
-  <span class="nt">countryExtensionVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
-
-  <span class="nt">conforme</span><span class="p">:</span>
-    <span class="nt">lineeGuidaDesign</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">modelloInteroperabilita</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">misureMinimeSicurezza</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">gdpr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-
-  <span class="nt">piattaforme</span><span class="p">:</span>
-    <span class="nt">spid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">cie</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">anpr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="nt">pagopa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-
-  <span class="nt">riuso</span><span class="p">:</span>
-    <span class="nt">codiceIPA</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">c_h501</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="nt">publiccodeYmlVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
+<span class="linenos">  4</span><span class="nt">applicationSuite</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MegaProductivitySuite</span>
+<span class="linenos">  5</span><span class="nt">url</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa.git&quot;</span>
+<span class="linenos">  6</span><span class="nt">landingURL</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa&quot;</span>
+<span class="linenos">  7</span><span class="nt">isBasedOn</span><span class="p">:</span> <span class="s">&quot;https://github.com/italia/otello.git&quot;</span>
+<span class="linenos">  8</span><span class="nt">softwareVersion</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span>
+<span class="linenos">  9</span><span class="nt">releaseDate</span><span class="p">:</span> <span class="s">&quot;2017-04-15&quot;</span>
+<span class="linenos"> 10</span><span class="nt">logo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">img/logo.svg</span>
+<span class="linenos"> 11</span><span class="nt">monochromeLogo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">img/logo-mono.svg</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="nt">inputTypes</span><span class="p">:</span>
+<span class="linenos"> 14</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">text/plain</span>
+<span class="linenos"> 15</span><span class="nt">outputTypes</span><span class="p">:</span>
+<span class="linenos"> 16</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">text/plain</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="nt">platforms</span><span class="p">:</span>
+<span class="linenos"> 19</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">android</span>
+<span class="linenos"> 20</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ios</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="nt">categories</span><span class="p">:</span>
+<span class="linenos"> 23</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">content-management</span>
+<span class="linenos"> 24</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">office</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="nt">usedBy</span><span class="p">:</span>
+<span class="linenos"> 27</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Firenze</span>
+<span class="linenos"> 28</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Roma</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="nt">roadmap</span><span class="p">:</span> <span class="s">&quot;https://example.com/italia/medusa/roadmap&quot;</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="nt">developmentStatus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="nt">softwareType</span><span class="p">:</span> <span class="s">&quot;standalone/desktop&quot;</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="nt">intendedAudience</span><span class="p">:</span>
+<span class="linenos"> 37</span>  <span class="nt">scope</span><span class="p">:</span>
+<span class="linenos"> 38</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">science-and-technology</span>
+<span class="linenos"> 39</span>  <span class="nt">countries</span><span class="p">:</span>
+<span class="linenos"> 40</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">it</span>
+<span class="linenos"> 41</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">de</span>
+<span class="linenos"> 42</span>  <span class="nt">unsupportedCountries</span><span class="p">:</span>
+<span class="linenos"> 43</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">us</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="nt">description</span><span class="p">:</span>
+<span class="linenos"> 46</span>  <span class="nt">en</span><span class="p">:</span>
+<span class="linenos"> 47</span>    <span class="nt">localisedName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Medusa</span>
+<span class="linenos"> 48</span>    <span class="nt">genericName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Text Editor</span>
+<span class="linenos"> 49</span>    <span class="nt">shortDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+<span class="linenos"> 50</span>          <span class="no">This description can have a maximum 150</span>
+<span class="linenos"> 51</span>          <span class="no">characters long. We should not fill the</span>
+<span class="linenos"> 52</span>          <span class="no">remaining space with &quot;Lorem Ipsum&quot;. End</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span>    <span class="nt">longDescription</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+<span class="linenos"> 55</span>          <span class="no">Very long description of this software, also split</span>
+<span class="linenos"> 56</span>          <span class="no">on multiple rows. You should note what the software</span>
+<span class="linenos"> 57</span>          <span class="no">is and why one should need it.</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span>    <span class="nt">documentation</span><span class="p">:</span> <span class="s">&quot;https://read.the.documentation/medusa/v1.0&quot;</span>
+<span class="linenos"> 60</span>    <span class="nt">apiDocumentation</span><span class="p">:</span> <span class="s">&quot;https://read.the.api.doc/medusa/v1.0&quot;</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>    <span class="nt">features</span><span class="p">:</span>
+<span class="linenos"> 63</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Very important feature</span>
+<span class="linenos"> 64</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Will run without a problem</span>
+<span class="linenos"> 65</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Has zero bugs</span>
+<span class="linenos"> 66</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Solves all the problems of the world</span>
+<span class="linenos"> 67</span>    <span class="nt">screenshots</span><span class="p">:</span>
+<span class="linenos"> 68</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot1.jpg</span>
+<span class="linenos"> 69</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot2.jpg</span>
+<span class="linenos"> 70</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">img/sshot3.jpg</span>
+<span class="linenos"> 71</span>    <span class="nt">videos</span><span class="p">:</span>
+<span class="linenos"> 72</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://youtube.com/xxxxxxxx</span>
+<span class="linenos"> 73</span>    <span class="nt">awards</span><span class="p">:</span>
+<span class="linenos"> 74</span>       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1st Price Software of the year</span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span><span class="nt">legal</span><span class="p">:</span>
+<span class="linenos"> 77</span>  <span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AGPL-3.0-or-later</span>
+<span class="linenos"> 78</span>  <span class="nt">mainCopyrightOwner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">City of Chicago</span>
+<span class="linenos"> 79</span>  <span class="nt">repoOwner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">City of Chicago</span>
+<span class="linenos"> 80</span>  <span class="nt">authorsFile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AUTHORS</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span><span class="nt">maintenance</span><span class="p">:</span>
+<span class="linenos"> 83</span>  <span class="nt">type</span><span class="p">:</span> <span class="s">&quot;contract&quot;</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span>  <span class="nt">contractors</span><span class="p">:</span>
+<span class="linenos"> 86</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;Fornitore</span><span class="nv"> </span><span class="s">Privato</span><span class="nv"> </span><span class="s">SPA&quot;</span>
+<span class="linenos"> 87</span>      <span class="nt">email</span><span class="p">:</span> <span class="s">&quot;dario.bianchi@fornitore.it&quot;</span>
+<span class="linenos"> 88</span>      <span class="nt">website</span><span class="p">:</span> <span class="s">&quot;https://privatecompany.com&quot;</span>
+<span class="linenos"> 89</span>      <span class="nt">until</span><span class="p">:</span> <span class="s">&quot;2019-01-01&quot;</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>  <span class="nt">contacts</span><span class="p">:</span>
+<span class="linenos"> 92</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Francesco Rossi</span>
+<span class="linenos"> 93</span>      <span class="nt">email</span><span class="p">:</span> <span class="s">&quot;francesco.rossi@comune.reggioemilia.it&quot;</span>
+<span class="linenos"> 94</span>      <span class="nt">affiliation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Comune di Reggio Emilia</span>
+<span class="linenos"> 95</span>      <span class="nt">phone</span><span class="p">:</span> <span class="s">&quot;+3923113215112&quot;</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="nt">localisation</span><span class="p">:</span>
+<span class="linenos"> 98</span>  <span class="nt">localisationReady</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos"> 99</span>  <span class="nt">availableLanguages</span><span class="p">:</span>
+<span class="linenos">100</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
+<span class="linenos">101</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">it</span>
+<span class="linenos">102</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fr</span>
+<span class="linenos">103</span>    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">de</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="nt">dependsOn</span><span class="p">:</span>
+<span class="linenos">106</span>  <span class="nt">open</span><span class="p">:</span>
+<span class="linenos">107</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MySQL</span>
+<span class="linenos">108</span>      <span class="nt">versionMin</span><span class="p">:</span> <span class="s">&quot;1.1&quot;</span>
+<span class="linenos">109</span>      <span class="nt">versionMax</span><span class="p">:</span> <span class="s">&quot;1.3&quot;</span>
+<span class="linenos">110</span>      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">111</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span>
+<span class="linenos">112</span>      <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.2&quot;</span>
+<span class="linenos">113</span>      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">114</span>  <span class="nt">proprietary</span><span class="p">:</span>
+<span class="linenos">115</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Oracle</span>
+<span class="linenos">116</span>      <span class="nt">versionMin</span><span class="p">:</span> <span class="s">&quot;11.4&quot;</span>
+<span class="linenos">117</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">IBM SoftLayer</span>
+<span class="linenos">118</span>  <span class="nt">hardware</span><span class="p">:</span>
+<span class="linenos">119</span>    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NFC Reader</span>
+<span class="linenos">120</span>      <span class="nt">optional</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span><span class="nt">it</span><span class="p">:</span>
+<span class="linenos">123</span>  <span class="nt">countryExtensionVersion</span><span class="p">:</span> <span class="s">&quot;0.2&quot;</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span>  <span class="nt">conforme</span><span class="p">:</span>
+<span class="linenos">126</span>    <span class="nt">lineeGuidaDesign</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">127</span>    <span class="nt">modelloInteroperabilita</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">128</span>    <span class="nt">misureMinimeSicurezza</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">129</span>    <span class="nt">gdpr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span>  <span class="nt">piattaforme</span><span class="p">:</span>
+<span class="linenos">132</span>    <span class="nt">spid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">133</span>    <span class="nt">cie</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">134</span>    <span class="nt">anpr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">135</span>    <span class="nt">pagopa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span>  <span class="nt">riuso</span><span class="p">:</span>
+<span class="linenos">138</span>    <span class="nt">codiceIPA</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">c_h501</span>
 </pre></div>
-</td></tr></table></div>
 </div>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="scope-list.html"
+       title="previous chapter">← <span class="section-number">5. </span>Scope list</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright .
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
-
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="scope-list.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Scope list</p>
-        </div>
-    </a>
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright .<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>

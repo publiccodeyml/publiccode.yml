@@ -1,738 +1,179 @@
-
 <!DOCTYPE html>
-
-<html>
+<html >
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. The Standard (core) &#8212; publiccode.yml Standard  documentation</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
+      <title>1. The Standard (core)</title>
     
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
+      <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
 
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Country-Specific Extensions" href="country.html" />
-    <link rel="prev" title="publiccode.yml" href="index.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="2. Country-Specific Extensions" href="country.html" />
+  <link rel="prev" title="publiccode.yml" href="index.html" /> 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
 
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
     
+      <span class="site-name">publiccode.yml Standard</span>
+    
+  </router-link>
 
-    <div class="container-xl">
-      <div class="row">
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">publiccode.yml Standard  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. The Standard (core)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="country.html">
-   2. Country-Specific Extensions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="forks.html">
-   3. Forks and variants
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="categories-list.html">
-   4. List of software categories
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="scope-list.html">
-   5. Scope list
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="example.html">
-   6. Examples
-  </a>
- </li>
-</ul>
+          <navlinks>
+            
 
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#table-of-contents">table of contents</a></span>
+      </p>
+      <ul class="current">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/schema.core.rst.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+          <li class="toctree-l1 current">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#top-level-keys-and-sections">
-   1.1. Top-Level Keys and Sections
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-publiccodeymlversion">
-     1.1.1. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       publiccodeYmlVersion
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-name">
-     1.1.2. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       name
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-applicationsuite">
-     1.1.3. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       applicationSuite
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-url">
-     1.1.4. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       url
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-landingurl">
-     1.1.5. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       landingURL
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-isbasedon">
-     1.1.6. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       isBasedOn
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-softwareversion">
-     1.1.7. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       softwareVersion
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-releasedate">
-     1.1.8. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       releaseDate
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-logo">
-     1.1.9. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       logo
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-monochromelogo">
-     1.1.10. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       monochromeLogo
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-inputtypes">
-     1.1.11. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       inputTypes
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-outputtypes">
-     1.1.12. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       outputTypes
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-platforms">
-     1.1.13. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       platforms
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-categories">
-     1.1.14. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       categories
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-usedby">
-     1.1.15. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       usedBy
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-roadmap">
-     1.1.16. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       roadmap
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-developmentstatus">
-     1.1.17. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       developmentStatus
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-softwaretype">
-     1.1.18. Key
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       softwareType
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-intendedaudience">
-     1.1.19. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       intendedAudience
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-intendedaudience-countries">
-       1.1.19.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         intendedAudience/countries
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-intendedaudience-unsupportedcountries">
-       1.1.19.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         intendedAudience/unsupportedCountries
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-intendedaudience-scope">
-       1.1.19.3. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         intendedAudience/scope
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-description">
-     1.1.20. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       description
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-localisedname">
-       1.1.20.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/localisedName
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-genericname">
-       1.1.20.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/genericName
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-shortdescription">
-       1.1.20.3. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/shortDescription
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-longdescription">
-       1.1.20.4. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/longDescription
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-documentation">
-       1.1.20.5. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/documentation
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-apidocumentation">
-       1.1.20.6. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/apiDocumentation
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-features">
-       1.1.20.7. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/features
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-screenshots">
-       1.1.20.8. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/screenshots
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-videos">
-       1.1.20.9. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/videos
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-description-lang-awards">
-       1.1.20.10. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         description/[lang]/awards
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-legal">
-     1.1.21. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       legal
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-legal-license">
-       1.1.21.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         legal/license
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-legal-maincopyrightowner">
-       1.1.21.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         legal/mainCopyrightOwner
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-legal-repoowner">
-       1.1.21.3. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         legal/repoOwner
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-legal-authorsfile">
-       1.1.21.4. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         legal/authorsFile
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-maintenance">
-     1.1.22. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       maintenance
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-maintenance-type">
-       1.1.22.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         maintenance/type
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-maintenance-contractors">
-       1.1.22.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         maintenance/contractors
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-maintenance-contacts">
-       1.1.22.3. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         maintenance/contacts
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-localisation">
-     1.1.23. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       localisation
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-localisation-localisationready">
-       1.1.23.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         localisation/localisationReady
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-localisation-availablelanguages">
-       1.1.23.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         localisation/availableLanguages
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-dependson">
-     1.1.24. Section
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dependsOn
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-dependson-open">
-       1.1.24.1. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         dependsOn/open
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-dependson-proprietary">
-       1.1.24.2. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         dependsOn/proprietary
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-dependson-hardware">
-       1.1.24.3. Key
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         dependsOn/hardware
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#special-data-formats">
-   1.2. Special data formats
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dependency">
-     1.2.1. Dependency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#complex-versioning">
-     1.2.2. Complex versioning
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#contact">
-     1.2.3. Contact
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#contractor">
-     1.2.4. Contractor
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dates">
-     1.2.5. Dates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#encoding">
-     1.2.6. Encoding
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              <a href="#" class="reference internal current">The Standard (core)</a>
+            
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+            
+              <ul>
                 
-  <div class="section" id="the-standard-core">
+                  <li class="toctree-l2"><a href="#top-level-keys-and-sections" class="reference internal">Top-Level Keys and Sections</a></li>
+                
+                  <li class="toctree-l2"><a href="#special-data-formats" class="reference internal">Special data formats</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="country.html" class="reference internal ">Country-Specific Extensions</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="forks.html" class="reference internal ">Forks and variants</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="categories-list.html" class="reference internal ">List of software categories</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scope-list.html" class="reference internal ">Scope list</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="example.html" class="reference internal ">Examples</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">1. </span>The Standard (core)</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code></a>
+  </li>
+  <li class="next">
+    <a href="country.html"
+       title="next chapter"><span class="section-number">2. </span>Country-Specific Extensions →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="the-standard-core">
 <span id="core"></span><h1><span class="section-number">1. </span>The Standard (core)<a class="headerlink" href="#the-standard-core" title="Permalink to this headline">¶</a></h1>
 <p>This document represents the description of the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>
 schema.</p>
-<div class="section" id="top-level-keys-and-sections">
+<section id="top-level-keys-and-sections">
 <h2><span class="section-number">1.1. </span>Top-Level Keys and Sections<a class="headerlink" href="#top-level-keys-and-sections" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="key-publiccodeymlversion">
+<section id="key-publiccodeymlversion">
 <h3><span class="section-number">1.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code><a class="headerlink" href="#key-publiccodeymlversion" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -741,8 +182,8 @@ schema.</p>
 </ul>
 <p>This key specifies the version to which the current <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>
 adheres to, for forward compatibility.</p>
-</div>
-<div class="section" id="key-name">
+</section>
+<section id="key-name">
 <h3><span class="section-number">1.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">name</span></code><a class="headerlink" href="#key-name" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -754,8 +195,8 @@ public name of the product, which can be localised in the specific
 <code class="docutils literal notranslate"><span class="pre">localisation</span></code> section. It should be the name most people usually
 refer to the software. In case the software has both an internal “code”
 name and a commercial name, use the commercial name.</p>
-</div>
-<div class="section" id="key-applicationsuite">
+</section>
+<section id="key-applicationsuite">
 <h3><span class="section-number">1.1.3. </span>Key <code class="docutils literal notranslate"><span class="pre">applicationSuite</span></code><a class="headerlink" href="#key-applicationsuite" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -763,8 +204,8 @@ name and a commercial name, use the commercial name.</p>
 <li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;MegaProductivitySuite&quot;</span></code></p></li>
 </ul>
 <p>This key contains the name of the “suite” to which the software belongs.</p>
-</div>
-<div class="section" id="key-url">
+</section>
+<section id="key-url">
 <h3><span class="section-number">1.1.4. </span>Key <code class="docutils literal notranslate"><span class="pre">url</span></code><a class="headerlink" href="#key-url" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (URL)</p></li>
@@ -784,8 +225,8 @@ of a different project.</p>
 <p>See <a class="reference internal" href="forks.html#forks-and-variants"><span class="std std-ref">Forks and variants</span></a> for a complete description of what
 is a software variant and how to handle forked software as a parser or
 an author.</p>
-</div>
-<div class="section" id="key-landingurl">
+</section>
+<section id="key-landingurl">
 <h3><span class="section-number">1.1.5. </span>Key <code class="docutils literal notranslate"><span class="pre">landingURL</span></code><a class="headerlink" href="#key-landingurl" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (URL)</p></li>
@@ -800,8 +241,8 @@ something like “Go to the application source code”. In case the product
 provides an automated graphical installer, this URL can point to a page
 which contains a reference to the source code but also offers the
 download of such an installer.</p>
-</div>
-<div class="section" id="key-isbasedon">
+</section>
+<section id="key-isbasedon">
 <h3><span class="section-number">1.1.6. </span>Key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code><a class="headerlink" href="#key-isbasedon" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string or array of strings</p></li>
@@ -813,8 +254,8 @@ might or might not contain a <code class="docutils literal notranslate"><span cl
 contain the <code class="docutils literal notranslate"><span class="pre">url</span></code> of the original project(s).</p>
 <p>The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.</p>
-</div>
-<div class="section" id="key-softwareversion">
+</section>
+<section id="key-softwareversion">
 <h3><span class="section-number">1.1.7. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareVersion</span></code><a class="headerlink" href="#key-softwareversion" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -827,8 +268,8 @@ parsed but just displayed; parsers should not assume semantic versioning
 or any other specific version format.</p>
 <p>The key can be omitted if the software is currently in initial
 development and has never been released yet.</p>
-</div>
-<div class="section" id="key-releasedate">
+</section>
+<section id="key-releasedate">
 <h3><span class="section-number">1.1.8. </span>Key <code class="docutils literal notranslate"><span class="pre">releaseDate</span></code><a class="headerlink" href="#key-releasedate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (date)</p></li>
@@ -838,8 +279,8 @@ development and has never been released yet.</p>
 <p>This key contains the date at which the latest version was released.
 This date is mandatory if the software has been released at least once
 and thus the version number is present.</p>
-</div>
-<div class="section" id="key-logo">
+</section>
+<section id="key-logo">
 <h3><span class="section-number">1.1.9. </span>Key <code class="docutils literal notranslate"><span class="pre">logo</span></code><a class="headerlink" href="#key-logo" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (relative path to file or absolute URL)</p></li>
@@ -854,8 +295,8 @@ The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
-</div>
-<div class="section" id="key-monochromelogo">
+</section>
+<section id="key-monochromelogo">
 <h3><span class="section-number">1.1.10. </span>Key <code class="docutils literal notranslate"><span class="pre">monochromeLogo</span></code><a class="headerlink" href="#key-monochromelogo" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (path to file)</p></li>
@@ -870,8 +311,8 @@ The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
-</div>
-<div class="section" id="key-inputtypes">
+</section>
+<section id="key-inputtypes">
 <h3><span class="section-number">1.1.11. </span>Key <code class="docutils literal notranslate"><span class="pre">inputTypes</span></code><a class="headerlink" href="#key-inputtypes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of enumerated strings</p></li>
@@ -884,8 +325,8 @@ the <code class="docutils literal notranslate"><span class="pre">publiccode.yml<
 handle as input.</p>
 <p>In case the software does not support any input, you can skip this field
 or use <code class="docutils literal notranslate"><span class="pre">application/x.empty</span></code>.</p>
-</div>
-<div class="section" id="key-outputtypes">
+</section>
+<section id="key-outputtypes">
 <h3><span class="section-number">1.1.12. </span>Key <code class="docutils literal notranslate"><span class="pre">outputTypes</span></code><a class="headerlink" href="#key-outputtypes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of enumerated strings</p></li>
@@ -898,8 +339,8 @@ or use <code class="docutils literal notranslate"><span class="pre">application/
 handle as output.</p>
 <p>In case the software does not support any output, you can skip this
 field or use <code class="docutils literal notranslate"><span class="pre">application/x.empty</span></code>.</p>
-</div>
-<div class="section" id="key-platforms">
+</section>
+<section id="key-platforms">
 <h3><span class="section-number">1.1.13. </span>Key <code class="docutils literal notranslate"><span class="pre">platforms</span></code><a class="headerlink" href="#key-platforms" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string or array of strings</p></li>
@@ -914,8 +355,8 @@ software, rather than the platform the software itself runs on.</p>
 <p>Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
 value can be used.</p>
-</div>
-<div class="section" id="key-categories">
+</section>
+<section id="key-categories">
 <h3><span class="section-number">1.1.14. </span>Key <code class="docutils literal notranslate"><span class="pre">categories</span></code><a class="headerlink" href="#key-categories" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -926,8 +367,8 @@ value can be used.</p>
 building catalogs of open software.</p>
 <p>The controlled vocabulary <a class="reference internal" href="categories-list.html#categories-list"><span class="std std-ref">List of software categories</span></a> contains the list of allowed
 values.</p>
-</div>
-<div class="section" id="key-usedby">
+</section>
+<section id="key-usedby">
 <h3><span class="section-number">1.1.15. </span>Key <code class="docutils literal notranslate"><span class="pre">usedBy</span></code><a class="headerlink" href="#key-usedby" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -940,16 +381,16 @@ to be using this software.</p>
 that can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.</p>
-</div>
-<div class="section" id="key-roadmap">
+</section>
+<section id="key-roadmap">
 <h3><span class="section-number">1.1.16. </span>Key <code class="docutils literal notranslate"><span class="pre">roadmap</span></code><a class="headerlink" href="#key-roadmap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>A link to a public roadmap of the software.</p>
-</div>
-<div class="section" id="key-developmentstatus">
+</section>
+<section id="key-developmentstatus">
 <h3><span class="section-number">1.1.17. </span>Key <code class="docutils literal notranslate"><span class="pre">developmentStatus</span></code><a class="headerlink" href="#key-developmentstatus" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string</p></li>
@@ -973,8 +414,8 @@ release and is ready to be used in a production environment.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">obsolete</span></code> - The software is no longer maintained or kept up to date.
 All of the source code is archived and kept for historical reasons.</p></li>
 </ul>
-</div>
-<div class="section" id="key-softwaretype">
+</section>
+<section id="key-softwaretype">
 <h3><span class="section-number">1.1.18. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareType</span></code><a class="headerlink" href="#key-softwaretype" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string</p></li>
@@ -1005,10 +446,10 @@ obtain a certain deployment. They could be in the form of plain
 configuration files, bash scripts, ansible playbooks, Dockerfiles, or
 other instruction sets.</p></li>
 </ul>
-</div>
-<div class="section" id="section-intendedaudience">
+</section>
+<section id="section-intendedaudience">
 <h3><span class="section-number">1.1.19. </span>Section <code class="docutils literal notranslate"><span class="pre">intendedAudience</span></code><a class="headerlink" href="#section-intendedaudience" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="key-intendedaudience-countries">
+<section id="key-intendedaudience-countries">
 <h4><span class="section-number">1.1.19.1. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/countries</span></code><a class="headerlink" href="#key-intendedaudience-countries" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -1018,8 +459,8 @@ other instruction sets.</p></li>
 i.e. the software explicitly claims compliance with specific processes,
 technologies or laws. All countries are specified using lowercase ISO
 3166-1 alpha-2 two-letter country codes.</p>
-</div>
-<div class="section" id="key-intendedaudience-unsupportedcountries">
+</section>
+<section id="key-intendedaudience-unsupportedcountries">
 <h4><span class="section-number">1.1.19.2. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/unsupportedCountries</span></code><a class="headerlink" href="#key-intendedaudience-unsupportedcountries" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -1029,8 +470,8 @@ technologies or laws. All countries are specified using lowercase ISO
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
 lowercase ISO 3166-1 alpha-2 two-letter country codes.</p>
-</div>
-<div class="section" id="key-intendedaudience-scope">
+</section>
+<section id="key-intendedaudience-scope">
 <h4><span class="section-number">1.1.19.3. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/scope</span></code><a class="headerlink" href="#key-intendedaudience-scope" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -1039,9 +480,9 @@ lowercase ISO 3166-1 alpha-2 two-letter country codes.</p>
 </ul>
 <p>This key contains a list of tags related to the field of application of
 the software.</p>
-</div>
-</div>
-<div class="section" id="section-description">
+</section>
+</section>
+<section id="section-description">
 <h3><span class="section-number">1.1.20. </span>Section <code class="docutils literal notranslate"><span class="pre">description</span></code><a class="headerlink" href="#section-description" title="Permalink to this headline">¶</a></h3>
 <p>This section contains a general description of the software. Parsers can
 use this section for instance to create a web page describing the
@@ -1064,7 +505,7 @@ sub-section with the name of the language (we will note this with
 <code class="docutils literal notranslate"><span class="pre">[lang]</span></code>).</p>
 <p><strong>Note:</strong> it is mandatory to have <em>at least</em> one language in this
 section. All other languages are optional.</p>
-<div class="section" id="key-description-lang-localisedname">
+<section id="key-description-lang-localisedname">
 <h4><span class="section-number">1.1.20.1. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/localisedName</span></code><a class="headerlink" href="#key-description-lang-localisedname" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -1076,8 +517,8 @@ It contains the (short) public name of the product. It should be the
 name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.</p>
-</div>
-<div class="section" id="key-description-lang-genericname">
+</section>
+<section id="key-description-lang-genericname">
 <h4><span class="section-number">1.1.20.2. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/genericName</span></code><a class="headerlink" href="#key-description-lang-genericname" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (max 35 chars)</p></li>
@@ -1089,8 +530,8 @@ which the software belongs. You can usually find the generic name in the
 presentation of the software, when you write: “Software xxx is a yyy”.
 Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
 “Chat” and so on… The generic name can be up to 35 characters long.</p>
-</div>
-<div class="section" id="key-description-lang-shortdescription">
+</section>
+<section id="key-description-lang-shortdescription">
 <h4><span class="section-number">1.1.20.3. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/shortDescription</span></code><a class="headerlink" href="#key-description-lang-shortdescription" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (max 150 chars)</p></li>
@@ -1100,8 +541,8 @@ Notable examples include “Text Editor”, “Word Processor”, “Web Browser
 <p>This key contains a short description of the software. It should be a
 single line containing a single sentence. Maximum 150 characters are
 allowed.</p>
-</div>
-<div class="section" id="key-description-lang-longdescription">
+</section>
+<section id="key-description-lang-longdescription">
 <h4><span class="section-number">1.1.20.4. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/longDescription</span></code><a class="headerlink" href="#key-description-lang-longdescription" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (min 500 chars, max 10000 chars)</p></li>
@@ -1115,8 +556,8 @@ text as the description of the software that would be in its website (if
 the software had one).</p>
 <p>This description can contain some basic markdown: <code class="docutils literal notranslate"><span class="pre">*italic*</span></code>,
 <code class="docutils literal notranslate"><span class="pre">**bold**</span></code>, bullet points and <code class="docutils literal notranslate"><span class="pre">[links](#)</span></code>.</p>
-</div>
-<div class="section" id="key-description-lang-documentation">
+</section>
+<section id="key-description-lang-documentation">
 <h4><span class="section-number">1.1.20.5. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/documentation</span></code><a class="headerlink" href="#key-description-lang-documentation" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: URL</p></li>
@@ -1138,8 +579,8 @@ Prefer using open formats like PDF or ODT for maximum interoperability.</p>
 <p>Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.</p>
-</div>
-<div class="section" id="key-description-lang-apidocumentation">
+</section>
+<section id="key-description-lang-apidocumentation">
 <h4><span class="section-number">1.1.20.6. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/apiDocumentation</span></code><a class="headerlink" href="#key-description-lang-apidocumentation" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: URL</p></li>
@@ -1161,8 +602,8 @@ Prefer using open formats like PDF or ODT for maximum interoperability.</p>
 <p>Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.</p>
-</div>
-<div class="section" id="key-description-lang-features">
+</section>
+<section id="key-description-lang-features">
 <h4><span class="section-number">1.1.20.7. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/features</span></code><a class="headerlink" href="#key-description-lang-features" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
@@ -1181,8 +622,8 @@ use a maximum of 100 characters.</p>
 on the software size and complexity. There is no need for
 exhaustiveness, as users can always read the documentation for
 additional information.</p>
-</div>
-<div class="section" id="key-description-lang-screenshots">
+</section>
+<section id="key-description-lang-screenshots">
 <h4><span class="section-number">1.1.20.8. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/screenshots</span></code><a class="headerlink" href="#key-description-lang-screenshots" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings (paths)</p></li>
@@ -1203,8 +644,8 @@ the <code class="docutils literal notranslate"><span class="pre">publiccode.yml<
 <li><p>Tablet: 1024x768 &#64;2x</p></li>
 <li><p>Mobile: 375x667 &#64;2x</p></li>
 </ul>
-</div>
-<div class="section" id="key-description-lang-videos">
+</section>
+<section id="key-description-lang-videos">
 <h4><span class="section-number">1.1.20.9. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/videos</span></code><a class="headerlink" href="#key-description-lang-videos" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings (URLs)</p></li>
@@ -1219,19 +660,19 @@ hosted on a video sharing website that supports the
 and Vimeo.</p>
 <p>Since videos are an integral part of the documentation, it is
 recommended to publish them with an open license.</p>
-</div>
-<div class="section" id="key-description-lang-awards">
+</section>
+<section id="key-description-lang-awards">
 <h4><span class="section-number">1.1.20.10. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/awards</span></code><a class="headerlink" href="#key-description-lang-awards" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>A list of awards won by the software.</p>
-</div>
-</div>
-<div class="section" id="section-legal">
+</section>
+</section>
+<section id="section-legal">
 <h3><span class="section-number">1.1.21. </span>Section <code class="docutils literal notranslate"><span class="pre">legal</span></code><a class="headerlink" href="#section-legal" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="key-legal-license">
+<section id="key-legal-license">
 <h4><span class="section-number">1.1.21.1. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/license</span></code><a class="headerlink" href="#key-legal-license" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -1242,8 +683,8 @@ recommended to publish them with an open license.</p>
 distributed. The string must contain a valid SPDX expression, referring
 to one (or multiple) open-source license. Please refer to the <a class="reference external" href="https://spdx.org/licenses/">SPDX
 documentation</a> for further information.</p>
-</div>
-<div class="section" id="key-legal-maincopyrightowner">
+</section>
+<section id="key-legal-maincopyrightowner">
 <h4><span class="section-number">1.1.21.2. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/mainCopyrightOwner</span></code><a class="headerlink" href="#key-legal-maincopyrightowner" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -1259,8 +700,8 @@ group of people like “Linus Torvalds and all Linux contributors”.</p>
 <p>In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has a authors
 file, you can point to it through <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code>.</p>
-</div>
-<div class="section" id="key-legal-repoowner">
+</section>
+<section id="key-legal-repoowner">
 <h4><span class="section-number">1.1.21.3. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/repoOwner</span></code><a class="headerlink" href="#key-legal-repoowner" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
@@ -1271,8 +712,8 @@ file, you can point to it through <code class="docutils literal notranslate"><sp
 or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is probably different from the <code class="docutils literal notranslate"><span class="pre">mainCopyrightOwner</span></code>.</p>
-</div>
-<div class="section" id="key-legal-authorsfile">
+</section>
+<section id="key-legal-authorsfile">
 <h4><span class="section-number">1.1.21.4. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code><a class="headerlink" href="#key-legal-authorsfile" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (path to file)</p></li>
@@ -1285,14 +726,14 @@ copyright. This is common in projects strongly backed by a community
 where there are many external contributors and no clear single/main
 copyright owner. In such cases, this key can be used to refer to the
 authors file, using a path relative to the root of the repository.</p>
-</div>
-</div>
-<div class="section" id="section-maintenance">
+</section>
+</section>
+<section id="section-maintenance">
 <h3><span class="section-number">1.1.22. </span>Section <code class="docutils literal notranslate"><span class="pre">maintenance</span></code><a class="headerlink" href="#section-maintenance" title="Permalink to this headline">¶</a></h3>
 <p>This section provides information on the maintenance status of the
 software, useful to evaluate whether the software is actively developed
 or not.</p>
-<div class="section" id="key-maintenance-type">
+<section id="key-maintenance-type">
 <h4><span class="section-number">1.1.22.1. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code><a class="headerlink" href="#key-maintenance-type" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: enumerate</p></li>
@@ -1309,8 +750,8 @@ contract that binds an entity to the maintenance of the software;</p></li>
 or more people that donate their time to the project;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> - means that the software is not actively maintained.</p></li>
 </ul>
-</div>
-<div class="section" id="key-maintenance-contractors">
+</section>
+<section id="key-maintenance-contractors">
 <h4><span class="section-number">1.1.22.2. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contractors</span></code><a class="headerlink" href="#key-maintenance-contractors" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of Contractor (see below)</p></li>
@@ -1319,8 +760,8 @@ or more people that donate their time to the project;</p></li>
 <p>This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
 organizations, or other collective names.</p>
-</div>
-<div class="section" id="key-maintenance-contacts">
+</section>
+<section id="key-maintenance-contacts">
 <h4><span class="section-number">1.1.22.3. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contacts</span></code><a class="headerlink" href="#key-maintenance-contacts" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: List of Contacts (see below)</p></li>
@@ -1336,13 +777,13 @@ contact.</p>
 specify the final entities actually contracted to deliver the
 maintenance. Do not specify the software owner unless it is technically
 involved with the maintenance of the product as well.</p>
-</div>
-</div>
-<div class="section" id="section-localisation">
+</section>
+</section>
+<section id="section-localisation">
 <h3><span class="section-number">1.1.23. </span>Section <code class="docutils literal notranslate"><span class="pre">localisation</span></code><a class="headerlink" href="#section-localisation" title="Permalink to this headline">¶</a></h3>
 <p>This section provides an overview of the localization features of the
 software.</p>
-<div class="section" id="key-localisation-localisationready">
+<section id="key-localisation-localisationready">
 <h4><span class="section-number">1.1.23.1. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/localisationReady</span></code><a class="headerlink" href="#key-localisation-localisationready" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
@@ -1351,8 +792,8 @@ software.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.</p>
-</div>
-<div class="section" id="key-localisation-availablelanguages">
+</section>
+<section id="key-localisation-availablelanguages">
 <h4><span class="section-number">1.1.23.2. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/availableLanguages</span></code><a class="headerlink" href="#key-localisation-availablelanguages" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: list of IETF BCP 47 language tags</p></li>
@@ -1363,9 +804,9 @@ than one language.</p>
 available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the
 <a class="reference external" href="https://tools.ietf.org/html/bcp47">BCP 47</a>.</p>
-</div>
-</div>
-<div class="section" id="section-dependson">
+</section>
+</section>
+<section id="section-dependson">
 <h3><span class="section-number">1.1.24. </span>Section <code class="docutils literal notranslate"><span class="pre">dependsOn</span></code><a class="headerlink" href="#section-dependson" title="Permalink to this headline">¶</a></h3>
 <p>This section provides an overview on the system-level dependencies
 required to install and use this software.</p>
@@ -1374,7 +815,7 @@ software libraries being used), and focus only on runtime and/or
 system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.</p>
-<div class="section" id="key-dependson-open">
+<section id="key-dependson-open">
 <h4><span class="section-number">1.1.24.1. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/open</span></code><a class="headerlink" href="#key-dependson-open" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
@@ -1382,8 +823,8 @@ dependencies.</p>
 </ul>
 <p>This key contains a list of runtime dependencies that are distributed
 under an open-source license.</p>
-</div>
-<div class="section" id="key-dependson-proprietary">
+</section>
+<section id="key-dependson-proprietary">
 <h4><span class="section-number">1.1.24.2. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/proprietary</span></code><a class="headerlink" href="#key-dependson-proprietary" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
@@ -1391,8 +832,8 @@ under an open-source license.</p>
 </ul>
 <p>This key contains a list of runtime dependencies that are distributed
 under a proprietary license.</p>
-</div>
-<div class="section" id="key-dependson-hardware">
+</section>
+<section id="key-dependson-hardware">
 <h4><span class="section-number">1.1.24.3. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/hardware</span></code><a class="headerlink" href="#key-dependson-hardware" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
@@ -1400,12 +841,12 @@ under a proprietary license.</p>
 </ul>
 <p>This key contains a list of hardware dependencies that must be owned to
 use the software.</p>
-</div>
-</div>
-</div>
-<div class="section" id="special-data-formats">
+</section>
+</section>
+</section>
+<section id="special-data-formats">
 <h2><span class="section-number">1.2. </span>Special data formats<a class="headerlink" href="#special-data-formats" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dependency">
+<section id="dependency">
 <h3><span class="section-number">1.2.1. </span>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">dependency</span></code> is a complex object. The properties are the following:</p>
 <ul class="simple">
@@ -1418,8 +859,8 @@ compatible. It assumes compatibility with all patches and bugfixes
 later applied to this version.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">optional</span></code> - whether the dependency is optional or mandatory</p></li>
 </ul>
-</div>
-<div class="section" id="complex-versioning">
+</section>
+<section id="complex-versioning">
 <h3><span class="section-number">1.2.2. </span>Complex versioning<a class="headerlink" href="#complex-versioning" title="Permalink to this headline">¶</a></h3>
 <p>It is of course possible to use the various keys to specify a complex
 compatibility matrix.</p>
@@ -1439,8 +880,8 @@ compatibility matrix.</p>
 </div>
 <p>This snippet marks a mandatory dependency on MySQL, allowing any version
 between 1.1 and 1.3.</p>
-</div>
-<div class="section" id="contact">
+</section>
+<section id="contact">
 <h3><span class="section-number">1.2.3. </span>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h3>
 <p>A Contact is an object with the following properties:</p>
 <ul class="simple">
@@ -1463,8 +904,8 @@ maintainers, this can be used to create a relation between each
 technical contact and each maintainer entity. It can contain for
 instance a company name, an association name, etc.</p></li>
 </ul>
-</div>
-<div class="section" id="contractor">
+</section>
+<section id="contractor">
 <h3><span class="section-number">1.2.4. </span>Contractor<a class="headerlink" href="#contractor" title="Permalink to this headline">¶</a></h3>
 <p>A Contractor is an object with the following properties:</p>
 <ul class="simple">
@@ -1486,59 +927,42 @@ specification.</p></li>
 either point to the main institutional website, or to a more
 project-specific page or website.</p></li>
 </ul>
-</div>
-<div class="section" id="dates">
+</section>
+<section id="dates">
 <h3><span class="section-number">1.2.5. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
 <p>All dates in <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> must follow the format “YYYY-MM-DD”,
 which is one of the ISO8601 allowed formats. This is the only allowed
 format though, so not the full ISO8601 is allowed for the date keys.</p>
-</div>
-<div class="section" id="encoding">
+</section>
+<section id="encoding">
 <h3><span class="section-number">1.2.6. </span>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h3>
 <p><cite>publiccode.yml</cite> <strong>MUST</strong> be UTF-8 encoded.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code></a>
+  </li>
+  <li class="next">
+    <a href="country.html"
+       title="next chapter"><span class="section-number">2. </span>Country-Specific Extensions →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright .
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
-</div>
-</div>
-
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code></p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="country.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Country-Specific Extensions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright .<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
   </body>
 </html>
