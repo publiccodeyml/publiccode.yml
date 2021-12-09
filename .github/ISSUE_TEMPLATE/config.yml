@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Proposal to change something in the Standard
+    url: https://github.com/publiccodeyml/publiccode.yml/discussions/new?category=general
+    about: I want to propose a change to the Standard or the Governance
+  - name: New question
+    url: https://github.com/publiccodeyml/publiccode.yml/discussions/new?category=Q-A
+    about: I have a question about the code, the Standard or the Governance
+  - name: New idea
+    url: https://github.com/publiccodeyml/publiccode.yml/discussions/new?category=ideas
+    about: I have a new idea I want to share
