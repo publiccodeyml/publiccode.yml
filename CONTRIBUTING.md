@@ -1,51 +1,98 @@
-# Contributing to this standard
+# Contributing to this Standard
 
-🙇‍♀️ Thank you for contributing!
+Thank you for your interest in contributing! 🙇
 
-We – the maintainers and contributors of this project – understand that a standard like this can only be set in collaboration with as many public technologists, policy makers and interested folk as possible. Thus we appreciate your input, enjoy feedback and welcome improvements to this project and are very open to collaboration.
+We – the maintainers and contributors of this project – understand that a Standard
+like this can only be set in collaboration with as many public technologists,
+policymakers and interested folks as possible. Thus, we appreciate your input, enjoy
+feedback and welcome improvements to this project and are very open to collaboration.
 
 We love issues and pull requests from everyone.
 
-## Problems, suggestions and questions in Issues
+## I want to help develop the standard
 
-Please help development by reporting problems, suggesting changes and asking questions. To do this, you can [create a GitHub Issue](https://help.github.com/articles/creating-an-issue/) for this project in the [GitHub Issues for publiccode.yml](https://github.com/italia/publiccode.yml/issues).
-
+Please help development by reporting problems, suggesting changes and asking questions.
 You don't need to change any of our code or documentation to be a contributor!
 
-## Documentation and code in Pull Requests
+Anyone is welcome to participate!
 
-If you want to add to the documentation or code of one of our projects you should make a Pull Request. 
+The best ways to do so are:
+* [Participate in discussions](https://github.com/publiccodeyml/publiccode.yml/discussions)
+* Once you know your contribution is ready, [open a pull request](https://github.com/publiccodeyml/publiccode.yml/pulls)
 
-If you never used GitHub, get up to speed with [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/) or follow one of the great free interactive courses in the [GitHub learning lab](https://lab.github.com/) on working with GitHub and working with MarkDown, the syntax this project's documentation is in.
+## I am a Free Software developer
 
-This project is [licenced CC-0](LICENSE), which essentially means that the project, along with your contributions is in the Public Domain in whatever jusrisdiction possible, and everyone can do whatever they want with it.
+Help us bring new Free Software into governments!
+You can add a `publiccode.yml` file in your repositories, ask other projects to do it,
+or, even better, help us create tools.
+
+Don't be afraid to start new ones and
+[show them to the community](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/show-and-tell).
+
+## I am a public software vendor
+
+Add a `publiccode.yml` file to your repositories!
+After that, you can submit it to national catalogs, for example:
+
+* [Developers Italia](https://github.com/italia/developers-italia-backend)
+* ...
+
+## I am a public servant and want to represent my country in the Steering Committee
+
+We are happy to have you here!
+
+[Take a look at the Charter](/governance/charter.md) and, once you made sure you are
+the right person, please [create a new post](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/general).
+
+The Chair will get in touch with you and get you started.
+
+We strongly encourage you to also contribute translations (if applicable) and, if needed,
+[a national section](https://yml.publiccode.tools/country.html).
+Just make your changes and [submit a Pull Request](https://github.com/publiccodeyml/publiccode.yml/pulls).
+
+# In short
+
+If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
+or follow one of the great free interactive courses in the
+[GitHub learning lab](https://lab.github.com/).
+
+This project is [CC-0 licensed](LICENSE), which essentially means that the project, along
+with your contributions, is in the Public Domain in whatever jurisdiction possible, and
+everyone can do whatever they want with it.
 
 ### 1. Make your changes
 
-This project uses the [**GitFlow branching model** and workflow](http://nvie.com/posts/a-successful-git-branching-model/). When you've forked this repository, please make sure to create a feature branch following the GitFlow model.
+This project uses the [**GitHub flow branching model**](https://docs.github.com/en/get-started/quickstart/github-flow).
 
-Add your changes in commits [with a message that explains them](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message). Document choices or decisions you make in the commit message, this will enable everyone to be informed of your choices in the future.
-
-If you are adding code, make sure you've added and updated the relevant documentation and tests before you submit your pull request. Make sure to write tests that show the behaviour of the newly added or changed code.
+Add your changes in commits [with a message that explains them](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
+Document choices or decisions you make in the commit message, this will enable everyone to
+be informed of your choices in the future.
 
 ### 2. Pull Request
 
-When submitting the pull request, please accompany it with a description of the problem you are trying to address and the issue numbers that this Pull Request fixes/addresses.
+When submitting the pull request, please accompany it with a description of the problem
+you are trying to address and the reference to the relevant Issue or Discussion.
+
+If your Pull Request is about a part of the Standard or the Governance of the project,
+it's considered as a formal proposal and will be voted on,
+[following this procedure](/governance/procedure-proposing-changes-and-voting.md).
 
 ### 3. Improve
 
 All contributions have to be reviewed by someone.
 
-It could be that your contribution can be merged immediately by a maintainer. However, usually, a new Pull Request needs some improvements before it can be merged. Other contributors (or helper robots) might have feedback. If this is the case the reviewing maintainer will help you improve your documentation and code.
+It could be that your contribution can be merged immediately by a maintainer.
+However, usually, a new Pull Request needs some improvements before it can be merged.
 
-If your documentation and code have passed human review, it is merged.
+Other contributors (or helper robots) might have feedback.
+If this is the case, the reviewing maintainer will help you improve the Pull Request.
+
+If your documentation or code have passed human review, it is merged.
 
 ### 4. Celebrate
 
-Your ideas, documentation and code have become an integral part of this project. You are the Open Source hero we need! 
+Your ideas, documentation and code have become an integral part of this project.
+You are the Open Source hero we need!
 
-In fact, feel free to open a PR to add your name to the [`AUTHORS`](AUTHORS.md) file and get eternal attribution.
-
----
-
-For more information on how to use and contribute to this project, please read the [`README`](README.md).
+In fact, feel free to open a Pull Request to add your name to the [`AUTHORS`](AUTHORS.md)
+file and get eternal attribution.
