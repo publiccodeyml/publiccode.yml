@@ -1,30 +1,12 @@
 # The `publiccode.yml` standard
 
-[![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
+[![GitHub release](https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic)](https://github.com/publiccodeyml/publiccode.yml/releases)
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
 
-> A metadata description standard for public software.
-
----
-
-## Table of Contents
-
-- [Description](#description)
-- [What is this file for](#what-this-file-is-for)
-- [Documentation](#documentation)
-- [Finding Projects](#finding-projects)
-- [Versioning](#versioning)
-- [Contributing](#contributing)
-- [Authors](#authors)
-- [License](#license)
-
-## Description
-
-A metadata description standard for public software and policy repositories
-that is easy to use both for developers and people with less technical
-background, in order to make the software developed by Public Administrations
-and Public Organisations easily discoverable.
+> A metadata description standard for public software that is easy to use both for
+> developers and people with less technical background, in order to make the
+> software developed by Public Administrations and Public Organisations easily discoverable.
 
 ## What this file is for
 
@@ -67,25 +49,20 @@ exposing them as open data.
 
 ## Versioning 
 
-**Latest release:** [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases) [See all versions](https://github.com/italia/publiccode.yml/releases)
+**Latest release:** [![GitHub release](https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic)](https://github.com/publiccodeyml/publiccode.yml/releases) [See all versions](https://github.com/publiccodeyml/publiccode.yml/releases)
 
 This project follows the Semantic Versioning.  For more information see
 [SemVer.org](https://semver.org/).
 
 Furthermore, the project uses branches and tags in the following way:
 * The `main` branch contains the improvements coming up in the next version.
-* GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
+* [Release page](https://github.com/publiccodeyml/publiccode.yml/releases)
   contains all the released versions of the standard. Releases are tagged
   with the Standard's version.
 
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
-
-## Authors
-The `publiccode.yml` specification is developed by the [Italian Digital
-Transformation Team](https://teamdigitale.governo.it) and the
-[Authors](AUTHORS.md).
 
 ## Licence
 
