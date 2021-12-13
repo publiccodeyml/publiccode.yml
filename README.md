@@ -73,31 +73,10 @@ This project follows the Semantic Versioning.  For more information see
 [SemVer.org](https://semver.org/).
 
 Furthermore, the project uses branches and tags in the following way:
-* The `master` branch contains the latest stable version of the standard.
-* The `development` branch contains the improvements proposed for the next
-  version. 
+* The `main` branch contains the improvements coming up in the next version.
 * GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
-  contains all the released versions of the standard. Releases are done
-  following the tag version for consistency.
-
-However, since the repository contains both the core schema and the
-country-specific ones, it is necessary to further refine the versioning. 
-As such, each update at the core and/or to a country-specific extension will be
-tagged as follows:
-
-> core-x.y.z;cc-a.b.c
-
-where cc is the country code defined in the `countryExtensionVersion` key. 
-
-This versioning schema is fundamental in this project since the
-`publiccode.yml` file contains references to the core release in the
-`publiccodeYmlVersion` key and each country-specific schema contains
-a `version` key. 
-
-Examples of this versioning schema may be:
-
-> * core:0.2;it:0.4
-> * core:0.2;fr:1.1
+  contains all the released versions of the standard. Releases are tagged
+  with the Standard's version.
 
 ## Contributing
 
