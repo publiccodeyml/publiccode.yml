@@ -47,9 +47,9 @@ Proposals require unanimity to pass, but when that doesn't happen, proposals wit
 put again to vote. In this second round, the change only needs 75% *approve* votes in order to be
 considered accepted.
 
-### National sections
+### Country-specific sections
 
-Changes to national sections (top level keys named after [ISO 3166-1 alpha-2
+Changes to country-specific sections (top level keys named after [ISO 3166-1 alpha-2
 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and their children) always require the
 *approval* of the Steering Committee member representing the corresponding country and 50% *approve*
 votes.
