@@ -1,9 +1,9 @@
-.. _italian-extensions:
+.. _italian-sections:
 
 Italy
 -----
 
-All the extensions listed below are specific for Italy and, as such, they must
+All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the ``it`` code. Every Country is specified
 using a two letters *country code* following the ISO 3166-1 alpha-2 standard.
 
@@ -13,16 +13,10 @@ Key ``countryExtensionVersion``
 
 - Type: string
 - Presence: mandatory
-- Example: ``"1.0"``
+- Value: ``"1.0"``
 
 
-This key specifies the version to which the current extension schema adheres to,
-for forward compatibility.
-
-Please note how the value of this key is independent from the top-level
-``publiccodeYmlVersion`` one (see :ref:`core`). In such a way, the extensions
-schema versioning is independent both from the core version of the schema and
-from every other Country.
+This key **MUST** always be set to ``1.0``.
 
 Key ``conforme``
 ~~~~~~~~~~~~~~~~
