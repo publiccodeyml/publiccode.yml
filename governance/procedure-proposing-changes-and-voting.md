@@ -1,6 +1,6 @@
 # Proposing changes
 
-Everyone can propose changes to the Standard ([`/docs/en/`](/docs/en/)) or organization of the
+Everyone can propose changes to the Standard ([`/docs/standard/`](/docs/standard/)) or organization of the
 Working Group ([`/governance/`](/governance/)).  Every other part of the repo, including
 translations of the Standard, are not normative and don't undergo this procedure.
 

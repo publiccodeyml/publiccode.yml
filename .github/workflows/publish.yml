@@ -15,7 +15,7 @@ jobs:
           python-version: '3.8'
 
       - run: pip install -r requirements.txt
-      - run: sphinx-build docs/en build -c .
+      - run: sphinx-build docs/standard build -c .
 
       - name: Publish on GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
