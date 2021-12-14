@@ -17,9 +17,9 @@ The [Maintainers](https://github.com/orgs/publiccodeyml/teams/steering-committee
 for labelling any change depending on their nature according to the [Semantic
 Versioning](https://semver.org/), or in other words:
 
-* [**`standard-fix`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-fix): for all
+* [**`standard-bugfix-change`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-bugfix-change): for all
   changes that don't break any compatibility, warrants a new patch version
-* [**`standard-backward-compatible`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-backward-compatible),
+* [**`standard-minor-change`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-minor-change),
 [**`standard-deprecation`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-deprecation):
   for all changes that are retrocompatibile, warrants a new minor version
 * [**`standard-breaking-change`**](https://github.com/publiccodeyml/publiccode.yml/labels/standard-breaking-change):
