@@ -654,7 +654,7 @@ Key ``localisation/localisationReady``
 -  Type: boolean
 -  Presence: mandatory
 
-If ``yes``, the software has infrastructure in place or is otherwise
+If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
 
@@ -738,7 +738,7 @@ compatibility matrix.
 
    - name: PostgreSQL
      version: "3.2"
-     optional: yes
+     optional: true
 
 This snippet marks an optional dependency on PostgreSQL exactly version
 3.2.
@@ -810,4 +810,5 @@ format though, so not the full ISO8601 is allowed for the date keys.
 
 Encoding
 ~~~~~~~~
-`publiccode.yml` **MUST** be UTF-8 encoded.
+`publiccode.yml` **MUST** be a UTF-8 encoded and **SHOULD** be a YAML 1.2 document,
+using YAML 1.1 is *deprecated*.
