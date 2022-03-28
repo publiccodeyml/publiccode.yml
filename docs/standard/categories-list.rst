@@ -69,6 +69,7 @@ Valid Tags
 - it-service-management
 - knowledge-management
 - learning-management-system
+- library-management-system
 - marketing
 - mind-mapping
 - mobile-marketing
