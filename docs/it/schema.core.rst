@@ -813,7 +813,8 @@ Un Contatto è un oggetto con le seguenti proprietà:
    deve essere offuscato. Per migliorare la resistenza contro la
    raccolta di indirizzi email, usare ``\x64`` per sostituire ``@``,
    siccome questo è permesso dalle specifiche YAML.
--  ``phone`` - Numero telefonico (con prefisso internazionale).
+-  ``phone`` - Numero telefonico (con prefisso internazionale). Questa chiave
+   deve essere una stringa.
 -  ``affiliation`` - Questa chiave contiene informazioni esplicite sui
    contatti tecnici. Nel caso esistano diversi maintainer, questa chiave
    può essere usata per creare relazioni tra diversi contatti tecnici e
@@ -848,6 +849,10 @@ Data
 ~~~~
 
 Tutte le date in ``publiccode.yml`` devono aderire al formato
-“YYYY-MM-DD” che è una delle codifiche permesse dal ISO8601. **Nota
-bene:** questa è l’unica codifica permessa, quindi non sono consentiti
+“YYYY-MM-DD” che è uno dei formati permessi da ISO8601. **Nota
+bene:** questo è l’unico formato permesso, quindi non sono consentiti
 gli altri formati previsti da ISO8601.
+
+Codifica
+~~~~~~~~
+La codifica di ``publiccode.yml`` **DEVE** essere UTF-8.

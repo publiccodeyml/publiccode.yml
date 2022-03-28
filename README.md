@@ -1,36 +1,40 @@
-# The `publiccode.yml` standard
+<!-- markdownlint-disable no-inline-html -->
 
-[![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases)
-[![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg)](https://developersitalia.slack.com/messages/CAM3F785T)
-[![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
-[![Docs
-Italia](https://docs.italia.it/media/static/projects/badges/passing.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
-[![Documentation](https://img.shields.io/badge/Documentation-Docs%20Italia-blue.svg)](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/index.html)
+<h1 align="center">The `publiccode.yml` standard</h1>
 
-> A metadata description standard for public software.
+<div align="center">
+  <i>
+    A metadata description standard for public software that is easy to use both for
+    developers and people with less technical background in order to make the
+    software developed by Public Administrations and Public Organisations easily discoverable.
+  </i>
+</div>
 
-* Read documentation in [English](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
-* Leggi la documentazione in [italiano](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/)*
+<br />
 
----
+ <!-- Badges -->
+<div align="center">
+  <a href="https://github.com/publiccodeyml/publiccode.yml/releases">
+    <img alt="Latest release" src="https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic">
+  </a>
+  <a href="https://developersitalia.slack.com/messages/CAM3F785T">
+    <img alt="Join the #publiccode channel" src="https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg">
+  </a>
+  <a href="https://slack.developers.italia.it/">
+    <img alt="Get invited" src="https://slack.developers.italia.it/badge.svg">
+  </a>
+</div>
 
-## Table of Contents
-
-- [Description](#description)
-- [What is this file for](#what-this-file-is-for)
-- [Documentation](#documentation)
-- [Finding Projects](#finding-projects)
-- [Versioning](#versioning)
-- [Contributing](#contributing)
-- [Authors](#authors)
-- [License](#license)
-
-## Description
-
-A metadata description standard for public software and policy repositories
-that is easy to use both for developers and people with less technical
-background, in order to make the software developed by Public Administrations
-and Public Organisations easily discoverable.
+<div align="center">
+  <h3>
+    <a href="governance/charter.md">Charter</a>
+    <span> | </span>
+    <a href="governance/procedure-proposing-changes-and-voting.md">
+      Voting procedure</a>
+    <span> | </span>
+    <a href="CONTRIBUTING.md">Contributing</a>
+  </h3>
+</div>
 
 ## What this file is for
 
@@ -58,15 +62,6 @@ The `publiccode.yml` file format should both be able to easily be added to any
 new project, as well as grow with the project as it expands beyond the original
 context it was developed in.
 
-## Documentation
-
-This repository is structured in order to be compatible with the [Docs Italia](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
-platform. As such, the content in the relevant folders will be
-compiled and rendered inside that platform. The `Docs Italia` platform is
-able to handle different releases and localised versions of the same file
-drawing from the document's GitHub repository. As such, the platform is to be
-considered the default landing page for the project.
-
 ## Finding projects
 
 Finding projects depends on how the search API is structured for every hosting
@@ -82,46 +77,20 @@ exposing them as open data.
 
 ## Versioning 
 
-**Latest release:** [![GitHub release](https://img.shields.io/github/release/italia/publiccode.yml.svg?style=plastic)](https://github.com/italia/publiccode.yml/releases) [See all versions](https://github.com/italia/publiccode.yml/releases)
+**Latest release:** [![GitHub release](https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic)](https://github.com/publiccodeyml/publiccode.yml/releases) [See all versions](https://github.com/publiccodeyml/publiccode.yml/releases)
 
 This project follows the Semantic Versioning.  For more information see
 [SemVer.org](https://semver.org/).
 
 Furthermore, the project uses branches and tags in the following way:
-* The `master` branch contains the latest stable version of the standard.
-* The `development` branch contains the improvements proposed for the next
-  version. 
-* GitHub's [release page](https://github.com/italia/publiccode.yml/releases)
-  contains all the released versions of the standard. Releases are done
-  following the tag version for consistency.
-
-However, since the repository contains both the core schema and the
-country-specific ones, it is necessary to further refine the versioning. 
-As such, each update at the core and/or to a country-specific extension will be
-tagged as follows:
-
-> core-x.y.z;cc-a.b.c
-
-where cc is the country code defined in the `countryExtensionVersion` key. 
-
-This versioning schema is fundamental in this project since the
-`publiccode.yml` file contains references to the core release in the
-`publiccodeYmlVersion` key and each country-specific schema contains
-a `version` key. 
-
-Examples of this versioning schema may be:
-
-> * core:0.2;it:0.4
-> * core:0.2;fr:1.1
+* The `main` branch contains the improvements coming up in the next version.
+* [Release page](https://github.com/publiccodeyml/publiccode.yml/releases)
+  contains all the released versions of the standard. Releases are tagged
+  with the Standard's version.
 
 ## Contributing
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
-
-## Authors
-The `publiccode.yml` specification is developed by the [Italian Digital
-Transformation Team](https://teamdigitale.governo.it) and the
-[Authors](AUTHORS.md).
 
 ## Licence
 

@@ -3,6 +3,22 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+[core-0.2.2] - 2019-12-13
+-------------------------
+
+Changed
+~~~~~~~
+
+-  Mandates UTF-8 as the encoding used.
+
+[core-0.2.1] - 2019-10-10
+-------------------------
+
+Changed
+~~~~~~~
+
+-  Mandates phone numbers to be strings
+
 [core-0.2/it-0.2] - 2019-03-13
 ------------------------------
 

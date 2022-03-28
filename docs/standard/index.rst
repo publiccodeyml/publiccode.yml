@@ -3,7 +3,7 @@
 
 ``publiccode.yml`` is a metadata standard for repositories containing software
 developed or acquired by the Public Administration, aimed at making them easily
-discoverabile and thus reusable by other entities.
+discoverable and thus reusable by other entities.
 
 By including a ``publiccode.yml`` file in the root of a repository, and
 populating it with information about the software, technicians and civil
@@ -26,7 +26,7 @@ Details carried by a ``publiccode.yml`` file include:
 - contacts of the entity who published the codebase; 
 - contacts of the maintainer, if any, including the expire date of the maintenance contract; 
 - information about the legal context for which the project or product was designed; 
-- dependencies.
+- dependencies
   
 and much more.
 

@@ -1,0 +1,12 @@
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: publiccodeyml/bot@main
+        with:
+          username: yaml-9000
+        env:
+          GITHUB_TOKEN: ${{ secrets.YAML_BOT_TOKEN }}

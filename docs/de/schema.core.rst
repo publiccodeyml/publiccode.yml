@@ -1,10 +1,7 @@
-.. _core:
-
-The Standard (core)
+Der Standard (Kern)
 ===================
 
-This document represents the description of the ``publiccode.yml``
-schema.
+Dieses Dokument beschreibt das publiccode.yml-Schema.
 
 Top-Level Keys and Sections
 ---------------------------
@@ -53,15 +50,15 @@ source code repository (git, svn, …) in which the software is published.
 If the repository is available under multiple protocols, prefer
 HTTP/HTTPS URLs which don’t require user authentication.
 
-Forks created for the purpose of contributing upstreams should not
+Forks created for the purpose of contributing upstream should not
 modify this file; this helps software parsing ``publiccode.yml`` to
-immediately skips technical forks. On the contrary, a
+immediately skip technical forks. On the contrary, a
 complete fork that is meant to be maintained separately from the
 original software should modify this line, to give themselves the status
 of a different project.
 
 See :ref:`forks-and-variants` for a complete description of what
-is a software variant and how to handle forked softwares as a parser or
+is a software variant and how to handle forked software as a parser or
 an author.
 
 Key ``landingURL``
@@ -162,7 +159,7 @@ Key ``inputTypes``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
-handle as output.
+handle as input.
 
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
@@ -281,7 +278,7 @@ The keys are:
 -  ``standalone/other`` - The software has a different nature from the once
    listed above.  
 -  ``softwareAddon`` - The software is an addon, such as a plugin or a
-   theme, for a more complex software (e.g. a CMS or an office suite).
+   theme, for a more complex software (e.g. a CMS or an office suite).
 -  ``library`` - The software contains a library or an SDK to make it
    easier to third party developers to create new products.
 -  ``configurationFiles`` - The software does not contain executable
@@ -377,7 +374,7 @@ Key ``description/[lang]/genericName``
 
 This key is the “Generic name”, which refers to the specific category to
 which the software belongs. You can usually find the generic name in the
-presentation of the software, when you write: “Software xxx is a yyy”
+presentation of the software, when you write: “Software xxx is a yyy”.
 Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
 “Chat” and so on… The generic name can be up to 35 characters long.
 
@@ -427,7 +424,7 @@ bar, etc.).
 If the documentation is instead available only as a document, put a
 direct view/download link as URL in this key. You should commit the
 document as part of the source code repository, and then link to it
-using the code hosting source browser URL (eg: GitHub URL to the file).
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
 Prefer using open formats like PDF or ODT for maximum interoperability.
 
 Whichever the format for the documentation, remember to make its source
@@ -448,12 +445,12 @@ documentation that is immediately readable through a common web browser.
 The documentation should be rendered in HTML and browsable like a
 website (with a navigation index, a search bar, etc.), and if there is a
 reference or test deployment, possibly offer an interactive interface
-(e.g. Swagger).
+(e.g. Swagger).
 
 If the documentation is instead available only as a document, put a
 direct view/download link as URL in this key. You should commit the
 document as part of the source code repository, and then link to it
-using the code hosting source browser URL (eg: GitHub URL to the file).
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
 Prefer using open formats like PDF or ODT for maximum interoperability.
 
 Whichever the format for the documentation, remember to make its source
@@ -469,7 +466,7 @@ Key ``description/[lang]/features``
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
 should be that of public decision makers who will be commissioning the
-software. The features should thus not target developers: instead of
+software. The features should thus not target developers; instead of
 listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
@@ -582,7 +579,7 @@ Key ``legal/authorsFile``
 -  Presence: optional
 -  Example: ``"doc/AUTHORS.txt"``
 
-Some open-source softwares adopt a convention of identify the copyright
+Some open-source software adopt a convention of identify the copyright
 holders through a file that lists all the entities that own the
 copyright. This is common in projects strongly backed by a community
 where there are many external contributors and no clear single/main
@@ -606,11 +603,11 @@ Key ``maintenance/type``
 This key describes how the software is currently maintained.
 
 -  ``internal`` - means that the software is internally maintained by the
-   repository owner. 
+   repository owner;
 -  ``contract`` - means that there is a commercial
    contract that binds an entity to the maintenance of the software;
 -  ``community`` - means that the software is currently maintained by one
-   or more people that donate their time to the project; 
+   or more people that donate their time to the project;
 -  ``none`` - means that the software is not actively maintained.
 
 Key ``maintenance/contractors``
@@ -676,7 +673,7 @@ Section ``dependsOn``
 This section provides an overview on the system-level dependencies
 required to install and use this software.
 
-**NOTE:** do not list dependencies at the source code level (eg:
+**NOTE:** do not list dependencies at the source code level (e.g.:
 software libraries being used), and focus only on runtime and/or
 system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
@@ -717,7 +714,7 @@ Dependency
 
 A ``dependency`` is a complex object. The properties are the following:
 
--  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
+-  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
    NFC Reader)
 -  ``versionMin`` - the first compatible version
 -  ``versionMax`` - the latest compatible version
@@ -770,7 +767,8 @@ A Contact is an object with the following properties:
    must not be obfuscated. To improve resistance against e-mail
    collection, use ``\x64`` to replace ``@``, as allowed by the YAML
    specification.
--  ``phone`` - phone number (with international prefix)
+-  ``phone`` - phone number (with international prefix). This has to be
+   a string. 
 -  ``affiliation`` - This key contains an explicit affiliation
    information for the technical contact. In case of multiple
    maintainers, this can be used to create a relation between each
@@ -800,9 +798,11 @@ A Contractor is an object with the following properties:
    either point to the main institutional website, or to a more
    project-specific page or website.
 
-Dates
+Datum
 ~~~~~
 
-All dates in ``publiccode.yml`` must follow the format “YYYY-MM-DD”,
-which is one of the ISO8601 allowed encoding. This is the only allowed
-encoding though, so not the full ISO8601 is allowed for the date keys.
+Jedes Datum in ``publiccode.yml`` muss dem Format "JJJJ-MM-TT" folgen, welches eines der Formate nach ISO8601 ist. Allerdings sind sonst keine anderen Formate aus ISO8601 für Datums-Keys erlaubt.
+
+Encodierung
+~~~~~~~~
+`publiccode.yml` **MUSS** nach UTF-8 encodiert sein.
