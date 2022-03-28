@@ -119,7 +119,7 @@ Chiave ``piattaforme/io``
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con `IO - l'app dei servizi pubblici <https://io.italia.it/>`__.
+Se presente e impostato a ``true``, il software si interfaccia con `IO - l'app dei servizi pubblici <https://io.italia.it/>`__.
 
 Sezione ``riuso``
 ~~~~~~~~~~~~~~~~~
