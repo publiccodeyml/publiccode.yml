@@ -110,6 +110,15 @@ Key ``piattafome/pagopa``
 
 If present and set to ``yes``, the software interfaces with pagoPA.
 
+Key ``piattaforme/io``
+'''''''''''''''''''''''''
+
+- Type: boolean
+- Presence: optional
+
+If present and set to ``true``, the software interfaces with `IO - the public services app <https://io.italia.it/>`__.
+
+
 Section ``riuso``
 ~~~~~~~~~~~~~~~~~
 
