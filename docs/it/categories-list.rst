@@ -39,6 +39,7 @@ Tag Validi
 - donor-management
 - e-commerce
 - e-signature
+- educational-content
 - email-management
 - email-marketing
 - employee-management
