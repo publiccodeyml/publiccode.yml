@@ -152,8 +152,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``inputTypes``
-~~~~~~~~~~~~~~~~~~
+Key ``inputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array of enumerated strings
 -  Presence: optional
@@ -167,8 +167,8 @@ handle as input.
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
 
-Key ``outputTypes``
-~~~~~~~~~~~~~~~~~~~
+Key ``outputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array of enumerated strings
 -  Presence: optional
