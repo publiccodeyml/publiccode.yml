@@ -136,8 +136,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``monochromeLogo``
-~~~~~~~~~~~~~~~~~~~~~~
+Key ``monochromeLogo`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (path to file)
 -  Presence: optional

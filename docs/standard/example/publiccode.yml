@@ -8,7 +8,6 @@ isBasedOn: "https://github.com/italia/otello.git"
 softwareVersion: "1.0"
 releaseDate: "2017-04-15"
 logo: img/logo.svg
-monochromeLogo: img/logo-mono.svg
 
 platforms:
   - android
