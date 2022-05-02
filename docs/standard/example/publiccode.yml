@@ -40,7 +40,6 @@ intendedAudience:
 description:
   en:
     localisedName: Medusa
-    genericName: Text Editor
     shortDescription: >
           This description can have a maximum 150
           characters long. We should not fill the

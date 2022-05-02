@@ -368,11 +368,11 @@ name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
-Key ``description/[lang]/genericName``
-''''''''''''''''''''''''''''''''''''''
+Key ``description/[lang]/genericName`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (max 35 chars)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"Text Editor"``
 
 This key is the “Generic name”, which refers to the specific category to
