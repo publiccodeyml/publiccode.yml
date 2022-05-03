@@ -29,7 +29,7 @@
     <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
-      <span class="site-name">publiccode.yml Standard</span>
+      <span class="site-name">publiccode.yml Standard (v0.3.0)</span>
     
   </router-link>
 
@@ -83,7 +83,7 @@
         
           <li class="toctree-l1 ">
             
-              <a href="country.html" class="reference internal ">Country-Specific Extensions</a>
+              <a href="country.html" class="reference internal ">Country-Specific Sections</a>
             
 
             
@@ -150,8 +150,8 @@
           <div class="content" role="main" v-pre>
             
   <section id="italy">
-<span id="italian-extensions"></span><h1>Italy<a class="headerlink" href="#italy" title="Permalink to this headline">¶</a></h1>
-<p>All the extensions listed below are specific for Italy and, as such, they must
+<span id="italian-sections"></span><h1>Italy<a class="headerlink" href="#italy" title="Permalink to this headline">¶</a></h1>
+<p>All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code. Every Country is specified
 using a two letters <em>country code</em> following the ISO 3166-1 alpha-2 standard.</p>
 <section id="key-countryextensionversion">
@@ -159,14 +159,9 @@ using a two letters <em>country code</em> following the ISO 3166-1 alpha-2 stand
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
-<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
+<li><p>Value: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
 </ul>
-<p>This key specifies the version to which the current extension schema adheres to,
-for forward compatibility.</p>
-<p>Please note how the value of this key is independent from the top-level
-<code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code> one (see <a class="reference internal" href="schema.core.html#core"><span class="std std-ref">The Standard (core)</span></a>). In such a way, the extensions
-schema versioning is independent both from the core version of the schema and
-from every other Country.</p>
+<p>This key <strong>MUST</strong> always be set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
 </section>
 <section id="key-conforme">
 <h2>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code><a class="headerlink" href="#key-conforme" title="Permalink to this headline">¶</a></h2>
@@ -180,7 +175,7 @@ declared.</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the Italian accessibility
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software is compliant with the Italian accessibility
 laws (L. 4/2004), as further explained in the
 <a class="reference external" href="https://docs.italia.it/italia/designers-italia/design-linee-guida-docs">linee guida di
 design</a> (Italian language).</p>
@@ -191,7 +186,7 @@ design</a> (Italian language).</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs">linee
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software is compliant with the <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs">linee
 guida
 sull’interoperabilità</a>.</p>
 <p>Regulatory reference: <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html">Art. 73 del
@@ -203,7 +198,7 @@ CAD</a> (Italian language).</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software is compliant with the <a class="reference external" href="https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict">Misure
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software is compliant with the <a class="reference external" href="https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict">Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni</a> (Italian language).</p>
 </section>
@@ -213,7 +208,7 @@ amministrazioni</a> (Italian language).</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software respects the GDPR.</p>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software respects the GDPR.</p>
 </section>
 </section>
 <section id="section-piattaforme">
@@ -224,7 +219,7 @@ amministrazioni</a> (Italian language).</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with <a class="reference external" href="https://developers.italia.it/it/spid">SPID
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with <a class="reference external" href="https://developers.italia.it/it/spid">SPID
 - il Sistema Pubblico di Identità
 Digitale</a>.</p>
 </section>
@@ -234,7 +229,7 @@ Digitale</a>.</p>
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with the Italian
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with the Italian
 electronic ID card (<code class="docutils literal notranslate"><span class="pre">Carta</span> <span class="pre">di</span> <span class="pre">Identità</span> <span class="pre">Elettronica</span></code>).</p>
 </section>
 <section id="key-piattaforme-anpr">
@@ -243,7 +238,7 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with ANPR.</p>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with ANPR.</p>
 </section>
 <section id="key-piattafome-pagopa">
 <h3>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code><a class="headerlink" href="#key-piattafome-pagopa" title="Permalink to this headline">¶</a></h3>
@@ -251,7 +246,15 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
-<p>If present and set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the software interfaces with pagoPA.</p>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with pagoPA.</p>
+</section>
+<section id="key-piattaforme-io">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/io</span></code><a class="headerlink" href="#key-piattaforme-io" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with <a class="reference external" href="https://io.italia.it/">IO - the public services app</a>.</p>
 </section>
 </section>
 <section id="section-riuso">

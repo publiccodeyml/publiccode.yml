@@ -136,8 +136,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``monochromeLogo``
-~~~~~~~~~~~~~~~~~~~~~~
+Key ``monochromeLogo`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (path to file)
 -  Presence: optional
@@ -152,8 +152,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``inputTypes``
-~~~~~~~~~~~~~~~~~~
+Key ``inputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array of enumerated strings
 -  Presence: optional
@@ -167,8 +167,8 @@ handle as input.
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
 
-Key ``outputTypes``
-~~~~~~~~~~~~~~~~~~~
+Key ``outputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array of enumerated strings
 -  Presence: optional
@@ -368,11 +368,11 @@ name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
-Key ``description/[lang]/genericName``
-''''''''''''''''''''''''''''''''''''''
+Key ``description/[lang]/genericName`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (max 35 chars)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"Text Editor"``
 
 This key is the “Generic name”, which refers to the specific category to
@@ -395,10 +395,10 @@ allowed.
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (min 500 chars, max 10000 chars)
+-  Type: string (min 150 chars, max 10000 chars)
 -  Presence: mandatory (for at least one language)
 
-This key contains a longer description of the software, between 500 and
+This key contains a longer description of the software, between 150 and
 10000 chars. It is meant to provide an overview of the capabilities of
 the software for a potential user. The audience for this text should be
 that of users of the software, not developers. You can think of this
@@ -474,8 +474,7 @@ listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
 While the key is mandatory, there is no mandatory minimum or maximum
-number of features that should be listed in this key. Each feature must
-use a maximum of 100 characters.
+number of features that should be listed in this key.
 
 The suggested number of features to list is between 5 and 20, depending
 on the software size and complexity. There is no need for
@@ -654,7 +653,7 @@ Key ``localisation/localisationReady``
 -  Type: boolean
 -  Presence: mandatory
 
-If ``yes``, the software has infrastructure in place or is otherwise
+If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
 
@@ -738,7 +737,7 @@ compatibility matrix.
 
    - name: PostgreSQL
      version: "3.2"
-     optional: yes
+     optional: true
 
 This snippet marks an optional dependency on PostgreSQL exactly version
 3.2.
@@ -810,4 +809,5 @@ format though, so not the full ISO8601 is allowed for the date keys.
 
 Encoding
 ~~~~~~~~
-`publiccode.yml` **MUST** be UTF-8 encoded.
+`publiccode.yml` **MUST** be a UTF-8 encoded and **SHOULD** be a YAML 1.2 document,
+using YAML 1.1 is *deprecated*.
