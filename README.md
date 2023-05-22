@@ -68,7 +68,7 @@ Finding projects depends on how the search API is structured for every hosting
 platform. For example, you can find all `publiccode.yml` on GitHub files by
 searching using the frontend or the API.
 
-* [GitHub Search `path:/publiccode.yml`](https://github.com/search?q=path%3A%2Fpubliccode.yml&type=code)
+* [GitHub Search `path:/(^|\/)publiccode\.yml$/`](https://github.com/search?q=path%3A%2F%28%5E%7C%5C%2F%29publiccode%5C.yml%24%2F&type=code)
 
 The Italian Digital Transformation Team is also working on providing a scanner
 which looks for all publiccode files on all publicly accessible websites, and
