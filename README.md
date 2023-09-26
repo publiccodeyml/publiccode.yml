@@ -89,4 +89,4 @@ Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 
 ## Licence
 
-Licenced under the [CC-0](LICENSE).
+Licenced under the [CC0-1.0](LICENSE).
