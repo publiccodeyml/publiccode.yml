@@ -35,6 +35,12 @@
     <a href="CONTRIBUTING.md">Contributing</a>
   </h3>
 </div>
+<div align="center">
+  <h3>
+    📣 publiccode.yml is one of the 6 candidates for the OSOR Achievement Award 2023
+    👉 <a href="https://joinup.ec.europa.eu/collection/open-source-observatory-osor/osor-awards-2023">Cast your vote</a> 👈 
+  </h3>
+</div>
 
 ## What `publiccode.yml` is for
 
