@@ -33,10 +33,6 @@
       Voting procedure</a>
     <span> | </span>
     <a href="CONTRIBUTING.md">Contributing</a>
-    <br>
-    <br>
-    📣 publiccode.yml is one of the 6 candidates for the OSOR Achievement Award 2023
-    👉 <a href="https://joinup.ec.europa.eu/collection/open-source-observatory-osor/osor-awards-2023">Read more</a> 👈 
   </h3>
 </div>
 
