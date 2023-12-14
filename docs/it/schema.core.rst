@@ -121,7 +121,7 @@ Chiave ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa (data)
--  Presenza: obbligatoria
+-  Presenza: opzionale
 -  Esempio: ``"2017-04-15"``
 
 Questa chiave contiene la data di ultimo rilascio del software. Questa

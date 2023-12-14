@@ -110,7 +110,7 @@ Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (date)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
