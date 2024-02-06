@@ -53,6 +53,10 @@ Gültige Tags
 
 - data-visualization
 
+- design
+
+- design-system
+
 - digital-asset-management
 
 - digital-citizenship

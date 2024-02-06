@@ -33,6 +33,8 @@ Tags valides
 - data-analytics
 - data-collection
 - data-visualization
+- design
+- design-system
 - digital-asset-management
 - digital-citizenship
 - document-management
