@@ -594,8 +594,8 @@ Clé ``legal/repoOwner``
 
 Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) de la même entité qui détient le droit d'auteur sur le code. Par exemple, dans le cas d'un logiciel fourché, le ``repoOwner`` est probablement différent du ``mainCopyrightOwner``.
 
-Clé ``legal/authorsFile``
-'''''''''''''''''''''''''
+Clé ``legal/authorsFile`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Type: chaîne de caractères (chemin du fichier)
 -  Présence: facultative

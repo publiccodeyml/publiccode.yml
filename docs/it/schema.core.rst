@@ -612,8 +612,8 @@ essere o non essere la stessa che possiede il copyright del codice
 stesso. Ad esempio, nel caso di un fork del software originale, il
 ``repoOwner`` è probabilmente diverso dal ``mainCopyrightOwner``.
 
-Chiave ``legal/authorsFile``
-''''''''''''''''''''''''''''
+Chiave ``legal/authorsFile`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (percorso al file)
 -  Presenza: opzionale
