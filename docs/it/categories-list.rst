@@ -86,6 +86,7 @@ Tag Validi
 - project-management
 - property-management
 - real-estate-management
+- regulations-and-directives
 - remote-support
 - resource-management
 - sales-management
