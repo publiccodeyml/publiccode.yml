@@ -209,8 +209,8 @@ building catalogs of open software.
 The controlled vocabulary :ref:`categories-list` contains the list of allowed
 values.
 
-Key ``usedBy``
-~~~~~~~~~~~~~~
+Key ``usedBy`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array of strings
 -  Presence: optional
