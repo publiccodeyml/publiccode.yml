@@ -115,9 +115,7 @@ Clé ``releaseDate``
 -  Présence: facultative
 -  Exemple: ``"2017-04-15"``
 
-Cette clé contient la date à laquelle la dernière version a été publiée. Cette
-date est obligatoire si le logiciel a été publié au moins une fois et qu'il
-existe, par conséquent, un numéro de version.
+Cette clé contient la date à laquelle la dernière version a été publiée.
 
 Clé ``logo``
 ~~~~~~~~~~~~

@@ -124,9 +124,7 @@ Chiave ``releaseDate``
 -  Presenza: opzionale
 -  Esempio: ``"2017-04-15"``
 
-Questa chiave contiene la data di ultimo rilascio del software. Questa
-data è obbligatoria se il software è stato rilasciato almeno una volta e
-dunque esiste un numero di versione.
+Questa chiave contiene la data di ultimo rilascio del software.
 
 Chiave ``logo``
 ~~~~~~~~~~~~~~~
