@@ -113,12 +113,10 @@ Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (date)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
-This date is mandatory if the software has been released at least once
-and thus the version number is present.
 
 Key ``logo``
 ~~~~~~~~~~~~
