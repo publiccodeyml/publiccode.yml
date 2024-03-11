@@ -41,6 +41,8 @@ Key ``applicationSuite``
 
 This key contains the name of the “suite” to which the software belongs.
 
+.. _key-url:
+
 Key ``url``
 ~~~~~~~~~~~
 
@@ -71,7 +73,7 @@ Key ``components``
 -  Presence: optional
 
 Some software projects are organized in more than one repository.
-In addition to the key ``url``, this key gives you an option to specify
+In addition to :ref:`key-url`, this key gives you an option to specify
 more than one URL to further relevant repositories. If you use the key,
 you need to specify the URL in the same way as is required for the key ``url``.
 You can specify more than one URL.
