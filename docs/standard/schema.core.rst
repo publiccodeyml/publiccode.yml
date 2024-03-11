@@ -74,7 +74,7 @@ Some software projects are organized in more than one repository.
 In addition to the key ``url``, this key gives you an option to specify
 more than one URL to further relevant repositories. If you use the key,
 you need to specify the URL in the same way as is required for the key ``url``.
-You can specify more than URL.
+You can specify more than one URL.
 
 Key ``landingURL``
 ~~~~~~~~~~~~~~~~~~
