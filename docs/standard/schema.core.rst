@@ -65,7 +65,7 @@ is a software variant and how to handle forked software as a parser or
 an author.
 
 Key ``components``
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 -  Type: array of strings (URLs)
 -  Presence: optional
