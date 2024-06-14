@@ -107,6 +107,8 @@ Gültige Tags
 
 - instant-messaging
 
+- integrated-library-system
+
 - inventory-management
 
 - it-asset-management
