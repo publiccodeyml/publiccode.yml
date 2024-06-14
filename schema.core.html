@@ -31,7 +31,7 @@
     <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
-      <span class="site-name">publiccode.yml Standard (v0.3.0)</span>
+      <span class="site-name">publiccode.yml Standard (v0.4.0)</span>
     
   </router-link>
 
@@ -273,12 +273,10 @@ development and has never been released yet.</p>
 <h3><span class="section-number">1.1.8. </span>Key <code class="docutils literal notranslate"><span class="pre">releaseDate</span></code><a class="headerlink" href="#key-releasedate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (date)</p></li>
-<li><p>Presence: mandatory</p></li>
+<li><p>Presence: optional</p></li>
 <li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;2017-04-15&quot;</span></code></p></li>
 </ul>
-<p>This key contains the date at which the latest version was released.
-This date is mandatory if the software has been released at least once
-and thus the version number is present.</p>
+<p>This key contains the date at which the latest version was released.</p>
 </section>
 <section id="key-logo">
 <h3><span class="section-number">1.1.9. </span>Key <code class="docutils literal notranslate"><span class="pre">logo</span></code><a class="headerlink" href="#key-logo" title="Permalink to this headline">¶</a></h3>
@@ -494,10 +492,10 @@ the language you are editing the text in (using the IETF
 creating a sub-section with that name. The primary language subtag cannot be
 omitted, as mandated by the BCP 47.</p>
 <p>An example for English:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">description</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">en</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">shortDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
-<span class="w">    </span><span class="nt">longDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">description</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">en</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">shortDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="nt">longDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 <p>In the following part of the document, all keys are assumed to be in a
@@ -712,8 +710,8 @@ or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is probably different from the <code class="docutils literal notranslate"><span class="pre">mainCopyrightOwner</span></code>.</p>
 </section>
-<section id="key-legal-authorsfile">
-<h4><span class="section-number">1.1.21.4. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code><a class="headerlink" href="#key-legal-authorsfile" title="Permalink to this headline">¶</a></h4>
+<section id="key-legal-authorsfile-deprecated">
+<h4><span class="section-number">1.1.21.4. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-legal-authorsfile-deprecated" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (path to file)</p></li>
 <li><p>Presence: optional</p></li>
@@ -864,17 +862,17 @@ later applied to this version.</p></li>
 <p>It is of course possible to use the various keys to specify a complex
 compatibility matrix.</p>
 <p><em>Ex. 1</em></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span><span class="w"></span>
-<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.2&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.2&quot;</span>
+<span class="w">  </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 <p>This snippet marks an optional dependency on PostgreSQL exactly version
 3.2.</p>
 <p><em>Ex. 2</em></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MySQL</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versionMin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.1&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">versionMax</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3&quot;</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MySQL</span>
+<span class="w">  </span><span class="nt">versionMin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.1&quot;</span>
+<span class="w">  </span><span class="nt">versionMax</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3&quot;</span>
 </pre></div>
 </div>
 <p>This snippet marks a mandatory dependency on MySQL, allowing any version
@@ -956,7 +954,7 @@ using YAML 1.1 is <em>deprecated</em>.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright .
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>
