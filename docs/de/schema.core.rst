@@ -572,8 +572,8 @@ or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
 
-Key ``legal/authorsFile``
-'''''''''''''''''''''''''
+Key ``legal/authorsFile`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (path to file)
 -  Presence: optional
