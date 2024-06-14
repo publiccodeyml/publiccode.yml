@@ -11,7 +11,7 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-project = "publiccode.yml Standard (v0.3.0)"
+project = "publiccode.yml Standard (v0.4.0)"
 
 html_theme = "press"
 
