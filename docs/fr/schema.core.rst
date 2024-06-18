@@ -283,7 +283,7 @@ utilisable au moyen d’un navigateur.
 -  ``standalone/backend`` - Le logiciel est une application backend.
 -  ``standalone/other`` - Le logiciel a une nature différente de ceux
 listés ci-dessus.  
--  ``softwareAddon`` - Le software est un addon, tel qu'un plugin
+-  ``addon`` - Le software est un addon, tel qu'un plugin
 ou un thème, dans le cadre de logiciel plus complexe (ex. un CMS ou
 une suite bureautique).
 -  ``library`` - Le logiciel contient une bibliothèque ou un SDK

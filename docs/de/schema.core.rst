@@ -275,7 +275,7 @@ The keys are:
 -  ``standalone/backend`` - The software is a backend application.
 -  ``standalone/other`` - The software has a different nature from the once
    listed above.  
--  ``softwareAddon`` - The software is an addon, such as a plugin or a
+-  ``addon`` - The software is an addon, such as a plugin or a
    theme, for a more complex software (e.g. a CMS or an office suite).
 -  ``library`` - The software contains a library or an SDK to make it
    easier to third party developers to create new products.
