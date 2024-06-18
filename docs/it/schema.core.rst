@@ -290,7 +290,7 @@ Le chiavi sono:
 -  ``standalone/backend`` - Il software è un applicativo backend. 
 -  ``standalone/other``  - Il software ha una natura diversa rispetto a quanto
    specificato alle chiavi precedenti. 
--  ``softwareAddon`` - Il software è un *addon*,
+-  ``addon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
 -  ``library`` - Il software
