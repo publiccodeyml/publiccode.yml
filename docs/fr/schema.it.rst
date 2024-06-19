@@ -43,8 +43,8 @@ laws (L. 4/2004), as further explained in the
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
 
-Key ``conforme/modelloInteroperatibilita``
-''''''''''''''''''''''''''''''''''''''''''
+Key ``conforme/modelloInteroperabilita``
+''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
