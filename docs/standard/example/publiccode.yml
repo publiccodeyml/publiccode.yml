@@ -1,4 +1,4 @@
-publiccodeYmlVersion: "0.2"
+publiccodeYmlVersion: "0.4"
 
 name: Medusa
 applicationSuite: MegaProductivitySuite
@@ -48,6 +48,7 @@ description:
           Very long description of this software, also split
           on multiple rows. You should note what the software
           is and why one should need it.
+          It can also contain some basic Markdown.
 
     documentation: "https://read.the.documentation/medusa/v1.0"
     apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
@@ -70,7 +71,6 @@ legal:
   license: AGPL-3.0-or-later
   mainCopyrightOwner: City of Chicago
   repoOwner: City of Chicago
-  authorsFile: AUTHORS
 
 maintenance:
   type: "contract"
@@ -113,7 +113,7 @@ dependsOn:
       optional: true
 
 it:
-  countryExtensionVersion: "0.2"
+  countryExtensionVersion: "1.0"
 
   conforme:
     lineeGuidaDesign: true
