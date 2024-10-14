@@ -1,9 +1,7 @@
-publiccodeYmlVersion: "0.2"
+publiccodeYmlVersion: "0.4"
 
 name: Medusa
 url: "https://example.com/italia/medusa.git"
-softwareVersion: "dev"    # Optional
-releaseDate: "2017-04-15"
 platforms:
   - web
 
@@ -16,8 +14,6 @@ softwareType: "standalone/desktop"
 
 description:
   en:
-    localisedName: medusa   # Optional
-    genericName: Text Editor
     shortDescription: >
           A rather short description which
           is probably useless
@@ -41,6 +37,6 @@ maintenance:
     - name: Francesco Rossi
 
 localisation:
-  localisationReady: yes
+  localisationReady: true
   availableLanguages:
     - en

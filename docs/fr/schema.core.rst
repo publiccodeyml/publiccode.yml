@@ -112,12 +112,10 @@ Clé ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: chaîne de caractères (date)
--  Présence: obligatoire
+-  Présence: facultative
 -  Exemple: ``"2017-04-15"``
 
-Cette clé contient la date à laquelle la dernière version a été publiée. Cette
-date est obligatoire si le logiciel a été publié au moins une fois et qu'il
-existe, par conséquent, un numéro de version.
+Cette clé contient la date à laquelle la dernière version a été publiée.
 
 Clé ``logo``
 ~~~~~~~~~~~~
@@ -285,7 +283,7 @@ utilisable au moyen d’un navigateur.
 -  ``standalone/backend`` - Le logiciel est une application backend.
 -  ``standalone/other`` - Le logiciel a une nature différente de ceux
 listés ci-dessus.  
--  ``softwareAddon`` - Le software est un addon, tel qu'un plugin
+-  ``addon`` - Le software est un addon, tel qu'un plugin
 ou un thème, dans le cadre de logiciel plus complexe (ex. un CMS ou
 une suite bureautique).
 -  ``library`` - Le logiciel contient une bibliothèque ou un SDK
@@ -594,8 +592,8 @@ Clé ``legal/repoOwner``
 
 Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) de la même entité qui détient le droit d'auteur sur le code. Par exemple, dans le cas d'un logiciel fourché, le ``repoOwner`` est probablement différent du ``mainCopyrightOwner``.
 
-Clé ``legal/authorsFile``
-'''''''''''''''''''''''''
+Clé ``legal/authorsFile`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Type: chaîne de caractères (chemin du fichier)
 -  Présence: facultative

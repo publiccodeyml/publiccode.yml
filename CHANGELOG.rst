@@ -3,6 +3,46 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+v0.4.0
+------
+
+Added
+~~~~~
+
+- add regulations-and-directives category by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/186
+- Add category: integrated-library-system by @nichtich in https://github.com/publiccodeyml/publiccode.yml/pull/160
+- Add design and design-system categories by @libremente in https://github.com/publiccodeyml/publiccode.yml/pull/183
+
+Changed
+~~~~~~~
+
+- deprecate AUTHORS key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/185
+- Make "releaseDate" key an optional key by @tomootes in https://github.com/publiccodeyml/publiccode.yml/pull/180
+
+**Full Changelog**: https://github.com/publiccodeyml/publiccode.yml/compare/v0.3.0...v0.4.0
+
+v0.3.0
+------
+
+Added
+~~~~~
+
+- Add IO key to it.piattaforme by @mspasiano in https://github.com/publiccodeyml/publiccode.yml/pull/139
+- Add Whistleblowing to the software categories list by @evilaliv3 in https://github.com/publiccodeyml/publiccode.yml/pull/97
+- add educational-content category by @Animtim in https://github.com/publiccodeyml/publiccode.yml/pull/88
+
+Changed
+~~~~~~~
+
+- change the minimum length of longDescription by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/149
+- remove the characters limit for features by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/148
+- deprecate inputTypes and outputTypes by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/147
+- make genericName optional and deprecate it by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/146
+- deprecate monochromeLogo by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/144
+- specify YAML 1.2 as the file format by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/141
+
+**Full Changelog**: https://github.com/publiccodeyml/publiccode.yml/compare/core-0.2.1...v0.3.0
+
 [core-0.2.2] - 2019-12-13
 -------------------------
 

@@ -110,12 +110,10 @@ Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (date)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
-This date is mandatory if the software has been released at least once
-and thus the version number is present.
 
 Key ``logo``
 ~~~~~~~~~~~~
@@ -277,7 +275,7 @@ The keys are:
 -  ``standalone/backend`` - The software is a backend application.
 -  ``standalone/other`` - The software has a different nature from the once
    listed above.  
--  ``softwareAddon`` - The software is an addon, such as a plugin or a
+-  ``addon`` - The software is an addon, such as a plugin or a
    theme, for a more complex software (e.g. a CMS or an office suite).
 -  ``library`` - The software contains a library or an SDK to make it
    easier to third party developers to create new products.
@@ -572,8 +570,8 @@ or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
 
-Key ``legal/authorsFile``
-'''''''''''''''''''''''''
+Key ``legal/authorsFile`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (path to file)
 -  Presence: optional

@@ -53,6 +53,10 @@ Gültige Tags
 
 - data-visualization
 
+- design
+
+- design-system
+
 - digital-asset-management
 
 - digital-citizenship
@@ -107,6 +111,8 @@ Gültige Tags
 
 - instant-messaging
 
+- integrated-library-system
+
 - inventory-management
 
 - it-asset-management
@@ -156,6 +162,8 @@ Gültige Tags
 - property-management
 
 - real-estate-management
+
+- regulations-and-directives
 
 - remote-support
 

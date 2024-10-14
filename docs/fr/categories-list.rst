@@ -33,6 +33,8 @@ Tags valides
 - data-analytics
 - data-collection
 - data-visualization
+- design
+- design-system
 - digital-asset-management
 - digital-citizenship
 - document-management
@@ -60,6 +62,7 @@ Tags valides
 - ide
 - identity-management
 - instant-messaging
+- integrated-library-system
 - inventory-management
 - it-asset-management
 - it-development
@@ -85,6 +88,7 @@ Tags valides
 - project-management
 - property-management
 - real-estate-management
+- regulations-and-directives
 - remote-support
 - resource-management
 - sales-management
