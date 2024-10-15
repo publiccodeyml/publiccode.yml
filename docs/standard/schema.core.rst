@@ -74,9 +74,12 @@ Key ``components``
 
 Some software projects are organized in more than one repository.
 In addition to :ref:`key-url`, this key gives you an option to specify
-more than one URL to further relevant repositories. If you use the key,
-you need to specify the URL in the same way as is required for the key ``url``.
-You can specify more than one URL.
+more than one URL to further repositories, that are essential parts of 
+the software (e.g. one repository for the frontend and another repository
+for the backend).
+
+If you use the key, you need to specify the URL in the same way as 
+is required for the key ``url``. You can specify more than one URL.
 
 Key ``landingURL``
 ~~~~~~~~~~~~~~~~~~
