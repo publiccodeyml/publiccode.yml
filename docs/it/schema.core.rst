@@ -239,7 +239,7 @@ usato come un segnale di uso del software.
 Chiave ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: Elenco delle organizzazioni (vedi sotto)
+-  Tipo: Lista di Organisation (vedi sotto)
 -  Presenza: opzionale
 
 Un elenco delle organizzazioni che attualmente finanziano lo sviluppo
