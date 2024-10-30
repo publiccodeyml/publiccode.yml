@@ -222,6 +222,15 @@ that can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.
 
+Key ``fundedBy``
+~~~~~~~~~~~~~~~~
+
+-  Type: List of Organisations (see below)
+-  Presence: optional
+
+A list of organisations that are currently known to be funding the
+development of this software.
+
 Key ``roadmap``
 ~~~~~~~~~~~~~~~
 
@@ -772,6 +781,17 @@ A Contact is an object with the following properties:
    maintainers, this can be used to create a relation between each
    technical contact and each maintainer entity. It can contain for
    instance a company name, an association name, etc.
+
+Organisation
+~~~~~~~~~~~~
+
+An organisation is a structure (association, company, public
+authority, etc.) that can fund software development. An organisation
+has the following property:
+
+-  ``name`` - **mandatory** - The name of the organisation, whether
+    it’s an association, a company, a public sector organisation, or 
+    a physical person.
 
 Contractor
 ~~~~~~~~~~
