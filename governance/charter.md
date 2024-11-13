@@ -18,7 +18,7 @@ All other tools are community-maintained.
 * 🇩🇪 Germany: [@cknebel](https://github.com/cknebel) (publicplan GmbH)
 * 🇮🇱 Israel: [@ShimonShore](https://github.com/ShimonShore) (Israel Ministry of Science and
   Technology)
-* 🇮🇹 Italy: [@ruphy](https://github.com/ruphy) for DTD (Presidenza del Consiglio dei Ministri)
+* 🇮🇹 Italy: [@dptdgi](https://github.com/dptdgi) for DTD (Presidenza del Consiglio dei Ministri)
 
 The Steering Committee members can vote on proposals on Pull Requests, the workflow is detailed in
 [procedure-proposing-changes.md](procedure-proposing-changes-and-voting.md#voting)
