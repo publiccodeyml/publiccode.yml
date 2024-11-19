@@ -11,3 +11,6 @@ Thumbs.db
 
 # Swap files
 *.swp
+
+# Sphinx
+build
