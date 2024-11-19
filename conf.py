@@ -15,6 +15,8 @@ project = "publiccode.yml Standard (v0.4.0)"
 
 html_theme = "press"
 
+templates_path = ['_templates']
+
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
