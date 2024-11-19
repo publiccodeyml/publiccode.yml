@@ -87,6 +87,24 @@ Furthermore, the project uses branches and tags in the following way:
 
 Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 
+The Standard's website (https://yml.publiccode.tools) is built using the Python Sphinx package.
+
+### Prerequisites
+- Python 3
+
+### Install dependencies
+
+```console
+pip install -r requirements.txt
+```
+
+### Local development process
+`spinx-build` can be used to compile all source file to static html files. Run this command to generate the website:
+
+```console
+sphinx-build docs/standard build -c .
+```
+
 ## Licence
 
 Licenced under the [CC0-1.0](LICENSE).
