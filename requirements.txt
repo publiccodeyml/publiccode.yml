@@ -1,6 +1,6 @@
 Sphinx==4.4.0
 sphinx-press-theme==0.8.0
-urllib3==1.26.19
+urllib3==2.5.0
 sphinxcontrib-applehelp==1.0.4
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==2.0.1
