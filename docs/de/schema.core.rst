@@ -612,7 +612,7 @@ Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
 -  Type: array of Contractor (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``contract``)
+-  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -622,7 +622,7 @@ Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
 -  Type: List of Contacts (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``internal`` or ``community``)
+-  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
 
