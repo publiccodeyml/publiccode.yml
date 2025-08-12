@@ -187,7 +187,7 @@ Key ``clientPlatforms``
 -  Presence: mandatory
 -  Values: ``browser``, ``macos - intel``, ``macos - arm``, ``windows``, ``unix``,
    ``mobile - android``, ``mobile - ios``. Human readable values outside this list are allowed.
--  Example: ``web``
+-  Example: ``browser``
 
 This key specifies the supported client platforms to access this software.
 
