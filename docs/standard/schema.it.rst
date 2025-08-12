@@ -18,16 +18,16 @@ Key ``countryExtensionVersion``
 
 This key **MUST** always be set to ``1.0``.
 
-Key ``conforme``
-~~~~~~~~~~~~~~~~
+Key ``conforme`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.
 
-Key ``conforme/lineeGuidaDesign``
-'''''''''''''''''''''''''''''''''
+Key ``conforme/lineeGuidaDesign`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -37,8 +37,10 @@ laws (L. 4/2004), as further explained in the
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
 
-Key ``conforme/modelloInteroperabilita``
-''''''''''''''''''''''''''''''''''''''''
+Don't use this deprecated key, those guidelines are no longer current.
+
+Key ``conforme/modelloInteroperabilita`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -50,9 +52,10 @@ sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-m
 Regulatory reference: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__ (Italian language).
 
+Don't use this deprecated key, those guidelines are no longer current.
 
-Key ``conforme/misureMinimeSicurezza``
-''''''''''''''''''''''''''''''''''''''
+Key ``conforme/misureMinimeSicurezza`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -62,8 +65,8 @@ minime di sicurezza ICT per le Pubbliche
 amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__ (Italian language).
 
 
-Key ``conforme/gdpr``
-'''''''''''''''''''''
+Key ``conforme/gdpr`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
