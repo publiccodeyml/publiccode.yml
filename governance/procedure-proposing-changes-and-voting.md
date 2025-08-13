@@ -13,7 +13,7 @@ Request directly on the GitHub repository](https://github.com/publiccodeyml/publ
 The participation in the discussion is encouraged and is free and open to everyone, as is the
 submission of Standard-changing Pull Requests.
 
-The [Maintainers](https://github.com/orgs/publiccodeyml/teams/steering-committee) are responsible
+The [Maintainers](https://github.com/publiccodeyml/publiccode.yml/blob/main/governance/charter.md#maintainer-bfabio-sebbalex) are responsible
 for labelling any change depending on their nature according to the [Semantic
 Versioning](https://semver.org/), or in other words:
 
