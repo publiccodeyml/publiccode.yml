@@ -625,7 +625,7 @@ Clé ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
 -  Type: array of Contractor (voir ci-dessous)
--  Présence: obligatoire (si ``maintenance/type`` **est** ``contract``)
+-  Présence: obligatoire si ``maintenance/type`` **est** ``contract``; ne doit pas être présent dans les autres cas
 
 Cette clé décrit la ou les entités actuellement sous contrat pour la maintenance du logiciel. Il peut s'agir d'entreprises, d'organisations ou d'autres collectifs.
 
@@ -633,7 +633,7 @@ Clé ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
 -  Type: Liste des Contacts (voir ci-dessous)
--  Présence: obligatoire (si ``maintenance/type`` **est** ``internal`` ou ``community``)
+-  Présence: obligatoire si ``maintenance/type`` **est** ``internal`` ou ``community``; facultatif dans les autres cas
 
 Un ou plusieurs contacts assurant la maintenance du logiciel. 
 
