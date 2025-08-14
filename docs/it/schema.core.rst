@@ -314,8 +314,8 @@ Chiave ``intendedAudience/countries``
 Questa chiave include in modo esplicito alcuni Paesi tra il pubblico
 previsto, i.e., il software rivendica esplicitamente la conformità con
 processi specifici, tecnologie o leggi. Tutti i Paesi sono specificati
-usando *country code* a due lettere seguendo lo standard ISO 3166-1
-alpha-2.
+usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
+seguendo lo standard ISO 3166-1 alpha-2.
 
 Chiave ``intendedAudience/unsupportedCountries``
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -327,8 +327,8 @@ Questa chiave contrassegna esplicitamente i Paesi **NON** supportati.
 Questa situazione potrebbe verificarsi nel momento in cui esista un
 conflitto tra la modalità di funzionamento del software ed una legge
 specifica, un processo o una tecnologia. Tutti i Paesi sono specificati
-usando *country code* a due lettere seguendo lo standard ISO 3166-1
-alpha-2.
+usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
+seguendo lo standard ISO 3166-1 alpha-2.
 
 Chiave ``intendedAudience/scope``
 '''''''''''''''''''''''''''''''''

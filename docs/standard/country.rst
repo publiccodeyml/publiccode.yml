@@ -10,7 +10,7 @@ laws or regulations. The provided extension mechanism is the usage of
 country-specific sections.
 
 All country-specific sections live under a key named after two-letter
-lowercase `ISO 3166-1 alpha-2 country
+lowercase (*deprecated*) or uppercase `ISO 3166-1 alpha-2 country
 codes <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. For instance
 ``spid`` is a property for Italian software declaring whether the
 software is integrated with the Italian Public Identification System.
