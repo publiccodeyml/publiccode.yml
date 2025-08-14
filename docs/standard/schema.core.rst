@@ -299,8 +299,8 @@ Key ``intendedAudience/countries``
 
 This key explicitly includes certain countries in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using lowercase ISO
-3166-1 alpha-2 two-letter country codes.
+technologies or laws. All countries are specified using lowercase (*deprecated*)
+or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/unsupportedCountries``
 '''''''''''''''''''''''''''''''''''''''''''''
@@ -311,7 +311,7 @@ Key ``intendedAudience/unsupportedCountries``
 This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
-lowercase ISO 3166-1 alpha-2 two-letter country codes.
+lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
