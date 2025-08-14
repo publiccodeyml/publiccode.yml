@@ -94,6 +94,28 @@ contain the ``url`` of the original project(s).
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
 
+Key ``organizationUri``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Type: string
+-  Presence: optional
+-  Example: ``"https://example.org/my-organization"``, ``"urn:x-foobar:my-organization"``
+
+The URI identifying the organization owning the software. The value
+SHOULD be a stable, resolvable URI or a persistent identifier.
+
+Parsers MAY use the URI structure to extract additional information if it follows a
+recognized format (for example, inferring an institutional domain or an
+official code).
+
+It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
+information out-of-band, to ensure that the declared `organizationUri` actually
+corresponds to the organization in control of the repository.
+The specific verification method depends on the implementation and policies of the
+platform consuming the file.
+
+The key can be omitted if no such URI is available.
+
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
