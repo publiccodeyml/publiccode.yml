@@ -4,9 +4,8 @@
 
 <div align="center">
   <i>
-    A metadata description standard for public software that is easy to use both for
-    developers and people with less technical background in order to make the
-    software developed by Public Administrations and Public Organisations easily discoverable.
+    A metadata standard to describe software made by or for Public administrations, making it discoverable
+    and understandable for both developers and non-technical users.
   </i>
 </div>
 
@@ -27,6 +26,8 @@
 
 <div align="center">
   <h3>
+    <a href="https://yml.publiccode.tools">Website</a>
+    <span> | </span>
     <a href="governance/charter.md">Charter</a>
     <span> | </span>
     <a href="governance/procedure-proposing-changes-and-voting.md">
@@ -36,31 +37,62 @@
   </h3>
 </div>
 
-## What `publiccode.yml` is for
+## What is `publiccode.yml`
 
-Many great software projects are developed by public administrations, however
-reuse of these projects is very limited. Some of the reasons for low uptake of
-such projects is a lack of discoverability and that it is hard to find out what
-project can actually work in the context of a different public administration.
+Public Administrations often create valuable software, but reuse is often limited due to
+poor discoverability or difficulty understanding if a project fits another administration's context.
 
-The `publiccode.yml` file is meant to solve all those problems. It is
-an easily readable file for civil servants that are trying to figure out
-whether a project will work for them, and easily readable by computers as
-well. It contains information such as:
-* the title and description of the project in English and/or other
-  languages;
-* the development status, e.g. `concept`, `development`, `beta`, `stable`,
-  `obsolete`;
-* which organisation developed the project;
-* who is caring for the maintenance and when this expires;
-* who to contact for technical or support inquiries;
-* what national and local legal frameworks the project is designed
-  for;
-* what software dependencies the project has.
+`publiccode.yml` solves this by providing a **human-readable and machine-readable metadata file**.
 
-The `publiccode.yml` file format should both be able to easily be added to any
-new project, as well as grow with the project as it expands beyond the original
-context it was developed in.
+It answers the questions:
+- What does this project do? (name, description, languages)
+- What is its status? (`concept`, `development`, `beta`, `stable`, `obsolete`)
+- Who maintains it and until when?
+- Who to contact for technical/support inquiries?
+- What legal frameworks is it designed for?
+- What are its dependencies?
+
+It is designed to be **easy to add to any new project** and to **grow as the project evolves**.
+
+## Example
+
+A minimal `publiccode.yml` file:
+
+```yaml
+publiccodeYmlVersion: "0"
+name: My text editor
+url: "https://example.com/mysoftware/text-editor.git"
+platforms:
+  - windows
+categories:
+  - office
+developmentStatus: development
+softwareType: "standalone/desktop"
+description:
+  en:
+    shortDescription: A lightweight text editor
+    longDescription: >
+          A lightweight yet powerful text editor designed for everyday use by developers,
+          writers, and public administrations. It also supports syntax highlighting.
+    features:
+       - Syntax highlighting
+       - Collaborative editing features
+       - Scripting interface
+legal:
+  license: AGPL-3.0-or-later
+maintenance:
+  type: "community"
+  contacts:
+    - name: Margaret Hamilton
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
+    - de
+    - fr
+```
+
+[**See all available fields...**](https://yml.publiccode.tools/)
 
 ## Finding projects
 
@@ -76,12 +108,6 @@ searching using the frontend or the API.
 
 This project follows the Semantic Versioning.  For more information see
 [SemVer.org](https://semver.org/).
-
-Furthermore, the project uses branches and tags in the following way:
-* The `main` branch contains the improvements coming up in the next version.
-* [Release page](https://github.com/publiccodeyml/publiccode.yml/releases)
-  contains all the released versions of the standard. Releases are tagged
-  with the Standard's version.
 
 ## Contributing
 
