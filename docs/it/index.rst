@@ -17,9 +17,8 @@ Italia, come da `linee guida
 <https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
 questo consente al crawler automatico di Developers Italia di costituire il
 `catalogo del software a riuso <https://developers.italia.it/>`__. Lo standard
-è tuttavia pensato in ottica internazionale, per cui tutte le specificità
-nazionali sono separate dal core e definite in apposite sezioni estensibili
-autonomamente dai governi nazionali.
+è tuttavia pensato in ottica internazionale, anche attraverso sezioni specifiche
+dei paesi, che possono essere regolate dai rispettivi governi.
 
 Tra le informazioni contenute in un ``publiccode.yml`` vi sono: 
 
