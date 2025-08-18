@@ -3,7 +3,7 @@
 Estensioni nazionali
 ====================
 
-Mentre il core è strutturato per essere significativo a livello
+Mentre lo standard è strutturato per essere significativo a livello
 internazionale, vi sono informazioni addizionali che possono essere
 aggiunte a livello nazionale, come ad esempio una dichiarazione di
 compatibilità con una legge locale. Il meccanismo di estensione fornito
