@@ -17,9 +17,8 @@ this enables the Developers Italia crawler to build the `national software
 catalog <https://developers.italia.it/>`__. The standard is also used at
 `opencode.de <https://opencode.de>`__, the German registry of open source for
 public administration. ``publiccode.yml`` is designed to be
-interoperable internationally, thus the country-specific keys are separated by
-the core part and are defined in specific sections that each government can
-rule.
+interoperable internationally, also through country-specific keys defined in
+dedicated sections that each government can regulate.
 
 Details carried by a ``publiccode.yml`` file include: 
 

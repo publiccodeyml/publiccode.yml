@@ -1,7 +1,7 @@
 .. _core:
 
-The Standard (core)
-===================
+The Standard
+============
 
 This document represents the description of the ``publiccode.yml``
 schema.
