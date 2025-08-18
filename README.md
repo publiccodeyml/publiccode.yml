@@ -116,7 +116,7 @@ Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
 The Standard's website (https://yml.publiccode.tools) is built using the Python Sphinx package.
 
 ### Prerequisites
-- Python 3
+- Python 3.9
 
 ### Install dependencies
 
