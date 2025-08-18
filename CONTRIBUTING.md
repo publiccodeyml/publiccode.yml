@@ -34,7 +34,7 @@ Don't be afraid to start new ones and
 Add a `publiccode.yml` file to your repositories!
 After that, you can submit it to national catalogs, for example:
 
-* [Developers Italia](https://github.com/italia/developers-italia-backend)
+* [Italian catalog](https://github.com/italia/developers.italia.it/issues/new?template=add_new_software.yaml)
 * ...
 
 ## I am a public servant and want to represent my country in the Steering Committee
@@ -44,17 +44,13 @@ We are happy to have you here!
 [Take a look at the Charter](/governance/charter.md) and, once you made sure you are
 the right person, please [create a new post](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/general).
 
-The Chair will get in touch with you and get you started.
-
 We strongly encourage you to also contribute translations (if applicable) and, if needed,
 [a national section](https://yml.publiccode.tools/country.html).
 Just make your changes and [submit a Pull Request](https://github.com/publiccodeyml/publiccode.yml/pulls).
 
 # In short
 
-If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
-or follow one of the great free interactive courses in the
-[GitHub learning lab](https://lab.github.com/).
+If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://guides.github.com/introduction/flow/).
 
 This project is [CC-0 licensed](LICENSE), which essentially means that the project, along
 with your contributions, is in the Public Domain in whatever jurisdiction possible, and
