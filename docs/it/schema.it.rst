@@ -6,7 +6,7 @@ Italia
 Tutte le chiavi elencate qui di seguito sono specifiche per l'Italia e, di
 conseguenza, devono essere inserite in una sezione denominata con il codice
 ``it``. Tutti i Paesi sono specificati usando *country code* a due lettere
-seguendo lo standard ISO 3166-1 alpha-2.
+in minuscolo (*deprecato*) o in maiuscolo, seguendo lo standard ISO 3166-1 alpha-2.
 
 
 Chiave ``countryExtensionVersion``
