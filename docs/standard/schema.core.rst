@@ -618,7 +618,7 @@ Key ``maintenance/contractors``
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
-organizations, or other collective names.
+organisations, or other collective names.
 
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
