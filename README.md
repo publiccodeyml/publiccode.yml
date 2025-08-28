@@ -67,7 +67,7 @@ platforms:
 categories:
   - office
 developmentStatus: development
-softwareType: "standalone/desktop"
+softwareType: standalone/desktop
 description:
   en:
     shortDescription: A lightweight text editor
@@ -81,7 +81,7 @@ description:
 legal:
   license: AGPL-3.0-or-later
 maintenance:
-  type: "community"
+  type: community
   contacts:
     - name: Margaret Hamilton
 localisation:
