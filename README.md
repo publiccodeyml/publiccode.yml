@@ -128,7 +128,7 @@ pip install -r requirements.txt
 ```
 
 ### Local development process
-`spinx-build` can be used to compile all source file to static html files. Run
+`sphinx-build` can be used to compile all source file to static html files. Run
 this command to generate the website:
 
 ```console
