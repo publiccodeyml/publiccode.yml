@@ -12,8 +12,9 @@ prevede l’utilizzo di sezioni specifiche per ogni Paese
 
 Tutte le sezioni specifiche per ogni Paese sono contenute in una sezione
 denominata con l’\ `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Ad esempio,
-``spid`` è una proprietà definita per i software italiani per la
+code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__ in minuscolo (*deprecato*) o
+in maiuscolo.
+Ad esempio, ``spid`` è una proprietà definita per i software italiani per la
 dichiarazione dell’eventuale compatibilità con il Sistema Pubblico di
 Identità Digitale.
 
