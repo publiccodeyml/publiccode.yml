@@ -3,7 +3,7 @@ on:
     types: [created]
 jobs:
   bot:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: publiccodeyml/bot@main
         with:
