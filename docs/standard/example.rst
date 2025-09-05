@@ -14,7 +14,7 @@ Minimum Version
 
 
 Extended Version
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. literalinclude:: example/publiccode.yml
    :language: yaml
