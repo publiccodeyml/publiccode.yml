@@ -106,17 +106,20 @@ searching using the frontend or the API.
 
 **Latest release:** [![GitHub release](https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic)](https://github.com/publiccodeyml/publiccode.yml/releases) [See all versions](https://github.com/publiccodeyml/publiccode.yml/releases)
 
-This project follows the Semantic Versioning.  For more information see
-[SemVer.org](https://semver.org/).
+This project follows the [Semantic Versioning](https://semver.org/).
 
 ## Contributing
 
-Feel free to submit [Pull Requests and to file Issues](CONTRIBUTING.md).
+Feel free to submit [Pull Requests, file Issues](CONTRIBUTING.md) or open
+a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions). 
 
-The Standard's website (https://yml.publiccode.tools) is built using the Python Sphinx package.
+The [Standard's website](https://yml.publiccode.tools) is built using the Python
+Sphinx package and
+[deployed](https://github.com/publiccodeyml/publiccode.yml/blob/main/.github/workflows/publish.yml)
+on GitHub Pages.
 
 ### Prerequisites
-- Python 3.9
+- Python 3.11
 
 ### Install dependencies
 
@@ -125,12 +128,16 @@ pip install -r requirements.txt
 ```
 
 ### Local development process
-`spinx-build` can be used to compile all source file to static html files. Run this command to generate the website:
+`spinx-build` can be used to compile all source file to static html files. Run
+this command to generate the website:
 
 ```console
 sphinx-build docs/standard build -c .
 ```
 
-## Licence
+then open the relevant file in the build directory with a browser (e.g.,
+`build/index.html`) to explore the contents.
 
-Licenced under the [CC0-1.0](LICENSE).
+## License
+
+Licensed under the [CC0-1.0](LICENSE).
