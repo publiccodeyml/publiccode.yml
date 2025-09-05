@@ -98,7 +98,7 @@ least:
    from which this variant is derived.
 -  Change the value for ``url`` to point to the repository holding the
    variant.
--  Change the value for ``legal/repoOwner`` to refer to the themselves
+-  Change the value for ``legal/repoOwner`` to refer to themselves
    (the authors of the variant).
 -  Revisit the ``maintenance`` section to refer to the maintenance
    status of the variant.
