@@ -64,8 +64,6 @@ name: My text editor
 url: "https://example.com/mysoftware/text-editor.git"
 platforms:
   - windows
-categories:
-  - office
 developmentStatus: development
 softwareType: standalone/desktop
 description:

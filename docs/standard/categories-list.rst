@@ -3,12 +3,11 @@
 List of software categories
 ===========================
 
-Here follows a controlled vocabulary of useful tags for categorizing the
-software.
+Here follows a controlled vocabulary of allowed categories for the software.
 
-==========
-Valid Tags
-==========
+================
+Valid categories
+================
 
 - accounting
 - agile-project-management
@@ -115,3 +114,4 @@ Valid Tags
 - website-builder
 - whistleblowing
 - workflow-management
+- other

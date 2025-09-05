@@ -212,10 +212,10 @@ Chiave ``categories``
 ~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
--  Presenza: obbligatoria
+-  Presenza: opzionale
 -  Valori accettabili: vedi :ref:`categories-list` 
 
-Una lista di parole che possono essere usate per descrivere il software
+Una lista di categorie che possono essere usate per descrivere il software
 e possono aiutare a costruire il catalogo di software open.
 
 Il vocabolario controllato :ref:`categories-list` presenta la lista dei valori
