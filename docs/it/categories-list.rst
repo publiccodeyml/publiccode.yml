@@ -3,12 +3,11 @@
 Lista delle categorie di software
 =================================
 
-Qui di seguito è presentato un vocabolario controllato di tag utilizzabili
-per categorizzare il software.
+Qui di seguito è presentato un vocabolario controllato delle categorie utilizzabili.
 
-==========
-Tag Validi
-==========
+================
+Categorie valide
+================
 - accounting
 - agile-project-management
 - applicant-tracking
@@ -114,3 +113,4 @@ Tag Validi
 - website-builder
 - whistleblowing
 - workflow-management
+- other

@@ -201,10 +201,10 @@ Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
 -  Type: array of strings
--  Presence: mandatory
+-  Presence: optional
 -  Acceptable values: see :ref:`categories-list` 
 
-A list of words that can be used to describe the software and can help
+A list of categories that can be used to describe the software and can help
 building catalogs of open software.
 
 The controlled vocabulary :ref:`categories-list` contains the list of allowed
