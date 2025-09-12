@@ -230,6 +230,16 @@ d'améliorer cette liste avec des informations complémentaires qui peuvent
 détenue par une administration, peut être utilisée comme un signal
 d’utilisation du logiciel.
 
+Clé ``fundedBy``
+~~~~~~~~~~~~~~~~
+
+-  Type: Liste d'organisations (voir ci-dessous)
+-  Présence: facultative
+
+Une liste des organisations actuellement connues pour financer le
+développement de ce logiciel.
+
+
 Clé ``roadmap``
 ~~~~~~~~~~~~~~~
 
@@ -747,6 +757,13 @@ Un Contact est un objet comportant les propriétés suivantes :
 Pour éviter autant que possible la collecte d'adresses e-mail, utilisez ``\x64`` to replace ``@``, tel qu'autorisé par la spécifiation YAML.
 -  ``phone`` - le numéro de téléphone (précédé de l'indicatif téléphonique international). Il s'agit d'une chaîne de caractères.
 -  ``affiliation`` - Cette clé contient une information explicite quant à l'affiliation du contact technique. Dans le cas où il y aurait plusieurs entités maintenant le logiciel, cette clé peut être utilisée pour créer une relation entre chaque contact technique et chaque entité maintenant le logiciel. Elle peut contenir, par exemple, le nom d'une entreprise, le nom d'une association, etc.
+
+Organisation
+~~~~~~~~~~~~
+
+Une organisation est une structure (association, entreprise, autorité publique, etc.) qui peut financer le développement d'un logiciel. Une organisation possède les propriétés suivantes :
+
+-  ``name`` - **obligatoire** - Le nom de l'organisation, qu'il s'agisse d'une association, d'une entreprise, d'une organisation du secteur public ou d'une personne physique.
 
 Prestataire
 ~~~~~~~~~~~
