@@ -1,9 +1,9 @@
 Liste von Software-Kategorien
 =============================
-Es folgt ein festgelegtes Verzeichnis mit nützlichen Tags zur Kategorisierung der Software.
+Es folgt ein festgelegtes Verzeichnis gültiger Kategorien für die Software.
 
-Gültige Tags
-------------
+Gültige Kategorien
+------------------
 
 - accounting
 
@@ -210,3 +210,5 @@ Gültige Tags
 - website-builder
 
 - workflow-management
+
+- other

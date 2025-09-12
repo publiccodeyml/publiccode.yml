@@ -15,9 +15,6 @@ Minimal-Konfiguration
   platforms:
     - web
 
-  categories:
-    - financial-reporting
-
   developmentStatus: development
 
   softwareType: "standalone/desktop"

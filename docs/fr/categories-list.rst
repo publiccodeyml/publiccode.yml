@@ -3,11 +3,11 @@
 Liste des catégories de logiciel
 ===========================
 
-Ici se trouve une liste contrôlée du vocabulaire des tags utiles pour catégoriser un logiciel.
+Ici se trouve une liste contrôlée du vocabulaire des catégories pour le logiciel.
 
-==========
-Tags valides
-==========
+==================
+Catégories valides
+==================
 
 - accounting
 - agile-project-management
@@ -113,3 +113,4 @@ Tags valides
 - website-builder
 - whistleblowing
 - workflow-management
+- other
