@@ -94,28 +94,6 @@ contain the ``url`` of the original project(s).
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
 
-Key ``organisationUri``
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: string
--  Presence: optional
--  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
-
-The URI identifying the organisation owning the software. The value
-SHOULD be a stable, resolvable URI or a persistent identifier.
-
-Parsers MAY use the URI structure to extract additional information if it follows a
-recognized format (for example, inferring an institutional domain or an
-official code).
-
-It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
-information out-of-band, to ensure that the declared `organisationUri` actually
-corresponds to the organisation in control of the repository.
-The specific verification method depends on the implementation and policies of the
-platform consuming the file.
-
-The key can be omitted if no such URI is available.
-
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -309,6 +287,45 @@ The keys are:
    obtain a certain deployment. They could be in the form of plain
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
+
+Section ``organisation``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This optional section provides the organisation publishing the software.
+
+Key ``organisation/uri``
+'''''''''''''''''''''''
+
+-  Type: string
+-  Presence: mandatory
+-  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+The URI identifying the organisation publishing the software. The value
+SHOULD be a stable, resolvable URI or a persistent identifier.
+
+Parsers MAY use the URI structure to extract additional information if it follows a
+recognized format (for example, inferring an institutional domain or an
+official code).
+
+It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
+information out-of-band, to ensure that the declared `organisationUri` actually
+corresponds to the organisation in control of the repository.
+The specific verification method depends on the implementation and policies of the
+platform consuming the file.
+
+Key ``organisation/name``
+'''''''''''''''''''''''
+
+-  Type: string
+-  Presence: optional
+-  Example: ``"My organisation"``
+
+The canonical name of the organisation publishing the software.
+
+It MUST correspond to the same entity identified by ``organisation/uri`` and is
+intended to provide a human-readable label for that URI.
+It SHOULD be the canonical, widely recognized form of the name (such as the
+registered legal or institutional name).
 
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -582,8 +599,8 @@ In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has a authors
 file, you can point to it through ``legal/authorsFile``.
 
-Key ``legal/repoOwner``
-'''''''''''''''''''''''
+Key ``legal/repoOwner`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Type: string
 -  Presence: optional
@@ -593,6 +610,8 @@ This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
+
+This key is deprecated, use ``organisation/name`` instead.
 
 Key ``legal/authorsFile`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''
