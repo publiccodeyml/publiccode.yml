@@ -838,6 +838,7 @@ Un'organizzazione ha le seguenti proprietà:
 - ``nome`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
    un'associazione, una società, un ente pubblico o una persona
    fisica.
+-  ``uri`` - The URI identifying the organisation.
 
 Contractor
 ~~~~~~~~~~
