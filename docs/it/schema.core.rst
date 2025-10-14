@@ -236,6 +236,15 @@ informazioni che riescono ad ottenere in modo indipendente; ad esempio,
 il fork di un software, di proprietà di un’amministrazione, può essere
 usato come un segnale di uso del software.
 
+Chiave ``fundedBy``
+~~~~~~~~~~~~~~~~
+
+-  Tipo: Lista di Organisation (vedi sotto)
+-  Presenza: opzionale
+
+Un elenco delle organizzazioni che attualmente finanziano lo sviluppo
+di questo software.
+
 Chiave ``roadmap``
 ~~~~~~~~~~~~~~~~~~
 
@@ -818,6 +827,18 @@ Un Contatto è un oggetto con le seguenti proprietà:
    può essere usata per creare relazioni tra diversi contatti tecnici e
    entità di manutenzione. Ad esempio, può contenere il nome di
    un’azienda, il nome di un’associazione, etc.
+
+Organisation
+~~~~~~~~~~~~
+
+Un'organizzazione è una struttura (associazione, azienda, ente
+pubblico, ecc.) che può finanziare lo sviluppo di software.
+Un'organizzazione ha le seguenti proprietà:
+
+- ``nome`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
+   un'associazione, una società, un ente pubblico o una persona
+   fisica.
+-  ``uri`` - The URI identifying the organisation.
 
 Contractor
 ~~~~~~~~~~
