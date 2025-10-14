@@ -201,10 +201,10 @@ Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
 -  Type: array of strings
--  Presence: mandatory
+-  Presence: optional
 -  Acceptable values: see :ref:`categories-list` 
 
-A list of words that can be used to describe the software and can help
+A list of categories that can be used to describe the software and can help
 building catalogs of open software.
 
 The controlled vocabulary :ref:`categories-list` contains the list of allowed
@@ -224,6 +224,15 @@ Parsers are encouraged to enhance this list also with other information
 that can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.
+
+Key ``fundedBy``
+~~~~~~~~~~~~~~~~
+
+-  Type: List of Organisations (see below)
+-  Presence: optional
+
+A list of organisations that are currently known to be funding the
+development of this software.
 
 Key ``roadmap``
 ~~~~~~~~~~~~~~~
@@ -288,6 +297,45 @@ The keys are:
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
 
+Section ``organisation``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This optional section provides the organisation publishing the software.
+
+Key ``organisation/uri``
+'''''''''''''''''''''''
+
+-  Type: string
+-  Presence: mandatory
+-  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+The URI identifying the organisation publishing the software. The value
+SHOULD be a stable, resolvable URI or a persistent identifier.
+
+Parsers MAY use the URI structure to extract additional information if it follows a
+recognized format (for example, inferring an institutional domain or an
+official code).
+
+It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
+information out-of-band, to ensure that the declared `organisationUri` actually
+corresponds to the organisation in control of the repository.
+The specific verification method depends on the implementation and policies of the
+platform consuming the file.
+
+Key ``organisation/name``
+'''''''''''''''''''''''
+
+-  Type: string
+-  Presence: optional
+-  Example: ``"My organisation"``
+
+The canonical name of the organisation publishing the software.
+
+It MUST correspond to the same entity identified by ``organisation/uri`` and is
+intended to provide a human-readable label for that URI.
+It SHOULD be the canonical, widely recognized form of the name (such as the
+registered legal or institutional name).
+
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -299,8 +347,8 @@ Key ``intendedAudience/countries``
 
 This key explicitly includes certain countries in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using lowercase ISO
-3166-1 alpha-2 two-letter country codes.
+technologies or laws. All countries are specified using lowercase (*deprecated*)
+or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/unsupportedCountries``
 '''''''''''''''''''''''''''''''''''''''''''''
@@ -311,7 +359,7 @@ Key ``intendedAudience/unsupportedCountries``
 This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
-lowercase ISO 3166-1 alpha-2 two-letter country codes.
+lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
@@ -560,8 +608,8 @@ In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has a authors
 file, you can point to it through ``legal/authorsFile``.
 
-Key ``legal/repoOwner``
-'''''''''''''''''''''''
+Key ``legal/repoOwner`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Type: string
 -  Presence: optional
@@ -571,6 +619,8 @@ This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
+
+This key is deprecated, use ``organisation/name`` instead.
 
 Key ``legal/authorsFile`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''
@@ -614,7 +664,7 @@ Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
 -  Type: array of Contractor (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``contract``)
+-  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -624,7 +674,7 @@ Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
 -  Type: List of Contacts (see below)
--  Presence: mandatory (if ``maintenance/type`` **is** ``internal`` or ``community``)
+-  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
 
@@ -774,6 +824,18 @@ A Contact is an object with the following properties:
    maintainers, this can be used to create a relation between each
    technical contact and each maintainer entity. It can contain for
    instance a company name, an association name, etc.
+
+Organisation
+~~~~~~~~~~~~
+
+An organisation is a structure (association, company, public
+authority, etc.) that can fund software development. An organisation
+has the following property:
+
+-  ``name`` - **mandatory** - The name of the organisation, whether
+    it’s an association, a company, a public sector organisation, or
+    a physical person.
+-  ``uri`` - The URI identifying the organisation.
 
 Contractor
 ~~~~~~~~~~

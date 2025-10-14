@@ -34,7 +34,7 @@
         </svg>
     </div>
     <a href="index.html" class="home-link">
-        <span class="site-name">publiccode.yml Standard (v0.4.0)</span>
+        <span class="site-name">publiccode.yml Standard (v0.5.0)</span>
     </a>
     <a href="https://github.com/publiccodeyml/publiccode.yml" style="float: right; margin-top: 1px;">
         <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true">
@@ -159,7 +159,8 @@
 <span id="italian-sections"></span><h1>Italy<a class="headerlink" href="#italy" title="Permalink to this headline">¶</a></h1>
 <p>All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code. Every Country is specified
-using a two letters <em>country code</em> following the ISO 3166-1 alpha-2 standard.</p>
+using a two letters lowercase (<em>deprecated</em>) or uppercase <em>country code</em> following
+the ISO 3166-1 alpha-2 standard.</p>
 <section id="key-countryextensionversion">
 <h2>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -169,14 +170,14 @@ using a two letters <em>country code</em> following the ISO 3166-1 alpha-2 stand
 </ul>
 <p>This key <strong>MUST</strong> always be set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
 </section>
-<section id="key-conforme">
-<h2>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code><a class="headerlink" href="#key-conforme" title="Permalink to this headline">¶</a></h2>
+<section id="key-conforme-deprecated">
+<h2>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-deprecated" title="Permalink to this headline">¶</a></h2>
 <p>This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.</p>
-<section id="key-conforme-lineeguidadesign">
-<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code><a class="headerlink" href="#key-conforme-lineeguidadesign" title="Permalink to this headline">¶</a></h3>
+<section id="key-conforme-lineeguidadesign-deprecated">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-lineeguidadesign-deprecated" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -185,9 +186,10 @@ declared.</p>
 laws (L. 4/2004), as further explained in the
 <a class="reference external" href="https://docs.italia.it/italia/designers-italia/design-linee-guida-docs">linee guida di
 design</a> (Italian language).</p>
+<p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
-<section id="key-conforme-modellointeroperabilita">
-<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code><a class="headerlink" href="#key-conforme-modellointeroperabilita" title="Permalink to this headline">¶</a></h3>
+<section id="key-conforme-modellointeroperabilita-deprecated">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-modellointeroperabilita-deprecated" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -197,9 +199,10 @@ guida
 sull’interoperabilità</a>.</p>
 <p>Regulatory reference: <a class="reference external" href="https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html">Art. 73 del
 CAD</a> (Italian language).</p>
+<p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
-<section id="key-conforme-misureminimesicurezza">
-<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code><a class="headerlink" href="#key-conforme-misureminimesicurezza" title="Permalink to this headline">¶</a></h3>
+<section id="key-conforme-misureminimesicurezza-deprecated">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-misureminimesicurezza-deprecated" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -208,8 +211,8 @@ CAD</a> (Italian language).</p>
 minime di sicurezza ICT per le Pubbliche
 amministrazioni</a> (Italian language).</p>
 </section>
-<section id="key-conforme-gdpr">
-<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code><a class="headerlink" href="#key-conforme-gdpr" title="Permalink to this headline">¶</a></h3>
+<section id="key-conforme-gdpr-deprecated">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-gdpr-deprecated" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -267,8 +270,8 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 <h2>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code><a class="headerlink" href="#section-riuso" title="Permalink to this headline">¶</a></h2>
 <p>This section contains a set of keys related to the publication of the software
 inside the reuse catalog of <a class="reference external" href="https://developers.italia.it">Developers Italia</a>.</p>
-<section id="chiave-riuso-codiceipa">
-<h3>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code><a class="headerlink" href="#chiave-riuso-codiceipa" title="Permalink to this headline">¶</a></h3>
+<section id="chiave-riuso-codiceipa-deprecated">
+<h3>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code> (<em>deprecated</em>)<a class="headerlink" href="#chiave-riuso-codiceipa-deprecated" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (iPA code)</p></li>
 <li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is a Public Administration</p></li>
@@ -276,6 +279,7 @@ inside the reuse catalog of <a class="reference external" href="https://develope
 </ul>
 <p>This key represents the administration code inside the Public Administration
 index (codice IPA).</p>
+<p>This key is deprecated, use <code class="docutils literal notranslate"><span class="pre">organisation/uri</span></code> instead.</p>
 </section>
 </section>
 </section>
