@@ -19,6 +19,7 @@ All other tools are community-maintained.
 * 🇮🇱 Israel: [@ShimonShore](https://github.com/ShimonShore) (Israel Ministry of Science and
   Technology)
 * 🇮🇹 Italy: [@dptdgi](https://github.com/dptdgi) for DTD (Presidenza del Consiglio dei Ministri)
+* 🇳🇱 The Netherlands: [@tomootes](https://github.com/tomootes) for developer.overheid.nl (Dutch Developer Portal)
 
 The Steering Committee members can vote on proposals on Pull Requests, the workflow is detailed in
 [procedure-proposing-changes.md](procedure-proposing-changes-and-voting.md#voting)
