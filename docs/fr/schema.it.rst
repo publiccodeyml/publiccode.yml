@@ -25,16 +25,16 @@ Please note how the value of this key is independent from the top-level
 schema versioning is independent both from the core version of the schema and
 from every other Country.
 
-Key ``conforme``
-~~~~~~~~~~~~~~~~
+Key ``conforme`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.
 
-Key ``conforme/lineeGuidaDesign``
-'''''''''''''''''''''''''''''''''
+Key ``conforme/lineeGuidaDesign`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -44,8 +44,8 @@ laws (L. 4/2004), as further explained in the
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
 
-Key ``conforme/modelloInteroperabilita``
-''''''''''''''''''''''''''''''''''''''''
+Key ``conforme/modelloInteroperabilita`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -58,8 +58,8 @@ Regulatory reference: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__ (Italian language).
 
 
-Key ``conforme/misureMinimeSicurezza``
-''''''''''''''''''''''''''''''''''''''
+Key ``conforme/misureMinimeSicurezza`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
@@ -69,8 +69,8 @@ minime di sicurezza ICT per le Pubbliche
 amministrazioni <http://www.agid.gov.it/sites/default/files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__ (Italian language). 
 
 
-Key ``conforme/gdpr``
-'''''''''''''''''''''
+Key ``conforme/gdpr`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional

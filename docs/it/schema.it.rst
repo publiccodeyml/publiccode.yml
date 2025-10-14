@@ -18,16 +18,16 @@ Chiave ``countryExtensionVersion``
 
 This chiave **DEVE** always sempre impostata a ``1.0``.
 
-Sezione ``conforme``
-~~~~~~~~~~~~~~~~~~~~
+Sezione ``conforme`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa sezione contiene delle chiavi per auto dichiarare la conformità
 con la normativa vigente, rispetto ad alcune sezioni.
 Se queste chiavi non vengono incluse, si intende che la conformità non è nota
 o non viene dichiarata.
 
-Chiave ``conforme/lineeGuidaDesign``
-''''''''''''''''''''''''''''''''''''
+Chiave ``conforme/lineeGuidaDesign`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -37,8 +37,10 @@ materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__.
 
-Chiave ``conforme/modelloInteroperabilita``
-'''''''''''''''''''''''''''''''''''''''''''
+Non usare questa chiave deprecata, le linee guida sono superate.
+
+Chiave ``conforme/modelloInteroperabilita`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -50,8 +52,10 @@ sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-m
 Riferimento normativo: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__.
 
-Chiave ``conforme/misureMinimeSicurezza``
-'''''''''''''''''''''''''''''''''''''''''
+Non usare questa chiave deprecata, le linee guida sono superate.
+
+Chiave ``conforme/misureMinimeSicurezza`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -60,8 +64,8 @@ Se presente e impostato a ``yes``, il software è conforme alle `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__.
 
-Chiave ``conforme/gdpr``
-''''''''''''''''''''''''
+Chiave ``conforme/gdpr`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
