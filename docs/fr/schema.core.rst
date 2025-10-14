@@ -318,8 +318,8 @@ Clé ``intendedAudience/countries``
 Cette clé inclut explicitement certains pays dans le public cible,
 par exemple, le logiciel revendique explicitement sa conformité avec
 des processus, des technologies ou des lois spécifiques. 
-Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays, 
-conformément au standard ISO 3166-1 alpha-2.
+Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays,
+en minuscules (*deprecated*) ou en majuscules, conformément au standard ISO 3166-1 alpha-2.
 
 Clé ``intendedAudience/unsupportedCountries``
 '''''''''''''''''''''''''''''''''''''''''''''
@@ -331,8 +331,8 @@ Cette clé mentionne explicitement les pays qui ne sont pas supportés.
 Cette situation peut survenir en cas de conflit entre le mode de
 fonctionnement du logiciel et une loi, un processus ou une technologie
 particulière.
-Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays, 
-conformément au standard ISO 3166-1 alpha-2.
+Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays
+en minuscules (*deprecated*) ou en majuscules, conformément au standard ISO 3166-1 alpha-2.
 
 Clé ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''

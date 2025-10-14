@@ -11,7 +11,7 @@ Le mécanisme d'extension fourni est l'utilisation de sections spécifiques
 à chaque pays.
 
 Toutes les extensions spécifiques à un pays sont contenues dans une section
-nommée avec deux lettres minuscules `ISO 3166-1 alpha-2 country
+nommée avec deux lettres minuscules (*deprecated*) ou majuscules `ISO 3166-1 alpha-2 country
 code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Pour le moment 
 ``spid`` est une propriété pour un logiciel Italien  indiquant  si le logiciel
 est intégré au système italien d'identification publique.
