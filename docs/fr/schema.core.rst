@@ -205,10 +205,10 @@ Clé ``categories``
 ~~~~~~~~~~~~~~~~~~
 
 -  Type: array de chaînes de caractères
--  Présence: obligatoire
+-  Présence: facultative
 -  Valeurs acceptées: voir :ref:`categories-list` 
 
-Une liste des mots qui peuvent être utilisés pour décrire le logiciel
+Une liste des categories qui peuvent être utilisés pour décrire le logiciel
 et aider à la constitution d'un catalogue des logiciels ouverts.
 
 Le vocabulaire contrôlé de la :ref:`categories-list` présente la liste
