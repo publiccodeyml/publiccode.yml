@@ -3,6 +3,27 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+v0.5.0
+------
+
+Added
+~~~~~
+
+* doc(standard): make categories optional and add `other` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/241
+* Add organisation by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/229
+* Add the "fundedBy" key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/220
+
+Changed
+~~~~~~~
+
+* Clarify presence rules for `contractors` and `contacts` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/213
+* Use pure ISO 3166-1 alpha-2 and deprecate lowercase ISO 3166-1 alpha-2 by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/227
+* Deprecate it.conforme.* keys by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/223
+* Deprecate legal/repoOwner by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/229
+* Deprecate it/riuso/codiceIPA by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/229
+
+**Full Changelog**: https://github.com/publiccodeyml/publiccode.yml/compare/v0.4.0...v0.5.0
+
 v0.4.0
 ------
 
