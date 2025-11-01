@@ -11,8 +11,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import locale
-
 project = "publiccode.yml Standard (v0.5.0)"
 
 html_theme = "press"
@@ -24,8 +22,3 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.doctest",
 ]
-
-try:
-    locale.setlocale(locale.LC_ALL, "C.UTF-8")
-except locale.Error:
-    locale.setlocale(locale.LC_ALL, "C")
