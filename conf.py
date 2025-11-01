@@ -15,10 +15,10 @@ project = "publiccode.yml Standard (v0.5.0)"
 
 html_theme = "press"
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.doctest',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.doctest",
 ]
