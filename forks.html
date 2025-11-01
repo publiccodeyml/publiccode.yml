@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html  lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <title>3. Forks and variants</title>
     
@@ -10,10 +10,9 @@
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
       <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -174,13 +173,13 @@
           <div class="content" role="main" v-pre>
             
   <section id="forks-and-variants">
-<span id="id1"></span><h1><span class="section-number">3. </span>Forks and variants<a class="headerlink" href="#forks-and-variants" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><span class="section-number">3. </span>Forks and variants<a class="headerlink" href="#forks-and-variants" title="Link to this heading">¶</a></h1>
 <p>As already cited before, a fork may have two different forms based on the final
 aim. As such, in order to make it clear how to handle the
 <cite>publiccode.yml</cite> in both cases, below we define two different
 semantics: technical forks and software variants.</p>
 <section id="technical-forks-i-e-to-publish-patches">
-<h2><span class="section-number">3.1. </span>Technical forks (i.e. to publish patches)<a class="headerlink" href="#technical-forks-i-e-to-publish-patches" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Technical forks (i.e. to publish patches)<a class="headerlink" href="#technical-forks-i-e-to-publish-patches" title="Link to this heading">¶</a></h2>
 <p>A technical fork is a fork made by a developer for the purpose of
 working on the original code base or sending improvements to the
 original authors, without any explicit goal of creating and publishing
@@ -195,7 +194,7 @@ software, thus including also <code class="docutils literal notranslate"><span c
 to be able to distinguish such technical forks from the original
 codebase.</p>
 <section id="parsers">
-<h3><span class="section-number">3.1.1. </span>Parsers<a class="headerlink" href="#parsers" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Parsers<a class="headerlink" href="#parsers" title="Link to this heading">¶</a></h3>
 <p>Parsers <strong>SHOULD</strong> identify a technical fork by noticing that the
 top-level <code class="docutils literal notranslate"><span class="pre">url</span></code> key does not point to the repository in which the
 <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is found.</p>
@@ -204,7 +203,7 @@ might be exposed by the code hosting platform (eg: GitHub marks forks
 explicitly as forks)</p>
 </section>
 <section id="authors">
-<h3><span class="section-number">3.1.2. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2. </span>Authors<a class="headerlink" href="#authors" title="Link to this heading">¶</a></h3>
 <p>Authors of technical forks <strong>SHOULD NOT</strong> modify <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> in
 any way. Specifically, they <strong>MUST NOT</strong> modify the top-level <code class="docutils literal notranslate"><span class="pre">url</span></code>
 key that <strong>MUST</strong> continue pointing to the original repository.</p>
@@ -216,7 +215,7 @@ anything.</p>
 </section>
 </section>
 <section id="software-variants">
-<h2><span class="section-number">3.2. </span>Software variants<a class="headerlink" href="#software-variants" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Software variants<a class="headerlink" href="#software-variants" title="Link to this heading">¶</a></h2>
 <p>A software variant is a fork that is offered as an alternative to the
 original upstream software.</p>
 <p>It contains modifications that are still not part of the upstream
@@ -231,7 +230,7 @@ even if the fork will eventually be merged upstream, it might make sense
 to mark it as a variant during the process, so that others might
 discover it and benefit from it.</p>
 <section id="parsers-1">
-<span id="id2"></span><h3><span class="section-number">3.2.1. </span>Parsers<a class="headerlink" href="#parsers-1" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3><span class="section-number">3.2.1. </span>Parsers<a class="headerlink" href="#parsers-1" title="Link to this heading">¶</a></h3>
 <p>Parsers <strong>SHOULD</strong> identify a variant by noticing that the top-level
 <code class="docutils literal notranslate"><span class="pre">url</span></code> key matches to the repository in which the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is
 found, <strong>AND</strong> a top-level <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code> exists and points to a
@@ -242,7 +241,7 @@ different repository.</p>
 identify and show user-visible differences.</p>
 </section>
 <section id="authors-1">
-<span id="id3"></span><h3><span class="section-number">3.2.2. </span>Authors<a class="headerlink" href="#authors-1" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3><span class="section-number">3.2.2. </span>Authors<a class="headerlink" href="#authors-1" title="Link to this heading">¶</a></h3>
 <p>Authors that are willing to publish a fork as a variant <strong>MUST</strong> at
 least:</p>
 <ul class="simple">

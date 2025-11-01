@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html  lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <title>1. The Standard</title>
     
@@ -10,10 +10,9 @@
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
       <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -174,13 +173,13 @@
           <div class="content" role="main" v-pre>
             
   <section id="the-standard">
-<span id="core"></span><h1><span class="section-number">1. </span>The Standard<a class="headerlink" href="#the-standard" title="Permalink to this headline">¶</a></h1>
+<span id="core"></span><h1><span class="section-number">1. </span>The Standard<a class="headerlink" href="#the-standard" title="Link to this heading">¶</a></h1>
 <p>This document represents the description of the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>
 schema.</p>
 <section id="top-level-keys-and-sections">
-<h2><span class="section-number">1.1. </span>Top-Level Keys and Sections<a class="headerlink" href="#top-level-keys-and-sections" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Top-Level Keys and Sections<a class="headerlink" href="#top-level-keys-and-sections" title="Link to this heading">¶</a></h2>
 <section id="key-publiccodeymlversion">
-<h3><span class="section-number">1.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code><a class="headerlink" href="#key-publiccodeymlversion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code><a class="headerlink" href="#key-publiccodeymlversion" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -190,7 +189,7 @@ schema.</p>
 adheres to, for forward compatibility.</p>
 </section>
 <section id="key-name">
-<h3><span class="section-number">1.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">name</span></code><a class="headerlink" href="#key-name" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">name</span></code><a class="headerlink" href="#key-name" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -203,7 +202,7 @@ refer to the software. In case the software has both an internal “code”
 name and a commercial name, use the commercial name.</p>
 </section>
 <section id="key-applicationsuite">
-<h3><span class="section-number">1.1.3. </span>Key <code class="docutils literal notranslate"><span class="pre">applicationSuite</span></code><a class="headerlink" href="#key-applicationsuite" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3. </span>Key <code class="docutils literal notranslate"><span class="pre">applicationSuite</span></code><a class="headerlink" href="#key-applicationsuite" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -212,7 +211,7 @@ name and a commercial name, use the commercial name.</p>
 <p>This key contains the name of the “suite” to which the software belongs.</p>
 </section>
 <section id="key-url">
-<h3><span class="section-number">1.1.4. </span>Key <code class="docutils literal notranslate"><span class="pre">url</span></code><a class="headerlink" href="#key-url" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.4. </span>Key <code class="docutils literal notranslate"><span class="pre">url</span></code><a class="headerlink" href="#key-url" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (URL)</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -233,7 +232,7 @@ is a software variant and how to handle forked software as a parser or
 an author.</p>
 </section>
 <section id="key-landingurl">
-<h3><span class="section-number">1.1.5. </span>Key <code class="docutils literal notranslate"><span class="pre">landingURL</span></code><a class="headerlink" href="#key-landingurl" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.5. </span>Key <code class="docutils literal notranslate"><span class="pre">landingURL</span></code><a class="headerlink" href="#key-landingurl" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (URL)</p></li>
 <li><p>Presence: optional</p></li>
@@ -249,7 +248,7 @@ which contains a reference to the source code but also offers the
 download of such an installer.</p>
 </section>
 <section id="key-isbasedon">
-<h3><span class="section-number">1.1.6. </span>Key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code><a class="headerlink" href="#key-isbasedon" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.6. </span>Key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code><a class="headerlink" href="#key-isbasedon" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string or array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -262,7 +261,7 @@ contain the <code class="docutils literal notranslate"><span class="pre">url</sp
 variant, descending from the specified repositories.</p>
 </section>
 <section id="key-softwareversion">
-<h3><span class="section-number">1.1.7. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareVersion</span></code><a class="headerlink" href="#key-softwareversion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.7. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareVersion</span></code><a class="headerlink" href="#key-softwareversion" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -276,7 +275,7 @@ or any other specific version format.</p>
 development and has never been released yet.</p>
 </section>
 <section id="key-releasedate">
-<h3><span class="section-number">1.1.8. </span>Key <code class="docutils literal notranslate"><span class="pre">releaseDate</span></code><a class="headerlink" href="#key-releasedate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.8. </span>Key <code class="docutils literal notranslate"><span class="pre">releaseDate</span></code><a class="headerlink" href="#key-releasedate" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (date)</p></li>
 <li><p>Presence: optional</p></li>
@@ -285,7 +284,7 @@ development and has never been released yet.</p>
 <p>This key contains the date at which the latest version was released.</p>
 </section>
 <section id="key-logo">
-<h3><span class="section-number">1.1.9. </span>Key <code class="docutils literal notranslate"><span class="pre">logo</span></code><a class="headerlink" href="#key-logo" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.9. </span>Key <code class="docutils literal notranslate"><span class="pre">logo</span></code><a class="headerlink" href="#key-logo" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (relative path to file or absolute URL)</p></li>
 <li><p>Presence: optional</p></li>
@@ -301,7 +300,7 @@ version. In both cases, the file must reside inside the same repository where
 the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
 </section>
 <section id="key-monochromelogo-deprecated">
-<h3><span class="section-number">1.1.10. </span>Key <code class="docutils literal notranslate"><span class="pre">monochromeLogo</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-monochromelogo-deprecated" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.10. </span>Key <code class="docutils literal notranslate"><span class="pre">monochromeLogo</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-monochromelogo-deprecated" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string (path to file)</p></li>
 <li><p>Presence: optional</p></li>
@@ -317,7 +316,7 @@ version. In both cases, the file must reside inside the same repository where
 the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
 </section>
 <section id="key-inputtypes-deprecated">
-<h3><span class="section-number">1.1.11. </span>Key <code class="docutils literal notranslate"><span class="pre">inputTypes</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-inputtypes-deprecated" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.11. </span>Key <code class="docutils literal notranslate"><span class="pre">inputTypes</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-inputtypes-deprecated" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of enumerated strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -331,7 +330,7 @@ handle as input.</p>
 or use <code class="docutils literal notranslate"><span class="pre">application/x.empty</span></code>.</p>
 </section>
 <section id="key-outputtypes-deprecated">
-<h3><span class="section-number">1.1.12. </span>Key <code class="docutils literal notranslate"><span class="pre">outputTypes</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-outputtypes-deprecated" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.12. </span>Key <code class="docutils literal notranslate"><span class="pre">outputTypes</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-outputtypes-deprecated" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of enumerated strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -345,7 +344,7 @@ handle as output.</p>
 field or use <code class="docutils literal notranslate"><span class="pre">application/x.empty</span></code>.</p>
 </section>
 <section id="key-platforms">
-<h3><span class="section-number">1.1.13. </span>Key <code class="docutils literal notranslate"><span class="pre">platforms</span></code><a class="headerlink" href="#key-platforms" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.13. </span>Key <code class="docutils literal notranslate"><span class="pre">platforms</span></code><a class="headerlink" href="#key-platforms" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string or array of strings</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -361,7 +360,7 @@ platform for which a predefined value is not available, a different
 value can be used.</p>
 </section>
 <section id="key-categories">
-<h3><span class="section-number">1.1.14. </span>Key <code class="docutils literal notranslate"><span class="pre">categories</span></code><a class="headerlink" href="#key-categories" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.14. </span>Key <code class="docutils literal notranslate"><span class="pre">categories</span></code><a class="headerlink" href="#key-categories" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -373,7 +372,7 @@ building catalogs of open software.</p>
 values.</p>
 </section>
 <section id="key-usedby">
-<h3><span class="section-number">1.1.15. </span>Key <code class="docutils literal notranslate"><span class="pre">usedBy</span></code><a class="headerlink" href="#key-usedby" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.15. </span>Key <code class="docutils literal notranslate"><span class="pre">usedBy</span></code><a class="headerlink" href="#key-usedby" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -387,7 +386,7 @@ by an administration, could be used as a signal of usage of the
 software.</p>
 </section>
 <section id="key-fundedby">
-<h3><span class="section-number">1.1.16. </span>Key <code class="docutils literal notranslate"><span class="pre">fundedBy</span></code><a class="headerlink" href="#key-fundedby" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.16. </span>Key <code class="docutils literal notranslate"><span class="pre">fundedBy</span></code><a class="headerlink" href="#key-fundedby" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: List of Organisations (see below)</p></li>
 <li><p>Presence: optional</p></li>
@@ -396,7 +395,7 @@ software.</p>
 development of this software.</p>
 </section>
 <section id="key-roadmap">
-<h3><span class="section-number">1.1.17. </span>Key <code class="docutils literal notranslate"><span class="pre">roadmap</span></code><a class="headerlink" href="#key-roadmap" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.17. </span>Key <code class="docutils literal notranslate"><span class="pre">roadmap</span></code><a class="headerlink" href="#key-roadmap" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -404,7 +403,7 @@ development of this software.</p>
 <p>A link to a public roadmap of the software.</p>
 </section>
 <section id="key-developmentstatus">
-<h3><span class="section-number">1.1.18. </span>Key <code class="docutils literal notranslate"><span class="pre">developmentStatus</span></code><a class="headerlink" href="#key-developmentstatus" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.18. </span>Key <code class="docutils literal notranslate"><span class="pre">developmentStatus</span></code><a class="headerlink" href="#key-developmentstatus" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -429,7 +428,7 @@ All of the source code is archived and kept for historical reasons.</p></li>
 </ul>
 </section>
 <section id="key-softwaretype">
-<h3><span class="section-number">1.1.19. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareType</span></code><a class="headerlink" href="#key-softwaretype" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.19. </span>Key <code class="docutils literal notranslate"><span class="pre">softwareType</span></code><a class="headerlink" href="#key-softwaretype" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: enumerated string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -461,10 +460,10 @@ other instruction sets.</p></li>
 </ul>
 </section>
 <section id="section-organisation">
-<h3><span class="section-number">1.1.20. </span>Section <code class="docutils literal notranslate"><span class="pre">organisation</span></code><a class="headerlink" href="#section-organisation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.20. </span>Section <code class="docutils literal notranslate"><span class="pre">organisation</span></code><a class="headerlink" href="#section-organisation" title="Link to this heading">¶</a></h3>
 <p>This optional section provides the organisation publishing the software.</p>
 <section id="key-organisation-uri">
-<h4><span class="section-number">1.1.20.1. </span>Key <code class="docutils literal notranslate"><span class="pre">organisation/uri</span></code><a class="headerlink" href="#key-organisation-uri" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.20.1. </span>Key <code class="docutils literal notranslate"><span class="pre">organisation/uri</span></code><a class="headerlink" href="#key-organisation-uri" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -482,7 +481,7 @@ The specific verification method depends on the implementation and policies of t
 platform consuming the file.</p>
 </section>
 <section id="key-organisation-name">
-<h4><span class="section-number">1.1.20.2. </span>Key <code class="docutils literal notranslate"><span class="pre">organisation/name</span></code><a class="headerlink" href="#key-organisation-name" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.20.2. </span>Key <code class="docutils literal notranslate"><span class="pre">organisation/name</span></code><a class="headerlink" href="#key-organisation-name" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -496,9 +495,9 @@ registered legal or institutional name).</p>
 </section>
 </section>
 <section id="section-intendedaudience">
-<h3><span class="section-number">1.1.21. </span>Section <code class="docutils literal notranslate"><span class="pre">intendedAudience</span></code><a class="headerlink" href="#section-intendedaudience" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.21. </span>Section <code class="docutils literal notranslate"><span class="pre">intendedAudience</span></code><a class="headerlink" href="#section-intendedaudience" title="Link to this heading">¶</a></h3>
 <section id="key-intendedaudience-countries">
-<h4><span class="section-number">1.1.21.1. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/countries</span></code><a class="headerlink" href="#key-intendedaudience-countries" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.21.1. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/countries</span></code><a class="headerlink" href="#key-intendedaudience-countries" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -509,7 +508,7 @@ technologies or laws. All countries are specified using lowercase (<em>deprecate
 or uppercase ISO 3166-1 alpha-2 two-letter country codes.</p>
 </section>
 <section id="key-intendedaudience-unsupportedcountries">
-<h4><span class="section-number">1.1.21.2. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/unsupportedCountries</span></code><a class="headerlink" href="#key-intendedaudience-unsupportedcountries" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.21.2. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/unsupportedCountries</span></code><a class="headerlink" href="#key-intendedaudience-unsupportedcountries" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -520,7 +519,7 @@ specific law, process or technology. All countries are specified using
 lowercase (<em>deprecated</em>) or uppercase ISO 3166-1 alpha-2 two-letter country codes.</p>
 </section>
 <section id="key-intendedaudience-scope">
-<h4><span class="section-number">1.1.21.3. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/scope</span></code><a class="headerlink" href="#key-intendedaudience-scope" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.21.3. </span>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/scope</span></code><a class="headerlink" href="#key-intendedaudience-scope" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -531,7 +530,7 @@ the software.</p>
 </section>
 </section>
 <section id="section-description">
-<h3><span class="section-number">1.1.22. </span>Section <code class="docutils literal notranslate"><span class="pre">description</span></code><a class="headerlink" href="#section-description" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.22. </span>Section <code class="docutils literal notranslate"><span class="pre">description</span></code><a class="headerlink" href="#section-description" title="Link to this heading">¶</a></h3>
 <p>This section contains a general description of the software. Parsers can
 use this section for instance to create a web page describing the
 software.</p>
@@ -554,7 +553,7 @@ sub-section with the name of the language (we will note this with
 <p><strong>Note:</strong> it is mandatory to have <em>at least</em> one language in this
 section. All other languages are optional.</p>
 <section id="key-description-lang-localisedname">
-<h4><span class="section-number">1.1.22.1. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/localisedName</span></code><a class="headerlink" href="#key-description-lang-localisedname" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.1. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/localisedName</span></code><a class="headerlink" href="#key-description-lang-localisedname" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -567,7 +566,7 @@ both an internal “code” name and a commercial name, use the commercial
 name.</p>
 </section>
 <section id="key-description-lang-genericname-deprecated">
-<h4><span class="section-number">1.1.22.2. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/genericName</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-description-lang-genericname-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.2. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/genericName</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-description-lang-genericname-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (max 35 chars)</p></li>
 <li><p>Presence: optional</p></li>
@@ -580,7 +579,7 @@ Notable examples include “Text Editor”, “Word Processor”, “Web Browser
 “Chat” and so on… The generic name can be up to 35 characters long.</p>
 </section>
 <section id="key-description-lang-shortdescription">
-<h4><span class="section-number">1.1.22.3. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/shortDescription</span></code><a class="headerlink" href="#key-description-lang-shortdescription" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.3. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/shortDescription</span></code><a class="headerlink" href="#key-description-lang-shortdescription" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (max 150 chars)</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -591,7 +590,7 @@ single line containing a single sentence. Maximum 150 characters are
 allowed.</p>
 </section>
 <section id="key-description-lang-longdescription">
-<h4><span class="section-number">1.1.22.4. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/longDescription</span></code><a class="headerlink" href="#key-description-lang-longdescription" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.4. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/longDescription</span></code><a class="headerlink" href="#key-description-lang-longdescription" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (min 150 chars, max 10000 chars)</p></li>
 <li><p>Presence: mandatory (for at least one language)</p></li>
@@ -606,7 +605,7 @@ the software had one).</p>
 <code class="docutils literal notranslate"><span class="pre">**bold**</span></code>, bullet points and <code class="docutils literal notranslate"><span class="pre">[links](#)</span></code>.</p>
 </section>
 <section id="key-description-lang-documentation">
-<h4><span class="section-number">1.1.22.5. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/documentation</span></code><a class="headerlink" href="#key-description-lang-documentation" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.5. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/documentation</span></code><a class="headerlink" href="#key-description-lang-documentation" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: URL</p></li>
 <li><p>Presence: optional</p></li>
@@ -629,7 +628,7 @@ files available under an open license, possibly by committing them as
 part of the repository itself.</p>
 </section>
 <section id="key-description-lang-apidocumentation">
-<h4><span class="section-number">1.1.22.6. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/apiDocumentation</span></code><a class="headerlink" href="#key-description-lang-apidocumentation" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.6. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/apiDocumentation</span></code><a class="headerlink" href="#key-description-lang-apidocumentation" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: URL</p></li>
 <li><p>Presence: optional</p></li>
@@ -652,7 +651,7 @@ files available under an open license, possibly by committing them as
 part of the repository itself.</p>
 </section>
 <section id="key-description-lang-features">
-<h4><span class="section-number">1.1.22.7. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/features</span></code><a class="headerlink" href="#key-description-lang-features" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.7. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/features</span></code><a class="headerlink" href="#key-description-lang-features" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: mandatory (for at least one language)</p></li>
@@ -671,7 +670,7 @@ exhaustiveness, as users can always read the documentation for
 additional information.</p>
 </section>
 <section id="key-description-lang-screenshots">
-<h4><span class="section-number">1.1.22.8. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/screenshots</span></code><a class="headerlink" href="#key-description-lang-screenshots" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.8. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/screenshots</span></code><a class="headerlink" href="#key-description-lang-screenshots" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings (paths)</p></li>
 <li><p>Presence: optional</p></li>
@@ -693,7 +692,7 @@ the <code class="docutils literal notranslate"><span class="pre">publiccode.yml<
 </ul>
 </section>
 <section id="key-description-lang-videos">
-<h4><span class="section-number">1.1.22.9. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/videos</span></code><a class="headerlink" href="#key-description-lang-videos" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.9. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/videos</span></code><a class="headerlink" href="#key-description-lang-videos" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings (URLs)</p></li>
 <li><p>Presence: optional</p></li>
@@ -709,7 +708,7 @@ and Vimeo.</p>
 recommended to publish them with an open license.</p>
 </section>
 <section id="key-description-lang-awards">
-<h4><span class="section-number">1.1.22.10. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/awards</span></code><a class="headerlink" href="#key-description-lang-awards" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.22.10. </span>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/awards</span></code><a class="headerlink" href="#key-description-lang-awards" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of strings</p></li>
 <li><p>Presence: optional</p></li>
@@ -718,9 +717,9 @@ recommended to publish them with an open license.</p>
 </section>
 </section>
 <section id="section-legal">
-<h3><span class="section-number">1.1.23. </span>Section <code class="docutils literal notranslate"><span class="pre">legal</span></code><a class="headerlink" href="#section-legal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.23. </span>Section <code class="docutils literal notranslate"><span class="pre">legal</span></code><a class="headerlink" href="#section-legal" title="Link to this heading">¶</a></h3>
 <section id="key-legal-license">
-<h4><span class="section-number">1.1.23.1. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/license</span></code><a class="headerlink" href="#key-legal-license" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.23.1. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/license</span></code><a class="headerlink" href="#key-legal-license" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -732,7 +731,7 @@ to one (or multiple) open-source license. Please refer to the <a class="referenc
 documentation</a> for further information.</p>
 </section>
 <section id="key-legal-maincopyrightowner">
-<h4><span class="section-number">1.1.23.2. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/mainCopyrightOwner</span></code><a class="headerlink" href="#key-legal-maincopyrightowner" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.23.2. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/mainCopyrightOwner</span></code><a class="headerlink" href="#key-legal-maincopyrightowner" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -749,7 +748,7 @@ possible to omit this key; in those cases, if the repo has a authors
 file, you can point to it through <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code>.</p>
 </section>
 <section id="key-legal-repoowner-deprecated">
-<h4><span class="section-number">1.1.23.3. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/repoOwner</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-legal-repoowner-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.23.3. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/repoOwner</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-legal-repoowner-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: optional</p></li>
@@ -762,7 +761,7 @@ itself. For instance, in case of a fork of the original software, the
 <p>This key is deprecated, use <code class="docutils literal notranslate"><span class="pre">organisation/name</span></code> instead.</p>
 </section>
 <section id="key-legal-authorsfile-deprecated">
-<h4><span class="section-number">1.1.23.4. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-legal-authorsfile-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.23.4. </span>Key <code class="docutils literal notranslate"><span class="pre">legal/authorsFile</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-legal-authorsfile-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (path to file)</p></li>
 <li><p>Presence: optional</p></li>
@@ -777,12 +776,12 @@ authors file, using a path relative to the root of the repository.</p>
 </section>
 </section>
 <section id="section-maintenance">
-<h3><span class="section-number">1.1.24. </span>Section <code class="docutils literal notranslate"><span class="pre">maintenance</span></code><a class="headerlink" href="#section-maintenance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.24. </span>Section <code class="docutils literal notranslate"><span class="pre">maintenance</span></code><a class="headerlink" href="#section-maintenance" title="Link to this heading">¶</a></h3>
 <p>This section provides information on the maintenance status of the
 software, useful to evaluate whether the software is actively developed
 or not.</p>
 <section id="key-maintenance-type">
-<h4><span class="section-number">1.1.24.1. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code><a class="headerlink" href="#key-maintenance-type" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.24.1. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code><a class="headerlink" href="#key-maintenance-type" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: enumerate</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -800,7 +799,7 @@ or more people that donate their time to the project;</p></li>
 </ul>
 </section>
 <section id="key-maintenance-contractors">
-<h4><span class="section-number">1.1.24.2. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contractors</span></code><a class="headerlink" href="#key-maintenance-contractors" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.24.2. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contractors</span></code><a class="headerlink" href="#key-maintenance-contractors" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of Contractor (see below)</p></li>
 <li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code> <strong>is</strong> <code class="docutils literal notranslate"><span class="pre">contract</span></code>; must not be present otherwise</p></li>
@@ -810,7 +809,7 @@ contracted for maintaining the software. They can be companies,
 organisations, or other collective names.</p>
 </section>
 <section id="key-maintenance-contacts">
-<h4><span class="section-number">1.1.24.3. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contacts</span></code><a class="headerlink" href="#key-maintenance-contacts" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.24.3. </span>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contacts</span></code><a class="headerlink" href="#key-maintenance-contacts" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: List of Contacts (see below)</p></li>
 <li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code> <strong>is</strong> <code class="docutils literal notranslate"><span class="pre">internal</span></code> or <code class="docutils literal notranslate"><span class="pre">community</span></code>; optional otherwise</p></li>
@@ -828,11 +827,11 @@ involved with the maintenance of the product as well.</p>
 </section>
 </section>
 <section id="section-localisation">
-<h3><span class="section-number">1.1.25. </span>Section <code class="docutils literal notranslate"><span class="pre">localisation</span></code><a class="headerlink" href="#section-localisation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.25. </span>Section <code class="docutils literal notranslate"><span class="pre">localisation</span></code><a class="headerlink" href="#section-localisation" title="Link to this heading">¶</a></h3>
 <p>This section provides an overview of the localization features of the
 software.</p>
 <section id="key-localisation-localisationready">
-<h4><span class="section-number">1.1.25.1. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/localisationReady</span></code><a class="headerlink" href="#key-localisation-localisationready" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.25.1. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/localisationReady</span></code><a class="headerlink" href="#key-localisation-localisationready" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -842,7 +841,7 @@ designed to be multilingual. It does not need to be available in more
 than one language.</p>
 </section>
 <section id="key-localisation-availablelanguages">
-<h4><span class="section-number">1.1.25.2. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/availableLanguages</span></code><a class="headerlink" href="#key-localisation-availablelanguages" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.25.2. </span>Key <code class="docutils literal notranslate"><span class="pre">localisation/availableLanguages</span></code><a class="headerlink" href="#key-localisation-availablelanguages" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: list of IETF BCP 47 language tags</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -855,7 +854,7 @@ The primary language subtag cannot be omitted, as mandated by the
 </section>
 </section>
 <section id="section-dependson">
-<h3><span class="section-number">1.1.26. </span>Section <code class="docutils literal notranslate"><span class="pre">dependsOn</span></code><a class="headerlink" href="#section-dependson" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.26. </span>Section <code class="docutils literal notranslate"><span class="pre">dependsOn</span></code><a class="headerlink" href="#section-dependson" title="Link to this heading">¶</a></h3>
 <p>This section provides an overview on the system-level dependencies
 required to install and use this software.</p>
 <p><strong>NOTE:</strong> do not list dependencies at the source code level (e.g.:
@@ -864,7 +863,7 @@ system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.</p>
 <section id="key-dependson-open">
-<h4><span class="section-number">1.1.26.1. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/open</span></code><a class="headerlink" href="#key-dependson-open" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.26.1. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/open</span></code><a class="headerlink" href="#key-dependson-open" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
 <li><p>Presence: optional</p></li>
@@ -873,7 +872,7 @@ dependencies.</p>
 under an open-source license.</p>
 </section>
 <section id="key-dependson-proprietary">
-<h4><span class="section-number">1.1.26.2. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/proprietary</span></code><a class="headerlink" href="#key-dependson-proprietary" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.26.2. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/proprietary</span></code><a class="headerlink" href="#key-dependson-proprietary" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
 <li><p>Presence: optional</p></li>
@@ -882,7 +881,7 @@ under an open-source license.</p>
 under a proprietary license.</p>
 </section>
 <section id="key-dependson-hardware">
-<h4><span class="section-number">1.1.26.3. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/hardware</span></code><a class="headerlink" href="#key-dependson-hardware" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.1.26.3. </span>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/hardware</span></code><a class="headerlink" href="#key-dependson-hardware" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
 <li><p>Presence: optional</p></li>
@@ -893,9 +892,9 @@ use the software.</p>
 </section>
 </section>
 <section id="special-data-formats">
-<h2><span class="section-number">1.2. </span>Special data formats<a class="headerlink" href="#special-data-formats" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Special data formats<a class="headerlink" href="#special-data-formats" title="Link to this heading">¶</a></h2>
 <section id="dependency">
-<h3><span class="section-number">1.2.1. </span>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.1. </span>Dependency<a class="headerlink" href="#dependency" title="Link to this heading">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">dependency</span></code> is a complex object. The properties are the following:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - The name of the dependency (e.g. MySQL,
@@ -909,7 +908,7 @@ later applied to this version.</p></li>
 </ul>
 </section>
 <section id="complex-versioning">
-<h3><span class="section-number">1.2.2. </span>Complex versioning<a class="headerlink" href="#complex-versioning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.2. </span>Complex versioning<a class="headerlink" href="#complex-versioning" title="Link to this heading">¶</a></h3>
 <p>It is of course possible to use the various keys to specify a complex
 compatibility matrix.</p>
 <p><em>Ex. 1</em></p>
@@ -930,7 +929,7 @@ compatibility matrix.</p>
 between 1.1 and 1.3.</p>
 </section>
 <section id="contact">
-<h3><span class="section-number">1.2.3. </span>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.3. </span>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h3>
 <p>A Contact is an object with the following properties:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - This key contains the full name of one of
@@ -954,7 +953,7 @@ instance a company name, an association name, etc.</p></li>
 </ul>
 </section>
 <section id="organisation">
-<h3><span class="section-number">1.2.4. </span>Organisation<a class="headerlink" href="#organisation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.4. </span>Organisation<a class="headerlink" href="#organisation" title="Link to this heading">¶</a></h3>
 <p>An organisation is a structure (association, company, public
 authority, etc.) that can fund software development. An organisation
 has the following property:</p>
@@ -969,7 +968,7 @@ a physical person.</p>
 </ul>
 </section>
 <section id="contractor">
-<h3><span class="section-number">1.2.5. </span>Contractor<a class="headerlink" href="#contractor" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.5. </span>Contractor<a class="headerlink" href="#contractor" title="Link to this heading">¶</a></h3>
 <p>A Contractor is an object with the following properties:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - The name of the contractor, whether it’s a
@@ -992,13 +991,13 @@ project-specific page or website.</p></li>
 </ul>
 </section>
 <section id="dates">
-<h3><span class="section-number">1.2.6. </span>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.6. </span>Dates<a class="headerlink" href="#dates" title="Link to this heading">¶</a></h3>
 <p>All dates in <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> must follow the format “YYYY-MM-DD”,
 which is one of the ISO8601 allowed formats. This is the only allowed
 format though, so not the full ISO8601 is allowed for the date keys.</p>
 </section>
 <section id="encoding">
-<h3><span class="section-number">1.2.7. </span>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.7. </span>Encoding<a class="headerlink" href="#encoding" title="Link to this heading">¶</a></h3>
 <p><cite>publiccode.yml</cite> <strong>MUST</strong> be a UTF-8 encoded and <strong>SHOULD</strong> be a YAML 1.2 document,
 using YAML 1.1 is <em>deprecated</em>.</p>
 </section>

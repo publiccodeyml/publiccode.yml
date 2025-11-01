@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html >
+<html  lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <title>2. Country-Specific Sections</title>
     
@@ -10,10 +10,9 @@
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
       
       <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -172,7 +171,7 @@
           <div class="content" role="main" v-pre>
             
   <section id="country-specific-sections">
-<span id="country-section"></span><h1><span class="section-number">2. </span>Country-Specific Sections<a class="headerlink" href="#country-specific-sections" title="Permalink to this headline">¶</a></h1>
+<span id="country-section"></span><h1><span class="section-number">2. </span>Country-Specific Sections<a class="headerlink" href="#country-specific-sections" title="Link to this heading">¶</a></h1>
 <p>While the standard is structured to be meaningful on an international
 level, there are additional information that can be added that makes
 sense in specific countries, such as declaring compliance with local
@@ -194,13 +193,13 @@ software is integrated with the Italian Public Identification System.</p>
 are not allowed. Countries that want to extend the format should add a
 country-specific section instead.</p>
 <section id="italy">
-<span id="italian-sections"></span><h2><span class="section-number">2.1. </span>Italy<a class="headerlink" href="#italy" title="Permalink to this headline">¶</a></h2>
+<span id="italian-sections"></span><h2><span class="section-number">2.1. </span>Italy<a class="headerlink" href="#italy" title="Link to this heading">¶</a></h2>
 <p>All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code. Every Country is specified
 using a two letters lowercase (<em>deprecated</em>) or uppercase <em>country code</em> following
 the ISO 3166-1 alpha-2 standard.</p>
 <section id="key-countryextensionversion">
-<h3><span class="section-number">2.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
@@ -209,13 +208,13 @@ the ISO 3166-1 alpha-2 standard.</p>
 <p>This key <strong>MUST</strong> always be set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
 </section>
 <section id="key-conforme-deprecated">
-<h3><span class="section-number">2.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-deprecated" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-deprecated" title="Link to this heading">¶</a></h3>
 <p>This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.</p>
 <section id="key-conforme-lineeguidadesign-deprecated">
-<h4><span class="section-number">2.1.2.1. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-lineeguidadesign-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.2.1. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-lineeguidadesign-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -227,7 +226,7 @@ design</a> (Italian language).</p>
 <p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
 <section id="key-conforme-modellointeroperabilita-deprecated">
-<h4><span class="section-number">2.1.2.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-modellointeroperabilita-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.2.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-modellointeroperabilita-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -240,7 +239,7 @@ CAD</a> (Italian language).</p>
 <p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
 <section id="key-conforme-misureminimesicurezza-deprecated">
-<h4><span class="section-number">2.1.2.3. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-misureminimesicurezza-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.2.3. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-misureminimesicurezza-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -250,7 +249,7 @@ minime di sicurezza ICT per le Pubbliche
 amministrazioni</a> (Italian language).</p>
 </section>
 <section id="key-conforme-gdpr-deprecated">
-<h4><span class="section-number">2.1.2.4. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-gdpr-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.2.4. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-gdpr-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -259,9 +258,9 @@ amministrazioni</a> (Italian language).</p>
 </section>
 </section>
 <section id="section-piattaforme">
-<h3><span class="section-number">2.1.3. </span>Section <code class="docutils literal notranslate"><span class="pre">piattaforme</span></code><a class="headerlink" href="#section-piattaforme" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3. </span>Section <code class="docutils literal notranslate"><span class="pre">piattaforme</span></code><a class="headerlink" href="#section-piattaforme" title="Link to this heading">¶</a></h3>
 <section id="key-piattaforme-spid">
-<h4><span class="section-number">2.1.3.1. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/spid</span></code><a class="headerlink" href="#key-piattaforme-spid" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.3.1. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/spid</span></code><a class="headerlink" href="#key-piattaforme-spid" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -271,7 +270,7 @@ amministrazioni</a> (Italian language).</p>
 Digitale</a>.</p>
 </section>
 <section id="key-piattaforme-cie">
-<h4><span class="section-number">2.1.3.2. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/cie</span></code><a class="headerlink" href="#key-piattaforme-cie" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.3.2. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/cie</span></code><a class="headerlink" href="#key-piattaforme-cie" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -280,7 +279,7 @@ Digitale</a>.</p>
 electronic ID card (<code class="docutils literal notranslate"><span class="pre">Carta</span> <span class="pre">di</span> <span class="pre">Identità</span> <span class="pre">Elettronica</span></code>).</p>
 </section>
 <section id="key-piattaforme-anpr">
-<h4><span class="section-number">2.1.3.3. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/anpr</span></code><a class="headerlink" href="#key-piattaforme-anpr" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.3.3. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/anpr</span></code><a class="headerlink" href="#key-piattaforme-anpr" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -288,7 +287,7 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with ANPR.</p>
 </section>
 <section id="key-piattafome-pagopa">
-<h4><span class="section-number">2.1.3.4. </span>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code><a class="headerlink" href="#key-piattafome-pagopa" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.3.4. </span>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code><a class="headerlink" href="#key-piattafome-pagopa" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -296,7 +295,7 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with pagoPA.</p>
 </section>
 <section id="key-piattaforme-io">
-<h4><span class="section-number">2.1.3.5. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/io</span></code><a class="headerlink" href="#key-piattaforme-io" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.3.5. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/io</span></code><a class="headerlink" href="#key-piattaforme-io" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -305,11 +304,11 @@ electronic ID card (<code class="docutils literal notranslate"><span class="pre"
 </section>
 </section>
 <section id="section-riuso">
-<h3><span class="section-number">2.1.4. </span>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code><a class="headerlink" href="#section-riuso" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4. </span>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code><a class="headerlink" href="#section-riuso" title="Link to this heading">¶</a></h3>
 <p>This section contains a set of keys related to the publication of the software
 inside the reuse catalog of <a class="reference external" href="https://developers.italia.it">Developers Italia</a>.</p>
 <section id="chiave-riuso-codiceipa-deprecated">
-<h4><span class="section-number">2.1.4.1. </span>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code> (<em>deprecated</em>)<a class="headerlink" href="#chiave-riuso-codiceipa-deprecated" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.1.4.1. </span>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code> (<em>deprecated</em>)<a class="headerlink" href="#chiave-riuso-codiceipa-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (iPA code)</p></li>
 <li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is a Public Administration</p></li>
