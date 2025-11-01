@@ -109,7 +109,7 @@ This project follows the [Semantic Versioning](https://semver.org/).
 ## Contributing
 
 Feel free to submit [Pull Requests, file Issues](CONTRIBUTING.md) or open
-a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions). 
+a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions).
 
 The [Standard's website](https://yml.publiccode.tools) is built using the Python
 Sphinx package and
@@ -117,20 +117,16 @@ Sphinx package and
 on GitHub Pages.
 
 ### Prerequisites
-- Python 3.11
 
-### Install dependencies
-
-```console
-pip install -r requirements.txt
-```
+- [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
 
 ### Local development process
+
 `sphinx-build` can be used to compile all source file to static html files. Run
 this command to generate the website:
 
 ```console
-sphinx-build docs/standard build -c .
+uv run sphinx-build docs/standard build -c .
 ```
 
 then open the relevant file in the build directory with a browser (e.g.,
