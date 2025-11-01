@@ -1,0 +1,14 @@
+[project]
+name = "publiccode-yml"
+version = "0.5.0"
+requires-python = "==3.11.13"
+dependencies = [
+    "sphinx==4.4.0",
+    "sphinx-press-theme==0.8.0",
+    "sphinxcontrib-applehelp==1.0.4",
+    "sphinxcontrib-devhelp==1.0.2",
+    "sphinxcontrib-htmlhelp==2.0.1",
+    "sphinxcontrib-qthelp==1.0.3",
+    "sphinxcontrib-serializinghtml==1.1.5",
+    "urllib3==2.5.0",
+]
