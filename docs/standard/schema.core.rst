@@ -729,48 +729,48 @@ system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.
 
-Key ``dependsOn/open``
+Key ``dependsOn/software``
 ''''''''''''''''''''''
 
--  Type: array of ``dependency`` (see below)
+-  Type: array of ``softwareDependency`` (see below)
 -  Presence: optional
 
-This key contains a list of runtime dependencies that are distributed
-under an open-source license.
-
-Key ``dependsOn/proprietary``
-'''''''''''''''''''''''''''''
-
--  Type: array of ``dependency`` (see below)
--  Presence: optional
-
-This key contains a list of runtime dependencies that are distributed
-under a proprietary license.
+This key contains a list of runtime dependencies.
 
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Type: array of ``dependency`` (see below)
+-  Type: array of ``hardwareDependency`` (see below)
 -  Presence: optional
 
-This key contains a list of hardware dependencies that must be owned to
-use the software.
+This key contains a list of hardware dependencies that are required to use the software.
 
 Special data formats
 --------------------
 
-Dependency
-~~~~~~~~~~
+Dependencies
+~~~~~~~~~~~~
 
-A ``dependency`` is a complex object. The properties are the following:
+A ``softwareDependency`` is a complex object. The properties are the following:
 
 -  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
    NFC Reader)
+-  ``source`` - where the software can be obtained (e.g. a URL)
+-  ``license`` - the type of license, may be broad (e.g. 'open', 'free', 'proprietary', 'commercial'
+   or more detailed (see e.g. https://spdx.org/licenses)
 -  ``versionMin`` - the first compatible version
 -  ``versionMax`` - the latest compatible version
 -  ``version`` - the only major version for which the software is
    compatible. It assumes compatibility with all patches and bugfixes
    later applied to this version.
+-  ``optional`` - whether the dependency is optional or mandatory
+
+
+A ``hardwareDependency`` is a complex object. The properties are the following:
+
+-  ``name`` - **mandatory** - The name of the dependency (e.g. Rasberry Pi)
+-  ``source`` - where the hardware can be obtained (e.g. name of the manufacturer)
+-  ``specifications`` - the (minimal) specification the hardware must meet to support the software
 -  ``optional`` - whether the dependency is optional or mandatory
 
 Complex versioning
