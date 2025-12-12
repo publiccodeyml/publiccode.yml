@@ -95,10 +95,10 @@ localisation:
 ## Finding projects
 
 Finding projects depends on how the search API is structured for every hosting
-platform. For example, you can find all `publiccode.yml` on GitHub files by
-searching using the frontend or the API.
+platform. For example, you can find all `publiccode.yml` files in the root
+directory of projects on GitHub, either by using the search frontend or the API.
 
-* [GitHub Search `path:publiccode.yml`](https://github.com/search?q=path%3Apubliccode.yml&type=code)
+* [GitHub Search `path:/^publiccode.yml$/`](https://github.com/search?q=path%3A%2F%5Epubliccode.yml%24%2F&type=code)
 
 ## Versioning
 
