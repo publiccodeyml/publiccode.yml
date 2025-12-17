@@ -268,7 +268,7 @@ Key ``softwareType``
 
 The keys are:
 
--  ``standalone/mobile`` - The software is a standalone application typically
+-  ``standalone/mobile`` - The software is a standalone application, typically
   installed and run on a mobile operating system.
 -  ``standalone/iot`` - The software is suitable for an IoT context.
 -  ``standalone/desktop`` - The software is typically installed and run in a  
