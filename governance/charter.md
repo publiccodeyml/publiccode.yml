@@ -13,7 +13,6 @@ All other tools are community-maintained.
 
 ## Steering Committee (`@publiccodeyml/steering-committee`)
 
-* 🇩🇰 Denmark: [@zorp](https://github.com/zorp) for OS2 Offentlig Digitaliseringsfællesskab
 * 🇫🇷 France: [@bzg](https://github.com/bzg) for the Free Software unit at the Interministerial Digital Directorate
 * 🇩🇪 Germany: [@cknebel](https://github.com/cknebel) (publicplan GmbH)
 * 🇮🇱 Israel: [@ShimonShore](https://github.com/ShimonShore) (Israel Ministry of Science and
