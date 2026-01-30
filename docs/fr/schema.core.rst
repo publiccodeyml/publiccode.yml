@@ -105,9 +105,6 @@ Le numéro de la version est une chaîne de caractères qui n’est pas destiné
 syntaxique ne doivent pas s'appuyer sur une gestion sémantique des versions ou
 tout autre format de gestion spécifique de version.
 
-La clé peut être omise si le logiciel est à un stade précoce de développement
-et n'a pas encore été publié.
-
 Clé ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
