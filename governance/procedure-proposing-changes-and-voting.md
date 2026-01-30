@@ -34,8 +34,8 @@ participation from everyone but restrict the voting to public servants, for this
 only open to members of the [Steering Committee](charter.md#steering-commitee-publiccodeymlsteering-committee),
 typically one per country.
 
-[The Chair](charter.md#roles-and-duties)  of the Steering committee is responsible for holding a
-regular vote, which happens as deemed necessary. Once the voting starts, it stays open for a week.
+Votes are held following an [experimental cadence defined here](https://github.com/publiccodeyml/publiccode.yml/discussions/228#discussioncomment-14314999).
+Once a vote opens, it remains open for two weeks.
 
 Voting happens on formal proposals opened as Pull Requests through expressing a clear intention to
 *approve*, *reject*, or *abstain*.  This can be done by either using GitHub's code review feature,
@@ -65,7 +65,7 @@ so.
 
 ### Results of the vote and implementation of the changes
 
-After a week from the vote has passed, the Chair formally announces the results.
+After the voting session ends, the results are announced.
 
 The Maintainers act accordingly to reflect the changes on GitHub and proceed to queue the changes in
 the next release cycle.

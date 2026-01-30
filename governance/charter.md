@@ -30,14 +30,6 @@ level.
 
 # Roles and duties
 
-### Chair ([@ruphy](https://github.com/ruphy))
-
-* Plans, organizes agenda and moderates meetings
-* Prepares and shares milestones and deadlines
-* Oversees the voting procedure
-* Is the ultimate responsible for the development of the project
-* Has administrative access on GitHub and other platforms
-
 ### Maintainer ([@bfabio](https://github.com/bfabio), [@sebbalex](https://github.com/sebbalex))
 
 * Maintains the non-Standard side of repositories
