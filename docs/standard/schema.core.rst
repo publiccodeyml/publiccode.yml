@@ -303,7 +303,7 @@ Section ``organisation``
 This optional section provides the organisation publishing the software.
 
 Key ``organisation/uri``
-'''''''''''''''''''''''
+''''''''''''''''''''''''
 
 -  Type: string
 -  Presence: mandatory
@@ -323,7 +323,7 @@ The specific verification method depends on the implementation and policies of t
 platform consuming the file.
 
 Key ``organisation/name``
-'''''''''''''''''''''''
+'''''''''''''''''''''''''
 
 -  Type: string
 -  Presence: optional

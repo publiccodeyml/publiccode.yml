@@ -8,7 +8,7 @@ Minimal-Konfiguration
 ~~~~~~~~~~~~~~~~~~~~~
 .. code:: yaml
 
-  publiccodeYmlVersion: "0.4"
+  publiccodeYmlVersion: "0"
 
   name: Medusa
   url: "https://example.com/italia/medusa.git"
@@ -52,8 +52,8 @@ Ausführlichere Version
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. code:: yaml
 
-  publiccodeYmlVersion: "0.4"
-
+  publiccodeYmlVersion: "0"
+  
   name: Medusa
   applicationSuite: MegaProductivitySuite
   url: "https://example.com/italia/medusa.git"
@@ -62,85 +62,84 @@ Ausführlichere Version
   softwareVersion: "1.0"
   releaseDate: "2017-04-15"
   logo: img/logo.svg
-
+  
   platforms:
     - android
     - ios
-
+  
   categories:
     - content-management
     - office
-
+  
   usedBy:
     - Comune di Firenze
     - Comune di Roma
-
+  
   roadmap: "https://example.com/italia/medusa/roadmap"
-
+  
   developmentStatus: development
-
+  
   softwareType: "standalone/desktop"
-
+  
   intendedAudience:
     scope:
       - science-and-technology
     countries:
-      - it
-      - de
+      - IT
+      - DE
     unsupportedCountries:
-      - us
-
+      - US
+  
   description:
     en:
       localisedName: Medusa
       shortDescription: >
-            This description can have a maximum 150
-            characters long. We should not fill the
-            remaining space with "Lorem Ipsum". End
-
+        This description can have a maximum 150
+        characters long. We should not fill the
+        remaining space with "Lorem Ipsum". End
+  
       longDescription: >
-            Very long description of this software, also split
-            on multiple rows. You should note what the software
-            is and why one should need it.
-            It can also contain some basic Markdown.
-
+        Very long description of this software, also split
+        on multiple rows. You should note what the software
+        is and why one should need it.
+        It can also contain some basic Markdown.
+  
       documentation: "https://read.the.documentation/medusa/v1.0"
       apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
-
+  
       features:
-         - Very important feature
-         - Will run without a problem
-         - Has zero bugs
-         - Solves all the problems of the world
+        - Very important feature
+        - Will run without a problem
+        - Has zero bugs
+        - Solves all the problems of the world
       screenshots:
-         - img/sshot1.jpg
-         - img/sshot2.jpg
-         - img/sshot3.jpg
+        - img/sshot1.jpg
+        - img/sshot2.jpg
+        - img/sshot3.jpg
       videos:
-         - https://youtube.com/xxxxxxxx
+        - https://youtube.com/xxxxxxxx
       awards:
-         - 1st Price Software of the year
-
+        - 1st Price Software of the year
+  
   legal:
     license: AGPL-3.0-or-later
     mainCopyrightOwner: City of Chicago
-    repoOwner: City of Chicago
-
+  
   maintenance:
     type: "contract"
-
+  
     contractors:
       - name: "Fornitore Privato SPA"
         email: "dario.bianchi@fornitore.it"
         website: "https://privatecompany.com"
         until: "2019-01-01"
-
+  
     contacts:
       - name: Francesco Rossi
         email: "francesco.rossi@comune.reggioemilia.it"
         affiliation: Comune di Reggio Emilia
         phone: "+3923113215112"
-
+  
   localisation:
     localisationReady: true
     availableLanguages:
@@ -148,7 +147,7 @@ Ausführlichere Version
       - it
       - fr
       - de
-
+  
   dependsOn:
     open:
       - name: MySQL
@@ -165,21 +164,16 @@ Ausführlichere Version
     hardware:
       - name: NFC Reader
         optional: true
-
-  it:
+  
+  IT:
     countryExtensionVersion: "1.0"
-
-    conforme:
-      lineeGuidaDesign: true
-      modelloInteroperabilita: true
-      misureMinimeSicurezza: true
-      gdpr: true
-
+  
     piattaforme:
       spid: true
       cie: true
       anpr: true
       pagopa: true
-
-    riuso:
-      codiceIPA: c_h501
+  
+  organisation:
+    uri: urn:x-italian-pa:c_h501
+    name: Roma Capitale

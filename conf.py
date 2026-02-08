@@ -21,4 +21,5 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx.ext.doctest",
+    "sphinx_copybutton",
 ]
