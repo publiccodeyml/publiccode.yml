@@ -15,7 +15,6 @@ All other tools are community-maintained.
 
 * 🇩🇰 Denmark: [@zorp](https://github.com/zorp) for OS2 Offentlig Digitaliseringsfællesskab
 * 🇫🇷 France: [@bzg](https://github.com/bzg) for the Free Software unit at the Interministerial Digital Directorate
-* 🇩🇪 Germany: [@cknebel](https://github.com/cknebel) (publicplan GmbH)
 * 🇮🇹 Italy: [@dptdgi](https://github.com/dptdgi) for DTD (Presidenza del Consiglio dei Ministri)
 * 🇳🇱 The Netherlands: [@tomootes](https://github.com/tomootes) for developer.overheid.nl (Dutch Developer Portal)
 
@@ -27,14 +26,6 @@ should be part of a central entity managing software or technological innovation
 level.
 
 # Roles and duties
-
-### Chair ([@ruphy](https://github.com/ruphy))
-
-* Plans, organizes agenda and moderates meetings
-* Prepares and shares milestones and deadlines
-* Oversees the voting procedure
-* Is the ultimate responsible for the development of the project
-* Has administrative access on GitHub and other platforms
 
 ### Maintainer ([@bfabio](https://github.com/bfabio), [@sebbalex](https://github.com/sebbalex))
 
