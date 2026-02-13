@@ -15,8 +15,6 @@ All other tools are community-maintained.
 
 * 🇩🇰 Denmark: [@zorp](https://github.com/zorp) for OS2 Offentlig Digitaliseringsfællesskab
 * 🇫🇷 France: [@bzg](https://github.com/bzg) for the Free Software unit at the Interministerial Digital Directorate
-* 🇮🇱 Israel: [@ShimonShore](https://github.com/ShimonShore) (Israel Ministry of Science and
-  Technology)
 * 🇮🇹 Italy: [@dptdgi](https://github.com/dptdgi) for DTD (Presidenza del Consiglio dei Ministri)
 * 🇳🇱 The Netherlands: [@tomootes](https://github.com/tomootes) for developer.overheid.nl (Dutch Developer Portal)
 
