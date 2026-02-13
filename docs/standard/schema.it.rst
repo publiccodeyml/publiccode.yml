@@ -4,9 +4,7 @@ Italy
 -----
 
 All the keys listed below are specific for Italy and, as such, they must
-be inserted in a section named with the ``it`` code. Every Country is specified
-using a two letters lowercase (*deprecated*) or uppercase *country code* following
-the ISO 3166-1 alpha-2 standard.
+be inserted in a section named with the ``it`` code.
 
 
 Key ``countryExtensionVersion``
