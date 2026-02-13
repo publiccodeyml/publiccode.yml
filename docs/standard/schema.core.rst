@@ -579,11 +579,11 @@ Key ``legal/license``
 
 -  Type: string
 -  Presence: mandatory
--  Example: ``"AGPL-3.0-or-later"``
+-  Example: ``"AGPL-3.0-or-later"``, ``"EUPL-1.2 OR AGPL-3.0-or-later"``
 
 This string describes the license under which the software is
 distributed. The string must contain a valid SPDX expression, referring
-to one (or multiple) open-source license. Please refer to the `SPDX
+to one or multiple open-source licenses. Please refer to the `SPDX
 documentation <https://spdx.org/licenses/>`__ for further information.
 
 Key ``legal/mainCopyrightOwner``
