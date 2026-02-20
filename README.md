@@ -132,6 +132,66 @@ uv run sphinx-build docs/standard build -c .
 then open the relevant file in the build directory with a browser (e.g.,
 `build/index.html`) to explore the contents.
 
+### Tooling
+
+Tools and libraries that implement and support the publiccode.yml Standard.
+
+#### Core tools
+
+Core tools are developed alongside the publiccode.yml specification and provide
+its reference implementations and supporting components.
+
+- **[publiccode-parser-go](https://github.com/italia/publiccode-parser-go)**
+
+  Go parser and validator. Reference implementation of the specification.
+
+- **[publiccode-parser-php](https://github.com/bfabio/publiccode-parser-php)**
+
+  PHP library for parsing and validation using the reference implementation via FFI.
+
+- **[publiccode-crawler](https://github.com/italia/publiccode-crawler)**
+
+  Crawler to discover and collect descriptor files for catalogs.
+
+- **[software-catalog-api](https://github.com/italia/developers-italia-api)**
+
+  RESTful API powering software catalogs for public administrations, used to
+  store, query and expose all catalog data about FLOSS solutions.
+
+- **[publiccode-api-client](https://github.com/bfabio/publiccode-api-client)**
+
+  Convenience command-line client to query the catalog API. (*alpha*)
+
+- **[publiccode-parser-action](https://github.com/italia/publiccode-parser-action)**
+
+  GitHub Action for validation in GitHub pipelines.
+
+- **[publiccode-parser-gitlab-ci](https://github.com/italia/publiccode-parser-gitlab-ci)**
+
+  GitLab CI integration for validation
+
+- **[publiccode-validator-api](https://github.com/italia/publiccode-validator-api)**
+
+  Simple RESTful API for validating publiccode.yml files, returning errors and warnings.
+
+- **[JSON SChema on SchemaStore](https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/publiccode.json)**
+
+  JSON Schema definition mainly used by editors and IDEs for coarse validation
+  and autocompletion.
+
+#### Third-party tooling
+
+Maintained separately from the core tooling, but widely used in practice.
+
+- **[publiccode-editor](https://github.com/italia/publiccode-editor)**
+
+  User friendly editor and basic validator for publiccode.yml files (maintained
+  by Developers Italia, Italian Government).
+
+- **[publiccode-parser-orb](https://github.com/italia/publiccode-parser-orb)**
+
+  CircleCI Orb for validation in pipelines.
+
 ## License
 
 Licensed under the [CC0-1.0](LICENSE).
