@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <title>2. Country-Specific Sections</title>
+      <title>2. Country-specific sections</title>
     
           <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
@@ -93,7 +93,7 @@
         
           <li class="toctree-l1 current">
             
-              <a href="#" class="reference internal current">Country-Specific Sections</a>
+              <a href="#" class="reference internal current">Country-specific sections</a>
             
 
             
@@ -154,7 +154,7 @@
   <ul class="breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
     
-    <li><span class="section-number">2. </span>Country-Specific Sections</li>
+    <li><span class="section-number">2. </span>Country-specific sections</li>
   </ul>
   
 
@@ -174,33 +174,18 @@
           <div class="content" role="main" v-pre>
             
   <section id="country-specific-sections">
-<span id="country-section"></span><h1><span class="section-number">2. </span>Country-Specific Sections<a class="headerlink" href="#country-specific-sections" title="Link to this heading">¶</a></h1>
-<p>While the standard is structured to be meaningful on an international
-level, there are additional information that can be added that makes
-sense in specific countries, such as declaring compliance with local
-laws or regulations. The provided extension mechanism is the usage of
-country-specific sections.</p>
-<p>All country-specific sections live under a key named after two-letter
-lowercase (<em>deprecated</em>) or uppercase <a class="reference external" href="https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2 country
-codes</a>. For instance
-<code class="docutils literal notranslate"><span class="pre">spid</span></code> is a property for Italian software declaring whether the
-software is integrated with the Italian Public Identification System.</p>
-<p>If a software is compliant I will find:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">it</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">countryExtensionVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span>
-<span class="w">  </span><span class="nt">piattaforme</span><span class="p">:</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">spid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
-<p>Notice that country-specific keys within international sections
-are not allowed. Countries that want to extend the format should add a
-country-specific section instead.</p>
+<span id="country-section"></span><h1><span class="section-number">2. </span>Country-specific sections<a class="headerlink" href="#country-specific-sections" title="Link to this heading">¶</a></h1>
+<p>Country-specific sections allow including information relevant only within a
+given country, such as compliance with national regulations or integration with
+national platforms.</p>
+<p>Each section is identified by a two-letter ISO 3166-1 alpha-2 country code
+lowercase (<em>deprecated</em>) or uppercase <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2 country
+codes</a>.</p>
+<p>Currently, the only defined country-specific section is the Italian one (<code class="docutils literal notranslate"><span class="pre">it:</span></code>).</p>
 <section id="italy">
 <span id="italian-sections"></span><h2><span class="section-number">2.1. </span>Italy<a class="headerlink" href="#italy" title="Link to this heading">¶</a></h2>
 <p>All the keys listed below are specific for Italy and, as such, they must
-be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code. Every Country is specified
-using a two letters lowercase (<em>deprecated</em>) or uppercase <em>country code</em> following
-the ISO 3166-1 alpha-2 standard.</p>
+be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code.</p>
 <section id="key-countryextensionversion">
 <h3><span class="section-number">2.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Link to this heading">¶</a></h3>
 <ul class="simple">
