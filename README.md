@@ -132,11 +132,11 @@ uv run sphinx-build docs/standard build -c .
 then open the relevant file in the build directory with a browser (e.g.,
 `build/index.html`) to explore the contents.
 
-### Tooling
+## Tooling
 
 Tools and libraries that implement and support the publiccode.yml Standard.
 
-#### Core tools
+### Core tools
 
 Core tools are developed alongside the publiccode.yml specification and provide
 its reference implementations and supporting components.
@@ -179,7 +179,7 @@ its reference implementations and supporting components.
   JSON Schema definition mainly used by editors and IDEs for coarse validation
   and autocompletion.
 
-#### Third-party tooling
+### Third-party tooling
 
 Maintained separately from the core tooling, but widely used in practice.
 
