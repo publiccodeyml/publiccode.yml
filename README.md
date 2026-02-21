@@ -174,6 +174,11 @@ its reference implementations and supporting components.
 
   Simple RESTful API for validating publiccode.yml files, returning errors and warnings.
 
+- **[publiccode-issueopener](https://github.com/italia/publiccode-issueopener)**
+
+  Opens GitHub issues to repos in a software catalog with invalid publiccode.yml
+  files.
+
 - **[JSON SChema on SchemaStore](https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/publiccode.json)**
 
   JSON Schema definition mainly used by editors and IDEs for coarse validation
