@@ -11,8 +11,8 @@ Ist dies der Fall, wird dies folgendermaßen angegeben:
 
 .. code:: yaml
 
-   it:
-     countryExtensionVersion: "0.2"
+   IT:
+     countryExtensionVersion: "1.0"
      piattaforme:
       - spid: yes
 

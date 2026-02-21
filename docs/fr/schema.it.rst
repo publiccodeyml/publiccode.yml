@@ -4,7 +4,7 @@ Italy
 -----
 
 All the extensions listed below are specific for Italy and, as such, they must
-be inserted in a section named with the ``it`` code.
+be inserted in a section named with the ``IT`` code.
 
 Key ``countryExtensionVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
