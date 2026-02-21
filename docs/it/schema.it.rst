@@ -5,7 +5,7 @@ Italia
 
 Tutte le chiavi elencate qui di seguito sono specifiche per l'Italia e, di
 conseguenza, devono essere inserite in una sezione denominata con il codice
-``it``.
+``IT``.
 
 Chiave ``countryExtensionVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

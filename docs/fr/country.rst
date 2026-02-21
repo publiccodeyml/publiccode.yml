@@ -20,8 +20,8 @@ Si un logiciel est conforme, je trouverai :
 
 .. code:: yaml
 
-   it:
-     countryExtensionVersion: "0.2"
+   IT:
+     countryExtensionVersion: "1.0"
      piattaforme:
       - spid: yes
 
