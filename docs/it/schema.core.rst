@@ -135,9 +135,7 @@ Questa chiave indica il logo del software. Il valore può essere il percorso
 relativo al file a partire dalla root del repository, oppure una URL assoluta
 che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
 all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
-dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
-come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
-larghezza minima di 1000px.
+dovrebbe essere in formato vettoriale.
 
 Chiave ``monochromeLogo``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
