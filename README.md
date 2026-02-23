@@ -197,6 +197,8 @@ Maintained separately from the core tooling, but widely used in practice.
 
   CircleCI Orb for validation in pipelines.
 
+More tools can e.g. be found [by searching for the GitHub topic `publiccode`](https://github.com/topics/publiccode).
+
 ## License
 
 Licensed under the [CC0-1.0](LICENSE).
