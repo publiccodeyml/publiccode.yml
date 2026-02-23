@@ -179,7 +179,7 @@ its reference implementations and supporting components.
   Opens GitHub issues to repos in a software catalog with invalid publiccode.yml
   files.
 
-- **[JSON SChema on SchemaStore](https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/publiccode.json)**
+- **[JSON Schema on SchemaStore](https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/publiccode.json)**
 
   JSON Schema definition mainly used by editors and IDEs for coarse validation
   and autocompletion.
