@@ -123,9 +123,7 @@ Clé ``logo``
 -  Exemple: ``"img/logo.svg"``
 
 Cette clé contient le chemin du logo du logiciel. Les logos doivent être
-dans un format de fichier vectoriel ; les format raster sont uniquement
-acceptés en dernier recours. Dans ce cas, il s'agit de fichiers PNG
-transparents, d’une largeur minimale de 1000px. 
+dans un format de fichier vectoriel. 
 La valeur de la clé peut être le chemin relatif du fichier à partir de la
 racine du dépôt ou une URL absolue qui pointe vers la version brute du logo.
 Dans les deux cas, le fichier doit être situé dans le même dépôt que le

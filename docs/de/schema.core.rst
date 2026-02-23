@@ -121,8 +121,7 @@ Key ``logo``
 -  Example: ``"img/logo.svg"``
 
 This key contains the path to the logo of the software. Logos should be
-in vector format; raster formats are only allowed as a fallback. In this
-case, they should be transparent PNGs, minimum 1000px of width.
+in vector format.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
