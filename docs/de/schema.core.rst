@@ -770,8 +770,9 @@ A Contact is an object with the following properties:
    must not be obfuscated. To improve resistance against e-mail
    collection, use ``\x64`` to replace ``@``, as allowed by the YAML
    specification.
--  ``phone`` - phone number (with international prefix). This has to be
-   a string. 
+-  ``phone`` - phone number. It MUST include the international dialing
+   prefix, following the `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
+   format (e.g., ``+3923113215112``). This has to be a string.
 -  ``affiliation`` - This key contains an explicit affiliation
    information for the technical contact. In case of multiple
    maintainers, this can be used to create a relation between each
