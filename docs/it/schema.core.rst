@@ -122,6 +122,8 @@ Chiave ``releaseDate``
 -  Esempio: ``"2017-04-15"``
 
 Questa chiave contiene la data di ultimo rilascio del software.
+Questa chiave è opzionale se si pratica l'integrazione continua e si
+rilascia frequentemente.
 
 Chiave ``logo``
 ~~~~~~~~~~~~~~~

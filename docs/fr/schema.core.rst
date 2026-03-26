@@ -113,6 +113,8 @@ Clé ``releaseDate``
 -  Exemple: ``"2017-04-15"``
 
 Cette clé contient la date à laquelle la dernière version a été publiée.
+Cette clé est facultative si vous pratiquez l'intégration continue et
+que vous publiez souvent.
 
 Clé ``logo``
 ~~~~~~~~~~~~

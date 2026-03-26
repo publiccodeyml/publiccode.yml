@@ -111,6 +111,8 @@ Key ``releaseDate``
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
+This key is optional if you practice continuous integration and you're
+releasing often.
 
 Key ``logo``
 ~~~~~~~~~~~~
