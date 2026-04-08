@@ -811,10 +811,7 @@ A Contact is an object with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address of where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”. The e-mail address
-   must not be obfuscated. To improve resistance against e-mail
-   collection, use ``\x64`` to replace ``@``, as allowed by the YAML
-   specification.
+   or generic contact points like “info@acme.inc”.
 -  ``phone`` - phone number (with international prefix). This has to be
    a string. 
 -  ``affiliation`` - This key contains an explicit affiliation
@@ -850,10 +847,7 @@ A Contractor is an object with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address of where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”. The e-mail address
-   must not be obfuscated. To improve resistance against e-mail
-   collection, use ``\x64`` to replace ``@``, as allowed by the YAML
-   specification.
+   or generic contact points like “info@acme.inc”.
 -  ``website`` - This key points to the maintainer website. It can
    either point to the main institutional website, or to a more
    project-specific page or website.
