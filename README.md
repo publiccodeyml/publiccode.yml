@@ -132,7 +132,7 @@ uv run sphinx-build docs/standard build -c .
 then open the relevant file in the build directory with a browser (e.g.,
 `build/index.html`) to explore the contents.
 
-### Local development process with hot reloading
+#### Hot reloading
 
 `sphinx-autobuild` can be used to make use of hot reloading.
 
