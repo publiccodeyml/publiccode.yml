@@ -43,7 +43,6 @@ Table of contents
 
 .. toctree:: 
    :maxdepth: 2
-   :numbered:
 
    schema.core.rst
    country.rst
