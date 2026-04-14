@@ -26,7 +26,7 @@ level.
 
 # Roles and duties
 
-### Maintainer ([@bfabio](https://github.com/bfabio), [@sebbalex](https://github.com/sebbalex))
+### Maintainer ([@bfabio](https://github.com/bfabio))
 
 * Maintains the non-Standard side of repositories
 * Merges PR regarding the Standard after consensus by the Steering Committee
