@@ -127,8 +127,8 @@ Section ``riuso``
 This section contains a set of keys related to the publication of the software
 inside the reuse catalog of `Developers Italia <https://developers.italia.it>`__.
 
-Chiave ``riuso/codiceIPA`` (*deprecated*)
-'''''''''''''''''''''''''''''''''''''''''
+Key ``riuso/codiceIPA`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (iPA code) 
 -  Presence: mandatory if ``repoOwner`` is a Public Administration 
