@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+jobs:
+  vote-log-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: publiccodeyml/bot@main
+        with:
+          username: yaml-9000
+        env:
+          GITHUB_TOKEN: ${{ secrets.YAML_BOT_TOKEN }}
