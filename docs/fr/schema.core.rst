@@ -209,8 +209,8 @@ et aider à la constitution d'un catalogue des logiciels ouverts.
 Le vocabulaire contrôlé de la :ref:`categories-list` présente la liste
 des valeurs acceptées.
 
-Clé ``usedBy``
-~~~~~~~~~~~~~~
+Clé ``usedBy`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: array de chaînes de caractères
 -  Présence: facultative
