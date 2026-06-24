@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <title>2. Country-specific sections</title>
+      <title>Country-specific sections (deprecated)</title>
     
           <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
           <link rel="stylesheet" href="_static/theme.css " type="text/css" />
@@ -24,8 +24,8 @@
     
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="3. Forks and variants" href="forks.html" />
-  <link rel="prev" title="1. The Standard" href="schema.core.html" /> 
+  <link rel="next" title="Forks and variants" href="forks.html" />
+  <link rel="prev" title="The Standard" href="schema.core.html" /> 
   </head>
 
   <body>
@@ -34,11 +34,11 @@
 
 <header class="navbar">
     <div class="sidebar-button">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path>
+        <svg class="icon" xmlns="https://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path>
         </svg>
     </div>
     <a href="index.html" class="home-link">
-        <span class="site-name">publiccode.yml Standard (v0.5.0)</span>
+        <span class="site-name">publiccode.yml Standard (v0.7)</span>
     </a>
     <a href="https://github.com/publiccodeyml/publiccode.yml" style="float: right; margin-top: 1px;">
         <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true">
@@ -93,13 +93,13 @@
         
           <li class="toctree-l1 current">
             
-              <a href="#" class="reference internal current">Country-specific sections</a>
+              <a href="#" class="reference internal current">Country-specific sections (deprecated)</a>
             
 
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#italy" class="reference internal">Italy</a></li>
+                  <li class="toctree-l2"><a href="#italy-deprecated" class="reference internal">Italy (deprecated)</a></li>
                 
               </ul>
             
@@ -135,6 +135,15 @@
         
           <li class="toctree-l1 ">
             
+              <a href="aliases-list.html" class="reference internal ">List of aliases</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
               <a href="example.html" class="reference internal ">Examples</a>
             
 
@@ -154,18 +163,18 @@
   <ul class="breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
     
-    <li><span class="section-number">2. </span>Country-specific sections</li>
+    <li>Country-specific sections (<em>deprecated</em>)</li>
   </ul>
   
 
   <ul class="page-nav">
   <li class="prev">
     <a href="schema.core.html"
-       title="previous chapter">← <span class="section-number">1. </span>The Standard</a>
+       title="previous chapter">← The Standard</a>
   </li>
   <li class="next">
     <a href="forks.html"
-       title="next chapter"><span class="section-number">3. </span>Forks and variants →</a>
+       title="next chapter">Forks and variants →</a>
   </li>
 </ul>
   
@@ -173,36 +182,47 @@
 <hr>
           <div class="content" role="main" v-pre>
             
-  <section id="country-specific-sections">
-<span id="country-section"></span><h1><span class="section-number">2. </span>Country-specific sections<a class="headerlink" href="#country-specific-sections" title="Link to this heading">¶</a></h1>
+  <section id="country-specific-sections-deprecated">
+<span id="country-section"></span><h1>Country-specific sections (<em>deprecated</em>)<a class="headerlink" href="#country-specific-sections-deprecated" title="Link to this heading">¶</a></h1>
+<p>Country-specific sections are deprecated and will be removed in
+publiccode.yml 1.0. The use cases they covered are now expressed with
+generic keys: declare compliance with national regulations or
+integration with national platforms through the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key, and
+reference the publishing administration through the <code class="docutils literal notranslate"><span class="pre">organisation</span></code> key.</p>
 <p>Country-specific sections allow including information relevant only within a
 given country, such as compliance with national regulations or integration with
 national platforms.</p>
 <p>Each section is identified by a two-letter ISO 3166-1 alpha-2 country code
 lowercase (<em>deprecated</em>) or uppercase <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2 country
 codes</a>.</p>
-<p>Currently, the only defined country-specific section is the Italian one (<code class="docutils literal notranslate"><span class="pre">it:</span></code>).</p>
-<section id="italy">
-<span id="italian-sections"></span><h2><span class="section-number">2.1. </span>Italy<a class="headerlink" href="#italy" title="Link to this heading">¶</a></h2>
+<p>Currently, the only defined country-specific section is the Italian one (<code class="docutils literal notranslate"><span class="pre">IT:</span></code>).</p>
+<section id="italy-deprecated">
+<span id="italian-sections"></span><h2>Italy (<em>deprecated</em>)<a class="headerlink" href="#italy-deprecated" title="Link to this heading">¶</a></h2>
+<p>The entire Italian country-specific section is deprecated and will be
+removed in publiccode.yml 1.0. Use the generic <code class="docutils literal notranslate"><span class="pre">supports</span></code> key for
+compliance with national regulations and integration with national
+platforms, and the <code class="docutils literal notranslate"><span class="pre">organisation</span></code> key to reference the publishing
+administration.</p>
 <p>All the keys listed below are specific for Italy and, as such, they must
-be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">it</span></code> code.</p>
-<section id="key-countryextensionversion">
-<h3><span class="section-number">2.1.1. </span>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code><a class="headerlink" href="#key-countryextensionversion" title="Link to this heading">¶</a></h3>
+be inserted in a section named with the <code class="docutils literal notranslate"><span class="pre">IT</span></code> code.</p>
+<section id="key-countryextensionversion-deprecated">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">countryExtensionVersion</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-countryextensionversion-deprecated" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Type: string</p></li>
 <li><p>Presence: mandatory</p></li>
 <li><p>Value: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code></p></li>
 </ul>
 <p>This key <strong>MUST</strong> always be set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
+<p>This key is deprecated together with the rest of the Italian section.</p>
 </section>
 <section id="key-conforme-deprecated">
-<h3><span class="section-number">2.1.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-deprecated" title="Link to this heading">¶</a></h3>
+<h3>Key <code class="docutils literal notranslate"><span class="pre">conforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-deprecated" title="Link to this heading">¶</a></h3>
 <p>This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.</p>
 <section id="key-conforme-lineeguidadesign-deprecated">
-<h4><span class="section-number">2.1.2.1. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-lineeguidadesign-deprecated" title="Link to this heading">¶</a></h4>
+<h4>Key <code class="docutils literal notranslate"><span class="pre">conforme/lineeGuidaDesign</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-lineeguidadesign-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -214,7 +234,7 @@ design</a> (Italian language).</p>
 <p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
 <section id="key-conforme-modellointeroperabilita-deprecated">
-<h4><span class="section-number">2.1.2.2. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-modellointeroperabilita-deprecated" title="Link to this heading">¶</a></h4>
+<h4>Key <code class="docutils literal notranslate"><span class="pre">conforme/modelloInteroperabilita</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-modellointeroperabilita-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -227,7 +247,7 @@ CAD</a> (Italian language).</p>
 <p>Don’t use this deprecated key, those guidelines are no longer current.</p>
 </section>
 <section id="key-conforme-misureminimesicurezza-deprecated">
-<h4><span class="section-number">2.1.2.3. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-misureminimesicurezza-deprecated" title="Link to this heading">¶</a></h4>
+<h4>Key <code class="docutils literal notranslate"><span class="pre">conforme/misureMinimeSicurezza</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-misureminimesicurezza-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -237,18 +257,19 @@ minime di sicurezza ICT per le Pubbliche
 amministrazioni</a> (Italian language).</p>
 </section>
 <section id="key-conforme-gdpr-deprecated">
-<h4><span class="section-number">2.1.2.4. </span>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-gdpr-deprecated" title="Link to this heading">¶</a></h4>
+<h4>Key <code class="docutils literal notranslate"><span class="pre">conforme/gdpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-conforme-gdpr-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software respects the GDPR.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:gdpr</span></code> instead.</p>
 </section>
 </section>
-<section id="section-piattaforme">
-<h3><span class="section-number">2.1.3. </span>Section <code class="docutils literal notranslate"><span class="pre">piattaforme</span></code><a class="headerlink" href="#section-piattaforme" title="Link to this heading">¶</a></h3>
-<section id="key-piattaforme-spid">
-<h4><span class="section-number">2.1.3.1. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/spid</span></code><a class="headerlink" href="#key-piattaforme-spid" title="Link to this heading">¶</a></h4>
+<section id="section-piattaforme-deprecated">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">piattaforme</span></code> (<em>deprecated</em>)<a class="headerlink" href="#section-piattaforme-deprecated" title="Link to this heading">¶</a></h3>
+<section id="key-piattaforme-spid-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/spid</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-piattaforme-spid-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
@@ -256,47 +277,52 @@ amministrazioni</a> (Italian language).</p>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with <a class="reference external" href="https://developers.italia.it/it/spid">SPID
 - il Sistema Pubblico di Identità
 Digitale</a>.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:spid</span></code> instead.</p>
 </section>
-<section id="key-piattaforme-cie">
-<h4><span class="section-number">2.1.3.2. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/cie</span></code><a class="headerlink" href="#key-piattaforme-cie" title="Link to this heading">¶</a></h4>
+<section id="key-piattaforme-cie-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/cie</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-piattaforme-cie-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with the Italian
 electronic ID card (<code class="docutils literal notranslate"><span class="pre">Carta</span> <span class="pre">di</span> <span class="pre">Identità</span> <span class="pre">Elettronica</span></code>).</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:cie</span></code> instead.</p>
 </section>
-<section id="key-piattaforme-anpr">
-<h4><span class="section-number">2.1.3.3. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/anpr</span></code><a class="headerlink" href="#key-piattaforme-anpr" title="Link to this heading">¶</a></h4>
+<section id="key-piattaforme-anpr-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/anpr</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-piattaforme-anpr-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with ANPR.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:anpr</span></code> instead.</p>
 </section>
-<section id="key-piattafome-pagopa">
-<h4><span class="section-number">2.1.3.4. </span>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code><a class="headerlink" href="#key-piattafome-pagopa" title="Link to this heading">¶</a></h4>
+<section id="key-piattafome-pagopa-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">piattafome/pagopa</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-piattafome-pagopa-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with pagoPA.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:pagopa</span></code> instead.</p>
 </section>
-<section id="key-piattaforme-io">
-<h4><span class="section-number">2.1.3.5. </span>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/io</span></code><a class="headerlink" href="#key-piattaforme-io" title="Link to this heading">¶</a></h4>
+<section id="key-piattaforme-io-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">piattaforme/io</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-piattaforme-io-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: boolean</p></li>
 <li><p>Presence: optional</p></li>
 </ul>
 <p>If present and set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software interfaces with <a class="reference external" href="https://io.italia.it/">IO - the public services app</a>.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">supports</span></code> key with <code class="docutils literal notranslate"><span class="pre">alias:io</span></code> instead.</p>
 </section>
 </section>
-<section id="section-riuso">
-<h3><span class="section-number">2.1.4. </span>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code><a class="headerlink" href="#section-riuso" title="Link to this heading">¶</a></h3>
+<section id="section-riuso-deprecated">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">riuso</span></code> (<em>deprecated</em>)<a class="headerlink" href="#section-riuso-deprecated" title="Link to this heading">¶</a></h3>
 <p>This section contains a set of keys related to the publication of the software
 inside the reuse catalog of <a class="reference external" href="https://developers.italia.it">Developers Italia</a>.</p>
-<section id="chiave-riuso-codiceipa-deprecated">
-<h4><span class="section-number">2.1.4.1. </span>Chiave <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code> (<em>deprecated</em>)<a class="headerlink" href="#chiave-riuso-codiceipa-deprecated" title="Link to this heading">¶</a></h4>
+<section id="key-riuso-codiceipa-deprecated">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">riuso/codiceIPA</span></code> (<em>deprecated</em>)<a class="headerlink" href="#key-riuso-codiceipa-deprecated" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Type: string (iPA code)</p></li>
 <li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">repoOwner</span></code> is a Public Administration</p></li>

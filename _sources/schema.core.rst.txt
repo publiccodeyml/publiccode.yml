@@ -123,9 +123,8 @@ Key ``logo``
 -  Acceptable formats: SVG, SVGZ, PNG
 -  Example: ``"img/logo.svg"``
 
-This key contains the path to the logo of the software. Logos should be
-in vector format; raster formats are only allowed as a fallback. In this
-case, they should be transparent PNGs, minimum 1000px of width.
+This key contains the path to the logo of the software. Logos SHOULD be
+in vector format.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
@@ -274,25 +273,57 @@ Key ``softwareType``
 
 The keys are:
 
--  ``standalone/mobile`` - The software is a standalone, self-contained
-   The software is a native mobile app.
+-  ``standalone/mobile`` - The software is a standalone application, typically
+  installed and run on a mobile operating system.
 -  ``standalone/iot`` - The software is suitable for an IoT context.
 -  ``standalone/desktop`` - The software is typically installed and run in a  
    a desktop operating system environment.
--  ``standalone/web`` - The software represents a web application usable by
-   means of a browser. 
--  ``standalone/backend`` - The software is a backend application.
--  ``standalone/other`` - The software has a different nature from the once
+-  ``standalone/web`` - The software is a web application that runs on a server
+  and is accessible through a web browser.
+-  ``standalone/backend`` - The software is a backend application that provides
+  interfaces (e.g., APIs) for other services. Typically it does not provide
+  direct user interfaces.
+-  ``standalone/other`` - The software has a different nature from the ones 
    listed above.  
 -  ``addon`` - The software is an addon, such as a plugin or a
    theme, for a more complex software (e.g. a CMS or an office suite).
--  ``library`` - The software contains a library or an SDK to make it
-   easier to third party developers to create new products.
+-  ``library`` - The software is a library or SDK intended to be used 
+   by developers in other software projects. 
 -  ``configurationFiles`` - The software does not contain executable
    script but a set of configuration files. They may document how to
    obtain a certain deployment. They could be in the form of plain
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
+
+Key ``supports``
+~~~~~~~~~~~~~~~~
+
+-  Type: array of objects
+-  Presence: optional
+
+A list of standards, regulations, frameworks or systems that the
+software supports or complies with.
+
+Each item is an object with a single property:
+
+-  ``id`` - **mandatory** - an identifier for the supported standard,
+   regulation, framework or system. It is either an alias in
+   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
+   :ref:`list of aliases <aliases-list>`, or any other valid URI (URL or
+   URN) referencing the resource directly.
+
+   An ``alias:`` value MUST exist in the
+   :ref:`list of aliases <aliases-list>`. An unknown alias is an error.
+   Any other value MUST be a syntactically valid URI. A value that is
+   well formed but not otherwise known is accepted as is.
+
+Example:
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
 
 Section ``organisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -810,10 +841,7 @@ A Contact is an object with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address of where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”. The e-mail address
-   must not be obfuscated. To improve resistance against e-mail
-   collection, use ``\x64`` to replace ``@``, as allowed by the YAML
-   specification.
+   or generic contact points like “info@acme.inc”.
 -  ``phone`` - phone number (with international prefix). This has to be
    a string. 
 -  ``affiliation`` - This key contains an explicit affiliation
@@ -849,10 +877,7 @@ A Contractor is an object with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address of where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”. The e-mail address
-   must not be obfuscated. To improve resistance against e-mail
-   collection, use ``\x64`` to replace ``@``, as allowed by the YAML
-   specification.
+   or generic contact points like “info@acme.inc”.
 -  ``website`` - This key points to the maintainer website. It can
    either point to the main institutional website, or to a more
    project-specific page or website.
