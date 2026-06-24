@@ -295,6 +295,36 @@ The keys are:
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
 
+Key ``supports``
+~~~~~~~~~~~~~~~~
+
+-  Type: array of objects
+-  Presence: optional
+
+A list of standards, regulations, frameworks or systems that the
+software supports or complies with.
+
+Each item is an object with a single property:
+
+-  ``id`` - **mandatory** - an identifier for the supported standard,
+   regulation, framework or system. It is either an alias in
+   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
+   :ref:`list of aliases <aliases-list>`, or any other valid URI (URL or
+   URN) referencing the resource directly.
+
+   An ``alias:`` value MUST exist in the
+   :ref:`list of aliases <aliases-list>`. An unknown alias is an error.
+   Any other value MUST be a syntactically valid URI. A value that is
+   well formed but not otherwise known is accepted as is.
+
+Example:
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
 Section ``organisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
