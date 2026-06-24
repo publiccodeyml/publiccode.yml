@@ -130,6 +130,52 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
+Key ``monochromeLogo`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Type: string (path to file)
+-  Presence: optional
+-  Acceptable formats: SVG, SVGZ, PNG
+-  Example: ``"img/logo-mono.svg"``
+
+A monochromatic (black) logo. The logo should be in vector format;
+raster formats are only allowed as a fallback. In this case, they should
+be transparent PNGs, minimum 1000px of width.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the logo in raw
+version. In both cases, the file must reside inside the same repository where
+the ``publiccode.yml`` file is stored.
+
+Key ``inputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Type: array of enumerated strings
+-  Presence: optional
+-  Values: as per RFC 6838
+-  Example: ``"text/plain"``
+
+A list of Media Types (MIME Types) as mandated in `RFC
+6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
+handle as input.
+
+In case the software does not support any input, you can skip this field
+or use ``application/x.empty``.
+
+Key ``outputTypes`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Type: array of enumerated strings
+-  Presence: optional
+-  Values: as per RFC 6838
+-  Example: ``"text/plain"``
+
+A list of Media Types (MIME Types) as mandated in `RFC
+6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
+handle as output.
+
+In case the software does not support any output, you can skip this
+field or use ``application/x.empty``.
+
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
 
@@ -329,8 +375,8 @@ Key ``intendedAudience/countries``
 
 This key explicitly includes certain countries in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using uppercase
-ISO 3166-1 alpha-2 two-letter country codes.
+technologies or laws. All countries are specified using lowercase (*deprecated*)
+or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/unsupportedCountries``
 '''''''''''''''''''''''''''''''''''''''''''''
@@ -341,7 +387,7 @@ Key ``intendedAudience/unsupportedCountries``
 This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
-uppercase ISO 3166-1 alpha-2 two-letter country codes.
+lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
@@ -395,6 +441,19 @@ It contains the (short) public name of the product. It should be the
 name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
+
+Key ``description/[lang]/genericName`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+-  Type: string (max 35 chars)
+-  Presence: optional
+-  Example: ``"Text Editor"``
+
+This key is the “Generic name”, which refers to the specific category to
+which the software belongs. You can usually find the generic name in the
+presentation of the software, when you write: “Software xxx is a yyy”.
+Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
+“Chat” and so on… The generic name can be up to 35 characters long.
 
 Key ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
@@ -574,7 +633,36 @@ sentence. It is also possible to informally refer to a community of
 group of people like “Linus Torvalds and all Linux contributors”.
 
 In case it is not possible to name a main copyright owner, it is
-possible to omit this key.
+possible to omit this key; in those cases, if the repo has a authors
+file, you can point to it through ``legal/authorsFile``.
+
+Key ``legal/repoOwner`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''
+
+-  Type: string
+-  Presence: optional
+-  Example: ``"City of Amsterdam"``
+
+This string describes the entity that owns this repository; this might
+or might not be the same entity who owns the copyright on the code
+itself. For instance, in case of a fork of the original software, the
+``repoOwner`` is probably different from the ``mainCopyrightOwner``.
+
+This key is deprecated, use ``organisation/name`` instead.
+
+Key ``legal/authorsFile`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''
+
+-  Type: string (path to file)
+-  Presence: optional
+-  Example: ``"doc/AUTHORS.txt"``
+
+Some open-source software adopt a convention of identify the copyright
+holders through a file that lists all the entities that own the
+copyright. This is common in projects strongly backed by a community
+where there are many external contributors and no clear single/main
+copyright owner. In such cases, this key can be used to refer to the
+authors file, using a path relative to the root of the repository.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -803,4 +891,5 @@ format though, so not the full ISO8601 is allowed for the date keys.
 
 Encoding
 ~~~~~~~~
-`publiccode.yml` **MUST** be a UTF-8 encoded and **MUST** be a YAML 1.2 document.
+`publiccode.yml` **MUST** be a UTF-8 encoded and **SHOULD** be a YAML 1.2 document,
+using YAML 1.1 is *deprecated*.
