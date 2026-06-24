@@ -865,7 +865,7 @@ A Contact is a mapping with the following properties:
    contact. It must be an email address where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
    or generic contact points like “info@acme.inc”.
--  ``phone`` - phone number. It SHOULD include the international
+-  ``phone`` - phone number. It MUST include the international
    prefix, following the `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
    format (e.g. ``+3923113215112``). This has to be a string.
 -  ``affiliation`` - This key contains an explicit affiliation
