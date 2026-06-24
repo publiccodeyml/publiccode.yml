@@ -11,19 +11,6 @@
 
 <br />
 
- <!-- Badges -->
-<div align="center">
-  <a href="https://github.com/publiccodeyml/publiccode.yml/releases">
-    <img alt="Latest release" src="https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic">
-  </a>
-  <a href="https://developersitalia.slack.com/messages/CAM3F785T">
-    <img alt="Join the #publiccode channel" src="https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg">
-  </a>
-  <a href="https://slack.developers.italia.it/">
-    <img alt="Get invited" src="https://slack.developers.italia.it/badge.svg">
-  </a>
-</div>
-
 <div align="center">
   <h3>
     <a href="https://yml.publiccode.tools">Website</a>
@@ -102,9 +89,9 @@ directory of projects on GitHub, either by using the search frontend or the API.
 
 ## Versioning
 
-**Latest release:** [![GitHub release](https://img.shields.io/github/release/publiccodeyml/publiccode.yml.svg?style=plastic)](https://github.com/publiccodeyml/publiccode.yml/releases) [See all versions](https://github.com/publiccodeyml/publiccode.yml/releases)
-
 This project follows the [Semantic Versioning](https://semver.org/).
+
+[See all versions](https://github.com/publiccodeyml/publiccode.yml/releases)
 
 ## Contributing
 
