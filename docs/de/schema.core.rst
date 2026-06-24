@@ -767,8 +767,9 @@ A Contact is an object with the following properties:
    contact. It must be an email address of where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
    or generic contact points like “info@acme.inc”.
--  ``phone`` - phone number (with international prefix). This has to be
-   a string. 
+-  ``phone`` - phone number. It MUST include the international dialing
+   prefix, following the `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
+   format (e.g., ``+3923113215112``). This has to be a string.
 -  ``affiliation`` - This key contains an explicit affiliation
    information for the technical contact. In case of multiple
    maintainers, this can be used to create a relation between each
