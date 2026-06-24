@@ -27,8 +27,6 @@ Gültige Tags
 
 - foreign-affairs
 
-- government (*veraltet*)
-
 - healthcare
 
 - infrastructures

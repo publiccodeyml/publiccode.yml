@@ -19,7 +19,6 @@ Tags valides
 - environment
 - finance-and-economic-development
 - foreign-affairs
-- government (*déprécié*)
 - healthcare
 - infrastructures
 - justice
