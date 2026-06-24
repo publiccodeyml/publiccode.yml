@@ -855,7 +855,7 @@ Ein Kontakt ist ein Mapping mit den folgenden Eigenschaften:
    technische Kontakt direkt erreichbar ist. Tragen Sie hier KEINE
    Mailinglisten oder allgemeinen Kontaktadressen wie „info@acme.inc“
    ein.
--  ``phone`` - Telefonnummer. Sie SOLLTE die internationale Vorwahl
+-  ``phone`` - Telefonnummer. Sie MUSS die internationale Vorwahl
    enthalten und dem Format
    `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ folgen (z. B.
    ``+3923113215112``). Der Wert muss eine Zeichenkette sein.
