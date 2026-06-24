@@ -176,18 +176,16 @@ handle as output.
 In case the software does not support any output, you can skip this
 field or use ``application/x.empty``.
 
-Key ``platforms``
+Key ``clientPlatforms``
 ~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string or array of strings
 -  Presence: mandatory
--  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
-   ``android``. Human readable values outside this list are allowed.
--  Example: ``web``
+-  Values: ``browser``, ``macos - intel``, ``macos - arm``, ``windows``, ``unix``,
+   ``mobile - android``, ``mobile - ios``. Human readable values outside this list are allowed.
+-  Example: ``browser``
 
-This key specifies which platform the software runs on. It is meant to
-describe the platforms that users will use to access and operate the
-software, rather than the platform the software itself runs on.
+This key specifies the supported client platforms to access this software.
 
 Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
