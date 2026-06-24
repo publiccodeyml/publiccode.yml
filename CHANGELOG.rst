@@ -3,6 +3,26 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+v0.7.0
+------
+
+Added
+~~~~~
+
+* Add the `supports` key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/318
+
+Changed
+~~~~~~~
+
+* Deprecate the country specific sections, including the Italian one, in favor of `supports` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/318
+
+v0.6.0
+------
+
+No changes to the standard itself. This release only contains
+procedural and tooling changes (governance, CI, dependencies and
+documentation infrastructure).
+
 v0.5.0
 ------
 
