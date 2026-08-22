@@ -274,21 +274,21 @@ Key ``softwareType``
 The keys are:
 
 -  ``standalone/mobile`` - The software is a standalone application, typically
-  installed and run on a mobile operating system.
+   installed and run on a mobile operating system.
 -  ``standalone/iot`` - The software is suitable for an IoT context.
--  ``standalone/desktop`` - The software is typically installed and run in a  
+-  ``standalone/desktop`` - The software is typically installed and run in
    a desktop operating system environment.
 -  ``standalone/web`` - The software is a web application that runs on a server
-  and is accessible through a web browser.
+   and is accessible through a web browser.
 -  ``standalone/backend`` - The software is a backend application that provides
-  interfaces (e.g., APIs) for other services. Typically it does not provide
-  direct user interfaces.
--  ``standalone/other`` - The software has a different nature from the ones 
-   listed above.  
+   interfaces (e.g., APIs) for other services. Typically it does not provide
+   direct user interfaces.
+-  ``standalone/other`` - The software has a different nature from the ones
+   listed above.
 -  ``addon`` - The software is an addon, such as a plugin or a
    theme, for a more complex software (e.g. a CMS or an office suite).
--  ``library`` - The software is a library or SDK intended to be used 
-   by developers in other software projects. 
+-  ``library`` - The software is a library or SDK intended to be used
+   by developers in other software projects.
 -  ``configurationFiles`` - The software does not contain executable
    script but a set of configuration files. They may document how to
    obtain a certain deployment. They could be in the form of plain
