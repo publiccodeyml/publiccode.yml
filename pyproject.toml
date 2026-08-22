@@ -8,5 +8,6 @@ dependencies = [
     "sphinx==8.2.3",
     "sphinx-autobuild>=2025.8.25",
     "sphinx-copybutton>=0.5.2",
+    "sphinx-polyversion>=2.0.0",
     "sphinx-press-theme==0.9.1",
 ]

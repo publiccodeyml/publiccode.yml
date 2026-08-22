@@ -1,0 +1,88 @@
+{%- extends "!page.html" %}
+
+{#- `versions`, `current` and `latest` come from poly.py through
+    html_context. A plain sphinx-build leaves them undefined and this
+    template adds nothing. The style and the script live in the <head>
+    because the theme's Vue app re-renders the whole body. -#}
+
+{% block extrahead %}
+{{ super() }}
+{% if versions is defined and versions %}
+<style>
+  .version-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 0 0 16px 0;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .version-switcher label {
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .version-switcher select {
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 0.95em;
+    background: inherit;
+    color: inherit;
+  }
+  .version-banner {
+    margin: 0 0 16px 0 !important;
+  }
+</style>
+<script>
+  // Same page in the chosen version when it exists there, its index otherwise.
+  function switchVersion(select) {
+    var index = select.value;
+    var page = index + select.dataset.page;
+    fetch(page, { method: "HEAD" })
+      .then(function (response) {
+        window.location.href = response.ok ? page + window.location.hash : index;
+      })
+      .catch(function () {
+        window.location.href = index;
+      });
+  }
+</script>
+{% endif %}
+{% endblock %}
+
+{% block body_header %}
+{% if versions is defined and versions %}
+{#- Pages live one level below the site root, inside their version directory -#}
+{% set prefix = '../' * (pagename.count('/') + 1) %}
+<div class="version-switcher">
+  <label for="version-select">Version:</label>
+  <select id="version-select" data-page="{{ pagename }}.html" onchange="switchVersion(this)">
+    {% for v in versions %}
+    <option value="{{ prefix }}{{ v.dir }}/"{% if v.dir == current.dir %} selected{% endif %}>
+      {{- v.name }}{% if v.prerelease %} (pre-release){% elif v.latest %} (latest){% endif -%}
+    </option>
+    {% endfor %}
+  </select>
+</div>
+
+{% if current.prerelease %}
+<div class="admonition note version-banner">
+  <p class="admonition-title">Pre-release</p>
+  <p>You are viewing <strong>{{ current.name }}</strong>, a draft of the next
+  version of the Standard that can still change.
+  {%- if latest %} The latest released version is
+  <a href="{{ prefix }}{{ latest.dir }}/">{{ latest.name }}</a>.{% endif %}</p>
+</div>
+{% elif latest and current.dir != latest.dir %}
+<div class="admonition warning version-banner">
+  <p class="admonition-title">Outdated version</p>
+  <p>You are viewing <strong>{{ current.name }}</strong>. The latest version is
+  <a href="{{ prefix }}{{ latest.dir }}/">{{ latest.name }}</a>.</p>
+</div>
+{% endif %}
+{% endif %}
+{{ super() }}
+{% endblock %}

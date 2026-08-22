@@ -12,5 +12,8 @@ Thumbs.db
 # Swap files
 *.swp
 
+# Python
+__pycache__/
+
 # Sphinx
 build

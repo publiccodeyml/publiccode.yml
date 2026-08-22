@@ -182,6 +182,7 @@ dependencies = [
     { name = "sphinx" },
     { name = "sphinx-autobuild" },
     { name = "sphinx-copybutton" },
+    { name = "sphinx-polyversion" },
     { name = "sphinx-press-theme" },
 ]
 
@@ -190,6 +191,7 @@ requires-dist = [
     { name = "sphinx", specifier = "==8.2.3" },
     { name = "sphinx-autobuild", specifier = ">=2025.8.25" },
     { name = "sphinx-copybutton", specifier = ">=0.5.2" },
+    { name = "sphinx-polyversion", specifier = ">=2.0.0" },
     { name = "sphinx-press-theme", specifier = "==0.9.1" },
 ]
 
@@ -290,6 +292,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/fc/2b/a964715e7f5295f77509e59309959f4125122d648f86b4fe7d70ca1d882c/sphinx-copybutton-0.5.2.tar.gz", hash = "sha256:4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd", size = 23039, upload-time = "2023-04-14T08:10:22.998Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9e/48/1ea60e74949eecb12cdd6ac43987f9fd331156388dcc2319b45e2ebb81bf/sphinx_copybutton-0.5.2-py3-none-any.whl", hash = "sha256:fb543fd386d917746c9a2c50360c7905b605726b9355cd26e9974857afeae06e", size = 13343, upload-time = "2023-04-14T08:10:20.844Z" },
+]
+
+[[package]]
+name = "sphinx-polyversion"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/01/7755fc4b01ff281df937f6563c190b55313a14e9b1b5ac960003933f0793/sphinx_polyversion-2.0.0.tar.gz", hash = "sha256:ce5d15bbf5d2003aaec9e25c1646ec4f8a91cd55dac89df60ff17bd15630f926", size = 32265, upload-time = "2025-09-25T15:15:13.035Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/13/ac/88c719ec04351cd1d56c5faab18e6183b3d82eb5c64a10284feeaadb6ff1/sphinx_polyversion-2.0.0-py3-none-any.whl", hash = "sha256:5455e8a5560d587a0401009196612c98b067138e69556891eb9b8edc547e1327", size = 36628, upload-time = "2025-09-25T15:15:11.939Z" },
 ]
 
 [[package]]

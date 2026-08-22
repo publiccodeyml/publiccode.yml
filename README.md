@@ -109,8 +109,8 @@ on GitHub Pages.
 
 ### Local development process
 
-`sphinx-build` can be used to compile all source file to static html files. Run
-this command to generate the website:
+`sphinx-build` can be used to compile all source files of the current
+checkout to static html files. Run this command to generate the website:
 
 ```console
 uv run sphinx-build docs/standard build -c .
@@ -124,7 +124,27 @@ then open the relevant file in the build directory with a browser (e.g.,
 `sphinx-autobuild` can be used to make use of hot reloading.
 
 ```console
-sphinx-autobuild docs build
+uv run sphinx-autobuild docs/standard build -c .
+```
+
+#### All the versions
+
+The published website puts every version line of the Standard side by
+side, one directory per major version (`/v0/`, `/v1/`, ...) with a
+version switcher on each page. Each line is built from its branch
+(`v0.7`, `1.0-rc`, ...) using the `conf.py` and templates of the current
+checkout, see `poly.py`. The branches must exist locally (e.g.
+`git branch v0.7 origin/v0.7`), then:
+
+```console
+uv run sphinx-polyversion poly.py build/html
+```
+
+To preview the switcher on the current checkout alone, without building
+every branch:
+
+```console
+uv run sphinx-polyversion poly.py build/html -l
 ```
 
 ## Tooling

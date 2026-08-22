@@ -3,14 +3,27 @@ name: publish
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
+      - "v[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+-rc"
     tags:
       - "*"
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      # The toolchain (poly.py, conf.py, templates) always comes from main,
+      # the content of each version from its branch.
       - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v7
         with:
           python-version-file: "pyproject.toml"
@@ -20,11 +33,19 @@ jobs:
           version: "0.9.7"
           enable-cache: true
 
-      - run: uv run sphinx-build docs/standard build -c .
-      - run: echo yml.publiccode.tools > build/CNAME
+      # sphinx-polyversion only looks at local branches
+      - name: Create the version branches
+        run: |
+          for ref in $(git for-each-ref --format='%(refname:lstrip=3)' 'refs/remotes/origin/v[0-9]*' 'refs/remotes/origin/[0-9]*-rc'); do
+            git branch "$ref" "origin/$ref"
+          done
+          git branch --list
+
+      - run: uv run sphinx-polyversion poly.py build/html -vv
+      - run: echo yml.publiccode.tools > build/html/CNAME
 
       - name: Publish on GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./build/html
