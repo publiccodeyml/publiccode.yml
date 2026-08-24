@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>The Standard</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Country-specific sections" href="country.html" />
+  <link rel="prev" title="publiccode.yml" href="index.html" />
+ 
+
+<style>
+  .version-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 0 0 16px 0;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .version-switcher label {
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .version-switcher select {
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 0.95em;
+    background: inherit;
+    color: inherit;
+  }
+  .version-banner {
+    margin: 0 0 16px 0 !important;
+  }
+</style>
+<script>
+  // Same page in the chosen version when it exists there, its index otherwise.
+  function switchVersion(select) {
+    var index = select.value;
+    var page = index + select.dataset.page;
+    fetch(page, { method: "HEAD" })
+      .then(function (response) {
+        window.location.href = response.ok ? page + window.location.hash : index;
+      })
+      .catch(function () {
+        window.location.href = index;
+      });
+  }
+</script>
+
+
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses">
+
+<header class="navbar">
+    <div class="sidebar-button">
+        <svg class="icon" xmlns="https://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path>
+        </svg>
+    </div>
+    <a href="index.html" class="home-link">
+        <span class="site-name">publiccode.yml Standard</span>
+    </a>
+    <a href="https://github.com/publiccodeyml/publiccode.yml" style="float: right; margin-top: 1px;">
+        <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true">
+            <path fill="#2c3e50" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+        </svg>
+    </a>
+    <div class="links">
+        <nav class="nav-links can-hide"></nav>
+    </div>
+</header>
+
+
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#table-of-contents">table of contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">The Standard</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#top-level-keys-and-sections" class="reference internal">Top-Level Keys and Sections</a></li>
+                
+                  <li class="toctree-l2"><a href="#special-data-formats" class="reference internal">Special data formats</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="country.html" class="reference internal ">Country-specific sections</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="forks.html" class="reference internal ">Forks and variants</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="categories-list.html" class="reference internal ">List of software categories</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scope-list.html" class="reference internal ">Scope list</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="example.html" class="reference internal ">Examples</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          
+
+<div class="version-switcher">
+  <label for="version-select">Version:</label>
+  <select id="version-select" data-page="schema.core.html" onchange="switchVersion(this)">
+    
+    <option value="../v1/" selected>1.0-rc (pre-release)</option>
+    
+  </select>
+</div>
+
+
+<div class="admonition note version-banner">
+  <p class="admonition-title">Pre-release</p>
+  <p>You are viewing <strong>1.0-rc</strong>, a draft of the next
+  version of the Standard that can still change.</p>
+</div>
+
+
+<div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>The Standard</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code></a>
+  </li>
+  <li class="next">
+    <a href="country.html"
+       title="next chapter">Country-specific sections →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+
+          <div class="content" role="main" v-pre>
+            
+  <section id="the-standard">
+<span id="core"></span><h1>The Standard<a class="headerlink" href="#the-standard" title="Link to this heading">¶</a></h1>
+<p>This document represents the description of the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>
+schema.</p>
+<section id="top-level-keys-and-sections">
+<h2>Top-Level Keys and Sections<a class="headerlink" href="#top-level-keys-and-sections" title="Link to this heading">¶</a></h2>
+<section id="key-publiccodeymlversion">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">publiccodeYmlVersion</span></code><a class="headerlink" href="#key-publiccodeymlversion" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;0.1&quot;</span></code></p></li>
+</ul>
+<p>This key specifies the version to which the current <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>
+adheres to, for forward compatibility.</p>
+</section>
+<section id="key-name">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">name</span></code><a class="headerlink" href="#key-name" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;Medusa&quot;</span></code></p></li>
+</ul>
+<p>This key contains the name of the software. It contains the (short)
+public name of the product, which can be localised in the specific
+<code class="docutils literal notranslate"><span class="pre">localisation</span></code> section. It should be the name most people usually
+refer to the software. In case the software has both an internal “code”
+name and a commercial name, use the commercial name.</p>
+</section>
+<section id="key-applicationsuite">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">applicationSuite</span></code><a class="headerlink" href="#key-applicationsuite" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;MegaProductivitySuite&quot;</span></code></p></li>
+</ul>
+<p>This key contains the name of the “suite” to which the software belongs.</p>
+</section>
+<section id="key-url">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">url</span></code><a class="headerlink" href="#key-url" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string (URL)</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;https://example.com/italia/medusa.git&quot;</span></code></p></li>
+</ul>
+<p>A unique identifier for this software. This string must be a URL to the
+source code repository (git, svn, …) in which the software is published.
+If the repository is available under multiple protocols, prefer
+HTTP/HTTPS URLs which don’t require user authentication.</p>
+<p>Forks created for the purpose of contributing upstream should not
+modify this file; this helps software parsing <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> to
+immediately skip technical forks. On the contrary, a
+complete fork that is meant to be maintained separately from the
+original software should modify this line, to give themselves the status
+of a different project.</p>
+<p>See <a class="reference internal" href="forks.html#forks-and-variants"><span class="std std-ref">Forks and variants</span></a> for a complete description of what
+is a software variant and how to handle forked software as a parser or
+an author.</p>
+</section>
+<section id="key-landingurl">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">landingURL</span></code><a class="headerlink" href="#key-landingurl" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string (URL)</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;https://example.com/italia/medusa&quot;</span></code></p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">url</span></code> parameter does not serve a human readable or browsable
+page, but only serves source code to a source control client, with this
+key you have an option to specify a landing page. This page, ideally, is
+where your users will land when they will click a button labeled
+something like “Go to the application source code”. In case the product
+provides an automated graphical installer, this URL can point to a page
+which contains a reference to the source code but also offers the
+download of such an installer.</p>
+</section>
+<section id="key-isbasedon">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code><a class="headerlink" href="#key-isbasedon" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string or array of strings</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;https://github.com/italia/otello.git&quot;</span></code></p></li>
+</ul>
+<p>In case this software is a variant or a fork of another software, which
+might or might not contain a <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file, this key will
+contain the <code class="docutils literal notranslate"><span class="pre">url</span></code> of the original project(s).</p>
+<p>The existence of this key identifies the fork as a software
+variant, descending from the specified repositories.</p>
+</section>
+<section id="key-softwareversion">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">softwareVersion</span></code><a class="headerlink" href="#key-softwareversion" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;1.0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;dev&quot;</span></code></p></li>
+</ul>
+<p>This key contains the latest stable version number of the software. The
+version number is a string that is not meant to be interpreted and
+parsed but just displayed; parsers should not assume semantic versioning
+or any other specific version format.</p>
+</section>
+<section id="key-releasedate">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">releaseDate</span></code><a class="headerlink" href="#key-releasedate" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string (date)</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;2017-04-15&quot;</span></code></p></li>
+</ul>
+<p>This key contains the date at which the latest version was released.</p>
+</section>
+<section id="key-logo">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">logo</span></code><a class="headerlink" href="#key-logo" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string (relative path to file or absolute URL)</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Acceptable formats: SVG, SVGZ, PNG</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;img/logo.svg&quot;</span></code></p></li>
+</ul>
+<p>This key contains the path to the logo of the software. Logos SHOULD be
+in vector format.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the logo in raw
+version. In both cases, the file must reside inside the same repository where
+the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
+</section>
+<section id="key-platforms">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">platforms</span></code><a class="headerlink" href="#key-platforms" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: enumerated string or array of strings</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Values: <code class="docutils literal notranslate"><span class="pre">web</span></code>, <code class="docutils literal notranslate"><span class="pre">windows</span></code>, <code class="docutils literal notranslate"><span class="pre">mac</span></code>, <code class="docutils literal notranslate"><span class="pre">linux</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code>,
+<code class="docutils literal notranslate"><span class="pre">android</span></code>. Human readable values outside this list are allowed.</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">web</span></code></p></li>
+</ul>
+<p>This key specifies which platform the software runs on. It is meant to
+describe the platforms that users will use to access and operate the
+software, rather than the platform the software itself runs on.</p>
+<p>Use the predefined values if possible. If the software runs on a
+platform for which a predefined value is not available, a different
+value can be used.</p>
+</section>
+<section id="key-categories">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">categories</span></code><a class="headerlink" href="#key-categories" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Acceptable values: see <a class="reference internal" href="categories-list.html#categories-list"><span class="std std-ref">List of software categories</span></a></p></li>
+</ul>
+<p>A list of categories that can be used to describe the software and can help
+building catalogs of open software.</p>
+<p>The controlled vocabulary <a class="reference internal" href="categories-list.html#categories-list"><span class="std std-ref">List of software categories</span></a> contains the list of allowed
+values.</p>
+</section>
+<section id="key-usedby">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">usedBy</span></code><a class="headerlink" href="#key-usedby" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>A list of the names of prominent public administrations (that will serve
+as “testimonials”) that are currently known to the software maintainer
+to be using this software.</p>
+<p>Parsers are encouraged to enhance this list also with other information
+that can obtain independently; for instance, a fork of a software, owned
+by an administration, could be used as a signal of usage of the
+software.</p>
+</section>
+<section id="key-fundedby">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">fundedBy</span></code><a class="headerlink" href="#key-fundedby" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: List of Organisations (see below)</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>A list of organisations that are currently known to be funding the
+development of this software.</p>
+</section>
+<section id="key-roadmap">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">roadmap</span></code><a class="headerlink" href="#key-roadmap" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>A link to a public roadmap of the software.</p>
+</section>
+<section id="key-developmentstatus">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">developmentStatus</span></code><a class="headerlink" href="#key-developmentstatus" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: enumerated string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Allowed values: <code class="docutils literal notranslate"><span class="pre">concept</span></code>, <code class="docutils literal notranslate"><span class="pre">development</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">stable</span></code>,
+<code class="docutils literal notranslate"><span class="pre">obsolete</span></code></p></li>
+</ul>
+<p>The keys are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">concept</span></code> - The software is just a “concept”. No
+actual code may have been produced, and the repository could simply be a
+placeholder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">development</span></code> - Some effort has gone into the
+development of the software, but the code is not ready for the end user,
+even in a preliminary version (beta or alpha) to be tested by end users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beta</span></code> - The software is in the testing phase (alpha or beta). At
+this stage, the software might or might not have had a preliminary
+public release.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stable</span></code> - The software has seen a first public
+release and is ready to be used in a production environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obsolete</span></code> - The software is no longer maintained or kept up to date.
+All of the source code is archived and kept for historical reasons.</p></li>
+</ul>
+</section>
+<section id="key-softwaretype">
+<h3>Key <code class="docutils literal notranslate"><span class="pre">softwareType</span></code><a class="headerlink" href="#key-softwaretype" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Type: enumerated string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Allowed values: <code class="docutils literal notranslate"><span class="pre">&quot;standalone/mobile&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;standalone/iot&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;standalone/desktop&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;standalone/web&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;standalone/backend&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;standalone/other&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;addon&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;library&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;configurationFiles&quot;</span></code></p></li>
+</ul>
+<p>The keys are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/mobile</span></code> - The software is a standalone application, typically</p></li>
+</ul>
+<blockquote>
+<div><p>installed and run on a mobile operating system.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/iot</span></code> - The software is suitable for an IoT context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/desktop</span></code> - The software is typically installed and run in a
+a desktop operating system environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/web</span></code> - The software is a web application that runs on a server</p></li>
+</ul>
+<blockquote>
+<div><p>and is accessible through a web browser.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/backend</span></code> - The software is a backend application that provides</p></li>
+</ul>
+<blockquote>
+<div><p>interfaces (e.g., APIs) for other services. Typically it does not provide
+direct user interfaces.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">standalone/other</span></code> - The software has a different nature from the ones
+listed above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addon</span></code> - The software is an addon, such as a plugin or a
+theme, for a more complex software (e.g. a CMS or an office suite).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library</span></code> - The software is a library or SDK intended to be used
+by developers in other software projects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configurationFiles</span></code> - The software does not contain executable
+script but a set of configuration files. They may document how to
+obtain a certain deployment. They could be in the form of plain
+configuration files, bash scripts, ansible playbooks, Dockerfiles, or
+other instruction sets.</p></li>
+</ul>
+</section>
+<section id="section-organisation">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">organisation</span></code><a class="headerlink" href="#section-organisation" title="Link to this heading">¶</a></h3>
+<p>This optional section provides the organisation publishing the software.</p>
+<section id="key-organisation-uri">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">organisation/uri</span></code><a class="headerlink" href="#key-organisation-uri" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;https://example.org/my-organisation&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;urn:x-foobar:my-organisation&quot;</span></code></p></li>
+</ul>
+<p>The URI identifying the organisation publishing the software. The value
+SHOULD be a stable, resolvable URI or a persistent identifier.</p>
+<p>Parsers MAY use the URI structure to extract additional information if it follows a
+recognized format (for example, inferring an institutional domain or an
+official code).</p>
+<p>It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
+information out-of-band, to ensure that the declared <cite>organisationUri</cite> actually
+corresponds to the organisation in control of the repository.
+The specific verification method depends on the implementation and policies of the
+platform consuming the file.</p>
+</section>
+<section id="key-organisation-name">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">organisation/name</span></code><a class="headerlink" href="#key-organisation-name" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;My</span> <span class="pre">organisation&quot;</span></code></p></li>
+</ul>
+<p>The canonical name of the organisation publishing the software.</p>
+<p>It MUST correspond to the same entity identified by <code class="docutils literal notranslate"><span class="pre">organisation/uri</span></code> and is
+intended to provide a human-readable label for that URI.
+It SHOULD be the canonical, widely recognized form of the name (such as the
+registered legal or institutional name).</p>
+</section>
+</section>
+<section id="section-intendedaudience">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">intendedAudience</span></code><a class="headerlink" href="#section-intendedaudience" title="Link to this heading">¶</a></h3>
+<section id="key-intendedaudience-countries">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/countries</span></code><a class="headerlink" href="#key-intendedaudience-countries" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key explicitly includes certain countries in the intended audience,
+i.e. the software explicitly claims compliance with specific processes,
+technologies or laws. All countries are specified using uppercase
+ISO 3166-1 alpha-2 two-letter country codes.</p>
+</section>
+<section id="key-intendedaudience-unsupportedcountries">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/unsupportedCountries</span></code><a class="headerlink" href="#key-intendedaudience-unsupportedcountries" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key explicitly marks countries as NOT supported. This might be the
+case if there is a conflict between how software is working and a
+specific law, process or technology. All countries are specified using
+uppercase ISO 3166-1 alpha-2 two-letter country codes.</p>
+</section>
+<section id="key-intendedaudience-scope">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">intendedAudience/scope</span></code><a class="headerlink" href="#key-intendedaudience-scope" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Acceptable values: see <a class="reference internal" href="scope-list.html#scope-list"><span class="std std-ref">Scope list</span></a></p></li>
+</ul>
+<p>This key contains a list of tags related to the field of application of
+the software.</p>
+</section>
+</section>
+<section id="section-description">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">description</span></code><a class="headerlink" href="#section-description" title="Link to this heading">¶</a></h3>
+<p>This section contains a general description of the software. Parsers can
+use this section for instance to create a web page describing the
+software.</p>
+<p><strong>Note:</strong> since all the strings contained in this section are
+user-visible and written in a specific language, you <strong>must</strong> specify
+the language you are editing the text in (using the IETF
+<a class="reference external" href="https://tools.ietf.org/html/bcp47">BCP 47</a> specifications) by
+creating a sub-section with that name. The primary language subtag cannot be
+omitted, as mandated by the BCP 47.</p>
+<p>An example for English:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">description</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">en</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">shortDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="nt">longDescription</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>In the following part of the document, all keys are assumed to be in a
+sub-section with the name of the language (we will note this with
+<code class="docutils literal notranslate"><span class="pre">[lang]</span></code>).</p>
+<p><strong>Note:</strong> it is mandatory to have <em>at least</em> one language in this
+section. All other languages are optional.</p>
+<section id="key-description-lang-localisedname">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/localisedName</span></code><a class="headerlink" href="#key-description-lang-localisedname" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;Medusa&quot;</span></code></p></li>
+</ul>
+<p>This key is an opportunity to localise the name in a specific language.
+It contains the (short) public name of the product. It should be the
+name most people usually refer to the software. In case the software has
+both an internal “code” name and a commercial name, use the commercial
+name.</p>
+</section>
+<section id="key-description-lang-shortdescription">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/shortDescription</span></code><a class="headerlink" href="#key-description-lang-shortdescription" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string (max 150 chars)</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;Advanced</span> <span class="pre">booking</span> <span class="pre">system</span> <span class="pre">for</span> <span class="pre">hospitals&quot;</span></code></p></li>
+</ul>
+<p>This key contains a short description of the software. It should be a
+single line containing a single sentence. Maximum 150 characters are
+allowed.</p>
+</section>
+<section id="key-description-lang-longdescription">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/longDescription</span></code><a class="headerlink" href="#key-description-lang-longdescription" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string (min 150 chars, max 10000 chars)</p></li>
+<li><p>Presence: mandatory (for at least one language)</p></li>
+</ul>
+<p>This key contains a longer description of the software, between 150 and
+10000 chars. It is meant to provide an overview of the capabilities of
+the software for a potential user. The audience for this text should be
+that of users of the software, not developers. You can think of this
+text as the description of the software that would be in its website (if
+the software had one).</p>
+<p>This description can contain some basic markdown: <code class="docutils literal notranslate"><span class="pre">*italic*</span></code>,
+<code class="docutils literal notranslate"><span class="pre">**bold**</span></code>, bullet points and <code class="docutils literal notranslate"><span class="pre">[links](#)</span></code>.</p>
+</section>
+<section id="key-description-lang-documentation">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/documentation</span></code><a class="headerlink" href="#key-description-lang-documentation" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: URL</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key contains a reference to the user-level (not developer-level)
+documentation of the software. The value must be a URL to a hosted
+version of the documentation.</p>
+<p>It is suggested that the URL points to a hosted version of the
+documentation that is immediately readable through a common web browser
+in both desktop and mobile format. The documentation should be rendered
+in HTML and browsable like a website (with a navigation index, a search
+bar, etc.).</p>
+<p>If the documentation is instead available only as a document, put a
+direct view/download link as URL in this key. You should commit the
+document as part of the source code repository, and then link to it
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
+Prefer using open formats like PDF or ODT for maximum interoperability.</p>
+<p>Whichever the format for the documentation, remember to make its source
+files available under an open license, possibly by committing them as
+part of the repository itself.</p>
+</section>
+<section id="key-description-lang-apidocumentation">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/apiDocumentation</span></code><a class="headerlink" href="#key-description-lang-apidocumentation" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: URL</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key contains a reference to the API documentation of the software.
+The value must be a URL to a hosted version of the documentation.</p>
+<p>It is suggested that the URL points to a hosted version of the
+documentation that is immediately readable through a common web browser.
+The documentation should be rendered in HTML and browsable like a
+website (with a navigation index, a search bar, etc.), and if there is a
+reference or test deployment, possibly offer an interactive interface
+(e.g. Swagger).</p>
+<p>If the documentation is instead available only as a document, put a
+direct view/download link as URL in this key. You should commit the
+document as part of the source code repository, and then link to it
+using the code hosting source browser URL (e.g.: GitHub URL to the file).
+Prefer using open formats like PDF or ODT for maximum interoperability.</p>
+<p>Whichever the format for the documentation, remember to make its source
+files available under an open license, possibly by committing them as
+part of the repository itself.</p>
+</section>
+<section id="key-description-lang-features">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/features</span></code><a class="headerlink" href="#key-description-lang-features" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: mandatory (for at least one language)</p></li>
+</ul>
+<p>This key contains a list of software features, describing what
+capabilities the software allows to do. The audience for this text
+should be that of public decision makers who will be commissioning the
+software. The features should thus not target developers; instead of
+listing technical features referring to implementation details, prefer
+listing user-visible functionalities of the software.</p>
+<p>While the key is mandatory, there is no mandatory minimum or maximum
+number of features that should be listed in this key.</p>
+<p>The suggested number of features to list is between 5 and 20, depending
+on the software size and complexity. There is no need for
+exhaustiveness, as users can always read the documentation for
+additional information.</p>
+</section>
+<section id="key-description-lang-screenshots">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/screenshots</span></code><a class="headerlink" href="#key-description-lang-screenshots" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings (paths)</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Formats: PNG, JPG</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;data/screenshots/configuration.png&quot;</span></code></p></li>
+</ul>
+<p>This key contains one or multiple paths to files showing screenshots of
+the software. They are meant to give a quick idea on how the software
+looks like and how it works.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the screenshot in raw
+version. In both cases, the file must reside inside the same repository where
+the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> file is stored.</p>
+<p>Screenshots can be of any shape and size; the suggested formats are:</p>
+<ul class="simple">
+<li><p>Desktop: 1280x800 &#64;1x</p></li>
+<li><p>Tablet: 1024x768 &#64;2x</p></li>
+<li><p>Mobile: 375x667 &#64;2x</p></li>
+</ul>
+</section>
+<section id="key-description-lang-videos">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/videos</span></code><a class="headerlink" href="#key-description-lang-videos" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings (URLs)</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;https://youtube.com/xxxxxxxx&quot;</span></code></p></li>
+</ul>
+<p>This key contains one or multiple URLs of videos showing how the
+software works. Like screenshots, videos should be used to give a quick
+overview on how the software looks like and how it works. Videos must be
+hosted on a video sharing website that supports the
+<a class="reference external" href="https://oembed.com">oEmbed</a> standard; popular options are YouTube
+and Vimeo.</p>
+<p>Since videos are an integral part of the documentation, it is
+recommended to publish them with an open license.</p>
+</section>
+<section id="key-description-lang-awards">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">description/[lang]/awards</span></code><a class="headerlink" href="#key-description-lang-awards" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of strings</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>A list of awards won by the software.</p>
+</section>
+</section>
+<section id="section-legal">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">legal</span></code><a class="headerlink" href="#section-legal" title="Link to this heading">¶</a></h3>
+<section id="key-legal-license">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">legal/license</span></code><a class="headerlink" href="#key-legal-license" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;AGPL-3.0-or-later&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;EUPL-1.2</span> <span class="pre">OR</span> <span class="pre">AGPL-3.0-or-later&quot;</span></code></p></li>
+</ul>
+<p>This string describes the license under which the software is
+distributed. The string must contain a valid SPDX expression, referring
+to one or multiple open-source licenses. Please refer to the <a class="reference external" href="https://spdx.org/licenses/">SPDX
+documentation</a> for further information.</p>
+</section>
+<section id="key-legal-maincopyrightowner">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">legal/mainCopyrightOwner</span></code><a class="headerlink" href="#key-legal-maincopyrightowner" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: string</p></li>
+<li><p>Presence: optional</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;City</span> <span class="pre">of</span> <span class="pre">Amsterdam&quot;</span></code></p></li>
+</ul>
+<p>This string describes the entity that owns the copyright on “most” of
+the code in the repository. Normally, this is the line that is reported
+with the copyright symbol at the top of most files in the repo.</p>
+<p>It is possible to list multiple owners if required so, using an English
+sentence. It is also possible to informally refer to a community of
+group of people like “Linus Torvalds and all Linux contributors”.</p>
+<p>In case it is not possible to name a main copyright owner, it is
+possible to omit this key.</p>
+</section>
+</section>
+<section id="section-maintenance">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">maintenance</span></code><a class="headerlink" href="#section-maintenance" title="Link to this heading">¶</a></h3>
+<p>This section provides information on the maintenance status of the
+software, useful to evaluate whether the software is actively developed
+or not.</p>
+<section id="key-maintenance-type">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code><a class="headerlink" href="#key-maintenance-type" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: enumerate</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Values: <code class="docutils literal notranslate"><span class="pre">&quot;internal&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;contract&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;community&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code></p></li>
+</ul>
+<p>This key describes how the software is currently maintained.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">internal</span></code> - means that the software is internally maintained by the
+repository owner;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contract</span></code> - means that there is a commercial
+contract that binds an entity to the maintenance of the software;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">community</span></code> - means that the software is currently maintained by one
+or more people that donate their time to the project;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> - means that the software is not actively maintained.</p></li>
+</ul>
+</section>
+<section id="key-maintenance-contractors">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contractors</span></code><a class="headerlink" href="#key-maintenance-contractors" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of Contractor (see below)</p></li>
+<li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code> <strong>is</strong> <code class="docutils literal notranslate"><span class="pre">contract</span></code>; must not be present otherwise</p></li>
+</ul>
+<p>This key describes the entity or entities, if any, that are currently
+contracted for maintaining the software. They can be companies,
+organisations, or other collective names.</p>
+</section>
+<section id="key-maintenance-contacts">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">maintenance/contacts</span></code><a class="headerlink" href="#key-maintenance-contacts" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: List of Contacts (see below)</p></li>
+<li><p>Presence: mandatory if <code class="docutils literal notranslate"><span class="pre">maintenance/type</span></code> <strong>is</strong> <code class="docutils literal notranslate"><span class="pre">internal</span></code> or <code class="docutils literal notranslate"><span class="pre">community</span></code>; optional otherwise</p></li>
+</ul>
+<p>One or more contacts maintaining this software.</p>
+<p>This key describes the technical people currently responsible for
+maintaining the software. All contacts need to be a physical person, not
+a company or an organisation. If somebody is acting as a representative
+of an institution, it must be listed within the <code class="docutils literal notranslate"><span class="pre">affiliation</span></code> of the
+contact.</p>
+<p>In case of a commercial agreement (or a chain of such agreements),
+specify the final entities actually contracted to deliver the
+maintenance. Do not specify the software owner unless it is technically
+involved with the maintenance of the product as well.</p>
+</section>
+</section>
+<section id="section-localisation">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">localisation</span></code><a class="headerlink" href="#section-localisation" title="Link to this heading">¶</a></h3>
+<p>This section provides an overview of the localization features of the
+software.</p>
+<section id="key-localisation-localisationready">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">localisation/localisationReady</span></code><a class="headerlink" href="#key-localisation-localisationready" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: boolean</p></li>
+<li><p>Presence: mandatory</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the software has infrastructure in place or is otherwise
+designed to be multilingual. It does not need to be available in more
+than one language.</p>
+</section>
+<section id="key-localisation-availablelanguages">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">localisation/availableLanguages</span></code><a class="headerlink" href="#key-localisation-availablelanguages" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: list of IETF BCP 47 language tags</p></li>
+<li><p>Presence: mandatory</p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">&quot;it&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;en&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sl-IT-nedis&quot;</span></code></p></li>
+</ul>
+<p>If present, this is the list of languages in which the software is
+available. Of course, this list will contain at least one language.
+The primary language subtag cannot be omitted, as mandated by the
+<a class="reference external" href="https://tools.ietf.org/html/bcp47">BCP 47</a>.</p>
+</section>
+</section>
+<section id="section-dependson">
+<h3>Section <code class="docutils literal notranslate"><span class="pre">dependsOn</span></code><a class="headerlink" href="#section-dependson" title="Link to this heading">¶</a></h3>
+<p>This section provides an overview on the system-level dependencies
+required to install and use this software.</p>
+<p><strong>NOTE:</strong> do not list dependencies at the source code level (e.g.:
+software libraries being used), and focus only on runtime and/or
+system-level dependencies that must be installed and maintained
+separately. For instance, a database is a good example of such
+dependencies.</p>
+<section id="key-dependson-open">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/open</span></code><a class="headerlink" href="#key-dependson-open" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key contains a list of runtime dependencies that are distributed
+under an open-source license.</p>
+</section>
+<section id="key-dependson-proprietary">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/proprietary</span></code><a class="headerlink" href="#key-dependson-proprietary" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key contains a list of runtime dependencies that are distributed
+under a proprietary license.</p>
+</section>
+<section id="key-dependson-hardware">
+<h4>Key <code class="docutils literal notranslate"><span class="pre">dependsOn/hardware</span></code><a class="headerlink" href="#key-dependson-hardware" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Type: array of <code class="docutils literal notranslate"><span class="pre">dependency</span></code> (see below)</p></li>
+<li><p>Presence: optional</p></li>
+</ul>
+<p>This key contains a list of hardware dependencies that must be owned to
+use the software.</p>
+</section>
+</section>
+</section>
+<section id="special-data-formats">
+<h2>Special data formats<a class="headerlink" href="#special-data-formats" title="Link to this heading">¶</a></h2>
+<section id="dependency">
+<h3>Dependency<a class="headerlink" href="#dependency" title="Link to this heading">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">dependency</span></code> is a complex object. The properties are the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - The name of the dependency (e.g. MySQL,
+NFC Reader)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">versionMin</span></code> - the first compatible version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">versionMax</span></code> - the latest compatible version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> - the only major version for which the software is
+compatible. It assumes compatibility with all patches and bugfixes
+later applied to this version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optional</span></code> - whether the dependency is optional or mandatory</p></li>
+</ul>
+</section>
+<section id="complex-versioning">
+<h3>Complex versioning<a class="headerlink" href="#complex-versioning" title="Link to this heading">¶</a></h3>
+<p>It is of course possible to use the various keys to specify a complex
+compatibility matrix.</p>
+<p><em>Ex. 1</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgreSQL</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.2&quot;</span>
+<span class="w">  </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>This snippet marks an optional dependency on PostgreSQL exactly version
+3.2.</p>
+<p><em>Ex. 2</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MySQL</span>
+<span class="w">  </span><span class="nt">versionMin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.1&quot;</span>
+<span class="w">  </span><span class="nt">versionMax</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.3&quot;</span>
+</pre></div>
+</div>
+<p>This snippet marks a mandatory dependency on MySQL, allowing any version
+between 1.1 and 1.3.</p>
+</section>
+<section id="contact">
+<h3>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h3>
+<p>A Contact is an object with the following properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - This key contains the full name of one of
+the technical contacts. It must be a real person; do NOT populate
+this key with generic contact information, company departments,
+associations, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code> - This key contains the e-mail address of the technical
+contact. It must be an email address of where the technical contact
+can be directly reached; do NOT populate this key with mailing-lists
+or generic contact points like “<a class="reference external" href="mailto:info&#37;&#52;&#48;acme&#46;inc">info<span>&#64;</span>acme<span>&#46;</span>inc</a>”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phone</span></code> - phone number. It MUST include the international dialing
+prefix, following the <a class="reference external" href="https://www.itu.int/rec/T-REC-E.164/en">E.164</a>
+format (e.g., <code class="docutils literal notranslate"><span class="pre">+3923113215112</span></code>). This has to be a string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">affiliation</span></code> - This key contains an explicit affiliation
+information for the technical contact. In case of multiple
+maintainers, this can be used to create a relation between each
+technical contact and each maintainer entity. It can contain for
+instance a company name, an association name, etc.</p></li>
+</ul>
+</section>
+<section id="organisation">
+<h3>Organisation<a class="headerlink" href="#organisation" title="Link to this heading">¶</a></h3>
+<p>An organisation is a structure (association, company, public
+authority, etc.) that can fund software development. An organisation
+has the following property:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - The name of the organisation, whether</dt><dd><p>it’s an association, a company, a public sector organisation, or
+a physical person.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uri</span></code> - The URI identifying the organisation.</p></li>
+</ul>
+</section>
+<section id="contractor">
+<h3>Contractor<a class="headerlink" href="#contractor" title="Link to this heading">¶</a></h3>
+<p>A Contractor is an object with the following properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - <strong>mandatory</strong> - The name of the contractor, whether it’s a
+company or a physical person.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">until</span></code> - <strong>mandatory</strong> - This is a date (YYYY-MM-DD). This key
+must contain the date at which the maintenance is going to end. In
+case of community maintenance, the value should not be more than 2
+years in the future, and thus will need to be regularly updated as
+the community continues working on the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code> - This key contains the e-mail address of the technical
+contact. It must be an email address of where the technical contact
+can be directly reached; do NOT populate this key with mailing-lists
+or generic contact points like “<a class="reference external" href="mailto:info&#37;&#52;&#48;acme&#46;inc">info<span>&#64;</span>acme<span>&#46;</span>inc</a>”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">website</span></code> - This key points to the maintainer website. It can
+either point to the main institutional website, or to a more
+project-specific page or website.</p></li>
+</ul>
+</section>
+<section id="dates">
+<h3>Dates<a class="headerlink" href="#dates" title="Link to this heading">¶</a></h3>
+<p>All dates in <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> must follow the format “YYYY-MM-DD”,
+which is one of the ISO8601 allowed formats. This is the only allowed
+format though, so not the full ISO8601 is allowed for the date keys.</p>
+</section>
+<section id="encoding">
+<h3>Encoding<a class="headerlink" href="#encoding" title="Link to this heading">¶</a></h3>
+<p><cite>publiccode.yml</cite> <strong>MUST</strong> be a UTF-8 encoded and <strong>MUST</strong> be a YAML 1.2 document.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner">
+
+<div class="footer">
+    <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a> <span style="margin-left:8px; margin-right: 8px;">|</span> <a href="https://github.com/publiccodeyml/publiccode.yml">GitHub</a></p>
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

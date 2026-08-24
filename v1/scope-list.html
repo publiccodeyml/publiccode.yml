@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Scope list</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Examples" href="example.html" />
+  <link rel="prev" title="List of software categories" href="categories-list.html" />
+ 
+
+<style>
+  .version-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 0 0 16px 0;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .version-switcher label {
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .version-switcher select {
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 0.95em;
+    background: inherit;
+    color: inherit;
+  }
+  .version-banner {
+    margin: 0 0 16px 0 !important;
+  }
+</style>
+<script>
+  // Same page in the chosen version when it exists there, its index otherwise.
+  function switchVersion(select) {
+    var index = select.value;
+    var page = index + select.dataset.page;
+    fetch(page, { method: "HEAD" })
+      .then(function (response) {
+        window.location.href = response.ok ? page + window.location.hash : index;
+      })
+      .catch(function () {
+        window.location.href = index;
+      });
+  }
+</script>
+
+
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses">
+
+<header class="navbar">
+    <div class="sidebar-button">
+        <svg class="icon" xmlns="https://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path>
+        </svg>
+    </div>
+    <a href="index.html" class="home-link">
+        <span class="site-name">publiccode.yml Standard</span>
+    </a>
+    <a href="https://github.com/publiccodeyml/publiccode.yml" style="float: right; margin-top: 1px;">
+        <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true">
+            <path fill="#2c3e50" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+        </svg>
+    </a>
+    <div class="links">
+        <nav class="nav-links can-hide"></nav>
+    </div>
+</header>
+
+
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#table-of-contents">table of contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="schema.core.html" class="reference internal ">The Standard</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="country.html" class="reference internal ">Country-specific sections</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="forks.html" class="reference internal ">Forks and variants</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="categories-list.html" class="reference internal ">List of software categories</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Scope list</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#valid-tags" class="reference internal">Valid Tags</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="example.html" class="reference internal ">Examples</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          
+
+<div class="version-switcher">
+  <label for="version-select">Version:</label>
+  <select id="version-select" data-page="scope-list.html" onchange="switchVersion(this)">
+    
+    <option value="../v1/" selected>1.0-rc (pre-release)</option>
+    
+  </select>
+</div>
+
+
+<div class="admonition note version-banner">
+  <p class="admonition-title">Pre-release</p>
+  <p>You are viewing <strong>1.0-rc</strong>, a draft of the next
+  version of the Standard that can still change.</p>
+</div>
+
+
+<div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Scope list</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="categories-list.html"
+       title="previous chapter">← List of software categories</a>
+  </li>
+  <li class="next">
+    <a href="example.html"
+       title="next chapter">Examples →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+
+          <div class="content" role="main" v-pre>
+            
+  <section id="scope-list">
+<span id="id1"></span><h1>Scope list<a class="headerlink" href="#scope-list" title="Link to this heading">¶</a></h1>
+<p>Here follows a controlled vocabulary of useful tags for categorizing the
+software.</p>
+<section id="valid-tags">
+<h2>Valid Tags<a class="headerlink" href="#valid-tags" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>agriculture</p></li>
+<li><p>culture</p></li>
+<li><p>defence</p></li>
+<li><p>education</p></li>
+<li><p>emergency-services</p></li>
+<li><p>employment</p></li>
+<li><p>energy</p></li>
+<li><p>environment</p></li>
+<li><p>finance-and-economic-development</p></li>
+<li><p>foreign-affairs</p></li>
+<li><p>healthcare</p></li>
+<li><p>infrastructures</p></li>
+<li><p>justice</p></li>
+<li><p>local-authorities</p></li>
+<li><p>manufacturing</p></li>
+<li><p>research</p></li>
+<li><p>science-and-technology</p></li>
+<li><p>security</p></li>
+<li><p>society</p></li>
+<li><p>sport</p></li>
+<li><p>tourism</p></li>
+<li><p>transportation</p></li>
+<li><p>welfare</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner">
+
+<div class="footer">
+    <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a> <span style="margin-left:8px; margin-right: 8px;">|</span> <a href="https://github.com/publiccodeyml/publiccode.yml">GitHub</a></p>
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>

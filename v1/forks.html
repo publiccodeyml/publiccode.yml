@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html  lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Forks and variants</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+          <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="List of software categories" href="categories-list.html" />
+  <link rel="prev" title="Country-specific sections" href="country.html" />
+ 
+
+<style>
+  .version-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 0 0 16px 0;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+  .version-switcher label {
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .version-switcher select {
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-size: 0.95em;
+    background: inherit;
+    color: inherit;
+  }
+  .version-banner {
+    margin: 0 0 16px 0 !important;
+  }
+</style>
+<script>
+  // Same page in the chosen version when it exists there, its index otherwise.
+  function switchVersion(select) {
+    var index = select.value;
+    var page = index + select.dataset.page;
+    fetch(page, { method: "HEAD" })
+      .then(function (response) {
+        window.location.href = response.ok ? page + window.location.hash : index;
+      })
+      .catch(function () {
+        window.location.href = index;
+      });
+  }
+</script>
+
+
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses">
+
+<header class="navbar">
+    <div class="sidebar-button">
+        <svg class="icon" xmlns="https://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class=""></path>
+        </svg>
+    </div>
+    <a href="index.html" class="home-link">
+        <span class="site-name">publiccode.yml Standard</span>
+    </a>
+    <a href="https://github.com/publiccodeyml/publiccode.yml" style="float: right; margin-top: 1px;">
+        <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true">
+            <path fill="#2c3e50" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+        </svg>
+    </a>
+    <div class="links">
+        <nav class="nav-links can-hide"></nav>
+    </div>
+</header>
+
+
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#table-of-contents">table of contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="schema.core.html" class="reference internal ">The Standard</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="country.html" class="reference internal ">Country-specific sections</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Forks and variants</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#technical-forks-i-e-to-publish-patches" class="reference internal">Technical forks (i.e. to publish patches)</a></li>
+                
+                  <li class="toctree-l2"><a href="#software-variants" class="reference internal">Software variants</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="categories-list.html" class="reference internal ">List of software categories</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="scope-list.html" class="reference internal ">Scope list</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="example.html" class="reference internal ">Examples</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          
+
+<div class="version-switcher">
+  <label for="version-select">Version:</label>
+  <select id="version-select" data-page="forks.html" onchange="switchVersion(this)">
+    
+    <option value="../v1/" selected>1.0-rc (pre-release)</option>
+    
+  </select>
+</div>
+
+
+<div class="admonition note version-banner">
+  <p class="admonition-title">Pre-release</p>
+  <p>You are viewing <strong>1.0-rc</strong>, a draft of the next
+  version of the Standard that can still change.</p>
+</div>
+
+
+<div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Forks and variants</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="country.html"
+       title="previous chapter">← Country-specific sections</a>
+  </li>
+  <li class="next">
+    <a href="categories-list.html"
+       title="next chapter">List of software categories →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+
+          <div class="content" role="main" v-pre>
+            
+  <section id="forks-and-variants">
+<span id="id1"></span><h1>Forks and variants<a class="headerlink" href="#forks-and-variants" title="Link to this heading">¶</a></h1>
+<p>As already cited before, a fork may have two different forms based on the final
+aim. As such, in order to make it clear how to handle the
+<cite>publiccode.yml</cite> in both cases, below we define two different
+semantics: technical forks and software variants.</p>
+<section id="technical-forks-i-e-to-publish-patches">
+<h2>Technical forks (i.e. to publish patches)<a class="headerlink" href="#technical-forks-i-e-to-publish-patches" title="Link to this heading">¶</a></h2>
+<p>A technical fork is a fork made by a developer for the purpose of
+working on the original code base or sending improvements to the
+original authors, without any explicit goal of creating and publishing
+an alternative variant of the original software.</p>
+<p>In the context of distributed control systems and collaborative code
+hosting platforms like GitHub, forking is almost always used by
+developers as a step to work on a contribution on an existing codebase,
+by sending “pull requests”.</p>
+<p>Because of the way forking works on GitHub and other platforms,
+developers publish their forks as perfect copies of the original
+software, thus including also <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code>. However, parsers need
+to be able to distinguish such technical forks from the original
+codebase.</p>
+<section id="parsers">
+<h3>Parsers<a class="headerlink" href="#parsers" title="Link to this heading">¶</a></h3>
+<p>Parsers <strong>SHOULD</strong> identify a technical fork by noticing that the
+top-level <code class="docutils literal notranslate"><span class="pre">url</span></code> key does not point to the repository in which the
+<code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is found.</p>
+<p>Parsers <strong>MIGHT</strong> identify a technical fork also through metadata that
+might be exposed by the code hosting platform (eg: GitHub marks forks
+explicitly as forks)</p>
+</section>
+<section id="authors">
+<h3>Authors<a class="headerlink" href="#authors" title="Link to this heading">¶</a></h3>
+<p>Authors of technical forks <strong>SHOULD NOT</strong> modify <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> in
+any way. Specifically, they <strong>MUST NOT</strong> modify the top-level <code class="docutils literal notranslate"><span class="pre">url</span></code>
+key that <strong>MUST</strong> continue pointing to the original repository.</p>
+<p>There is no explicit key to mark a fork as a technical fork. This is a
+conscious design decision because we do not want authors of technical
+forks to be aware of <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> and necessarily be aware of how
+to modify it. The current design does not require authors to do
+anything.</p>
+</section>
+</section>
+<section id="software-variants">
+<h2>Software variants<a class="headerlink" href="#software-variants" title="Link to this heading">¶</a></h2>
+<p>A software variant is a fork that is offered as an alternative to the
+original upstream software.</p>
+<p>It contains modifications that are still not part of the upstream
+version, like more features, different dependencies, optimizations, etc.</p>
+<p>By marking a fork as a variant, the author indicates that they believe
+that the variant includes a complete and working set of modifications
+that might be useful to other people.</p>
+<p>Marking a fork as a variant does <strong>not</strong> relate to the willingness of
+contributing upstream; the author might still plan to contribute the
+modifications upstream, or even being in the process of doing so. Thus,
+even if the fork will eventually be merged upstream, it might make sense
+to mark it as a variant during the process, so that others might
+discover it and benefit from it.</p>
+<section id="parsers-1">
+<span id="id2"></span><h3>Parsers<a class="headerlink" href="#parsers-1" title="Link to this heading">¶</a></h3>
+<p>Parsers <strong>SHOULD</strong> identify a variant by noticing that the top-level
+<code class="docutils literal notranslate"><span class="pre">url</span></code> key matches to the repository in which the <code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> is
+found, <strong>AND</strong> a top-level <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code> exists and points to a
+different repository.</p>
+<p>Parsers should expect and analyze other differences in
+<code class="docutils literal notranslate"><span class="pre">publiccode.yml</span></code> between variants of the software. Specifically
+<code class="docutils literal notranslate"><span class="pre">description/features</span></code> is designed to be compared across variants to
+identify and show user-visible differences.</p>
+</section>
+<section id="authors-1">
+<span id="id3"></span><h3>Authors<a class="headerlink" href="#authors-1" title="Link to this heading">¶</a></h3>
+<p>Authors that are willing to publish a fork as a variant <strong>MUST</strong> at
+least:</p>
+<ul class="simple">
+<li><p>add a key <code class="docutils literal notranslate"><span class="pre">isBasedOn</span></code> pointing to one or more upstream repositories
+from which this variant is derived.</p></li>
+<li><p>Change the value for <code class="docutils literal notranslate"><span class="pre">url</span></code> to point to the repository holding the
+variant.</p></li>
+<li><p>Change the value for <code class="docutils literal notranslate"><span class="pre">organisation/name</span></code> to refer to themselves
+(the authors of the variant).</p></li>
+<li><p>Revisit the <code class="docutils literal notranslate"><span class="pre">maintenance</span></code> section to refer to the maintenance
+status of the variant.</p></li>
+</ul>
+<p>Moreover, authors <strong>SHOULD</strong> evaluate the following changes:</p>
+<ul class="simple">
+<li><p>add the features that differentiate the variant to the
+<code class="docutils literal notranslate"><span class="pre">description/features</span></code> key. Existing features <strong>SHOULD NOT</strong> be
+edited or removed from this list unless they have been removed from
+the variant, to allow parsers to easily compare feature lists.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner">
+
+<div class="footer">
+    <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a> <span style="margin-left:8px; margin-right: 8px;">|</span> <a href="https://github.com/publiccodeyml/publiccode.yml">GitHub</a></p>
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
