@@ -14,10 +14,10 @@ from sphinx_polyversion.environment import Environment
 from sphinx_polyversion.git import Git, GitRef, GitRefType, file_predicate
 from sphinx_polyversion.sphinx import SphinxBuilder
 
-#: Version lines live on mutable branches: ``vMAJOR.MINOR`` once released,
-#: ``MAJOR.MINOR-rc`` while the next release is being drafted. No tags.
-BRANCH_REGEX = r"^v?(?P<major>\d+)\.(?P<minor>\d+)(?P<rc>-rc)?$"
-TAG_REGEX = r"^$"
+#: Releases are ``vMAJOR.MINOR.PATCH`` tags. The next release is drafted
+#: on a mutable ``MAJOR.MINOR-rc`` branch until it gets tagged.
+BRANCH_REGEX = r"^(?P<major>\d+)\.(?P<minor>\d+)-rc$"
+TAG_REGEX = r"^v(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)$"
 
 #: One subdirectory per major line (``v0/``, ``v1/``) holding its newest
 #: branch, so links stay stable across minor releases, plus redirects at
@@ -36,9 +36,9 @@ SPHINX_ARGS = ""
 MOCK_DATA = {
     "revisions": [
         GitRef("1.0-rc", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
-        GitRef("v0.7", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
+        GitRef("v0.7.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
     ],
-    "current": GitRef("v0.7", "", "", GitRefType.BRANCH, datetime.fromtimestamp(1)),
+    "current": GitRef("v0.7.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
 }
 
 MOCK = False
@@ -48,7 +48,9 @@ apply_overrides(globals())
 
 root = Git.root(Path(__file__).parent)
 src = Path(SOURCE_DIR)
-version_pattern = re.compile(BRANCH_REGEX)
+version_pattern = re.compile(
+    r"^v?(?P<major>\d+)\.(?P<minor>\d+)(?:\.(?P<patch>\d+))?(?P<rc>-rc)?$"
+)
 
 REDIRECT = """<!DOCTYPE html>
 <html lang="en">
@@ -69,13 +71,19 @@ REDIRECT = """<!DOCTYPE html>
 
 def parse(name):
     match = version_pattern.fullmatch(name)
-    return int(match["major"]), int(match["minor"]), match["rc"] is None
+    return (
+        int(match["major"]),
+        int(match["minor"]),
+        int(match["patch"] or 0),
+        match["rc"] is None,
+    )
 
 
 def rank(rev):
-    """Newest major first, then a release before its candidate, then newest minor."""
-    major, minor, stable = parse(rev.name)
-    return major, stable, minor
+    """Newest major first, then a release before its candidate, then newest
+    minor and patch."""
+    major, minor, patch, stable = parse(rev.name)
+    return major, stable, minor, patch
 
 
 def line(rev):
@@ -83,7 +91,8 @@ def line(rev):
 
 
 class Lines(Git):
-    """Build one branch per major line: the newest release, or the candidate if none."""
+    """Build one revision per major line: the newest release tag, or the
+    draft branch if none."""
 
     async def retrieve(self, root):
         best = {}
@@ -97,7 +106,7 @@ class Lines(Git):
 def catalog(revisions):
     """Plain dicts for the templates, newest line first."""
     versions = [
-        {"name": rev.name, "dir": line(rev), "prerelease": not parse(rev.name)[2]}
+        {"name": rev.name, "dir": line(rev), "prerelease": not parse(rev.name)[3]}
         for rev in sorted(revisions, key=rank, reverse=True)
     ]
     stable = [v for v in versions if not v["prerelease"]]
@@ -139,16 +148,16 @@ class Driver(DefaultDriver):
     async def build_root(self):
         if not self.targets:
             sys.exit(
-                "no version branches found: poly.py builds the local branches "
-                "matching BRANCH_REGEX, create them first "
-                "(e.g. git branch v0.7 origin/v0.7)"
+                "no versions found: poly.py builds the local vX.Y.Z tags and "
+                "X.Y-rc branches. Run git fetch --tags and create the draft "
+                "branches (e.g. git branch 1.0-rc origin/1.0-rc)"
             )
         data = catalog(self.targets)
         if not MOCK and data["default"]["prerelease"]:
             sys.exit(
-                "no release branch matched: the site root would point at a "
-                "pre-release draft. Push or recreate the vMAJOR.MINOR branch "
-                "(e.g. v0.7): GitHub deletes it when a PR from it is merged."
+                "no release tag matched: the site root would point at a "
+                "pre-release draft. Run git fetch --tags to get the vX.Y.Z "
+                "release tags."
             )
         await super().build_root()
         write_redirects(self.output_dir, "local" if MOCK else data["default"]["dir"])
