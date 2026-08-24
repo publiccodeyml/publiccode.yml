@@ -131,10 +131,12 @@ uv run sphinx-autobuild docs/standard build -c .
 
 The published website puts every version line of the Standard side by
 side, one directory per major version (`/v0/`, `/v1/`, ...) with a
-version switcher on each page. Each line is built from its branch
-(`v0.7`, `1.0-rc`, ...) using the `conf.py` and templates of the current
-checkout, see `poly.py`. The branches must exist locally (e.g.
-`git branch v0.7 origin/v0.7`), then:
+version switcher on each page. Each line is built from the newest
+release tag of its major version (`v0.7.0`, ...), or from its draft
+branch (`1.0-rc`, ...) while unreleased, using the `conf.py` and
+templates of the current checkout, see `poly.py`. Tags come with the
+clone, draft branches must exist locally (e.g.
+`git branch 1.0-rc origin/1.0-rc`), then:
 
 ```console
 uv run sphinx-polyversion poly.py build/html

@@ -8,6 +8,6 @@
     }
   },
   "installCommand": "pip3 install uv==0.12.5",
-  "buildCommand": "git fetch \"https://github.com/$VERCEL_GIT_REPO_OWNER/$VERCEL_GIT_REPO_SLUG.git\" '+refs/heads/v*:refs/heads/v*' '+refs/heads/*-rc:refs/heads/*-rc' && LC_ALL=C.UTF-8 uv run sphinx-polyversion poly.py build/html",
+  "buildCommand": "git fetch --depth=1 \"https://github.com/$VERCEL_GIT_REPO_OWNER/$VERCEL_GIT_REPO_SLUG.git\" '+refs/tags/v*:refs/tags/v*' '+refs/heads/*-rc:refs/heads/*-rc' && LC_ALL=C.UTF-8 uv run sphinx-polyversion poly.py build/html",
   "outputDirectory": "build/html"
 }

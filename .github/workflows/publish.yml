@@ -5,10 +5,9 @@ on:
   push:
     branches:
       - main
-      - "v[0-9]+.[0-9]+"
       - "[0-9]+.[0-9]+-rc"
     tags:
-      - "*"
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 concurrency:
   group: publish
@@ -19,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # The toolchain (poly.py, conf.py, templates) always comes from main,
-      # the content of each version from its branch.
+      # the content of each version from its release tag or draft branch.
       - uses: actions/checkout@v7
         with:
           ref: main
@@ -29,13 +28,15 @@ jobs:
           version: "0.9.7"
           enable-cache: true
 
-      # sphinx-polyversion only looks at local branches
-      - name: Create the version branches
+      # Release tags come with the checkout, but sphinx-polyversion only
+      # looks at local branches for the drafts
+      - name: Create the draft branches
         run: |
-          for ref in $(git for-each-ref --format='%(refname:lstrip=3)' 'refs/remotes/origin/v[0-9]*' 'refs/remotes/origin/[0-9]*-rc'); do
+          for ref in $(git for-each-ref --format='%(refname:lstrip=3)' 'refs/remotes/origin/[0-9]*-rc'); do
             git branch "$ref" "origin/$ref"
           done
           git branch --list
+          git tag --list 'v*'
 
       - run: uv run sphinx-polyversion poly.py build/html -vv
       - run: echo yml.publiccode.tools > build/html/CNAME
