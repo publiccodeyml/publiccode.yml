@@ -143,9 +143,15 @@ class Driver(DefaultDriver):
                 "matching BRANCH_REGEX, create them first "
                 "(e.g. git branch v0.7 origin/v0.7)"
             )
+        data = catalog(self.targets)
+        if not MOCK and data["default"]["prerelease"]:
+            sys.exit(
+                "no release branch matched: the site root would point at a "
+                "pre-release draft. Push or recreate the vMAJOR.MINOR branch "
+                "(e.g. v0.7): GitHub deletes it when a PR from it is merged."
+            )
         await super().build_root()
-        default = "local" if MOCK else catalog(self.targets)["default"]["dir"]
-        write_redirects(self.output_dir, default)
+        write_redirects(self.output_dir, "local" if MOCK else data["default"]["dir"])
 
 
 # All version lines share the same doc toolchain, so reuse the active
