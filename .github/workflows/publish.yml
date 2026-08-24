@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v7
         with:
-          version: "0.9.7"
+          version: "0.12.5"
           enable-cache: true
 
       # Release tags come with the checkout, but sphinx-polyversion only
