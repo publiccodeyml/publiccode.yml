@@ -24,10 +24,6 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-python@v7
-        with:
-          python-version-file: "pyproject.toml"
-
       - uses: astral-sh/setup-uv@v7
         with:
           version: "0.9.7"
