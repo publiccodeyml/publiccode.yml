@@ -3,9 +3,8 @@
 List of aliases
 ===============
 
-Here follows the list of aliases that can be used in the
-``supports`` key. Each alias resolves to the canonical resource it
-refers to.
+These aliases can be used in the ``supports`` key. Each alias
+resolves to the canonical resource it refers to.
 
 ========  ===============================================
 alias     resource
