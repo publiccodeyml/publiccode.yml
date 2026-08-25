@@ -15,10 +15,8 @@ et des robots.
 d'après les `guidelines
 <https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
 this enables the Developers Italia crawler to build the national `software
-catalog <https://developers.italia.it/>`__ nationales. Le standard est fait pour 
-être interopérable internationalement, par conséquence les clés spécfiques aux pays 
-sont séparées par la partie centrale et définis dans des sections spécifiques que 
-chaque gouvernement peut diriger.
+catalog <https://developers.italia.it/>`__ nationales. Le standard est fait pour
+être interopérable internationalement.
 
 Les détails apportés par un fichier ``publiccode.yml`` inclus : 
 
@@ -46,7 +44,6 @@ Table du contenu
    :numbered:
 
    schema.core.rst
-   country.rst
    forks.rst
    categories-list.rst
    scope-list.rst

@@ -4,10 +4,7 @@ Lo standard
 ===========
 
 La struttura di un file ``publiccode.yml`` prevede l'esistenza di chiavi
-top-level e sezioni che possono contenere al proprio interno altre chiavi. 
-Lo standard ha rilevanza internazionale ma è possibile dichiarare una sezione
-dedicata per le chiavi relative ad un Paese specifico (si veda
-:ref:`estensioni-paese` per maggiori dettagli). 
+top-level e sezioni che possono contenere al proprio interno altre chiavi.
 
 Chiavi e Sezioni Top-Level
 --------------------------

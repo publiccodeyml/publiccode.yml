@@ -164,16 +164,7 @@ Ausführlichere Version
     hardware:
       - name: NFC Reader
         optional: true
-  
-  IT:
-    countryExtensionVersion: "1.0"
-  
-    piattaforme:
-      spid: true
-      cie: true
-      anpr: true
-      pagopa: true
-  
+
   organisation:
     uri: urn:x-italian-pa:c_h501
     name: Roma Capitale
