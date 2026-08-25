@@ -3,12 +3,6 @@
 List of software categories
 ===========================
 
-Here follows a controlled vocabulary of allowed categories for the software.
-
-================
-Valid categories
-================
-
 - accounting
 - agile-project-management
 - applicant-tracking
