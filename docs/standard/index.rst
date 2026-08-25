@@ -856,7 +856,7 @@ Table of contents
    :maxdepth: 2
 
    forks.rst
-   categories-list.rst
-   scope-list.rst
-   aliases-list.rst
+   vocabularies/categories.rst
+   vocabularies/scopes.rst
+   vocabularies/aliases.rst
    example.rst
