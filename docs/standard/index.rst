@@ -51,7 +51,6 @@ Table of contents
    :maxdepth: 2
 
    schema.core.rst
-   country.rst
    forks.rst
    categories-list.rst
    scope-list.rst
