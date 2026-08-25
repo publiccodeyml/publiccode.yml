@@ -2,7 +2,7 @@ publiccode.yml ist ein Metadaten-Standard für Repositories, die von der italien
 
 Indem man eine publiccode.yml-Datei in das Stammverzeichnis eines Repositories aufnimmt und sie mit Informationen über die Software füllt, können Techniker und Beamte diese auswerten. Es können auch automatische Indizierungswerkzeuge erstellt werden, da das Format sowohl von Menschen als auch von Maschinen leicht lesbar ist.
 
-Der Standard ist so konzipiert, dass er international interoperabel ist, daher sind die länderspezifischen Schlüssel vom Kernteil getrennt und in spezifischen Abschnitten definiert, die jede Regierung festlegen kann.
+Der Standard ist so konzipiert, dass er international interoperabel ist.
 
 Zu den Informationen, die in einer publiccode.yml-Datei enthalten sind, gehören:
 

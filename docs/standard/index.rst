@@ -17,8 +17,7 @@ this enables the Developers Italia crawler to build the `national software
 catalog <https://developers.italia.it/>`__. The standard is also used at
 `opencode.de <https://opencode.de>`__, the German registry of open source for
 public administration. ``publiccode.yml`` is designed to be
-interoperable internationally, also through country-specific keys defined in
-dedicated sections that each government can regulate.
+interoperable internationally.
 
 Details carried by a ``publiccode.yml`` file include: 
 
@@ -45,7 +44,6 @@ Table of contents
    :maxdepth: 2
 
    schema.core.rst
-   country.rst
    forks.rst
    categories-list.rst
    scope-list.rst
