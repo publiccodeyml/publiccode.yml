@@ -22,6 +22,3 @@ templates_path = ["_templates"]
 extensions = [
     "sphinx_copybutton",
 ]
-
-# This fragment is included by country.rst, not built as a separate page.
-exclude_patterns = ["schema.it.rst"]

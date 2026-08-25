@@ -52,7 +52,6 @@ Table du contenu
    :numbered:
 
    schema.core.rst
-   country.rst
    forks.rst
    categories-list.rst
    scope-list.rst
