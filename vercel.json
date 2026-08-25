@@ -7,7 +7,7 @@
       "gh-pages": false
     }
   },
-  "installCommand": "curl -LsSf https://astral.sh/uv/0.12.5/install.sh | UV_INSTALL_DIR=.uv UV_NO_MODIFY_PATH=1 sh",
-  "buildCommand": "git fetch --depth=1 \"https://github.com/$VERCEL_GIT_REPO_OWNER/$VERCEL_GIT_REPO_SLUG.git\" '+refs/tags/v*:refs/tags/v*' '+refs/heads/*-rc:refs/heads/*-rc' && LC_ALL=C.UTF-8 ./.uv/uv run sphinx-polyversion poly.py build/html",
+  "installCommand": "",
+  "buildCommand": "./scripts/vercel-build.sh",
   "outputDirectory": "build/html"
 }
