@@ -381,8 +381,8 @@ i.e. the software explicitly claims compliance with specific processes,
 technologies or laws. All countries are specified using lowercase (*deprecated*)
 or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
-Key ``intendedAudience/unsupportedCountries``
-'''''''''''''''''''''''''''''''''''''''''''''
+Key ``intendedAudience/unsupportedCountries`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: array of strings
 -  Presence: optional
@@ -391,6 +391,9 @@ This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
 lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
+
+This key is deprecated, use ``intendedAudience/countries`` to list the
+countries the software explicitly targets instead.
 
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
