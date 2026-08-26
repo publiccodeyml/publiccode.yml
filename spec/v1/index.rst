@@ -37,6 +37,15 @@ Details carried by a ``publiccode.yml`` file include:
   
 and much more.
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   forks.rst
+   types.rst
+   vocabularies.rst
+   example.rst
+
 Top-Level Keys and Sections
 ---------------------------
 
@@ -752,12 +761,3 @@ format though, so not the full ISO8601 is allowed for the date keys.
 Encoding
 ~~~~~~~~
 ``publiccode.yml`` **MUST** be UTF-8 encoded and **MUST** be a YAML 1.2 document.
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
-   forks.rst
-   types.rst
-   vocabularies.rst
-   example.rst
