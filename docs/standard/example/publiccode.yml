@@ -53,11 +53,6 @@ description:
     documentation: "https://read.the.documentation/medusa/v1.0"
     apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
 
-    features:
-      - Very important feature
-      - Will run without a problem
-      - Has zero bugs
-      - Solves all the problems of the world
     screenshots:
       - img/sshot1.jpg
       - img/sshot2.jpg
