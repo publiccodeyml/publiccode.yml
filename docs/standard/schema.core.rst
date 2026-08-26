@@ -120,7 +120,7 @@ Key ``logo``
 
 -  Type: string (relative path to file or absolute URL)
 -  Presence: optional
--  Acceptable formats: SVG, SVGZ, PNG
+-  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Example: ``"img/logo.svg"``
 
 This key contains the path to the logo of the software. Logos SHOULD be
@@ -560,7 +560,7 @@ Key ``description/[lang]/screenshots``
 
 -  Type: array of strings (paths)
 -  Presence: optional
--  Formats: PNG, JPG
+-  Formats: PNG, JPEG, WebP, AVIF
 -  Example: ``"data/screenshots/configuration.png"``
 
 This key contains one or multiple paths to files showing screenshots of
