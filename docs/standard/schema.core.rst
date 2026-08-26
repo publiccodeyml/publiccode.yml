@@ -83,9 +83,9 @@ download of such an installer.
 Key ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: string or array of strings
+-  Type: array of strings, or a single string (*deprecated*)
 -  Presence: optional
--  Example: ``"https://github.com/italia/otello.git"``
+-  Example: ``["https://github.com/italia/otello.git"]``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
@@ -93,6 +93,9 @@ contain the ``url`` of the original project(s).
 
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
+
+The single string form is deprecated, use a one element array
+instead.
 
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
