@@ -534,11 +534,11 @@ Whichever the format for the documentation, remember to make its source
 files available under an open license, possibly by committing them as
 part of the repository itself.
 
-Key ``description/[lang]/features``
-'''''''''''''''''''''''''''''''''''
+Key ``description/[lang]/features`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: array of strings
--  Presence: mandatory (for at least one language)
+-  Presence: optional
 
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
@@ -547,13 +547,9 @@ software. The features should thus not target developers; instead of
 listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
-While the key is mandatory, there is no mandatory minimum or maximum
-number of features that should be listed in this key.
-
-The suggested number of features to list is between 5 and 20, depending
-on the software size and complexity. There is no need for
-exhaustiveness, as users can always read the documentation for
-additional information.
+This key is deprecated, describe the main features of the software in
+``description/[lang]/longDescription`` instead, for example as a
+bullet point list.
 
 Key ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
