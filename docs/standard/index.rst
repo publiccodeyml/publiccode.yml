@@ -37,6 +37,11 @@ Details carried by a ``publiccode.yml`` file include:
   
 and much more.
 
+A minimal ``publiccode.yml``:
+
+.. literalinclude:: example/publiccode.minimal.yml
+   :language: yaml
+
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -44,7 +49,6 @@ and much more.
    forks.rst
    types.rst
    vocabularies.rst
-   example.rst
 
 Top-Level Keys and Sections
 ---------------------------
