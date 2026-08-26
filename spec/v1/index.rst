@@ -214,7 +214,7 @@ This key is deprecated.
 ``fundedBy``
 ~~~~~~~~~~~~
 
--  Type: List of :ref:`Organisations <organisation-object>`
+-  Type: List of :ref:`Organisations <organisation-type>`
 -  Presence: optional
 
 A list of organisations that are currently known to be funding the
@@ -641,7 +641,7 @@ This key describes how the software is currently maintained.
 ``maintenance/contractors``
 '''''''''''''''''''''''''''
 
--  Type: array of :ref:`Contractor <contractor-object>`
+-  Type: array of :ref:`Contractor <contractor-type>`
 -  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
@@ -651,7 +651,7 @@ organisations, or other collective names.
 ``maintenance/contacts``
 ''''''''''''''''''''''''
 
--  Type: List of :ref:`Contacts <contact-object>`
+-  Type: List of :ref:`Contacts <contact-type>`
 -  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
@@ -710,7 +710,7 @@ dependencies.
 ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-object>`
+-  Type: array of :ref:`dependency <dependency-type>`
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -724,7 +724,7 @@ deployment scripts.
 ``dependsOn/proprietary``
 '''''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-object>`
+-  Type: array of :ref:`dependency <dependency-type>`
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -733,7 +733,7 @@ under a proprietary license.
 ``dependsOn/hardware``
 ''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-object>`
+-  Type: array of :ref:`dependency <dependency-type>`
 -  Presence: optional
 
 This key contains a list of hardware dependencies that must be owned to
@@ -758,6 +758,6 @@ Encoding
    :hidden:
 
    forks.rst
-   objects.rst
+   types.rst
    vocabularies.rst
    example.rst
