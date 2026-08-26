@@ -839,7 +839,7 @@ A Contact is an object with the following properties:
    this key with generic contact information, company departments,
    associations, etc.
 -  ``email`` - This key contains the e-mail address of the technical
-   contact. It must be an email address of where the technical contact
+   contact. It must be an email address where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
    or generic contact points like “info@acme.inc”.
 -  ``phone`` - phone number (with international prefix). This has to be
@@ -855,7 +855,7 @@ Organisation
 
 An organisation is a structure (association, company, public
 authority, etc.) that can fund software development. An organisation
-has the following property:
+has the following properties:
 
 -  ``name`` - **mandatory** - The name of the organisation, whether
     it’s an association, a company, a public sector organisation, or
@@ -875,7 +875,7 @@ A Contractor is an object with the following properties:
    years in the future, and thus will need to be regularly updated as
    the community continues working on the project.
 -  ``email`` - This key contains the e-mail address of the technical
-   contact. It must be an email address of where the technical contact
+   contact. It must be an email address where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
    or generic contact points like “info@acme.inc”.
 -  ``website`` - This key points to the maintainer website. It can
