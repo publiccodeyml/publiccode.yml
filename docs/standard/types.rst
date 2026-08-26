@@ -1,7 +1,7 @@
-Objects
-=======
+Types
+=====
 
-.. _dependency-object:
+.. _dependency-type:
 
 Dependency
 ----------
@@ -45,7 +45,7 @@ This snippet marks an optional dependency on PostgreSQL exactly version
 This snippet marks a mandatory dependency on MySQL, allowing any version
 between 1.1 and 1.3.
 
-.. _contact-object:
+.. _contact-type:
 
 Contact
 -------
@@ -69,7 +69,7 @@ A Contact is an object with the following properties:
    technical contact and each maintainer entity. It can contain for
    instance a company name, an association name, etc.
 
-.. _organisation-object:
+.. _organisation-type:
 
 Organisation
 ------------
@@ -83,7 +83,7 @@ has the following property:
     a physical person.
 -  ``uri`` - The URI identifying the organisation.
 
-.. _contractor-object:
+.. _contractor-type:
 
 Contractor
 ----------
