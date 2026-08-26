@@ -579,8 +579,8 @@ Screenshots can be of any shape and size; the suggested formats are:
 -  Tablet: 1024x768 @2x
 -  Mobile: 375x667 @2x
 
-Key ``description/[lang]/videos``
-'''''''''''''''''''''''''''''''''
+Key ``description/[lang]/videos`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: array of strings (URLs)
 -  Presence: optional
@@ -593,8 +593,8 @@ hosted on a video sharing website that supports the
 `oEmbed <https://oembed.com>`__ standard; popular options are YouTube
 and Vimeo.
 
-Since videos are an integral part of the documentation, it is
-recommended to publish them with an open license.
+This key is deprecated, link videos from the documentation or the
+website of the software instead.
 
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
