@@ -101,7 +101,7 @@ Forks created for the purpose of contributing upstream should not
 modify this file; this helps software parsing ``publiccode.yml`` to
 immediately skip technical forks. On the contrary, a
 complete fork that is meant to be maintained separately from the
-original software should modify this line, to give themselves the status
+original software should modify this line, to give itself the status
 of a different project.
 
 See :ref:`forks-and-variants` for a complete description of what
@@ -444,7 +444,7 @@ section. All other languages are optional.
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the
-name most people usually refer to the software. In case the software has
+name most people usually use to refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
