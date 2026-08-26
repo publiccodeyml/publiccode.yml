@@ -469,7 +469,7 @@ allowed.
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (min 150 chars, max 10000 chars)
+-  Type: Markdown string (min 150 chars, max 10000 chars)
 -  Presence: mandatory (for at least one language)
 
 This key contains a longer description of the software, between 150 and
@@ -479,8 +479,10 @@ that of users of the software, not developers. You can think of this
 text as the description of the software that would be in its website (if
 the software had one).
 
-This description can contain some basic markdown: ``*italic*``,
-``**bold**``, bullet points and ``[links](#)``.
+The value of this key is Markdown, as defined by
+`CommonMark <https://commonmark.org/>`__. Keep the formatting basic:
+``*italic*``, ``**bold**``, bullet points and ``[links](#)``, since
+consumers MAY render only this subset.
 
 Key ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''''''
