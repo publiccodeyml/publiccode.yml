@@ -20,7 +20,7 @@ Valid Tags
 - environment
 - finance-and-economic-development
 - foreign-affairs
-- government
+- government (*deprecated*)
 - healthcare
 - infrastructures
 - justice
