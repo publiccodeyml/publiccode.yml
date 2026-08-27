@@ -38,10 +38,9 @@ Specification
 
 -  Type: string
 -  Presence: mandatory
--  Example: ``"0"``
 
-This key specifies the version to which the current ``publiccode.yml``
-adheres, for forward compatibility.
+This key specifies the version of the Standard to which this
+``publiccode.yml`` adheres. Use ``1``.
 
 ``name``
 ~~~~~~~~
