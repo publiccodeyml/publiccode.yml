@@ -62,8 +62,6 @@ description:
       - img/sshot1.jpg
       - img/sshot2.jpg
       - img/sshot3.jpg
-    videos:
-      - https://youtube.com/xxxxxxxx
     awards:
       - 1st Price Software of the year
 
