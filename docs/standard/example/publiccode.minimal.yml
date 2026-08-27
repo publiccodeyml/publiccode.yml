@@ -4,8 +4,10 @@ name: Firefax
 url: "https://example.com/firefax.git"
 platforms:
   - web
+  - linux
+  - windows
 
-developmentStatus: development
+developmentStatus: stable
 
 softwareType: "standalone/desktop"
 
@@ -28,7 +30,7 @@ maintenance:
   type: "community"
 
   contacts:
-    - name: Francesco Rossi
+    - name: Jane Doe
 
 localisation:
   localisationReady: true

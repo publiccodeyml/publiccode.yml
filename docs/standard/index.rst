@@ -680,7 +680,7 @@ than one language.
 
 -  Type: list of IETF BCP 47 language tags
 -  Presence: mandatory
--  Example: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
+-  Example: ``"en"``, ``"fr"``, ``"de-AT"``
 
 This is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
