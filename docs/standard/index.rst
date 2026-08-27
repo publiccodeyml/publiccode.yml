@@ -17,26 +17,6 @@ format. The `core tools
 <https://github.com/publiccodeyml/publiccode.yml#core-tools>`__
 provide the reference implementations to build on.
 
-``publiccode.yml`` is mandatory for all public software developed in Italy,
-according to the national `guidelines
-<https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
-this enables the Developers Italia crawler to build the `national software
-catalog <https://developers.italia.it/>`__. The standard is also used at
-`opencode.de <https://opencode.de>`__, the German registry of open source for
-public administration. ``publiccode.yml`` is designed to be
-interoperable internationally.
-
-Details carried by a ``publiccode.yml`` file include: 
-
-- title and description of the project or product (in one or more languages); 
-- development state (e.g., ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``);
-- name and URI of the organisation that publishes the software;
-- contacts of the maintainer, if any, including the expiry date of the maintenance contract;
-- information about the legal context for which the project or product was designed; 
-- dependencies
-  
-and much more.
-
 A minimal ``publiccode.yml``:
 
 .. literalinclude:: example/publiccode.minimal.yml
