@@ -48,7 +48,7 @@ adheres, for forward compatibility.
 
 -  Type: string
 -  Presence: mandatory
--  Example: ``"Office Suite"``
+-  Example: ``"Firefax"``
 
 This key contains the name of the software. It contains the (short)
 public name of the product, which can be localised using the
@@ -70,7 +70,7 @@ This key contains the name of the “suite” to which the software belongs.
 
 -  Type: string (URL)
 -  Presence: mandatory
--  Example: ``"https://example.com/office-suite.git"``
+-  Example: ``"https://example.com/firefax.git"``
 
 A unique identifier for this software. This string must be a URL to the
 source code repository (git, svn, …) in which the software is published.
@@ -93,7 +93,7 @@ an author.
 
 -  Type: string (URL)
 -  Presence: optional
--  Example: ``"https://example.com/office-suite"``
+-  Example: ``"https://example.com/firefax"``
 
 If the ``url`` parameter does not serve a human readable or browsable
 page, but only serves source code to a source control client, with this
@@ -109,7 +109,7 @@ download of such an installer.
 
 -  Type: list of strings, or a single string (*deprecated*)
 -  Presence: optional
--  Example: ``["https://example.com/document-editor.git"]``
+-  Example: ``"https://github.com/example-org/firefax.git"``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
@@ -420,7 +420,7 @@ section. All other languages are optional.
 
 -  Type: string
 -  Presence: optional
--  Example: ``"Office Suite"``
+-  Example: ``"Firefax"``
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the
