@@ -50,8 +50,8 @@ A minimal ``publiccode.yml``:
    types.rst
    vocabularies.rst
 
-Top-Level Keys and Sections
----------------------------
+Specification
+-------------
 
 ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~
