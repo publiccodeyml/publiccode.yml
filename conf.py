@@ -1,3 +1,9 @@
+import warnings
+
+from sphinx.deprecation import RemovedInSphinx90Warning
+
+warnings.filterwarnings("ignore", category=RemovedInSphinx90Warning)
+
 project = "publiccode.yml Standard (v0.8)"
 
 # Under sphinx-polyversion (poly.py) POLYVERSION_DATA carries the version
