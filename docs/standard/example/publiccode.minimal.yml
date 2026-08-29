@@ -1,22 +1,16 @@
 publiccodeYmlVersion: "1"
-
 name: Firefax
 url: "https://example.com/firefax.git"
 platforms:
   - web
   - linux
   - windows
-
 developmentStatus: stable
-
 softwareType: "standalone/desktop"
-
 description:
   en:
     shortDescription: >
-      A rather short description which
-      is probably useless
-
+      A rather short description which is probably useless
     longDescription: >
       Very long description of this software, also split
       on multiple rows. You should note what the software
@@ -25,14 +19,13 @@ description:
 
 legal:
   license: AGPL-3.0-or-later
-
 maintenance:
   type: "community"
-
   contacts:
     - name: Jane Doe
-
 localisation:
   localisationReady: true
   availableLanguages:
     - en
+    - it
+    - fr
