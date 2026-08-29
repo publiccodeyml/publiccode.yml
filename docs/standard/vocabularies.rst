@@ -1,7 +1,7 @@
 Vocabularies
 ============
 
-.. _aliases-list:
+.. _aliases:
 
 Aliases
 -------
@@ -23,7 +23,7 @@ alias       resource
 ``io``      https://io.italia.it/
 ==========  ==============================================
 
-.. _scope-list:
+.. _scopes:
 
 Scopes
 ------
@@ -52,7 +52,7 @@ Scopes
 - ``transportation``
 - ``welfare``
 
-.. _categories-list:
+.. _categories:
 
 Software categories
 -------------------
