@@ -33,20 +33,18 @@ A minimal ``publiccode.yml``:
 Specification
 -------------
 
-``publiccodeYmlVersion``
-~~~~~~~~~~~~~~~~~~~~~~~~
+``publiccodeYmlVersion`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Presence: mandatory
 
 This key specifies the version of the Standard to which this
 ``publiccode.yml`` adheres. Use ``1``.
 
-``name``
-~~~~~~~~
+``name`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Presence: mandatory
 -  Example: ``"Firefax"``
 
 This key contains the name of the software. It contains the (short)
@@ -59,16 +57,14 @@ internal “code” name and a commercial name, use the commercial name.
 ~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Presence: optional
 -  Example: ``"MegaProductivitySuite"``
 
 This key contains the name of the “suite” to which the software belongs.
 
-``url``
-~~~~~~~
+``url`` *(required)*
+~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (URL)
--  Presence: mandatory
 -  Example: ``"https://example.com/firefax.git"``
 
 A unique identifier for this software. This string must be a URL to the
@@ -91,7 +87,6 @@ an author.
 ~~~~~~~~~~~~~~
 
 -  Type: string (URL)
--  Presence: optional
 -  Example: ``"https://example.com/firefax"``
 
 If the ``url`` parameter does not serve a human readable or browsable
@@ -107,7 +102,6 @@ download of such an installer.
 ~~~~~~~~~~~~~
 
 -  Type: list of strings, or a single string (*deprecated*)
--  Presence: optional
 -  Example: ``"https://github.com/example-org/firefax.git"``
 
 In case this software is a variant or a fork of another software, which
@@ -124,7 +118,6 @@ instead.
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Presence: optional
 -  Example: ``"1.0"``, ``"dev"``
 
 This key contains the latest stable version number of the software. The
@@ -136,7 +129,6 @@ or any other specific version format.
 ~~~~~~~~~~~~~~~
 
 -  Type: string (date)
--  Presence: optional
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
@@ -145,7 +137,6 @@ This key contains the date at which the latest version was released.
 ~~~~~~~~
 
 -  Type: string (relative path to file or absolute URL)
--  Presence: optional
 -  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Example: ``"img/logo.svg"``
 
@@ -156,11 +147,10 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-``platforms``
-~~~~~~~~~~~~~
+``platforms`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string or list of strings
--  Presence: mandatory
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
 -  Example: ``web``
@@ -177,7 +167,6 @@ value can be used.
 ~~~~~~~~~~~~~~
 
 -  Type: list of strings
--  Presence: optional
 -  Acceptable values: see :ref:`categories-list` 
 
 A list of categories that can be used to describe the software and can help
@@ -190,7 +179,6 @@ values.
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: list of strings
--  Presence: optional
 
 A list of the names of prominent public administrations (that will serve
 as “testimonials”) that are currently known to the software maintainer
@@ -207,7 +195,6 @@ This key is deprecated.
 ~~~~~~~~~~~~
 
 -  Type: List of :ref:`Organisations <organisation-type>`
--  Presence: optional
 
 A list of organisations that are currently known to be funding the
 development of this software.
@@ -216,15 +203,13 @@ development of this software.
 ~~~~~~~~~~~
 
 -  Type: string
--  Presence: optional
 
 A link to a public roadmap of the software.
 
-``developmentStatus``
-~~~~~~~~~~~~~~~~~~~~~
+``developmentStatus`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string
--  Presence: mandatory
 -  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
@@ -244,11 +229,10 @@ The allowed values are:
 -  ``obsolete`` - The software is no longer maintained or kept up to date.
    All of the source code is archived and kept for historical reasons.
 
-``softwareType``
-~~~~~~~~~~~~~~~~
+``softwareType`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string
--  Presence: mandatory
 -  Allowed values: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
@@ -281,7 +265,6 @@ The allowed values are:
 ~~~~~~~~~~~~
 
 -  Type: list of mappings
--  Presence: optional
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
@@ -312,11 +295,10 @@ Example:
 
 This optional section provides the organisation publishing the software.
 
-``organisation/uri``
-''''''''''''''''''''
+``organisation/uri`` *(required)*
+'''''''''''''''''''''''''''''''''
 
 -  Type: string
--  Presence: mandatory
 -  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
 
 The URI identifying the organisation publishing the software. The value
@@ -336,7 +318,6 @@ platform consuming the file.
 '''''''''''''''''''''
 
 -  Type: string
--  Presence: optional
 -  Example: ``"My organisation"``
 
 The canonical name of the organisation publishing the software.
@@ -353,7 +334,6 @@ registered legal or institutional name).
 ''''''''''''''''''''''''''''''
 
 -  Type: list of strings
--  Presence: optional
 
 This key explicitly includes certain countries in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
@@ -364,7 +344,6 @@ ISO 3166-1 alpha-2 two-letter country codes.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: list of strings
--  Presence: optional
 
 This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
@@ -378,7 +357,6 @@ countries the software explicitly targets instead.
 ''''''''''''''''''''''''''
 
 -  Type: list of strings
--  Presence: optional
 -  Acceptable values: see :ref:`scope-list` 
 
 This key contains a list of tags related to the field of application of
@@ -418,7 +396,6 @@ section. All other languages are optional.
 ''''''''''''''''''''''''''''''''''''
 
 -  Type: string
--  Presence: optional
 -  Example: ``"Firefax"``
 
 This key is an opportunity to localise the name in a specific language.
@@ -427,11 +404,10 @@ name most people usually use to refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
-``description/[lang]/shortDescription``
-'''''''''''''''''''''''''''''''''''''''
+``description/[lang]/shortDescription`` *(required)*
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (max 150 chars)
--  Presence: mandatory
 -  Example: ``"Advanced booking system for hospitals"``
 
 This key contains a short description of the software. It should be a
@@ -442,7 +418,8 @@ allowed.
 ''''''''''''''''''''''''''''''''''''''
 
 -  Type: Markdown string (min 150 chars, max 10000 chars)
--  Presence: mandatory (for at least one language)
+
+**Required** for at least one language.
 
 This key contains a longer description of the software, between 150 and
 10000 chars. It is meant to provide an overview of the capabilities of
@@ -460,7 +437,6 @@ consumers MAY render only this subset.
 ''''''''''''''''''''''''''''''''''''
 
 -  Type: URL
--  Presence: optional
 
 This key contains a reference to the user-level (not developer-level)
 documentation of the software. The value must be a URL to a hosted
@@ -486,7 +462,6 @@ part of the repository itself.
 '''''''''''''''''''''''''''''''''''''''
 
 -  Type: URL
--  Presence: optional
 
 This key contains a reference to the API documentation of the software.
 The value must be a URL to a hosted version of the documentation.
@@ -512,7 +487,6 @@ part of the repository itself.
 '''''''''''''''''''''''''''''''
 
 -  Type: list of strings
--  Presence: optional
 
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
@@ -530,7 +504,6 @@ additional information.
 ''''''''''''''''''''''''''''''''''
 
 -  Type: list of strings (paths)
--  Presence: optional
 -  Formats: PNG, JPEG, WebP, AVIF
 -  Example: ``"data/screenshots/configuration.png"``
 
@@ -552,7 +525,6 @@ Screenshots can be of any shape and size; the suggested formats are:
 ''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: list of strings (URLs)
--  Presence: optional
 -  Example: ``"https://youtube.com/xxxxxxxx"``
 
 This key contains one or multiple URLs of videos showing how the
@@ -569,18 +541,16 @@ website of the software instead.
 '''''''''''''''''''''''''''''
 
 -  Type: list of strings
--  Presence: optional
 
 A list of awards won by the software.
 
 ``legal``
 ~~~~~~~~~
 
-``legal/license``
-'''''''''''''''''
+``legal/license`` *(required)*
+''''''''''''''''''''''''''''''
 
 -  Type: string
--  Presence: mandatory
 -  Example: ``"AGPL-3.0-or-later"``, ``"EUPL-1.2 OR AGPL-3.0-or-later"``
 
 This string describes the license under which the software is
@@ -592,7 +562,6 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 ''''''''''''''''''''''''''''
 
 -  Type: string
--  Presence: optional
 -  Example: ``"City of Amsterdam"``
 
 This string describes the entity that owns the copyright on “most” of
@@ -613,11 +582,10 @@ This section provides information on the maintenance status of the
 software, useful to evaluate whether the software is actively developed
 or not.
 
-``maintenance/type``
-''''''''''''''''''''
+``maintenance/type`` *(required)*
+'''''''''''''''''''''''''''''''''
 
 -  Type: enumerate
--  Presence: mandatory
 -  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 This key describes how the software is currently maintained.
@@ -633,8 +601,9 @@ This key describes how the software is currently maintained.
 ``maintenance/contractors``
 '''''''''''''''''''''''''''
 
+**Required** if ``maintenance/type`` is ``contract``. Must not be present otherwise.
+
 -  Type: array of :ref:`Contractor <contractor-type>`
--  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -643,8 +612,9 @@ organisations, or other collective names.
 ``maintenance/contacts``
 ''''''''''''''''''''''''
 
+**Required** if ``maintenance/type`` is ``internal`` or ``community``. Optional otherwise.
+
 -  Type: List of :ref:`Contacts <contact-type>`
--  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
 
@@ -665,21 +635,19 @@ involved with the maintenance of the product as well.
 This section provides an overview of the localization features of the
 software.
 
-``localisation/localisationReady``
-''''''''''''''''''''''''''''''''''
+``localisation/localisationReady`` *(required)*
+'''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: boolean
--  Presence: mandatory
 
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
 
-``localisation/availableLanguages``
-'''''''''''''''''''''''''''''''''''
+``localisation/availableLanguages`` *(required)*
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: list of IETF BCP 47 language tags
--  Presence: mandatory
 -  Example: ``"en"``, ``"fr"``, ``"de-AT"``
 
 This is the list of languages in which the software is
@@ -703,7 +671,6 @@ dependencies.
 '''''''''''''''''''''''''''''''''
 
 -  Type: array of :ref:`dependency <dependency-type>`
--  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
@@ -717,7 +684,6 @@ deployment scripts.
 '''''''''''''''''''''''''
 
 -  Type: array of :ref:`dependency <dependency-type>`
--  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under a proprietary license.
@@ -726,7 +692,6 @@ under a proprietary license.
 ''''''''''''''''''''''
 
 -  Type: array of :ref:`dependency <dependency-type>`
--  Presence: optional
 
 This key contains a list of hardware dependencies that must be owned to
 use the software.
