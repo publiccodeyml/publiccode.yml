@@ -3,6 +3,9 @@ publiccodeYmlVersion: "0"
 name: Medusa
 applicationSuite: MegaProductivitySuite
 url: "https://example.com/italia/medusa.git"
+components:
+  - "https://example.com/italia/stheno.git"
+  - "https://example.com/italia/euryale.git"
 landingURL: "https://example.com/italia/medusa"
 isBasedOn: "https://github.com/italia/otello.git"
 softwareVersion: "1.0"
