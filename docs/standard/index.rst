@@ -127,7 +127,8 @@ or any other specific version format.
 -  Type: string (date)
 -  Example: ``"2017-04-15"``
 
-The date the latest version was released.
+The date the latest version was released, as “YYYY-MM-DD”. This is
+the only allowed ISO8601 format.
 
 ``logo``
 ~~~~~~~~
@@ -679,16 +680,8 @@ Runtime dependencies distributed under a proprietary license.
 
 Hardware dependencies that must be owned to use the software.
 
-Special data formats
---------------------
-
-Dates
-~~~~~
-
-All dates in ``publiccode.yml`` must follow the format “YYYY-MM-DD”,
-which is one of the ISO8601 allowed formats. This is the only allowed
-format though, so not the full ISO8601 is allowed for the date keys.
-
 Encoding
-~~~~~~~~
-``publiccode.yml`` **MUST** be UTF-8 encoded and **MUST** be a YAML 1.2 document.
+--------
+
+``publiccode.yml`` **MUST** be UTF-8 encoded and **MUST** be a
+YAML 1.2 document.
