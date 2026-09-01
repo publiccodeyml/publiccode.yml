@@ -38,8 +38,7 @@ Specification
 
 -  Type: string
 
-This key specifies the version of the Standard to which this
-``publiccode.yml`` adheres. Use ``1``.
+The version of the specification this file adheres to. Use ``1``.
 
 ``name`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~
@@ -47,11 +46,7 @@ This key specifies the version of the Standard to which this
 -  Type: string
 -  Example: ``"Firefax"``
 
-This key contains the name of the software. It contains the (short)
-public name of the product, which can be localised using the
-``description/[lang]/localisedName`` key. It should be the name most
-people usually refer to the software. In case the software has both an
-internal “code” name and a commercial name, use the commercial name.
+The short public name of the software, the one users know it by.
 
 ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +54,10 @@ internal “code” name and a commercial name, use the commercial name.
 -  Type: string
 -  Example: ``"MegaProductivitySuite"``
 
-This key contains the name of the “suite” to which the software belongs.
+When the software ships as one piece of a larger family of
+products, the way a word processor ships inside an office suite,
+the name of that family. Catalogs can group related software
+by it.
 
 ``url`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~
@@ -89,14 +87,12 @@ an author.
 -  Type: string (URL)
 -  Example: ``"https://example.com/firefax"``
 
-If the ``url`` parameter does not serve a human readable or browsable
-page, but only serves source code to a source control client, with this
-key you have an option to specify a landing page. This page, ideally, is
-where your users will land when they will click a button labeled
-something like “Go to the application source code”. In case the product
-provides an automated graphical installer, this URL can point to a page
-which contains a reference to the source code but also offers the
-download of such an installer.
+The page users should reach when clicking a button like “Go to
+the application source code”, for when ``url`` serves source code
+to a source control client rather than a browsable page. If the
+product provides a graphical installer, this URL can point to a
+page that links the source code and offers the installer for
+download.
 
 ``isBasedOn``
 ~~~~~~~~~~~~~
@@ -120,7 +116,7 @@ instead.
 -  Type: string
 -  Example: ``"1.0"``, ``"dev"``
 
-This key contains the latest stable version number of the software. The
+The latest stable version number of the software. The
 version number is a string that is not meant to be interpreted and
 parsed but just displayed; parsers should not assume semantic versioning
 or any other specific version format.
@@ -131,7 +127,7 @@ or any other specific version format.
 -  Type: string (date)
 -  Example: ``"2017-04-15"``
 
-This key contains the date at which the latest version was released.
+The date the latest version was released.
 
 ``logo``
 ~~~~~~~~
@@ -140,8 +136,7 @@ This key contains the date at which the latest version was released.
 -  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Example: ``"img/logo.svg"``
 
-This key contains the path to the logo of the software. Logos SHOULD be
-in vector format.
+The logo of the software. Logos SHOULD be in vector format.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
@@ -155,9 +150,8 @@ the ``publiccode.yml`` file is stored.
    ``android``. Human readable values outside this list are allowed.
 -  Example: ``web``
 
-This key specifies which platform the software runs on. It is meant to
-describe the platforms that users will use to access and operate the
-software, rather than the platform the software itself runs on.
+The platforms the software runs on: the ones users use to access and
+operate it, rather than the platform the software itself runs on.
 
 Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
@@ -335,7 +329,7 @@ registered legal or institutional name).
 
 -  Type: list of strings
 
-This key explicitly includes certain countries in the intended audience,
+Countries explicitly included in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
 technologies or laws. All countries are specified using uppercase
 ISO 3166-1 alpha-2 two-letter country codes.
@@ -345,9 +339,9 @@ ISO 3166-1 alpha-2 two-letter country codes.
 
 -  Type: list of strings
 
-This key explicitly marks countries as NOT supported. This might be the
-case if there is a conflict between how software is working and a
-specific law, process or technology. All countries are specified using
+Countries explicitly marked as NOT supported, for instance when
+there is a conflict between how the software works and a specific
+law, process or technology. All countries are specified using
 uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
 This key is deprecated, use ``intendedAudience/countries`` to list the
@@ -359,8 +353,7 @@ countries the software explicitly targets instead.
 -  Type: array of strings
 -  Acceptable values: see :ref:`scopes`
 
-This key contains a list of tags related to the field of application of
-the software. 
+Tags related to the field of application of the software.
 
 ``description``
 ~~~~~~~~~~~~~~~
@@ -398,11 +391,8 @@ section. All other languages are optional.
 -  Type: string
 -  Example: ``"Firefax"``
 
-This key is an opportunity to localise the name in a specific language.
-It contains the (short) public name of the product. It should be the
-name most people usually use to refer to the software. In case the software has
-both an internal “code” name and a commercial name, use the commercial
-name.
+The short public name of the software in this language, for when
+it differs from ``name``.
 
 ``description/[lang]/shortDescription`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -410,19 +400,18 @@ name.
 -  Type: string (max 150 chars)
 -  Example: ``"Advanced booking system for hospitals"``
 
-This key contains a short description of the software. It should be a
-single line containing a single sentence. Maximum 150 characters are
-allowed.
+A short description of the software: a single line containing a
+single sentence, maximum 150 characters.
 
 ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: Markdown string (min 150 chars, max 10000 chars)
-
 **Required** for at least one language.
 
-This key contains a longer description of the software, between 150 and
-10000 chars. It is meant to provide an overview of the capabilities of
+-  Type: string (min 150 chars, max 10000 chars)
+
+A longer description of the software, between 150 and
+10000 chars, meant to provide an overview of the capabilities of
 the software for a potential user. The audience for this text should be
 that of users of the software, not developers. You can think of this
 text as the description of the software that would be in its website (if
@@ -438,9 +427,8 @@ consumers MAY render only this subset.
 
 -  Type: URL
 
-This key contains a reference to the user-level (not developer-level)
-documentation of the software. The value must be a URL to a hosted
-version of the documentation.
+A reference to the user-level (not developer-level) documentation
+of the software: a URL to a hosted version of the documentation.
 
 It is suggested that the URL points to a hosted version of the
 documentation that is immediately readable through a common web browser
@@ -463,8 +451,8 @@ part of the repository itself.
 
 -  Type: URL
 
-This key contains a reference to the API documentation of the software.
-The value must be a URL to a hosted version of the documentation.
+A reference to the API documentation of the software: a URL to a
+hosted version of the documentation.
 
 It is suggested that the URL points to a hosted version of the
 documentation that is immediately readable through a common web browser.
@@ -488,7 +476,7 @@ part of the repository itself.
 
 -  Type: list of strings
 
-This key contains a list of software features, describing what
+A list of software features, describing what
 capabilities the software allows to do. The audience for this text
 should be that of public decision makers who will be commissioning the
 software. The features should thus not target developers; instead of
@@ -507,8 +495,8 @@ additional information.
 -  Formats: PNG, JPEG, WebP, AVIF
 -  Example: ``"data/screenshots/configuration.png"``
 
-This key contains one or multiple paths to files showing screenshots of
-the software. They are meant to give a quick idea on how the software
+One or more paths to files showing screenshots of
+the software, meant to give a quick idea on how the software
 looks like and how it works.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the screenshot in raw
@@ -527,7 +515,7 @@ Screenshots can be of any shape and size; the suggested formats are:
 -  Type: list of strings (URLs)
 -  Example: ``"https://youtube.com/xxxxxxxx"``
 
-This key contains one or multiple URLs of videos showing how the
+One or more URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
 overview on how the software looks like and how it works. Videos must be
 hosted on a video sharing website that supports the
@@ -588,7 +576,7 @@ or not.
 -  Type: enumerate
 -  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
-This key describes how the software is currently maintained.
+How the software is currently maintained.
 
 -  ``internal`` - means that the software is internally maintained by the
    repository owner;
@@ -605,7 +593,7 @@ This key describes how the software is currently maintained.
 
 -  Type: array of :ref:`Contractor <contractor-type>`
 
-This key describes the entity or entities, if any, that are currently
+The entity or entities, if any, currently
 contracted for maintaining the software. They can be companies,
 organisations, or other collective names.
 
@@ -616,9 +604,7 @@ organisations, or other collective names.
 
 -  Type: List of :ref:`Contacts <contact-type>`
 
-One or more contacts maintaining this software.
-
-This key describes the technical people currently responsible for
+The technical people currently responsible for
 maintaining the software. All contacts need to be a physical person, not
 a company or an organisation. If somebody is acting as a representative
 of an institution, it must be listed within the ``affiliation`` of the
@@ -672,8 +658,7 @@ dependencies.
 
 -  Type: array of :ref:`dependency <dependency-type>`
 
-This key contains a list of runtime dependencies that are distributed
-under an open-source license.
+Runtime dependencies distributed under an open-source license.
 
 This key is deprecated. Open source runtime dependencies are already
 declared in the SBOM or in the package manager manifests, and what
@@ -685,16 +670,14 @@ deployment scripts.
 
 -  Type: array of :ref:`dependency <dependency-type>`
 
-This key contains a list of runtime dependencies that are distributed
-under a proprietary license.
+Runtime dependencies distributed under a proprietary license.
 
 ``dependsOn/hardware``
 ''''''''''''''''''''''
 
 -  Type: array of :ref:`dependency <dependency-type>`
 
-This key contains a list of hardware dependencies that must be owned to
-use the software.
+Hardware dependencies that must be owned to use the software.
 
 Special data formats
 --------------------
