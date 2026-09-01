@@ -32,8 +32,8 @@ A Contractor is an object with the following properties:
 
 -  ``name`` - **mandatory** - The name of the contractor, whether it’s a
    company or a physical person.
--  ``until`` - **mandatory** - The date (YYYY-MM-DD) at which
-   the maintenance is going to end. In
+-  ``until`` - **mandatory** - The date the maintenance is going
+   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format. In
    case of community maintenance, the value should not be more than 2
    years in the future, and thus will need to be regularly updated as
    the community continues working on the project.
