@@ -150,9 +150,11 @@ the ``publiccode.yml`` file is stored.
 The platforms the software runs on: the ones users use to access and
 operate it, rather than the platform the software itself runs on.
 
-Use the predefined values if possible. If the software runs on a
-platform for which a predefined value is not available, a different
-value can be used.
+.. tip::
+
+   Use the predefined values if possible. If the software runs on a
+   platform for which a predefined value is not available, a
+   different value can be used.
 
 ``categories``
 ~~~~~~~~~~~~~~
@@ -243,7 +245,7 @@ The allowed values are:
 -  ``standalone/other`` - The software has a different nature from the ones
    listed above.
 -  ``addon`` - The software is an addon, such as a plugin or a
-   theme, for a more complex software (e.g. a CMS or an office suite).
+   theme, for a more complex software (e.g. a CMS or an office suite).
 -  ``library`` - The software is a library or SDK intended to be used
    by developers in other software projects.
 -  ``configurationFiles`` - The software does not contain executable
@@ -427,21 +429,21 @@ consumers MAY render only this subset.
 A reference to the user-level (not developer-level) documentation
 of the software: a URL to a hosted version of the documentation.
 
-It is suggested that the URL points to a hosted version of the
-documentation that is immediately readable through a common web browser
-in both desktop and mobile format. The documentation should be rendered
-in HTML and browsable like a website (with a navigation index, a search
-bar, etc.).
+.. tip::
 
-If the documentation is instead available only as a document, put a
-direct view/download link as URL in this key. You should commit the
-document as part of the source code repository, and then link to it
-using the code hosting source browser URL (e.g.: GitHub URL to the file).
-Prefer using open formats like PDF or ODT for maximum interoperability.
+   Point the URL at documentation readable in a common web browser,
+   desktop and mobile: rendered in HTML and browsable like a website,
+   with a navigation index, a search bar, etc.
 
-Whichever the format for the documentation, remember to make its source
-files available under an open license, possibly by committing them as
-part of the repository itself.
+   If the documentation is only available as a document, put a direct
+   view/download link here: commit the document to the source code
+   repository and link it through the code hosting source browser
+   (e.g. the GitHub URL of the file). Prefer open formats like PDF or
+   ODT for maximum interoperability.
+
+   Whichever the format, make the documentation sources available
+   under an open license, possibly by committing them to the
+   repository itself.
 
 ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''
@@ -451,22 +453,22 @@ part of the repository itself.
 A reference to the API documentation of the software: a URL to a
 hosted version of the documentation.
 
-It is suggested that the URL points to a hosted version of the
-documentation that is immediately readable through a common web browser.
-The documentation should be rendered in HTML and browsable like a
-website (with a navigation index, a search bar, etc.), and if there is a
-reference or test deployment, possibly offer an interactive interface
-(e.g. Swagger).
+.. tip::
 
-If the documentation is instead available only as a document, put a
-direct view/download link as URL in this key. You should commit the
-document as part of the source code repository, and then link to it
-using the code hosting source browser URL (e.g.: GitHub URL to the file).
-Prefer using open formats like PDF or ODT for maximum interoperability.
+   Point the URL at documentation readable in a common web browser:
+   rendered in HTML and browsable like a website, with a navigation
+   index, a search bar, etc. If there is a reference or test
+   deployment, possibly offer an interactive interface (e.g. Swagger).
 
-Whichever the format for the documentation, remember to make its source
-files available under an open license, possibly by committing them as
-part of the repository itself.
+   If the documentation is only available as a document, put a direct
+   view/download link here: commit the document to the source code
+   repository and link it through the code hosting source browser
+   (e.g. the GitHub URL of the file). Prefer open formats like PDF or
+   ODT for maximum interoperability.
+
+   Whichever the format, make the documentation sources available
+   under an open license, possibly by committing them to the
+   repository itself.
 
 ``description/[lang]/features``
 '''''''''''''''''''''''''''''''
@@ -480,10 +482,12 @@ software. The features should thus not target developers; instead of
 listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
-The suggested number of features to list is between 5 and 20, depending
-on the software size and complexity. There is no need for
-exhaustiveness, as users can always read the documentation for
-additional information.
+.. tip::
+
+   The suggested number of features to list is between 5 and 20, depending
+   on the software size and complexity. There is no need for
+   exhaustiveness, as users can always read the documentation for
+   additional information.
 
 ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''
@@ -500,11 +504,14 @@ the repository, or it can be an absolute URL pointing to the screenshot in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Screenshots can be of any shape and size; the suggested formats are:
+.. tip::
 
--  Desktop: 1280x800 @1x
--  Tablet: 1024x768 @2x
--  Mobile: 375x667 @2x
+   Screenshots can be of any shape and size. The suggested formats
+   are:
+
+   -  Desktop: 1280x800 @1x
+   -  Tablet: 1024x768 @2x
+   -  Mobile: 375x667 @2x
 
 ``description/[lang]/videos`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''
