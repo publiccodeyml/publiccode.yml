@@ -65,21 +65,17 @@ by it.
 -  Type: string (URL)
 -  Example: ``"https://example.com/firefax.git"``
 
-A unique identifier for this software. This string must be a URL to the
-source code repository (git, svn, …) in which the software is published.
-If the repository is available under multiple protocols, prefer
-HTTP/HTTPS URLs which don’t require user authentication.
+The URL of the source code repository (git, svn, …) where the
+software is published, and thus its unique identifier. If the
+repository is available under multiple protocols, prefer HTTP/HTTPS
+URLs which don’t require user authentication.
 
-Forks created for the purpose of contributing upstream should not
-modify this file; this helps software parsing ``publiccode.yml`` to
-immediately skip technical forks. On the contrary, a
-complete fork that is meant to be maintained separately from the
-original software should modify this line, to give itself the status
-of a different project.
+.. tip::
 
-See :ref:`forks-and-variants` for a complete description of what
-is a software variant and how to handle forked software as a parser or
-an author.
+   Forking just to contribute upstream? Do not change ``url``: it
+   keeps pointing at the original repository, and parsers use the
+   mismatch to skip technical forks. Only a fork meant to become its
+   own project should change it. See :ref:`forks-and-variants`.
 
 ``landingURL``
 ~~~~~~~~~~~~~~
