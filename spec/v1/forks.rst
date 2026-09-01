@@ -7,7 +7,7 @@ A fork may have two different forms based on its final aim. As such, in order to
 ``publiccode.yml`` in both cases, below we define two different
 semantics: technical forks and software variants.
 
-Technical forks (i.e. to publish patches)
+Technical forks (i.e. to publish patches)
 -----------------------------------------
 
 A technical fork is a fork made by a developer for the purpose of

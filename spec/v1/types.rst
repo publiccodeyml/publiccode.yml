@@ -50,7 +50,7 @@ Dependency
 
 A ``dependency`` is a complex object. The properties are the following:
 
--  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
+-  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
    NFC Reader)
 -  ``versionMin`` - the first compatible version
 -  ``versionMax`` - the latest compatible version
