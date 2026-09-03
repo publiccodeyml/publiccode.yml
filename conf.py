@@ -25,6 +25,25 @@ html_theme = "press"
 
 templates_path = ["_templates"]
 
+html_static_path = ["_static"]
+html_css_files = ["sidebar-arrows.css"]
+
 extensions = [
     "sphinx_copybutton",
 ]
+
+
+# The press theme attaches a page's sections to the sidebar only when
+# that page is the one being viewed, so the other entries carry no
+# hint that they expand. Flag the entries whose page has sections and
+# let the sidetoc override in _templates render the arrow.
+def _flag_expandable_toc_entries(app, pagename, templatename, context, doctree):
+    for toc in context.get("toctree_data", []):
+        for entry in toc["entries"]:
+            sections = app.env.toc_dict.get(entry["name"], {}).get("sections")
+            entry["has_children"] = bool(sections)
+
+
+def setup(app):
+    # priority > 500: after the theme handler that builds toctree_data
+    app.connect("html-page-context", _flag_expandable_toc_entries, priority=501)

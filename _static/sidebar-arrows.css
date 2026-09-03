@@ -1,0 +1,24 @@
+/* Expand arrows for the sidebar entries, added by the sidetoc
+   override in _templates. The theme's .arrow component draws the
+   triangle from --arrow-bg-color, but the theme defines that
+   variable only under .theme-light/.theme-dark, classes the page
+   does not carry until the dark mode switch is used. Without a
+   defined variable the border declaration is dropped entirely, so
+   redeclare the triangle with a fallback color. */
+.vp-sidebar .toctree-l1 > a .arrow {
+  position: relative;
+  top: -0.1em;
+  margin-left: 0.3em;
+}
+
+.vp-sidebar .toctree-l1 > a .arrow.right {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid var(--arrow-bg-color, #ccc);
+}
+
+.vp-sidebar .toctree-l1 > a .arrow.down {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid var(--arrow-bg-color, #ccc);
+}
