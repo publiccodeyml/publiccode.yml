@@ -48,17 +48,6 @@ The version of the specification this file adheres to. Use ``1``.
 
 The short public name of the software, the one users know it by.
 
-``applicationSuite``
-~~~~~~~~~~~~~~~~~~~~
-
--  Type: string
--  Example: ``"MegaProductivitySuite"``
-
-When the software ships as one piece of a larger family of
-products, the way a word processor ships inside an office suite,
-the name of that family. Catalogs can group related software
-by it.
-
 ``url`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -76,151 +65,6 @@ URLs which don’t require user authentication.
    keeps pointing at the original repository, and parsers use the
    mismatch to skip technical forks. Only a fork meant to become its
    own project should change it. See :ref:`forks-and-variants`.
-
-``landingURL``
-~~~~~~~~~~~~~~
-
--  Type: string (URL)
--  Example: ``"https://example.com/firefax"``
-
-The page users should reach when clicking a button like “Go to
-the application source code”, for when ``url`` serves source code
-to a source control client rather than a browsable page. If the
-product provides a graphical installer, this URL can point to a
-page that links the source code and offers the installer for
-download.
-
-``isBasedOn``
-~~~~~~~~~~~~~
-
--  Type: list of strings, or a single string (*deprecated*)
--  Example: ``"https://github.com/example-org/firefax.git"``
-
-In case this software is a variant or a fork of another software, which
-might or might not contain a ``publiccode.yml`` file, this key will
-contain the ``url`` of the original project(s).
-
-The existence of this key identifies the fork as a software
-variant, descending from the specified repositories.
-
-The single string form is deprecated, use a one element list
-instead.
-
-``softwareVersion``
-~~~~~~~~~~~~~~~~~~~
-
--  Type: string
--  Example: ``"1.0"``, ``"dev"``
-
-The latest stable version number of the software. The
-version number is a string that is not meant to be interpreted and
-parsed but just displayed; parsers should not assume semantic versioning
-or any other specific version format.
-
-``releaseDate``
-~~~~~~~~~~~~~~~
-
--  Type: string (date)
--  Example: ``"2017-04-15"``
-
-The date the latest version was released, as “YYYY-MM-DD”. This is
-the only allowed ISO8601 format.
-
-``logo``
-~~~~~~~~
-
--  Type: string (relative path to file or absolute URL)
--  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
--  Example: ``"img/logo.svg"``
-
-The logo of the software. Logos SHOULD be in vector format.
-The key value can be the relative path to the file starting from the root of
-the repository, or it can be an absolute URL pointing to the logo in raw
-version. In both cases, the file must reside inside the same repository where
-the ``publiccode.yml`` file is stored.
-
-``platforms`` *(required)*
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: enumerated string or list of strings
--  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
-   ``android``. Human readable values outside this list are allowed.
--  Example: ``web``
-
-The platforms the software runs on: the ones users use to access and
-operate it, rather than the platform the software itself runs on.
-
-.. tip::
-
-   Use the predefined values if possible. If the software runs on a
-   platform for which a predefined value is not available, a
-   different value can be used.
-
-``categories``
-~~~~~~~~~~~~~~
-
--  Type: array of enumerated strings
--  Allowed values: see :ref:`categories`
-
-A list of categories that can be used to describe the software and can help
-building catalogs of open software.
-
-The controlled vocabulary :ref:`categories` contains the list of allowed
-values.
-
-``usedBy`` (*deprecated*)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: list of strings
-
-A list of the names of prominent public administrations (that will serve
-as “testimonials”) that are currently known to the software maintainer
-to be using this software.
-
-Parsers are encouraged to enhance this list also with other information
-that they can obtain independently; for instance, a fork of a software, owned
-by an administration, could be used as a signal of usage of the
-software.
-
-This key is deprecated.
-
-``fundedBy``
-~~~~~~~~~~~~
-
--  Type: array of :ref:`Organisations <organisation-type>`
-
-A list of organisations that are currently known to be funding the
-development of this software.
-
-``roadmap``
-~~~~~~~~~~~
-
--  Type: string
-
-A link to a public roadmap of the software.
-
-``developmentStatus`` *(required)*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: enumerated string
--  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
-   ``obsolete``
-
-The allowed values are:
-
--  ``concept`` - The software is just a “concept”. No
-   actual code may have been produced, and the repository could simply be a
-   placeholder. 
--  ``development`` - Some effort has gone into the
-   development of the software, but the code is not ready for the end user,
-   even in a preliminary version (beta or alpha) to be tested by end users.
--  ``beta`` - The software is in the testing phase (alpha or beta). At
-   this stage, the software might or might not have had a preliminary
-   public release. 
--  ``stable`` - The software has seen a first public
-   release and is ready to be used in a production environment.
--  ``obsolete`` - The software is no longer maintained or kept up to date.
-   All of the source code is archived and kept for historical reasons.
 
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,105 +98,45 @@ The allowed values are:
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
 
-``supports``
-~~~~~~~~~~~~
+``platforms`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: list of mappings
+-  Type: enumerated string or list of strings
+-  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
+   ``android``. Human readable values outside this list are allowed.
+-  Example: ``web``
 
-A list of standards, regulations, frameworks or systems that the
-software supports or complies with.
+The platforms the software runs on: the ones users use to access and
+operate it, rather than the platform the software itself runs on.
 
-Each item is a mapping with a single property:
+.. tip::
 
--  ``id`` - **mandatory** - an identifier for the supported standard,
-   regulation, framework or system. It is either an alias in
-   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
-   :ref:`list of aliases <aliases>`, or any other valid URI (URL or
-   URN) referencing the resource directly.
+   Use the predefined values if possible. If the software runs on a
+   platform for which a predefined value is not available, a
+   different value can be used.
 
-   An ``alias:`` value MUST exist in the
-   :ref:`list of aliases <aliases>`. An unknown alias is an error.
-   Any other value MUST be a syntactically valid URI. A value that is
-   well formed but not otherwise known is accepted as is.
+``developmentStatus`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example:
+-  Type: enumerated string
+-  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
+   ``obsolete``
 
-.. code:: yaml
+The allowed values are:
 
-   supports:
-     - id: alias:gdpr
-     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
-
-``organisation``
-~~~~~~~~~~~~~~~~
-
-This optional section provides the organisation publishing the software.
-
-``organisation/uri`` *(required)*
-'''''''''''''''''''''''''''''''''
-
--  Type: string
--  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
-
-The URI identifying the organisation publishing the software. The value
-SHOULD be a stable, resolvable URI or a persistent identifier.
-
-Parsers MAY use the URI structure to extract additional information if it follows a
-recognized format (for example, inferring an institutional domain or an
-official code).
-
-It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
-information out-of-band, to ensure that the declared ``organisation/uri`` actually
-corresponds to the organisation in control of the repository.
-The specific verification method depends on the implementation and policies of the
-platform consuming the file.
-
-``organisation/name``
-'''''''''''''''''''''
-
--  Type: string
--  Example: ``"My organisation"``
-
-The canonical name of the organisation publishing the software.
-
-It MUST correspond to the same entity identified by ``organisation/uri`` and is
-intended to provide a human-readable label for that URI.
-It SHOULD be the canonical, widely recognized form of the name (such as the
-registered legal or institutional name).
-
-``intendedAudience``
-~~~~~~~~~~~~~~~~~~~~
-
-``intendedAudience/countries``
-''''''''''''''''''''''''''''''
-
--  Type: list of strings
-
-Countries explicitly included in the intended audience,
-i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using uppercase
-ISO 3166-1 alpha-2 two-letter country codes.
-
-``intendedAudience/unsupportedCountries`` (*deprecated*)
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
--  Type: list of strings
-
-Countries explicitly marked as NOT supported, for instance when
-there is a conflict between how the software works and a specific
-law, process or technology. All countries are specified using
-uppercase ISO 3166-1 alpha-2 two-letter country codes.
-
-This key is deprecated, use ``intendedAudience/countries`` to list the
-countries the software explicitly targets instead.
-
-``intendedAudience/scope``
-''''''''''''''''''''''''''
-
--  Type: array of enumerated strings
--  Allowed values: see :ref:`scopes`
-
-Tags related to the field of application of the software.
+-  ``concept`` - The software is just a “concept”. No
+   actual code may have been produced, and the repository could simply be a
+   placeholder. 
+-  ``development`` - Some effort has gone into the
+   development of the software, but the code is not ready for the end user,
+   even in a preliminary version (beta or alpha) to be tested by end users.
+-  ``beta`` - The software is in the testing phase (alpha or beta). At
+   this stage, the software might or might not have had a preliminary
+   public release. 
+-  ``stable`` - The software has seen a first public
+   release and is ready to be used in a production environment.
+-  ``obsolete`` - The software is no longer maintained or kept up to date.
+   All of the source code is archived and kept for historical reasons.
 
 ``description``
 ~~~~~~~~~~~~~~~
@@ -567,6 +351,43 @@ group of people like “Linus Torvalds and all Linux contributors”.
 In case it is not possible to name a main copyright owner, it is
 possible to omit this key.
 
+``organisation``
+~~~~~~~~~~~~~~~~
+
+This optional section provides the organisation publishing the software.
+
+``organisation/uri`` *(required)*
+'''''''''''''''''''''''''''''''''
+
+-  Type: string
+-  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+The URI identifying the organisation publishing the software. The value
+SHOULD be a stable, resolvable URI or a persistent identifier.
+
+Parsers MAY use the URI structure to extract additional information if it follows a
+recognized format (for example, inferring an institutional domain or an
+official code).
+
+It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
+information out-of-band, to ensure that the declared ``organisation/uri`` actually
+corresponds to the organisation in control of the repository.
+The specific verification method depends on the implementation and policies of the
+platform consuming the file.
+
+``organisation/name``
+'''''''''''''''''''''
+
+-  Type: string
+-  Example: ``"My organisation"``
+
+The canonical name of the organisation publishing the software.
+
+It MUST correspond to the same entity identified by ``organisation/uri`` and is
+intended to provide a human-readable label for that URI.
+It SHOULD be the canonical, widely recognized form of the name (such as the
+registered legal or institutional name).
+
 ``maintenance``
 ~~~~~~~~~~~~~~~
 
@@ -644,6 +465,185 @@ This is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the 
 `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
+
+``logo``
+~~~~~~~~
+
+-  Type: string (relative path to file or absolute URL)
+-  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
+-  Example: ``"img/logo.svg"``
+
+The logo of the software. Logos SHOULD be in vector format.
+The key value can be the relative path to the file starting from the root of
+the repository, or it can be an absolute URL pointing to the logo in raw
+version. In both cases, the file must reside inside the same repository where
+the ``publiccode.yml`` file is stored.
+
+``softwareVersion``
+~~~~~~~~~~~~~~~~~~~
+
+-  Type: string
+-  Example: ``"1.0"``, ``"dev"``
+
+The latest stable version number of the software. The
+version number is a string that is not meant to be interpreted and
+parsed but just displayed; parsers should not assume semantic versioning
+or any other specific version format.
+
+``releaseDate``
+~~~~~~~~~~~~~~~
+
+-  Type: string (date)
+-  Example: ``"2017-04-15"``
+
+The date the latest version was released, as “YYYY-MM-DD”. This is
+the only allowed ISO8601 format.
+
+``landingURL``
+~~~~~~~~~~~~~~
+
+-  Type: string (URL)
+-  Example: ``"https://example.com/firefax"``
+
+The page users should reach when clicking a button like “Go to
+the application source code”, for when ``url`` serves source code
+to a source control client rather than a browsable page. If the
+product provides a graphical installer, this URL can point to a
+page that links the source code and offers the installer for
+download.
+
+``applicationSuite``
+~~~~~~~~~~~~~~~~~~~~
+
+-  Type: string
+-  Example: ``"MegaProductivitySuite"``
+
+When the software ships as one piece of a larger family of
+products, the way a word processor ships inside an office suite,
+the name of that family. Catalogs can group related software
+by it.
+
+``categories``
+~~~~~~~~~~~~~~
+
+-  Type: array of enumerated strings
+-  Allowed values: see :ref:`categories`
+
+A list of categories that can be used to describe the software and can help
+building catalogs of open software.
+
+The controlled vocabulary :ref:`categories` contains the list of allowed
+values.
+
+``supports``
+~~~~~~~~~~~~
+
+-  Type: list of mappings
+
+A list of standards, regulations, frameworks or systems that the
+software supports or complies with.
+
+Each item is a mapping with a single property:
+
+-  ``id`` - **mandatory** - an identifier for the supported standard,
+   regulation, framework or system. It is either an alias in
+   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
+   :ref:`list of aliases <aliases>`, or any other valid URI (URL or
+   URN) referencing the resource directly.
+
+   An ``alias:`` value MUST exist in the
+   :ref:`list of aliases <aliases>`. An unknown alias is an error.
+   Any other value MUST be a syntactically valid URI. A value that is
+   well formed but not otherwise known is accepted as is.
+
+Example:
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+``intendedAudience``
+~~~~~~~~~~~~~~~~~~~~
+
+``intendedAudience/countries``
+''''''''''''''''''''''''''''''
+
+-  Type: list of strings
+
+Countries explicitly included in the intended audience,
+i.e. the software explicitly claims compliance with specific processes,
+technologies or laws. All countries are specified using uppercase
+ISO 3166-1 alpha-2 two-letter country codes.
+
+``intendedAudience/unsupportedCountries`` (*deprecated*)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+-  Type: list of strings
+
+Countries explicitly marked as NOT supported, for instance when
+there is a conflict between how the software works and a specific
+law, process or technology. All countries are specified using
+uppercase ISO 3166-1 alpha-2 two-letter country codes.
+
+This key is deprecated, use ``intendedAudience/countries`` to list the
+countries the software explicitly targets instead.
+
+``intendedAudience/scope``
+''''''''''''''''''''''''''
+
+-  Type: array of enumerated strings
+-  Allowed values: see :ref:`scopes`
+
+Tags related to the field of application of the software.
+
+``usedBy`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Type: list of strings
+
+A list of the names of prominent public administrations (that will serve
+as “testimonials”) that are currently known to the software maintainer
+to be using this software.
+
+Parsers are encouraged to enhance this list also with other information
+that they can obtain independently; for instance, a fork of a software, owned
+by an administration, could be used as a signal of usage of the
+software.
+
+This key is deprecated.
+
+``fundedBy``
+~~~~~~~~~~~~
+
+-  Type: array of :ref:`Organisations <organisation-type>`
+
+A list of organisations that are currently known to be funding the
+development of this software.
+
+``roadmap``
+~~~~~~~~~~~
+
+-  Type: string
+
+A link to a public roadmap of the software.
+
+``isBasedOn``
+~~~~~~~~~~~~~
+
+-  Type: list of strings, or a single string (*deprecated*)
+-  Example: ``"https://github.com/example-org/firefax.git"``
+
+In case this software is a variant or a fork of another software, which
+might or might not contain a ``publiccode.yml`` file, this key will
+contain the ``url`` of the original project(s).
+
+The existence of this key identifies the fork as a software
+variant, descending from the specified repositories.
+
+The single string form is deprecated, use a one element list
+instead.
 
 ``dependsOn``
 ~~~~~~~~~~~~~
