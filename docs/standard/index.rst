@@ -159,8 +159,8 @@ operate it, rather than the platform the software itself runs on.
 ``categories``
 ~~~~~~~~~~~~~~
 
--  Type: array of strings
--  Acceptable values: see :ref:`categories`
+-  Type: array of enumerated strings
+-  Allowed values: see :ref:`categories`
 
 A list of categories that can be used to describe the software and can help
 building catalogs of open software.
@@ -187,7 +187,7 @@ This key is deprecated.
 ``fundedBy``
 ~~~~~~~~~~~~
 
--  Type: List of :ref:`Organisations <organisation-type>`
+-  Type: array of :ref:`Organisations <organisation-type>`
 
 A list of organisations that are currently known to be funding the
 development of this software.
@@ -349,8 +349,8 @@ countries the software explicitly targets instead.
 ``intendedAudience/scope``
 ''''''''''''''''''''''''''
 
--  Type: array of strings
--  Acceptable values: see :ref:`scopes`
+-  Type: array of enumerated strings
+-  Allowed values: see :ref:`scopes`
 
 Tags related to the field of application of the software.
 
@@ -595,7 +595,7 @@ How the software is currently maintained.
 
 **Required** if ``maintenance/type`` is ``contract``. Must not be present otherwise.
 
--  Type: array of :ref:`Contractor <contractor-type>`
+-  Type: array of :ref:`Contractors <contractor-type>`
 
 The entity or entities, if any, currently
 contracted for maintaining the software. They can be companies,
@@ -606,7 +606,7 @@ organisations, or other collective names.
 
 **Required** if ``maintenance/type`` is ``internal`` or ``community``. Optional otherwise.
 
--  Type: List of :ref:`Contacts <contact-type>`
+-  Type: array of :ref:`Contacts <contact-type>`
 
 The technical people currently responsible for
 maintaining the software. All contacts need to be a physical person, not
@@ -637,7 +637,7 @@ than one language.
 ``localisation/availableLanguages`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: list of IETF BCP 47 language tags
+-  Type: array of IETF BCP 47 language tags
 -  Example: ``"en"``, ``"fr"``, ``"de-AT"``
 
 This is the list of languages in which the software is
@@ -660,7 +660,7 @@ dependencies.
 ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-type>`
+-  Type: array of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under an open-source license.
 
@@ -672,14 +672,14 @@ deployment scripts.
 ``dependsOn/proprietary``
 '''''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-type>`
+-  Type: array of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under a proprietary license.
 
 ``dependsOn/hardware``
 ''''''''''''''''''''''
 
--  Type: array of :ref:`dependency <dependency-type>`
+-  Type: array of :ref:`Dependencies <dependency-type>`
 
 Hardware dependencies that must be owned to use the software.
 
