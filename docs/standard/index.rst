@@ -632,7 +632,7 @@ A link to a public roadmap of the software.
 ``isBasedOn``
 ~~~~~~~~~~~~~
 
--  Type: list of strings, or a single string (*deprecated*)
+-  Type: array of strings
 -  Example: ``"https://github.com/example-org/firefax.git"``
 
 In case this software is a variant or a fork of another software, which
@@ -641,9 +641,6 @@ contain the ``url`` of the original project(s).
 
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
-
-The single string form is deprecated, use a one element list
-instead.
 
 ``dependsOn``
 ~~~~~~~~~~~~~
