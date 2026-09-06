@@ -158,6 +158,8 @@ Tools and libraries that implement and support the publiccode.yml Standard.
 Core tools are developed alongside the publiccode.yml specification and provide
 its reference implementations and supporting components.
 
+[![Core tools and how they interact: code repositories, publiccode-crawler, libpubliccode, Open Catalog API and catalog consumers](.github/images/core-tools.png)](.github/images/core-tools.svg)
+
 - **[libpubliccode](https://github.com/publiccodeyml/libpubliccode)**
 
   Go parser and validator. Reference implementation of the specification.

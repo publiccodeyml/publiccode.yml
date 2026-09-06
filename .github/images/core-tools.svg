@@ -1,0 +1,201 @@
+<!-- Editor: Inkscape (https://inkscape.org/) -->
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="1500" height="912" viewBox="0 0 1500 912" role="img" aria-labelledby="title description" font-family="'Nunito', 'Segoe UI', Arial, sans-serif">
+  <title id="title">publiccode.yml - Core tools and how they interact</title>
+  <desc id="description">A card-based overview of the catalog architecture. Multiple code repositories feed the crawler, which uses libpubliccode in process and gets publishers from the API, then creates or updates software and logs. Multiple authorized clients include metrics tools, security scanners, quality checks and badges. Catalog reads are public; writes require a token. PostgreSQL overlaps the API card. Frontends read catalog data; publiccode-issueopener reports errors in publiccode.yml on GitHub. The API sends webhook notifications. Code examples show the corresponding API endpoints.</desc>
+  <metadata id="metadata">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Inkscape</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <!--Header font: Roboto by Google, Apache License 2.0; see fonts/roboto-LICENSE.txt. Font subsets embedded for consistent rendering.-->
+  <defs>
+    <style>
+@font-face{font-family:'Nunito';font-weight:200 1000;src:url(data:font/woff2;base64,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) format('woff2')}
+
+.title { font-size: 21px; font-weight: 800; fill: #2b2d42; }
+.body { font-size: 14px; font-weight: 600; fill: #58566a; }
+.label { font-size: 13px; font-weight: 700; fill: #58566a; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 12px; fill: #58566a; }
+.section { font-size: 16px; font-weight: 800; fill: #2b2d42; }
+.edge { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;  }
+</style>
+    <marker id="arrow-read" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="#26786f" />
+    </marker>
+    <marker id="arrow-write" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="#9a661c" />
+    </marker>
+    <marker id="arrow-notify" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L9 5 L1 9 Z" fill="#b5523c" />
+    </marker>
+    <style>@font-face{font-family:'Catalog Heading';font-weight:900;src:url(data:font/woff2;base64,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) format('woff2')}
+@font-face{font-family:'Catalog Heading';font-weight:400;src:url(data:font/woff2;base64,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) format('woff2')}</style>
+  </defs>
+  <rect width="1500" height="912" fill="#f6efe3" />
+  <text x="52" y="64" class="title" text-anchor="start" style="font-family:'Catalog Heading'; font-size:50px; font-weight:900; fill:#061c32">publiccode.yml</text>
+  <text x="52" y="104" class="body" text-anchor="start" style="font-family:'Catalog Heading'; font-size:28px; font-weight:400; fill:#061c32">Core tools and how they interact</text>
+  <text x="52" y="176" class="section" text-anchor="start" style="fill:#65717f">Sources and clients</text>
+  <rect id="service-group" x="436" y="162" width="694" height="668" rx="18" fill="#f6efe3" stroke="#d9d2c6" stroke-width="1.5" />
+  <rect x="436" y="162" width="694" height="668" rx="18" fill="none" stroke="#d9d2c6" stroke-width="1.4" stroke-dasharray="5 5" />
+  <text x="488" y="191" class="section" text-anchor="start" style="fill:#26786f">Catalog</text>
+  <rect id="consumer-group" x="1180" y="164" width="272" height="684" rx="14" fill="#f3e0d5" stroke="none" stroke-width="1.5" />
+  <text x="1200" y="189" class="section" text-anchor="start" style="fill:#b5523c">Consumers</text>
+  <g id="repositories-stack" aria-label="Multiple code repositories">
+    <rect x="36" y="188" width="260" height="146" rx="14" fill="#e7e4dc" stroke="#d9d2c6" stroke-width="1.5" />
+    <rect x="44" y="196" width="260" height="146" rx="14" fill="#f0ede5" stroke="#d9d2c6" stroke-width="1.5" />
+  </g>
+  <rect id="repositories" x="52" y="204" width="260" height="146" rx="14" fill="#fffdf9" stroke="#d9d2c6" stroke-width="1.5" />
+  <g data-component="Code repositories">
+    <circle cx="80" cy="238" r="16" fill="#6c7a89" />
+    <g transform="translate(68 226)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="5" r="2" />
+      <circle cx="6" cy="19" r="2" />
+      <circle cx="18" cy="5" r="2" />
+      <path d="M6 7v10 M18 7v2a5 5 0 0 1-5 5H6" />
+    </g>
+  </g>
+  <text x="105" y="245" class="title" text-anchor="start" style="font-size:19px">Code repositories</text>
+  <text x="74" y="276" class="body" text-anchor="start">GitHub · GitLab · Bitbucket</text>
+  <text x="74" y="299" class="body" text-anchor="start">Gitea / Forgejo · etc.</text>
+  <text x="74" y="330" class="code" text-anchor="start" style="font-size:14px">publiccode.yml</text>
+  <g id="clients-stack" aria-label="Multiple authorized clients">
+    <rect x="36" y="546" width="260" height="166" rx="14" fill="#e7e4dc" stroke="#d9d2c6" stroke-width="1.5" />
+    <rect x="44" y="554" width="260" height="166" rx="14" fill="#f0ede5" stroke="#d9d2c6" stroke-width="1.5" />
+  </g>
+  <rect id="clients" x="52" y="562" width="260" height="166" rx="14" fill="#fffdf9" stroke="#d9d2c6" stroke-width="1.5" />
+  <g data-component="Authorized clients">
+    <circle cx="80" cy="597" r="16" fill="#6c7a89" />
+    <g transform="translate(68 585)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m6 9 3 3-3 3 M12 15h6" />
+    </g>
+  </g>
+  <text x="105" y="604" class="title" text-anchor="start" style="font-size:19px">Authorized clients</text>
+  <text x="74" y="637" class="body" text-anchor="start">• Metrics</text>
+  <text x="74" y="660" class="body" text-anchor="start">• Security scanners</text>
+  <text x="74" y="683" class="body" text-anchor="start">• Quality checks</text>
+  <text x="74" y="706" class="body" text-anchor="start">• Badges</text>
+  <rect x="476" y="202" width="614" height="234" rx="20" fill="#f2e4cb" />
+  <rect id="crawler-process" x="488" y="214" width="590" height="210" rx="14" fill="#fffdf9" stroke="#d5b67c" stroke-width="1.5" />
+  <g data-component="publiccode-crawler">
+    <circle cx="522" cy="245" r="16" fill="#c18a2c" />
+    <g transform="translate(510 233)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10.5" cy="10.5" r="6.5" />
+      <path d="m15.5 15.5 5 5" />
+    </g>
+  </g>
+  <text x="549" y="252" class="title" text-anchor="start">publiccode-crawler</text>
+  <text x="510" y="282" class="body" text-anchor="start">Gets publishers, then creates or updates software and logs.</text>
+  <text x="510" y="306" class="code" text-anchor="start">POST /v1/catalogs/:id/software</text>
+  <text x="510" y="328" class="code" text-anchor="start">PATCH /v1/catalogs/:id/software/:softwareId</text>
+  <path d="M 510 343 H 1056" stroke="#d5b67c" />
+  <g data-component="libpubliccode">
+    <circle cx="525" cy="378" r="16" fill="#c18a2c" />
+    <g transform="translate(513 366)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 2 9 5v10l-9 5-9-5V7Z M3 7l9 5 9-5 M12 12v10 M7.5 4.5l9 5v5" />
+    </g>
+  </g>
+  <text x="550" y="378" class="title" text-anchor="start" style="font-size:19px">libpubliccode</text>
+  <text x="550" y="402" class="body" text-anchor="start" style="font-size:13px">Parses and validates publiccode.yml · in-process library</text>
+  <rect x="476" y="550" width="614" height="240" rx="20" fill="#dfece5" />
+  <rect id="catalog-api" x="488" y="562" width="590" height="216" rx="14" fill="#e8f3ef" stroke="#77aea2" stroke-width="1.5" />
+  <g data-component="Open Catalog API" transform="translate(502.8 577.8) scale(1.6)" color="#6b25c7">
+    <g fill="currentColor">
+      <path d="M12.0000 9.8000L12.0000 3.6000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="12.0000" cy="3.6000" r="1.35" />
+      <path d="M13.9053 10.9000L19.2746 7.8000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="19.2746" cy="7.8000" r="1.35" />
+      <path d="M13.9053 13.1000L19.2746 16.2000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="19.2746" cy="16.2000" r="1.35" />
+      <path d="M12.0000 14.2000L12.0000 20.4000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="12.0000" cy="20.4000" r="1.35" />
+      <path d="M10.0947 13.1000L4.7254 16.2000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="4.7254" cy="16.2000" r="1.35" />
+      <path d="M10.0947 10.9000L4.7254 7.8000" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" />
+      <circle cx="4.7254" cy="7.8000" r="1.35" />
+      <circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width=".8" />
+      <circle cx="12" cy="12" r="1.05" />
+    </g>
+  </g>
+  <text x="549" y="604" class="title" text-anchor="start">Open Catalog API</text>
+  <text x="510" y="636" class="body" text-anchor="start">Catalog state, event history and webhook dispatch.</text>
+  <text x="510" y="665" class="code" text-anchor="start">GET /v1/software</text>
+  <text x="510" y="688" class="code" text-anchor="start">POST /v1/software/webhooks</text>
+  <text x="510" y="737" class="body" text-anchor="start" style="font-size:13px">Catalog reads are public. Writes require a token.</text>
+  <rect id="database" x="954" y="660" width="146" height="134" rx="14" fill="#edf3f7" stroke="#9ab5c9" stroke-width="1.5" />
+  <g data-component="PostgreSQL" transform="translate(0 12)">
+    <circle cx="1027" cy="690" r="16" fill="#3d7ea6" />
+    <g transform="translate(1015 678)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="5" rx="7" ry="3" />
+      <path d="M5 5v14c0 4 14 4 14 0V5 M5 10c0 4 14 4 14 0 M5 15c0 4 14 4 14 0" />
+    </g>
+  </g>
+  <text x="1027" y="739" class="title" text-anchor="middle" style="font-size:18px">PostgreSQL</text>
+  <rect id="frontends" x="1196" y="210" width="240" height="146" rx="14" fill="#fffdf9" stroke="#d9d2c6" stroke-width="1.5" />
+  <g data-component="Catalog frontends">
+    <circle cx="1224" cy="241" r="16" fill="#cb6d50" />
+    <g transform="translate(1212 229)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="3.5" width="19" height="13" rx="1.5" />
+      <path d="M12 16.5V21 M7.5 21h9" />
+    </g>
+  </g>
+  <text x="1249" y="248" class="title" text-anchor="start" style="font-size:18px">Catalog frontends</text>
+  <text x="1216" y="280" class="body" text-anchor="start" style="font-size:13px">Software and publishers</text>
+  <text x="1216" y="313" class="code" text-anchor="start">GET /v1/software</text>
+  <text x="1216" y="336" class="code" text-anchor="start">GET /v1/publishers</text>
+  <rect id="issue-opener" x="1196" y="438" width="240" height="184" rx="14" fill="#fffdf9" stroke="#d9d2c6" stroke-width="1.5" />
+  <g data-component="publiccode-issueopener">
+    <circle cx="1224" cy="478" r="16" fill="#cb6d50" />
+    <g transform="translate(1212 466)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="18" rx="2" />
+      <path d="M9 2h6v5H9Z M8 11l2 2 5-4 M8 17h8" />
+    </g>
+  </g>
+  <text x="1249" y="477" class="title" text-anchor="start" style="font-size:19px">publiccode-</text>
+  <text x="1249" y="504" class="title" text-anchor="start" style="font-size:19px">issueopener</text>
+  <text x="1216" y="530" class="body" text-anchor="start" style="font-size:13px">Reports errors in</text>
+  <text x="1216" y="551" class="body" text-anchor="start" style="font-size:13px">publiccode.yml on GitHub</text>
+  <text x="1216" y="580" class="code" text-anchor="start">GET /v1/logs</text>
+  <text x="1216" y="603" class="code" text-anchor="start" style="font-size:11.5px">GET /v1/software/:id</text>
+  <rect id="subscribers" x="1196" y="686" width="240" height="142" rx="14" fill="#fffdf9" stroke="#d9d2c6" stroke-width="1.5" />
+  <g data-component="Webhook subscribers">
+    <circle cx="1224" cy="726" r="16" fill="#cb6d50" />
+    <g transform="translate(1212 714)" fill="none" color="#ffffff" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="5" r="3" />
+      <circle cx="18" cy="5" r="3" />
+      <path d="M6 8v9a5 5 0 0 0 10 0v-4 M18 8v3 M13 16l3-3 3 3" />
+    </g>
+  </g>
+  <text x="1249" y="722" class="title" text-anchor="start" style="font-size:19px">Webhook</text>
+  <text x="1249" y="750" class="title" text-anchor="start" style="font-size:19px">subscribers</text>
+  <text x="1216" y="777" class="body" text-anchor="start" style="font-size:13px">Publisher / software events</text>
+  <text x="1216" y="809" class="code" text-anchor="start" style="font-size:11.5px">POST &lt;registered URL&gt;</text>
+  <path class="edge" d="M 488 267 H 312" stroke="#26786f" marker-end="url(#arrow-read)" />
+  <text x="374" y="239" class="label" text-anchor="middle" style="fill:#26786f">Fetch</text>
+  <text x="374" y="257" class="label" text-anchor="middle" style="fill:#26786f">publiccode.yml</text>
+  <path class="edge" d="M 560 424 V 562" stroke="#26786f" marker-end="url(#arrow-read)" />
+  <text x="578" y="467" class="label" text-anchor="start" style="fill:#26786f">GET catalogs,</text>
+  <text x="578" y="488" class="label" text-anchor="start" style="fill:#26786f">publishers and</text>
+  <text x="578" y="509" class="label" text-anchor="start" style="fill:#26786f">known software</text>
+  <path class="edge" d="M 798 424 V 562" stroke="#9a661c" marker-end="url(#arrow-write)" />
+  <text x="812" y="467" class="label" text-anchor="start" style="fill:#9a661c">POST / PATCH</text>
+  <text x="812" y="488" class="label" text-anchor="start" style="fill:#9a661c">Software and crawl logs</text>
+  <path class="edge" d="M 312 645 H 488" stroke="#9a661c" marker-end="url(#arrow-write)" />
+  <text x="374" y="630" class="label" text-anchor="middle" style="fill:#9a661c">Writes</text>
+  <path class="edge" d="M 1196 274 H 1160 Q 1144 274 1144 290 V 576 Q 1144 592 1128 592 H 1078" stroke="#26786f" marker-end="url(#arrow-read)" />
+  <text x="1103" y="578" class="label" text-anchor="middle" style="fill:#26786f">GET</text>
+  <path class="edge" d="M 1196 520 H 1180 Q 1168 520 1168 532 V 612 Q 1168 624 1156 624 H 1078" stroke="#26786f" marker-end="url(#arrow-read)" />
+  <text x="1103" y="613" class="label" text-anchor="middle" style="fill:#26786f">GET</text>
+  <path class="edge" d="M 870 778 V 840 Q 870 854 884 854 H 1154 Q 1168 854 1168 840 V 782 Q 1168 768 1182 768 H 1196" stroke="#b5523c" marker-end="url(#arrow-notify)" />
+  <text x="1035" y="876" class="label" text-anchor="middle" style="fill:#b5523c">POST</text>
+  <path class="edge" d="M 1436 520 H 1454 Q 1468 520 1468 506 V 142 Q 1468 128 1454 128 H 310 Q 296 128 296 142 V 204" stroke="#b5523c" marker-end="url(#arrow-notify)" />
+  <text x="1025" y="116" class="label" text-anchor="middle" style="fill:#b5523c">Create / update issues</text>
+  <text x="288" y="330" text-anchor="end" class="label" style="font-size:14px; font-weight:800; fill:#6c7a89">× N</text>
+  <text x="288" y="706" text-anchor="end" class="label" style="font-size:14px; font-weight:800; fill:#6c7a89">× N</text>
+</svg>
