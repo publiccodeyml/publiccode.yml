@@ -44,7 +44,12 @@ The version of the specification this file adheres to. Use ``1``.
 ~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Example: ``"Firefax"``
+
+Example:
+
+.. code:: yaml
+
+   name: Firefax
 
 The short public name of the software, the one users know it by.
 
@@ -52,7 +57,12 @@ The short public name of the software, the one users know it by.
 ~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (URL)
--  Example: ``"https://example.com/firefax.git"``
+
+Example:
+
+.. code:: yaml
+
+   url: "https://example.com/firefax.git"
 
 The URL of the source code repository (git, svn, …) where the
 software is published, and thus its unique identifier. If the
@@ -98,7 +108,13 @@ Allowed values:
 -  Type: enumerated string or list of strings
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
--  Example: ``web``
+
+Example:
+
+.. code:: yaml
+
+   platforms:
+     - web
 
 The platforms the software runs on: the ones users use to access and
 operate it, rather than the platform the software itself runs on.
@@ -156,7 +172,14 @@ In the key names below, ``[lang]`` stands for that tag.
 ''''''''''''''''''''''''''''''''''''
 
 -  Type: string
--  Example: ``"Firefax"``
+
+Example:
+
+.. code:: yaml
+
+   description:
+     en:
+       localisedName: Firefax
 
 The short public name of the software in this language, for when
 it differs from ``name``.
@@ -165,7 +188,14 @@ it differs from ``name``.
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (max 150 chars)
--  Example: ``"Advanced booking system for hospitals"``
+
+Example:
+
+.. code:: yaml
+
+   description:
+     en:
+       shortDescription: Advanced booking system for hospitals
 
 A short description of the software: a single line containing a
 single sentence, maximum 150 characters.
@@ -260,9 +290,17 @@ listing user-visible functionalities of the software.
 ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''
 
--  Type: list of strings (paths)
+-  Type: array of strings (paths)
 -  Formats: PNG, JPEG, WebP, AVIF
--  Example: ``"data/screenshots/configuration.png"``
+
+Example:
+
+.. code:: yaml
+
+   description:
+     en:
+       screenshots:
+         - data/screenshots/configuration.png
 
 One or more paths to files showing screenshots of
 the software, meant to give a quick idea on how the software
@@ -284,8 +322,16 @@ the ``publiccode.yml`` file is stored.
 ``description/[lang]/videos`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: list of strings (URLs)
--  Example: ``"https://youtube.com/xxxxxxxx"``
+-  Type: array of strings (URLs)
+
+Example:
+
+.. code:: yaml
+
+   description:
+     en:
+       videos:
+         - "https://youtube.com/xxxxxxxx"
 
 One or more URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
@@ -311,7 +357,13 @@ A list of awards won by the software.
 ''''''''''''''''''''''''''''''
 
 -  Type: string
--  Example: ``"AGPL-3.0-or-later"``, ``"EUPL-1.2 OR AGPL-3.0-or-later"``
+
+Example:
+
+.. code:: yaml
+
+   legal:
+     license: "EUPL-1.2 OR AGPL-3.0-or-later"
 
 This string describes the license under which the software is
 distributed. The string must contain a valid SPDX expression, referring
@@ -322,7 +374,13 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 ''''''''''''''''''''''''''''
 
 -  Type: string
--  Example: ``"City of Amsterdam"``
+
+Example:
+
+.. code:: yaml
+
+   legal:
+     mainCopyrightOwner: City of Amsterdam
 
 This string describes the entity that owns the copyright on “most” of
 the code in the repository. Normally, this is the line that is reported
@@ -344,7 +402,13 @@ This optional section provides the organisation publishing the software.
 '''''''''''''''''''''''''''''''''
 
 -  Type: string
--  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+Example:
+
+.. code:: yaml
+
+   organisation:
+     uri: "https://example.org/my-organisation"
 
 The URI identifying the organisation publishing the software. The value
 SHOULD be a stable, resolvable URI or a persistent identifier.
@@ -363,7 +427,13 @@ platform consuming the file.
 '''''''''''''''''''''
 
 -  Type: string
--  Example: ``"My organisation"``
+
+Example:
+
+.. code:: yaml
+
+   organisation:
+     name: My organisation
 
 The canonical name of the organisation publishing the software.
 
@@ -442,8 +512,17 @@ than one language.
 ``localisation/availableLanguages`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: array of IETF BCP 47 language tags
--  Example: ``"en"``, ``"fr"``, ``"de-AT"``
+-  Type: array of `IETF BCP 47 <https://tools.ietf.org/html/bcp47>`__ language tags
+
+Example:
+
+.. code:: yaml
+
+   localisation:
+     availableLanguages:
+       - en
+       - fr
+       - de-AT
 
 This is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
@@ -455,7 +534,12 @@ The primary language subtag cannot be omitted, as mandated by the
 
 -  Type: string (relative path to file or absolute URL)
 -  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
--  Example: ``"img/logo.svg"``
+
+Example:
+
+.. code:: yaml
+
+   logo: img/logo.svg
 
 The logo of the software. Logos SHOULD be in vector format.
 The key value can be the relative path to the file starting from the root of
@@ -467,7 +551,12 @@ the ``publiccode.yml`` file is stored.
 ~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Example: ``"1.0"``, ``"dev"``
+
+Example:
+
+.. code:: yaml
+
+   softwareVersion: "1.0"
 
 The latest stable version number of the software. The
 version number is a string that is not meant to be interpreted and
@@ -478,7 +567,12 @@ or any other specific version format.
 ~~~~~~~~~~~~~~~
 
 -  Type: string (date)
--  Example: ``"2017-04-15"``
+
+Example:
+
+.. code:: yaml
+
+   releaseDate: "2017-04-15"
 
 The date the latest version was released, as “YYYY-MM-DD”. This is
 the only allowed ISO8601 format.
@@ -487,7 +581,12 @@ the only allowed ISO8601 format.
 ~~~~~~~~~~~~~~
 
 -  Type: string (URL)
--  Example: ``"https://example.com/firefax"``
+
+Example:
+
+.. code:: yaml
+
+   landingURL: "https://example.com/firefax"
 
 The page users should reach when clicking a button like “Go to
 the application source code”, for when ``url`` serves source code
@@ -500,7 +599,12 @@ download.
 ~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string
--  Example: ``"MegaProductivitySuite"``
+
+Example:
+
+.. code:: yaml
+
+   applicationSuite: MegaProductivitySuite
 
 When the software ships as one piece of a larger family of
 products, the way a word processor ships inside an office suite,
@@ -623,7 +727,13 @@ A link to a public roadmap of the software.
 ~~~~~~~~~~~~~
 
 -  Type: array of strings
--  Example: ``"https://github.com/example-org/firefax.git"``
+
+Example:
+
+.. code:: yaml
+
+   isBasedOn:
+     - "https://github.com/example-org/firefax.git"
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
