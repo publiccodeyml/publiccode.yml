@@ -158,7 +158,7 @@ Tools and libraries that implement and support the publiccode.yml Standard.
 Core tools are developed alongside the publiccode.yml specification and provide
 its reference implementations and supporting components.
 
-- **[publiccode-parser-go](https://github.com/italia/publiccode-parser-go)**
+- **[libpubliccode](https://github.com/publiccodeyml/libpubliccode)**
 
   Go parser and validator. Reference implementation of the specification.
 
@@ -166,11 +166,11 @@ its reference implementations and supporting components.
 
   PHP library for parsing and validation using the reference implementation via FFI.
 
-- **[publiccode-crawler](https://github.com/italia/publiccode-crawler)**
+- **[publiccode-crawler](https://github.com/publiccodeyml/publiccode-crawler)**
 
   Crawler to discover and collect descriptor files for catalogs.
 
-- **[software-catalog-api](https://github.com/italia/developers-italia-api)**
+- **[open-catalog-api](https://github.com/publiccodeyml/open-catalog-api)**
 
   RESTful API powering software catalogs for public administrations, used to
   store, query and expose all catalog data about FLOSS solutions.
@@ -179,19 +179,19 @@ its reference implementations and supporting components.
 
   Convenience command-line client to query the catalog API. (*alpha*)
 
-- **[publiccode-parser-action](https://github.com/italia/publiccode-parser-action)**
+- **[publiccode-parser-action](https://github.com/publiccodeyml/publiccode-parser-action)**
 
   GitHub Action for validation in GitHub pipelines.
 
-- **[publiccode-parser-gitlab-ci](https://github.com/italia/publiccode-parser-gitlab-ci)**
+- **[publiccode-parser-gitlab-ci](https://github.com/publiccodeyml/publiccode-parser-gitlab-ci)**
 
   GitLab CI integration for validation
 
-- **[publiccode-validator-api](https://github.com/italia/publiccode-validator-api)**
+- **[publiccode-validator-api](https://github.com/publiccodeyml/publiccode-validator-api)**
 
   Simple RESTful API for validating publiccode.yml files, returning errors and warnings.
 
-- **[publiccode-issueopener](https://github.com/italia/publiccode-issueopener)**
+- **[publiccode-issueopener](https://github.com/publiccodeyml/publiccode-issueopener)**
 
   Opens GitHub issues to repos in a software catalog with invalid publiccode.yml
   files.
