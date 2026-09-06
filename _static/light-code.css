@@ -1,0 +1,13 @@
+/* The press theme paints code blocks dark (--code-bg-color #282c34)
+   with a palette for dark backgrounds. The spec examples read better
+   on the same light background as the page: repaint the block and let
+   the light pygments style from conf.py color the tokens. */
+pre,
+.theme-default-content pre[class*="language-"] {
+    background-color: #f6f8fa;
+}
+
+pre code,
+.theme-default-content pre[class*="language-"] code {
+    color: #24292e;
+}
