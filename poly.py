@@ -60,7 +60,7 @@ REDIRECT = """<!DOCTYPE html>
 <title>publiccode.yml Standard</title>
 <link rel="canonical" href="{target}">
 <meta http-equiv="refresh" content="0; url={target}">
-<script>location.replace("{target}" + location.hash);</script>
+<script>location.replace("{target}" + location.search + location.hash);</script>
 </head>
 <body>
 <p>Moved to <a href="{target}">{target}</a>.</p>
