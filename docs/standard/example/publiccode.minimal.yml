@@ -1,12 +1,12 @@
 publiccodeYmlVersion: "1"
 name: Firefax
-url: "https://example.com/firefax.git"
+url: https://example.com/firefax.git
 platforms:
   - web
   - linux
   - windows
 developmentStatus: stable
-softwareType: "standalone/desktop"
+softwareType: standalone/desktop
 description:
   en:
     shortDescription: >
@@ -20,7 +20,7 @@ description:
 legal:
   license: AGPL-3.0-or-later
 maintenance:
-  type: "community"
+  type: community
   contacts:
     - name: Jane Doe
 localisation:
