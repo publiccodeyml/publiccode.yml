@@ -26,7 +26,11 @@ html_theme = "press"
 templates_path = ["_templates"]
 
 html_static_path = ["_static"]
-html_css_files = ["sidebar-arrows.css"]
+html_css_files = ["sidebar-arrows.css", "light-code.css"]
+
+# light-code.css repaints the code blocks light: the tokens need a
+# palette for light backgrounds instead of the theme's dark one.
+pygments_style = "default"
 
 extensions = [
     "sphinx_copybutton",
