@@ -62,7 +62,7 @@ Example:
 
 .. code:: yaml
 
-   url: "https://example.com/firefax.git"
+   url: https://example.com/firefax.git
 
 The URL of the source code repository (git, svn, …) where the
 software is published, and thus its unique identifier. If the
@@ -331,7 +331,7 @@ Example:
    description:
      en:
        videos:
-         - "https://youtube.com/xxxxxxxx"
+         - https://youtube.com/xxxxxxxx
 
 One or more URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
@@ -363,7 +363,7 @@ Example:
 .. code:: yaml
 
    legal:
-     license: "EUPL-1.2 OR AGPL-3.0-or-later"
+     license: EUPL-1.2 OR AGPL-3.0-or-later
 
 This string describes the license under which the software is
 distributed. The string must contain a valid SPDX expression, referring
@@ -408,7 +408,7 @@ Example:
 .. code:: yaml
 
    organisation:
-     uri: "https://example.org/my-organisation"
+     uri: https://example.org/my-organisation
 
 The URI identifying the organisation publishing the software. The value
 SHOULD be a stable, resolvable URI or a persistent identifier.
@@ -586,7 +586,7 @@ Example:
 
 .. code:: yaml
 
-   landingURL: "https://example.com/firefax"
+   landingURL: https://example.com/firefax
 
 The page users should reach when clicking a button like “Go to
 the application source code”, for when ``url`` serves source code
@@ -733,7 +733,7 @@ Example:
 .. code:: yaml
 
    isBasedOn:
-     - "https://github.com/example-org/firefax.git"
+     - https://github.com/example-org/firefax.git
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
