@@ -70,33 +70,27 @@ URLs which don’t require user authentication.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string
--  Allowed values: ``"standalone/mobile"``, ``"standalone/iot"``,
-   ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
-   ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-The allowed values are:
+Allowed values:
 
--  ``standalone/mobile`` - The software is a standalone application, typically
-   installed and run on a mobile operating system.
--  ``standalone/iot`` - The software is suitable for an IoT context.
--  ``standalone/desktop`` - The software is typically installed and run in
-   a desktop operating system environment.
--  ``standalone/web`` - The software is a web application that runs on a server
-   and is accessible through a web browser.
--  ``standalone/backend`` - The software is a backend application that provides
-   interfaces (e.g., APIs) for other services. Typically it does not provide
-   direct user interfaces.
--  ``standalone/other`` - The software has a different nature from the ones
-   listed above.
--  ``addon`` - The software is an addon, such as a plugin or a
-   theme, for a more complex software (e.g. a CMS or an office suite).
--  ``library`` - The software is a library or SDK intended to be used
-   by developers in other software projects.
--  ``configurationFiles`` - The software does not contain executable
-   script but a set of configuration files. They may document how to
-   obtain a certain deployment. They could be in the form of plain
-   configuration files, bash scripts, ansible playbooks, Dockerfiles, or
-   other instruction sets.
+-  ``standalone/mobile``: A standalone application for a mobile
+   operating system.
+-  ``standalone/iot``: A standalone application for an IoT device.
+-  ``standalone/desktop``: A standalone application for a desktop
+   operating system.
+-  ``standalone/web``: A web application, running on a server and
+   used through a web browser.
+-  ``standalone/backend``: A backend application exposing interfaces
+   (e.g. APIs) to other services, with no direct user interface.
+-  ``standalone/other``: A standalone application of another kind.
+-  ``addon``: A plugin, theme or other addon for a host
+   software (e.g. a CMS or an office suite).
+-  ``library``: A library or an SDK for developers to use in other
+   software.
+-  ``configurationFiles``: A set of configuration files (plain
+   files, bash scripts, ansible playbooks, Dockerfiles or other
+   instruction sets), possibly documenting how to obtain a certain
+   deployment.
 
 ``platforms`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,24 +113,21 @@ operate it, rather than the platform the software itself runs on.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: enumerated string
--  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
-   ``obsolete``
 
-The allowed values are:
+Allowed values:
 
--  ``concept`` - The software is just a “concept”. No
-   actual code may have been produced, and the repository could simply be a
-   placeholder. 
--  ``development`` - Some effort has gone into the
-   development of the software, but the code is not ready for the end user,
-   even in a preliminary version (beta or alpha) to be tested by end users.
--  ``beta`` - The software is in the testing phase (alpha or beta). At
-   this stage, the software might or might not have had a preliminary
-   public release. 
--  ``stable`` - The software has seen a first public
-   release and is ready to be used in a production environment.
--  ``obsolete`` - The software is no longer maintained or kept up to date.
-   All of the source code is archived and kept for historical reasons.
+-  ``concept``: A “concept”: no actual code may have been produced
+   yet, and the repository could simply be a placeholder.
+-  ``development``: Some effort has gone into the development, but
+   the code is not ready for the end user, even in a preliminary
+   version to be tested by end users.
+-  ``beta``: In the testing phase, alpha stage included. The
+   software might or might not have had a preliminary public
+   release.
+-  ``stable``: Has seen a first public release and is ready to be
+   used in a production environment.
+-  ``obsolete``: No longer maintained or kept up to date. All of the
+   source code is archived and kept for historical reasons.
 
 ``description``
 ~~~~~~~~~~~~~~~
@@ -145,12 +136,10 @@ This section contains a general description of the software. Parsers can
 use this section for instance to create a web page describing the
 software.
 
-**Note:** since all the strings contained in this section are
-user-visible and written in a specific language, you **must** specify
-the language you are editing the text in (using the IETF 
-`BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__ specifications) by
-creating a sub-section with that name. The primary language subtag cannot be
-omitted, as mandated by the BCP 47.  
+The strings in this section are user-visible and grouped by
+language: each language is a sub-section named with its IETF
+`BCP 47 <https://tools.ietf.org/html/bcp47>`__ tag, and at least
+one language must be present.
 
 An example for English:
 
@@ -161,12 +150,7 @@ An example for English:
        shortDescription: ...
        longDescription: ...
 
-In the following part of the document, all keys are assumed to be in a
-sub-section with the name of the language (we will note this with
-``[lang]``).
-
-**Note:** it is mandatory to have *at least* one language in this
-section. All other languages are optional.
+In the key names below, ``[lang]`` stands for that tag.
 
 ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''
@@ -398,18 +382,18 @@ or not.
 ``maintenance/type`` *(required)*
 '''''''''''''''''''''''''''''''''
 
--  Type: enumerate
--  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
+-  Type: enumerated string
 
 How the software is currently maintained.
 
--  ``internal`` - means that the software is internally maintained by the
-   repository owner;
--  ``contract`` - means that there is a commercial
-   contract that binds an entity to the maintenance of the software;
--  ``community`` - means that the software is currently maintained by one
-   or more people that donate their time to the project;
--  ``none`` - means that the software is not actively maintained.
+Allowed values:
+
+-  ``internal``: Maintained internally by the repository owner.
+-  ``contract``: A commercial contract binds an entity to the
+   maintenance.
+-  ``community``: Maintained by one or more people who donate their
+   time to the project.
+-  ``none``: Not actively maintained.
 
 ``maintenance/contractors``
 '''''''''''''''''''''''''''
@@ -538,16 +522,16 @@ values.
 ``supports``
 ~~~~~~~~~~~~
 
--  Type: list of mappings
+-  Type: array
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
 
-Each item is a mapping with a single property:
+Properties of each item:
 
--  ``id`` - **mandatory** - an identifier for the supported standard,
+-  ``id`` (**required**): An identifier for the supported standard,
    regulation, framework or system. It is either an alias in
-   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
+   the form ``alias:<name>``, resolved through the
    :ref:`list of aliases <aliases>`, or any other valid URI (URL or
    URN) referencing the resource directly.
 
@@ -563,6 +547,12 @@ Example:
    supports:
      - id: alias:gdpr
      - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+.. tip::
+
+   Prefer an alias when the list has one: every file then names the
+   standard the same way, while free URIs for the same resource can
+   differ.
 
 ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~
