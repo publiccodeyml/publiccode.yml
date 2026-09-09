@@ -1,5 +1,14 @@
 {% extends '!layout.html' %}
 
+{#- Sphinx 7.2 moved the content root from documentation_options.js to a
+    data attribute on <html>, which the theme's layout does not emit, so
+    the search page fetched its result excerpts from "undefined<page>". -#}
+
+{% block extrahead %}
+{{ super() }}
+<script>document.documentElement.dataset.content_root = "{{ content_root }}";</script>
+{% endblock %}
+
 {% block footer %}
 
 <div class="footer">
