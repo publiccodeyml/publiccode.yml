@@ -1,0 +1,9 @@
+{%- extends "!search.html" %}
+
+{#- The theme hides its "activate JavaScript" warning with jQuery, which
+    Sphinx stopped bundling in 6.0, so the call failed and the warning
+    stayed on the page for every search. -#}
+
+{% block footer_scripts %}
+<script>document.getElementById("fallback").style.display = "none";</script>
+{% endblock %}
