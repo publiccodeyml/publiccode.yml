@@ -10,3 +10,19 @@ h5,
 .theme-default-content h5 {
     font-size: 1.05em;
 }
+
+/* A light rule above each key heading separates one key from the
+   previous one's content. */
+.theme-default-content h3,
+h3 {
+    border-top: 1px solid #eaecef;
+    padding-top: 1.6rem;
+    margin-top: 2rem;
+}
+
+.theme-default-content h4,
+h4 {
+    border-top: 1px solid #f0f2f4;
+    padding-top: 1.2rem;
+    margin-top: 1.6rem;
+}
