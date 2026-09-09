@@ -1,3 +1,5 @@
+.. role:: meta-type
+
 ``publiccode.yml``
 ==================
 
@@ -36,14 +38,18 @@ Specification
 ``publiccodeYmlVersion`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 The version of the specification this file adheres to. Use ``1``.
 
 ``name`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -56,7 +62,9 @@ The short public name of the software, the one users know it by.
 ``url`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~
 
--  Type: string (URL)
+.. rst-class:: key-meta
+
+URL
 
 Example:
 
@@ -79,7 +87,9 @@ URLs which don’t require user authentication.
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
+.. rst-class:: key-meta
+
+enumerated string
 
 Allowed values:
 
@@ -105,7 +115,10 @@ Allowed values:
 ``platforms`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string or list of strings
+.. rst-class:: key-meta key-meta-union
+
+:meta-type:`enumerated string` or :meta-type:`array of strings`
+
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
 
@@ -128,7 +141,9 @@ operate it, rather than the platform the software itself runs on.
 ``developmentStatus`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
+.. rst-class:: key-meta
+
+enumerated string
 
 Allowed values:
 
@@ -171,7 +186,9 @@ In the key names below, ``[lang]`` stands for that tag.
 ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -187,7 +204,9 @@ it differs from ``name``.
 ``description/[lang]/shortDescription`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (max 150 chars)
+.. rst-class:: key-meta
+
+string (max 150 chars)
 
 Example:
 
@@ -203,9 +222,11 @@ single sentence, maximum 150 characters.
 ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''
 
-**Required** for at least one language.
+.. rst-class:: key-meta
 
--  Type: string (min 150 chars, max 10000 chars)
+string (min 150 chars, max 10000 chars)
+
+**Required** for at least one language.
 
 A longer description of the software, between 150 and
 10000 chars, meant to provide an overview of the capabilities of
@@ -222,7 +243,9 @@ consumers MAY render only this subset.
 ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''
 
--  Type: URL
+.. rst-class:: key-meta
+
+URL
 
 A reference to the user-level (not developer-level) documentation
 of the software: a URL to a hosted version of the documentation.
@@ -246,7 +269,9 @@ of the software: a URL to a hosted version of the documentation.
 ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''
 
--  Type: URL
+.. rst-class:: key-meta
+
+URL
 
 A reference to the API documentation of the software: a URL to a
 hosted version of the documentation.
@@ -271,7 +296,9 @@ hosted version of the documentation.
 ``description/[lang]/features``
 '''''''''''''''''''''''''''''''
 
--  Type: list of strings
+.. rst-class:: key-meta
+
+array of strings
 
 A list of software features, describing what
 capabilities the software allows to do. The audience for this text
@@ -290,7 +317,10 @@ listing user-visible functionalities of the software.
 ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''
 
--  Type: array of strings (paths)
+.. rst-class:: key-meta
+
+array of paths
+
 -  Formats: PNG, JPEG, WebP, AVIF
 
 Example:
@@ -322,7 +352,9 @@ the ``publiccode.yml`` file is stored.
 ``description/[lang]/videos`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: array of strings (URLs)
+.. rst-class:: key-meta
+
+array of URLs
 
 Example:
 
@@ -346,7 +378,9 @@ website of the software instead.
 ``description/[lang]/awards``
 '''''''''''''''''''''''''''''
 
--  Type: list of strings
+.. rst-class:: key-meta
+
+array of strings
 
 A list of awards won by the software.
 
@@ -356,7 +390,9 @@ A list of awards won by the software.
 ``legal/license`` *(required)*
 ''''''''''''''''''''''''''''''
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -373,7 +409,9 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -401,7 +439,9 @@ This optional section provides the organisation publishing the software.
 ``organisation/uri`` *(required)*
 '''''''''''''''''''''''''''''''''
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -426,7 +466,9 @@ platform consuming the file.
 ``organisation/name``
 '''''''''''''''''''''
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -452,7 +494,9 @@ or not.
 ``maintenance/type`` *(required)*
 '''''''''''''''''''''''''''''''''
 
--  Type: enumerated string
+.. rst-class:: key-meta
+
+enumerated string
 
 How the software is currently maintained.
 
@@ -468,9 +512,11 @@ Allowed values:
 ``maintenance/contractors``
 '''''''''''''''''''''''''''
 
-**Required** if ``maintenance/type`` is ``contract``. Must not be present otherwise.
+.. rst-class:: key-meta
 
--  Type: array of :ref:`Contractors <contractor-type>`
+array of :ref:`Contractors <contractor-type>`
+
+**Required** if ``maintenance/type`` is ``contract``. Must not be present otherwise.
 
 The entity or entities, if any, currently
 contracted for maintaining the software. They can be companies,
@@ -479,9 +525,11 @@ organisations, or other collective names.
 ``maintenance/contacts``
 ''''''''''''''''''''''''
 
-**Required** if ``maintenance/type`` is ``internal`` or ``community``. Optional otherwise.
+.. rst-class:: key-meta
 
--  Type: array of :ref:`Contacts <contact-type>`
+array of :ref:`Contacts <contact-type>`
+
+**Required** if ``maintenance/type`` is ``internal`` or ``community``. Optional otherwise.
 
 The technical people currently responsible for
 maintaining the software. All contacts need to be a physical person, not
@@ -503,7 +551,9 @@ software.
 ``localisation/localisationReady`` *(required)*
 '''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: boolean
+.. rst-class:: key-meta
+
+boolean
 
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
@@ -512,7 +562,9 @@ than one language.
 ``localisation/availableLanguages`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: array of `IETF BCP 47 <https://tools.ietf.org/html/bcp47>`__ language tags
+.. rst-class:: key-meta
+
+array of `IETF BCP 47 <https://tools.ietf.org/html/bcp47>`__ language tags
 
 Example:
 
@@ -532,7 +584,10 @@ The primary language subtag cannot be omitted, as mandated by the
 ``logo``
 ~~~~~~~~
 
--  Type: string (relative path to file or absolute URL)
+.. rst-class:: key-meta key-meta-union
+
+:meta-type:`path` or :meta-type:`URL`
+
 -  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 
 Example:
@@ -550,7 +605,9 @@ the ``publiccode.yml`` file is stored.
 ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -566,7 +623,9 @@ or any other specific version format.
 ``releaseDate``
 ~~~~~~~~~~~~~~~
 
--  Type: string (date)
+.. rst-class:: key-meta
+
+date
 
 Example:
 
@@ -580,7 +639,9 @@ the only allowed ISO8601 format.
 ``landingURL``
 ~~~~~~~~~~~~~~
 
--  Type: string (URL)
+.. rst-class:: key-meta
+
+URL
 
 Example:
 
@@ -598,7 +659,9 @@ download.
 ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
+.. rst-class:: key-meta
+
+string
 
 Example:
 
@@ -614,7 +677,10 @@ by it.
 ``categories``
 ~~~~~~~~~~~~~~
 
--  Type: array of enumerated strings
+.. rst-class:: key-meta
+
+array of enumerated strings
+
 -  Allowed values: see :ref:`categories`
 
 A list of categories that can be used to describe the software and can help
@@ -626,7 +692,9 @@ values.
 ``supports``
 ~~~~~~~~~~~~
 
--  Type: array
+.. rst-class:: key-meta
+
+array
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
@@ -664,7 +732,9 @@ Example:
 ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''
 
--  Type: list of strings
+.. rst-class:: key-meta
+
+array of strings
 
 Countries explicitly included in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
@@ -674,7 +744,9 @@ ISO 3166-1 alpha-2 two-letter country codes.
 ``intendedAudience/unsupportedCountries`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: list of strings
+.. rst-class:: key-meta
+
+array of strings
 
 Countries explicitly marked as NOT supported, for instance when
 there is a conflict between how the software works and a specific
@@ -687,7 +759,10 @@ countries the software explicitly targets instead.
 ``intendedAudience/scope``
 ''''''''''''''''''''''''''
 
--  Type: array of enumerated strings
+.. rst-class:: key-meta
+
+array of enumerated strings
+
 -  Allowed values: see :ref:`scopes`
 
 Tags related to the field of application of the software.
@@ -695,7 +770,9 @@ Tags related to the field of application of the software.
 ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: list of strings
+.. rst-class:: key-meta
+
+array of strings
 
 A list of the names of prominent public administrations (that will serve
 as “testimonials”) that are currently known to the software maintainer
@@ -711,7 +788,9 @@ This key is deprecated.
 ``fundedBy``
 ~~~~~~~~~~~~
 
--  Type: array of :ref:`Organisations <organisation-type>`
+.. rst-class:: key-meta
+
+array of :ref:`Organisations <organisation-type>`
 
 A list of organisations that are currently known to be funding the
 development of this software.
@@ -719,14 +798,18 @@ development of this software.
 ``roadmap``
 ~~~~~~~~~~~
 
--  Type: string
+.. rst-class:: key-meta
+
+URL
 
 A link to a public roadmap of the software.
 
 ``isBasedOn``
 ~~~~~~~~~~~~~
 
--  Type: array of strings
+.. rst-class:: key-meta
+
+array of strings
 
 Example:
 
@@ -757,7 +840,9 @@ dependencies.
 ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''
 
--  Type: array of :ref:`Dependencies <dependency-type>`
+.. rst-class:: key-meta
+
+array of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under an open-source license.
 
@@ -769,14 +854,18 @@ deployment scripts.
 ``dependsOn/proprietary``
 '''''''''''''''''''''''''
 
--  Type: array of :ref:`Dependencies <dependency-type>`
+.. rst-class:: key-meta
+
+array of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under a proprietary license.
 
 ``dependsOn/hardware``
 ''''''''''''''''''''''
 
--  Type: array of :ref:`Dependencies <dependency-type>`
+.. rst-class:: key-meta
+
+array of :ref:`Dependencies <dependency-type>`
 
 Hardware dependencies that must be owned to use the software.
 
