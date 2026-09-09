@@ -1,0 +1,28 @@
+/* The type of each key renders as a chip under the heading, in the
+   same look as inline code, instead of a Type bullet. */
+p.key-meta,
+p.key-meta-union .meta-type {
+    display: inline-block;
+    background-color: #ecf4fa;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.85em;
+    color: #476582;
+}
+
+p.key-meta {
+    margin: -0.3rem 0 1rem;
+}
+
+/* A key accepting several types shows one chip per type, with the
+   "or" between them read as prose. */
+p.key-meta-union {
+    background: none;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    font-size: 1em;
+    color: #000;
+}
