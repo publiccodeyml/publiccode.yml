@@ -216,8 +216,8 @@ e possono aiutare a costruire il catalogo di software open.
 Il vocabolario controllato :ref:`categories-list` presenta la lista dei valori
 accettabili. 
 
-Chiave ``usedBy``
-~~~~~~~~~~~~~~~~~
+Chiave ``usedBy`` (*deprecated*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
