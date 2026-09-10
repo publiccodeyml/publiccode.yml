@@ -14,32 +14,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  # The website is built and served by publiccodeyml/publiccodeyml.github.io
+  # out of this repository: ask it for a new build.
+  website:
     runs-on: ubuntu-latest
     steps:
-      # The toolchain (poly.py, conf.py, templates) always comes from main,
-      # the content of each version from its release tag or draft branch.
+      - run: gh api repos/publiccodeyml/publiccodeyml.github.io/dispatches -f event_type=publish
+        env:
+          GH_TOKEN: ${{ secrets.YAML_BOT_TOKEN }}
+
+  # yml.publiccode.tools, the former address of the website, keeps
+  # redirecting every URL to the new one.
+  redirect:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v7
-        with:
-          ref: main
-          fetch-depth: 0
-      - uses: astral-sh/setup-uv@v7
-        with:
-          version: "0.12.5"
-          enable-cache: true
-
-      # Release tags come with the checkout, but sphinx-polyversion only
-      # looks at local branches for the drafts
-      - name: Create the draft branches
-        run: |
-          for ref in $(git for-each-ref --format='%(refname:lstrip=3)' 'refs/remotes/origin/[0-9]*-rc'); do
-            git branch "$ref" "origin/$ref"
-          done
-          git branch --list
-          git tag --list 'v*'
-
-      - run: uv run sphinx-polyversion poly.py build/html -vv
-      - run: echo yml.publiccode.tools > build/html/CNAME
+      - run: |
+          mkdir -p build/html
+          cp redirect/index.html build/html/index.html
+          cp redirect/index.html build/html/404.html
+          echo yml.publiccode.tools > build/html/CNAME
 
       - name: Publish on GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
