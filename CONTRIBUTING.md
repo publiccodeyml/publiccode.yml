@@ -45,7 +45,7 @@ We are happy to have you here!
 the right person, please [create a new post](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/general).
 
 We strongly encourage you to also contribute translations (if applicable) and, if needed,
-[a national section](https://yml.publiccode.tools/country.html).
+[a national section](https://publiccodeyml.github.io/country.html).
 Just make your changes and [submit a Pull Request](https://github.com/publiccodeyml/publiccode.yml/pulls).
 
 # In short

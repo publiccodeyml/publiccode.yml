@@ -13,7 +13,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://yml.publiccode.tools">Website</a>
+    <a href="https://publiccodeyml.github.io">Website</a>
     <span> | </span>
     <a href="governance/charter.md">Charter</a>
     <span> | </span>
@@ -77,7 +77,7 @@ localisation:
     - fr
 ```
 
-[**See all available fields...**](https://yml.publiccode.tools/)
+[**See all available fields...**](https://publiccodeyml.github.io/)
 
 ## Finding projects
 
@@ -98,10 +98,12 @@ This project follows the [Semantic Versioning](https://semver.org/).
 Feel free to submit [Pull Requests, file Issues](CONTRIBUTING.md) or open
 a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions).
 
-The [Standard's website](https://yml.publiccode.tools) is built using the Python
-Sphinx package and
-[deployed](https://github.com/publiccodeyml/publiccode.yml/blob/main/.github/workflows/publish.yml)
-on GitHub Pages.
+The [Standard's website](https://publiccodeyml.github.io) is built using the
+Python Sphinx package and
+[deployed](https://github.com/publiccodeyml/publiccodeyml.github.io/blob/main/.github/workflows/publish.yml)
+on GitHub Pages from the
+[publiccodeyml.github.io](https://github.com/publiccodeyml/publiccodeyml.github.io)
+repository.
 
 ### Prerequisites
 
