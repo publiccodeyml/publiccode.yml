@@ -33,8 +33,6 @@ intendedAudience:
   countries:
     - IT
     - DE
-  unsupportedCountries:
-    - US
 
 description:
   en:
