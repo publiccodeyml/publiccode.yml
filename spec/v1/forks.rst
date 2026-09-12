@@ -30,7 +30,7 @@ Parsers
 ~~~~~~~
 
 Parsers **SHOULD** identify a technical fork by noticing that the
-top-level ``url`` key does not point to the repository in which the
+top-level :ref:`url <url>` key does not point to the repository in which the
 ``publiccode.yml`` is found.
 
 Parsers **MIGHT** identify a technical fork also through metadata that
@@ -41,7 +41,7 @@ Authors
 ~~~~~~~
 
 Authors of technical forks **SHOULD NOT** modify ``publiccode.yml`` in
-any way. Specifically, they **MUST NOT** modify the top-level ``url``
+any way. Specifically, they **MUST NOT** modify the top-level :ref:`url <url>`
 key that **MUST** continue pointing to the original repository.
 
 There is no explicit key to mark a fork as a technical fork. This is a
@@ -76,8 +76,8 @@ Parsers
 ~~~~~~~
 
 Parsers **SHOULD** identify a variant by noticing that the top-level
-``url`` key matches the repository in which the ``publiccode.yml`` is
-found, **AND** a top-level ``isBasedOn`` exists and points to a
+:ref:`url <url>` key matches the repository in which the ``publiccode.yml`` is
+found, **AND** a top-level :ref:`isBasedOn <is-based-on>` exists and points to a
 different repository.
 
 Parsers should expect and analyze other differences in
@@ -93,14 +93,14 @@ Authors
 Authors that are willing to publish a fork as a variant **MUST** at
 least:
 
--  Add a key ``isBasedOn`` pointing to one or more upstream repositories
-   from which this variant is derived.
--  Change the value for ``url`` to point to the repository holding the
-   variant.
--  Change the value for ``organisation/name`` to refer to themselves
-   (the authors of the variant).
--  Revisit the ``maintenance`` section to refer to the maintenance
-   status of the variant.
+-  Add a key :ref:`isBasedOn <is-based-on>` pointing to one or more
+   upstream repositories from which this variant is derived.
+-  Change the value for :ref:`url <url>` to point to the repository
+   holding the variant.
+-  Change the value for :ref:`organisation/name <organisation-name>`
+   to refer to themselves (the authors of the variant).
+-  Revisit the :ref:`maintenance <maintenance>` section to refer to
+   the maintenance status of the variant.
 
 Moreover, authors **SHOULD** evaluate the following changes:
 

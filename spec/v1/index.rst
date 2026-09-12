@@ -44,6 +44,8 @@ string
 
 The version of the specification this file adheres to. Use ``1``.
 
+.. _name:
+
 ``name`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -58,6 +60,8 @@ Example:
    name: Firefax
 
 The short public name of the software, the one users know it by.
+
+.. _url:
 
 ``url`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~
@@ -199,7 +203,7 @@ Example:
        localisedName: Firefax
 
 The short public name of the software in this language, for when
-it differs from ``name``.
+it differs from :ref:`name <name>`.
 
 ``description/[lang]/shortDescription`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -314,6 +318,8 @@ listing user-visible functionalities of the software.
    exhaustiveness, as users can always read the documentation for
    additional information.
 
+.. _screenshots:
+
 ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''
 
@@ -366,8 +372,9 @@ Example:
          - https://youtube.com/xxxxxxxx
 
 One or more URLs of videos showing how the
-software works. Like screenshots, videos should be used to give a quick
-overview on how the software looks like and how it works. Videos must be
+software works. Like :ref:`screenshots <screenshots>`, videos should
+be used to give a quick overview on how the software looks like and
+how it works. Videos must be
 hosted on a video sharing website that supports the
 `oEmbed <https://oembed.com>`__ standard; popular options are YouTube
 and Vimeo.
@@ -436,6 +443,8 @@ possible to omit this key.
 
 This optional section provides the organisation publishing the software.
 
+.. _organisation-uri:
+
 ``organisation/uri`` *(required)*
 '''''''''''''''''''''''''''''''''
 
@@ -458,10 +467,12 @@ recognized format (for example, inferring an institutional domain or an
 official code).
 
 It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
-information out-of-band, to ensure that the declared ``organisation/uri`` actually
+information out-of-band, to ensure that the declared URI actually
 corresponds to the organisation in control of the repository.
 The specific verification method depends on the implementation and policies of the
 platform consuming the file.
+
+.. _organisation-name:
 
 ``organisation/name``
 '''''''''''''''''''''
@@ -479,10 +490,13 @@ Example:
 
 The canonical name of the organisation publishing the software.
 
-It MUST correspond to the same entity identified by ``organisation/uri`` and is
+It MUST correspond to the same entity identified by
+:ref:`organisation/uri <organisation-uri>` and is
 intended to provide a human-readable label for that URI.
 It SHOULD be the canonical, widely recognized form of the name (such as the
 registered legal or institutional name).
+
+.. _maintenance:
 
 ``maintenance``
 ~~~~~~~~~~~~~~~
@@ -490,6 +504,8 @@ registered legal or institutional name).
 This section provides information on the maintenance status of the
 software, useful to evaluate whether the software is actively developed
 or not.
+
+.. _maintenance-type:
 
 ``maintenance/type`` *(required)*
 '''''''''''''''''''''''''''''''''
@@ -516,7 +532,8 @@ Allowed values:
 
 array of :ref:`Contractors <contractor-type>`
 
-**Required** if ``maintenance/type`` is ``contract``. Must not be present otherwise.
+**Required** if :ref:`maintenance/type <maintenance-type>` is
+``contract``. Must not be present otherwise.
 
 The entity or entities, if any, currently
 contracted for maintaining the software. They can be companies,
@@ -529,7 +546,8 @@ organisations, or other collective names.
 
 array of :ref:`Contacts <contact-type>`
 
-**Required** if ``maintenance/type`` is ``internal`` or ``community``. Optional otherwise.
+**Required** if :ref:`maintenance/type <maintenance-type>` is
+``internal`` or ``community``. Optional otherwise.
 
 The technical people currently responsible for
 maintaining the software. All contacts need to be a physical person, not
@@ -649,12 +667,10 @@ Example:
 
    landingURL: https://example.com/firefax
 
-The page users should reach when clicking a button like “Go to
-the application source code”, for when ``url`` serves source code
-to a source control client rather than a browsable page. If the
-product provides a graphical installer, this URL can point to a
-page that links the source code and offers the installer for
-download.
+A browsable page for humans, used in place of :ref:`url <url>` when ``url``
+serves raw source code to a version control client only. Catalogs
+link people here instead of ``url``. If the product provides a
+graphical installer, this page can also offer it for download.
 
 ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~
@@ -804,6 +820,8 @@ URL
 
 A link to a public roadmap of the software.
 
+.. _is-based-on:
+
 ``isBasedOn``
 ~~~~~~~~~~~~~
 
@@ -820,7 +838,7 @@ Example:
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
-contain the ``url`` of the original project(s).
+contain the :ref:`url <url>` of the original project(s).
 
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
