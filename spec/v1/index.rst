@@ -323,9 +323,9 @@ listing user-visible functionalities of the software.
 ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''
 
-.. rst-class:: key-meta
+.. rst-class:: key-meta key-meta-union
 
-array of paths
+:meta-type:`array` of :meta-type:`paths` or :meta-type:`URLs`
 
 -  Formats: PNG, JPEG, WebP, AVIF
 
@@ -339,7 +339,7 @@ Example:
          - data/screenshots/configuration.png
 
 One or more paths to files showing screenshots of
-the software, meant to give a quick idea on how the software
+the software, meant to give a quick idea of what the software
 looks like and how it works.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the screenshot in raw
@@ -348,7 +348,7 @@ the ``publiccode.yml`` file is stored.
 
 .. tip::
 
-   Screenshots can be of any shape and size. The suggested formats
+   Screenshots can be of any shape and size. The suggested sizes
    are:
 
    -  Desktop: 1280x800 @1x
@@ -373,7 +373,7 @@ Example:
 
 One or more URLs of videos showing how the
 software works. Like :ref:`screenshots <screenshots>`, videos should
-be used to give a quick overview on how the software looks like and
+be used to give a quick overview of what the software looks like and
 how it works. Videos must be
 hosted on a video sharing website that supports the
 `oEmbed <https://oembed.com>`__ standard; popular options are YouTube

@@ -4,7 +4,9 @@ from sphinx.deprecation import RemovedInSphinx90Warning
 
 warnings.filterwarnings("ignore", category=RemovedInSphinx90Warning)
 
-project = "publiccode.yml Standard (v0.8)"
+# No version in the name: under sphinx-polyversion the switcher shows it,
+# and a hardcoded one goes stale on the branches that change version.
+project = "publiccode.yml Standard"
 
 # Under sphinx-polyversion (poly.py) POLYVERSION_DATA carries the version
 # being built and the list of all of them; load() copies it into
@@ -16,10 +18,6 @@ try:
     load(globals())
 except LoadError:
     pass
-else:
-    # The switcher names the version on every page, and the bare name is
-    # what still fits the navbar on a phone.
-    project = "publiccode.yml Standard"
 
 html_theme = "press"
 
