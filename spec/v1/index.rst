@@ -3,21 +3,16 @@
 ``publiccode.yml``
 ==================
 
-``publiccode.yml`` is a metadata standard for repositories containing software
-developed or acquired by the Public Administration, aimed at making them easily
-discoverable and thus reusable by other entities.
+``publiccode.yml`` describes software developed or acquired by public
+administrations. Authors place the file in the root of the source code
+repository so that other administrations can find and evaluate the
+software for reuse.
 
-By including a ``publiccode.yml`` file in the root of a repository, and
-populating it with information about the software, technicians and civil
-servants can evaluate it.
-
-The format is easily readable by both humans and machines, and
-automatic indexing tools are built on top of it: national software
-catalogs crawl the published files and build searchable sites.
-Catalogs federate across countries, since they all read the same
-format. The `core tools
+National software catalogs collect these files to build searchable
+listings. A shared format lets catalogs exchange information across
+countries. The `core tools
 <https://github.com/publiccodeyml/publiccode.yml#core-tools>`__
-provide the reference implementations to build on.
+include an editor and a parser for the format.
 
 A minimal ``publiccode.yml``:
 
@@ -42,7 +37,7 @@ Specification
 
 string
 
-The version of the specification this file adheres to. Use ``1``.
+The version of the specification the file follows: ``"1"``.
 
 .. _name:
 
@@ -76,10 +71,10 @@ Example:
 
    url: https://example.com/firefax.git
 
-The URL of the source code repository (git, svn, …) where the
-software is published, and thus its unique identifier. If the
-repository is available under multiple protocols, prefer HTTP/HTTPS
-URLs which don’t require user authentication.
+The URL of the source code repository (git, svn and so on) where the
+software is published. It is also the unique identifier of the
+software. If the repository is reachable over several protocols,
+prefer HTTPS.
 
 .. tip::
 
@@ -111,10 +106,8 @@ Allowed values:
    software (e.g. a CMS or an office suite).
 -  ``library``: A library or an SDK for developers to use in other
    software.
--  ``configurationFiles``: A set of configuration files (plain
-   files, bash scripts, ansible playbooks, Dockerfiles or other
-   instruction sets), possibly documenting how to obtain a certain
-   deployment.
+-  ``configurationFiles``: Configuration files or scripts for a
+   deployment, such as Bash scripts, Ansible playbooks or Dockerfiles.
 
 ``platforms`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +117,8 @@ Allowed values:
 :meta-type:`enumerated string` or :meta-type:`array of strings`
 
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
-   ``android``. Human readable values outside this list are allowed.
+   ``android``. When none of them fits, another human readable value
+   is allowed.
 
 Example:
 
@@ -133,14 +127,9 @@ Example:
    platforms:
      - web
 
-The platforms the software runs on: the ones users use to access and
-operate it, rather than the platform the software itself runs on.
-
-.. tip::
-
-   Use the predefined values if possible. If the software runs on a
-   platform for which a predefined value is not available, a
-   different value can be used.
+The platforms people use to access and operate the software, not the
+ones it runs on: a web application lists ``web``, whatever system its
+server runs.
 
 ``developmentStatus`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,14 +140,12 @@ enumerated string
 
 Allowed values:
 
--  ``concept``: A “concept”: no actual code may have been produced
-   yet, and the repository could simply be a placeholder.
--  ``development``: Some effort has gone into the development, but
-   the code is not ready for the end user, even in a preliminary
-   version to be tested by end users.
--  ``beta``: In the testing phase, alpha stage included. The
-   software might or might not have had a preliminary public
-   release.
+-  ``concept``: An idea for software. The repository may contain no
+   code yet.
+-  ``development``: Development has started. The software is not yet
+   ready for end users to test.
+-  ``beta``: Available for testing, including alpha versions. A
+   public release is optional at this stage.
 -  ``stable``: Has seen a first public release and is ready to be
    used in a production environment.
 -  ``obsolete``: No longer maintained or kept up to date. All of the
@@ -167,9 +154,7 @@ Allowed values:
 ``description``
 ~~~~~~~~~~~~~~~
 
-This section contains a general description of the software. Parsers can
-use this section for instance to create a web page describing the
-software.
+Descriptions of the software, grouped by language.
 
 The strings in this section are user-visible and grouped by
 language: each language is a sub-section named with its IETF
@@ -232,17 +217,17 @@ string (min 150 chars, max 10000 chars)
 
 **Required** for at least one language.
 
-A longer description of the software, between 150 and
-10000 chars, meant to provide an overview of the capabilities of
-the software for a potential user. The audience for this text should be
-that of users of the software, not developers. You can think of this
-text as the description of the software that would be in its website (if
-the software had one).
+A longer description of the software, between 150 and 10000
+characters, giving potential users an overview of what it can do.
+Write it for users, not developers: it is the text that would
+present the software on its website.
 
 The value of this key is Markdown, as defined by
 `CommonMark <https://commonmark.org/>`__. Keep the formatting basic:
 ``*italic*``, ``**bold**``, bullet points and ``[links](#)``, since
 consumers MAY render only this subset.
+
+.. _documentation:
 
 ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''
@@ -251,24 +236,16 @@ consumers MAY render only this subset.
 
 URL
 
-A reference to the user-level (not developer-level) documentation
-of the software: a URL to a hosted version of the documentation.
+A URL to the user documentation of the software.
 
 .. tip::
 
-   Point the URL at documentation readable in a common web browser,
-   desktop and mobile: rendered in HTML and browsable like a website,
-   with a navigation index, a search bar, etc.
+   Prefer HTML documentation that users can browse and search on
+   desktop and mobile devices. For a downloadable document, link to
+   the file and use an open format such as PDF or ODT.
 
-   If the documentation is only available as a document, put a direct
-   view/download link here: commit the document to the source code
-   repository and link it through the code hosting source browser
-   (e.g. the GitHub URL of the file). Prefer open formats like PDF or
-   ODT for maximum interoperability.
-
-   Whichever the format, make the documentation sources available
-   under an open license, possibly by committing them to the
-   repository itself.
+   Publish the documentation sources under an open license, for
+   example in the source code repository.
 
 ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''
@@ -277,25 +254,13 @@ of the software: a URL to a hosted version of the documentation.
 
 URL
 
-A reference to the API documentation of the software: a URL to a
-hosted version of the documentation.
+A URL to the hosted API documentation of the software.
 
 .. tip::
 
-   Point the URL at documentation readable in a common web browser:
-   rendered in HTML and browsable like a website, with a navigation
-   index, a search bar, etc. If there is a reference or test
-   deployment, possibly offer an interactive interface (e.g. Swagger).
-
-   If the documentation is only available as a document, put a direct
-   view/download link here: commit the document to the source code
-   repository and link it through the code hosting source browser
-   (e.g. the GitHub URL of the file). Prefer open formats like PDF or
-   ODT for maximum interoperability.
-
-   Whichever the format, make the documentation sources available
-   under an open license, possibly by committing them to the
-   repository itself.
+   The advice for :ref:`documentation <documentation>` applies here
+   too. If there is a reference or test deployment, also consider an
+   interactive interface (e.g. Swagger).
 
 ``description/[lang]/features``
 '''''''''''''''''''''''''''''''
@@ -304,19 +269,13 @@ hosted version of the documentation.
 
 array of strings
 
-A list of software features, describing what
-capabilities the software allows to do. The audience for this text
-should be that of public decision makers who will be commissioning the
-software. The features should thus not target developers; instead of
-listing technical features referring to implementation details, prefer
-listing user-visible functionalities of the software.
+What users can do with the software. Write the list for public
+decision makers who would commission it.
 
 .. tip::
 
-   The suggested number of features to list is between 5 and 20, depending
-   on the software size and complexity. There is no need for
-   exhaustiveness, as users can always read the documentation for
-   additional information.
+   Aim for 5 to 20 features, depending on the size and complexity of
+   the software. Leave the details to the documentation.
 
 .. _screenshots:
 
@@ -338,13 +297,12 @@ Example:
        screenshots:
          - data/screenshots/configuration.png
 
-One or more paths to files showing screenshots of
-the software, meant to give a quick idea of what the software
-looks like and how it works.
-The key value can be the relative path to the file starting from the root of
-the repository, or it can be an absolute URL pointing to the screenshot in raw
-version. In both cases, the file must reside inside the same repository where
-the ``publiccode.yml`` file is stored.
+Screenshots of the software, giving a quick idea of what it looks
+like and how it works.
+
+Each item is either a path relative to the root of the repository or
+an absolute URL to the raw file. Either way, the file must be in the
+same repository as ``publiccode.yml``.
 
 .. tip::
 
@@ -371,16 +329,13 @@ Example:
        videos:
          - https://youtube.com/xxxxxxxx
 
-One or more URLs of videos showing how the
-software works. Like :ref:`screenshots <screenshots>`, videos should
-be used to give a quick overview of what the software looks like and
-how it works. Videos must be
-hosted on a video sharing website that supports the
-`oEmbed <https://oembed.com>`__ standard; popular options are YouTube
-and Vimeo.
+Videos showing how the software looks and works.
 
-This key is deprecated, link videos from the documentation or the
-website of the software instead.
+Videos must be hosted on a video sharing website that supports the
+`oEmbed <https://oembed.com>`__ standard, such as YouTube or Vimeo.
+
+This key is deprecated. Link to videos from the documentation or
+the software's website.
 
 ``description/[lang]/awards``
 '''''''''''''''''''''''''''''
@@ -408,10 +363,9 @@ Example:
    legal:
      license: EUPL-1.2 OR AGPL-3.0-or-later
 
-This string describes the license under which the software is
-distributed. The string must contain a valid SPDX expression, referring
-to one or multiple open-source licenses. Please refer to the `SPDX
-documentation <https://spdx.org/licenses/>`__ for further information.
+The license the software is distributed under. The value must be a
+valid SPDX expression referring to one or more open source licenses:
+see the `SPDX License List <https://spdx.org/licenses/>`__.
 
 ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''
@@ -427,21 +381,18 @@ Example:
    legal:
      mainCopyrightOwner: City of Amsterdam
 
-This string describes the entity that owns the copyright on “most” of
-the code in the repository. Normally, this is the line that is reported
-with the copyright symbol at the top of most files in the repo.
+The entity that owns the copyright on most of the code in the
+repository: usually the one named next to the copyright symbol at the
+top of most files.
 
-It is possible to list multiple owners if required so, using an English
-sentence. It is also possible to informally refer to a community or
-group of people like “Linus Torvalds and all Linux contributors”.
-
-In case it is not possible to name a main copyright owner, it is
-possible to omit this key.
+You can name several owners in one English sentence or name a
+community, such as "Linus Torvalds and all Linux contributors". Omit
+the key if you cannot identify a main copyright owner.
 
 ``organisation``
 ~~~~~~~~~~~~~~~~
 
-This optional section provides the organisation publishing the software.
+The organisation publishing the software. This section is optional.
 
 .. _organisation-uri:
 
@@ -462,15 +413,14 @@ Example:
 The URI identifying the organisation publishing the software. The value
 SHOULD be a stable, resolvable URI or a persistent identifier.
 
-Parsers MAY use the URI structure to extract additional information if it follows a
-recognized format (for example, inferring an institutional domain or an
-official code).
+When the URI follows a recognized format, parsers MAY read more
+information from its structure, for example an institutional domain
+or an official code.
 
-It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
-information out-of-band, to ensure that the declared URI actually
-corresponds to the organisation in control of the repository.
-The specific verification method depends on the implementation and policies of the
-platform consuming the file.
+It is RECOMMENDED that crawlers and consumers of ``publiccode.yml``
+verify out of band that the declared URI belongs to the organisation
+in control of the repository. How to verify it is up to the
+implementation and policies of each consumer.
 
 .. _organisation-name:
 
@@ -490,20 +440,17 @@ Example:
 
 The canonical name of the organisation publishing the software.
 
-It MUST correspond to the same entity identified by
-:ref:`organisation/uri <organisation-uri>` and is
-intended to provide a human-readable label for that URI.
-It SHOULD be the canonical, widely recognized form of the name (such as the
-registered legal or institutional name).
+It MUST name the entity identified by
+:ref:`organisation/uri <organisation-uri>`, as a human readable label
+for that URI. It SHOULD be the widely recognized form of the name,
+such as the registered legal or institutional name.
 
 .. _maintenance:
 
 ``maintenance``
 ~~~~~~~~~~~~~~~
 
-This section provides information on the maintenance status of the
-software, useful to evaluate whether the software is actively developed
-or not.
+How the software is maintained and who maintains it.
 
 .. _maintenance-type:
 
@@ -518,9 +465,9 @@ How the software is currently maintained.
 
 Allowed values:
 
--  ``internal``: Maintained internally by the repository owner.
--  ``contract``: A commercial contract binds an entity to the
-   maintenance.
+-  ``internal``: The repository owner maintains the software.
+-  ``contract``: A contractor maintains the software under a
+   commercial agreement.
 -  ``community``: Maintained by one or more people who donate their
    time to the project.
 -  ``none``: Not actively maintained.
@@ -535,9 +482,8 @@ array of :ref:`Contractors <contractor-type>`
 **Required** if :ref:`maintenance/type <maintenance-type>` is
 ``contract``. Must not be present otherwise.
 
-The entity or entities, if any, currently
-contracted for maintaining the software. They can be companies,
-organisations, or other collective names.
+The entities currently contracted to maintain the software:
+companies, organisations or other collective names.
 
 ``maintenance/contacts``
 ''''''''''''''''''''''''
@@ -549,22 +495,17 @@ array of :ref:`Contacts <contact-type>`
 **Required** if :ref:`maintenance/type <maintenance-type>` is
 ``internal`` or ``community``. Optional otherwise.
 
-The technical people currently responsible for
-maintaining the software. All contacts need to be a physical person, not
-a company or an organisation. If somebody is acting as a representative
-of an institution, it must be listed within the ``affiliation`` of the
-contact.
+The people responsible for technical maintenance. Each contact MUST
+be a person. Use ``affiliation`` for the institution they represent.
 
-In case of a commercial agreement (or a chain of such agreements),
-specify the final entities actually contracted to deliver the
-maintenance. Do not specify the software owner unless it is technically
-involved with the maintenance of the product as well.
+For contracted or subcontracted maintenance, list the people who do
+the work. Include the software owner only if they also maintain it.
 
 ``localisation``
 ~~~~~~~~~~~~~~~~
 
-This section provides an overview of the localization features of the
-software.
+Whether the software supports localisation and which languages it
+is available in.
 
 ``localisation/localisationReady`` *(required)*
 '''''''''''''''''''''''''''''''''''''''''''''''
@@ -573,9 +514,8 @@ software.
 
 boolean
 
-If ``true``, the software has infrastructure in place or is otherwise
-designed to be multilingual. It does not need to be available in more
-than one language.
+If ``true``, the software supports translation into other languages.
+It may still be available in one language.
 
 ``localisation/availableLanguages`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -594,10 +534,7 @@ Example:
        - fr
        - de-AT
 
-This is the list of languages in which the software is
-available. Of course, this list will contain at least one language.
-The primary language subtag cannot be omitted, as mandated by the 
-`BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
+The languages the software is available in. List at least one.
 
 ``logo``
 ~~~~~~~~
@@ -606,7 +543,7 @@ The primary language subtag cannot be omitted, as mandated by the
 
 :meta-type:`path` or :meta-type:`URL`
 
--  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
+-  Formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 
 Example:
 
@@ -615,10 +552,10 @@ Example:
    logo: img/logo.svg
 
 The logo of the software. Logos SHOULD be in vector format.
-The key value can be the relative path to the file starting from the root of
-the repository, or it can be an absolute URL pointing to the logo in raw
-version. In both cases, the file must reside inside the same repository where
-the ``publiccode.yml`` file is stored.
+
+The value is either a path relative to the root of the repository or
+an absolute URL to the raw file. Either way, the file must be in the
+same repository as ``publiccode.yml``.
 
 ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~
@@ -633,10 +570,8 @@ Example:
 
    softwareVersion: "1.0"
 
-The latest stable version number of the software. The
-version number is a string that is not meant to be interpreted and
-parsed but just displayed; parsers should not assume semantic versioning
-or any other specific version format.
+The version of the software, in any format: semantic versioning is
+not required.
 
 ``releaseDate``
 ~~~~~~~~~~~~~~~
@@ -685,10 +620,9 @@ Example:
 
    applicationSuite: MegaProductivitySuite
 
-When the software ships as one piece of a larger family of
-products, the way a word processor ships inside an office suite,
-the name of that family. Catalogs can group related software
-by it.
+The name of the suite the software belongs to, such as an office
+suite that includes a word processor. Catalogs can use it to group
+related software.
 
 ``categories``
 ~~~~~~~~~~~~~~
@@ -699,11 +633,8 @@ array of enumerated strings
 
 -  Allowed values: see :ref:`categories`
 
-A list of categories that can be used to describe the software and can help
-building catalogs of open software.
-
-The controlled vocabulary :ref:`categories` contains the list of allowed
-values.
+The categories the software belongs to. Catalogs use them to group
+software.
 
 ``supports``
 ~~~~~~~~~~~~
@@ -745,6 +676,8 @@ Example:
 ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~
 
+Who the software is for.
+
 ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''
 
@@ -781,7 +714,7 @@ array of enumerated strings
 
 -  Allowed values: see :ref:`scopes`
 
-Tags related to the field of application of the software.
+The sectors the software serves, such as healthcare or education.
 
 ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -790,14 +723,11 @@ Tags related to the field of application of the software.
 
 array of strings
 
-A list of the names of prominent public administrations (that will serve
-as “testimonials”) that are currently known to the software maintainer
-to be using this software.
+Names of prominent public administrations using the software, shown
+as testimonials.
 
-Parsers are encouraged to enhance this list also with other information
-that they can obtain independently; for instance, a fork of a software, owned
-by an administration, could be used as a signal of usage of the
-software.
+Parsers can supplement the list using other evidence of use, such
+as a fork owned by an administration.
 
 This key is deprecated.
 
@@ -808,8 +738,7 @@ This key is deprecated.
 
 array of :ref:`Organisations <organisation-type>`
 
-A list of organisations that are currently known to be funding the
-development of this software.
+The organisations known to be funding the development of the software.
 
 ``roadmap``
 ~~~~~~~~~~~
@@ -836,24 +765,23 @@ Example:
    isBasedOn:
      - https://github.com/example-org/firefax.git
 
-In case this software is a variant or a fork of another software, which
-might or might not contain a ``publiccode.yml`` file, this key will
-contain the :ref:`url <url>` of the original project(s).
+When the software is a variant or a fork, the :ref:`url <url>` of
+the original projects, whether or not they have a ``publiccode.yml``.
 
-The existence of this key identifies the fork as a software
-variant, descending from the specified repositories.
+The key marks the software as a variant descending from those
+repositories: see :ref:`forks-and-variants`.
 
 ``dependsOn``
 ~~~~~~~~~~~~~
 
-This section provides an overview on the system-level dependencies
-required to install and use this software.
+The system-level dependencies needed to install and use the
+software.
 
-**NOTE:** do not list dependencies at the source code level (e.g.:
-software libraries being used), and focus only on runtime and/or
-system-level dependencies that must be installed and maintained
-separately. For instance, a database is a good example of such
-dependencies.
+.. note::
+
+   List only the runtime and system-level dependencies installed and
+   maintained separately, such as a database. Do not list source code
+   dependencies, such as the libraries the software uses.
 
 ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''
@@ -864,10 +792,9 @@ array of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under an open-source license.
 
-This key is deprecated. Open source runtime dependencies are already
-declared in the SBOM or in the package manager manifests, and what
-needs to be installed belongs in the documentation and in the
-deployment scripts.
+This key is deprecated. Declare these dependencies in an SBOM or
+package manager manifests. Put installation requirements in the
+documentation and deployment scripts.
 
 ``dependsOn/proprietary``
 '''''''''''''''''''''''''
