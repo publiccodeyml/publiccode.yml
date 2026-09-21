@@ -33,7 +33,7 @@ Parsers **SHOULD** identify a technical fork by noticing that the
 top-level :ref:`url <url>` key does not point to the repository in which the
 ``publiccode.yml`` is found.
 
-Parsers **MIGHT** identify a technical fork also through metadata that
+Parsers **MAY** identify a technical fork also through metadata that
 might be exposed by the code hosting platform (e.g. GitHub marks forks
 explicitly as forks).
 

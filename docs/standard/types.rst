@@ -34,12 +34,9 @@ Properties:
 -  ``name`` (**required**): The name of the contractor, whether it’s a
    company or a physical person.
 -  ``until`` (**required**): The date the maintenance is going
-   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format. In
-   case of community maintenance, the value should not be more than 2
-   years in the future, and thus will need to be regularly updated as
-   the community continues working on the project.
--  ``email``: The e-mail address of the technical contact. It must
-   be an address where the contact can be directly reached; do NOT
+   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format.
+-  ``email``: The e-mail address of the contractor. It must be an
+   address where the contractor can be directly reached; do NOT
    populate this key with mailing-lists or generic contact points
    like “info@acme.inc”.
 -  ``website``: The maintainer website: either the main
@@ -72,22 +69,22 @@ compatibility matrix.
 .. code:: yaml
 
    - name: PostgreSQL
-     version: "3.2"
+     version: "16"
      optional: true
 
-This snippet marks an optional dependency on PostgreSQL exactly version
-3.2.
+This snippet marks an optional dependency on PostgreSQL 16, with any
+of its patch releases.
 
 *Ex. 2*
 
 .. code:: yaml
 
    - name: MySQL
-     versionMin: "1.1"
-     versionMax: "1.3"
+     versionMin: "8.0"
+     versionMax: "8.4"
 
 This snippet marks a required dependency on MySQL, allowing any version
-between 1.1 and 1.3.
+between 8.0 and 8.4.
 
 .. _organisation-type:
 
@@ -100,6 +97,6 @@ can fund software development.
 Properties:
 
 -  ``name`` (**required**): The name of the organisation, whether
-    it’s an association, a company, a public sector organisation, or
-    a physical person.
+   it’s an association, a company, a public sector organisation, or
+   a physical person.
 -  ``uri``: The URI identifying the organisation.
