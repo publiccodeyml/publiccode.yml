@@ -3,28 +3,21 @@
 Forks and variants
 ==================
 
-A fork may have two different forms based on its final aim. As such, in order to make it clear how to handle the
-``publiccode.yml`` in both cases, below we define two different
-semantics: technical forks and software variants.
+A fork serves one of two purposes, and ``publiccode.yml`` handles
+each differently: technical forks and software variants.
 
 Technical forks (i.e. to publish patches)
 -----------------------------------------
 
-A technical fork is a fork made by a developer for the purpose of
-working on the original code base or sending improvements to the
-original authors, without any explicit goal of creating and publishing
-an alternative variant of the original software.
+A technical fork is made to work on the original code base or to send
+improvements to its authors, with no goal of publishing an alternative
+version of the software. On code hosting platforms like GitHub,
+forking is almost always the first step of a contribution sent as a
+pull request.
 
-In the context of distributed version control systems and collaborative code
-hosting platforms like GitHub, forking is almost always used by
-developers as a step to work on a contribution on an existing codebase,
-by sending “pull requests”.
-
-Because of the way forking works on GitHub and other platforms,
-developers publish their forks as perfect copies of the original
-software, thus including also ``publiccode.yml``. However, parsers need
-to be able to distinguish such technical forks from the original
-codebase.
+These platforms publish a fork as an exact copy of the original
+repository, ``publiccode.yml`` included, so parsers need a way to tell
+a technical fork from the original codebase.
 
 Parsers
 ~~~~~~~
@@ -33,8 +26,8 @@ Parsers **SHOULD** identify a technical fork by noticing that the
 top-level :ref:`url <url>` key does not point to the repository in which the
 ``publiccode.yml`` is found.
 
-Parsers **MAY** identify a technical fork also through metadata that
-might be exposed by the code hosting platform (e.g. GitHub marks forks
+Parsers **MAY** also identify a technical fork through metadata
+exposed by the code hosting platform (e.g. GitHub marks forks
 explicitly as forks).
 
 Authors
@@ -44,11 +37,9 @@ Authors of technical forks **SHOULD NOT** modify ``publiccode.yml`` in
 any way. Specifically, they **MUST NOT** modify the top-level :ref:`url <url>`
 key that **MUST** continue pointing to the original repository.
 
-There is no explicit key to mark a fork as a technical fork. This is a
-conscious design decision because we do not want authors of technical
-forks to be aware of ``publiccode.yml`` and necessarily be aware of how
-to modify it. The current design does not require authors to do
-anything.
+No key marks a fork as technical, by design: authors of technical
+forks do not need to know ``publiccode.yml`` or how to edit it, and
+nothing is asked of them.
 
 Software variants
 -----------------
@@ -56,19 +47,17 @@ Software variants
 A software variant is a fork that is offered as an alternative to the
 original upstream software.
 
-It contains modifications that are still not part of the upstream
-version, like more features, different dependencies, optimizations, etc.
+It contains modifications not yet part of the upstream version, like
+more features, different dependencies or optimizations.
 
-By marking a fork as a variant, the author indicates that they believe
-that the variant includes a complete and working set of modifications
-that might be useful to other people.
+By marking a fork as a variant, the author states that it holds a
+complete and working set of modifications that other people might
+find useful.
 
-Marking a fork as a variant does **not** relate to the willingness to
-contribute upstream; the author might still plan to contribute the
-modifications upstream, or even be in the process of doing so. Thus,
-even if the fork will eventually be merged upstream, it might make sense
-to mark it as a variant during the process, so that others might
-discover it and benefit from it.
+Marking a fork as a variant says nothing about contributing upstream:
+the author might still plan to, or be doing it already. Even a fork
+that will eventually be merged upstream can be marked as a variant
+meanwhile, so that others can find it and use it.
 
 .. _parsers-1:
 
@@ -81,17 +70,16 @@ found, **AND** a top-level :ref:`isBasedOn <is-based-on>` exists and points to a
 different repository.
 
 Parsers should expect and analyze other differences in
-``publiccode.yml`` between variants of the software. Specifically
-``description/[lang]/features`` is designed to be compared across variants to
-identify and show user-visible differences.
+``publiccode.yml`` between variants of the software. In particular,
+``description/[lang]/features`` is designed to be compared across
+variants to show their user-visible differences.
 
 .. _authors-1:
 
 Authors
 ~~~~~~~
 
-Authors that are willing to publish a fork as a variant **MUST** at
-least:
+Authors who publish a fork as a variant **MUST** at least:
 
 -  Add a key :ref:`isBasedOn <is-based-on>` pointing to one or more
    upstream repositories from which this variant is derived.
