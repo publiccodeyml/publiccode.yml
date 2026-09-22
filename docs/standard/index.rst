@@ -48,9 +48,8 @@ The version of the specification the file follows: ``"1"``.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    name: Firefax
 
@@ -65,9 +64,8 @@ The short public name of the software, the one users know it by.
 
 URL
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    url: https://example.com/firefax.git
 
@@ -116,13 +114,12 @@ Allowed values:
 
 :meta-type:`enumerated string` or :meta-type:`array of strings`
 
--  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
-   ``android``. When none of them fits, another human readable value
-   is allowed.
+Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
+``android``. When none of them fits, another human readable value
+is allowed.
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    platforms:
      - web
@@ -179,9 +176,8 @@ In the key names below, ``[lang]`` stands for that tag.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    description:
      en:
@@ -197,9 +193,8 @@ it differs from :ref:`name <name>`.
 
 string (max 150 chars)
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    description:
      en:
@@ -286,11 +281,10 @@ decision makers who would commission it.
 
 :meta-type:`array` of :meta-type:`paths` or :meta-type:`URLs`
 
--  Formats: PNG, JPEG, WebP, AVIF
+Formats: PNG, JPEG, WebP, AVIF
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    description:
      en:
@@ -320,9 +314,8 @@ same repository as ``publiccode.yml``.
 
 array of URLs
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    description:
      en:
@@ -356,9 +349,8 @@ A list of awards won by the software.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    legal:
      license: EUPL-1.2 OR AGPL-3.0-or-later
@@ -374,9 +366,8 @@ see the `SPDX License List <https://spdx.org/licenses/>`__.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    legal:
      mainCopyrightOwner: City of Amsterdam
@@ -403,9 +394,8 @@ The organisation publishing the software. This section is optional.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    organisation:
      uri: https://example.org/my-organisation
@@ -431,9 +421,8 @@ implementation and policies of each consumer.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    organisation:
      name: My organisation
@@ -524,9 +513,8 @@ It may still be available in one language.
 
 array of `IETF BCP 47 <https://tools.ietf.org/html/bcp47>`__ language tags
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    localisation:
      availableLanguages:
@@ -543,11 +531,10 @@ The languages the software is available in. List at least one.
 
 :meta-type:`path` or :meta-type:`URL`
 
--  Formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
+Formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    logo: img/logo.svg
 
@@ -564,9 +551,8 @@ same repository as ``publiccode.yml``.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    softwareVersion: "1.0"
 
@@ -581,9 +567,8 @@ semantic versioning or any other version format.
 
 date
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    releaseDate: "2017-04-15"
 
@@ -597,9 +582,8 @@ the only allowed ISO8601 format.
 
 URL
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    landingURL: https://example.com/firefax
 
@@ -615,9 +599,8 @@ graphical installer, this page can also offer it for download.
 
 string
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    applicationSuite: MegaProductivitySuite
 
@@ -632,7 +615,7 @@ related software.
 
 array of enumerated strings
 
--  Allowed values: see :ref:`categories`
+Allowed values: see :ref:`categories`
 
 The categories the software belongs to. Catalogs use them to group
 software.
@@ -660,9 +643,8 @@ Properties of each item:
    Any other value MUST be a syntactically valid URI. A value that is
    well formed but not otherwise known is accepted as is.
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    supports:
      - id: alias:gdpr
@@ -713,7 +695,7 @@ countries the software explicitly targets instead.
 
 array of enumerated strings
 
--  Allowed values: see :ref:`scopes`
+Allowed values: see :ref:`scopes`
 
 The sectors the software serves, such as healthcare or education.
 
@@ -759,9 +741,8 @@ A link to a public roadmap of the software.
 
 array of strings
 
-Example:
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example
 
    isBasedOn:
      - https://github.com/example-org/firefax.git

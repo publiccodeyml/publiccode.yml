@@ -63,9 +63,8 @@ Complex versioning
 
 The version keys combine to describe a compatibility range.
 
-*Ex. 1*
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example 1
 
    - name: PostgreSQL
      version: "16"
@@ -74,9 +73,8 @@ The version keys combine to describe a compatibility range.
 This snippet marks an optional dependency on PostgreSQL 16, with any
 of its patch releases.
 
-*Ex. 2*
-
-.. code:: yaml
+.. code-block:: yaml
+   :caption: Example 2
 
    - name: MySQL
      versionMin: "8.0"
