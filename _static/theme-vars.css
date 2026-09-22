@@ -1,0 +1,25 @@
+/* The press theme defines its color variables only under .theme-light
+   and .theme-dark, classes the page never carries because the dark
+   mode switch is not rendered. Every rule reading them fell back to
+   nothing: black text, no borders under the h2 headings and around
+   the sidebar, and a transparent navbar and phone sidebar with the
+   page text showing through. Define the light palette on the root. */
+:root {
+    --text-color: #2c3e50;
+    --background-color: #fff;
+    --border-color: #eaecef;
+    --code-bg-color: #ecf4fa;
+    --arrow-bg-color: #ccc;
+    --box-shadow-color: #f0f1f2;
+    --text-color-l10: #3a5169;
+    --text-color-l20: #476582;
+    --text-color-l25: #4e6e8e;
+    --text-color-l40: #6a8bad;
+    --black: #000;
+    --dark-grey: #666;
+    --light-grey: #999;
+    --white: #fff;
+    --grey3: #333;
+    --grey12: #bbb;
+    --grey14: #eee;
+}

@@ -24,5 +24,5 @@ p.key-meta-union {
         Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
     font-size: 1em;
-    color: #000;
+    color: var(--text-color);
 }
