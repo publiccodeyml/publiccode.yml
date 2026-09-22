@@ -11,3 +11,20 @@ pre code,
 .theme-default-content pre[class*="language-"] code {
     color: #24292e;
 }
+
+/* Each example is a code block captioned "Example": a small label
+   tied to its block reads as part of it, where a body text line
+   competed with the key description. The permalink next to the
+   caption only adds noise. */
+.code-block-caption {
+    margin: 1rem 0 -0.5rem;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6a737d;
+}
+
+.code-block-caption .headerlink {
+    display: none;
+}
