@@ -725,15 +725,18 @@ Section ``localisation``
 This section provides an overview of the localization features of the
 software.
 
-Key ``localisation/localisationReady``
-''''''''''''''''''''''''''''''''''''''
+Key ``localisation/localisationReady`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: boolean
--  Presence: mandatory
+-  Presence: optional
 
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
+
+This key is deprecated, use ``localisation/availableLanguages`` to
+state the languages the software is available in.
 
 Key ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
