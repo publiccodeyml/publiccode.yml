@@ -27,6 +27,19 @@ A minimal ``publiccode.yml``:
    types.rst
    vocabularies.rst
 
+Conventions
+-----------
+
+The key words MUST, MUST NOT, REQUIRED, SHOULD, SHOULD NOT,
+RECOMMENDED, MAY and OPTIONAL in this document are to be interpreted
+as described in BCP 14 (`RFC 2119 <https://www.rfc-editor.org/rfc/rfc2119>`__,
+`RFC 8174 <https://www.rfc-editor.org/rfc/rfc8174>`__) when, and only
+when, they appear in all capitals.
+
+A key marked *(required)* MUST be present. Within an optional
+section, required keys MUST be present if you include that section.
+Other keys are optional unless their descriptions state a condition.
+
 Specification
 -------------
 
@@ -148,15 +161,15 @@ Allowed values:
 -  ``obsolete``: No longer maintained or kept up to date. All of the
    source code is archived and kept for historical reasons.
 
-``description``
-~~~~~~~~~~~~~~~
+``description`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Descriptions of the software, grouped by language.
 
 The strings in this section are user-visible and grouped by
 language: each language is a sub-section named with its IETF
 `BCP 47 <https://tools.ietf.org/html/bcp47>`__ tag, and at least
-one language must be present.
+one language MUST be present.
 
 An example for English:
 
@@ -210,7 +223,7 @@ single sentence, maximum 150 characters.
 
 string (min 150 chars, max 10000 chars)
 
-**Required** for at least one language.
+MUST be present in at least one language.
 
 A longer description of the software, between 150 and 10000
 characters, giving potential users an overview of what it can do.
@@ -295,7 +308,7 @@ Screenshots of the software, giving a quick idea of what it looks
 like and how it works.
 
 Each item is either a path relative to the root of the repository or
-an absolute URL to the raw file. Either way, the file must be in the
+an absolute URL to the raw file. Either way, the file MUST be in the
 same repository as ``publiccode.yml``.
 
 .. tip::
@@ -324,7 +337,7 @@ array of URLs
 
 Videos showing how the software looks and works.
 
-Videos must be hosted on a video sharing website that supports the
+Videos MUST be hosted on a video sharing website that supports the
 `oEmbed <https://oembed.com>`__ standard, such as YouTube or Vimeo.
 
 This key is deprecated. Link to videos from the documentation or
@@ -339,8 +352,8 @@ array of strings
 
 A list of awards won by the software.
 
-``legal``
-~~~~~~~~~
+``legal`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~
 
 ``legal/license`` *(required)*
 ''''''''''''''''''''''''''''''
@@ -355,7 +368,7 @@ string
    legal:
      license: EUPL-1.2 OR AGPL-3.0-or-later
 
-The license the software is distributed under. The value must be a
+The license the software is distributed under. The value MUST be a
 valid SPDX expression referring to one or more open source licenses:
 see the `SPDX License List <https://spdx.org/licenses/>`__.
 
@@ -436,8 +449,8 @@ such as the registered legal or institutional name.
 
 .. _maintenance:
 
-``maintenance``
-~~~~~~~~~~~~~~~
+``maintenance`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How the software is maintained and who maintains it.
 
@@ -468,8 +481,8 @@ Allowed values:
 
 array of :ref:`Contractors <contractor-type>`
 
-**Required** if :ref:`maintenance/type <maintenance-type>` is
-``contract``. Must not be present otherwise.
+MUST be present if :ref:`maintenance/type <maintenance-type>` is
+``contract``, and MUST NOT be present otherwise.
 
 The entities currently contracted to maintain the software:
 companies, organisations or other collective names.
@@ -481,8 +494,8 @@ companies, organisations or other collective names.
 
 array of :ref:`Contacts <contact-type>`
 
-**Required** if :ref:`maintenance/type <maintenance-type>` is
-``internal`` or ``community``. Optional otherwise.
+MUST be present if :ref:`maintenance/type <maintenance-type>` is
+``internal`` or ``community``, and is optional otherwise.
 
 The people responsible for technical maintenance. Each contact MUST
 be a person. Use ``affiliation`` for the institution they represent.
@@ -490,8 +503,8 @@ be a person. Use ``affiliation`` for the institution they represent.
 For contracted or subcontracted maintenance, list the people who do
 the work. Include the software owner only if they also maintain it.
 
-``localisation``
-~~~~~~~~~~~~~~~~
+``localisation`` *(required)*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whether the software supports localisation and which languages it
 is available in.
@@ -541,7 +554,7 @@ Formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 The logo of the software. Logos SHOULD be in vector format.
 
 The value is either a path relative to the root of the repository or
-an absolute URL to the raw file. Either way, the file must be in the
+an absolute URL to the raw file. Either way, the file MUST be in the
 same repository as ``publiccode.yml``.
 
 ``softwareVersion``
@@ -794,10 +807,10 @@ Runtime dependencies distributed under a proprietary license.
 
 array of :ref:`Dependencies <dependency-type>`
 
-Hardware dependencies that must be owned to use the software.
+Hardware needed to use the software.
 
 Encoding
 --------
 
-``publiccode.yml`` **MUST** be UTF-8 encoded and **MUST** be a
+``publiccode.yml`` MUST be UTF-8 encoded and MUST be a
 YAML 1.2 document.

@@ -22,20 +22,20 @@ a technical fork from the original codebase.
 Parsers
 ~~~~~~~
 
-Parsers **SHOULD** identify a technical fork by noticing that the
+Parsers SHOULD identify a technical fork by noticing that the
 top-level :ref:`url <url>` key does not point to the repository in which the
 ``publiccode.yml`` is found.
 
-Parsers **MAY** also identify a technical fork through metadata
+Parsers MAY also identify a technical fork through metadata
 exposed by the code hosting platform (e.g. GitHub marks forks
 explicitly as forks).
 
 Authors
 ~~~~~~~
 
-Authors of technical forks **SHOULD NOT** modify ``publiccode.yml`` in
-any way. Specifically, they **MUST NOT** modify the top-level :ref:`url <url>`
-key that **MUST** continue pointing to the original repository.
+Authors of technical forks SHOULD NOT modify ``publiccode.yml`` in
+any way. Specifically, they MUST NOT modify the top-level :ref:`url <url>`
+key that MUST continue pointing to the original repository.
 
 No key marks a fork as technical, by design: authors of technical
 forks do not need to know ``publiccode.yml`` or how to edit it, and
@@ -64,12 +64,12 @@ meanwhile, so that others can find it and use it.
 Parsers
 ~~~~~~~
 
-Parsers **SHOULD** identify a variant by noticing that the top-level
+Parsers SHOULD identify a variant by noticing that the top-level
 :ref:`url <url>` key matches the repository in which the ``publiccode.yml`` is
 found, **AND** a top-level :ref:`isBasedOn <is-based-on>` exists and points to a
 different repository.
 
-Parsers should expect and analyze other differences in
+Parsers SHOULD expect and analyze other differences in
 ``publiccode.yml`` between variants of the software. In particular,
 ``description/[lang]/features`` is designed to be compared across
 variants to show their user-visible differences.
@@ -79,7 +79,7 @@ variants to show their user-visible differences.
 Authors
 ~~~~~~~
 
-Authors who publish a fork as a variant **MUST** at least:
+Authors who publish a fork as a variant MUST at least:
 
 -  Add a key :ref:`isBasedOn <is-based-on>` pointing to one or more
    upstream repositories from which this variant is derived.
@@ -90,9 +90,9 @@ Authors who publish a fork as a variant **MUST** at least:
 -  Revisit the :ref:`maintenance <maintenance>` section to refer to
    the maintenance status of the variant.
 
-Moreover, authors **SHOULD** evaluate the following changes:
+Moreover, authors SHOULD evaluate the following changes:
 
 -  Add the features that differentiate the variant to the
-   ``description/[lang]/features`` key. Existing features **SHOULD NOT** be
+   ``description/[lang]/features`` key. Existing features SHOULD NOT be
    edited or removed from this list unless they have been removed from
    the variant, to allow parsers to easily compare feature lists.
