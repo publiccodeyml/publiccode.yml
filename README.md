@@ -164,11 +164,15 @@ its reference implementations and supporting components.
 
 - **[libpubliccode](https://github.com/publiccodeyml/libpubliccode)**
 
-  Go parser and validator. Reference implementation of the specification.
+  Parser and validator library. Reference implementation of the specification.
 
-- **[publiccode-parser-php](https://github.com/bfabio/publiccode-parser-php)**
-
-  PHP library for parsing and validation using the reference implementation via FFI.
+  - Bindings:
+    [PHP](https://github.com/bfabio/publiccode-parser-php) (via FFI)
+  - CI:
+    [GitHub Action](https://github.com/publiccodeyml/publiccode-parser-action),
+    [GitLab CI](https://github.com/publiccodeyml/publiccode-parser-gitlab-ci)
+  - [Validator API](https://github.com/publiccodeyml/publiccode-validator-api):
+    RESTful API returning validation errors and warnings
 
 - **[publiccode-crawler](https://github.com/publiccodeyml/publiccode-crawler)**
 
@@ -179,21 +183,8 @@ its reference implementations and supporting components.
   RESTful API powering software catalogs for public administrations, used to
   store, query and expose all catalog data about FLOSS solutions.
 
-- **[publiccode-api-client](https://github.com/bfabio/publiccode-api-client)**
-
-  Convenience command-line client to query the catalog API. (*alpha*)
-
-- **[publiccode-parser-action](https://github.com/publiccodeyml/publiccode-parser-action)**
-
-  GitHub Action for validation in GitHub pipelines.
-
-- **[publiccode-parser-gitlab-ci](https://github.com/publiccodeyml/publiccode-parser-gitlab-ci)**
-
-  GitLab CI integration for validation
-
-- **[publiccode-validator-api](https://github.com/publiccodeyml/publiccode-validator-api)**
-
-  Simple RESTful API for validating publiccode.yml files, returning errors and warnings.
+  - [CLI client](https://github.com/bfabio/publiccode-api-client) to query
+    the catalog API (*alpha*)
 
 - **[publiccode-issueopener](https://github.com/publiccodeyml/publiccode-issueopener)**
 
