@@ -1,5 +1,3 @@
-.. role:: meta-type
-
 ``publiccode.yml``
 ==================
 
@@ -75,7 +73,7 @@ The short public name of the software, the one users know it by.
 
 .. rst-class:: key-meta
 
-URL
+:ref:`URL <url-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -99,7 +97,7 @@ prefer HTTPS.
 
 .. rst-class:: key-meta
 
-enumerated string
+:ref:`enumerated string <enumerated-string-type>`
 
 Allowed values:
 
@@ -125,7 +123,7 @@ Allowed values:
 
 .. rst-class:: key-meta key-meta-union
 
-:meta-type:`enumerated string` or :meta-type:`array of strings`
+:meta-type:`enumerated string <enumerated-string-type>` or :meta-type:`array of strings`
 
 Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
 ``android``. When none of them fits, another human readable value
@@ -146,7 +144,7 @@ server runs.
 
 .. rst-class:: key-meta
 
-enumerated string
+:ref:`enumerated string <enumerated-string-type>`
 
 Allowed values:
 
@@ -167,8 +165,8 @@ Allowed values:
 Descriptions of the software, grouped by language.
 
 The strings in this section are user-visible and grouped by
-language: each language is a sub-section named with its IETF
-`BCP 47 <https://tools.ietf.org/html/bcp47>`__ tag, and at least
+language: each language is a sub-section named with its
+:ref:`language tag <language-tag-type>`, and at least
 one language MUST be present.
 
 An example for English:
@@ -242,7 +240,7 @@ consumers MAY render only this subset.
 
 .. rst-class:: key-meta
 
-URL
+:ref:`URL <url-type>`
 
 A URL to the user documentation of the software.
 
@@ -260,7 +258,7 @@ A URL to the user documentation of the software.
 
 .. rst-class:: key-meta
 
-URL
+:ref:`URL <url-type>`
 
 A URL to the hosted API documentation of the software.
 
@@ -292,7 +290,7 @@ decision makers who would commission it.
 
 .. rst-class:: key-meta key-meta-union
 
-:meta-type:`array` of :meta-type:`paths` or :meta-type:`URLs`
+:meta-type:`array` of :meta-type:`paths <path-type>` or :meta-type:`URLs <url-type>`
 
 Formats: PNG, JPEG, WebP, AVIF
 
@@ -325,7 +323,7 @@ same repository as ``publiccode.yml``.
 
 .. rst-class:: key-meta
 
-array of URLs
+array of :ref:`URLs <url-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -405,7 +403,7 @@ The organisation publishing the software. This section is optional.
 
 .. rst-class:: key-meta
 
-string
+:ref:`URI <uri-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -461,7 +459,7 @@ How the software is maintained and who maintains it.
 
 .. rst-class:: key-meta
 
-enumerated string
+:ref:`enumerated string <enumerated-string-type>`
 
 How the software is currently maintained.
 
@@ -524,7 +522,7 @@ It may still be available in one language.
 
 .. rst-class:: key-meta
 
-array of `IETF BCP 47 <https://tools.ietf.org/html/bcp47>`__ language tags
+array of :ref:`language tags <language-tag-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -542,7 +540,7 @@ The languages the software is available in. List at least one.
 
 .. rst-class:: key-meta key-meta-union
 
-:meta-type:`path` or :meta-type:`URL`
+:meta-type:`path <path-type>` or :meta-type:`URL <url-type>`
 
 Formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 
@@ -578,22 +576,21 @@ semantic versioning or any other version format.
 
 .. rst-class:: key-meta
 
-date
+:ref:`date <date-type>`
 
 .. code-block:: yaml
    :caption: Example
 
    releaseDate: "2017-04-15"
 
-The date the latest version was released, as “YYYY-MM-DD”. This is
-the only allowed ISO8601 format.
+The date the latest version was released.
 
 ``landingURL``
 ~~~~~~~~~~~~~~
 
 .. rst-class:: key-meta
 
-URL
+:ref:`URL <url-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -626,7 +623,7 @@ related software.
 
 .. rst-class:: key-meta
 
-array of enumerated strings
+array of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`categories`
 
@@ -648,8 +645,8 @@ Properties of each item:
 -  ``id`` (**required**): An identifier for the supported standard,
    regulation, framework or system. It is either an alias in
    the form ``alias:<name>``, resolved through the
-   :ref:`list of aliases <aliases>`, or any other valid URI (URL or
-   URN) referencing the resource directly.
+   :ref:`list of aliases <aliases>`, or any other valid :ref:`URI <uri-type>` referencing the resource
+   directly.
 
    An ``alias:`` value MUST exist in the
    :ref:`list of aliases <aliases>`. An unknown alias is an error.
@@ -679,34 +676,32 @@ Who the software is for.
 
 .. rst-class:: key-meta
 
-array of strings
+array of :ref:`country codes <country-code-type>`
 
-Countries explicitly included in the intended audience,
-i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using uppercase
-ISO 3166-1 alpha-2 two-letter country codes.
+Countries explicitly included in the intended audience: the
+software claims compliance with their processes, technologies
+or laws.
 
 ``intendedAudience/unsupportedCountries`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. rst-class:: key-meta
 
-array of strings
+array of :ref:`country codes <country-code-type>`
 
-Countries explicitly marked as NOT supported, for instance when
-there is a conflict between how the software works and a specific
-law, process or technology. All countries are specified using
-uppercase ISO 3166-1 alpha-2 two-letter country codes.
+Countries explicitly excluded from the intended audience, for
+instance when the software conflicts with a law, process or
+technology of theirs.
 
-This key is deprecated, use ``intendedAudience/countries`` to list the
-countries the software explicitly targets instead.
+This key is deprecated. Use ``intendedAudience/countries`` to list the
+countries the software targets.
 
 ``intendedAudience/scope``
 ''''''''''''''''''''''''''
 
 .. rst-class:: key-meta
 
-array of enumerated strings
+array of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`scopes`
 
@@ -741,7 +736,7 @@ The organisations known to be funding the development of the software.
 
 .. rst-class:: key-meta
 
-URL
+:ref:`URL <url-type>`
 
 A link to a public roadmap of the software.
 
