@@ -1,5 +1,7 @@
 import warnings
 
+from docutils import nodes
+from docutils.parsers.rst import roles
 from sphinx.deprecation import RemovedInSphinx90Warning
 
 warnings.filterwarnings("ignore", category=RemovedInSphinx90Warning)
@@ -46,6 +48,22 @@ def _flag_expandable_toc_entries(app, pagename, templatename, context, doctree):
             entry["has_children"] = bool(sections)
 
 
+# One type chip on a key's type line, for the keys accepting several
+# types. A docutils generic role cannot hold a link, so a chip written
+# as ``:meta-type:`URL <url-type>``` delegates to the std ref role and
+# links to the definition of the type.
+def _meta_type_role(name, rawtext, text, lineno, inliner, options=None, content=()):
+    chip = nodes.inline(rawtext, "", classes=["meta-type"])
+    if "<" not in text:
+        chip += nodes.Text(text)
+        return [chip], []
+    ref, messages = roles.role("ref", inliner.language, lineno, inliner.reporter)
+    children, ref_messages = ref("ref", rawtext, text, lineno, inliner, options or {}, content)
+    chip.extend(children)
+    return [chip], [*messages, *ref_messages]
+
+
 def setup(app):
     # priority > 500: after the theme handler that builds toctree_data
     app.connect("html-page-context", _flag_expandable_toc_entries, priority=501)
+    app.add_role("meta-type", _meta_type_role)

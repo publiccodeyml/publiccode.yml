@@ -1,6 +1,66 @@
 Types
 =====
 
+Each key lists its type below its name. Values MUST follow the
+rules for that type.
+
+.. _date-type:
+
+Date
+----
+
+A calendar date in the ISO 8601 ``YYYY-MM-DD`` format, the only
+ISO 8601 format allowed. Quote it in YAML, as in
+``"2017-04-15"``, so that it stays a string.
+
+.. _enumerated-string-type:
+
+Enumerated string
+-----------------
+
+A string taking one of the values listed for its key.
+
+.. _language-tag-type:
+
+Language tag
+------------
+
+An IETF `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__ language
+tag, such as ``en``, ``it`` or ``de-AT``.
+
+.. _country-code-type:
+
+Country code
+------------
+
+An `ISO 3166-1 alpha-2
+<https://www.iso.org/iso-3166-country-codes.html>`__ country code,
+such as ``IT`` or ``DE``.
+
+.. _path-type:
+
+Path
+----
+
+The path of a file in the repository, relative to its root, such
+as ``img/logo.svg``.
+
+.. _uri-type:
+
+URI
+---
+
+A URI as defined by `RFC 3986
+<https://www.rfc-editor.org/rfc/rfc3986>`__, such as a URL or a URN.
+
+.. _url-type:
+
+URL
+---
+
+An absolute URL, scheme included, such as
+``https://example.com/firefax``.
+
 .. _contact-type:
 
 Contact
@@ -31,11 +91,10 @@ Properties:
 
 -  ``name`` (**required**): The name of the contractor, whether it’s a
    company or a physical person.
--  ``until`` (**required**): The date the maintenance is going
-   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format. For
-   community maintenance, it should be no more than two years in the
-   future. Update it regularly while the community maintains the
-   software.
+-  ``until`` (**required**): The :ref:`date <date-type>` the
+   maintenance is going to end. For community maintenance, it should
+   be no more than two years in the future. Update it regularly while
+   the community maintains the software.
 -  ``email``: The e-mail address of the technical contact. It MUST
    reach that person directly, not a mailing list or a generic
    contact point like ``info@acme.inc``.
