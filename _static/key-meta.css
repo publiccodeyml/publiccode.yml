@@ -26,3 +26,10 @@ p.key-meta-union {
     font-size: 1em;
     color: var(--text-color);
 }
+
+/* A condition on the presence of a key sits right under its type,
+   in the italic of the "(required)" mark it stands in for. */
+p.key-condition {
+    margin-top: -0.4rem;
+    font-style: italic;
+}
