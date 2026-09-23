@@ -205,8 +205,6 @@ Maintained separately from the core tooling, but widely used in practice.
   User friendly editor and basic validator for publiccode.yml files (maintained
   by Developers Italia, Italian Government).
 
-More tools can e.g. be found [by searching for the GitHub topic `publiccode`](https://github.com/topics/publiccode).
-
 ## License
 
 Licensed under the [CC0-1.0](LICENSE).
