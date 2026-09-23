@@ -221,6 +221,8 @@ single sentence, maximum 150 characters.
 
 string (min 150 chars, max 10000 chars)
 
+.. rst-class:: key-condition
+
 MUST be present in at least one language.
 
 A longer description of the software, between 150 and 10000
@@ -479,6 +481,8 @@ Allowed values:
 
 array of :ref:`Contractors <contractor-type>`
 
+.. rst-class:: key-condition
+
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
 ``contract``, and MUST NOT be present otherwise.
 
@@ -491,6 +495,8 @@ companies, organisations or other collective names.
 .. rst-class:: key-meta
 
 array of :ref:`Contacts <contact-type>`
+
+.. rst-class:: key-condition
 
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
 ``internal`` or ``community``, and is optional otherwise.
