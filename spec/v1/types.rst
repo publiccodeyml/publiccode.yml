@@ -9,9 +9,9 @@ Contact
 Properties:
 
 -  ``name`` (**required**): The full name of the technical contact.
-   It must be a real person, not generic contact information, a
+   It MUST be a real person, not generic contact information, a
    company department or an association.
--  ``email``: The e-mail address of the technical contact. It must
+-  ``email``: The e-mail address of the technical contact. It MUST
    reach the contact directly, not a mailing list or a generic
    contact point like ``info@acme.inc``.
 -  ``phone``: The phone number, as a string in
@@ -36,7 +36,7 @@ Properties:
    community maintenance, it should be no more than two years in the
    future. Update it regularly while the community maintains the
    software.
--  ``email``: The e-mail address of the technical contact. It must
+-  ``email``: The e-mail address of the technical contact. It MUST
    reach that person directly, not a mailing list or a generic
    contact point like ``info@acme.inc``.
 -  ``website``: The contractor website: its main institutional site
