@@ -1,83 +1,72 @@
-publiccodeYmlVersion: "0"
+publiccodeYmlVersion: "1"
 
-name: Office Suite
-applicationSuite: MegaProductivitySuite
-url: "https://example.com/office-suite.git"
-landingURL: "https://example.com/office-suite"
-isBasedOn:
-  - "https://example.com/document-editor.git"
-softwareVersion: "1.0"
-releaseDate: "2017-04-15"
-logo: img/logo.svg
-
+name: Firefax
+url: https://example.com/firefax.git
+landingURL: https://example.com/firefax
+softwareType: standalone/desktop
 platforms:
-  - android
-  - ios
-
-categories:
-  - content-management
-  - office
-
-roadmap: "https://example.com/office-suite/roadmap"
-
-developmentStatus: development
-
-softwareType: "standalone/desktop"
-
-intendedAudience:
-  scope:
-    - science-and-technology
-  countries:
-    - IT
-    - DE
+  - linux
+  - windows
+  - mac
+developmentStatus: stable
+softwareVersion: "2.3"
+releaseDate: "2026-03-15"
+logo: img/logo.svg
+applicationSuite: MegaProductivitySuite
+isBasedOn:
+  - https://example.com/openfax.git
+roadmap: https://example.com/firefax/roadmap
 
 description:
   en:
-    localisedName: Office Suite
-    shortDescription: >
-      This description can have a maximum 150
-      characters long. We should not fill the
-      remaining space with "Lorem Ipsum". End
-
+    localisedName: Firefax
+    shortDescription: Send and receive faxes from the desktop
     longDescription: >
-      Very long description of this software, also split
-      on multiple rows. You should note what the software
-      is and why one should need it.
-      It can also contain some basic Markdown.
+      Firefax lets you send and receive faxes from a desktop computer
+      without a fax machine. You can search received faxes in an archive,
+      schedule outgoing faxes and track their delivery.
 
-    documentation: "https://read.the.documentation/office-suite/v1.0"
-    apiDocumentation: "https://read.the.api.doc/office-suite/v1.0"
 
+      Offices that exchange documents by fax can keep those documents
+      in one archive and replace their fax machines.
+    documentation: https://example.com/firefax/docs
+    apiDocumentation: https://example.com/firefax/api
     features:
-      - Very important feature
-      - Will run without a problem
-      - Has zero bugs
-      - Solves all the problems of the world
+      - Send and receive faxes without a fax machine
+      - Search the archive of received faxes
+      - Schedule outgoing faxes
+      - Track the delivery of every fax
+      - Sign outgoing faxes digitally
     screenshots:
-      - img/sshot1.jpg
-      - img/sshot2.jpg
-      - img/sshot3.jpg
+      - img/screenshots/inbox.png
+      - img/screenshots/compose.png
+    videos:
+      - https://www.youtube.com/watch?v=xxxxxxxxxxx
     awards:
-      - 1st Price Software of the year
+      - Public Sector Software Award 2025
+  it:
+    shortDescription: Invia e ricevi fax dal computer
 
 legal:
-  license: AGPL-3.0-or-later
-  mainCopyrightOwner: City of Chicago
+  license: EUPL-1.2 OR AGPL-3.0-or-later
+  mainCopyrightOwner: Roma Capitale
+
+organisation:
+  uri: urn:x-italian-pa:c_h501
+  name: Roma Capitale
 
 maintenance:
-  type: "contract"
-
+  type: contract
   contractors:
-    - name: "Fornitore Privato SPA"
-      email: "dario.bianchi@fornitore.it"
-      website: "https://privatecompany.com"
-      until: "2019-01-01"
-
+    - name: Fornitore Privato SpA
+      until: "2027-12-31"
+      email: firefax-maintenance@fornitore.example.com
+      website: https://fornitore.example.com
   contacts:
-    - name: Francesco Rossi
-      email: "francesco.rossi@comune.reggioemilia.it"
-      affiliation: Comune di Reggio Emilia
-      phone: "+3923113215112"
+    - name: Jane Doe
+      email: jane.doe@fornitore.example.com
+      affiliation: Fornitore Privato SpA
+      phone: "+390612345678"
 
 localisation:
   localisationReady: true
@@ -85,22 +74,42 @@ localisation:
     - en
     - it
     - fr
-    - de
 
-dependsOn:
-  proprietary:
-    - name: Oracle
-      versionMin: "11.4"
-    - name: IBM SoftLayer
-  hardware:
-    - name: NFC Reader
-      optional: true
+categories:
+  - communications
+  - document-management
 
 supports:
-  - id: alias:gdpr
   - id: alias:eidas
-  - id: https://eur-lex.europa.eu/eli/dir/2016/2102/oj
+  - id: alias:gdpr
 
-organisation:
-  uri: urn:x-italian-pa:c_h501
-  name: Roma Capitale
+intendedAudience:
+  countries:
+    - IT
+  unsupportedCountries:
+    - US
+  scope:
+    - local-authorities
+
+usedBy:
+  - Roma Capitale
+  - Comune di Firenze
+
+fundedBy:
+  - name: Roma Capitale
+    uri: urn:x-italian-pa:c_h501
+
+dependsOn:
+  open:
+    - name: PostgreSQL
+      version: "16"
+    - name: Ghostscript
+      versionMin: "10.0"
+  proprietary:
+    - name: Oracle Database
+      versionMin: "19"
+      versionMax: "23"
+      optional: true
+  hardware:
+    - name: Fax modem
+      optional: true
