@@ -17,6 +17,8 @@ A minimal ``publiccode.yml``:
 .. literalinclude:: example/publiccode.minimal.yml
    :language: yaml
 
+The :doc:`full example <example>` uses every key.
+
 .. toctree::
    :maxdepth: 2
    :hidden:
@@ -24,6 +26,7 @@ A minimal ``publiccode.yml``:
    forks.rst
    types.rst
    vocabularies.rst
+   example.rst
 
 Conventions
 -----------
