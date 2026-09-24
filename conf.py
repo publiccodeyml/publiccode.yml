@@ -44,7 +44,12 @@ extensions = [
 def _flag_expandable_toc_entries(app, pagename, templatename, context, doctree):
     for toc in context.get("toctree_data", []):
         for entry in toc["entries"]:
-            sections = app.env.toc_dict.get(entry["name"], {}).get("sections")
+            sections = app.env.toc_dict.get(entry["name"], {}).get("sections") or []
+            # A page without subsections gets its own title as the only
+            # section, which would list the page under itself.
+            if len(sections) == 1 and sections[0]["title"] == entry["title"]:
+                sections = []
+                entry["children"] = []
             entry["has_children"] = bool(sections)
 
 
