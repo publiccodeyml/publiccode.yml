@@ -11,3 +11,8 @@ dependencies = [
     "sphinx-polyversion>=2.0.0",
     "sphinx-press-theme==0.9.1",
 ]
+
+[dependency-groups]
+dev = [
+    "pyyaml>=6.0.3",
+]

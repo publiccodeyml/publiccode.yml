@@ -2,6 +2,10 @@ name: Build Standard
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
+      - "[0-9]+.[0-9]+-rc"
 
 permissions:
   contents: read
@@ -18,7 +22,10 @@ jobs:
       - uses: astral-sh/setup-uv@v7
         with:
           version: "0.12.5"
-      - name: Test documentation redirects
+          enable-cache: true
+      - name: Test documentation checks
         run: uv run --frozen python -m unittest discover -s tests
       - name: Build Standard with warnings as errors
-        run: uv run --frozen sphinx-build -W -c . docs/standard build
+        run: uv run --frozen sphinx-build -W --keep-going -c . docs/standard build
+      - name: Check specification examples
+        run: uv run --frozen scripts/check-examples.py
