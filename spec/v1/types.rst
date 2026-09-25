@@ -41,6 +41,9 @@ Array
 
 A YAML sequence of values of the same type.
 
+A key of this type MUST hold a list even for a single item. For
+example, write ``platforms: [web]``.
+
 An array MUST contain at least one item and MUST NOT contain
 duplicates. Omit an optional key if you have no items to list.
 
@@ -216,12 +219,14 @@ Organisation
 ------------
 
 An entity that can fund software development, such as an
-association, a company or a public authority.
+association, a company or a public authority. Its properties follow
+the same rules as the :ref:`organisation <organisation>` section.
 
 Properties:
 
--  ``name`` *(required)*, :ref:`string <string-type>`: The name of the
+-  ``uri`` *(required)*, :ref:`URI <uri-type>`: The URI identifying
+   the organisation.
+-  ``name``, :ref:`string <string-type>`: The name of the
    organisation, whether it’s an association, a company, a public
-   sector organisation or a physical person.
--  ``uri``, :ref:`URI <uri-type>`: The URI identifying the
-   organisation.
+   sector organisation or a physical person. It is a human readable
+   label for ``uri``.
