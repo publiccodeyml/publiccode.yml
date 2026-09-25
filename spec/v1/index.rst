@@ -90,10 +90,10 @@ prefer HTTPS.
 
 .. tip::
 
-   Forking just to contribute upstream? Do not change ``url``: it
-   keeps pointing at the original repository, and parsers use the
-   mismatch to skip technical forks. Only a fork meant to become its
-   own project SHOULD change it. See :ref:`forks-and-variants`.
+   Forking just to contribute? Do not change ``url``: it keeps
+   pointing at the original repository, and catalogs use the mismatch
+   to skip the fork. Only a fork published as software of its own
+   changes it. See :ref:`forks`.
 
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,6 +273,8 @@ A URL to the hosted API documentation of the software.
    too. If there is a reference or test deployment, also consider an
    interactive interface (e.g. Swagger).
 
+.. _features:
+
 ``description/[lang]/features``
 '''''''''''''''''''''''''''''''
 
@@ -395,6 +397,8 @@ top of most files.
 You can name several owners in one English sentence or name a
 community, such as "Linus Torvalds and all Linux contributors". Omit
 the key if you cannot identify a main copyright owner.
+
+.. _organisation:
 
 ``organisation``
 ~~~~~~~~~~~~~~~~
@@ -763,13 +767,13 @@ array of strings
    :caption: Example
 
    isBasedOn:
-     - https://github.com/example-org/firefax.git
+     - https://example.com/openfax.git
 
-When the software is a variant or a fork, the :ref:`url <url>` of
-the original projects, whether or not they have a ``publiccode.yml``.
+When the software is a fork, the :ref:`url <url>` of the software it
+was forked from, whether or not that has a ``publiccode.yml``.
 
-The key marks the software as a variant descending from those
-repositories: see :ref:`forks-and-variants`.
+The key marks the software as a fork published as software of its
+own: see :ref:`forks`.
 
 ``dependsOn``
 ~~~~~~~~~~~~~
