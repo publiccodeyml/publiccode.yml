@@ -23,9 +23,9 @@ The :doc:`full example <example>` uses every key.
    :maxdepth: 2
    :hidden:
 
-   forks.rst
    types.rst
    vocabularies.rst
+   forks.rst
    example.rst
 
 Conventions
