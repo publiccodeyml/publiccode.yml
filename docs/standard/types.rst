@@ -157,7 +157,7 @@ Contractor
 Properties:
 
 -  ``name`` (**required**), :ref:`string <string-type>`: The name of the
-   contractor, whether it’s a company or a physical person.
+   company or person providing maintenance.
 -  ``until`` (**required**), :ref:`date <date-type>`: The date the
    maintenance is going to end. For community maintenance, it SHOULD
    be no more than two years in the future. Update it regularly while
@@ -226,7 +226,5 @@ Properties:
 
 -  ``uri`` *(required)*, :ref:`URI <uri-type>`: The URI identifying
    the organisation.
--  ``name``, :ref:`string <string-type>`: The name of the
-   organisation, whether it’s an association, a company, a public
-   sector organisation or a physical person. It is a human readable
-   label for ``uri``.
+-  ``name``, :ref:`string <string-type>`: The name of the organisation
+   or person identified by ``uri``.
