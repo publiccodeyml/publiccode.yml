@@ -41,6 +41,12 @@ A key marked *(required)* MUST be present. Within an optional
 section, required keys MUST be present if you include that section.
 Other keys are optional unless their descriptions state a condition.
 
+A key MUST NOT have a null value. Omit an optional key if you have
+no value for it. A file MUST NOT contain keys this specification
+does not define.
+
+Every value follows the rules of its :doc:`type <types>`.
+
 Specification
 -------------
 
@@ -49,7 +55,7 @@ Specification
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 The version of the specification the file follows: ``"1"``.
 
@@ -60,7 +66,7 @@ The version of the specification the file follows: ``"1"``.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -85,8 +91,8 @@ The short public name of the software, the one users know it by.
 
 The URL of the source code repository (git, svn and so on) where the
 software is published. It is also the unique identifier of the
-software. If the repository is reachable over several protocols,
-prefer HTTPS.
+software. Any scheme is allowed. If the repository is reachable over
+several protocols, prefer HTTPS.
 
 .. tip::
 
@@ -126,7 +132,7 @@ Allowed values:
 
 .. rst-class:: key-meta key-meta-union
 
-:meta-type:`enumerated string <enumerated-string-type>` or :meta-type:`array of strings`
+:meta-type:`enumerated string <enumerated-string-type>` or :meta-type:`array <array-type>` of :meta-type:`strings <string-type>`
 
 Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
 ``android``. When none of them fits, another human readable value
@@ -188,7 +194,7 @@ In the key names below, ``[lang]`` stands for that tag.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -205,7 +211,7 @@ it differs from :ref:`name <name>`.
 
 .. rst-class:: key-meta
 
-string (max 150 chars)
+:ref:`string <string-type>` (max 150 chars)
 
 .. code-block:: yaml
    :caption: Example
@@ -222,7 +228,7 @@ single sentence, maximum 150 characters.
 
 .. rst-class:: key-meta
 
-string (min 150 chars, max 10000 chars)
+:ref:`string <string-type>` (min 150 chars, max 10000 chars)
 
 .. rst-class:: key-condition
 
@@ -233,10 +239,10 @@ characters, giving potential users an overview of what it can do.
 Write it for users, not developers: it is the text that would
 present the software on its website.
 
-The value of this key is Markdown, as defined by
-`CommonMark <https://commonmark.org/>`__. Keep the formatting basic:
-``*italic*``, ``**bold**``, bullet points and ``[links](#)``, since
-consumers MAY render only this subset.
+The value MAY contain line breaks and uses Markdown as defined by
+`CommonMark <https://commonmark.org/>`__. Consumers MAY support only
+``*italic*``, ``**bold**``, bullet points and ``[links](#)``. Use these
+formats to keep the description readable across catalogs.
 
 .. _documentation:
 
@@ -280,7 +286,7 @@ A URL to the hosted API documentation of the software.
 
 .. rst-class:: key-meta
 
-array of strings
+:ref:`array <array-type>` of :ref:`strings <string-type>`
 
 What users can do with the software. Write the list for public
 decision makers who would commission it.
@@ -297,7 +303,7 @@ decision makers who would commission it.
 
 .. rst-class:: key-meta key-meta-union
 
-:meta-type:`array` of :meta-type:`paths <path-type>` or :meta-type:`URLs <url-type>`
+:meta-type:`array <array-type>` of :meta-type:`paths <path-type>` or :meta-type:`URLs <url-type>`
 
 Formats: PNG, JPEG, WebP, AVIF
 
@@ -330,7 +336,7 @@ same repository as ``publiccode.yml``.
 
 .. rst-class:: key-meta
 
-array of :ref:`URLs <url-type>`
+:ref:`array <array-type>` of :ref:`URLs <url-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -353,7 +359,7 @@ the software's website.
 
 .. rst-class:: key-meta
 
-array of strings
+:ref:`array <array-type>` of :ref:`strings <string-type>`
 
 A list of awards won by the software.
 
@@ -365,7 +371,7 @@ A list of awards won by the software.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -382,7 +388,7 @@ see the `SPDX License List <https://spdx.org/licenses/>`__.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -439,7 +445,7 @@ implementation and policies of each consumer.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -486,7 +492,7 @@ Allowed values:
 
 .. rst-class:: key-meta
 
-array of :ref:`Contractors <contractor-type>`
+:ref:`array <array-type>` of :ref:`Contractors <contractor-type>`
 
 .. rst-class:: key-condition
 
@@ -501,7 +507,7 @@ companies, organisations or other collective names.
 
 .. rst-class:: key-meta
 
-array of :ref:`Contacts <contact-type>`
+:ref:`array <array-type>` of :ref:`Contacts <contact-type>`
 
 .. rst-class:: key-condition
 
@@ -525,7 +531,7 @@ is available in.
 
 .. rst-class:: key-meta
 
-boolean
+:ref:`boolean <boolean-type>`
 
 If ``true``, the software supports translation into other languages.
 It may still be available in one language.
@@ -535,7 +541,7 @@ It may still be available in one language.
 
 .. rst-class:: key-meta
 
-array of :ref:`language tags <language-tag-type>`
+:ref:`array <array-type>` of :ref:`language tags <language-tag-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -574,7 +580,7 @@ same repository as ``publiccode.yml``.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -621,7 +627,7 @@ graphical installer, this page can also offer it for download.
 
 .. rst-class:: key-meta
 
-string
+:ref:`string <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -637,7 +643,7 @@ related software.
 
 .. rst-class:: key-meta
 
-array of :ref:`enumerated strings <enumerated-string-type>`
+:ref:`array <array-type>` of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`categories`
 
@@ -649,23 +655,10 @@ software.
 
 .. rst-class:: key-meta
 
-array
+:ref:`array <array-type>` of objects
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
-
-Properties of each item:
-
--  ``id`` (**required**): An identifier for the supported standard,
-   regulation, framework or system. It is either an alias in
-   the form ``alias:<name>``, resolved through the
-   :ref:`list of aliases <aliases>`, or any other valid :ref:`URI <uri-type>` referencing the resource
-   directly.
-
-   An ``alias:`` value MUST exist in the
-   :ref:`list of aliases <aliases>`. An unknown alias is an error.
-   Any other value MUST be a syntactically valid URI. A value that is
-   well formed but not otherwise known is accepted as is.
 
 .. code-block:: yaml
    :caption: Example
@@ -673,6 +666,23 @@ Properties of each item:
    supports:
      - id: alias:gdpr
      - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+``supports/id`` *(required)*
+''''''''''''''''''''''''''''
+
+.. rst-class:: key-meta
+
+:ref:`URI <uri-type>`
+
+An identifier for the supported standard, regulation, framework or
+system. It is either an alias in the form ``alias:<name>``, resolved
+through the :ref:`list of aliases <aliases>`, or any other URI
+referencing the resource directly.
+
+An ``alias:`` value MUST exist in the :ref:`list of aliases
+<aliases>`. An unknown alias is an error. Any other value MUST be a
+syntactically valid URI. A value that is well formed but not otherwise
+known is accepted as is.
 
 .. tip::
 
@@ -690,7 +700,7 @@ Who the software is for.
 
 .. rst-class:: key-meta
 
-array of :ref:`country codes <country-code-type>`
+:ref:`array <array-type>` of :ref:`country codes <country-code-type>`
 
 Countries explicitly included in the intended audience: the
 software claims compliance with their processes, technologies
@@ -701,7 +711,7 @@ or laws.
 
 .. rst-class:: key-meta
 
-array of :ref:`country codes <country-code-type>`
+:ref:`array <array-type>` of :ref:`country codes <country-code-type>`
 
 Countries explicitly excluded from the intended audience, for
 instance when the software conflicts with a law, process or
@@ -715,7 +725,7 @@ countries the software targets.
 
 .. rst-class:: key-meta
 
-array of :ref:`enumerated strings <enumerated-string-type>`
+:ref:`array <array-type>` of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`scopes`
 
@@ -726,7 +736,7 @@ The sectors the software serves, such as healthcare or education.
 
 .. rst-class:: key-meta
 
-array of strings
+:ref:`array <array-type>` of :ref:`strings <string-type>`
 
 Names of prominent public administrations using the software, shown
 as testimonials.
@@ -741,7 +751,7 @@ This key is deprecated.
 
 .. rst-class:: key-meta
 
-array of :ref:`Organisations <organisation-type>`
+:ref:`array <array-type>` of :ref:`Organisations <organisation-type>`
 
 The organisations known to be funding the development of the software.
 
@@ -761,7 +771,7 @@ A link to a public roadmap of the software.
 
 .. rst-class:: key-meta
 
-array of strings
+:ref:`array <array-type>` of :ref:`strings <string-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -770,7 +780,8 @@ array of strings
      - https://example.com/openfax.git
 
 When the software is a fork, the :ref:`url <url>` of the software it
-was forked from, whether or not that has a ``publiccode.yml``.
+was forked from, whether or not that has a ``publiccode.yml``. Like
+``url``, it allows any scheme.
 
 The key marks the software as a fork published as software of its
 own: see :ref:`forks`.
@@ -792,7 +803,7 @@ software.
 
 .. rst-class:: key-meta
 
-array of :ref:`Dependencies <dependency-type>`
+:ref:`array <array-type>` of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under an open-source license.
 
@@ -805,7 +816,7 @@ documentation and deployment scripts.
 
 .. rst-class:: key-meta
 
-array of :ref:`Dependencies <dependency-type>`
+:ref:`array <array-type>` of :ref:`Dependencies <dependency-type>`
 
 Runtime dependencies distributed under a proprietary license.
 
@@ -814,7 +825,7 @@ Runtime dependencies distributed under a proprietary license.
 
 .. rst-class:: key-meta
 
-array of :ref:`Dependencies <dependency-type>`
+:ref:`array <array-type>` of :ref:`Dependencies <dependency-type>`
 
 Hardware needed to use the software.
 

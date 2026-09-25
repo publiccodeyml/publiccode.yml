@@ -15,4 +15,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pyyaml>=6.0.3",
+    "regex>=2026.11.15",
 ]

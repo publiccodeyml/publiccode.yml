@@ -95,3 +95,37 @@ class ExampleTests(unittest.TestCase):
             result, errors = self.check(self.data)
         self.assertEqual(result, 1)
         self.assertIn("maintenance/contacts/[]/emali is not documented", errors)
+
+    def test_short_description_counts_graphemes(self):
+        for character in ("e\u0301", "\U0001f469\u200d\U0001f4bb"):
+            with self.subTest(character=character):
+                data = {"description": {"en": {"shortDescription": character * 150}}}
+                self.assertEqual(checker.check_descriptions("example", data), [])
+
+    def test_long_description_counts_graphemes(self):
+        data = {"description": {"en": {"longDescription": "e\u0301" * 100}}}
+        errors = checker.check_descriptions("example", data)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("100 characters", errors[0])
+
+    def test_short_description_ignores_surrounding_whitespace(self):
+        data = {"description": {"en": {"shortDescription": "  " + "a" * 150 + "  "}}}
+        self.assertEqual(checker.check_descriptions("example", data), [])
+
+    def test_short_description_rejects_line_breaks(self):
+        for line_break in ("\n", "\r", "\u2028"):
+            with self.subTest(line_break=line_break):
+                data = {"description": {"en": {"shortDescription": "first" + line_break + "second"}}}
+                errors = checker.check_descriptions("example", data)
+                self.assertEqual(len(errors), 1)
+                self.assertIn("must be one line", errors[0])
+
+    def test_long_description_ignores_surrounding_whitespace(self):
+        data = {"description": {"en": {"longDescription": "  " + "a" * 149 + "\n"}}}
+        errors = checker.check_descriptions("example", data)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("149 characters", errors[0])
+
+
+if __name__ == "__main__":
+    unittest.main()
