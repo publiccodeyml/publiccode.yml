@@ -23,8 +23,8 @@ you MUST update ``publiccode.yml`` to describe it:
 -  Point :ref:`url <url>` to the repository of the fork.
 -  Add :ref:`isBasedOn <is-based-on>` with the ``url`` of the
    software it was forked from.
--  Replace :ref:`organisation <organisation>`, both ``uri`` and
-   ``name``, with the organisation publishing the fork, or remove the
+-  Replace :ref:`organisation <organisation>` with the fork's
+   publisher, updating both ``uri`` and ``name``. You can omit this
    section.
 -  Use :ref:`maintenance <maintenance>` to describe who maintains
    the fork and how.
