@@ -7,8 +7,15 @@ discoverable and thus reusable by other entities.
 
 By including a ``publiccode.yml`` file in the root of a repository, and
 populating it with information about the software, technicians and civil
-servants can evaluate it. Automatic indexing tools can also be built, since the
-format is easily readable by both humans and machines.
+servants can evaluate it.
+
+The format is easily readable by both humans and machines, and
+automatic indexing tools are built on top of it: national software
+catalogs crawl the published files and build searchable sites.
+Catalogs federate across countries, since they all read the same
+format. The `core tools
+<https://github.com/publiccodeyml/publiccode.yml#core-tools>`__
+provide the reference implementations to build on.
 
 ``publiccode.yml`` is mandatory for all public software developed in Italy,
 according to the national `guidelines
