@@ -3,6 +3,7 @@ import warnings
 from docutils import nodes
 from docutils.parsers.rst import roles
 from sphinx.deprecation import RemovedInSphinx90Warning
+from sphinx.transforms import SphinxTransform
 
 warnings.filterwarnings("ignore", category=RemovedInSphinx90Warning)
 
@@ -68,7 +69,48 @@ def _meta_type_role(name, rawtext, text, lineno, inliner, options=None, content=
     return [chip], [*messages, *ref_messages]
 
 
+# The id docutils derives from "``url`` *(required)*" is url-required.
+# Anchor a required key at its name alone, so the anchor stays when
+# the key becomes optional.
+class _AnchorWithoutRequiredMarker(SphinxTransform):
+    # before SphinxDomains (850), which records the label targets
+    default_priority = 800
+
+    def apply(self, **kwargs):
+        for section in self.document.findall(nodes.section):
+            title = section[0]
+            text = "".join(
+                child.astext()
+                for child in title.children
+                if not (isinstance(child, nodes.emphasis) and child.astext() == "(required)")
+            )
+            anchor = nodes.make_id(text)
+            if not anchor or self.document.ids.get(anchor, section) is not section:
+                continue
+            if anchor in section["ids"]:
+                section["ids"].remove(anchor)
+            section["ids"].insert(0, anchor)
+            self.document.ids[anchor] = section
+
+
+# A label before a heading becomes an empty span above the section,
+# and :ref: links to that span (#date-type) instead of the section id
+# the heading's own permalink uses (#date). Point the labels of
+# sections at the section id.
+def _link_labels_to_sections(app, doctree):
+    std = app.env.domains.standard_domain
+    docname = app.env.docname
+    for name, (labeldoc, labelid, sectname) in list(std.labels.items()):
+        node = doctree.ids.get(labelid)
+        if labeldoc != docname or not isinstance(node, nodes.section):
+            continue
+        std.labels[name] = labeldoc, node["ids"][0], sectname
+        std.anonlabels[name] = labeldoc, node["ids"][0]
+
+
 def setup(app):
     # priority > 500: after the theme handler that builds toctree_data
     app.connect("html-page-context", _flag_expandable_toc_entries, priority=501)
+    app.add_transform(_AnchorWithoutRequiredMarker)
+    app.connect("doctree-read", _link_labels_to_sections)
     app.add_role("meta-type", _meta_type_role)
