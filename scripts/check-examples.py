@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Check the example files against the keys documented in the spec.
 
-Both examples may use only documented keys, and the full example must
-use every one of them, so a key added to the spec without an example
-fails the build. The description length limits are checked too.
+Both examples may use only documented keys. The full example must
+use every key. Also check description lengths and line breaks.
 """
 
 import re
 import sys
 from pathlib import Path
 
+import regex
 import yaml
 
 SPEC = Path("docs/standard/index.rst")
@@ -71,24 +71,42 @@ def used_keys(node, prefix=""):
     return keys
 
 
+def list_item_keys(node, containers, prefix=""):
+    """Key paths inside the mappings of lists, like supports/id."""
+    keys = set()
+    for key, value in node.items():
+        path = f"{prefix}{key}"
+        if isinstance(value, dict):
+            keys |= list_item_keys(value, containers, path + "/")
+        elif isinstance(value, list) and path in containers:
+            for item in value:
+                if isinstance(item, dict):
+                    keys |= {f"{path}/{k}" for k in item}
+    return keys
+
+
 def check_descriptions(name, data):
     errors = []
     for lang, texts in data.get("description", {}).items():
-        short = texts.get("shortDescription", "")
-        if len(short) > 150 or "\n" in short:
+        short = texts.get("shortDescription", "").strip()
+        if len(regex.findall(r"\X", short)) > 150 or regex.search(r"\R", short):
             errors.append(f"{name}: description/{lang}/shortDescription must be one line of at most 150 characters")
         long = texts.get("longDescription")
-        if long is not None and not 150 <= len(long) <= 10000:
-            errors.append(f"{name}: description/{lang}/longDescription is {len(long)} characters, not 150 to 10000")
+        if long is not None:
+            length = len(regex.findall(r"\X", long.strip()))
+            if not 150 <= length <= 10000:
+                errors.append(f"{name}: description/{lang}/longDescription is {length} characters, not 150 to 10000")
     return errors
 
 
 def main():
     spec = documented_keys()
+    containers = {key.rsplit("/", 1)[0] for key in spec if "/" in key}
     errors = []
     for path in (MINIMAL, FULL):
         data = yaml.safe_load(path.read_text())
-        used = used_keys(data)
+        # Typed objects have their properties on the Types page.
+        used = used_keys(data) | list_item_keys(data, containers)
         for key in sorted(used - spec):
             errors.append(f"{path}: {key} is not documented in {SPEC}")
         if path == FULL:
