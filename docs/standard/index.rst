@@ -55,7 +55,7 @@ Specification
 
 .. rst-class:: key-meta
 
-:ref:`string <string-type>`
+:ref:`enumerated string <enumerated-string-type>`
 
 The version of the specification the file follows: ``"1"``.
 
@@ -130,9 +130,9 @@ Allowed values:
 ``platforms`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. rst-class:: key-meta key-meta-union
+.. rst-class:: key-meta
 
-:meta-type:`enumerated string <enumerated-string-type>` or :meta-type:`array <array-type>` of :meta-type:`strings <string-type>`
+:ref:`array <array-type>` of :ref:`strings <string-type>`
 
 Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
 ``android``. When none of them fits, another human readable value
@@ -771,7 +771,7 @@ A link to a public roadmap of the software.
 
 .. rst-class:: key-meta
 
-:ref:`array <array-type>` of :ref:`strings <string-type>`
+:ref:`array <array-type>` of :ref:`URLs <url-type>`
 
 .. code-block:: yaml
    :caption: Example
