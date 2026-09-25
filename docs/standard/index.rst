@@ -34,8 +34,8 @@ Conventions
 The key words MUST, MUST NOT, REQUIRED, SHOULD, SHOULD NOT,
 RECOMMENDED, MAY and OPTIONAL in this document are to be interpreted
 as described in BCP 14 (`RFC 2119 <https://www.rfc-editor.org/rfc/rfc2119>`__,
-`RFC 8174 <https://www.rfc-editor.org/rfc/rfc8174>`__) when, and only
-when, they appear in all capitals.
+`RFC 8174 <https://www.rfc-editor.org/rfc/rfc8174>`__) only when they
+appear in all capitals.
 
 A key marked *(required)* MUST be present. Within an optional
 section, required keys MUST be present if you include that section.
@@ -120,8 +120,8 @@ Allowed values:
 -  ``standalone/backend``: A backend application exposing interfaces
    (e.g. APIs) to other services, with no direct user interface.
 -  ``standalone/other``: A standalone application of another kind.
--  ``addon``: A plugin, theme or other addon for a host
-   software (e.g. a CMS or an office suite).
+-  ``addon``: A plugin, theme or other extension for an application,
+   such as a CMS or an office suite.
 -  ``library``: A library or an SDK for developers to use in other
    software.
 -  ``configurationFiles``: Configuration files or scripts for a
@@ -173,14 +173,13 @@ Allowed values:
 
 Descriptions of the software, grouped by language.
 
-The strings in this section are user-visible and grouped by
-language: each language is a sub-section named with its
-:ref:`language tag <language-tag-type>`, and at least
-one language MUST be present.
+Use a subsection for each language, named with its
+:ref:`language tag <language-tag-type>`. At least one language MUST
+be present.
 
 An example for English:
 
-.. code:: yaml 
+.. code:: yaml
 
    description:
      en:
@@ -433,10 +432,10 @@ When the URI follows a recognized format, parsers MAY read more
 information from its structure, for example an institutional domain
 or an official code.
 
-It is RECOMMENDED that crawlers and consumers of ``publiccode.yml``
-verify out of band that the declared URI belongs to the organisation
-in control of the repository. How to verify it is up to the
-implementation and policies of each consumer.
+Consumers of ``publiccode.yml`` SHOULD use a trusted source outside
+the file to verify that the URI belongs to the organisation in
+control of the repository. Each consumer chooses its verification
+method.
 
 .. _organisation-name:
 
@@ -497,7 +496,7 @@ Allowed values:
 .. rst-class:: key-condition
 
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
-``contract``, and MUST NOT be present otherwise.
+``contract``. MUST NOT be present otherwise.
 
 The entities currently contracted to maintain the software:
 companies, organisations or other collective names.
@@ -512,7 +511,7 @@ companies, organisations or other collective names.
 .. rst-class:: key-condition
 
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
-``internal`` or ``community``, and is optional otherwise.
+``internal`` or ``community``. Optional otherwise.
 
 The people responsible for technical maintenance. Each contact MUST
 be a person. Use ``affiliation`` for the institution they represent.
@@ -617,10 +616,9 @@ The date the latest version was released.
 
    landingURL: https://example.com/firefax
 
-A browsable page for humans, used in place of :ref:`url <url>` when ``url``
-serves raw source code to a version control client only. Catalogs
-link people here instead of ``url``. If the product provides a
-graphical installer, this page can also offer it for download.
+A web page that catalogs link to when :ref:`url <url>` gives access
+only to a version control client. The page can also offer a graphical
+installer for download.
 
 ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~
@@ -675,14 +673,12 @@ software supports or complies with.
 :ref:`URI <uri-type>`
 
 An identifier for the supported standard, regulation, framework or
-system. It is either an alias in the form ``alias:<name>``, resolved
-through the :ref:`list of aliases <aliases>`, or any other URI
-referencing the resource directly.
+system. Use ``alias:<name>`` with a name from the
+:ref:`list of aliases <aliases>` or another URI for the resource.
 
 An ``alias:`` value MUST exist in the :ref:`list of aliases
-<aliases>`. An unknown alias is an error. Any other value MUST be a
-syntactically valid URI. A value that is well formed but not otherwise
-known is accepted as is.
+<aliases>`. An unknown alias is an error. Other values MUST be valid
+URIs. Parsers accept these even if they do not recognize the resource.
 
 .. tip::
 

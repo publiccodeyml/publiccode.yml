@@ -53,7 +53,7 @@ description:
     shortDescription: A lightweight text editor
     longDescription: >
           A lightweight yet powerful text editor designed for everyday use by developers,
-          writers, and public administrations. It also supports syntax highlighting.
+          writers and public administrations. It also supports syntax highlighting.
     features:
        - Syntax highlighting
        - Collaborative editing features
