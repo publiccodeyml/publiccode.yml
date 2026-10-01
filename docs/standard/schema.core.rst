@@ -540,7 +540,7 @@ Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
 -  Type: array of strings
--  Presence: mandatory (for at least one language)
+-  Presence: optional
 
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
@@ -548,9 +548,6 @@ should be that of public decision makers who will be commissioning the
 software. The features should thus not target developers; instead of
 listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
-
-While the key is mandatory, there is no mandatory minimum or maximum
-number of features that should be listed in this key.
 
 The suggested number of features to list is between 5 and 20, depending
 on the software size and complexity. There is no need for
