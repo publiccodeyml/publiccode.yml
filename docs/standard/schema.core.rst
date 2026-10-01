@@ -759,14 +759,19 @@ system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.
 
-Key ``dependsOn/open``
-''''''''''''''''''''''
+Key ``dependsOn/open`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''
 
 -  Type: array of ``dependency`` (see below)
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
+
+This key is deprecated. Open source runtime dependencies are already
+declared in the SBOM or in the package manager manifests, and what
+needs to be installed belongs in the documentation and in the
+deployment scripts.
 
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
