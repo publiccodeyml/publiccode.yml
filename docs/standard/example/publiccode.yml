@@ -87,7 +87,6 @@ maintenance:
       phone: "+3923113215112"
 
 localisation:
-  localisationReady: true
   availableLanguages:
     - en
     - it
