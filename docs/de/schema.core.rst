@@ -474,8 +474,7 @@ listing technical features referring to implementation details, prefer
 listing user-visible functionalities of the software.
 
 While the key is mandatory, there is no mandatory minimum or maximum
-number of features that should be listed in this key. Each feature must
-use a maximum of 100 characters.
+number of features that should be listed in this key.
 
 The suggested number of features to list is between 5 and 20, depending
 on the software size and complexity. There is no need for
