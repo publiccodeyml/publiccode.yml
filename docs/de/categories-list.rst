@@ -19,6 +19,8 @@ Gültige Kategorien
 
 - billing-and-invoicing
 
+- bim
+
 - blog
 
 - budgeting
