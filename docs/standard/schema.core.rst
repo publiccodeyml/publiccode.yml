@@ -158,7 +158,7 @@ Key ``inputTypes`` (*deprecated*)
 -  Example: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
-6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
+6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
 handle as input.
 
 In case the software does not support any input, you can skip this field
@@ -173,7 +173,7 @@ Key ``outputTypes`` (*deprecated*)
 -  Example: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
-6838 <https://tools.ietf.org/html/rfc6838>`__ which the application can
+6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
 handle as output.
 
 In case the software does not support any output, you can skip this
@@ -415,7 +415,7 @@ software.
 **Note:** since all the strings contained in this section are
 user-visible and written in a specific language, you **must** specify
 the language you are editing the text in (using the IETF 
-`BCP 47 <https://tools.ietf.org/html/bcp47>`__ specifications) by
+`BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__ specifications) by
 creating a sub-section with that name. The primary language subtag cannot be
 omitted, as mandated by the BCP 47.  
 
@@ -751,7 +751,7 @@ Key ``localisation/availableLanguages``
 If present, this is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the 
-`BCP 47 <https://tools.ietf.org/html/bcp47>`__.
+`BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
 
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
