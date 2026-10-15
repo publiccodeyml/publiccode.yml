@@ -120,8 +120,8 @@ If present and set to ``true``, the software interfaces with ANPR.
 
 Use the ``supports`` key with ``alias:anpr`` instead.
 
-Key ``piattafome/pagopa`` (*deprecated*)
-''''''''''''''''''''''''''''''''''''''''
+Key ``piattaforme/pagopa`` (*deprecated*)
+'''''''''''''''''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
