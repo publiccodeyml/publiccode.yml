@@ -106,8 +106,8 @@ Key ``piattaforme/anpr``
 
 If present and set to ``yes``, the software interfaces with ANPR.
 
-Key ``piattafome/pagopa``
-'''''''''''''''''''''''''
+Key ``piattaforme/pagopa``
+''''''''''''''''''''''''''
 
 - Type: boolean
 - Presence: optional
