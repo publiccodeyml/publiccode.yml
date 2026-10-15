@@ -50,7 +50,7 @@ Just make your changes and [submit a Pull Request](https://github.com/publiccode
 
 # In short
 
-If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://guides.github.com/introduction/flow/).
+If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow).
 
 This project is [CC-0 licensed](LICENSE), which essentially means that the project, along
 with your contributions, is in the Public Domain in whatever jurisdiction possible, and
@@ -58,9 +58,9 @@ everyone can do whatever they want with it.
 
 ### 1. Make your changes
 
-This project uses the [**GitHub flow branching model**](https://docs.github.com/en/get-started/quickstart/github-flow).
+This project uses the [**GitHub flow branching model**](https://docs.github.com/en/get-started/using-github/github-flow).
 
-Add your changes in commits [with a message that explains them](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
+Add your changes in commits [with a message that explains them](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message).
 Document choices or decisions you make in the commit message, this will enable everyone to
 be informed of your choices in the future.
 
