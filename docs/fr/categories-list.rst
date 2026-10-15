@@ -16,6 +16,7 @@ Catégories valides
 - appointment-scheduling
 - backup
 - billing-and-invoicing
+- bim
 - blog
 - budgeting
 - business-intelligence
