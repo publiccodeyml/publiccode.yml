@@ -3,6 +3,28 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+v0.8.0
+------
+
+Added
+~~~~~
+
+* Allow WebP and AVIF for screenshots and the logo by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/350
+
+Changed
+~~~~~~~
+
+* Deprecate the `videos` key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/352
+* Deprecate the `government` scope by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/353
+* Deprecate the `unsupportedCountries` key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/356
+* Deprecate the single string form of `isBasedOn` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/357
+* Deprecate the `dependsOn/open` key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/358
+* Deprecate `usedBy` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/187
+* Recommend the E.164 format for the `phone` key by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/348
+* State that `longDescription` is Markdown by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/359
+
+**Full Changelog**: https://github.com/publiccodeyml/publiccode.yml/compare/v0.7.0...v0.8.0
+
 v0.7.0
 ------
 
