@@ -11,7 +11,7 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-project = "publiccode.yml Standard (v0.7)"
+project = "publiccode.yml Standard (v0.8)"
 
 # Under sphinx-polyversion (poly.py) POLYVERSION_DATA carries the version
 # being built and the list of all of them; load() copies it into
