@@ -36,9 +36,9 @@ SPHINX_ARGS = ""
 MOCK_DATA = {
     "revisions": [
         GitRef("1.0-rc", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
-        GitRef("v0.7.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
+        GitRef("v0.8.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
     ],
-    "current": GitRef("v0.7.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
+    "current": GitRef("v0.8.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
 }
 
 MOCK = False
