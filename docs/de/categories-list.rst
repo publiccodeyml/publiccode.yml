@@ -19,6 +19,8 @@ Gültige Kategorien
 
 - billing-and-invoicing
 
+- building-information-modelling
+
 - blog
 
 - budgeting
