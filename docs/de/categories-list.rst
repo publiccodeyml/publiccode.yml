@@ -19,7 +19,7 @@ Gültige Kategorien
 
 - billing-and-invoicing
 
-- bim
+- building-information-modelling
 
 - blog
 
