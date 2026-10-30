@@ -35,6 +35,7 @@ Add a `publiccode.yml` file to your repositories!
 After that, you can submit it to national catalogs, for example:
 
 * [Italian catalog](https://github.com/italia/developers.italia.it/issues/new?template=add_new_software.yaml)
+* [Switzerland OSS Catalogue](https://github.com/swiss/index)
 * ...
 
 ## I am a public servant and want to represent my country in the Steering Committee
