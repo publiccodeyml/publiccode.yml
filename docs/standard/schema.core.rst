@@ -132,6 +132,22 @@ Example:
      - url: https://old-mirror.example.com/italia/medusa.git
        status: deprecated
 
+Key ``previousURLs``
+~~~~~~~~~~~~~~~~~~~~
+
+-  Type: array of strings (URL)
+-  Presence: optional
+-  Example: ``["https://old-forge.example.com/italia/medusa.git"]``
+
+Earlier values of the top-level ``url`` key, oldest first, for software
+that has moved to a different repository location. Parsers use it to
+resolve references made against an earlier location to the current
+entry. Entries MUST NOT repeat the top-level ``url`` or each other.
+
+Parsers MUST only take this key into account when it is read from the
+``publiccode.yml`` found at the top-level ``url``. See
+:ref:`forks-and-variants` for how parsers verify this key.
+
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
