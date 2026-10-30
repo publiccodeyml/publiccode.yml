@@ -97,6 +97,41 @@ variant, descending from the specified repositories.
 The single string form is deprecated, use a one element array
 instead.
 
+Key ``mirrors``
+~~~~~~~~~~~~~~~
+
+-  Type: array of objects
+-  Presence: optional
+
+A list of alternative repository locations endorsed by the authors of
+the software, most preferred first and deprecated entries last. A
+mirror holds the same software as
+``url``; it is not a fork or a variant.
+
+Each item is an object with the following properties:
+
+-  ``url`` - **mandatory** - a URL to the source code repository of the
+   mirror, in the same format as the top-level ``url`` key.
+-  ``status`` - either ``active`` (default) or ``deprecated``.
+   A mirror that is no longer maintained SHOULD be marked ``deprecated``
+   rather than removed, so that parsers can still resolve references to
+   it and warn about them. A mirror whose location the authors no
+   longer control, for example after a domain has lapsed, or whose
+   operator they no longer trust, MUST be removed instead.
+
+Parsers MUST only take this key into account when it is read from the
+``publiccode.yml`` found at the top-level ``url``. See
+:ref:`forks-and-variants`.
+
+Example:
+
+.. code:: yaml
+
+   mirrors:
+     - url: https://mirror.example.com/italia/medusa.git
+     - url: https://old-mirror.example.com/italia/medusa.git
+       status: deprecated
+
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
