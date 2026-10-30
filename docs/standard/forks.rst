@@ -31,7 +31,9 @@ Parsers
 
 Parsers **SHOULD** identify a technical fork by noticing that the
 top-level ``url`` key does not point to the repository in which the
-``publiccode.yml`` is found.
+``publiccode.yml`` is found. Parsers **SHOULD** follow redirects before
+comparing, since a repository that was renamed or transferred on its
+code hosting platform is still the same repository.
 
 Parsers **MIGHT** identify a technical fork also through metadata that
 might be exposed by the code hosting platform (e.g. GitHub marks forks
