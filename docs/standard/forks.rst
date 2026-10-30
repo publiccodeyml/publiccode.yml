@@ -242,6 +242,11 @@ Authors moving the software to a new repository location **SHOULD**:
    the new repository does this by itself.
 -  Keep every earlier location in ``previousURLs``, oldest first, since
    each one is confirmed against the one that follows it.
+-  Keep the old location reachable, with its ``url`` pointing to the
+   new location or redirecting there, until the catalogs that matter
+   to the project have crawled it. In a chain of moves, a location
+   that disappears before it is crawled also breaks the confirmation
+   of every earlier location.
 
 After renaming or transferring the repository on its code hosting
 platform, authors **SHOULD** update ``url`` and ``previousURLs``
