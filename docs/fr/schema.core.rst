@@ -155,7 +155,7 @@ Clé ``inputTypes``
 -  Exemple: ``"text/plain"``
 
 Une liste des types de supports (*Media Types* ou MIME Types) tels que mentionnés dans la
-RFC 6838 <https://tools.ietf.org/html/rfc6838>`__, qui peuvent être gérés
+`RFC 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, qui peuvent être gérés
 en entrée (*input*) dans l'application.
 
 Si le logiciel ne supporte aucune entrée, il est possible d'ignorer ce champ
@@ -170,7 +170,7 @@ Clé ``outputTypes``
 -  Exemple: ``"text/plain"``
 
 Une liste des types de supports (*Media Types* ou MIME Types) tels que mentionnés dans la
-RFC 6838 <https://tools.ietf.org/html/rfc6838>`__, qui peuvent être gérés
+`RFC 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, qui peuvent être gérés
 en sorties (*output*) dans l'application.
 
 Si le logiciel ne supporte aucune sorties, il est possible d'ignorer ce champ
@@ -352,7 +352,7 @@ dans cette section sont visibles par l’utilisateur et écrites dans une
 langue donnée, il est **nécessaire** d’indiquer la langue avec laquelle le
 le texte est éditée. Pour ce faire, il est nécessaire de créer une section
 dédiée à la langue, conformément aux spécifications de la
-`BCP 47 <https://tools.ietf.org/html/bcp47>`__ de l’IETF.
+`BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__ de l’IETF.
 Veuillez noter que l'étiquette *primary language subtag* ne doit pas être
 omise, comme indiquée dans la BCP 47. 
 
@@ -667,7 +667,7 @@ Clé ``localisation/availableLanguages``
 -  Présence: obligatoire
 -  Exemple: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
-Il s'agit de la liste des langues dans lesquelles le logiciel est disponible. Bien entendu, cette liste contiendra au moins une langue. Tel que spécifié dans la `BCP 47 <https://tools.ietf.org/html/bcp47>`__, la *primary language subtag* ne doit pas être omise.
+Il s'agit de la liste des langues dans lesquelles le logiciel est disponible. Bien entendu, cette liste contiendra au moins une langue. Tel que spécifié dans la `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__, la *primary language subtag* ne doit pas être omise.
 
 
 Section ``dependsOn``

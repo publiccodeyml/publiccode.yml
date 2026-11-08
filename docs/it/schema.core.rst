@@ -163,7 +163,7 @@ Chiave ``inputTypes``
 -  Esempio: ``"text/plain"``
 
 Una lista di Media Types (MIME Types), come specificato dal `RFC
-6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere
+6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, che possono essere
 gestiti in input dall’applicazione.
 
 Nel caso in cui il software non supporti alcun input, è possibile
@@ -178,7 +178,7 @@ Chiave ``outputTypes``
 -  Esempio: ``"text/plain"``
 
 Una lista di Media Types (MIME Types), come specificato dal `RFC
-6838 <https://tools.ietf.org/html/rfc6838>`__, che possono essere
+6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, che possono essere
 gestiti in output dall’applicazione.
 
 Nel caso in cui il software non supporti alcun output, è possibile
@@ -357,7 +357,7 @@ descriva il software.
 visibili all’utente e scritte in un linguaggio specifico, è
 **necessario** specificare il linguaggio con il quale si sta modificando
 il testo. Per farlo è necessario creare una sezione dedicata alla lingua
-seguendo le specifiche IETF `BCP 47 <https://tools.ietf.org/html/bcp47>`__. Si
+seguendo le specifiche IETF `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__. Si
 ricorda che il *primary language
 subtag* non può essere omesso, come specificato nel BCP 47. 
 
@@ -712,7 +712,7 @@ Chiave ``localisation/availableLanguages``
 Se presente, questa è la lista di lingue in cui è disponibile il
 software. Ovviamente, questa lista dovrà contenere almeno una lingua.
 Si ricorda che il *primary language subtag* non può essere omesso, come
-specificato dal `BCP 47 <https://tools.ietf.org/html/bcp47>`__.
+specificato dal `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
 
 Sezione ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
