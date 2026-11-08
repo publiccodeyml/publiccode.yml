@@ -5,9 +5,7 @@ Ein Metadaten-Deskriptions-Standard für öffentliche Software.
 
 >Dokumentation auf Deutsch
 
->Read documentation in [English](https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/)
-
->Leggi la documentazione in [italiano](https://docs.italia.it/italia/developers-italia/publiccodeyml/it/master/)
+>Die aktuelle Dokumentation finden Sie auf der [publiccode.yml-Website](https://publiccodeyml.github.io/).
 
 ---
 
@@ -51,7 +49,7 @@ Das Dateiformat Publiccode.yml soll sowohl einfach zu jedem neuen Projekt hinzug
 
 ## Dokumentation
 
-Dieses Repository ist strukturiert, um mit der Docs-Italia-Plattform kompatibel zu sein. Daher wird der Inhalt der relevanten Ordner innerhalb dieser Plattform kompliliert und gerendert. Die Docs-Italia-Plattform greift auf das GitHub-Repository des Dokuments zurück, um mit verschiedenen Releases und lokalisierten Versionen umgehen zu können. Die Plattform kann als die standardmäßige Landing-Page des Projekts angesehen werden.
+Die aktuelle Dokumentation des Projekts wird auf der [publiccode.yml-Website](https://publiccodeyml.github.io/) veröffentlicht. Die übersetzten Standardseiten bleiben in diesem Repository erhalten.
 
 
 ## Projekte Finden
@@ -65,33 +63,18 @@ Das Italienische "Digital Transformation Team" arbeitet auch daran einen Scanner
 
 ## Branches
 
-Neuester Release:
+Die aktuelle veröffentlichte Version des Standards ist 0.8. Alle Versionen
+finden Sie auf der [GitHub-Release-Seite](https://github.com/publiccodeyml/publiccode.yml/releases).
 
-Alle Versionen https://github.com/publiccodeyml/publiccode.yml/releases
-
-Das Projekt folgt der Sematischen Versionierung. Mehr Informationen finden Sie unter [SemVer.org](https://semver.org/).
+Das Projekt folgt der semantischen Versionierung. Mehr Informationen finden Sie unter [SemVer.org](https://semver.org/).
 
 Außerdem nutzt das Projekt Branches und Tags folgendermaßen:
 
-* Der `main`-Branch enthält die aktuelle stabile Version des Standards.
+* Der `main`-Branch ist der Entwicklungs-Branch des Projekts.
 
-* Der Entwicklungs-Branch enthält die vorgeschlagenen Verbesserungen für die nächste Version.
+* Die Release-Seite auf GitHub enthält die veröffentlichten Versionen des Standards.
 
-* Die Release-Seite auf GitHub enthält alle veröffentlichten Versionen des Standards. Aus Gründen der Einheitlichkeit folgen Releases der Tag-Version.
-
-Da das Repository jedoch sowohl das Kernschema als auch die länderspezifischen Schemata enthält, ist es notwendig, die Versionierung weiter zu verfeinern. Daher wird jede Aktualisierung am Kern und/oder an einer länderspezifischen Erweiterung mit folgenden Tags gekennzeichnet:
-
-    core-x.y.z;cc-a.b.c
-
-Dabei steht cc für den Ländercode, der im countryExtensionVersion key definiert wird.
-
-Dieses Versionierungsschema ist grundlegend für das Projekt, da die Publiccode.yml-Datei Verweise auf den Kern-Release im publiccodeYmlVersion key enthält und jedes länderspezifische Schema einen version key enthält.
-
-Beispiele für dieses Versionsierungsschema sind:
-
-    core:0.2;it:0.4
-
-    core:0.2;fr:1.1
+* Releases verwenden Versions-Tags nach der semantischen Versionierung.
 
 
 
@@ -102,7 +85,7 @@ Beispiele für dieses Versionsierungsschema sind:
 
 ## Autoren
 
-Die Publiccode.yml-Spezifikationen werdem vom [Italian Digital Transformation Team](https://teamdigitale.governo.it/) und von den [Autoren](https://github.com/publiccodeyml/publiccode.yml/blob/main/AUTHORS.md) entwickelt.
+Die Publiccode.yml-Spezifikationen werden von den [Autoren](https://github.com/publiccodeyml/publiccode.yml/blob/main/AUTHORS.md) entwickelt.
 
 
 ## Lizensierung
