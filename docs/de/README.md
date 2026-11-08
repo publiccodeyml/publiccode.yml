@@ -67,13 +67,13 @@ Das Italienische "Digital Transformation Team" arbeitet auch daran einen Scanner
 
 Neuester Release:
 
-Alle Versionen https://github.com/italia/publiccode.yml/releases
+Alle Versionen https://github.com/publiccodeyml/publiccode.yml/releases
 
 Das Projekt folgt der Sematischen Versionierung. Mehr Informationen finden Sie unter [SemVer.org](https://semver.org/).
 
 Außerdem nutzt das Projekt Branches und Tags folgendermaßen:
 
-* Der Master-Branch enthält die aktuelle stabile Version des Standards.
+* Der `main`-Branch enthält die aktuelle stabile Version des Standards.
 
 * Der Entwicklungs-Branch enthält die vorgeschlagenen Verbesserungen für die nächste Version.
 
@@ -97,14 +97,14 @@ Beispiele für dieses Versionsierungsschema sind:
 
 ## Mitwirken
 
-[Sie sind herzlich eingeladen Pull Requests oder Issues einzureichen](https://github.com/italia/publiccode.yml/blob/master/CONTRIBUTING.md).
+[Sie sind herzlich eingeladen Pull Requests oder Issues einzureichen](https://github.com/publiccodeyml/publiccode.yml/blob/main/CONTRIBUTING.md).
 
 
 ## Autoren
 
-Die Publiccode.yml-Spezifikationen werdem vom [Italian Digital Transformation Team](https://teamdigitale.governo.it/) und von den [Autoren](https://github.com/italia/publiccode.yml/blob/master/AUTHORS.md) entwickelt.
+Die Publiccode.yml-Spezifikationen werdem vom [Italian Digital Transformation Team](https://teamdigitale.governo.it/) und von den [Autoren](https://github.com/publiccodeyml/publiccode.yml/blob/main/AUTHORS.md) entwickelt.
 
 
 ## Lizensierung
 
-Lizensiert unter [CC-0](https://github.com/italia/publiccode.yml/blob/master/LICENSE).
+Lizensiert unter [CC-0](https://github.com/publiccodeyml/publiccode.yml/blob/main/LICENSE).
