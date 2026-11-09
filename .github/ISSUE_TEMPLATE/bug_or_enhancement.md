@@ -10,6 +10,6 @@ Thank you for your report! 😃
 
 Please describe the bug or the enhancement you'd like to see in the repo.
 
-If instead you want to propose changes to the Standard or the Governance
-of the project, please take a look at [procedure-proposing-changes-and-voting.md](/governance/procedure-proposing-changes-and-voting.md#voting).
+If instead you want to propose changes to the Standard, please open a
+[discussion](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/general).
 -->

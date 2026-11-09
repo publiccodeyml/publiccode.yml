@@ -15,11 +15,6 @@
   <h3>
     <a href="https://publiccodeyml.github.io">Website</a>
     <span> | </span>
-    <a href="governance/charter.md">Charter</a>
-    <span> | </span>
-    <a href="governance/procedure-proposing-changes-and-voting.md">
-      Voting procedure</a>
-    <span> | </span>
     <a href="CONTRIBUTING.md">Contributing</a>
   </h3>
 </div>
