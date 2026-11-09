@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing! 🙇
 
-We – the maintainers and contributors of this project – understand that a Standard
+We, the maintainers and contributors of this project, understand that a Standard
 like this can only be set in collaboration with as many public technologists,
 policymakers and interested folks as possible. Thus, we appreciate your input, enjoy
 feedback and welcome improvements to this project and are very open to collaboration.
@@ -38,17 +38,6 @@ After that, you can submit it to national catalogs, for example:
 * [Switzerland OSS Catalogue](https://github.com/swiss/index)
 * ...
 
-## I am a public servant and want to represent my country in the Steering Committee
-
-We are happy to have you here!
-
-[Take a look at the Charter](/governance/charter.md) and, once you made sure you are
-the right person, please [create a new post](https://github.com/publiccodeyml/publiccode.yml/discussions/categories/general).
-
-We strongly encourage you to also contribute translations (if applicable) and, if needed,
-[aliases](https://publiccodeyml.github.io/aliases-list.html) for your national regulations and platforms.
-Just make your changes and [submit a Pull Request](https://github.com/publiccodeyml/publiccode.yml/pulls).
-
 # In short
 
 If you never used GitHub, get up to speed with [understanding the GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow).
@@ -69,10 +58,6 @@ be informed of your choices in the future.
 
 When submitting the pull request, please accompany it with a description of the problem
 you are trying to address and the reference to the relevant Issue or Discussion.
-
-If your Pull Request is about a part of the Standard or the Governance of the project,
-it's considered as a formal proposal and will be voted on,
-[following this procedure](/governance/procedure-proposing-changes-and-voting.md).
 
 ### 3. Improve
 
