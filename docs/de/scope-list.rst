@@ -25,7 +25,7 @@ Gültige Tags
 
 - foreign-affairs
 
-- government
+- government (*veraltet*)
 
 - healthcare
 

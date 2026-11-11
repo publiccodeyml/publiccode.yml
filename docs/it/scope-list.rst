@@ -20,7 +20,7 @@ Tag Validi
 - environment
 - finance-and-economic-development
 - foreign-affairs
-- government
+- government (*deprecato*)
 - healthcare
 - infrastructures
 - justice
