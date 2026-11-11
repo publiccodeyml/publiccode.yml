@@ -9,6 +9,8 @@ on:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
+permissions: {}
+
 concurrency:
   group: publish
   cancel-in-progress: false
@@ -26,9 +28,13 @@ jobs:
   # yml.publiccode.tools, the former address of the website, keeps
   # redirecting every URL to the new one.
   redirect:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - run: |
           mkdir -p build/html
           cp redirect/index.html build/html/index.html
