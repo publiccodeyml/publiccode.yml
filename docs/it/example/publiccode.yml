@@ -4,7 +4,8 @@ name: Medusa
 applicationSuite: MegaProductivitySuite
 url: "https://example.com/italia/medusa.git"
 landingURL: "https://example.com/italia/medusa"
-isBasedOn: "https://github.com/italia/otello.git"
+isBasedOn:
+  - "https://github.com/italia/otello.git"
 softwareVersion: "1.0"
 releaseDate: "2017-04-15"
 logo: img/logo.svg
@@ -33,8 +34,6 @@ intendedAudience:
   countries:
     - IT
     - DE
-  unsupportedCountries:
-    - US
 
 description:
   en:
@@ -62,8 +61,6 @@ description:
       - img/sshot1.jpg
       - img/sshot2.jpg
       - img/sshot3.jpg
-    videos:
-      - https://youtube.com/xxxxxxxx
     awards:
       - 1st Price Software of the year
 
@@ -95,14 +92,6 @@ localisation:
     - de
 
 dependsOn:
-  open:
-    - name: MySQL
-      versionMin: "1.1"
-      versionMax: "1.3"
-      optional: true
-    - name: PostgreSQL
-      version: "3.2"
-      optional: true
   proprietary:
     - name: Oracle
       versionMin: "11.4"
@@ -110,15 +99,6 @@ dependsOn:
   hardware:
     - name: NFC Reader
       optional: true
-
-IT:
-  countryExtensionVersion: "1.0"
-
-  piattaforme:
-    spid: true
-    cie: true
-    anpr: true
-    pagopa: true
 
 organisation:
   uri: urn:x-italian-pa:c_h501
