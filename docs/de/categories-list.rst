@@ -71,6 +71,8 @@ Gültige Kategorien
 
 - e-signature
 
+- educational-content
+
 - email-management
 
 - email-marketing
@@ -210,6 +212,8 @@ Gültige Kategorien
 - web-conferencing
 
 - website-builder
+
+- whistleblowing
 
 - workflow-management
 
