@@ -22,17 +22,14 @@ Minimal-Konfiguration
   description:
     en:
       shortDescription: >
-            A rather short description which
-            is probably useless
+        A rather short description which
+        is probably useless
 
       longDescription: >
-            Very long description of this software, also split
-            on multiple rows. You should note what the software
-            is and why one should need it. We can potentially
-            have many pages of text here.
-
-      features:
-         - Just one feature
+        Very long description of this software, also split
+        on multiple rows. You should note what the software
+        is and why one should need it. We can potentially
+        have many pages of text here.
 
   legal:
     license: AGPL-3.0-or-later
@@ -53,43 +50,42 @@ Ausführlichere Version
 .. code:: yaml
 
   publiccodeYmlVersion: "0"
-  
+
   name: Medusa
   applicationSuite: MegaProductivitySuite
   url: "https://example.com/italia/medusa.git"
   landingURL: "https://example.com/italia/medusa"
-  isBasedOn: "https://github.com/italia/otello.git"
+  isBasedOn:
+    - "https://github.com/italia/otello.git"
   softwareVersion: "1.0"
   releaseDate: "2017-04-15"
   logo: img/logo.svg
-  
+
   platforms:
     - android
     - ios
-  
+
   categories:
     - content-management
     - office
-  
+
   usedBy:
     - Comune di Firenze
     - Comune di Roma
-  
+
   roadmap: "https://example.com/italia/medusa/roadmap"
-  
+
   developmentStatus: development
-  
+
   softwareType: "standalone/desktop"
-  
+
   intendedAudience:
     scope:
       - science-and-technology
     countries:
       - IT
       - DE
-    unsupportedCountries:
-      - US
-  
+
   description:
     en:
       localisedName: Medusa
@@ -97,16 +93,16 @@ Ausführlichere Version
         This description can have a maximum 150
         characters long. We should not fill the
         remaining space with "Lorem Ipsum". End
-  
+
       longDescription: >
         Very long description of this software, also split
         on multiple rows. You should note what the software
         is and why one should need it.
         It can also contain some basic Markdown.
-  
+
       documentation: "https://read.the.documentation/medusa/v1.0"
       apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
-  
+
       features:
         - Very important feature
         - Will run without a problem
@@ -116,30 +112,28 @@ Ausführlichere Version
         - img/sshot1.jpg
         - img/sshot2.jpg
         - img/sshot3.jpg
-      videos:
-        - https://youtube.com/xxxxxxxx
       awards:
         - 1st Price Software of the year
-  
+
   legal:
     license: AGPL-3.0-or-later
     mainCopyrightOwner: City of Chicago
-  
+
   maintenance:
     type: "contract"
-  
+
     contractors:
       - name: "Fornitore Privato SPA"
         email: "dario.bianchi@fornitore.it"
         website: "https://privatecompany.com"
         until: "2019-01-01"
-  
+
     contacts:
       - name: Francesco Rossi
         email: "francesco.rossi@comune.reggioemilia.it"
         affiliation: Comune di Reggio Emilia
         phone: "+3923113215112"
-  
+
   localisation:
     localisationReady: true
     availableLanguages:
@@ -147,16 +141,8 @@ Ausführlichere Version
       - it
       - fr
       - de
-  
+
   dependsOn:
-    open:
-      - name: MySQL
-        versionMin: "1.1"
-        versionMax: "1.3"
-        optional: true
-      - name: PostgreSQL
-        version: "3.2"
-        optional: true
     proprietary:
       - name: Oracle
         versionMin: "11.4"
@@ -164,16 +150,7 @@ Ausführlichere Version
     hardware:
       - name: NFC Reader
         optional: true
-  
-  IT:
-    countryExtensionVersion: "1.0"
-  
-    piattaforme:
-      spid: true
-      cie: true
-      anpr: true
-      pagopa: true
-  
+
   organisation:
     uri: urn:x-italian-pa:c_h501
     name: Roma Capitale
