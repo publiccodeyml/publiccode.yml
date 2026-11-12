@@ -414,10 +414,10 @@ d'un maximum de 150 caractères.
 Clé ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: chaîne de caractères (500 caractères min, 10 000 caractères max)
+-  Type: chaîne de caractères (150 caractères min, 10 000 caractères max)
 -  Présence: obligatoire (pour au moins une langue)
 
-Cette clé contient une description longue du logiciel, entre 500 et 10 000
+Cette clé contient une description longue du logiciel, entre 150 et 10 000
 caractères. Elle a pour but de donner un aperçu des fonctionnalités du
 logiciel à un utilisateur potentiel. Le public de ce texte doit être 
 l'utilisateur final du logiciel et non le développeur.
@@ -500,9 +500,6 @@ fonctionnalités ne s'adressent pas aux développeurs : plutôt que de lister
 les caractéristiques techniques qui renvoient à l'implémentation de détails,
 il est préférable de lister les fonctionnalités utiles aux utilisateurs
 du logiciel.
-
-Notons, toutefois, que chaque fonctionnalité peut comporter
-un maximum de 100 caractères.
 
 Il est suggéré de lister entre 5 et 20 fonctionnalités, en fonction de
 la taille et de la complexité du logiciel. Dans la mesure où les utilisateurs
