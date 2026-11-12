@@ -420,7 +420,7 @@ massima consentita è di 150 caratteri.
 Chiave ``description/[lang]/longDescription``
 '''''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: stringa (min 150 caratteri, max 10000 caratteri)
+-  Tipo: stringa Markdown (min 150 caratteri, max 10000 caratteri)
 -  Presenza: obbligatoria (almeno per una lingua)
 
 Questa chiave contiene una descrizione più lunga del software, con una
@@ -431,8 +431,10 @@ essere l’utente finale, non nello sviluppatore. E’ possibile pensare a
 questo testo come alla descrizione del software che potrebbe stare nel
 sito web (nel caso in cui il software ne possieda uno).
 
-Questa descrizione può contenere del Markdown base: ``*italic*``,
-``**bold**``, elenchi puntati e ``[link](#)``.
+Il valore di questa chiave è Markdown, come definito da
+`CommonMark <https://commonmark.org/>`__. Usare una formattazione di base:
+``*italic*``, ``**bold**``, elenchi puntati e ``[link](#)``, poiché i
+consumatori POSSONO visualizzare solo questo sottoinsieme.
 
 Chiave ``description/[lang]/documentation``
 '''''''''''''''''''''''''''''''''''''''''''
