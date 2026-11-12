@@ -56,7 +56,7 @@ Ausführlichere Version
   url: "https://example.com/italia/medusa.git"
   landingURL: "https://example.com/italia/medusa"
   isBasedOn:
-    - "https://github.com/italia/otello.git"
+    - "https://example.com/italia/otello.git"
   softwareVersion: "1.0"
   releaseDate: "2017-04-15"
   logo: img/logo.svg

@@ -92,7 +92,7 @@ Chiave ``isBasedOn``
 
 -  Tipo: stringa o array di stringhe
 -  Presenza: opzionale
--  Esempio: ``"https://github.com/italia/otello.git"``
+-  Esempio: ``"https://example.com/italia/otello.git"``
 
 Nel caso in cui questo software sia una variante o un fork di un altro
 software, che opzionalmente può contenere un file ``publiccode.yml``,

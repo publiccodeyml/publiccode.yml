@@ -52,9 +52,8 @@ Key ``conforme/modelloInteroperabilita`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``true``, the software is compliant with the `linee
-guida
-sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs>`__.
+If present and set to ``true``, the software is compliant with the linee guida
+sull’interoperabilità.
 
 Regulatory reference: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__ (Italian language).

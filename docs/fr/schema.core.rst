@@ -83,14 +83,14 @@ Clé ``isBasedOn``
 
 -  Type: chaîne de caractères ou array de chaînes de caractères
 -  Présence: facultative
--  Exemple: ``"https://github.com/italia/otello.git"``
+-  Exemple: ``"https://example.com/italia/otello.git"``
 
 Si le logiciel est une variante ou une fourche d’un autre logiciel qui peut
 éventuellement contenir un fichier ``publiccode.yml``, cette clé contiendra
 l’``url`` d'un ou de plusieurs projets originaux.
 
 L’existence de cette clé identifie la fourche comme une variante d’un logiciel (voir:
-:ref:`fork-varianti`), à partir du dépôt spécifié.
+:ref:`forks-and-variants`), à partir du dépôt spécifié.
 
 Clé ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
