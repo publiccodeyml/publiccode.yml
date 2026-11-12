@@ -43,9 +43,8 @@ Chiave ``conforme/modelloInteroperabilita`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle `linee
-guida
-sull’interoperabilità <https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs>`__.
+Se presente e impostato a ``yes``, il software è conforme alle linee guida
+sull’interoperabilità.
 
 Riferimento normativo: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__.

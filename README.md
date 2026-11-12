@@ -195,7 +195,7 @@ its reference implementations and supporting components.
 
 Maintained separately from the core tooling, but widely used in practice.
 
-- **[publiccode-editor](https://github.com/italia/publiccode-editor)**
+- **[publiccode-editor](https://publiccode-editor.developers.italia.it/)**
 
   User friendly editor and basic validator for publiccode.yml files (maintained
   by Developers Italia, Italian Government).

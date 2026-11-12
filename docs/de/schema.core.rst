@@ -82,7 +82,7 @@ Key ``isBasedOn``
 
 -  Type: string or array of strings
 -  Presence: optional
--  Example: ``"https://github.com/italia/otello.git"``
+-  Example: ``"https://example.com/italia/otello.git"``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will

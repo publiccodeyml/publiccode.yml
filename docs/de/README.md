@@ -13,13 +13,13 @@ Ein Metadaten-Deskriptions-Standard für öffentliche Software.
 ## Inhalt
 
 - [Beschreibung](#beschreibung)
-- [Funktion der Datei](#Funktion-der-Datei)
-- [Dokumentation](#Dokumentation)
-- [Projekte Finden](#Projekte-Finden)
-- [Branches](#Branches)
-- [Mitwirken](#Mitwirken)
-- [Autoren](#Autoren)
-- [Lizensierung](#Lizensierung)
+- [Funktion der Datei](#funktion-der-datei)
+- [Dokumentation](#dokumentation)
+- [Projekte Finden](#projekte-finden)
+- [Branches](#branches)
+- [Mitwirken](#mitwirken)
+- [Autoren](#autoren)
+- [Lizensierung](#lizensierung)
 
 
 ## Beschreibung

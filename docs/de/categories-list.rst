@@ -1,3 +1,5 @@
+.. _categories-list:
+
 Liste von Software-Kategorien
 =============================
 Es folgt ein festgelegtes Verzeichnis gültiger Kategorien für die Software.
