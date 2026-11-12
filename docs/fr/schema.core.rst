@@ -119,7 +119,7 @@ Clé ``logo``
 
 -  Type: chaîne de caractères (chemin relatif du fichier ou URL absolue)
 -  Présence: facultative
--  Formats acceptés: SVG, SVGZ, PNG
+-  Formats acceptés: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Exemple: ``"img/logo.svg"``
 
 Cette clé contient le chemin du logo du logiciel. Les logos doivent être
@@ -582,7 +582,7 @@ Clé ``description/[lang]/screenshots``
 
 -  Type: array of strings (chemins)
 -  Présence: facultative
--  Formats: PNG, JPG
+-  Formats: PNG, JPEG, WebP, AVIF
 -  Exemple: ``"data/screenshots/configuration.png"``
 
 Cette clé contient un ou plusieurs chemins vers les fichiers montrant des
