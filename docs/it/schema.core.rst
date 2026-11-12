@@ -128,7 +128,7 @@ Chiave ``logo``
 
 -  Tipo: stringa (percorso verso il file)
 -  Presenza: opzionale
--  Formati accettabili: SVG, SVGZ, PNG
+-  Formati accettabili: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Esempio: ``"img/logo.svg"``
 
 Questa chiave indica il logo del software. Il valore può essere il percorso
@@ -587,7 +587,7 @@ Chiave ``description/[lang]/screenshots``
 
 -  Tipo: array di stringhe (percorsi)
 -  Presenza: opzionale
--  Formati: PNG, JPG
+-  Formati: PNG, JPEG, WebP, AVIF
 -  Esempio: ``"data/screenshots/configuration.png"``
 
 Questa chiave indica una o più immagini del software (screenshot). Queste
