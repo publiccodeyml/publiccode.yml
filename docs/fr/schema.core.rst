@@ -301,6 +301,75 @@ des scripts bash, de playbook ansible, de fichiers *dockerfiles*,
 ou d’autres jeux d’instructions.
 
 
+Clé ``supports``
+~~~~~~~~~~~~~~~~
+
+-  Type: tableau d'objets
+-  Présence: optionnelle
+
+Une liste de standards, réglementations, frameworks ou systèmes que le
+logiciel prend en charge ou auxquels il est conforme.
+
+Chaque élément est un objet avec une seule propriété :
+
+-  ``id`` - **obligatoire** - un identifiant du standard, de la réglementation,
+   du framework ou du système pris en charge. Il s'agit soit d'un alias de la
+   forme ``alias:<name>`` (par exemple ``alias:gdpr``), résolu à l'aide de la
+   :ref:`liste des alias <aliases-list>`, soit de tout autre URI valide
+   (URL ou URN) faisant directement référence à la ressource.
+
+   Une valeur ``alias:`` DOIT exister dans la :ref:`liste des alias
+   <aliases-list>`. Un alias inconnu est une erreur.
+   Toute autre valeur DOIT être un URI syntaxiquement valide. Une valeur
+   bien formée mais inconnue par ailleurs est acceptée telle quelle.
+
+Exemple :
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+Section ``organisation``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cette section optionnelle indique l'organisation qui publie le logiciel.
+
+Clé ``organisation/uri``
+''''''''''''''''''''''''
+
+-  Type: chaîne de caractères
+-  Présence: obligatoire
+-  Exemple: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+L'URI identifiant l'organisation qui publie le logiciel. La valeur DEVRAIT
+être un URI stable et résolvable ou un identifiant persistant.
+
+Les analyseurs PEUVENT utiliser la structure de l'URI pour extraire des
+informations supplémentaires si elle suit un format reconnu (par exemple,
+en déduisant un domaine institutionnel ou un code officiel).
+
+Il est RECOMMANDÉ que les robots d'indexation et les consommateurs de
+publiccode.yml vérifient ces informations par des moyens externes, afin de
+s'assurer que l'URI déclaré correspond bien à l'organisation qui contrôle
+le dépôt. La méthode de vérification dépend de l'implémentation et des
+politiques de la plateforme qui consomme le fichier.
+
+Clé ``organisation/name``
+'''''''''''''''''''''''''
+
+-  Type: chaîne de caractères
+-  Présence: optionnelle
+-  Exemple: ``"My organisation"``
+
+Le nom canonique de l'organisation qui publie le logiciel.
+
+Il DOIT correspondre à la même entité que celle identifiée par
+``organisation/uri`` et sert à fournir un libellé lisible pour cet URI.
+Il DEVRAIT être la forme canonique et largement reconnue du nom
+(comme la dénomination légale ou institutionnelle enregistrée).
+
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

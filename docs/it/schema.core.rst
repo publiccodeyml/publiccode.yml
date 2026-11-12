@@ -306,6 +306,75 @@ Le chiavi sono:
    forma di semplici file di configurazione, script bash, playbook ansible,
    Dockerfile, o altri set di istruzioni.
 
+Chiave ``supports``
+~~~~~~~~~~~~~~~~~~~
+
+-  Tipo: array di oggetti
+-  Presenza: opzionale
+
+Un elenco di standard, regolamenti, framework o sistemi che il software
+supporta o a cui è conforme.
+
+Ogni elemento è un oggetto con una sola proprietà:
+
+-  ``id`` - **obbligatoria** - un identificatore dello standard, regolamento,
+   framework o sistema supportato. È un alias nella forma ``alias:<name>``
+   (ad esempio ``alias:gdpr``), risolto tramite l':ref:`elenco degli alias
+   <aliases-list>`, oppure un altro URI valido (URL o URN) che fa riferimento
+   direttamente alla risorsa.
+
+   Un valore ``alias:`` DEVE esistere nell':ref:`elenco degli alias
+   <aliases-list>`. Un alias sconosciuto è un errore.
+   Ogni altro valore DEVE essere un URI sintatticamente valido. Un valore
+   ben formato ma altrimenti sconosciuto è accettato così com'è.
+
+Esempio:
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+Sezione ``organisation``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Questa sezione opzionale indica l'organizzazione che pubblica il software.
+
+Chiave ``organisation/uri``
+'''''''''''''''''''''''''''
+
+-  Tipo: stringa
+-  Presenza: obbligatoria
+-  Esempio: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+L'URI che identifica l'organizzazione che pubblica il software. Il valore
+DOVREBBE essere un URI stabile e risolvibile o un identificatore persistente.
+
+I parser POSSONO usare la struttura dell'URI per estrarre informazioni
+aggiuntive se segue un formato riconosciuto (ad esempio, ricavando un dominio
+istituzionale o un codice ufficiale).
+
+Si RACCOMANDA che i crawler e i consumatori di publiccode.yml verifichino
+queste informazioni con mezzi esterni, per assicurarsi che l'URI dichiarato
+corrisponda effettivamente all'organizzazione che controlla il repository.
+Il metodo di verifica specifico dipende dall'implementazione e dalle politiche
+della piattaforma che utilizza il file.
+
+Chiave ``organisation/name``
+''''''''''''''''''''''''''''
+
+-  Tipo: stringa
+-  Presenza: opzionale
+-  Esempio: ``"My organisation"``
+
+Il nome canonico dell'organizzazione che pubblica il software.
+
+DEVE corrispondere alla stessa entità identificata da ``organisation/uri``
+e serve a fornire un'etichetta leggibile per quell'URI.
+DOVREBBE essere la forma canonica e ampiamente riconosciuta del nome
+(come il nome legale o istituzionale registrato).
+
 Sezione ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

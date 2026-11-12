@@ -19,3 +19,11 @@ Zu den Informationen, die in einer publiccode.yml-Datei enthalten sind, gehören
 * Abhängigkeiten
 
 und noch viel mehr.
+
+Inhaltsverzeichnis
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   aliases-list.rst
