@@ -27,7 +27,7 @@ Chiave ``name``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Esempio: “Medusa”
+-  Esempio: “Office Suite”
 
 Questa chiave contiene il nome del software. Contiene il nome
 (abbreviato) pubblico del prodotto, che può essere tradotto nella
@@ -51,7 +51,7 @@ Chiave ``url``
 
 -  Tipo: stringa (URL)
 -  Presenza: obbligatoria
--  Esempio: ``"https://example.com/italia/medusa.git"``
+-  Esempio: ``"https://example.com/office-suite.git"``
 
 Un identificatore unico per questo software. Questa stringa deve essere
 una URL che punta al repository di codice sorgente (git, svn, …) nel
@@ -75,7 +75,7 @@ Chiave ``landingURL``
 
 -  Tipo: stringa (URL)
 -  Presenza: opzionale
--  Esempio: ``"https://example.com/italia/medusa"``
+-  Esempio: ``"https://example.com/office-suite"``
 
 Se la chiave ``url`` non porta ad una pagina leggibile da un umano, ma
 serve solo ad indirizzare un client di source control verso il codice
@@ -92,7 +92,7 @@ Chiave ``isBasedOn``
 
 -  Tipo: stringa o array di stringhe
 -  Presenza: opzionale
--  Esempio: ``"https://example.com/italia/otello.git"``
+-  Esempio: ``"https://example.com/document-editor.git"``
 
 Nel caso in cui questo software sia una variante o un fork di un altro
 software, che opzionalmente può contenere un file ``publiccode.yml``,
@@ -451,7 +451,7 @@ Chiave ``description/[lang]/localisedName``
 
 -  Tipo: stringa
 -  Presenza: opzionale
--  Esempio: ``"Medusa"``
+-  Esempio: ``"Office Suite"``
 
 Questa chiave rappresenta un’opportunità di tradurre il nome in una
 lingua specifica. Contiene il nome pubblico (corto) del prodotto.

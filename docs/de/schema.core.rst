@@ -21,7 +21,7 @@ Key ``name``
 
 -  Type: string
 -  Presence: mandatory
--  Example: ``"Medusa"``
+-  Example: ``"Office Suite"``
 
 This key contains the name of the software. It contains the (short)
 public name of the product, which can be localised in the specific
@@ -43,7 +43,7 @@ Key ``url``
 
 -  Type: string (URL)
 -  Presence: mandatory
--  Example: ``"https://example.com/italia/medusa.git"``
+-  Example: ``"https://example.com/office-suite.git"``
 
 A unique identifier for this software. This string must be a URL to the
 source code repository (git, svn, …) in which the software is published.
@@ -66,7 +66,7 @@ Key ``landingURL``
 
 -  Type: string (URL)
 -  Presence: optional
--  Example: ``"https://example.com/italia/medusa"``
+-  Example: ``"https://example.com/office-suite"``
 
 If the ``url`` parameter does not serve a human readable or browsable
 page, but only serves source code to a source control client, with this
@@ -82,7 +82,7 @@ Key ``isBasedOn``
 
 -  Type: string or array of strings
 -  Presence: optional
--  Example: ``"https://example.com/italia/otello.git"``
+-  Example: ``"https://example.com/document-editor.git"``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
@@ -431,7 +431,7 @@ Key ``description/[lang]/localisedName``
 
 -  Type: string
 -  Presence: optional
--  Example: ``"Medusa"``
+-  Example: ``"Office Suite"``
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the

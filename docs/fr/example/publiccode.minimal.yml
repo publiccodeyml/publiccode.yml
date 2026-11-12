@@ -1,7 +1,7 @@
 publiccodeYmlVersion: "0"
 
-name: Medusa
-url: "https://example.com/italia/medusa.git"
+name: Office Suite
+url: "https://example.com/office-suite.git"
 platforms:
   - web
 

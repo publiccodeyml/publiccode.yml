@@ -23,7 +23,7 @@ Clé ``name``
 
 -  Type: chaîne de caractères
 -  Présence: obligatoire
--  Exemple: ``"Medusa"``
+-  Exemple: ``"Office Suite"``
 
 Cette clé contient le nom du logiciel. Elle contient le nom public (abrégé)
 du produit, qui peut être traduit dans la section ``localisation`` dédiée.
@@ -46,7 +46,7 @@ Clé ``url``
 
 -  Type: chaîne de cractères (URL)
 -  Présence: obligatoire
--  Exemple: ``"https://example.com/italia/medusa.git"``
+-  Exemple: ``"https://example.com/office-suite.git"``
 
 Un identifiant unique pour ce logiciel. Cette chaîne de caractères doit être
 une URL qui pointe vers le dépôt du code source (git, svn, …) dans lequel le
@@ -68,7 +68,7 @@ Clé ``landingURL``
 
 -  Type: chaîne de caractères (URL)
 -  Présence: facultative
--  Exemple: ``"https://example.com/italia/medusa"``
+-  Exemple: ``"https://example.com/office-suite"``
 
 Si le paramètre de l’``url`` ne renvoie pas à une page lisible par un humain,
 mais sert uniquement à rediriger vers le code source d’un logiciel de gestion
@@ -83,7 +83,7 @@ Clé ``isBasedOn``
 
 -  Type: chaîne de caractères ou array de chaînes de caractères
 -  Présence: facultative
--  Exemple: ``"https://example.com/italia/otello.git"``
+-  Exemple: ``"https://example.com/document-editor.git"``
 
 Si le logiciel est une variante ou une fourche d’un autre logiciel qui peut
 éventuellement contenir un fichier ``publiccode.yml``, cette clé contiendra
@@ -446,7 +446,7 @@ Clé ``description/[lang]/localisedName``
 
 -  Type: chaîne de caractères
 -  Présence: facultative
--  Exemple: ``"Medusa"``
+-  Exemple: ``"Office Suite"``
 
 Cette clé représente l'occasion de traduire le nom dans une langue spécifique.
 Cette clé contient le nom public (abrégé) du produit. Il s'agit du nom
