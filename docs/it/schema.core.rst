@@ -390,8 +390,8 @@ processi specifici, tecnologie o leggi. Tutti i Paesi sono specificati
 usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
 seguendo lo standard ISO 3166-1 alpha-2.
 
-Chiave ``intendedAudience/unsupportedCountries``
-''''''''''''''''''''''''''''''''''''''''''''''''
+Chiave ``intendedAudience/unsupportedCountries`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
 -  Presenza: opzionale
@@ -793,14 +793,18 @@ sistema e/o a runtime che devono essere installate e manutenute
 separatamente. Ad esempio, un database è un buon esempio di questo tipo
 di dipendenza.
 
-Chiave ``dependsOn/open``
-'''''''''''''''''''''''''
+Chiave ``dependsOn/open`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di ``dependency`` (vedi sotto)
 -  Presenza: opzionale
 
 Questa chiave contiene una lista di dipendenze a runtime che sono
 distribuite con una licenza di tipo open-source.
+
+Questa chiave è deprecata. Le dipendenze open source a runtime sono già
+dichiarate nella SBOM o nei manifest dei gestori di pacchetti. I requisiti
+di installazione vanno nella documentazione e negli script di deployment.
 
 Chiave ``dependsOn/proprietary``
 ''''''''''''''''''''''''''''''''

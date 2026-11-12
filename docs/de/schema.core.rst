@@ -375,8 +375,8 @@ i.e. the software explicitly claims compliance with specific processes,
 technologies or laws. All countries are specified using lowercase (*deprecated*)
 or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
-Key ``intendedAudience/unsupportedCountries``
-'''''''''''''''''''''''''''''''''''''''''''''
+Key ``intendedAudience/unsupportedCountries`` (*veraltet*)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: array of strings
 -  Presence: optional
@@ -751,14 +751,19 @@ system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.
 
-Key ``dependsOn/open``
-''''''''''''''''''''''
+Key ``dependsOn/open`` (*veraltet*)
+'''''''''''''''''''''''''''''''''''
 
 -  Type: array of ``dependency`` (see below)
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
+
+Dieser Schlüssel ist veraltet. Open-Source-Laufzeitabhängigkeiten sind
+bereits in der SBOM oder in den Manifesten der Paketmanager angegeben.
+Was installiert werden muss, gehört in die Dokumentation und in die
+Deployment-Skripte.
 
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
