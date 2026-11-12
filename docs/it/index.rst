@@ -49,4 +49,5 @@ Indice dei contenuti
    forks.rst
    categories-list.rst
    scope-list.rst
+   aliases-list.rst
    example.rst

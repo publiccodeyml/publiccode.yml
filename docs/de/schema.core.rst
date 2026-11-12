@@ -290,6 +290,77 @@ The keys are:
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
 
+Schlüssel ``supports``
+~~~~~~~~~~~~~~~~~~~~~~
+
+-  Typ: Array von Objekten
+-  Vorhandensein: optional
+
+Eine Liste von Standards, Vorschriften, Frameworks oder Systemen, die die
+Software unterstützt oder deren Anforderungen sie erfüllt.
+
+Jeder Eintrag ist ein Objekt mit einer einzigen Eigenschaft:
+
+-  ``id`` - **obligatorisch** - ein Bezeichner für den unterstützten Standard,
+   die Vorschrift, das Framework oder das System. Dies ist entweder ein Alias
+   der Form ``alias:<name>`` (z. B. ``alias:gdpr``), der über die
+   :ref:`Liste der Aliase <aliases-list>` aufgelöst wird, oder eine andere
+   gültige URI (URL oder URN), die direkt auf die Ressource verweist.
+
+   Ein ``alias:``-Wert MUSS in der :ref:`Liste der Aliase <aliases-list>`
+   vorhanden sein. Ein unbekannter Alias ist ein Fehler.
+   Jeder andere Wert MUSS eine syntaktisch gültige URI sein. Ein korrekt
+   formatierter, ansonsten unbekannter Wert wird unverändert akzeptiert.
+
+Beispiel:
+
+.. code:: yaml
+
+   supports:
+     - id: alias:gdpr
+     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+Abschnitt ``organisation``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Dieser optionale Abschnitt gibt die Organisation an, die die Software
+veröffentlicht.
+
+Schlüssel ``organisation/uri``
+''''''''''''''''''''''''''''''
+
+-  Typ: Zeichenkette
+-  Vorhandensein: obligatorisch
+-  Beispiel: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+
+Die URI, die die Organisation identifiziert, die die Software veröffentlicht.
+Der Wert SOLLTE eine stabile, auflösbare URI oder ein persistenter Bezeichner
+sein.
+
+Parser DÜRFEN aus der URI-Struktur zusätzliche Informationen extrahieren,
+wenn sie einem anerkannten Format folgt (zum Beispiel eine institutionelle
+Domain oder einen offiziellen Code ableiten).
+
+Es wird EMPFOHLEN, dass Crawler und Verbraucher von publiccode.yml diese
+Informationen außerhalb der Datei überprüfen, um sicherzustellen, dass die
+angegebene URI tatsächlich der Organisation entspricht, die das Repository
+kontrolliert. Die konkrete Prüfmethode hängt von der Implementierung und den
+Richtlinien der Plattform ab, die die Datei verarbeitet.
+
+Schlüssel ``organisation/name``
+'''''''''''''''''''''''''''''''
+
+-  Typ: Zeichenkette
+-  Vorhandensein: optional
+-  Beispiel: ``"My organisation"``
+
+Der kanonische Name der Organisation, die die Software veröffentlicht.
+
+Er MUSS derselben Entität entsprechen, die durch ``organisation/uri``
+identifiziert wird, und dient als lesbare Bezeichnung für diese URI.
+Er SOLLTE die kanonische, allgemein anerkannte Form des Namens sein
+(wie der eingetragene rechtliche oder institutionelle Name).
+
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
