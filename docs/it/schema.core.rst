@@ -420,11 +420,11 @@ massima consentita è di 150 caratteri.
 Chiave ``description/[lang]/longDescription``
 '''''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: stringa (min 500 caratteri, max 10000 caratteri)
+-  Tipo: stringa (min 150 caratteri, max 10000 caratteri)
 -  Presenza: obbligatoria (almeno per una lingua)
 
 Questa chiave contiene una descrizione più lunga del software, con una
-lunghezza che può variare da 500 a 1000 caratteri. Questa chiave è
+lunghezza che può variare da 150 a 10000 caratteri. Questa chiave è
 pensata per fornire una panoramica delle caratteristiche del software
 per un potenziale utente. Il destinatario di questo testo dovrebbe
 essere l’utente finale, non nello sviluppatore. E’ possibile pensare a
@@ -505,8 +505,6 @@ decisori pubblici che potranno decidere di adottarlo o modificarlo. Per
 questo motivo, queste feature *non* devono riferirsi agli sviluppatori:
 invece di elencare le caratteristiche tecniche riferite ai dettagli
 implementativi, è preferibile elencare le funzionalità lato utente.
-
-Ogni feature deve però avere un massimo di 100 caratteri.
 
 Il numero di feature suggerito da elencare è tra 5 e 20, a seconda della
 dimensione del software e della sua complessità. Non c’è bisogno di fare

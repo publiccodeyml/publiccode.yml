@@ -395,10 +395,10 @@ allowed.
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (min 500 chars, max 10000 chars)
+-  Type: string (min 150 chars, max 10000 chars)
 -  Presence: mandatory (for at least one language)
 
-This key contains a longer description of the software, between 500 and
+This key contains a longer description of the software, between 150 and
 10000 chars. It is meant to provide an overview of the capabilities of
 the software for a potential user. The audience for this text should be
 that of users of the software, not developers. You can think of this
