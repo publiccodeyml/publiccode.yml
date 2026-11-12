@@ -491,7 +491,7 @@ Clé ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
 -  Type: tableau de chaînes de caractères
--  Présence: facultative (pour au moins une langue)
+-  Présence: facultative
 
 Cette clé contient une liste des fonctionnalités du logiciel qui décrit
 ce que permet de faire le logiciel. Les destinataires de ce texte sont les décideurs
@@ -501,9 +501,7 @@ les caractéristiques techniques qui renvoient à l'implémentation de détails,
 il est préférable de lister les fonctionnalités utiles aux utilisateurs
 du logiciel.
 
-Si cette clé est obligatoire, il n’y a pas de limites du nombre de
-fonctionnalités minimum et maximum qui peuvent être répertoriées dans
-cette clé. Notons, toutefois, que chaque fonctionnalité peut comporter
+Notons, toutefois, que chaque fonctionnalité peut comporter
 un maximum de 100 caractères.
 
 Il est suggéré de lister entre 5 et 20 fonctionnalités, en fonction de

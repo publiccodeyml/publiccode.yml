@@ -497,7 +497,7 @@ Chiave ``description/[lang]/features``
 ''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: array di stringhe
--  Presenza: obbligatoria (almeno per una lingua)
+-  Presenza: opzionale
 
 Questa chiave contiene una lista di *feature* del software, che descriva
 le possibilità offerte dallo stesso. Il target di questo testo sono i
@@ -506,9 +506,7 @@ questo motivo, queste feature *non* devono riferirsi agli sviluppatori:
 invece di elencare le caratteristiche tecniche riferite ai dettagli
 implementativi, è preferibile elencare le funzionalità lato utente.
 
-Anche se questa chiave è obbligatoria, non c’è un limite minimo o
-massimo sul numero di feature da elencare in questa chiave. Ogni feature
-deve però avere un massimo di 100 caratteri.
+Ogni feature deve però avere un massimo di 100 caratteri.
 
 Il numero di feature suggerito da elencare è tra 5 e 20, a seconda della
 dimensione del software e della sua complessità. Non c’è bisogno di fare
