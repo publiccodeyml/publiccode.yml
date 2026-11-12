@@ -1,7 +1,13 @@
 .. _`country-extension`:
 
-Länderspezifische Extensions
-===========================
+Länderspezifische Extensions (*veraltet*)
+=========================================
+
+Länderspezifische Sektionen sind veraltet und werden in publiccode.yml 1.0
+entfernt. Ihre Anwendungsfälle werden jetzt mit allgemeinen Schlüsseln
+ausgedrückt: Die Einhaltung nationaler Regelungen oder die Integration in
+nationale Plattformen wird mit dem Schlüssel ``supports`` angegeben, die
+veröffentlichende Verwaltung mit dem Schlüssel ``organisation``.
 
 Zwar ist der Standard so strukturiert, dass er international genutzt werden kann, dennoch können Informationen eingefügt werden, die in bestimmten Ländern nützlich sind, z. B. die Angabe, dass bestimmte nationale Gesetze oder Regelungen eingehalten werden.
 

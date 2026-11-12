@@ -1,8 +1,14 @@
 .. _`country-extension`:
 
-Extensions spcécifiques à un pays
-Country-Specific Extensions
-===========================
+Extensions spécifiques à un pays (*dépréciées*)
+===============================================
+
+Les sections spécifiques à un pays sont dépréciées et seront supprimées dans
+publiccode.yml 1.0. Les cas d'usage qu'elles couvraient s'expriment désormais
+avec des clés génériques : déclarez la conformité aux réglementations
+nationales ou l'intégration avec des plateformes nationales avec la clé
+``supports``, et indiquez l'administration qui publie le logiciel avec la clé
+``organisation``.
 
 Bien que la norme soit structurée pour avoir un sens sur le plan international, 
 on peut ajouter des informations supplémentaires qui ont une utilité dans 
