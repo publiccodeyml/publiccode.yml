@@ -414,7 +414,7 @@ d'un maximum de 150 caractères.
 Clé ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: chaîne de caractères (150 caractères min, 10 000 caractères max)
+-  Type: chaîne Markdown (150 caractères min, 10 000 caractères max)
 -  Présence: obligatoire (pour au moins une langue)
 
 Cette clé contient une description longue du logiciel, entre 150 et 10 000
@@ -424,8 +424,10 @@ l'utilisateur final du logiciel et non le développeur.
 Il est possible de considérer ce texte comme la description du logiciel
 qui pourrait figurer sur le site web (dans le cas où le logiciel en aurait un).
 
-Cette description peut contenir du markdown assez basique :
-``*italic*``, ``**bold**``, puces et ``[link](#)``.
+La valeur de cette clé est du Markdown, tel que défini par
+`CommonMark <https://commonmark.org/>`__. Gardez une mise en forme simple :
+``*italic*``, ``**bold**``, puces et ``[link](#)``, car les consommateurs
+PEUVENT ne prendre en charge que ce sous-ensemble pour le rendu.
 
 Clé ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''''''
