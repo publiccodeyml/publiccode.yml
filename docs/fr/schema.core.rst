@@ -385,8 +385,8 @@ des processus, des technologies ou des lois spécifiques.
 Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays,
 en minuscules (*deprecated*) ou en majuscules, conformément au standard ISO 3166-1 alpha-2.
 
-Clé ``intendedAudience/unsupportedCountries``
-'''''''''''''''''''''''''''''''''''''''''''''
+Clé ``intendedAudience/unsupportedCountries`` (*obsolète*)
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: array de chaînes de caractères
 -  Présence: facultative
@@ -743,13 +743,18 @@ Cette section fournit un aperçu des dépendances requises à l'échelle du syst
 
 **NOTE:** elle ne liste pas les dépendances à l'échelle du code source (ex. bibliothèques utlisées par le logiciel) et se concentre uniquement sur les dépendances de relative au fonctionnement et/ou au système qui doivent être installées et maintenues séparément; par exemple, une base de données.
 
-Clé ``dependsOn/open``
-''''''''''''''''''''''
+Clé ``dependsOn/open`` (*obsolète*)
+'''''''''''''''''''''''''''''''''''
 
 -  Type: array de ``dependency`` (voir ci-dessous)
 -  Présence: facultative
 
 Cette clé contient la liste des dépendances distribuées sous une licence open source et nécessaires au fonctionnement du logiciel.
+
+Cette clé est obsolète. Les dépendances open source nécessaires au
+fonctionnement du logiciel sont déjà déclarées dans la SBOM ou dans les
+manifestes des gestionnaires de paquets. Les éléments à installer doivent
+être indiqués dans la documentation et dans les scripts de déploiement.
 
 Clé ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
