@@ -1,11 +1,11 @@
 publiccodeYmlVersion: "0"
 
-name: Medusa
+name: Office Suite
 applicationSuite: MegaProductivitySuite
-url: "https://example.com/italia/medusa.git"
-landingURL: "https://example.com/italia/medusa"
+url: "https://example.com/office-suite.git"
+landingURL: "https://example.com/office-suite"
 isBasedOn:
-  - "https://example.com/italia/otello.git"
+  - "https://example.com/document-editor.git"
 softwareVersion: "1.0"
 releaseDate: "2017-04-15"
 logo: img/logo.svg
@@ -22,7 +22,7 @@ usedBy:
   - Comune di Firenze
   - Comune di Roma
 
-roadmap: "https://example.com/italia/medusa/roadmap"
+roadmap: "https://example.com/office-suite/roadmap"
 
 developmentStatus: development
 
@@ -37,7 +37,7 @@ intendedAudience:
 
 description:
   en:
-    localisedName: Medusa
+    localisedName: Office Suite
     shortDescription: >
       This description can have a maximum 150
       characters long. We should not fill the
@@ -49,8 +49,8 @@ description:
       is and why one should need it.
       It can also contain some basic Markdown.
 
-    documentation: "https://read.the.documentation/medusa/v1.0"
-    apiDocumentation: "https://read.the.api.doc/medusa/v1.0"
+    documentation: "https://read.the.documentation/office-suite/v1.0"
+    apiDocumentation: "https://read.the.api.doc/office-suite/v1.0"
 
     features:
       - Very important feature
