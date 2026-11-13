@@ -69,10 +69,6 @@ Ausführlichere Version
     - content-management
     - office
 
-  usedBy:
-    - Comune di Firenze
-    - Comune di Roma
-
   roadmap: "https://example.com/office-suite/roadmap"
 
   developmentStatus: development
