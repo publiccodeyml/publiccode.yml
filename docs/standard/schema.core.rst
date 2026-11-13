@@ -348,7 +348,7 @@ recognized format (for example, inferring an institutional domain or an
 official code).
 
 It is RECOMMENDED that crawlers and consumers of publiccode.yml verify this
-information out-of-band, to ensure that the declared `organisationUri` actually
+information out-of-band, to ensure that the declared ``organisation/uri`` actually
 corresponds to the organisation in control of the repository.
 The specific verification method depends on the implementation and policies of the
 platform consuming the file.
