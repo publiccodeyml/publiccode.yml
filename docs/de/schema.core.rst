@@ -80,9 +80,9 @@ download of such an installer.
 Key ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: string or list of strings
+-  Type: Liste von Zeichenketten oder eine einzelne Zeichenkette (*veraltet*)
 -  Presence: optional
--  Example: ``"https://example.com/document-editor.git"``
+-  Example: ``["https://example.com/document-editor.git"]``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
@@ -90,6 +90,9 @@ contain the ``url`` of the original project(s).
 
 The existence of this key identifies the fork as a software
 variant, descending from the specified repositories.
+
+Die Form mit einer einzelnen Zeichenkette ist veraltet. Verwenden Sie
+stattdessen eine Liste mit einem einzigen Element.
 
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -887,5 +890,8 @@ Datum
 Jedes Datum in ``publiccode.yml`` muss dem Format "JJJJ-MM-TT" folgen, welches eines der Formate nach ISO8601 ist. Allerdings sind sonst keine anderen Formate aus ISO8601 für Datums-Keys erlaubt.
 
 Encodierung
-~~~~~~~~
-`publiccode.yml` **MUSS** nach UTF-8 encodiert sein.
+~~~~~~~~~~~
+
+``publiccode.yml`` **MUSS** ein UTF-8-encodiertes Dokument sein und
+**SOLLTE** ein YAML-1.2-Dokument sein. Die Verwendung von YAML 1.1 ist
+*veraltet*.
