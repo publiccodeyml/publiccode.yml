@@ -221,7 +221,7 @@ software.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: List of Organisations (see below)
+-  Type: array of Organisation (see below)
 -  Presence: optional
 
 A list of organisations that are currently known to be funding the
@@ -293,13 +293,13 @@ The keys are:
 Schlüssel ``supports``
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: Array von Objekten
+-  Typ: Array von Mappings
 -  Vorhandensein: optional
 
 Eine Liste von Standards, Vorschriften, Frameworks oder Systemen, die die
 Software unterstützt oder deren Anforderungen sie erfüllt.
 
-Jeder Eintrag ist ein Objekt mit einer einzigen Eigenschaft:
+Jeder Eintrag ist ein Mapping mit einer einzigen Eigenschaft:
 
 -  ``id`` - **obligatorisch** - ein Bezeichner für den unterstützten Standard,
    die Vorschrift, das Framework oder das System. Dies ist entweder ein Alias
@@ -695,7 +695,7 @@ organisations, or other collective names.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: List of Contacts (see below)
+-  Type: array of Contact (see below)
 -  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
@@ -789,7 +789,7 @@ Special data formats
 Dependency
 ~~~~~~~~~~
 
-A ``dependency`` is a complex object. The properties are the following:
+A ``dependency`` is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
    NFC Reader)
@@ -831,7 +831,7 @@ between 1.1 and 1.3.
 Contact
 ~~~~~~~
 
-A Contact is an object with the following properties:
+A Contact is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - This key contains the full name of one of
    the technical contacts. It must be a real person; do NOT populate
@@ -854,7 +854,7 @@ Organisation
 
 An organisation is a structure (association, company, public
 authority, etc.) that can fund software development. An organisation
-has the following property:
+is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the organisation, whether
     it’s an association, a company, a public sector organisation, or
@@ -864,7 +864,7 @@ has the following property:
 Contractor
 ~~~~~~~~~~
 
-A Contractor is an object with the following properties:
+A Contractor is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the contractor, whether it’s a
    company or a physical person.
