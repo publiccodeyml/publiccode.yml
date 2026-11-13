@@ -130,8 +130,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``monochromeLogo``
-~~~~~~~~~~~~~~~~~~~~~~
+Key ``monochromeLogo`` (*veraltet*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: string (path to file)
 -  Presence: optional
@@ -146,8 +146,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``inputTypes``
-~~~~~~~~~~~~~~~~~~
+Key ``inputTypes`` (*veraltet*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: list of enumerated strings
 -  Presence: optional
@@ -161,8 +161,8 @@ handle as input.
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
 
-Key ``outputTypes``
-~~~~~~~~~~~~~~~~~~~
+Key ``outputTypes`` (*veraltet*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: list of enumerated strings
 -  Presence: optional
@@ -446,11 +446,11 @@ name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
-Key ``description/[lang]/genericName``
-''''''''''''''''''''''''''''''''''''''
+Key ``description/[lang]/genericName`` (*veraltet*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (max 35 chars)
--  Presence: mandatory
+-  Presence: optional
 -  Example: ``"Text Editor"``
 
 This key is the “Generic name”, which refers to the specific category to
@@ -580,8 +580,8 @@ Screenshots can be of any shape and size; the suggested formats are:
 -  Tablet: 1024x768 @2x
 -  Mobile: 375x667 @2x
 
-Key ``description/[lang]/videos``
-'''''''''''''''''''''''''''''''''
+Key ``description/[lang]/videos`` (*veraltet*)
+''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: list of strings (URLs)
 -  Presence: optional
@@ -596,6 +596,9 @@ and Vimeo.
 
 Since videos are an integral part of the documentation, it is
 recommended to publish them with an open license.
+
+Dieser Schlüssel ist veraltet. Verlinken Sie Videos stattdessen in der
+Dokumentation oder auf der Website der Software.
 
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''

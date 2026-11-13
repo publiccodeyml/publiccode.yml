@@ -132,8 +132,8 @@ racine du dépôt ou une URL absolue qui pointe vers la version brute du logo.
 Dans les deux cas, le fichier doit être situé dans le même dépôt que le
 fichier ``publiccode.yml``.
 
-Clé ``monochromeLogo``
-~~~~~~~~~~~~~~~~~~~~~~
+Clé ``monochromeLogo`` (*obsolète*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: chaîne de caractères (chemin vers le fichier)
 -  Présence: facultative
@@ -149,8 +149,8 @@ racine du dépôt ou une URL absolue pointant vers une version brute du
 logo. Dans les deux cas, le fichier doit être situé dans le même dépôt que le
 fichier ``publiccode.yml``.
 
-Clé ``inputTypes``
-~~~~~~~~~~~~~~~~~~
+Clé ``inputTypes`` (*obsolète*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: liste de chaînes de caractères énumérées
 -  Présence: facultative
@@ -164,8 +164,8 @@ en entrée (*input*) dans l'application.
 Si le logiciel ne supporte aucune entrée, il est possible d'ignorer ce champ
 ou d’utiliser ``application/x.empty``.
 
-Clé ``outputTypes``
-~~~~~~~~~~~~~~~~~~~
+Clé ``outputTypes`` (*obsolète*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: liste de chaînes de caractères énumérées
 -  Présence: facultative
@@ -460,11 +460,11 @@ auquel se réfère la majorité des personnes. Si le logiciel a un nom de « co
 en interne et une dénomination commerciale, il est préférable d'indiquer
 la dénomination commerciale.
 
-Clé ``description/[lang]/genericName``
-''''''''''''''''''''''''''''''''''''''
+Clé ``description/[lang]/genericName`` (*obsolète*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: chaîne de caractères (35 caractères max)
--  Présence: obligatoire
+-  Présence: facultative
 -  Exemple: ``"Text Editor"``
 
 Cette clé indique le « nom générique », en référence à la catégorie spécifique
@@ -606,8 +606,8 @@ Les formats suggérés sont :
 -  Tablet: 1024x768 @2x
 -  Mobile: 375x667 @2x
 
-Clé ``description/[lang]/videos``
-'''''''''''''''''''''''''''''''''
+Clé ``description/[lang]/videos`` (*obsolète*)
+''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Type: liste de chaînes de caractères (URLs)
 -  Présence: facultative
@@ -622,6 +622,9 @@ sont des alternatives populaires.
 
 **N.B. :** Dans la mesure où les vidéos font parties intégrantes de la
 documentation, il est recommandé de les publier sous une licence ouverte.
+
+Cette clé est obsolète. Ajoutez plutôt des liens vers les vidéos dans la
+documentation ou sur le site web du logiciel.
 
 Clé ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
