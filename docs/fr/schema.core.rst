@@ -561,7 +561,7 @@ dans le dépôt lui-même.
 Clé ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
--  Type: tableau de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 
 Cette clé contient une liste des fonctionnalités du logiciel qui décrit
