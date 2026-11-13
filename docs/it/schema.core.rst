@@ -842,7 +842,7 @@ Una ``dependency`` è un mapping con le seguenti proprietà:
 -  ``version`` - l’unica versione major con la quale il software è
    compatibile. Si assume la compatibilità con tutte le *patch* e i
    *bugfix* che saranno applicati successivamente a questa versione;
--  ``opzionale`` - se la dipendenza è opzionale o obbligatoria.
+-  ``optional`` - se la dipendenza è opzionale o obbligatoria.
 
 Versioning complesso
 ~~~~~~~~~~~~~~~~~~~~
@@ -856,7 +856,7 @@ matrice di compatibilità complessa.
 
    - name: PostgreSQL
      version: "3.2"
-     opzionale: yes
+     optional: true
 
 Questo snippet segnala una dipendenza opzionale verso PostgreSQL,
 nell’esattezza la sua versione 3.2.

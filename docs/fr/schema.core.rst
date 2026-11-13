@@ -802,7 +802,7 @@ Il est bien sûr possible d'utiliser les différentes clés pour spécifier une 
 
    - name: PostgreSQL
      version: "3.2"
-     optional: yes
+     optional: true
 
 Cet extrait précise le caractère facultatif et la version exacte (3.2.) de la dépendance PostgreSQL.
 
