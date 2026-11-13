@@ -227,7 +227,7 @@ software.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: List of Organisations (see below)
+-  Type: array of Organisation (see below)
 -  Presence: optional
 
 A list of organisations that are currently known to be funding the
@@ -301,13 +301,13 @@ The keys are:
 Key ``supports``
 ~~~~~~~~~~~~~~~~
 
--  Type: array of objects
+-  Type: array of mappings
 -  Presence: optional
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
 
-Each item is an object with a single property:
+Each item is a mapping with a single property:
 
 -  ``id`` - **mandatory** - an identifier for the supported standard,
    regulation, framework or system. It is either an alias in
@@ -706,7 +706,7 @@ organisations, or other collective names.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: List of Contacts (see below)
+-  Type: array of Contact (see below)
 -  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
@@ -800,7 +800,7 @@ Special data formats
 Dependency
 ~~~~~~~~~~
 
-A ``dependency`` is a complex object. The properties are the following:
+A ``dependency`` is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
    NFC Reader)
@@ -842,7 +842,7 @@ between 1.1 and 1.3.
 Contact
 ~~~~~~~
 
-A Contact is an object with the following properties:
+A Contact is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - This key contains the full name of one of
    the technical contacts. It must be a real person; do NOT populate
@@ -866,7 +866,7 @@ Organisation
 
 An organisation is a structure (association, company, public
 authority, etc.) that can fund software development. An organisation
-has the following properties:
+is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the organisation, whether
     it’s an association, a company, a public sector organisation, or
@@ -876,7 +876,7 @@ has the following properties:
 Contractor
 ~~~~~~~~~~
 
-A Contractor is an object with the following properties:
+A Contractor is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the contractor, whether it’s a
    company or a physical person.
