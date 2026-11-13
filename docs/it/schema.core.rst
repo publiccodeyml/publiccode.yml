@@ -406,6 +406,9 @@ specifica, un processo o una tecnologia. Tutti i Paesi sono specificati
 usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
 seguendo lo standard ISO 3166-1 alpha-2.
 
+Questa chiave è deprecata, usare invece ``intendedAudience/countries``
+per elencare i Paesi a cui il software si rivolge esplicitamente.
+
 Chiave ``intendedAudience/scope``
 '''''''''''''''''''''''''''''''''
 
