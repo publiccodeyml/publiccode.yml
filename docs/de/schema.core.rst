@@ -815,7 +815,7 @@ compatibility matrix.
 
    - name: PostgreSQL
      version: "3.2"
-     optional: yes
+     optional: true
 
 This snippet marks an optional dependency on PostgreSQL exactly version
 3.2.
