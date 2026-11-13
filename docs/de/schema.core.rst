@@ -80,7 +80,7 @@ download of such an installer.
 Key ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: string or array of strings
+-  Type: string or list of strings
 -  Presence: optional
 -  Example: ``"https://example.com/document-editor.git"``
 
@@ -146,7 +146,7 @@ the ``publiccode.yml`` file is stored.
 Key ``inputTypes``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: array of enumerated strings
+-  Type: list of enumerated strings
 -  Presence: optional
 -  Values: as per RFC 6838
 -  Example: ``"text/plain"``
@@ -161,7 +161,7 @@ or use ``application/x.empty``.
 Key ``outputTypes``
 ~~~~~~~~~~~~~~~~~~~
 
--  Type: array of enumerated strings
+-  Type: list of enumerated strings
 -  Presence: optional
 -  Values: as per RFC 6838
 -  Example: ``"text/plain"``
@@ -176,7 +176,7 @@ field or use ``application/x.empty``.
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string or array of strings
+-  Type: enumerated string or list of strings
 -  Presence: mandatory
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
@@ -193,7 +193,7 @@ value can be used.
 Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 -  Acceptable values: see :ref:`categories-list` 
 
@@ -206,7 +206,7 @@ values.
 Key ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 
 A list of the names of prominent public administrations (that will serve
@@ -221,7 +221,7 @@ software.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: array of Organisation (see below)
+-  Type: list of Organisations (see below)
 -  Presence: optional
 
 A list of organisations that are currently known to be funding the
@@ -293,7 +293,7 @@ The keys are:
 Schlüssel ``supports``
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: Array von Mappings
+-  Typ: Liste von Mappings
 -  Vorhandensein: optional
 
 Eine Liste von Standards, Vorschriften, Frameworks oder Systemen, die die
@@ -367,7 +367,7 @@ Section ``intendedAudience``
 Key ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 
 This key explicitly includes certain countries in the intended audience,
@@ -378,7 +378,7 @@ or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 Key ``intendedAudience/unsupportedCountries`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 
 This key explicitly marks countries as NOT supported. This might be the
@@ -389,7 +389,7 @@ lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country code
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 -  Acceptable values: see :ref:`scope-list` 
 
@@ -536,7 +536,7 @@ part of the repository itself.
 Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 
 This key contains a list of software features, describing what
@@ -554,7 +554,7 @@ additional information.
 Key ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: array of strings (paths)
+-  Type: list of strings (paths)
 -  Presence: optional
 -  Formats: PNG, JPEG, WebP, AVIF
 -  Example: ``"data/screenshots/configuration.png"``
@@ -576,7 +576,7 @@ Screenshots can be of any shape and size; the suggested formats are:
 Key ``description/[lang]/videos``
 '''''''''''''''''''''''''''''''''
 
--  Type: array of strings (URLs)
+-  Type: list of strings (URLs)
 -  Presence: optional
 -  Example: ``"https://youtube.com/xxxxxxxx"``
 
@@ -593,7 +593,7 @@ recommended to publish them with an open license.
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: list of strings
 -  Presence: optional
 
 A list of awards won by the software.
@@ -685,7 +685,7 @@ This key describes how the software is currently maintained.
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: array of Contractor (see below)
+-  Type: list of Contractors (see below)
 -  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
@@ -695,7 +695,7 @@ organisations, or other collective names.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: array of Contact (see below)
+-  Type: list of Contacts (see below)
 -  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
@@ -754,7 +754,7 @@ dependencies.
 Key ``dependsOn/open`` (*veraltet*)
 '''''''''''''''''''''''''''''''''''
 
--  Type: array of ``dependency`` (see below)
+-  Type: list of ``dependency`` (see below)
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -768,7 +768,7 @@ Deployment-Skripte.
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
--  Type: array of ``dependency`` (see below)
+-  Type: list of ``dependency`` (see below)
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -777,7 +777,7 @@ under a proprietary license.
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Type: array of ``dependency`` (see below)
+-  Type: list of ``dependency`` (see below)
 -  Presence: optional
 
 This key contains a list of hardware dependencies that must be owned to

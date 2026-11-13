@@ -81,7 +81,7 @@ d’installation.
 Clé ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: chaîne de caractères ou array de chaînes de caractères
+-  Type: chaîne de caractères ou liste de chaînes de caractères
 -  Présence: facultative
 -  Exemple: ``"https://example.com/document-editor.git"``
 
@@ -149,7 +149,7 @@ fichier ``publiccode.yml``.
 Clé ``inputTypes``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: array of enumerated strings
+-  Type: liste de chaînes de caractères énumérées
 -  Présence: facultative
 -  Valeurs: conformément à la RFC 6838
 -  Exemple: ``"text/plain"``
@@ -164,7 +164,7 @@ ou d’utiliser ``application/x.empty``.
 Clé ``outputTypes``
 ~~~~~~~~~~~~~~~~~~~
 
--  Type: array of enumerated strings
+-  Type: liste de chaînes de caractères énumérées
 -  Présence: facultative
 -  Valeurs: conformément à la RFC 6838
 -  Exemple: ``"text/plain"``
@@ -179,7 +179,7 @@ ou d’utiliser ``application/x.empty``.
 Clé ``platforms``
 ~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string or array of strings
+-  Type: chaîne de caractères énumérée ou liste de chaînes de caractères
 -  Présence: obligatoire
 -  Valeurs: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Les valeurs lisibles par des humains qui ne sont pas incluses
@@ -199,7 +199,7 @@ valeur par défaut n’est pas disponible, une autre valeur peut
 Clé ``categories``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: array de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 -  Valeurs acceptées: voir :ref:`categories-list` 
 
@@ -212,7 +212,7 @@ des valeurs acceptées.
 Clé ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: array de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 
 Une liste des noms des administrations publiques de premier plan (qui
@@ -228,7 +228,7 @@ d’utilisation du logiciel.
 Clé ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: array d'Organisation (voir ci-dessous)
+-  Type: liste d'Organisations (voir ci-dessous)
 -  Présence: facultative
 
 Une liste des organisations actuellement connues pour financer le
@@ -304,7 +304,7 @@ ou d’autres jeux d’instructions.
 Clé ``supports``
 ~~~~~~~~~~~~~~~~
 
--  Type: array de mappings
+-  Type: liste de mappings
 -  Présence: optionnelle
 
 Une liste de standards, réglementations, frameworks ou systèmes que le
@@ -376,7 +376,7 @@ Section ``intendedAudience``
 Clé ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
 
--  Type: array de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 
 Cette clé inclut explicitement certains pays dans le public cible,
@@ -388,7 +388,7 @@ en minuscules (*deprecated*) ou en majuscules, conformément au standard ISO 316
 Clé ``intendedAudience/unsupportedCountries`` (*obsolète*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: array de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 
 Cette clé mentionne explicitement les pays qui ne sont pas supportés.
@@ -401,7 +401,7 @@ en minuscules (*deprecated*) ou en majuscules, conformément au standard ISO 316
 Clé ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
--  Type: array de chaînes de caractères
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 -  Valeurs acceptées: voir :ref:`scope-list` 
 
@@ -580,7 +580,7 @@ complémentaires, la liste des fonctionnalités n’a pas besoin d’être exhau
 Clé ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: array of strings (chemins)
+-  Type: liste de chaînes de caractères (chemins)
 -  Présence: facultative
 -  Formats: PNG, JPEG, WebP, AVIF
 -  Exemple: ``"data/screenshots/configuration.png"``
@@ -603,7 +603,7 @@ Les formats suggérés sont :
 Clé ``description/[lang]/videos``
 '''''''''''''''''''''''''''''''''
 
--  Type: array of strings (URLs)
+-  Type: liste de chaînes de caractères (URLs)
 -  Présence: facultative
 -  Exemple: ``"https://youtube.com/xxxxxxxx"``
 
@@ -620,7 +620,7 @@ documentation, il est recommandé de les publier sous une licence ouverte.
 Clé ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
--  Type: array of strings
+-  Type: liste de chaînes de caractères
 -  Présence: facultative
 
 Une liste des récompenses obtenues par le logiciel.
@@ -695,7 +695,7 @@ Cette clé décrit la manière dont le logiciel est maintenu.
 Clé ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: array de Contractor (voir ci-dessous)
+-  Type: liste de Contractors (voir ci-dessous)
 -  Présence: obligatoire si ``maintenance/type`` **est** ``contract``; ne doit pas être présent dans les autres cas
 
 Cette clé décrit la ou les entités actuellement sous contrat pour la maintenance du logiciel. Il peut s'agir d'entreprises, d'organisations ou d'autres collectifs.
@@ -703,7 +703,7 @@ Cette clé décrit la ou les entités actuellement sous contrat pour la maintena
 Clé ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: array de Contact (voir ci-dessous)
+-  Type: liste de Contacts (voir ci-dessous)
 -  Présence: obligatoire si ``maintenance/type`` **est** ``internal`` ou ``community``; facultatif dans les autres cas
 
 Un ou plusieurs contacts assurant la maintenance du logiciel. 
@@ -746,7 +746,7 @@ Cette section fournit un aperçu des dépendances requises à l'échelle du syst
 Clé ``dependsOn/open`` (*obsolète*)
 '''''''''''''''''''''''''''''''''''
 
--  Type: array de ``dependency`` (voir ci-dessous)
+-  Type: liste de ``dependency`` (voir ci-dessous)
 -  Présence: facultative
 
 Cette clé contient la liste des dépendances distribuées sous une licence open source et nécessaires au fonctionnement du logiciel.
@@ -759,7 +759,7 @@ manifestes des gestionnaires de paquets. Les éléments à installer doivent
 Clé ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
--  Type: array de ``dependency`` (voir ci-dessous)
+-  Type: liste de ``dependency`` (voir ci-dessous)
 -  Présence: facultative
 
 Cette clé contient la liste des dépendances distribuées sous une licence propriétaire et nécessaires au fonctionnement du logiciel.
@@ -767,7 +767,7 @@ Cette clé contient la liste des dépendances distribuées sous une licence prop
 Clé ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Type: array de ``dependency`` (voir ci-dessous)
+-  Type: liste de ``dependency`` (voir ci-dessous)
 -  Présence: facultative
 
 Cette clé contient une liste des dépendances matérielles qui doivent être détenues pour utiliser le logiciel. 

@@ -90,7 +90,7 @@ possibilità di scaricare tale installer.
 Chiave ``isBasedOn``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringa o array di stringhe
+-  Tipo: stringa o lista di stringhe
 -  Presenza: opzionale
 -  Esempio: ``"https://example.com/document-editor.git"``
 
@@ -157,7 +157,7 @@ larghezza minima di 1000px.
 Chiave ``inputTypes``
 ~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
 -  Esempio: ``"text/plain"``
@@ -172,7 +172,7 @@ saltare questo campo o usare ``application/x.empty``.
 Chiave ``outputTypes``
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
 -  Esempio: ``"text/plain"``
@@ -187,7 +187,7 @@ saltare questo campo o usare ``application/x.empty``.
 Chiave ``platforms``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringhe o array di stringhe
+-  Tipo: stringhe o lista di stringhe
 -  Presenza: obbligatoria
 -  Valori: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Valori leggibili da un umano al di fuori di questa lista
@@ -206,7 +206,7 @@ diverso valore può essere usato.
 Chiave ``categories``
 ~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 -  Valori accettabili: vedi :ref:`categories-list` 
 
@@ -219,7 +219,7 @@ accettabili.
 Chiave ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 
 Una lista di nome di prominenti Pubbliche Amministrazioni (che
@@ -234,7 +234,7 @@ usato come un segnale di uso del software.
 Chiave ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Tipo: array di Organisation (vedi sotto)
+-  Tipo: lista di Organisation (vedi sotto)
 -  Presenza: opzionale
 
 Un elenco delle organizzazioni che attualmente finanziano lo sviluppo
@@ -309,7 +309,7 @@ Le chiavi sono:
 Chiave ``supports``
 ~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di mapping
+-  Tipo: lista di mapping
 -  Presenza: opzionale
 
 Un elenco di standard, regolamenti, framework o sistemi che il software
@@ -381,7 +381,7 @@ Sezione ``intendedAudience``
 Chiave ``intendedAudience/countries``
 '''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 
 Questa chiave include in modo esplicito alcuni Paesi tra il pubblico
@@ -393,7 +393,7 @@ seguendo lo standard ISO 3166-1 alpha-2.
 Chiave ``intendedAudience/unsupportedCountries`` (*deprecata*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 
 Questa chiave contrassegna esplicitamente i Paesi **NON** supportati.
@@ -406,7 +406,7 @@ seguendo lo standard ISO 3166-1 alpha-2.
 Chiave ``intendedAudience/scope``
 '''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 -  Valori accettabili: vedi :ref:`scope-list` 
 
@@ -567,7 +567,7 @@ effettuandone un commit all’interno del repository stesso.
 Chiave ``description/[lang]/features``
 ''''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 
 Questa chiave contiene una lista di *feature* del software, che descriva
@@ -585,7 +585,7 @@ disposizione la documentazione per reperire ulteriori informazioni.
 Chiave ``description/[lang]/screenshots``
 '''''''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe (percorsi)
+-  Tipo: lista di stringhe (percorsi)
 -  Presenza: opzionale
 -  Formati: PNG, JPEG, WebP, AVIF
 -  Esempio: ``"data/screenshots/configuration.png"``
@@ -607,7 +607,7 @@ formati suggeriti sono:
 Chiave ``description/[lang]/videos``
 ''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe (URL)
+-  Tipo: lista di stringhe (URL)
 -  Presenza: opzionale
 -  Esempio: ``"https://youtube.com/xxxxxxxx"``
 
@@ -626,7 +626,7 @@ aperta.
 Chiave ``description/[lang]/awards``
 ''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di stringhe
+-  Tipo: lista di stringhe
 -  Presenza: opzionale
 
 Una lista di premi assegnati al software.
@@ -724,7 +724,7 @@ Le chiavi sono:
 Chiave ``maintenance/contractors``
 ''''''''''''''''''''''''''''''''''
 
--  Tipo: array di Contractor (vedi sotto)
+-  Tipo: lista di Contractor (vedi sotto)
 -  Presenza: obbligatoria se ``maintenance/type`` **è** ``contract``; non deve essere presente negli altri casi
 
 Questa chiave descrive l’entità o le entità, se ce ne sono, che
@@ -734,7 +734,7 @@ possono essere aziende, organizzazioni o altri nomi collettivi.
 Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
--  Tipo: array di Contatto (vedi sotto)
+-  Tipo: lista di Contatto (vedi sotto)
 -  Presenza: obbligatoria se ``maintenance/type`` **è** ``internal`` oppure ``community``; opzionale negli altri casi
 
 Uno o più contatti di chi sta mantenendo il software.
@@ -796,7 +796,7 @@ di dipendenza.
 Chiave ``dependsOn/open`` (*deprecata*)
 '''''''''''''''''''''''''''''''''''''''
 
--  Tipo: array di ``dependency`` (vedi sotto)
+-  Tipo: lista di ``dependency`` (vedi sotto)
 -  Presenza: opzionale
 
 Questa chiave contiene una lista di dipendenze a runtime che sono
@@ -809,7 +809,7 @@ di installazione vanno nella documentazione e negli script di deployment.
 Chiave ``dependsOn/proprietary``
 ''''''''''''''''''''''''''''''''
 
--  Tipo: array di ``dependency`` (vedi sotto)
+-  Tipo: lista di ``dependency`` (vedi sotto)
 -  Presenza: opzionale
 
 Questa chiave contiene una lista di dipendenze a runtime che sono
@@ -818,7 +818,7 @@ distribuite con una licenza proprietaria.
 Chiave ``dependsOn/hardware``
 '''''''''''''''''''''''''''''
 
--  Tipo: array di ``dependency`` (vedi sotto)
+-  Tipo: lista di ``dependency`` (vedi sotto)
 
 This key contains a list of hardware dependencies that must be owned to use the
 software.
