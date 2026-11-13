@@ -81,9 +81,9 @@ d’installation.
 Clé ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: chaîne de caractères ou liste de chaînes de caractères
+-  Type: liste de chaînes de caractères ou une seule chaîne (*obsolète*)
 -  Présence: facultative
--  Exemple: ``"https://example.com/document-editor.git"``
+-  Exemple: ``["https://example.com/document-editor.git"]``
 
 Si le logiciel est une variante ou une fourche d’un autre logiciel qui peut
 éventuellement contenir un fichier ``publiccode.yml``, cette clé contiendra
@@ -91,6 +91,9 @@ l’``url`` d'un ou de plusieurs projets originaux.
 
 L’existence de cette clé identifie la fourche comme une variante d’un logiciel (voir:
 :ref:`forks-and-variants`), à partir du dépôt spécifié.
+
+La forme avec une seule chaîne de caractères est obsolète. Utilisez plutôt
+une liste contenant un seul élément.
 
 Clé ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -846,3 +849,9 @@ Dates
 
 Toutes les dates dans ``publiccode.yml`` doivent respecter le format “YYYY-MM-DD”,
 qui est l'un des codages autorisé par l'ISO8601. Il s'agit de l'unique codage autorisé. Par conséquent, l'ISO8601 complet n'est pas autorisé pour les clés relatives aux dates.
+
+Encodage
+~~~~~~~~
+
+``publiccode.yml`` **DOIT** être un document encodé en UTF-8 et **DEVRAIT**
+être un document YAML 1.2. L'utilisation de YAML 1.1 est *obsolète*.
