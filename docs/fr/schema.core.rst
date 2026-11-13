@@ -228,7 +228,7 @@ d’utilisation du logiciel.
 Clé ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: Liste d'organisations (voir ci-dessous)
+-  Type: array d'Organisation (voir ci-dessous)
 -  Présence: facultative
 
 Une liste des organisations actuellement connues pour financer le
@@ -304,13 +304,13 @@ ou d’autres jeux d’instructions.
 Clé ``supports``
 ~~~~~~~~~~~~~~~~
 
--  Type: tableau d'objets
+-  Type: array de mappings
 -  Présence: optionnelle
 
 Une liste de standards, réglementations, frameworks ou systèmes que le
 logiciel prend en charge ou auxquels il est conforme.
 
-Chaque élément est un objet avec une seule propriété :
+Chaque élément est un mapping avec une seule propriété :
 
 -  ``id`` - **obligatoire** - un identifiant du standard, de la réglementation,
    du framework ou du système pris en charge. Il s'agit soit d'un alias de la
@@ -695,7 +695,7 @@ Cette clé décrit la manière dont le logiciel est maintenu.
 Clé ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: array of Contractor (voir ci-dessous)
+-  Type: array de Contractor (voir ci-dessous)
 -  Présence: obligatoire si ``maintenance/type`` **est** ``contract``; ne doit pas être présent dans les autres cas
 
 Cette clé décrit la ou les entités actuellement sous contrat pour la maintenance du logiciel. Il peut s'agir d'entreprises, d'organisations ou d'autres collectifs.
@@ -703,7 +703,7 @@ Cette clé décrit la ou les entités actuellement sous contrat pour la maintena
 Clé ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: Liste des Contacts (voir ci-dessous)
+-  Type: array de Contact (voir ci-dessous)
 -  Présence: obligatoire si ``maintenance/type`` **est** ``internal`` ou ``community``; facultatif dans les autres cas
 
 Un ou plusieurs contacts assurant la maintenance du logiciel. 
@@ -778,7 +778,7 @@ Formats de données spécifiques
 Dépendance
 ~~~~~~~~~~
 
-Une ``dependency`` est un objet complexe. Les propriétés sont les suivantes :
+Une ``dependency`` est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Le nom de la dépendance (ex. MySQL,
    NFC Reader) ;
@@ -816,7 +816,7 @@ Cet extrait précise le caractère obligatoire de la dépendance MySQL ainsi que
 Contact
 ~~~~~~~
 
-Un Contact est un objet comportant les propriétés suivantes : 
+Un Contact est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Cette clé contient le nom complet d'un des contacts techniques. Ce doit être une personne physique ; NE PAS remplir cette clé avec des informations de contact génériques, relatives à des départements d'une entreprise, à une association, etc.
 -  ``email`` -  Cette clé contient l'adresse e-mail du contact technique. Il s'agit de l'adresse e-mail à laquelle le contact technique peut être directement contacté ; NE PAS remplir cette clé avec une liste de diffusion ou des points de contact génériques tels que “info@acme.inc”.
@@ -826,7 +826,7 @@ Un Contact est un objet comportant les propriétés suivantes :
 Organisation
 ~~~~~~~~~~~~
 
-Une organisation est une structure (association, entreprise, autorité publique, etc.) qui peut financer le développement d'un logiciel. Une organisation possède les propriétés suivantes :
+Une organisation est une structure (association, entreprise, autorité publique, etc.) qui peut financer le développement d'un logiciel. Une organisation est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Le nom de l'organisation, qu'il s'agisse d'une association, d'une entreprise, d'une organisation du secteur public ou d'une personne physique.
 -  ``uri`` - The URI identifying the organisation.
@@ -834,7 +834,7 @@ Une organisation est une structure (association, entreprise, autorité publique,
 Prestataire
 ~~~~~~~~~~~
 
-Un Contractor (prestataire) est un objet comportant les propriétés suivantes :
+Un Contractor (prestataire) est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Le nom du prestataire, qu'il s'agisse d'une entreprise ou d'une personne physique.
 -  ``until`` - **obligatoire** - Il s'agit d'une date (YYYY-MM-DD). Cette clé doit contenir la date à laquelle la maintenance prendra fin. Dans le cas où la maintenance serait réalisée par une communauté, la valeur ne doit pas excéder une période de deux ans, et devra donc être régulièrement mise si la communauté continue à travailler sur le projet. 

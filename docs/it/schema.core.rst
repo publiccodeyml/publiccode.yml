@@ -234,7 +234,7 @@ usato come un segnale di uso del software.
 Chiave ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Tipo: Lista di Organisation (vedi sotto)
+-  Tipo: array di Organisation (vedi sotto)
 -  Presenza: opzionale
 
 Un elenco delle organizzazioni che attualmente finanziano lo sviluppo
@@ -309,13 +309,13 @@ Le chiavi sono:
 Chiave ``supports``
 ~~~~~~~~~~~~~~~~~~~
 
--  Tipo: array di oggetti
+-  Tipo: array di mapping
 -  Presenza: opzionale
 
 Un elenco di standard, regolamenti, framework o sistemi che il software
 supporta o a cui è conforme.
 
-Ogni elemento è un oggetto con una sola proprietà:
+Ogni elemento è un mapping con una sola proprietà:
 
 -  ``id`` - **obbligatoria** - un identificatore dello standard, regolamento,
    framework o sistema supportato. È un alias nella forma ``alias:<name>``
@@ -734,7 +734,7 @@ possono essere aziende, organizzazioni o altri nomi collettivi.
 Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
--  Tipo: Lista di Contatti (vedi sotto)
+-  Tipo: array di Contatto (vedi sotto)
 -  Presenza: obbligatoria se ``maintenance/type`` **è** ``internal`` oppure ``community``; opzionale negli altri casi
 
 Uno o più contatti di chi sta mantenendo il software.
@@ -830,8 +830,7 @@ Formati di dato speciali
 Dependency
 ~~~~~~~~~~
 
-Una ``dependency`` è un oggetto complesso. Le proprietà sono le
-seguenti:
+Una ``dependency`` è un mapping con le seguenti proprietà:
 
 -  ``name`` - **obbligatoria** - Il nome della dipendenza (e.g. MySQL,
    NFC Reader);
@@ -873,7 +872,7 @@ permettendo ogni versione tra la 1.1 e la 1.3.
 Contatto
 ~~~~~~~~
 
-Un Contatto è un oggetto con le seguenti proprietà:
+Un Contatto è un mapping con le seguenti proprietà:
 
 -  ``name`` - **obbligatoria** - Questa chiave contiene il nome completo
    di uno dei contatti tecnici. Deve essere una persona reale; NON
@@ -896,7 +895,7 @@ Organisation
 
 Un'organizzazione è una struttura (associazione, azienda, ente
 pubblico, ecc.) che può finanziare lo sviluppo di software.
-Un'organizzazione ha le seguenti proprietà:
+Un'organizzazione è un mapping con le seguenti proprietà:
 
 - ``nome`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
    un'associazione, una società, un ente pubblico o una persona
@@ -906,7 +905,7 @@ Un'organizzazione ha le seguenti proprietà:
 Contractor
 ~~~~~~~~~~
 
-Un Contractor è un oggetto con le seguenti proprietà:
+Un Contractor è un mapping con le seguenti proprietà:
 
 -  ``name`` - **obbligatoria** - Il nome del contractor, sia esso
    un’azienda o una persona fisica.
