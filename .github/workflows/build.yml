@@ -1,0 +1,20 @@
+name: Build Standard
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.12.5"
+      - name: Build Standard with warnings as errors
+        run: uv run --frozen sphinx-build -W -c . docs/standard build
