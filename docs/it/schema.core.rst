@@ -17,7 +17,7 @@ Chiave ``publiccodeYmlVersion``
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Esempio: ``"0.1"``
+-  Esempio: ``"0"``
 
 Questa chiave specifica la versione alla quale il presente
 ``publiccode.yml`` aderisce, per una questione di compatibilità diretta.

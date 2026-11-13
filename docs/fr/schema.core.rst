@@ -13,7 +13,7 @@ Clé ``publiccodeYmlVersion``
 
 -  Type: chaîne de caractères
 -  Présence: obligatoire
--  Exemple: ``"0.1"``
+-  Exemple: ``"0"``
 
 Cette clé décrit, à des fins de compatibilité, la version à laquelle adhère
 le présent fichier ``publiccode.yml``.

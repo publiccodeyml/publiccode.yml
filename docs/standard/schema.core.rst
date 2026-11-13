@@ -14,7 +14,7 @@ Key ``publiccodeYmlVersion``
 
 -  Type: string
 -  Presence: mandatory
--  Example: ``"0.1"``
+-  Example: ``"0"``
 
 This key specifies the version to which the current ``publiccode.yml``
 adheres to, for forward compatibility.
