@@ -10,31 +10,15 @@ nationales ou l'intégration avec des plateformes nationales avec la clé
 ``supports``, et indiquez l'administration qui publie le logiciel avec la clé
 ``organisation``.
 
-Bien que la norme soit structurée pour avoir un sens sur le plan international, 
-on peut ajouter des informations supplémentaires qui ont une utilité dans 
-certains pays, comme la déclaration de conformité aux lois ou règlements. 
-Le mécanisme d'extension fourni est l'utilisation de sections spécifiques 
-à chaque pays.
+Les sections spécifiques à un pays permettent d'inclure des informations
+pertinentes uniquement dans un pays donné, comme la conformité aux
+réglementations nationales ou l'intégration avec des plateformes nationales.
 
-Toutes les extensions spécifiques à un pays sont contenues dans une section
-nommée avec deux lettres minuscules (*obsolète*) ou majuscules `ISO 3166-1 alpha-2 country
-code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__. Pour le moment 
-``spid`` est une propriété pour un logiciel Italien  indiquant  si le logiciel
-est intégré au système italien d'identification publique.
+Chaque section est identifiée par un code pays de deux lettres minuscules
+(*déprécié*) ou majuscules selon la norme `ISO 3166-1 alpha-2
+<https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__.
 
-Si un logiciel est conforme, je trouverai :
-
-.. code:: yaml
-
-   IT:
-     countryExtensionVersion: "1.0"
-     piattaforme:
-      - spid: yes
-
-
-Notez que les extensions spécifiques à un pays avec des sections 
-internationales ne sont pas autorisées. Les pays qui souhaitent 
-étendre le format devrait ajouter une section spécifique au pays 
-à la place.
+Actuellement, la seule section spécifique à un pays définie est la section
+italienne (``IT:``).
 
 .. include:: schema.it.rst
