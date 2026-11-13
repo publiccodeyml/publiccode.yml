@@ -734,7 +734,7 @@ possono essere aziende, organizzazioni o altri nomi collettivi.
 Chiave ``maintenance/contacts``
 '''''''''''''''''''''''''''''''
 
--  Tipo: lista di Contatto (vedi sotto)
+-  Tipo: lista di Contatti (vedi sotto)
 -  Presenza: obbligatoria se ``maintenance/type`` **è** ``internal`` oppure ``community``; opzionale negli altri casi
 
 Uno o più contatti di chi sta mantenendo il software.
