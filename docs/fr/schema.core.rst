@@ -257,17 +257,17 @@ Clé ``developmentStatus``
 Les clés sont: 
 
 -  ``concept`` - Le logiciel est encore un « concept » : aucun code n’a été
-développé, et le dépôt peut exister symboliquement, dans l'attente.
+   développé, et le dépôt peut exister symboliquement, dans l'attente.
 -  ``development`` - Des efforts ont été fournits quant au développement
-du logiciel, mais le code n’est pas prêt pour un utilisateurs final, pas même
-dans une version préliminaire (bêta ou alpha) à tester par les utilisateurs.
+   du logiciel, mais le code n’est pas prêt pour un utilisateurs final, pas même
+   dans une version préliminaire (bêta ou alpha) à tester par les utilisateurs.
 -  ``beta`` -  Le logiciel est en phase de test (alpha ou beta).
-À ce stade, le logiciel peut avoir eu ou non une première version de publiée.
+   À ce stade, le logiciel peut avoir eu ou non une première version de publiée.
 -  ``stable`` - Le logiciel a déjà eu une première version de publiée
-et est prêt à être utilisé dans un environnement de production.
+   et est prêt à être utilisé dans un environnement de production.
 -  ``obsolete`` - Le logiciel n’est plus maintenu ou mis à jour.
-L’ensemble du code source est archivé et conservé pour des raisons
-d’historicité.
+   L’ensemble du code source est archivé et conservé pour des raisons
+   d’historicité.
 
 Clé ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~
@@ -281,27 +281,27 @@ Clé ``softwareType``
 Les clés sont:
 
 -  ``standalone/mobile`` - Le logiciel est paquet autonome et portable. 
-Le logiciel est une application mobile native.
+   Le logiciel est une application mobile native.
 -  ``standalone/iot`` - Le logiciel est adapté pour une utilisation dans un
-contexte IoT.
+   contexte IoT.
 -  ``standalone/desktop`` - Le logiciel est normalement installé et
-utilisé dans un environnement de bureau.
+   utilisé dans un environnement de bureau.
 -  ``standalone/web`` - Le logiciel représente une application web
-utilisable au moyen d’un navigateur.
+   utilisable au moyen d’un navigateur.
 -  ``standalone/backend`` - Le logiciel est une application backend.
 -  ``standalone/other`` - Le logiciel a une nature différente de ceux
-listés ci-dessus.  
+   listés ci-dessus.
 -  ``addon`` - Le software est un addon, tel qu'un plugin
-ou un thème, dans le cadre de logiciel plus complexe (ex. un CMS ou
-une suite bureautique).
+   ou un thème, dans le cadre de logiciel plus complexe (ex. un CMS ou
+   une suite bureautique).
 -  ``library`` - Le logiciel contient une bibliothèque ou un SDK
-pour faciliter la création de nouveaux produits par des développeurs tiers.
+   pour faciliter la création de nouveaux produits par des développeurs tiers.
 -  ``configurationFiles`` - Le logiciel ne contient pas de script
-exécutable, mais une série de fichiers de configuration. Ils peuvent
-documenter la manière d'obtenir un certain type déploiement. Les fichiers 
-susmentionnés peuvent prendre la forme de simples fichiers de configuration,
-des scripts bash, de playbook ansible, de fichiers *dockerfiles*,
-ou d’autres jeux d’instructions.
+   exécutable, mais une série de fichiers de configuration. Ils peuvent
+   documenter la manière d'obtenir un certain type déploiement. Les fichiers
+   susmentionnés peuvent prendre la forme de simples fichiers de configuration,
+   des scripts bash, de playbook ansible, de fichiers *dockerfiles*,
+   ou d’autres jeux d’instructions.
 
 
 Clé ``supports``

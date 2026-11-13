@@ -10,7 +10,7 @@ comment gérer les `publiccode.yml` dans les deux cas, nous définissons ci-dess
 sémantique: forks techniques et variantes logicielles.
 
 Forks techniques (par exemple pour publier des patchs)
------------------------------------------
+------------------------------------------------------
 
 Un fork technique est un fork fait par un développeur dans le but de:
 travailler sur la base de code d'origine ou envoyer des améliorations aux
