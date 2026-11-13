@@ -639,8 +639,8 @@ In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has a authors
 file, you can point to it through ``legal/authorsFile``.
 
-Key ``legal/repoOwner``
-'''''''''''''''''''''''
+Key ``legal/repoOwner`` (*veraltet*)
+''''''''''''''''''''''''''''''''''''
 
 -  Type: string
 -  Presence: optional
@@ -650,6 +650,9 @@ This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
 itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
+
+Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
+``organisation/name``.
 
 Key ``legal/authorsFile`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''

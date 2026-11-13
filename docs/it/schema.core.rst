@@ -675,8 +675,8 @@ copyright, è possibile omettere questa chiave; in questi casi, se il
 repository ha un file contenente il nome degli autori, è possibile
 puntare a quel file attraverso ``legal/authorsFile`` (vedi più sotto).
 
-Chiave ``legal/repoOwner``
-''''''''''''''''''''''''''
+Chiave ``legal/repoOwner`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa
 -  Presenza: opzionale
@@ -686,6 +686,8 @@ Questa stringa descrive l’entità che possiede il repository; questa può
 essere o non essere la stessa che possiede il copyright del codice
 stesso. Ad esempio, nel caso di un fork del software originale, il
 ``repoOwner`` è probabilmente diverso dal ``mainCopyrightOwner``.
+
+Questa chiave è deprecata, usare invece ``organisation/name``.
 
 Chiave ``legal/authorsFile`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''

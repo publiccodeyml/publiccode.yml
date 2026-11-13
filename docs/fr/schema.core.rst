@@ -660,14 +660,16 @@ Il est possible de lister plusieurs propriétaires si nécessaire, en utilisant 
 
 S'il est impossible d'identifier le principal détenteur du droit d'auteur, il est possible d'omettre cette clé. Dans ce cas, si le dépôt a un fichier contenant le nom des auteurs, il est possible de pointer vers ce fichier via ``legal/authorsFile`` (voir ci-dessous).
 
-Clé ``legal/repoOwner``
-'''''''''''''''''''''''
+Clé ``legal/repoOwner`` (*obsolète*)
+''''''''''''''''''''''''''''''''''''
 
 -  Type: chaîne de caractères
 -  Présence: facultative
 -  Exemple: ``"City of Amsterdam"``
 
 Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) de la même entité qui détient le droit d'auteur sur le code. Par exemple, dans le cas d'un logiciel fourché, le ``repoOwner`` est probablement différent du ``mainCopyrightOwner``.
+
+Cette clé est obsolète, utilisez plutôt ``organisation/name``.
 
 Clé ``legal/authorsFile`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''
