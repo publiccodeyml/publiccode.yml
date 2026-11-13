@@ -54,11 +54,9 @@ Die aktuelle Dokumentation des Projekts wird auf der [publiccode.yml-Website](ht
 
 ## Projekte Finden
 
-Das Finden von Projekten hängt von der Struktur der Such-API der jeweiligen Hosting-Plattform ab. Zum Beispiel findet man alle Publiccode.yml-Dateien in GitHub-Dateien über eine Suche über das Frontend oder die API.
+Das Finden von Projekten hängt von der Struktur der Such-API der jeweiligen Hosting-Plattform ab. Zum Beispiel findet man alle `publiccode.yml`-Dateien im Hauptverzeichnis von Projekten auf GitHub über das Suchfrontend oder die API.
 
-    GitHub Search filename:publiccode.yml path:/
-
-Das Italienische "Digital Transformation Team" arbeitet auch daran einen Scanner zur Verfügung zu stellen, der nach alle Publiccode.yml-Dateien auf allen öffentlich zugänglichen Webseiten sucht und sie als offene Daten bereitstellt.
+* [GitHub Search `path:/^publiccode.yml$/`](https://github.com/search?q=path%3A%2F%5Epubliccode.yml%24%2F&type=code)
 
 
 ## Branches
