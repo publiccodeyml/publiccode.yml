@@ -219,8 +219,8 @@ e possono aiutare a costruire il catalogo di software open.
 Il vocabolario controllato :ref:`categories-list` presenta la lista dei valori
 accettabili. 
 
-Chiave ``usedBy`` (*deprecated*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chiave ``usedBy`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: lista di stringhe
 -  Presenza: opzionale
@@ -689,8 +689,8 @@ stesso. Ad esempio, nel caso di un fork del software originale, il
 
 Questa chiave è deprecata, usare invece ``organisation/name``.
 
-Chiave ``legal/authorsFile`` (*deprecated*)
-'''''''''''''''''''''''''''''''''''''''''''
+Chiave ``legal/authorsFile`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (percorso al file)
 -  Presenza: opzionale

@@ -212,8 +212,8 @@ et aider à la constitution d'un catalogue des logiciels ouverts.
 Le vocabulaire contrôlé de la :ref:`categories-list` présente la liste
 des valeurs acceptées.
 
-Clé ``usedBy`` (*deprecated*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Clé ``usedBy`` (*obsolète*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: liste de chaînes de caractères
 -  Présence: facultative
@@ -671,8 +671,8 @@ Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) d
 
 Cette clé est obsolète, utilisez plutôt ``organisation/name``.
 
-Clé ``legal/authorsFile`` (*deprecated*)
-''''''''''''''''''''''''''''''''''''''''
+Clé ``legal/authorsFile`` (*obsolète*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Type: chaîne de caractères (chemin du fichier)
 -  Présence: facultative
