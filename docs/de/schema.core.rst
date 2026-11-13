@@ -389,6 +389,10 @@ case if there is a conflict between how software is working and a
 specific law, process or technology. All countries are specified using
 lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
+Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
+``intendedAudience/countries``, um die Länder aufzulisten, an die sich
+die Software ausdrücklich richtet.
+
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
