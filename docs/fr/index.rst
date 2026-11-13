@@ -7,18 +7,24 @@ recherche et donc réutilisable par d'autres entités.
 
 En incluant un fichier ``publiccode.yml`` à la racine d'un repository, et
 en le populant avec des informations à propos du logiciel, les techniciens
-et les fonctionnaires peuvent l'évaluer. Les outils d'indexation automatique peuvent
-aussi être créés, puisque ce format est facilement lisible par à la fois des humains 
-et des robots.
+et les fonctionnaires peuvent l'évaluer.
 
-``publiccode.yml`` est obligatoire pour tous les logiciels publiques développés en Italie,
-d'après les `guidelines
-<https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
-this enables the Developers Italia crawler to build the national `software
-catalog <https://developers.italia.it/>`__ nationales. Le standard est fait pour 
-être interopérable internationalement, par conséquence les clés spécfiques aux pays 
-sont séparées par la partie centrale et définis dans des sections spécifiques que 
-chaque gouvernement peut diriger.
+Le format est facilement lisible à la fois par les humains et par les machines,
+et des outils d'indexation automatique s'appuient sur lui : les catalogues
+nationaux de logiciels collectent les fichiers publiés et construisent des sites
+de recherche. Les catalogues se fédèrent entre pays, puisqu'ils lisent tous le
+même format. Les `outils de base
+<https://github.com/publiccodeyml/publiccode.yml#core-tools>`__ fournissent les
+implémentations de référence sur lesquelles s'appuyer.
+
+``publiccode.yml`` est obligatoire pour tous les logiciels publics développés en
+Italie, d'après les `lignes directrices nationales
+<https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__ :
+cela permet au crawler de Developers Italia de construire le `catalogue national
+des logiciels <https://developers.italia.it/>`__. Le standard est aussi utilisé
+par `opencode.de <https://opencode.de>`__, le registre allemand des logiciels
+open source pour l'administration publique. ``publiccode.yml`` est conçu pour
+être interopérable à l'international.
 
 Les détails apportés par un fichier ``publiccode.yml`` inclus : 
 

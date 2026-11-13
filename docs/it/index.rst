@@ -8,17 +8,24 @@ enti.
 
 Inserendo nella root di un repository un file chiamato ``publiccode.yml`` che
 descrive le caratteristiche del software se ne agevola la comprensione ai
-tecnici e ai decisori pubblici interessati a valutarlo; al tempo stesso si
-permette di costruire strumenti automatici di indicizzazione, poiché il formato
-è facilmente leggibile sia da esseri umani sia da macchine.
+tecnici e ai decisori pubblici interessati a valutarlo.
+
+Il formato è facilmente leggibile sia da esseri umani sia da macchine, e su di
+esso si basano strumenti automatici di indicizzazione: i cataloghi nazionali del
+software raccolgono i file pubblicati e costruiscono siti in cui cercarli. I
+cataloghi si federano tra paesi diversi, perché leggono tutti lo stesso formato.
+Gli `strumenti principali
+<https://github.com/publiccodeyml/publiccode.yml#core-tools>`__ forniscono le
+implementazioni di riferimento su cui costruire.
 
 ``publiccode.yml`` è obbligatorio per tutto il software pubblico sviluppato in
 Italia, come da `linee guida
 <https://docs.italia.it/AgID/linee-guida-riuso-software/lg-acquisizione-e-riuso-software-per-pa-docs/>`__:
 questo consente al crawler automatico di Developers Italia di costituire il
 `catalogo del software a riuso <https://developers.italia.it/>`__. Lo standard
-è tuttavia pensato in ottica internazionale, anche attraverso sezioni specifiche
-dei paesi, che possono essere regolate dai rispettivi governi.
+è usato anche da `opencode.de <https://opencode.de>`__, il registro tedesco del
+software open source per la pubblica amministrazione. ``publiccode.yml`` è
+pensato per essere interoperabile a livello internazionale.
 
 Tra le informazioni contenute in un ``publiccode.yml`` vi sono: 
 
