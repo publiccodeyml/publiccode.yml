@@ -9,19 +9,14 @@ ausgedrückt: Die Einhaltung nationaler Regelungen oder die Integration in
 nationale Plattformen wird mit dem Schlüssel ``supports`` angegeben, die
 veröffentlichende Verwaltung mit dem Schlüssel ``organisation``.
 
-Zwar ist der Standard so strukturiert, dass er international genutzt werden kann, dennoch können Informationen eingefügt werden, die in bestimmten Ländern nützlich sind, z. B. die Angabe, dass bestimmte nationale Gesetze oder Regelungen eingehalten werden.
+Länderspezifische Sektionen ermöglichen die Angabe von Informationen, die nur
+in einem bestimmten Land relevant sind, etwa die Einhaltung nationaler
+Regelungen oder die Integration in nationale Plattformen.
 
-Alle länderspezifischen Extensions sind in einer Sektion enthalten, die mit dem aus zwei Kleinbuchstaben (*veraltet*) oder Großbuchstaben bestehenden Ländercode gemäß `ISO 3166-1 alpha-2 country code <https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__ bezeichnet ist. Z. B. handelt es sich bei ``spid`` um eine Eigenschaft für italienische Software, die angibt, ob die Software in das italienische öffentliche Identifikationssystem integriert ist.
+Jede Sektion wird durch einen Ländercode aus zwei Kleinbuchstaben
+(*veraltet*) oder Großbuchstaben gemäß `ISO 3166-1 alpha-2
+<https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__ gekennzeichnet.
 
-Ist dies der Fall, wird dies folgendermaßen angegeben:
-
-.. code:: yaml
-
-   IT:
-     countryExtensionVersion: "1.0"
-     piattaforme:
-      - spid: yes
-
-Es ist zu beachten, dass länderspezifische Extensions in internationalen Sektionen des Kerns nicht erlaubt sind. Dafür sollten länderspezifische Sektionen hinzugefügt werden.
+Derzeit ist nur die italienische länderspezifische Sektion (``IT:``) definiert.
 
 .. include:: ../standard/schema.it.rst
