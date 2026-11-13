@@ -140,8 +140,8 @@ che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
 all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
 dovrebbe essere in formato vettoriale.
 
-Chiave ``monochromeLogo``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Chiave ``monochromeLogo`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa (percorso verso il file)
 -  Presenza: opzionale
@@ -157,8 +157,8 @@ dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
 come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
 
-Chiave ``inputTypes``
-~~~~~~~~~~~~~~~~~~~~~
+Chiave ``inputTypes`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: lista di stringhe
 -  Presenza: opzionale
@@ -172,8 +172,8 @@ gestiti in input dall’applicazione.
 Nel caso in cui il software non supporti alcun input, è possibile
 saltare questo campo o usare ``application/x.empty``.
 
-Chiave ``outputTypes``
-~~~~~~~~~~~~~~~~~~~~~~
+Chiave ``outputTypes`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: lista di stringhe
 -  Presenza: opzionale
@@ -466,11 +466,11 @@ normalmente si riferisce al software. Nel caso in cui il software abbia
 sia un nome “interno” che uno commerciale, è preferibile utilizzare
 quello commerciale.
 
-Chiave ``description/[lang]/genericName``
-'''''''''''''''''''''''''''''''''''''''''
+Chiave ``description/[lang]/genericName`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (max 35 caratteri)
--  Presenza: obbligatoria
+-  Presenza: opzionale
 -  Esempio: ``"Text Editor"``
 
 Questa chiave rappresenta il “Nome generico”, riferito alla categoria
@@ -610,8 +610,8 @@ formati suggeriti sono:
 -  Tablet: 1024x768 @2x
 -  Mobile: 375x667 @2x
 
-Chiave ``description/[lang]/videos``
-''''''''''''''''''''''''''''''''''''
+Chiave ``description/[lang]/videos`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: lista di stringhe (URL)
 -  Presenza: opzionale
@@ -628,6 +628,9 @@ Vimeo.
 **Nota bene:** dal momento che costituisce parte integrante della
 documentazione, è opportuno che il video sia pubblicato con una licenza
 aperta.
+
+Questa chiave è deprecata. Collegare invece i video dalla documentazione
+o dal sito web del software.
 
 Chiave ``description/[lang]/awards``
 ''''''''''''''''''''''''''''''''''''
