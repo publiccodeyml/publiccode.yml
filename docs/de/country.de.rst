@@ -24,4 +24,4 @@ Ist dies der Fall, wird dies folgendermaßen angegeben:
 
 Es ist zu beachten, dass länderspezifische Extensions in internationalen Sektionen des Kerns nicht erlaubt sind. Dafür sollten länderspezifische Sektionen hinzugefügt werden.
 
-.. include:: schema.it.rst
+.. include:: ../standard/schema.it.rst
