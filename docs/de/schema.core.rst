@@ -206,8 +206,8 @@ building catalogs of open software.
 The controlled vocabulary :ref:`categories-list` contains the list of allowed
 values.
 
-Key ``usedBy`` (*deprecated*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Key ``usedBy`` (*veraltet*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Type: list of strings
 -  Presence: optional
@@ -654,8 +654,8 @@ itself. For instance, in case of a fork of the original software, the
 Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
 ``organisation/name``.
 
-Key ``legal/authorsFile`` (*deprecated*)
-''''''''''''''''''''''''''''''''''''''''
+Key ``legal/authorsFile`` (*veraltet*)
+''''''''''''''''''''''''''''''''''''''
 
 -  Type: string (path to file)
 -  Presence: optional
