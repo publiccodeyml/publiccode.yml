@@ -1,20 +1,28 @@
 .. _italian-extensions:
 
-Italia
-------
+Italia (*deprecata*)
+--------------------
+
+L'intera sezione specifica per l'Italia è deprecata e sarà rimossa in
+publiccode.yml 1.0. Usa la chiave generica ``supports`` per la
+conformità alle normative nazionali e l'integrazione con le piattaforme
+nazionali. Per indicare l'amministrazione che pubblica il software usa
+la chiave ``organisation``.
 
 Tutte le chiavi elencate qui di seguito sono specifiche per l'Italia e, di
 conseguenza, devono essere inserite in una sezione denominata con il codice
 ``IT``.
 
-Chiave ``countryExtensionVersion``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chiave ``countryExtensionVersion`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
 -  Esempio: ``"1.0"``
 
-This chiave **DEVE** always sempre impostata a ``1.0``.
+Questa chiave **DEVE** essere sempre impostata a ``1.0``.
+
+Questa chiave è deprecata insieme al resto della sezione italiana.
 
 Sezione ``conforme`` (*deprecata*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,11 +77,13 @@ Chiave ``conforme/gdpr`` (*deprecata*)
 
 Se presente e impostato a ``yes``, il software rispetta il GDPR.
 
-Sezione ``piattaforme``
-~~~~~~~~~~~~~~~~~~~~~~~
+Usa invece la chiave ``supports`` con ``alias:gdpr``.
 
-Chiave ``piattaforme/spid``
-'''''''''''''''''''''''''''
+Sezione ``piattaforme`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Chiave ``piattaforme/spid`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -82,8 +92,10 @@ Se presente e impostato a ``yes``, il software si interfaccia con `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
-Chiave ``piattaforme/cie``
-''''''''''''''''''''''''''
+Usa invece la chiave ``supports`` con ``alias:spid``.
+
+Chiave ``piattaforme/cie`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -91,16 +103,20 @@ Chiave ``piattaforme/cie``
 Se presente e impostato a ``yes``, il software si interfaccia con la
 Carta di Identità Elettronica.
 
-Chiave ``piattaforme/anpr``
-'''''''''''''''''''''''''''
+Usa invece la chiave ``supports`` con ``alias:cie``.
+
+Chiave ``piattaforme/anpr`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
 
 Se presente e impostato a ``yes``, il software si interfaccia con ANPR.
 
-Chiave ``piattaforme/pagopa``
-'''''''''''''''''''''''''''''
+Usa invece la chiave ``supports`` con ``alias:anpr``.
+
+Chiave ``piattaforme/pagopa`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
@@ -108,22 +124,26 @@ Chiave ``piattaforme/pagopa``
 Se presente e impostato a ``yes``, il software si interfaccia con
 pagoPA.
 
-Chiave ``piattaforme/io``
-'''''''''''''''''''''''''''
+Usa invece la chiave ``supports`` con ``alias:pagopa``.
+
+Chiave ``piattaforme/io`` (*deprecata*)
+'''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: booleano
 -  Presenza: opzionale
 
 Se presente e impostato a ``true``, il software si interfaccia con `IO - l'app dei servizi pubblici <https://io.italia.it/>`__.
 
-Sezione ``riuso``
-~~~~~~~~~~~~~~~~~
+Usa invece la chiave ``supports`` con ``alias:io``.
+
+Sezione ``riuso`` (*deprecata*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa sezione contiene una serie di chiavi legate alla pubblicazione
 del software sul `Catalogo del Riuso <https://developers.italia.it>`__.
 
-Chiave ``riuso/codiceIPA``
-''''''''''''''''''''''''''
+Chiave ``riuso/codiceIPA`` (*deprecata*)
+''''''''''''''''''''''''''''''''''''''''
 
 -  Tipo: stringa (codice iPA)
 -  Presenza: obbligatoria se ``repoOwner`` è una Pubblica
@@ -132,3 +152,5 @@ Chiave ``riuso/codiceIPA``
 
 Questa chiave rappresenta il codice dell’amministrazione all’interno
 dell’Indice delle Pubbliche Amministrazioni (codice IPA).
+
+Questa chiave è deprecata, usa invece ``organisation/uri``.

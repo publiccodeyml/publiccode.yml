@@ -90,9 +90,9 @@ possibilità di scaricare tale installer.
 Chiave ``isBasedOn``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringa o lista di stringhe
+-  Tipo: lista di stringhe o una singola stringa (*deprecata*)
 -  Presenza: opzionale
--  Esempio: ``"https://example.com/document-editor.git"``
+-  Esempio: ``["https://example.com/document-editor.git"]``
 
 Nel caso in cui questo software sia una variante o un fork di un altro
 software, che opzionalmente può contenere un file ``publiccode.yml``,
@@ -100,6 +100,9 @@ questa chiave conterrà la ``url`` di uno o più progetti originali.
 
 L’esistenza di questa chiave identifica il fork come una variante (vedi
 :ref:`fork-varianti`), discendente dal repository specificato.
+
+La forma con una singola stringa è deprecata. Usare invece una lista
+con un solo elemento.
 
 Chiave ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -897,7 +900,7 @@ Un'organizzazione è una struttura (associazione, azienda, ente
 pubblico, ecc.) che può finanziare lo sviluppo di software.
 Un'organizzazione è un mapping con le seguenti proprietà:
 
-- ``nome`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
+- ``name`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
    un'associazione, una società, un ente pubblico o una persona
    fisica.
 -  ``uri`` - The URI identifying the organisation.
@@ -933,4 +936,6 @@ gli altri formati previsti da ISO8601.
 
 Codifica
 ~~~~~~~~
-La codifica di ``publiccode.yml`` **DEVE** essere UTF-8.
+
+``publiccode.yml`` **DEVE** essere un documento codificato in UTF-8 e
+**DOVREBBE** essere un documento YAML 1.2. L'uso di YAML 1.1 è *deprecato*.
