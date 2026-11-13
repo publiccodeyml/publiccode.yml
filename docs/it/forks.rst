@@ -9,6 +9,7 @@ Per questioni di chiarezza, qui di seguito distinguiamo le due possibilità:
 fork tecnici e varianti software.
 
 .. _fork-tecnici:
+
 Fork tecnici (i.e. pubblicare patch)
 ------------------------------------
 

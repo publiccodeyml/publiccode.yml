@@ -1,13 +1,13 @@
 .. _scope-list:
 
 Liste du scope
-==========
+==============
 
 Ici se trouve une liste contrôlée du vocabulaire des tags utiles pour catégoriser un logiciel.
 
-==========
+============
 Tags valides
-==========
+============
 
 - agriculture
 - culture

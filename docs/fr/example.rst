@@ -6,7 +6,7 @@ représente la configuration minimale, qui contient les champs obligatoires,
 alors que le second représente une version plus étendue.
 
 Version minimale
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. literalinclude:: example/publiccode.minimal.yml
    :language: yaml

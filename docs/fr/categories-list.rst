@@ -1,7 +1,7 @@
 .. _categories-list:
 
 Liste des catégories de logiciel
-===========================
+================================
 
 Ici se trouve une liste contrôlée du vocabulaire des catégories pour le logiciel.
 

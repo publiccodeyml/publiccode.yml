@@ -235,7 +235,7 @@ il fork di un software, di proprietà di un’amministrazione, può essere
 usato come un segnale di uso del software.
 
 Chiave ``fundedBy``
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 -  Tipo: lista di Organisation (vedi sotto)
 -  Presenza: opzionale
