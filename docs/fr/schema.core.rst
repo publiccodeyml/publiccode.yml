@@ -641,7 +641,7 @@ Clé ``legal/license``
 '''''''''''''''''''''
 
 -  Type: chaîne de caractères
--  Présence: facultative
+-  Présence: obligatoire
 -  Exemple: ``"AGPL-3.0-or-later"``
 
 Cette chaîne de caractères décrit la licence sous laquelle le logiciel
