@@ -44,7 +44,7 @@ Parser
 
 Parser **SOLLTEN** eine Variante identifizieren, indem sie feststellen, dass der Top-Level ``URL``-Key mit dem Repository übereinstimmt, in dem die ``publiccode.yml`` gefunden wird, **UND** ein ``isBasedOn`` auf oberster Ebene existiert und auf ein anderes Repository verweist.
 
-Parser sollten andere Unterschiede in der ``publiccode.yml`` zwischen Varianten der Software voraussetzen und analysieren. Insbesondere ``description/features`` ist dazu gedacht, zwischen Varianten verglichen zu werden, um für den Benutzer sichtbare Unterschiede zu identifizieren und anzuzeigen.
+Parser sollten andere Unterschiede in der ``publiccode.yml`` zwischen Varianten der Software voraussetzen und analysieren. Insbesondere ``description/[lang]/features`` ist dazu gedacht, zwischen Varianten verglichen zu werden, um für den Benutzer sichtbare Unterschiede zu identifizieren und anzuzeigen.
 
 Autoren
 ~~~~~~~
@@ -61,4 +61,4 @@ Autoren, die bereit sind, einen Fork als Variante zu veröffentlichen, **MÜSSEN
 
 Außerdem **SOLLTEN** die Autoren die folgenden Änderungen evaluieren: 
 
-- Merkmale, die die Variante vom ``description/features``-Key unterscheiden. Bestehende Merkmale **SOLLTEN NICHT** bearbeitet oder aus dieser Liste entfernt werden, es sei denn, sie wurden aus der Variante entfernt, um Parsern einen einfachen Vergleich von Merkmalslisten zu ermöglichen. 
+- Merkmale, die die Variante vom ``description/[lang]/features``-Key unterscheiden. Bestehende Merkmale **SOLLTEN NICHT** bearbeitet oder aus dieser Liste entfernt werden, es sei denn, sie wurden aus der Variante entfernt, um Parsern einen einfachen Vergleich von Merkmalslisten zu ermöglichen.
