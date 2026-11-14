@@ -21,11 +21,11 @@ Gültige Kategorien
 
 - billing-and-invoicing
 
-- building-information-modelling
-
 - blog
 
 - budgeting
+
+- building-information-modelling
 
 - business-intelligence
 
