@@ -198,7 +198,7 @@ Key ``categories``
 
 -  Typ: list of strings
 -  Vorhandensein: optional
--  Zulässige Werte: see :ref:`categories-list` 
+-  Zulässige Werte: see :ref:`categories-list`
 
 A list of categories that can be used to describe the software and can help
 building catalogs of open software.
@@ -398,7 +398,7 @@ Key ``intendedAudience/scope``
 
 -  Typ: list of strings
 -  Vorhandensein: optional
--  Zulässige Werte: see :ref:`scope-list` 
+-  Zulässige Werte: see :ref:`scope-list`
 
 This key contains a list of tags related to the field of application of
 the software. 
