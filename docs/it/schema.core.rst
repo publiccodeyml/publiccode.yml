@@ -774,7 +774,7 @@ Chiave ``localisation/localisationReady``
 -  Tipo: booleano
 -  Presenza: obbligatoria
 
-Se ``yes``, il software ha l’infrastruttura o è stato progettato per
+Se ``true``, il software ha l’infrastruttura o è stato progettato per
 essere multi-lingua. Ad ogni modo, questo campo non pregiudica
 l’esistenza di una traduzione in altre lingue ma si riferisce
 esclusivamente all’aspetto tecnologico. Per l’elenco delle lingue

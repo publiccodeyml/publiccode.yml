@@ -736,7 +736,7 @@ Key ``localisation/localisationReady``
 -  Type: boolean
 -  Presence: mandatory
 
-If ``yes``, the software has infrastructure in place or is otherwise
+If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
 

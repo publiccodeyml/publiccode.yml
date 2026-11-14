@@ -735,7 +735,7 @@ Clé ``localisation/localisationReady``
 -  Type: booléen
 -  Présence: obligatoire
 
-Si ``yes``, le logiciel a l'infrastructure mise en place ou a été conçu pour être
+Si ``true``, le logiciel a l'infrastructure mise en place ou a été conçu pour être
 multilingue. Le logiciel n'a pas besoin d'être disponible dans plusieurs langues, une seule langue suffit. 
 
 Clé ``localisation/availableLanguages``
