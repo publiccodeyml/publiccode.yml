@@ -830,9 +830,10 @@ Chiave ``dependsOn/hardware``
 '''''''''''''''''''''''''''''
 
 -  Tipo: lista di ``dependency`` (vedi sotto)
+-  Presenza: opzionale
 
-This key contains a list of hardware dependencies that must be owned to use the
-software.
+Questa chiave contiene una lista di dipendenze hardware di cui è necessario
+disporre per utilizzare il software.
 
 
 Formati di dato speciali
