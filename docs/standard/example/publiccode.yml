@@ -96,6 +96,11 @@ dependsOn:
     - name: NFC Reader
       optional: true
 
+supports:
+  - id: alias:gdpr
+  - id: alias:eidas
+  - id: https://eur-lex.europa.eu/eli/dir/2016/2102/oj
+
 organisation:
   uri: urn:x-italian-pa:c_h501
   name: Roma Capitale
