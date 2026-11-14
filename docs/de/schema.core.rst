@@ -296,8 +296,8 @@ The keys are:
 Schlüssel ``supports``
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: Liste von Mappings
--  Vorhandensein: optional
+-  Type: Liste von Mappings
+-  Presence: optional
 
 Eine Liste von Standards, Vorschriften, Frameworks oder Systemen, die die
 Software unterstützt oder deren Anforderungen sie erfüllt.
@@ -332,9 +332,9 @@ veröffentlicht.
 Schlüssel ``organisation/uri``
 ''''''''''''''''''''''''''''''
 
--  Typ: Zeichenkette
--  Vorhandensein: obligatorisch
--  Beispiel: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+-  Type: Zeichenkette
+-  Presence: obligatorisch
+-  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
 
 Die URI, die die Organisation identifiziert, die die Software veröffentlicht.
 Der Wert SOLLTE eine stabile, auflösbare URI oder ein persistenter Bezeichner
@@ -353,9 +353,9 @@ Richtlinien der Plattform ab, die die Datei verarbeitet.
 Schlüssel ``organisation/name``
 '''''''''''''''''''''''''''''''
 
--  Typ: Zeichenkette
--  Vorhandensein: optional
--  Beispiel: ``"My organisation"``
+-  Type: Zeichenkette
+-  Presence: optional
+-  Example: ``"My organisation"``
 
 Der kanonische Name der Organisation, die die Software veröffentlicht.
 
