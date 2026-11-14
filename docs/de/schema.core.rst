@@ -14,7 +14,7 @@ Key ``publiccodeYmlVersion``
 -  Beispiel: ``"0"``
 
 This key specifies the version to which the current ``publiccode.yml``
-adheres to, for forward compatibility.
+adheres, for forward compatibility.
 
 Key ``name``
 ~~~~~~~~~~~~
