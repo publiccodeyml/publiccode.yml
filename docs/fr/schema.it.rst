@@ -44,7 +44,7 @@ Key ``conforme/lineeGuidaDesign`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the Italian accessibility
+If present and set to ``true``, the software is compliant with the Italian accessibility
 laws (L. 4/2004), as further explained in the 
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
@@ -55,7 +55,7 @@ Key ``conforme/modelloInteroperabilita`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the linee guida
+If present and set to ``true``, the software is compliant with the linee guida
 sull’interoperabilità.
 
 Regulatory reference: `Art. 73 del
@@ -68,7 +68,7 @@ Key ``conforme/misureMinimeSicurezza`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software is compliant with the `Misure
+If present and set to ``true``, the software is compliant with the `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <https://www.agid.gov.it/sites/default/files/repository_files/documentazione/misure_minime_di_sicurezza_v.1.0.pdf>`__ (Italian language). 
 
@@ -79,7 +79,7 @@ Key ``conforme/gdpr`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software respects the GDPR.
+If present and set to ``true``, the software respects the GDPR.
 
 Use the ``supports`` key with ``alias:gdpr`` instead.
 
@@ -94,7 +94,7 @@ Key ``piattaforme/spid`` (*deprecated*)
 - Presence: optional
 
 
-If present and set to ``yes``, the software interfaces with `SPID
+If present and set to ``true``, the software interfaces with `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
@@ -106,7 +106,7 @@ Key ``piattaforme/cie`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with the Italian
+If present and set to ``true``, the software interfaces with the Italian
 electronic ID card (``Carta di Identità Elettronica``).
 
 Use the ``supports`` key with ``alias:cie`` instead.
@@ -117,7 +117,7 @@ Key ``piattaforme/anpr`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with ANPR.
+If present and set to ``true``, the software interfaces with ANPR.
 
 Use the ``supports`` key with ``alias:anpr`` instead.
 
@@ -127,7 +127,7 @@ Key ``piattaforme/pagopa`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``yes``, the software interfaces with pagoPA.
+If present and set to ``true``, the software interfaces with pagoPA.
 
 Use the ``supports`` key with ``alias:pagopa`` instead.
 

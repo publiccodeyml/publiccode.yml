@@ -38,7 +38,7 @@ Chiave ``conforme/lineeGuidaDesign`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle leggi in
+Se presente e impostato a ``true``, il software è conforme alle leggi in
 materia di accessibilità (L. 4/2004), come descritto ulteriormente nelle
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__.
@@ -51,7 +51,7 @@ Chiave ``conforme/modelloInteroperabilita`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle linee guida
+Se presente e impostato a ``true``, il software è conforme alle linee guida
 sull’interoperabilità.
 
 Riferimento normativo: `Art. 73 del
@@ -65,7 +65,7 @@ Chiave ``conforme/misureMinimeSicurezza`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software è conforme alle `Misure
+Se presente e impostato a ``true``, il software è conforme alle `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__.
 
@@ -75,7 +75,7 @@ Chiave ``conforme/gdpr`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software rispetta il GDPR.
+Se presente e impostato a ``true``, il software rispetta il GDPR.
 
 Usa invece la chiave ``supports`` con ``alias:gdpr``.
 
@@ -88,7 +88,7 @@ Chiave ``piattaforme/spid`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con `SPID
+Se presente e impostato a ``true``, il software si interfaccia con `SPID
 - il Sistema Pubblico di Identità
 Digitale <https://developers.italia.it/it/spid>`__.
 
@@ -100,7 +100,7 @@ Chiave ``piattaforme/cie`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con la
+Se presente e impostato a ``true``, il software si interfaccia con la
 Carta di Identità Elettronica.
 
 Usa invece la chiave ``supports`` con ``alias:cie``.
@@ -111,7 +111,7 @@ Chiave ``piattaforme/anpr`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con ANPR.
+Se presente e impostato a ``true``, il software si interfaccia con ANPR.
 
 Usa invece la chiave ``supports`` con ``alias:anpr``.
 
@@ -121,7 +121,7 @@ Chiave ``piattaforme/pagopa`` (*deprecata*)
 -  Tipo: booleano
 -  Presenza: opzionale
 
-Se presente e impostato a ``yes``, il software si interfaccia con
+Se presente e impostato a ``true``, il software si interfaccia con
 pagoPA.
 
 Usa invece la chiave ``supports`` con ``alias:pagopa``.
