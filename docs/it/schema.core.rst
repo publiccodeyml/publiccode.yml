@@ -787,7 +787,7 @@ Chiave ``localisation/availableLanguages``
 -  Presenza: obbligatoria
 -  Esempio: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
-Se presente, questa è la lista di lingue in cui è disponibile il
+Questa è la lista di lingue in cui è disponibile il
 software. Ovviamente, questa lista dovrà contenere almeno una lingua.
 Si ricorda che il *primary language subtag* non può essere omesso, come
 specificato dal `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
