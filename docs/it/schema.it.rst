@@ -18,7 +18,7 @@ Chiave ``countryExtensionVersion`` (*deprecata*)
 
 -  Tipo: stringa
 -  Presenza: obbligatoria
--  Esempio: ``"1.0"``
+-  Valore: ``"1.0"``
 
 Questa chiave **DEVE** essere sempre impostata a ``1.0``.
 
