@@ -9,7 +9,7 @@ compliance with national regulations and integration with national
 platforms, and the ``organisation`` key to reference the publishing
 administration.
 
-All the extensions listed below are specific for Italy and, as such, they must
+All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the ``IT`` code.
 
 Key ``countryExtensionVersion`` (*deprecated*)
@@ -17,16 +17,10 @@ Key ``countryExtensionVersion`` (*deprecated*)
 
 - Type: string
 - Presence: mandatory
-- Example: ``"1.0"``
+- Value: ``"1.0"``
 
 
-This key specifies the version to which the current extension schema adheres to,
-for forward compatibility.
-
-Please note how the value of this key is independent from the top-level
-``publiccodeYmlVersion`` one (see :ref:`core`). In such a way, the extensions
-schema versioning is independent both from the core version of the schema and
-from every other Country.
+This key **MUST** always be set to ``1.0``.
 
 This key is deprecated together with the rest of the Italian section.
 
@@ -49,6 +43,8 @@ laws (L. 4/2004), as further explained in the
 `linee guida di
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
 
+Don't use this deprecated key, those guidelines are no longer current.
+
 Key ``conforme/modelloInteroperabilita`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -61,6 +57,7 @@ sull’interoperabilità.
 Regulatory reference: `Art. 73 del
 CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-digitale-docs/it/v2017-12-13/_rst/capo8_art73.html>`__ (Italian language).
 
+Don't use this deprecated key, those guidelines are no longer current.
 
 Key ``conforme/misureMinimeSicurezza`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
