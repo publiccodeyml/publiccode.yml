@@ -61,8 +61,7 @@ Das Finden von Projekten hängt von der Struktur der Such-API der jeweiligen Hos
 
 ## Branches
 
-Die aktuelle veröffentlichte Version des Standards ist 0.8. Alle Versionen
-finden Sie auf der [GitHub-Release-Seite](https://github.com/publiccodeyml/publiccode.yml/releases).
+Alle Versionen finden Sie auf der [GitHub-Release-Seite](https://github.com/publiccodeyml/publiccode.yml/releases).
 
 Das Projekt folgt der semantischen Versionierung. Mehr Informationen finden Sie unter [SemVer.org](https://semver.org/).
 
