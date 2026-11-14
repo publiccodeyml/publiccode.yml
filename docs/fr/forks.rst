@@ -83,7 +83,7 @@ different repository.
 
 Parsers should expect and analyze other differences in
 ``publiccode.yml`` between variants of the software. Specifically
-``description/features`` is designed to be compared across variants to
+``description/[lang]/features`` is designed to be compared across variants to
 identify and show user-visible differences.
 
 .. _authors-1:
@@ -106,6 +106,6 @@ least:
 Moreover, authors **SHOULD** evaluate the following changes:
 
 -  add the features that differentiate the variant to the
-   ``description/features`` key. Existing features **SHOULD NOT** be
+   ``description/[lang]/features`` key. Existing features **SHOULD NOT** be
    edited or removed from this list unless they have been removed from
    the variant, to allow parsers to easily compare feature lists.

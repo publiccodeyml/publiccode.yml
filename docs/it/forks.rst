@@ -87,7 +87,7 @@ esiste e punta ad un altro repository.
 
 I parser dovrebbero aspettarsi e analizzare altre differenze nelle due
 varianti dei file ``publiccode.yml``. In particolare, la chiave
-``description/features`` è pensata per essere comparata tra diverse
+``description/[lang]/features`` è pensata per essere comparata tra diverse
 varianti in modo da identificare e visualizzare le differenze lato
 utente.
 
@@ -112,7 +112,7 @@ Inoltre, gli autori **DOVREBBERO** valutare di apportare anche i seguenti
 cambiamenti:
 
 -  Aggiungere le funzionalità che differenziano le varianti alla chiave
-   ``description/features``. Le funzionalità esistenti **NON
+   ``description/[lang]/features``. Le funzionalità esistenti **NON
    DOVREBBERO** essere modificate o rimosse da questa lista a meno che
    esse siano state rimosse dalla variante, per permettere ai parser di
    comparare facilmente la lista delle funzionalità.
