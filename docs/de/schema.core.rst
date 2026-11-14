@@ -120,7 +120,7 @@ Key ``logo``
 
 -  Typ: string (relative path to file or absolute URL)
 -  Vorhandensein: optional
--  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
+-  Zulässige Formate: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Beispiel: ``"img/logo.svg"``
 
 This key contains the path to the logo of the software. Logos should be
@@ -135,7 +135,7 @@ Key ``monochromeLogo`` (*veraltet*)
 
 -  Typ: string (path to file)
 -  Vorhandensein: optional
--  Acceptable formats: SVG, SVGZ, PNG
+-  Zulässige Formate: SVG, SVGZ, PNG
 -  Beispiel: ``"img/logo-mono.svg"``
 
 A monochromatic (black) logo. The logo should be in vector format;
@@ -151,7 +151,7 @@ Key ``inputTypes`` (*veraltet*)
 
 -  Typ: list of enumerated strings
 -  Vorhandensein: optional
--  Values: as per RFC 6838
+-  Werte: as per RFC 6838
 -  Beispiel: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
@@ -166,7 +166,7 @@ Key ``outputTypes`` (*veraltet*)
 
 -  Typ: list of enumerated strings
 -  Vorhandensein: optional
--  Values: as per RFC 6838
+-  Werte: as per RFC 6838
 -  Beispiel: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
@@ -181,7 +181,7 @@ Key ``platforms``
 
 -  Typ: enumerated string or list of strings
 -  Vorhandensein: mandatory
--  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
+-  Werte: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
 -  Beispiel: ``web``
 
@@ -198,7 +198,7 @@ Key ``categories``
 
 -  Typ: list of strings
 -  Vorhandensein: optional
--  Acceptable values: see :ref:`categories-list` 
+-  Zulässige Werte: see :ref:`categories-list` 
 
 A list of categories that can be used to describe the software and can help
 building catalogs of open software.
@@ -243,7 +243,7 @@ Key ``developmentStatus``
 
 -  Typ: enumerated string
 -  Vorhandensein: mandatory
--  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
+-  Zulässige Werte: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
 The keys are: 
@@ -267,7 +267,7 @@ Key ``softwareType``
 
 -  Typ: enumerated string
 -  Vorhandensein: mandatory
--  Allowed values: ``"standalone/mobile"``, ``"standalone/iot"``,
+-  Zulässige Werte: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
@@ -398,7 +398,7 @@ Key ``intendedAudience/scope``
 
 -  Typ: list of strings
 -  Vorhandensein: optional
--  Acceptable values: see :ref:`scope-list` 
+-  Zulässige Werte: see :ref:`scope-list` 
 
 This key contains a list of tags related to the field of application of
 the software. 
@@ -563,7 +563,7 @@ Key ``description/[lang]/screenshots``
 
 -  Typ: list of strings (paths)
 -  Vorhandensein: optional
--  Formats: PNG, JPEG, WebP, AVIF
+-  Formate: PNG, JPEG, WebP, AVIF
 -  Beispiel: ``"data/screenshots/configuration.png"``
 
 This key contains one or multiple paths to files showing screenshots of
@@ -683,7 +683,7 @@ Key ``maintenance/type``
 
 -  Typ: enumerate
 -  Vorhandensein: mandatory
--  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
+-  Werte: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 This key describes how the software is currently maintained.
 
