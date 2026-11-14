@@ -747,7 +747,7 @@ Key ``localisation/availableLanguages``
 -  Presence: mandatory
 -  Example: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
-If present, this is the list of languages in which the software is
+This is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the 
 `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
