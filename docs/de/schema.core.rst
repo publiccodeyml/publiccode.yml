@@ -9,9 +9,9 @@ Top-Level Keys and Sections
 Key ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
--  Presence: mandatory
--  Example: ``"0"``
+-  Typ: string
+-  Vorhandensein: mandatory
+-  Beispiel: ``"0"``
 
 This key specifies the version to which the current ``publiccode.yml``
 adheres to, for forward compatibility.
@@ -19,9 +19,9 @@ adheres to, for forward compatibility.
 Key ``name``
 ~~~~~~~~~~~~
 
--  Type: string
--  Presence: mandatory
--  Example: ``"Office Suite"``
+-  Typ: string
+-  Vorhandensein: mandatory
+-  Beispiel: ``"Office Suite"``
 
 This key contains the name of the software. It contains the (short)
 public name of the product, which can be localised using the
@@ -32,18 +32,18 @@ internal “code” name and a commercial name, use the commercial name.
 Key ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
--  Presence: optional
--  Example: ``"MegaProductivitySuite"``
+-  Typ: string
+-  Vorhandensein: optional
+-  Beispiel: ``"MegaProductivitySuite"``
 
 This key contains the name of the “suite” to which the software belongs.
 
 Key ``url``
 ~~~~~~~~~~~
 
--  Type: string (URL)
--  Presence: mandatory
--  Example: ``"https://example.com/office-suite.git"``
+-  Typ: string (URL)
+-  Vorhandensein: mandatory
+-  Beispiel: ``"https://example.com/office-suite.git"``
 
 A unique identifier for this software. This string must be a URL to the
 source code repository (git, svn, …) in which the software is published.
@@ -64,9 +64,9 @@ an author.
 Key ``landingURL``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: string (URL)
--  Presence: optional
--  Example: ``"https://example.com/office-suite"``
+-  Typ: string (URL)
+-  Vorhandensein: optional
+-  Beispiel: ``"https://example.com/office-suite"``
 
 If the ``url`` parameter does not serve a human readable or browsable
 page, but only serves source code to a source control client, with this
@@ -80,9 +80,9 @@ download of such an installer.
 Key ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
 
--  Type: Liste von Zeichenketten oder eine einzelne Zeichenkette (*veraltet*)
--  Presence: optional
--  Example: ``["https://example.com/document-editor.git"]``
+-  Typ: Liste von Zeichenketten oder eine einzelne Zeichenkette (*veraltet*)
+-  Vorhandensein: optional
+-  Beispiel: ``["https://example.com/document-editor.git"]``
 
 In case this software is a variant or a fork of another software, which
 might or might not contain a ``publiccode.yml`` file, this key will
@@ -97,9 +97,9 @@ stattdessen eine Liste mit einem einzigen Element.
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string
--  Presence: optional
--  Example: ``"1.0"``, ``"dev"``
+-  Typ: string
+-  Vorhandensein: optional
+-  Beispiel: ``"1.0"``, ``"dev"``
 
 This key contains the latest stable version number of the software. The
 version number is a string that is not meant to be interpreted and
@@ -109,19 +109,19 @@ or any other specific version format.
 Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
--  Type: string (date)
--  Presence: optional
--  Example: ``"2017-04-15"``
+-  Typ: string (date)
+-  Vorhandensein: optional
+-  Beispiel: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
 
 Key ``logo``
 ~~~~~~~~~~~~
 
--  Type: string (relative path to file or absolute URL)
--  Presence: optional
+-  Typ: string (relative path to file or absolute URL)
+-  Vorhandensein: optional
 -  Acceptable formats: SVG, SVGZ, PNG, JPEG, WebP, AVIF
--  Example: ``"img/logo.svg"``
+-  Beispiel: ``"img/logo.svg"``
 
 This key contains the path to the logo of the software. Logos should be
 in vector format.
@@ -133,10 +133,10 @@ the ``publiccode.yml`` file is stored.
 Key ``monochromeLogo`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: string (path to file)
--  Presence: optional
+-  Typ: string (path to file)
+-  Vorhandensein: optional
 -  Acceptable formats: SVG, SVGZ, PNG
--  Example: ``"img/logo-mono.svg"``
+-  Beispiel: ``"img/logo-mono.svg"``
 
 A monochromatic (black) logo. The logo should be in vector format;
 raster formats are only allowed as a fallback. In this case, they should
@@ -149,10 +149,10 @@ the ``publiccode.yml`` file is stored.
 Key ``inputTypes`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: list of enumerated strings
--  Presence: optional
+-  Typ: list of enumerated strings
+-  Vorhandensein: optional
 -  Values: as per RFC 6838
--  Example: ``"text/plain"``
+-  Beispiel: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
@@ -164,10 +164,10 @@ or use ``application/x.empty``.
 Key ``outputTypes`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: list of enumerated strings
--  Presence: optional
+-  Typ: list of enumerated strings
+-  Vorhandensein: optional
 -  Values: as per RFC 6838
--  Example: ``"text/plain"``
+-  Beispiel: ``"text/plain"``
 
 A list of Media Types (MIME Types) as mandated in `RFC
 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
@@ -179,11 +179,11 @@ field or use ``application/x.empty``.
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string or list of strings
--  Presence: mandatory
+-  Typ: enumerated string or list of strings
+-  Vorhandensein: mandatory
 -  Values: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
--  Example: ``web``
+-  Beispiel: ``web``
 
 This key specifies which platform the software runs on. It is meant to
 describe the platforms that users will use to access and operate the
@@ -196,8 +196,8 @@ value can be used.
 Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 -  Acceptable values: see :ref:`categories-list` 
 
 A list of categories that can be used to describe the software and can help
@@ -209,8 +209,8 @@ values.
 Key ``usedBy`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 
 A list of the names of prominent public administrations (that will serve
 as “testimonials”) that are currently known to the software maintainer
@@ -224,8 +224,8 @@ software.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: list of Organisations (see below)
--  Presence: optional
+-  Typ: list of Organisations (see below)
+-  Vorhandensein: optional
 
 A list of organisations that are currently known to be funding the
 development of this software.
@@ -233,16 +233,16 @@ development of this software.
 Key ``roadmap``
 ~~~~~~~~~~~~~~~
 
--  Type: string
--  Presence: optional
+-  Typ: string
+-  Vorhandensein: optional
 
 A link to a public roadmap of the software.
 
 Key ``developmentStatus``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
--  Presence: mandatory
+-  Typ: enumerated string
+-  Vorhandensein: mandatory
 -  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
@@ -265,8 +265,8 @@ The keys are:
 Key ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
--  Presence: mandatory
+-  Typ: enumerated string
+-  Vorhandensein: mandatory
 -  Allowed values: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
@@ -296,8 +296,8 @@ The keys are:
 Schlüssel ``supports``
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: Liste von Mappings
--  Presence: optional
+-  Typ: Liste von Mappings
+-  Vorhandensein: optional
 
 Eine Liste von Standards, Vorschriften, Frameworks oder Systemen, die die
 Software unterstützt oder deren Anforderungen sie erfüllt.
@@ -332,9 +332,9 @@ veröffentlicht.
 Schlüssel ``organisation/uri``
 ''''''''''''''''''''''''''''''
 
--  Type: Zeichenkette
--  Presence: obligatorisch
--  Example: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
+-  Typ: Zeichenkette
+-  Vorhandensein: obligatorisch
+-  Beispiel: ``"https://example.org/my-organisation"``, ``"urn:x-foobar:my-organisation"``
 
 Die URI, die die Organisation identifiziert, die die Software veröffentlicht.
 Der Wert SOLLTE eine stabile, auflösbare URI oder ein persistenter Bezeichner
@@ -353,9 +353,9 @@ Richtlinien der Plattform ab, die die Datei verarbeitet.
 Schlüssel ``organisation/name``
 '''''''''''''''''''''''''''''''
 
--  Type: Zeichenkette
--  Presence: optional
--  Example: ``"My organisation"``
+-  Typ: Zeichenkette
+-  Vorhandensein: optional
+-  Beispiel: ``"My organisation"``
 
 Der kanonische Name der Organisation, die die Software veröffentlicht.
 
@@ -370,8 +370,8 @@ Section ``intendedAudience``
 Key ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 
 This key explicitly includes certain countries in the intended audience,
 i.e. the software explicitly claims compliance with specific processes,
@@ -381,8 +381,8 @@ or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 Key ``intendedAudience/unsupportedCountries`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 
 This key explicitly marks countries as NOT supported. This might be the
 case if there is a conflict between how software is working and a
@@ -396,8 +396,8 @@ die Software ausdrücklich richtet.
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 -  Acceptable values: see :ref:`scope-list` 
 
 This key contains a list of tags related to the field of application of
@@ -436,9 +436,9 @@ section. All other languages are optional.
 Key ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''''''
 
--  Type: string
--  Presence: optional
--  Example: ``"Office Suite"``
+-  Typ: string
+-  Vorhandensein: optional
+-  Beispiel: ``"Office Suite"``
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the
@@ -449,9 +449,9 @@ name.
 Key ``description/[lang]/genericName`` (*veraltet*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (max 35 chars)
--  Presence: optional
--  Example: ``"Text Editor"``
+-  Typ: string (max 35 chars)
+-  Vorhandensein: optional
+-  Beispiel: ``"Text Editor"``
 
 This key is the “Generic name”, which refers to the specific category to
 which the software belongs. You can usually find the generic name in the
@@ -462,9 +462,9 @@ Notable examples include “Text Editor”, “Word Processor”, “Web Browser
 Key ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
--  Type: string (max 150 chars)
--  Presence: mandatory
--  Example: ``"Advanced booking system for hospitals"``
+-  Typ: string (max 150 chars)
+-  Vorhandensein: mandatory
+-  Beispiel: ``"Advanced booking system for hospitals"``
 
 This key contains a short description of the software. It should be a
 single line containing a single sentence. Maximum 150 characters are
@@ -473,8 +473,8 @@ allowed.
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Type: Markdown string (min 150 chars, max 10000 chars)
--  Presence: mandatory (for at least one language)
+-  Typ: Markdown string (min 150 chars, max 10000 chars)
+-  Vorhandensein: mandatory (for at least one language)
 
 This key contains a longer description of the software, between 150 and
 10000 chars. It is meant to provide an overview of the capabilities of
@@ -491,8 +491,8 @@ consumers MAY render only this subset.
 Key ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''''''
 
--  Type: URL
--  Presence: optional
+-  Typ: URL
+-  Vorhandensein: optional
 
 This key contains a reference to the user-level (not developer-level)
 documentation of the software. The value must be a URL to a hosted
@@ -517,8 +517,8 @@ part of the repository itself.
 Key ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''''''
 
--  Type: URL
--  Presence: optional
+-  Typ: URL
+-  Vorhandensein: optional
 
 This key contains a reference to the API documentation of the software.
 The value must be a URL to a hosted version of the documentation.
@@ -543,8 +543,8 @@ part of the repository itself.
 Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 
 This key contains a list of software features, describing what
 capabilities the software allows to do. The audience for this text
@@ -561,10 +561,10 @@ additional information.
 Key ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: list of strings (paths)
--  Presence: optional
+-  Typ: list of strings (paths)
+-  Vorhandensein: optional
 -  Formats: PNG, JPEG, WebP, AVIF
--  Example: ``"data/screenshots/configuration.png"``
+-  Beispiel: ``"data/screenshots/configuration.png"``
 
 This key contains one or multiple paths to files showing screenshots of
 the software. They are meant to give a quick idea on how the software
@@ -583,9 +583,9 @@ Screenshots can be of any shape and size; the suggested formats are:
 Key ``description/[lang]/videos`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''''''''''
 
--  Type: list of strings (URLs)
--  Presence: optional
--  Example: ``"https://youtube.com/xxxxxxxx"``
+-  Typ: list of strings (URLs)
+-  Vorhandensein: optional
+-  Beispiel: ``"https://youtube.com/xxxxxxxx"``
 
 This key contains one or multiple URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
@@ -603,8 +603,8 @@ Dokumentation oder auf der Website der Software.
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
--  Type: list of strings
--  Presence: optional
+-  Typ: list of strings
+-  Vorhandensein: optional
 
 A list of awards won by the software.
 
@@ -614,9 +614,9 @@ Section ``legal``
 Key ``legal/license``
 '''''''''''''''''''''
 
--  Type: string
--  Presence: mandatory
--  Example: ``"AGPL-3.0-or-later"``
+-  Typ: string
+-  Vorhandensein: mandatory
+-  Beispiel: ``"AGPL-3.0-or-later"``
 
 This string describes the license under which the software is
 distributed. The string must contain a valid SPDX expression, referring
@@ -626,9 +626,9 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 Key ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''''''
 
--  Type: string
--  Presence: optional
--  Example: ``"City of Amsterdam"``
+-  Typ: string
+-  Vorhandensein: optional
+-  Beispiel: ``"City of Amsterdam"``
 
 This string describes the entity that owns the copyright on “most” of
 the code in the repository. Normally, this is the line that is reported
@@ -645,9 +645,9 @@ file, you can point to it through ``legal/authorsFile``.
 Key ``legal/repoOwner`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''
 
--  Type: string
--  Presence: optional
--  Example: ``"City of Amsterdam"``
+-  Typ: string
+-  Vorhandensein: optional
+-  Beispiel: ``"City of Amsterdam"``
 
 This string describes the entity that owns this repository; this might
 or might not be the same entity who owns the copyright on the code
@@ -660,9 +660,9 @@ Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
 Key ``legal/authorsFile`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: string (path to file)
--  Presence: optional
--  Example: ``"doc/AUTHORS.txt"``
+-  Typ: string (path to file)
+-  Vorhandensein: optional
+-  Beispiel: ``"doc/AUTHORS.txt"``
 
 Some open-source software adopt a convention of identify the copyright
 holders through a file that lists all the entities that own the
@@ -681,8 +681,8 @@ or not.
 Key ``maintenance/type``
 ''''''''''''''''''''''''
 
--  Type: enumerate
--  Presence: mandatory
+-  Typ: enumerate
+-  Vorhandensein: mandatory
 -  Values: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 This key describes how the software is currently maintained.
@@ -698,8 +698,8 @@ This key describes how the software is currently maintained.
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: list of Contractors (see below)
--  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
+-  Typ: list of Contractors (see below)
+-  Vorhandensein: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -708,8 +708,8 @@ organisations, or other collective names.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: list of Contacts (see below)
--  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
+-  Typ: list of Contacts (see below)
+-  Vorhandensein: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
 
@@ -733,8 +733,8 @@ software.
 Key ``localisation/localisationReady``
 ''''''''''''''''''''''''''''''''''''''
 
--  Type: boolean
--  Presence: mandatory
+-  Typ: boolean
+-  Vorhandensein: mandatory
 
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
@@ -743,9 +743,9 @@ than one language.
 Key ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
 
--  Type: list of IETF BCP 47 language tags
--  Presence: mandatory
--  Example: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
+-  Typ: list of IETF BCP 47 language tags
+-  Vorhandensein: mandatory
+-  Beispiel: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
 This is the list of languages in which the software is
 available. Of course, this list will contain at least one language.
@@ -767,8 +767,8 @@ dependencies.
 Key ``dependsOn/open`` (*veraltet*)
 '''''''''''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
--  Presence: optional
+-  Typ: list of ``dependency`` (see below)
+-  Vorhandensein: optional
 
 This key contains a list of runtime dependencies that are distributed
 under an open-source license.
@@ -781,8 +781,8 @@ Deployment-Skripte.
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
--  Presence: optional
+-  Typ: list of ``dependency`` (see below)
+-  Vorhandensein: optional
 
 This key contains a list of runtime dependencies that are distributed
 under a proprietary license.
@@ -790,8 +790,8 @@ under a proprietary license.
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
--  Presence: optional
+-  Typ: list of ``dependency`` (see below)
+-  Vorhandensein: optional
 
 This key contains a list of hardware dependencies that must be owned to
 use the software.
