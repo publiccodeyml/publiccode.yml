@@ -26,7 +26,8 @@ Clé ``name``
 -  Exemple: ``"Office Suite"``
 
 Cette clé contient le nom du logiciel. Elle contient le nom public (abrégé)
-du produit, qui peut être traduit dans la section ``localisation`` dédiée.
+du produit, qui peut être traduit avec la clé
+``description/[lang]/localisedName``.
 Il s'agit du nom que la plupart des personnes utilise habituellement pour
 désigner le logiciel. Dans le cas où le logiciel aurait un nom de code en
 interne et un nom commercial, il est préférable d'utiliser la dénomination

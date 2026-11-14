@@ -24,10 +24,10 @@ Key ``name``
 -  Example: ``"Office Suite"``
 
 This key contains the name of the software. It contains the (short)
-public name of the product, which can be localised in the specific
-``localisation`` section. It should be the name most people usually
-refer to the software. In case the software has both an internal “code”
-name and a commercial name, use the commercial name.
+public name of the product, which can be localised using the
+``description/[lang]/localisedName`` key. It should be the name most
+people usually refer to the software. In case the software has both an
+internal “code” name and a commercial name, use the commercial name.
 
 Key ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~~~~~

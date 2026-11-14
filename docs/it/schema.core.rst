@@ -30,8 +30,8 @@ Chiave ``name``
 -  Esempio: “Office Suite”
 
 Questa chiave contiene il nome del software. Contiene il nome
-(abbreviato) pubblico del prodotto, che può essere tradotto nella
-sezione specifica chiamata ``localisation``. Dovrebbe essere il nome con
+(abbreviato) pubblico del prodotto, che può essere tradotto usando la
+chiave ``description/[lang]/localisedName``. Dovrebbe essere il nome con
 il quale la maggior parte delle persone si riferisce al suddetto
 software. Nel caso in cui il software abbia sia un nome in “codice”
 interno che uno commerciale, è preferibile usare il nome commerciale.
