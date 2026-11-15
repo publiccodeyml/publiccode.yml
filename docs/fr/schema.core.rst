@@ -45,7 +45,7 @@ Cette clé contient le nom de la « suite » à laquelle appartient le logicie
 Clé ``url``
 ~~~~~~~~~~~
 
--  Type: chaîne de cractères (URL)
+-  Type: chaîne de caractères (URL)
 -  Présence: obligatoire
 -  Exemple: ``"https://example.com/office-suite.git"``
 
@@ -250,7 +250,7 @@ Un lien vers une *roadmap* publique du logiciel.
 Clé ``developmentStatus``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
+-  Type: chaîne de caractères énumérée
 -  Présence: obligatoire
 -  Valeurs autorisées: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
@@ -273,7 +273,7 @@ Les clés sont:
 Clé ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Type: enumerated string
+-  Type: chaîne de caractères énumérée
 -  Présence: obligatoire
 -  Valeurs autorisées: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,

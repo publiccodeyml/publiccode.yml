@@ -129,7 +129,7 @@ Questa chiave contiene la data di ultimo rilascio del software.
 Chiave ``logo``
 ~~~~~~~~~~~~~~~
 
--  Tipo: stringa (percorso verso il file)
+-  Tipo: stringa (percorso relativo al file o URL assoluta)
 -  Presenza: opzionale
 -  Formati accettabili: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Esempio: ``"img/logo.svg"``
@@ -190,7 +190,7 @@ saltare questo campo o usare ``application/x.empty``.
 Chiave ``platforms``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringhe o lista di stringhe
+-  Tipo: stringa enumerata o lista di stringhe
 -  Presenza: obbligatoria
 -  Valori: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Valori leggibili da un umano al di fuori di questa lista
@@ -254,7 +254,7 @@ Un link ad una *roadmap* pubblica del software.
 Chiave ``developmentStatus``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringa
+-  Tipo: stringa enumerata
 -  Presenza: obbligatoria
 -  Valori permessi: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
@@ -279,7 +279,7 @@ Le chiavi sono:
 Chiave ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: stringa
+-  Tipo: stringa enumerata
 -  Presenza: obbligatoria
 -  Valori permessi: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
