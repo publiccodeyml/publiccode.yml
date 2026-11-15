@@ -3,7 +3,7 @@
 
 ``publiccode.yml`` est un standard de métadonnées pour les référentiels contenant des logiciels
 développés ou acquis par l’administration publique dans le but de faciliter leur
-recherche et donc réutilisable par d'autres entités.
+recherche et de les rendre réutilisables par d'autres entités.
 
 En incluant un fichier ``publiccode.yml`` à la racine d'un repository, et
 en le populant avec des informations à propos du logiciel, les techniciens
@@ -26,13 +26,13 @@ par `opencode.de <https://opencode.de>`__, le registre allemand des logiciels
 open source pour l'administration publique. ``publiccode.yml`` est conçu pour
 être interopérable à l'international.
 
-Les détails apportés par un fichier ``publiccode.yml`` inclus : 
+Les détails apportés par un fichier ``publiccode.yml`` incluent :
 
-- titre et description du projet ou produit (dans un ou plusieurs languages);
+- titre et description du projet ou produit (dans une ou plusieurs langues);
 - l'état du développement, par exemple : ``concept``, ``development``, ``beta``, ``stable``, ``obsolete``;
-- les conctacts de l'entité qui publie la codebase;
-- les contacts des mainteneurs, si il y en a, incluant la date d'expiration du contrat de maintenance;
-- des informations à propos du context légal pour lequel le projet ou le produit a été créé;
+- les contacts de l'entité qui publie la codebase;
+- les contacts des mainteneurs, s'il y en a, incluant la date d'expiration du contrat de maintenance;
+- des informations à propos du contexte légal pour lequel le projet ou le produit a été créé;
 - les dépendances
   
 et bien plus encore.
