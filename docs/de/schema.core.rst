@@ -146,6 +146,8 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
+Dieser Schlüssel ist veraltet. Eine monochrome Version kann aus ``logo`` erzeugt werden.
+
 Key ``inputTypes`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,6 +163,8 @@ handle as input.
 In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
 
+Dieser Schlüssel ist veraltet.
+
 Key ``outputTypes`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -175,6 +179,8 @@ handle as output.
 
 In case the software does not support any output, you can skip this
 field or use ``application/x.empty``.
+
+Dieser Schlüssel ist veraltet.
 
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
@@ -220,6 +226,8 @@ Parsers are encouraged to enhance this list also with other information
 that can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.
+
+Dieser Schlüssel ist veraltet.
 
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
@@ -459,6 +467,9 @@ presentation of the software, when you write: “Software xxx is a yyy”.
 Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
 “Chat” and so on… The generic name can be up to 35 characters long.
 
+Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
+``description/[lang]/shortDescription`` und ``name``.
+
 Key ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
@@ -670,6 +681,8 @@ copyright. This is common in projects strongly backed by a community
 where there are many external contributors and no clear single/main
 copyright owner. In such cases, this key can be used to refer to the
 authors file, using a path relative to the root of the repository.
+
+Dieser Schlüssel ist veraltet.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~

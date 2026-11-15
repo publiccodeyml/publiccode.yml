@@ -150,6 +150,9 @@ racine du dépôt ou une URL absolue pointant vers une version brute du
 logo. Dans les deux cas, le fichier doit être situé dans le même dépôt que le
 fichier ``publiccode.yml``.
 
+Cette clé est obsolète. Une version monochrome peut être obtenue à partir
+de ``logo``.
+
 Clé ``inputTypes`` (*obsolète*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -165,6 +168,8 @@ en entrée (*input*) dans l'application.
 Si le logiciel ne supporte aucune entrée, il est possible d'ignorer ce champ
 ou d’utiliser ``application/x.empty``.
 
+Cette clé est obsolète.
+
 Clé ``outputTypes`` (*obsolète*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -179,6 +184,8 @@ en sorties (*output*) dans l'application.
 
 Si le logiciel ne supporte aucune sorties, il est possible d'ignorer ce champ
 ou d’utiliser ``application/x.empty``.
+
+Cette clé est obsolète.
 
 Clé ``platforms``
 ~~~~~~~~~~~~~~~~~
@@ -228,6 +235,8 @@ d'améliorer cette liste avec des informations complémentaires qui peuvent
 être obtenu indépendamment ; par exemple, la fourche d’un logiciel 
 détenue par une administration, peut être utilisée comme un signal
 d’utilisation du logiciel.
+
+Cette clé est obsolète.
 
 Clé ``fundedBy``
 ~~~~~~~~~~~~~~~~
@@ -476,6 +485,9 @@ de mentionner « Éditeur de texte », « Logiciel de traitement de texte »
 « Moteur de recherche », « Forum », etc… Le nom générique peut comporter
 jusqu’à 35 caractères.
 
+Cette clé est obsolète. Utilisez plutôt
+``description/[lang]/shortDescription`` et ``name``.
+
 Clé ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
@@ -684,6 +696,7 @@ Clé ``legal/authorsFile`` (*obsolète*)
 
 Certains logiciels au code source ouvert adoptent une convention qui identifie les détenteurs du droit d'auteur via un fichier répertoriant toutes les entités titulaires du droit d'auteur. Il s'agit d'une pratique courante dans le cadre de projets fortement soutenus par une communauté où il y a de nombreux contributeurs externes et pas de titulaires du droit d'auteur unique / principal. Dans ce cas, cette clé peut être utilisée pour faire référence au fichier *authors* susmentionné, en utilisant un chemin relatif vers la racine du dépôt.
 
+Cette clé est obsolète.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
