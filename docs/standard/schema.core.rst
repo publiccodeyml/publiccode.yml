@@ -226,7 +226,7 @@ as “testimonials”) that are currently known to the software maintainer
 to be using this software.
 
 Parsers are encouraged to enhance this list also with other information
-that can obtain independently; for instance, a fork of a software, owned
+that they can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.
 
@@ -645,11 +645,11 @@ the code in the repository. Normally, this is the line that is reported
 with the copyright symbol at the top of most files in the repo.
 
 It is possible to list multiple owners if required so, using an English
-sentence. It is also possible to informally refer to a community of
+sentence. It is also possible to informally refer to a community or
 group of people like “Linus Torvalds and all Linux contributors”.
 
 In case it is not possible to name a main copyright owner, it is
-possible to omit this key; in those cases, if the repo has a authors
+possible to omit this key; in those cases, if the repo has an authors
 file, you can point to it through ``legal/authorsFile``.
 
 Key ``legal/repoOwner`` (*deprecated*)
@@ -673,7 +673,7 @@ Key ``legal/authorsFile`` (*deprecated*)
 -  Presence: optional
 -  Example: ``"doc/AUTHORS.txt"``
 
-Some open-source software adopt a convention of identify the copyright
+Some open-source software adopt a convention of identifying the copyright
 holders through a file that lists all the entities that own the
 copyright. This is common in projects strongly backed by a community
 where there are many external contributors and no clear single/main
