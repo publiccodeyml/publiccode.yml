@@ -53,11 +53,11 @@ Autoren, die bereit sind, einen Fork als Variante zu veröffentlichen, **MÜSSEN
 
 - einen Key ``isBasedOn`` hinzufügen, der auf ein oder mehrere Upstream-Repositories verweist, von denen diese Variante abgeleitet ist. 
 
-- den Wert für ``url`` so ändern, dass er auf das Repository verweist, das die Variante enthält. 
+- den Wert für ``url`` so ändern, dass er auf das Repository verweist, das die Variante enthält.
 
 - den Wert für ``legal/repoOwner`` ändern, um auf sich selbst (die Autoren der Variante) zu verweisen. 
 
-- auf den ``maintenance``-Abschnitt zurückkommen, um auf den Maintenance-Status der Variante zu verweisen. 
+- auf den ``maintenance``-Abschnitt zurückkommen, um auf den Maintenance-Status der Variante zu verweisen.
 
 Außerdem **SOLLTEN** die Autoren die folgenden Änderungen evaluieren: 
 
