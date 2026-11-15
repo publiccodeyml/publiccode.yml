@@ -30,21 +30,21 @@ d'être capables de distinguer ces forks techniques de la code base originale.
 Analyseurs
 ~~~~~~~~~~
 
-Les analyseurs **SHOULD** identifier un fork technique en constatant que
-la clé ``url`` de premier niveau ne pointe pas vers le dépôt dans lequel
-se trouve le fichier ``publiccode.yml``.
+Les analyseurs **DEVRAIENT** identifier un fork technique en constatant
+que la clé ``url`` de premier niveau ne pointe pas vers le dépôt dans
+lequel se trouve le fichier ``publiccode.yml``.
 
-Les analyseurs **MIGHT** également identifier un fork technique grâce aux
+Les analyseurs **PEUVENT** également identifier un fork technique grâce aux
 métadonnées que la plateforme d'hébergement du code peut exposer
 (par exemple, GitHub marque explicitement les forks comme tels).
 
 Auteurs
 ~~~~~~~
 
-Les auteurs de forks techniques **SHOULD NOT** modifier ``publiccode.yml``
-de quelque manière que ce soit. En particulier, ils **MUST NOT** modifier
-la clé ``url`` de premier niveau, qui **MUST** continuer à pointer vers le
-dépôt d'origine.
+Les auteurs de forks techniques **NE DEVRAIENT PAS** modifier
+``publiccode.yml`` de quelque manière que ce soit. En particulier, ils
+**NE DOIVENT PAS** modifier la clé ``url`` de premier niveau, qui
+**DOIT** continuer à pointer vers le dépôt d'origine.
 
 Il n'existe pas de clé explicite pour marquer un fork comme technique.
 Ce choix de conception est délibéré : nous ne voulons pas que les auteurs
@@ -78,10 +78,10 @@ découvrir et en bénéficier.
 Analyseurs
 ~~~~~~~~~~
 
-Les analyseurs **SHOULD** identifier une variante en constatant que la clé
-``url`` de premier niveau correspond au dépôt dans lequel se trouve le
-fichier ``publiccode.yml``, **ET** qu'une clé ``isBasedOn`` de premier
-niveau existe et pointe vers un autre dépôt.
+Les analyseurs **DEVRAIENT** identifier une variante en constatant que
+la clé ``url`` de premier niveau correspond au dépôt dans lequel se
+trouve le fichier ``publiccode.yml``, **ET** qu'une clé ``isBasedOn`` de
+premier niveau existe et pointe vers un autre dépôt.
 
 Les analyseurs devraient s'attendre à trouver et analyser d'autres
 différences dans ``publiccode.yml`` entre les variantes du logiciel.
@@ -94,8 +94,8 @@ visibles par les utilisateurs.
 Auteurs
 ~~~~~~~
 
-Les auteurs qui souhaitent publier un fork comme variante **MUST** au
-minimum :
+Les auteurs qui souhaitent publier un fork comme variante **DOIVENT**
+au minimum :
 
 -  Ajouter une clé ``isBasedOn`` pointant vers un ou plusieurs dépôts en
    amont dont cette variante est dérivée.
@@ -106,10 +106,10 @@ minimum :
 -  Réexaminer la section ``maintenance`` pour indiquer l'état de
    maintenance de la variante.
 
-De plus, les auteurs **SHOULD** envisager les modifications suivantes :
+De plus, les auteurs **DEVRAIENT** envisager les modifications suivantes :
 
 -  Ajouter les fonctionnalités qui distinguent la variante dans la clé
    ``description/[lang]/features``. Les fonctionnalités existantes
-   **SHOULD NOT** être modifiées ou supprimées de cette liste, sauf si
-   elles ont été supprimées de la variante, afin de permettre aux
+   **NE DEVRAIENT PAS** être modifiées ou supprimées de cette liste, sauf
+   si elles ont été supprimées de la variante, afin de permettre aux
    analyseurs de comparer facilement les listes de fonctionnalités.
