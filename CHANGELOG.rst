@@ -3,6 +3,24 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+Unreleased
+----------
+
+Removed
+~~~~~~~
+
+* Remove the deprecated ``it/conforme`` and ``it/riuso/codiceIPA`` keys by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/316
+* Remove ``government`` from ``intendedAudience/scope`` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/305
+* Remove the deprecated ``monochromeLogo``, ``inputTypes``, ``outputTypes``, ``description/[lang]/genericName``, ``legal/repoOwner`` and ``legal/authorsFile`` keys by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/325
+* Remove country specific sections in favor of ``supports`` and ``organisation`` by @bfabio. See https://github.com/publiccodeyml/publiccode.yml/issues/259
+
+Changed
+~~~~~~~
+
+* Require E.164 format for ``maintenance/contacts/phone`` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/306
+* Require uppercase ISO 3166-1 alpha-2 country codes in ``intendedAudience/countries`` and ``intendedAudience/unsupportedCountries`` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/325
+* Require YAML 1.2, removing the deprecated YAML 1.1 allowance, by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/325
+
 v0.8.0
 ------
 
