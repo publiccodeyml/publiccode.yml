@@ -865,13 +865,13 @@ A Contact is a mapping with the following properties:
 Organisation
 ~~~~~~~~~~~~
 
-An organisation is a structure (association, company, public
-authority, etc.) that can fund software development. An organisation
-is a mapping with the following properties:
+Eine Organisation ist eine Einrichtung (Verein, Unternehmen, Behörde
+usw.), die die Softwareentwicklung finanzieren kann. Eine Organisation
+ist ein Mapping mit den folgenden Eigenschaften:
 
--  ``name`` - **mandatory** - The name of the organisation, whether
-    it’s an association, a company, a public sector organisation, or
-    a physical person.
+-  ``name`` - **obligatorisch** - Der Name der Organisation, unabhängig
+   davon, ob es sich um einen Verein, ein Unternehmen, eine öffentliche
+   Einrichtung oder eine natürliche Person handelt.
 -  ``uri`` - Die URI, die die Organisation identifiziert.
 
 Contractor
