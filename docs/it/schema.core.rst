@@ -160,7 +160,7 @@ larghezza minima di 1000px.
 Chiave ``inputTypes`` (*deprecata*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: lista di stringhe
+-  Tipo: lista di stringhe enumerate
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
 -  Esempio: ``"text/plain"``
@@ -175,7 +175,7 @@ saltare questo campo o usare ``application/x.empty``.
 Chiave ``outputTypes`` (*deprecata*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Tipo: lista di stringhe
+-  Tipo: lista di stringhe enumerate
 -  Presenza: opzionale
 -  Valori: vedi RFC 6838
 -  Esempio: ``"text/plain"``
