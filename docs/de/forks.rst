@@ -10,21 +10,21 @@ Technische Forks (z.B. zur Veröffentlichung von Patches)
 
 Ein technischer Fork ist ein Fork, der von einem Entwickler zu dem Zweck gemacht wird, an der ursprünglichen Codebasis zu arbeiten oder Verbesserungen an die ursprünglichen Autoren zu senden, ohne das explizite Ziel, eine alternative Variante der ursprünglichen Software zu erstellen und zu veröffentlichen.
 
-Im Kontext von verteilten Kontrollsystemen und kollaborativen Code-Hosting-Plattformen wie GitHub wird Forking fast immer von Entwicklern als Schritt verwendet, um an einem Beitrag zu einer bestehenden Codebasis zu arbeiten, indem sie "Pull Requests" senden.
+Im Kontext von verteilten Versionskontrollsystemen und kollaborativen Code-Hosting-Plattformen wie GitHub wird Forking fast immer von Entwicklern als Schritt verwendet, um an einem Beitrag zu einer bestehenden Codebasis zu arbeiten, indem sie "Pull Requests" senden.
 
 Aufgrund der Art und Weise, wie Forks auf GitHub und anderen Plattformen funktionieren, veröffentlichen Entwickler ihre Forks als perfekte Kopien der ursprünglichen Software, also auch die ``publiccode.yml``. Parser müssen jedoch in der Lage sein, solche technischen Forks von der ursprünglichen Codebasis zu unterscheiden.
 
 Parser
 ~~~~~~
 
-Parser **SOLLTEN** einen technischen Fork erkennen, indem sie bemerken, dass der Top-Level ``URL``-Key nicht auf das Repository verweist, in dem sich die ``publiccode.yml`` befindet.
+Parser **SOLLTEN** einen technischen Fork erkennen, indem sie bemerken, dass der Top-Level ``url``-Key nicht auf das Repository verweist, in dem sich die ``publiccode.yml`` befindet.
 
 Parser **KÖNNEN** einen technischen Fork auch durch Metadaten identifizieren, die von der Code-Hosting-Plattform offengelegt werden können (z. B.: GitHub kennzeichnet Forks explizit als Forks).
 
 Autoren
 ~~~~~~~
 
-Autoren von technischen Forks **SOLLTEN** die Datei ``publiccode.yml`` in keinster Weise verändern. Insbesondere **DÜRFEN** sie **NICHT** den Top-Level-``URL``-Key ändern, der weiterhin auf das ursprüngliche Repository verweisen **MUSS**.
+Autoren von technischen Forks **SOLLTEN** die Datei ``publiccode.yml`` in keinster Weise verändern. Insbesondere **DÜRFEN** sie **NICHT** den Top-Level-``url``-Key ändern, der weiterhin auf das ursprüngliche Repository verweisen **MUSS**.
 
 Es gibt keinen expliziten Key um einen Fork als technischen Fork zu markieren. Dies ist eine bewusste Design-Entscheidung, weil wir nicht möchten, dass die Autoren von technischen Forks die ``publiccode.yml`` kennen und notwendigerweise wissen, wie sie sie modifizieren können. Das aktuelle Design verlangt von den Autoren nicht, irgendetwas zu tun.
 
@@ -42,7 +42,7 @@ Einen Fork als Variante zu markieren, hat **nichts** mit der Bereitschaft zu tun
 Parser
 ~~~~~~
 
-Parser **SOLLTEN** eine Variante identifizieren, indem sie feststellen, dass der Top-Level ``URL``-Key mit dem Repository übereinstimmt, in dem die ``publiccode.yml`` gefunden wird, **UND** ein ``isBasedOn`` auf oberster Ebene existiert und auf ein anderes Repository verweist.
+Parser **SOLLTEN** eine Variante identifizieren, indem sie feststellen, dass der Top-Level ``url``-Key mit dem Repository übereinstimmt, in dem die ``publiccode.yml`` gefunden wird, **UND** ein ``isBasedOn`` auf oberster Ebene existiert und auf ein anderes Repository verweist.
 
 Parser sollten andere Unterschiede in der ``publiccode.yml`` zwischen Varianten der Software voraussetzen und analysieren. Insbesondere ``description/[lang]/features`` ist dazu gedacht, zwischen Varianten verglichen zu werden, um für den Benutzer sichtbare Unterschiede zu identifizieren und anzuzeigen.
 
@@ -53,11 +53,11 @@ Autoren, die bereit sind, einen Fork als Variante zu veröffentlichen, **MÜSSEN
 
 - einen Key ``isBasedOn`` hinzufügen, der auf ein oder mehrere Upstream-Repositories verweist, von denen diese Variante abgeleitet ist. 
 
-- den Wert für ``URL`` so ändern, dass er auf das Repository verweist, das die Variante enthält. 
+- den Wert für ``url`` so ändern, dass er auf das Repository verweist, das die Variante enthält. 
 
 - den Wert für ``legal/repoOwner`` ändern, um auf sich selbst (die Autoren der Variante) zu verweisen. 
 
-- auf den ``Maintenance``-Abschnitt zurückkomenn, um auf den Maintenance-Status der Variante zu verweisen. 
+- auf den ``maintenance``-Abschnitt zurückkommen, um auf den Maintenance-Status der Variante zu verweisen. 
 
 Außerdem **SOLLTEN** die Autoren die folgenden Änderungen evaluieren: 
 
