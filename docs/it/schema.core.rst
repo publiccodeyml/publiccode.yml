@@ -894,8 +894,10 @@ Un Contatto è un mapping con le seguenti proprietà:
    tecnico. Deve essere un indirizzo email per il contatto diretto con
    il tecnico; NON popolare questa chiave con mailing-list o punti di
    contatto generico tipo “info@acme.inc”.
--  ``phone`` - Numero telefonico (con prefisso internazionale). Questa chiave
-   deve essere una stringa.
+-  ``phone`` - Numero telefonico. DOVREBBE includere il prefisso
+   internazionale, secondo il formato
+   `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ (ad esempio
+   ``+3923113215112``). Questa chiave deve essere una stringa.
 -  ``affiliation`` - Questa chiave contiene informazioni esplicite sui
    contatti tecnici. Nel caso esistano diversi maintainer, questa chiave
    può essere usata per creare relazioni tra diversi contatti tecnici e
