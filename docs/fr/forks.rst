@@ -27,85 +27,89 @@ les développeurs publient leurs forks comme des copies parfaites de l'original
 logiciel, incluant donc aussi ``publiccode.yml``. Cependant, les analyseurs ont besoin
 d'être capables de distinguer ces forks techniques de la code base originale.
 
-Parsers
+Analyseurs
+~~~~~~~~~~
+
+Les analyseurs **SHOULD** identifier un fork technique en constatant que
+la clé ``url`` de premier niveau ne pointe pas vers le dépôt dans lequel
+se trouve le fichier ``publiccode.yml``.
+
+Les analyseurs **MIGHT** également identifier un fork technique grâce aux
+métadonnées que la plateforme d'hébergement du code peut exposer
+(par exemple, GitHub marque explicitement les forks comme tels).
+
+Auteurs
 ~~~~~~~
 
-Parsers **SHOULD** identify a technical fork by noticing that the
-top-level ``url`` key does not point to the repository in which the
-``publiccode.yml`` is found.
+Les auteurs de forks techniques **SHOULD NOT** modifier ``publiccode.yml``
+de quelque manière que ce soit. En particulier, ils **MUST NOT** modifier
+la clé ``url`` de premier niveau, qui **MUST** continuer à pointer vers le
+dépôt d'origine.
 
-Parsers **MIGHT** identify a technical fork also through metadata that
-might be exposed by the code hosting platform (eg: GitHub marks forks
-explicitly as forks)
+Il n'existe pas de clé explicite pour marquer un fork comme technique.
+Ce choix de conception est délibéré : nous ne voulons pas que les auteurs
+de forks techniques aient besoin de connaître ``publiccode.yml`` ni la
+manière de le modifier. La conception actuelle ne demande aucune action
+aux auteurs.
 
-Authors
-~~~~~~~
+Variantes logicielles
+---------------------
 
-Authors of technical forks **SHOULD NOT** modify ``publiccode.yml`` in
-any way. Specifically, they **MUST NOT** modify the top-level ``url``
-key that **MUST** continue pointing to the original repository.
+Une variante logicielle est un fork proposé comme alternative au logiciel
+d'origine en amont.
 
-There is no explicit key to mark a fork as a technical fork. This is a
-conscious design decision because we do not want authors of technical
-forks to be aware of ``publiccode.yml`` and necessarily be aware of how
-to modify it. The current design does not require authors to do
-anything.
+Elle contient des modifications qui ne font pas encore partie de la
+version en amont, comme des fonctionnalités supplémentaires, des
+dépendances différentes, des optimisations, etc.
 
-Software variants
------------------
+En marquant un fork comme variante, l'auteur indique qu'il estime que
+celle-ci comprend un ensemble complet et fonctionnel de modifications
+susceptibles d'être utiles à d'autres personnes.
 
-A software variant is a fork that is offered as an alternative to the
-original upstream software.
-
-It contains modifications that are still not part of the upstream
-version, like more features, different dependencies, optimizations, etc.
-
-By marking a fork as a variant, the author indicates that they believe
-that the variant includes a complete and working set of modifications
-that might be useful to other people.
-
-Marking a fork as a variant does **not** relate to the willingness of
-contributing upstream; the author might still plan to contribute the
-modifications upstream, or even being in the process of doing so. Thus,
-even if the fork will eventually be merged upstream, it might make sense
-to mark it as a variant during the process, so that others might
-discover it and benefit from it.
+Marquer un fork comme variante n'est **pas** lié à la volonté de contribuer
+au projet en amont : l'auteur peut toujours prévoir d'y contribuer ses
+modifications, voire être déjà en train de le faire. Ainsi, même si le
+fork sera finalement intégré en amont, il peut être utile de le marquer
+comme variante pendant ce processus, afin que d'autres puissent le
+découvrir et en bénéficier.
 
 .. _parsers-1:
 
-Parsers
-~~~~~~~
+Analyseurs
+~~~~~~~~~~
 
-Parsers **SHOULD** identify a variant by noticing that the top-level
-``url`` key matches to the repository in which the ``publiccode.yml`` is
-found, **AND** a top-level ``isBasedOn`` exists and points to a
-different repository.
+Les analyseurs **SHOULD** identifier une variante en constatant que la clé
+``url`` de premier niveau correspond au dépôt dans lequel se trouve le
+fichier ``publiccode.yml``, **ET** qu'une clé ``isBasedOn`` de premier
+niveau existe et pointe vers un autre dépôt.
 
-Parsers should expect and analyze other differences in
-``publiccode.yml`` between variants of the software. Specifically
-``description/[lang]/features`` is designed to be compared across variants to
-identify and show user-visible differences.
+Les analyseurs devraient s'attendre à trouver et analyser d'autres
+différences dans ``publiccode.yml`` entre les variantes du logiciel.
+En particulier, ``description/[lang]/features`` est conçu pour être
+comparé entre variantes afin d'identifier et de présenter les différences
+visibles par les utilisateurs.
 
 .. _authors-1:
 
-Authors
+Auteurs
 ~~~~~~~
 
-Authors that are willing to publish a fork as a variant **MUST** at
-least:
+Les auteurs qui souhaitent publier un fork comme variante **MUST** au
+minimum :
 
--  add a key ``isBasedOn`` pointing to one or more upstream repositories
-   from which this variant is derived.
--  Change the value for ``url`` to point to the repository holding the
-   variant.
--  Change the value for ``legal/repoOwner`` to refer to themselves
-   (the authors of the variant).
--  Revisit the ``maintenance`` section to refer to the maintenance
-   status of the variant.
+-  Ajouter une clé ``isBasedOn`` pointant vers un ou plusieurs dépôts en
+   amont dont cette variante est dérivée.
+-  Modifier la valeur de ``url`` pour pointer vers le dépôt contenant la
+   variante.
+-  Modifier la valeur de ``legal/repoOwner`` pour se désigner eux-mêmes
+   (les auteurs de la variante).
+-  Réexaminer la section ``maintenance`` pour indiquer l'état de
+   maintenance de la variante.
 
-Moreover, authors **SHOULD** evaluate the following changes:
+De plus, les auteurs **SHOULD** envisager les modifications suivantes :
 
--  add the features that differentiate the variant to the
-   ``description/[lang]/features`` key. Existing features **SHOULD NOT** be
-   edited or removed from this list unless they have been removed from
-   the variant, to allow parsers to easily compare feature lists.
+-  Ajouter les fonctionnalités qui distinguent la variante dans la clé
+   ``description/[lang]/features``. Les fonctionnalités existantes
+   **SHOULD NOT** être modifiées ou supprimées de cette liste, sauf si
+   elles ont été supprimées de la variante, afin de permettre aux
+   analyseurs de comparer facilement les listes de fonctionnalités.
