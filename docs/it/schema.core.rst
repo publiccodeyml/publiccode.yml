@@ -157,6 +157,8 @@ dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
 come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
 larghezza minima di 1000px.
 
+Questa chiave è deprecata. Una versione monocromatica può essere ottenuta da ``logo``.
+
 Chiave ``inputTypes`` (*deprecata*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -172,6 +174,8 @@ gestiti in input dall’applicazione.
 Nel caso in cui il software non supporti alcun input, è possibile
 saltare questo campo o usare ``application/x.empty``.
 
+Questa chiave è deprecata.
+
 Chiave ``outputTypes`` (*deprecata*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -186,6 +190,8 @@ gestiti in output dall’applicazione.
 
 Nel caso in cui il software non supporti alcun output, è possibile
 saltare questo campo o usare ``application/x.empty``.
+
+Questa chiave è deprecata.
 
 Chiave ``platforms``
 ~~~~~~~~~~~~~~~~~~~~
@@ -233,6 +239,8 @@ I parser sono incoraggiati ad accrescere questa lista anche con altre
 informazioni che riescono ad ottenere in modo indipendente; ad esempio,
 il fork di un software, di proprietà di un’amministrazione, può essere
 usato come un segnale di uso del software.
+
+Questa chiave è deprecata.
 
 Chiave ``fundedBy``
 ~~~~~~~~~~~~~~~~~~~
@@ -481,6 +489,9 @@ nota includono “Editor di Testi”, “Word Processor”, “Web Browser”,
 “Chat” e così via. Il nome generico può avere una lunghezza fino a 35
 caratteri.
 
+Questa chiave è deprecata. Usare invece
+``description/[lang]/shortDescription`` e ``name``.
+
 Chiave ``description/[lang]/shortDescription``
 ''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -706,6 +717,8 @@ sostenuti dalla community ove esistono diversi contributori esterni e
 non c’è un chiaro singolo detentore del copyright. In questi casi,
 questa chiave può essere usata per riferirsi al suddetto file degli
 autori, usando un percorso relativo alla radice (root) del repository.
+
+Questa chiave è deprecata.
 
 Sezione ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
