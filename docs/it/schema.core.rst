@@ -912,7 +912,7 @@ Un'organizzazione è un mapping con le seguenti proprietà:
 - ``name`` - **obbligatorio** - Il nome dell'organizzazione, sia essa
    un'associazione, una società, un ente pubblico o una persona
    fisica.
--  ``uri`` - The URI identifying the organisation.
+-  ``uri`` - L'URI che identifica l'organizzazione.
 
 Contractor
 ~~~~~~~~~~

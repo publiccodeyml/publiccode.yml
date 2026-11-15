@@ -872,7 +872,7 @@ is a mapping with the following properties:
 -  ``name`` - **mandatory** - The name of the organisation, whether
     it’s an association, a company, a public sector organisation, or
     a physical person.
--  ``uri`` - The URI identifying the organisation.
+-  ``uri`` - Die URI, die die Organisation identifiziert.
 
 Contractor
 ~~~~~~~~~~
