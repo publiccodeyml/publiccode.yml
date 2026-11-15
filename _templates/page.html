@@ -37,15 +37,20 @@
   }
 </style>
 <script>
+  var versionSwitchRequest = 0;
+
   // Same page in the chosen version when it exists there, its index otherwise.
   function switchVersion(select) {
+    var request = ++versionSwitchRequest;
     var index = select.value;
     var page = index + select.dataset.page;
     fetch(page, { method: "HEAD" })
       .then(function (response) {
+        if (request !== versionSwitchRequest) return;
         window.location.href = response.ok ? page + window.location.hash : index;
       })
       .catch(function () {
+        if (request !== versionSwitchRequest) return;
         window.location.href = index;
       });
   }
