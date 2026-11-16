@@ -267,7 +267,7 @@ Chiave ``developmentStatus``
 -  Valori permessi: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-Le chiavi sono: 
+I valori ammessi sono:
 
 -  ``concept`` - Il software è solo un “concept”. Non è
    stato sviluppato codice e il repository potrebbe semplicemente essere un
@@ -293,7 +293,7 @@ Chiave ``softwareType``
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-Le chiavi sono: 
+I valori ammessi sono:
 
 -  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
    Il software è un'applicazione nativa per dispositivi mobile.
@@ -735,7 +735,7 @@ Chiave ``maintenance/type``
 -  Valori: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 Questa chiave descrive come il software è attualmente manutenuto.
-Le chiavi sono:
+I valori ammessi sono:
 
 -  ``internal`` - significa che il software è manutenuto internamente dal
    proprietario del repository; 
