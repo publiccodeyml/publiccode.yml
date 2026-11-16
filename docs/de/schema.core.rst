@@ -9,8 +9,8 @@ Top-Level Keys and Sections
 Key ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: string
--  Vorhandensein: mandatory
+-  Typ: Zeichenkette
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"0"``
 
 This key specifies the version to which the current ``publiccode.yml``
@@ -19,8 +19,8 @@ adheres, for forward compatibility.
 Key ``name``
 ~~~~~~~~~~~~
 
--  Typ: string
--  Vorhandensein: mandatory
+-  Typ: Zeichenkette
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"Office Suite"``
 
 This key contains the name of the software. It contains the (short)
@@ -32,7 +32,7 @@ internal “code” name and a commercial name, use the commercial name.
 Key ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: string
+-  Typ: Zeichenkette
 -  Vorhandensein: optional
 -  Beispiel: ``"MegaProductivitySuite"``
 
@@ -41,8 +41,8 @@ This key contains the name of the “suite” to which the software belongs.
 Key ``url``
 ~~~~~~~~~~~
 
--  Typ: string (URL)
--  Vorhandensein: mandatory
+-  Typ: Zeichenkette (URL)
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"https://example.com/office-suite.git"``
 
 A unique identifier for this software. This string must be a URL to the
@@ -64,7 +64,7 @@ an author.
 Key ``landingURL``
 ~~~~~~~~~~~~~~~~~~
 
--  Typ: string (URL)
+-  Typ: Zeichenkette (URL)
 -  Vorhandensein: optional
 -  Beispiel: ``"https://example.com/office-suite"``
 
@@ -97,7 +97,7 @@ stattdessen eine Liste mit einem einzigen Element.
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: string
+-  Typ: Zeichenkette
 -  Vorhandensein: optional
 -  Beispiel: ``"1.0"``, ``"dev"``
 
@@ -109,7 +109,7 @@ or any other specific version format.
 Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
--  Typ: string (date)
+-  Typ: Zeichenkette (Datum)
 -  Vorhandensein: optional
 -  Beispiel: ``"2017-04-15"``
 
@@ -118,7 +118,7 @@ This key contains the date at which the latest version was released.
 Key ``logo``
 ~~~~~~~~~~~~
 
--  Typ: string (relative path to file or absolute URL)
+-  Typ: Zeichenkette (relativer Pfad zur Datei oder absolute URL)
 -  Vorhandensein: optional
 -  Zulässige Formate: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Beispiel: ``"img/logo.svg"``
@@ -130,57 +130,11 @@ the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Key ``monochromeLogo`` (*veraltet*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Typ: string (path to file)
--  Vorhandensein: optional
--  Zulässige Formate: SVG, SVGZ, PNG
--  Beispiel: ``"img/logo-mono.svg"``
-
-A monochromatic (black) logo. The logo should be in vector format;
-raster formats are only allowed as a fallback. In this case, they should
-be transparent PNGs, minimum 1000px of width.
-The key value can be the relative path to the file starting from the root of
-the repository, or it can be an absolute URL pointing to the logo in raw
-version. In both cases, the file must reside inside the same repository where
-the ``publiccode.yml`` file is stored.
-
-Key ``inputTypes`` (*veraltet*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Typ: list of enumerated strings
--  Vorhandensein: optional
--  Werte: as per RFC 6838
--  Beispiel: ``"text/plain"``
-
-A list of Media Types (MIME Types) as mandated in `RFC
-6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
-handle as input.
-
-In case the software does not support any input, you can skip this field
-or use ``application/x.empty``.
-
-Key ``outputTypes`` (*veraltet*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Typ: list of enumerated strings
--  Vorhandensein: optional
--  Werte: as per RFC 6838
--  Beispiel: ``"text/plain"``
-
-A list of Media Types (MIME Types) as mandated in `RFC
-6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__ which the application can
-handle as output.
-
-In case the software does not support any output, you can skip this
-field or use ``application/x.empty``.
-
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
 
--  Typ: enumerated string or list of strings
--  Vorhandensein: mandatory
+-  Typ: enumerierte Zeichenkette oder Liste von Zeichenketten
+-  Vorhandensein: obligatorisch
 -  Werte: ``web``, ``windows``, ``mac``, ``linux``, ``ios``,
    ``android``. Human readable values outside this list are allowed.
 -  Beispiel: ``web``
@@ -196,7 +150,7 @@ value can be used.
 Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 -  Zulässige Werte: see :ref:`categories-list`
 
@@ -209,7 +163,7 @@ values.
 Key ``usedBy`` (*veraltet*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 
 A list of the names of prominent public administrations (that will serve
@@ -224,7 +178,7 @@ software.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Typ: list of Organisations (see below)
+-  Typ: Liste von Organisationen (siehe unten)
 -  Vorhandensein: optional
 
 A list of organisations that are currently known to be funding the
@@ -233,7 +187,7 @@ development of this software.
 Key ``roadmap``
 ~~~~~~~~~~~~~~~
 
--  Typ: string
+-  Typ: Zeichenkette
 -  Vorhandensein: optional
 
 A link to a public roadmap of the software.
@@ -241,12 +195,12 @@ A link to a public roadmap of the software.
 Key ``developmentStatus``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Typ: enumerated string
--  Vorhandensein: mandatory
+-  Typ: enumerierte Zeichenkette
+-  Vorhandensein: obligatorisch
 -  Zulässige Werte: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-The keys are: 
+Die zulässigen Werte sind:
 
 -  ``concept`` - The software is just a “concept”. No
    actual code may have been produced, and the repository could simply be a
@@ -265,13 +219,13 @@ The keys are:
 Key ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~
 
--  Typ: enumerated string
--  Vorhandensein: mandatory
+-  Typ: enumerierte Zeichenkette
+-  Vorhandensein: obligatorisch
 -  Zulässige Werte: ``"standalone/mobile"``, ``"standalone/iot"``,
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-The keys are:
+Die zulässigen Werte sind:
 
 -  ``standalone/mobile`` - The software is a standalone, self-contained
    The software is a native mobile app.
@@ -370,24 +324,24 @@ Section ``intendedAudience``
 Key ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 
-This key explicitly includes certain countries in the intended audience,
-i.e. the software explicitly claims compliance with specific processes,
-technologies or laws. All countries are specified using lowercase (*deprecated*)
-or uppercase ISO 3166-1 alpha-2 two-letter country codes.
+Dieser Schlüssel schließt bestimmte Länder ausdrücklich in die Zielgruppe
+ein. Die Software gibt damit ausdrücklich an, bestimmte Prozesse,
+Technologien oder Gesetze einzuhalten. Alle Länder werden durch
+zweistellige Ländercodes in Großbuchstaben gemäß ISO 3166-1 alpha-2 angegeben.
 
 Key ``intendedAudience/unsupportedCountries`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 
-This key explicitly marks countries as NOT supported. This might be the
-case if there is a conflict between how software is working and a
-specific law, process or technology. All countries are specified using
-lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country codes.
+Dieser Schlüssel kennzeichnet Länder ausdrücklich als NICHT unterstützt.
+Dies kann der Fall sein, wenn die Funktionsweise der Software einem
+bestimmten Gesetz, Prozess oder einer Technologie widerspricht. Alle Länder
+werden durch zweistellige Ländercodes in Großbuchstaben gemäß ISO 3166-1 alpha-2 angegeben.
 
 Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
 ``intendedAudience/countries``, um die Länder aufzulisten, an die sich
@@ -396,7 +350,7 @@ die Software ausdrücklich richtet.
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 -  Zulässige Werte: see :ref:`scope-list`
 
@@ -436,7 +390,7 @@ section. All other languages are optional.
 Key ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''''''
 
--  Typ: string
+-  Typ: Zeichenkette
 -  Vorhandensein: optional
 -  Beispiel: ``"Office Suite"``
 
@@ -446,24 +400,11 @@ name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
 
-Key ``description/[lang]/genericName`` (*veraltet*)
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
--  Typ: string (max 35 chars)
--  Vorhandensein: optional
--  Beispiel: ``"Text Editor"``
-
-This key is the “Generic name”, which refers to the specific category to
-which the software belongs. You can usually find the generic name in the
-presentation of the software, when you write: “Software xxx is a yyy”.
-Notable examples include “Text Editor”, “Word Processor”, “Web Browser”,
-“Chat” and so on… The generic name can be up to 35 characters long.
-
 Key ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
--  Typ: string (max 150 chars)
--  Vorhandensein: mandatory
+-  Typ: Zeichenkette (max. 150 Zeichen)
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"Advanced booking system for hospitals"``
 
 This key contains a short description of the software. It should be a
@@ -473,8 +414,8 @@ allowed.
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
 
--  Typ: Markdown string (min 150 chars, max 10000 chars)
--  Vorhandensein: mandatory (for at least one language)
+-  Typ: Markdown-Zeichenkette (min. 150 Zeichen, max. 10000 Zeichen)
+-  Vorhandensein: obligatorisch (für mindestens eine Sprache)
 
 This key contains a longer description of the software, between 150 and
 10000 chars. It is meant to provide an overview of the capabilities of
@@ -543,7 +484,7 @@ part of the repository itself.
 Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 
 This key contains a list of software features, describing what
@@ -561,7 +502,7 @@ additional information.
 Key ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
 
--  Typ: list of strings (paths)
+-  Typ: Liste von Zeichenketten (Pfade)
 -  Vorhandensein: optional
 -  Formate: PNG, JPEG, WebP, AVIF
 -  Beispiel: ``"data/screenshots/configuration.png"``
@@ -583,7 +524,7 @@ Screenshots can be of any shape and size; the suggested formats are:
 Key ``description/[lang]/videos`` (*veraltet*)
 ''''''''''''''''''''''''''''''''''''''''''''''
 
--  Typ: list of strings (URLs)
+-  Typ: Liste von Zeichenketten (URLs)
 -  Vorhandensein: optional
 -  Beispiel: ``"https://youtube.com/xxxxxxxx"``
 
@@ -603,7 +544,7 @@ Dokumentation oder auf der Website der Software.
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
--  Typ: list of strings
+-  Typ: Liste von Zeichenketten
 -  Vorhandensein: optional
 
 A list of awards won by the software.
@@ -614,8 +555,8 @@ Section ``legal``
 Key ``legal/license``
 '''''''''''''''''''''
 
--  Typ: string
--  Vorhandensein: mandatory
+-  Typ: Zeichenkette
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"AGPL-3.0-or-later"``
 
 This string describes the license under which the software is
@@ -626,7 +567,7 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 Key ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''''''
 
--  Typ: string
+-  Typ: Zeichenkette
 -  Vorhandensein: optional
 -  Beispiel: ``"City of Amsterdam"``
 
@@ -639,37 +580,7 @@ sentence. It is also possible to informally refer to a community of
 group of people like “Linus Torvalds and all Linux contributors”.
 
 In case it is not possible to name a main copyright owner, it is
-possible to omit this key; in those cases, if the repo has a authors
-file, you can point to it through ``legal/authorsFile``.
-
-Key ``legal/repoOwner`` (*veraltet*)
-''''''''''''''''''''''''''''''''''''
-
--  Typ: string
--  Vorhandensein: optional
--  Beispiel: ``"City of Amsterdam"``
-
-This string describes the entity that owns this repository; this might
-or might not be the same entity who owns the copyright on the code
-itself. For instance, in case of a fork of the original software, the
-``repoOwner`` is probably different from the ``mainCopyrightOwner``.
-
-Dieser Schlüssel ist veraltet. Verwenden Sie stattdessen
-``organisation/name``.
-
-Key ``legal/authorsFile`` (*veraltet*)
-''''''''''''''''''''''''''''''''''''''
-
--  Typ: string (path to file)
--  Vorhandensein: optional
--  Beispiel: ``"doc/AUTHORS.txt"``
-
-Some open-source software adopt a convention of identify the copyright
-holders through a file that lists all the entities that own the
-copyright. This is common in projects strongly backed by a community
-where there are many external contributors and no clear single/main
-copyright owner. In such cases, this key can be used to refer to the
-authors file, using a path relative to the root of the repository.
+possible to omit this key.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -681,8 +592,8 @@ or not.
 Key ``maintenance/type``
 ''''''''''''''''''''''''
 
--  Typ: enumerate
--  Vorhandensein: mandatory
+-  Typ: Aufzählung
+-  Vorhandensein: obligatorisch
 -  Werte: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 This key describes how the software is currently maintained.
@@ -698,8 +609,8 @@ This key describes how the software is currently maintained.
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Typ: list of Contractors (see below)
--  Vorhandensein: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
+-  Typ: Liste von Auftragnehmern (siehe unten)
+-  Vorhandensein: obligatorisch, wenn ``maintenance/type`` ``contract`` **ist**; darf sonst nicht vorhanden sein
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
@@ -708,8 +619,8 @@ organisations, or other collective names.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Typ: list of Contacts (see below)
--  Vorhandensein: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
+-  Typ: Liste von Kontakten (siehe unten)
+-  Vorhandensein: obligatorisch, wenn ``maintenance/type`` ``internal`` oder ``community`` **ist**; sonst optional
 
 One or more contacts maintaining this software.
 
@@ -733,8 +644,8 @@ software.
 Key ``localisation/localisationReady``
 ''''''''''''''''''''''''''''''''''''''
 
--  Typ: boolean
--  Vorhandensein: mandatory
+-  Typ: boolescher Wert
+-  Vorhandensein: obligatorisch
 
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
@@ -743,8 +654,8 @@ than one language.
 Key ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
 
--  Typ: list of IETF BCP 47 language tags
--  Vorhandensein: mandatory
+-  Typ: Liste von Sprach-Tags nach IETF BCP 47
+-  Vorhandensein: obligatorisch
 -  Beispiel: ``"it"``, ``"en"``, ``"sl-IT-nedis"``
 
 This is the list of languages in which the software is
@@ -767,7 +678,7 @@ dependencies.
 Key ``dependsOn/open`` (*veraltet*)
 '''''''''''''''''''''''''''''''''''
 
--  Typ: list of ``dependency`` (see below)
+-  Typ: Liste von ``dependency`` (siehe unten)
 -  Vorhandensein: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -781,7 +692,7 @@ Deployment-Skripte.
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
--  Typ: list of ``dependency`` (see below)
+-  Typ: Liste von ``dependency`` (siehe unten)
 -  Vorhandensein: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -790,7 +701,7 @@ under a proprietary license.
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Typ: list of ``dependency`` (see below)
+-  Typ: Liste von ``dependency`` (siehe unten)
 -  Vorhandensein: optional
 
 This key contains a list of hardware dependencies that must be owned to
@@ -906,5 +817,4 @@ Encodierung
 ~~~~~~~~~~~
 
 ``publiccode.yml`` **MUSS** ein UTF-8-encodiertes Dokument sein und
-**SOLLTE** ein YAML-1.2-Dokument sein. Die Verwendung von YAML 1.1 ist
-*veraltet*.
+**MUSS** ein YAML-1.2-Dokument sein.

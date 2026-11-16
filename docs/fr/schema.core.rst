@@ -126,59 +126,12 @@ Clé ``logo``
 -  Formats acceptés: SVG, SVGZ, PNG, JPEG, WebP, AVIF
 -  Exemple: ``"img/logo.svg"``
 
-Cette clé contient le chemin du logo du logiciel. Les logos doivent être
-dans un format de fichier vectoriel. 
+Cette clé contient le chemin du logo du logiciel. Les logos DEVRAIENT être
+dans un format de fichier vectoriel.
 La valeur de la clé peut être le chemin relatif du fichier à partir de la
 racine du dépôt ou une URL absolue qui pointe vers la version brute du logo.
 Dans les deux cas, le fichier doit être situé dans le même dépôt que le
 fichier ``publiccode.yml``.
-
-Clé ``monochromeLogo`` (*obsolète*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: chaîne de caractères (chemin vers le fichier)
--  Présence: facultative
--  Formats acceptés: SVG, SVGZ, PNG
--  Exemple: ``"img/logo-mono.svg"``
-
-Cette clé indique le logo monochrome (noir) du logiciel. Le logo doit
-être dans un format de fichier vectoriel ; les formats raster sont uniquement
-autorisés comme solution de secours. Dans ce cas, il s'agit de fichiers PNG
-transparents, d’une largeur minimale de 1000px. 
-La valeur clé peut être le chemin relatif vers le fichier à partir de la 
-racine du dépôt ou une URL absolue pointant vers une version brute du
-logo. Dans les deux cas, le fichier doit être situé dans le même dépôt que le
-fichier ``publiccode.yml``.
-
-Clé ``inputTypes`` (*obsolète*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: liste de chaînes de caractères énumérées
--  Présence: facultative
--  Valeurs: conformément à la RFC 6838
--  Exemple: ``"text/plain"``
-
-Une liste des types de supports (*Media Types* ou MIME Types) tels que mentionnés dans la
-`RFC 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, qui peuvent être gérés
-en entrée (*input*) dans l'application.
-
-Si le logiciel ne supporte aucune entrée, il est possible d'ignorer ce champ
-ou d’utiliser ``application/x.empty``.
-
-Clé ``outputTypes`` (*obsolète*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Type: liste de chaînes de caractères énumérées
--  Présence: facultative
--  Valeurs: conformément à la RFC 6838
--  Exemple: ``"text/plain"``
-
-Une liste des types de supports (*Media Types* ou MIME Types) tels que mentionnés dans la
-`RFC 6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, qui peuvent être gérés
-en sorties (*output*) dans l'application.
-
-Si le logiciel ne supporte aucune sorties, il est possible d'ignorer ce champ
-ou d’utiliser ``application/x.empty``.
 
 Clé ``platforms``
 ~~~~~~~~~~~~~~~~~
@@ -191,7 +144,7 @@ Clé ``platforms``
 -  Exemple: ``web``
 
 Cette clé spécifie sur quelle plateforme le logiciel fonctionne.
-Plutôt que de décrire la plateforme sur laquelle le logiciel s'exécute, 
+Plutôt que de décrire la plateforme sur laquelle le logiciel s'exécute,
 cette clé permet d'indiquer les plateformes que les utilisateurs pourront
 utiliser pour accéder et faire fonctionner le logiciel.
 
@@ -205,7 +158,7 @@ Clé ``categories``
 
 -  Type: liste de chaînes de caractères
 -  Présence: facultative
--  Valeurs acceptées: voir :ref:`categories-list` 
+-  Valeurs acceptées: voir :ref:`categories-list`
 
 Une liste des categories qui peuvent être utilisés pour décrire le logiciel
 et aider à la constitution d'un catalogue des logiciels ouverts.
@@ -225,7 +178,7 @@ logiciel, comme étant des utilisateurs.
 
 Les programmes d'analyses syntaxiques sont encouragés pour permettre
 d'améliorer cette liste avec des informations complémentaires qui peuvent
-être obtenu indépendamment ; par exemple, la fourche d’un logiciel 
+être obtenu indépendamment ; par exemple, la fourche d’un logiciel
 détenue par une administration, peut être utilisée comme un signal
 d’utilisation du logiciel.
 
@@ -255,7 +208,7 @@ Clé ``developmentStatus``
 -  Valeurs autorisées: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-Les clés sont: 
+Les valeurs autorisées sont:
 
 -  ``concept`` - Le logiciel est encore un « concept » : aucun code n’a été
    développé, et le dépôt peut exister symboliquement, dans l'attente.
@@ -279,9 +232,9 @@ Clé ``softwareType``
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-Les clés sont:
+Les valeurs autorisées sont:
 
--  ``standalone/mobile`` - Le logiciel est paquet autonome et portable. 
+-  ``standalone/mobile`` - Le logiciel est paquet autonome et portable.
    Le logiciel est une application mobile native.
 -  ``standalone/iot`` - Le logiciel est adapté pour une utilisation dans un
    contexte IoT.
@@ -385,9 +338,9 @@ Clé ``intendedAudience/countries``
 
 Cette clé inclut explicitement certains pays dans le public cible,
 par exemple, le logiciel revendique explicitement sa conformité avec
-des processus, des technologies ou des lois spécifiques. 
+des processus, des technologies ou des lois spécifiques.
 Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays,
-en minuscules (*obsolète*) ou en majuscules, conformément au standard ISO 3166-1 alpha-2.
+en majuscules, conformément au standard ISO 3166-1 alpha-2.
 
 Clé ``intendedAudience/unsupportedCountries`` (*obsolète*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -400,7 +353,7 @@ Cette situation peut survenir en cas de conflit entre le mode de
 fonctionnement du logiciel et une loi, un processus ou une technologie
 particulière.
 Tous les pays sont indiqués à l'aide des deux lettres renvoyant au code du pays
-en minuscules (*obsolète*) ou en majuscules, conformément au standard ISO 3166-1 alpha-2.
+en majuscules, conformément au standard ISO 3166-1 alpha-2.
 
 Cette clé est obsolète, utilisez plutôt ``intendedAudience/countries``
 pour lister les pays auxquels le logiciel s'adresse explicitement.
@@ -410,7 +363,7 @@ Clé ``intendedAudience/scope``
 
 -  Type: liste de chaînes de caractères
 -  Présence: facultative
--  Valeurs acceptées: voir :ref:`scope-list` 
+-  Valeurs acceptées: voir :ref:`scope-list`
 
 Cette clé contient la liste des catégories relatives au champ d’application
 du logiciel.
@@ -430,12 +383,12 @@ le texte est éditée. Pour ce faire, il est nécessaire de créer une section
 dédiée à la langue, conformément aux spécifications de la
 `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__ de l’IETF.
 Veuillez noter que l'étiquette *primary language subtag* ne doit pas être
-omise, comme indiquée dans la BCP 47. 
+omise, comme indiquée dans la BCP 47.
 
 Un exemple pour le français:
 
 
-.. code:: yaml 
+.. code:: yaml
 
    description:
      fr:
@@ -461,21 +414,6 @@ auquel se réfère la majorité des personnes. Si le logiciel a un nom de « co
 en interne et une dénomination commerciale, il est préférable d'indiquer
 la dénomination commerciale.
 
-Clé ``description/[lang]/genericName`` (*obsolète*)
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
--  Type: chaîne de caractères (35 caractères max)
--  Présence: facultative
--  Exemple: ``"Text Editor"``
-
-Cette clé indique le « nom générique », en référence à la catégorie spécifique
-à laquelle le logiciel appartient. Le nom générique du logiciel se trouve 
-généralement dans la présentation du logiciel, lorsque vous écrivez :
-« Le logiciel xxx est un.e yyy ». Parmi les exemples notables, il est possible
-de mentionner « Éditeur de texte », « Logiciel de traitement de texte »,
-« Moteur de recherche », « Forum », etc… Le nom générique peut comporter
-jusqu’à 35 caractères.
-
 Clé ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
@@ -484,7 +422,7 @@ Clé ``description/[lang]/shortDescription``
 -  Exemple: ``"Advanced booking system for hospitals"``
 
 Cette clé contient une brève description du logiciel.
-Il s'agit d'une seule ligne contenant une unique phrase 
+Il s'agit d'une seule ligne contenant une unique phrase
 d'un maximum de 150 caractères.
 
 Clé ``description/[lang]/longDescription``
@@ -495,7 +433,7 @@ Clé ``description/[lang]/longDescription``
 
 Cette clé contient une description longue du logiciel, entre 150 et 10 000
 caractères. Elle a pour but de donner un aperçu des fonctionnalités du
-logiciel à un utilisateur potentiel. Le public de ce texte doit être 
+logiciel à un utilisateur potentiel. Le public de ce texte doit être
 l'utilisateur final du logiciel et non le développeur.
 Il est possible de considérer ce texte comme la description du logiciel
 qui pourrait figurer sur le site web (dans le cas où le logiciel en aurait un).
@@ -511,7 +449,7 @@ Clé ``description/[lang]/documentation``
 -  Type: URL
 -  Présence: facultative
 
-Cette clé contient une référence à la documentation du logiciel à destination 
+Cette clé contient une référence à la documentation du logiciel à destination
 de l'utilisateur (et non du développeur). La valeur doit être une URL pointant
 vers une version hébergée de la documentation.
 
@@ -524,12 +462,12 @@ de recherche, etc.).
 Si la documentation est uniquement disponible sous la forme d'un document,
 il est nécessaire d'insérer un lien dans la clé, sous la forme d'une URL,
 pour afficher / télécharger le document. Il est conseillé de traiter la
-documentation comme faisant partie du code source et donc de la gérer au 
+documentation comme faisant partie du code source et donc de la gérer au
 travers de commits vers le code source du dépôt. De cette manière, il sera
 possible d'indiquer une URL pointant directement vers la plateforme
 d'hébergement du code source (ex. l'URL Github d'un fichier). Il est
-préférable d'utiliser un format ouvert tel que PDF ou ODT pour une 
-interopérabilité maximale. 
+préférable d'utiliser un format ouvert tel que PDF ou ODT pour une
+interopérabilité maximale.
 
 Quel que soit le format de la documentation, il est nécessaire de publier
 les fichiers sources sous une licence ouverte, en les ajoutant éventuellement
@@ -554,12 +492,12 @@ une interface interactive (ex. Swagger).
 Si la documentation est uniquement disponible sous la forme d'un document,
 il est necessaire d'insérer un lien dans la clé, sous la forme d'une URL,
 pour afficher / télécharger le document. Il est conseillé de traiter la
-documentation comme faisant partie du code source et donc de la gérer au 
+documentation comme faisant partie du code source et donc de la gérer au
 travers de commits vers le code source du dépôt. De cette manière, il sera
 possible d'indiquer une URL pointant directement vers la plateforme
 d'hébergement du code source (ex. l'URL Github d'un fichier). Il est
-préférable d'utiliser un format ouvert tel que PDF ou ODT pour une 
-interopérabilité maximale. 
+préférable d'utiliser un format ouvert tel que PDF ou ODT pour une
+interopérabilité maximale.
 
 Quel que soit le format de la documentation, il est nécessaire de publier
 les fichiers sources sous une licence ouverte, en les ajoutant éventuellement
@@ -616,7 +554,7 @@ Clé ``description/[lang]/videos`` (*obsolète*)
 
 Cette clé contient une ou plusieurs URLs de vidéos montrant le fonctionnement
 du logiciel. Comme les captures d'écran, les vidéos doivent donner un aperçu
-rapide de l’apparence du logiciel et de la manière dont il fonctionne. 
+rapide de l’apparence du logiciel et de la manière dont il fonctionne.
 Les vidéos doivent être hébergées sur une plateforme de partage de vidéos
 qui supporte le standard `oEmbed <https://oembed.com>`__ ; Youtube et Vimeo
 sont des alternatives populaires.
@@ -647,7 +585,7 @@ Clé ``legal/license``
 
 Cette chaîne de caractères décrit la licence sous laquelle le logiciel
 est distribué. La chaîne de caractères doit contenir une expression SPDX
-valide, renvoyant à une (ou plusieurs) licence open source. 
+valide, renvoyant à une (ou plusieurs) licence open source.
 Pour plus d’informations, veuillez vous référer à la
 `documentation du SPDX <https://spdx.org/licenses/>`__.
 
@@ -662,28 +600,7 @@ Cette chaîne décrit l'entité qui détient les droits d'auteur sur la "majorit
 
 Il est possible de lister plusieurs propriétaires si nécessaire, en utilisant une phrase en anglais. Il est également possible de faire référence à une communauté ou à un groupe de personnes tel que "Linus Torvalds et tous les contributeurs Linux".
 
-S'il est impossible d'identifier le principal détenteur du droit d'auteur, il est possible d'omettre cette clé. Dans ce cas, si le dépôt a un fichier contenant le nom des auteurs, il est possible de pointer vers ce fichier via ``legal/authorsFile`` (voir ci-dessous).
-
-Clé ``legal/repoOwner`` (*obsolète*)
-''''''''''''''''''''''''''''''''''''
-
--  Type: chaîne de caractères
--  Présence: facultative
--  Exemple: ``"City of Amsterdam"``
-
-Cette clé décrit l'entité propriétaire du dépôt. Il peut s'agir (ou non) de la même entité qui détient le droit d'auteur sur le code. Par exemple, dans le cas d'un logiciel fourché, le ``repoOwner`` est probablement différent du ``mainCopyrightOwner``.
-
-Cette clé est obsolète, utilisez plutôt ``organisation/name``.
-
-Clé ``legal/authorsFile`` (*obsolète*)
-''''''''''''''''''''''''''''''''''''''
-
--  Type: chaîne de caractères (chemin du fichier)
--  Présence: facultative
--  Exemple: ``"doc/AUTHORS.txt"``
-
-Certains logiciels au code source ouvert adoptent une convention qui identifie les détenteurs du droit d'auteur via un fichier répertoriant toutes les entités titulaires du droit d'auteur. Il s'agit d'une pratique courante dans le cadre de projets fortement soutenus par une communauté où il y a de nombreux contributeurs externes et pas de titulaires du droit d'auteur unique / principal. Dans ce cas, cette clé peut être utilisée pour faire référence au fichier *authors* susmentionné, en utilisant un chemin relatif vers la racine du dépôt.
-
+S'il est impossible d'identifier le principal détenteur du droit d'auteur, il est possible d'omettre cette clé.
 
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -718,11 +635,11 @@ Clé ``maintenance/contacts``
 -  Type: liste de Contacts (voir ci-dessous)
 -  Présence: obligatoire si ``maintenance/type`` **est** ``internal`` ou ``community``; facultatif dans les autres cas
 
-Un ou plusieurs contacts assurant la maintenance du logiciel. 
+Un ou plusieurs contacts assurant la maintenance du logiciel.
 
 Cette clé décrit les personnes techniques responsable de la maintenance du logiciel. Chaque contact doit être une personne physique et non une entreprise ou une organisation. Si un contact agit comme représentant d'une institution, ce rapport doit être explicité à l'aide de la clé ``affiliation`` du contact (voir ci-dessous).
 
-Dans le cas d'un accord commercial (ou d'une série d'accords semblables), il est nécessaire de spécifier les entités finales sous contrat, en charge de la maintenance du logiciel. Ne mentionné pas le propriétaire du logiciel, sauf s'il est techniquement impliqué dans la maintenance du produit. 
+Dans le cas d'un accord commercial (ou d'une série d'accords semblables), il est nécessaire de spécifier les entités finales sous contrat, en charge de la maintenance du logiciel. Ne mentionné pas le propriétaire du logiciel, sauf s'il est techniquement impliqué dans la maintenance du produit.
 
 Section ``localisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -736,7 +653,7 @@ Clé ``localisation/localisationReady``
 -  Présence: obligatoire
 
 Si ``true``, le logiciel a l'infrastructure mise en place ou a été conçu pour être
-multilingue. Le logiciel n'a pas besoin d'être disponible dans plusieurs langues, une seule langue suffit. 
+multilingue. Le logiciel n'a pas besoin d'être disponible dans plusieurs langues, une seule langue suffit.
 
 Clé ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
@@ -751,7 +668,7 @@ Il s'agit de la liste des langues dans lesquelles le logiciel est disponible. Bi
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
 
-Cette section fournit un aperçu des dépendances requises à l'échelle du système, pour installer et utiliser le logiciel. 
+Cette section fournit un aperçu des dépendances requises à l'échelle du système, pour installer et utiliser le logiciel.
 
 **NOTE:** elle ne liste pas les dépendances à l'échelle du code source (ex. bibliothèques utlisées par le logiciel) et se concentre uniquement sur les dépendances de relative au fonctionnement et/ou au système qui doivent être installées et maintenues séparément; par exemple, une base de données.
 
@@ -782,7 +699,7 @@ Clé ``dependsOn/hardware``
 -  Type: liste de ``dependency`` (voir ci-dessous)
 -  Présence: facultative
 
-Cette clé contient une liste des dépendances matérielles qui doivent être détenues pour utiliser le logiciel. 
+Cette clé contient une liste des dépendances matérielles qui doivent être détenues pour utiliser le logiciel.
 
 Formats de données spécifiques
 ------------------------------
@@ -802,7 +719,7 @@ Une ``dependency`` est un mapping comportant les propriétés suivantes :
 Gestion de versions complexe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Il est bien sûr possible d'utiliser les différentes clés pour spécifier une matrice de compatibilité complexe. 
+Il est bien sûr possible d'utiliser les différentes clés pour spécifier une matrice de compatibilité complexe.
 
 
 *Ex. 1*
@@ -832,7 +749,9 @@ Un Contact est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Cette clé contient le nom complet d'un des contacts techniques. Ce doit être une personne physique ; NE PAS remplir cette clé avec des informations de contact génériques, relatives à des départements d'une entreprise, à une association, etc.
 -  ``email`` -  Cette clé contient l'adresse e-mail du contact technique. Il s'agit de l'adresse e-mail à laquelle le contact technique peut être directement contacté ; NE PAS remplir cette clé avec une liste de diffusion ou des points de contact génériques tels que “info@acme.inc”.
--  ``phone`` - le numéro de téléphone. Il DOIT inclure l'indicatif téléphonique international, selon le format `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ (par exemple ``+3923113215112``). Il s'agit d'une chaîne de caractères.
+-  ``phone`` - le numéro de téléphone. Il DOIT inclure l'indicatif téléphonique
+   international, en suivant le format `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
+   (ex. ``+3923113215112``). Il s'agit d'une chaîne de caractères.
 -  ``affiliation`` - Cette clé contient une information explicite quant à l'affiliation du contact technique. Dans le cas où il y aurait plusieurs entités maintenant le logiciel, cette clé peut être utilisée pour créer une relation entre chaque contact technique et chaque entité maintenant le logiciel. Elle peut contenir, par exemple, le nom d'une entreprise, le nom d'une association, etc.
 
 Organisation
@@ -849,9 +768,9 @@ Prestataire
 Un Contractor (prestataire) est un mapping comportant les propriétés suivantes :
 
 -  ``name`` - **obligatoire** - Le nom du prestataire, qu'il s'agisse d'une entreprise ou d'une personne physique.
--  ``until`` - **obligatoire** - Il s'agit d'une date (YYYY-MM-DD). Cette clé doit contenir la date à laquelle la maintenance prendra fin. Dans le cas où la maintenance serait réalisée par une communauté, la valeur ne doit pas excéder une période de deux ans, et devra donc être régulièrement mise si la communauté continue à travailler sur le projet. 
+-  ``until`` - **obligatoire** - Il s'agit d'une date (YYYY-MM-DD). Cette clé doit contenir la date à laquelle la maintenance prendra fin. Dans le cas où la maintenance serait réalisée par une communauté, la valeur ne doit pas excéder une période de deux ans, et devra donc être régulièrement mise si la communauté continue à travailler sur le projet.
 -  ``email`` -  Cette clé contient l'adresse e-mail du contact technique. Il s'agit de l'adresse e-mail à laquelle le contact technique peut être directement contacté ; NE PAS remplir cette clé avec une liste de diffusion ou des points de contact génériques tels que “info@acme.inc”.
--  ``website`` - Cette clé pointe vers l'entité maintenant le site web. Elle peut pointer vers le site web principal d'une institution ou bien vers un site web ou une page plus spécifique au projet. 
+-  ``website`` - Cette clé pointe vers l'entité maintenant le site web. Elle peut pointer vers le site web principal d'une institution ou bien vers un site web ou une page plus spécifique au projet.
 
 Dates
 ~~~~~
@@ -862,5 +781,5 @@ qui est l'un des codages autorisé par l'ISO8601. Il s'agit de l'unique codage a
 Encodage
 ~~~~~~~~
 
-``publiccode.yml`` **DOIT** être un document encodé en UTF-8 et **DEVRAIT**
-être un document YAML 1.2. L'utilisation de YAML 1.1 est *obsolète*.
+``publiccode.yml`` **DOIT** être un document encodé en UTF-8 et **DOIT**
+être un document YAML 1.2.

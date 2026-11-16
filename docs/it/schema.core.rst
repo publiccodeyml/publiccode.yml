@@ -137,53 +137,6 @@ che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
 all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
 dovrebbe essere in formato vettoriale.
 
-Chiave ``monochromeLogo`` (*deprecata*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Tipo: stringa (percorso verso il file)
--  Presenza: opzionale
--  Formati accettabili: SVG, SVGZ, PNG
--  Esempio: ``"img/logo-mono.svg"``
-
-Questa chiave indica il logo monocromatico (nero) del software. Il valore può
-essere il percorso
-relativo al file a partire dalla root del repository, oppure una URL assoluta
-che punta al logo in versione raw. In entrambi i casi, il file deve risiedere
-all'interno del medesimo repository che contiene il ``publiccode.yml``.  Il logo
-dovrebbe essere in formato vettoriale; i formati raster sono solo accettabili
-come fallback. In questo caso, dovrebbero essere PNG trasparenti, con una
-larghezza minima di 1000px.
-
-Chiave ``inputTypes`` (*deprecata*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Tipo: lista di stringhe enumerate
--  Presenza: opzionale
--  Valori: vedi RFC 6838
--  Esempio: ``"text/plain"``
-
-Una lista di Media Types (MIME Types), come specificato dal `RFC
-6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, che possono essere
-gestiti in input dall’applicazione.
-
-Nel caso in cui il software non supporti alcun input, è possibile
-saltare questo campo o usare ``application/x.empty``.
-
-Chiave ``outputTypes`` (*deprecata*)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Tipo: lista di stringhe enumerate
--  Presenza: opzionale
--  Valori: vedi RFC 6838
--  Esempio: ``"text/plain"``
-
-Una lista di Media Types (MIME Types), come specificato dal `RFC
-6838 <https://www.rfc-editor.org/rfc/rfc6838.html>`__, che possono essere
-gestiti in output dall’applicazione.
-
-Nel caso in cui il software non supporti alcun output, è possibile
-saltare questo campo o usare ``application/x.empty``.
-
 Chiave ``platforms``
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -256,7 +209,7 @@ Chiave ``developmentStatus``
 -  Valori permessi: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-Le chiavi sono: 
+I valori ammessi sono:
 
 -  ``concept`` - Il software è solo un “concept”. Non è
    stato sviluppato codice e il repository potrebbe semplicemente essere un
@@ -282,7 +235,7 @@ Chiave ``softwareType``
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-Le chiavi sono: 
+I valori ammessi sono:
 
 -  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
    Il software è un'applicazione nativa per dispositivi mobile.
@@ -387,7 +340,7 @@ Chiave ``intendedAudience/countries``
 Questa chiave include in modo esplicito alcuni Paesi tra il pubblico
 previsto, i.e., il software rivendica esplicitamente la conformità con
 processi specifici, tecnologie o leggi. Tutti i Paesi sono specificati
-usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
+usando *country code* a due lettere in maiuscolo,
 seguendo lo standard ISO 3166-1 alpha-2.
 
 Chiave ``intendedAudience/unsupportedCountries`` (*deprecata*)
@@ -400,7 +353,7 @@ Questa chiave contrassegna esplicitamente i Paesi **NON** supportati.
 Questa situazione potrebbe verificarsi nel momento in cui esista un
 conflitto tra la modalità di funzionamento del software ed una legge
 specifica, un processo o una tecnologia. Tutti i Paesi sono specificati
-usando *country code* a due lettere in minuscolo (*deprecato*) o in maiuscolo,
+usando *country code* a due lettere in maiuscolo,
 seguendo lo standard ISO 3166-1 alpha-2.
 
 Questa chiave è deprecata, usare invece ``intendedAudience/countries``
@@ -462,21 +415,6 @@ Dovrebbe essere il nome con il quale la maggioranza delle persone
 normalmente si riferisce al software. Nel caso in cui il software abbia
 sia un nome “interno” che uno commerciale, è preferibile utilizzare
 quello commerciale.
-
-Chiave ``description/[lang]/genericName`` (*deprecata*)
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa (max 35 caratteri)
--  Presenza: opzionale
--  Esempio: ``"Text Editor"``
-
-Questa chiave rappresenta il “Nome generico”, riferito alla categoria
-specifica alla quale il software appartiene. Normalmente è possibile
-trovare il nome generico nella presentazione del software, quando si
-scrive una frase del tipo: “Il software xxx è un yyy”. Esempi degni di
-nota includono “Editor di Testi”, “Word Processor”, “Web Browser”,
-“Chat” e così via. Il nome generico può avere una lunghezza fino a 35
-caratteri.
 
 Chiave ``description/[lang]/shortDescription``
 ''''''''''''''''''''''''''''''''''''''''''''''
@@ -671,38 +609,7 @@ gruppo di persone come ad esempio “Linus Torvalds and all Linux
 contributors”.
 
 Nel caso in cui non sia possibile individuare il maggior proprietario di
-copyright, è possibile omettere questa chiave; in questi casi, se il
-repository ha un file contenente il nome degli autori, è possibile
-puntare a quel file attraverso ``legal/authorsFile`` (vedi più sotto).
-
-Chiave ``legal/repoOwner`` (*deprecata*)
-''''''''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa
--  Presenza: opzionale
--  Esempio: ``"Città di Roma"``
-
-Questa stringa descrive l’entità che possiede il repository; questa può
-essere o non essere la stessa che possiede il copyright del codice
-stesso. Ad esempio, nel caso di un fork del software originale, il
-``repoOwner`` è probabilmente diverso dal ``mainCopyrightOwner``.
-
-Questa chiave è deprecata, usare invece ``organisation/name``.
-
-Chiave ``legal/authorsFile`` (*deprecata*)
-''''''''''''''''''''''''''''''''''''''''''
-
--  Tipo: stringa (percorso al file)
--  Presenza: opzionale
--  Esempio: ``"doc/AUTHORS.txt"``
-
-Qualche software open-source adotta una convenzione che identifica il
-detentore del copyright attraverso un file elencante tutte le entità
-che possiedono il copyright. Questo è comune nei progetti fortemente
-sostenuti dalla community ove esistono diversi contributori esterni e
-non c’è un chiaro singolo detentore del copyright. In questi casi,
-questa chiave può essere usata per riferirsi al suddetto file degli
-autori, usando un percorso relativo alla radice (root) del repository.
+copyright, è possibile omettere questa chiave.
 
 Sezione ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -719,7 +626,7 @@ Chiave ``maintenance/type``
 -  Valori: ``"internal"``, ``"contract"``, ``"community"``, ``"none"``
 
 Questa chiave descrive come il software è attualmente manutenuto.
-Le chiavi sono:
+I valori ammessi sono:
 
 -  ``internal`` - significa che il software è manutenuto internamente dal
    proprietario del repository; 
@@ -891,10 +798,9 @@ Un Contatto è un mapping con le seguenti proprietà:
    tecnico. Deve essere un indirizzo email per il contatto diretto con
    il tecnico; NON popolare questa chiave con mailing-list o punti di
    contatto generico tipo “info@acme.inc”.
--  ``phone`` - Numero telefonico. DEVE includere il prefisso
-   internazionale, secondo il formato
-   `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ (ad esempio
-   ``+3923113215112``). Questa chiave deve essere una stringa.
+-  ``phone`` - Numero telefonico. DEVE includere il prefisso internazionale,
+   seguendo il formato `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
+   (es. ``+3923113215112``). Questa chiave deve essere una stringa.
 -  ``affiliation`` - Questa chiave contiene informazioni esplicite sui
    contatti tecnici. Nel caso esistano diversi maintainer, questa chiave
    può essere usata per creare relazioni tra diversi contatti tecnici e
@@ -946,4 +852,4 @@ Codifica
 ~~~~~~~~
 
 ``publiccode.yml`` **DEVE** essere un documento codificato in UTF-8 e
-**DOVREBBE** essere un documento YAML 1.2. L'uso di YAML 1.1 è *deprecato*.
+**DEVE** essere un documento YAML 1.2.
