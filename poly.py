@@ -126,14 +126,13 @@ def root_data(driver):
     return catalog(driver.targets)
 
 
-def write_redirects(out, default):
-    """Keep the unversioned URLs alive: the root and every page of the default
-    version redirect into its directory, fragment included."""
-    for page in (out / default).rglob("*.html"):
-        rel = page.relative_to(out / default)
-        target = "../" * (len(rel.parts) - 1) + f"{default}/{rel.as_posix()}"
+def write_redirects(out, version="v0"):
+    """Keep legacy unversioned URLs pointing to the v0 documentation."""
+    for page in (out / version).rglob("*.html"):
+        rel = page.relative_to(out / version)
+        target = "../" * (len(rel.parts) - 1) + f"{version}/{rel.as_posix()}"
         if rel.as_posix() == "index.html":
-            target = f"{default}/"
+            target = f"{version}/"
         stub = out / rel
         stub.parent.mkdir(parents=True, exist_ok=True)
         stub.write_text(REDIRECT.format(target=target))
@@ -160,7 +159,7 @@ class Driver(DefaultDriver):
                 "release tags."
             )
         await super().build_root()
-        write_redirects(self.output_dir, "local" if MOCK else data["default"]["dir"])
+        write_redirects(self.output_dir, "local" if MOCK else "v0")
 
 
 # All version lines share the same doc toolchain, so reuse the active
