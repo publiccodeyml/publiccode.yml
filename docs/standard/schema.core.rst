@@ -257,7 +257,7 @@ Key ``developmentStatus``
 -  Allowed values: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-The keys are: 
+The allowed values are:
 
 -  ``concept`` - The software is just a “concept”. No
    actual code may have been produced, and the repository could simply be a
@@ -282,7 +282,7 @@ Key ``softwareType``
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-The keys are:
+The allowed values are:
 
 -  ``standalone/mobile`` - The software is a standalone application, typically
    installed and run on a mobile operating system.
