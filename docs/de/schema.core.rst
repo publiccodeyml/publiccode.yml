@@ -171,7 +171,7 @@ as “testimonials”) that are currently known to the software maintainer
 to be using this software.
 
 Parsers are encouraged to enhance this list also with other information
-that can obtain independently; for instance, a fork of a software, owned
+that they can obtain independently; for instance, a fork of a software, owned
 by an administration, could be used as a signal of usage of the
 software.
 
@@ -227,25 +227,28 @@ Key ``softwareType``
 
 Die zulässigen Werte sind:
 
--  ``standalone/mobile`` - The software is a standalone, self-contained
-   The software is a native mobile app.
--  ``standalone/iot`` - The software is suitable for an IoT context.
--  ``standalone/desktop`` - The software is typically installed and run in a  
-   a desktop operating system environment.
--  ``standalone/web`` - The software represents a web application usable by
-   means of a browser. 
--  ``standalone/backend`` - The software is a backend application.
--  ``standalone/other`` - The software has a different nature from the once
-   listed above.  
--  ``addon`` - The software is an addon, such as a plugin or a
-   theme, for a more complex software (e.g. a CMS or an office suite).
--  ``library`` - The software contains a library or an SDK to make it
-   easier to third party developers to create new products.
--  ``configurationFiles`` - The software does not contain executable
-   script but a set of configuration files. They may document how to
-   obtain a certain deployment. They could be in the form of plain
-   configuration files, bash scripts, ansible playbooks, Dockerfiles, or
-   other instruction sets.
+-  ``standalone/mobile`` - Die Software ist eine eigenständige Anwendung, die
+   typischerweise auf einem mobilen Betriebssystem installiert und ausgeführt
+   wird.
+-  ``standalone/iot`` - Die Software eignet sich für den Einsatz im IoT-Bereich.
+-  ``standalone/desktop`` - Die Software wird typischerweise in einer
+   Desktop-Betriebssystemumgebung installiert und ausgeführt.
+-  ``standalone/web`` - Die Software ist eine Webanwendung, die auf einem Server
+   ausgeführt wird und über einen Webbrowser zugänglich ist.
+-  ``standalone/backend`` - Die Software ist eine Backend-Anwendung, die
+   Schnittstellen (z. B. APIs) für andere Dienste bereitstellt. Typischerweise
+   stellt sie keine direkten Benutzeroberflächen bereit.
+-  ``standalone/other`` - Die Software ist von anderer Art als die oben
+   aufgeführten Anwendungen.
+-  ``addon`` - Die Software ist eine Erweiterung, etwa ein Plugin oder ein
+   Theme, für eine komplexere Software (z. B. ein CMS oder ein Office-Paket).
+-  ``library`` - Die Software ist eine Bibliothek oder ein SDK zur Verwendung
+   durch Entwickler in anderen Softwareprojekten.
+-  ``configurationFiles`` - Die Software enthält keine ausführbaren Skripte,
+   sondern eine Sammlung von Konfigurationsdateien. Diese können dokumentieren,
+   wie eine bestimmte Bereitstellung erreicht wird. Sie können als einfache
+   Konfigurationsdateien, Bash-Skripte, Ansible-Playbooks, Dockerfiles oder
+   andere Anweisungssätze vorliegen.
 
 Schlüssel ``supports``
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -576,7 +579,7 @@ the code in the repository. Normally, this is the line that is reported
 with the copyright symbol at the top of most files in the repo.
 
 It is possible to list multiple owners if required so, using an English
-sentence. It is also possible to informally refer to a community of
+sentence. It is also possible to informally refer to a community or
 group of people like “Linus Torvalds and all Linux contributors”.
 
 In case it is not possible to name a main copyright owner, it is

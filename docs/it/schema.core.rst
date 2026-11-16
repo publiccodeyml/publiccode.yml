@@ -237,22 +237,24 @@ Chiave ``softwareType``
 
 I valori ammessi sono:
 
--  ``standalone/mobile`` - Il software è un pacchetto  *self-contained*, *standalone*.
-   Il software è un'applicazione nativa per dispositivi mobile.
+-  ``standalone/mobile`` - Il software è un'applicazione autonoma, tipicamente
+   installata ed eseguita su un sistema operativo mobile.
 -  ``standalone/iot`` - Il software è adatto ad essere utilizzato nel contesto
    `Internet of Things`.
 -  ``standalone/desktop`` - Il software è tipicamente installato e utilizzato su un
    sistema operativo desktop. 
--  ``standalone/web`` - Il software rappresenta un applicativo fruibile attraverso il web. 
--  ``standalone/backend`` - Il software è un applicativo backend. 
+-  ``standalone/web`` - Il software è un'applicazione web eseguita su un server
+   e accessibile tramite un browser web.
+-  ``standalone/backend`` - Il software è un'applicazione backend che fornisce
+   interfacce (ad esempio API) ad altri servizi. Tipicamente non fornisce
+   interfacce utente dirette.
 -  ``standalone/other``  - Il software ha una natura diversa rispetto a quanto
    specificato alle chiavi precedenti. 
 -  ``addon`` - Il software è un *addon*,
    come ad esempio un plugin o un tema, per un software più complesso
    (e.g., un CMS o una suite per ufficio). 
--  ``library`` - Il software
-   contiene una libreria o una SDK che facilita la creazione di nuovi prodotti
-   a sviluppatori di terze parti.
+-  ``library`` - Il software è una libreria o un SDK destinato all'uso
+   da parte di sviluppatori in altri progetti software.
 -  ``configurationFiles`` - Il software non contiene script eseguibili ma
    una serie di file di configurazione. Questi potrebbero documentare come
    ottenere un certo tipo di *deployment*. I suddetti file potrebbero avere la

@@ -234,22 +234,24 @@ Clé ``softwareType``
 
 Les valeurs autorisées sont:
 
--  ``standalone/mobile`` - Le logiciel est paquet autonome et portable.
-   Le logiciel est une application mobile native.
+-  ``standalone/mobile`` - Le logiciel est une application autonome, généralement
+   installée et exécutée sur un système d'exploitation mobile.
 -  ``standalone/iot`` - Le logiciel est adapté pour une utilisation dans un
    contexte IoT.
 -  ``standalone/desktop`` - Le logiciel est normalement installé et
    utilisé dans un environnement de bureau.
--  ``standalone/web`` - Le logiciel représente une application web
-   utilisable au moyen d’un navigateur.
--  ``standalone/backend`` - Le logiciel est une application backend.
+-  ``standalone/web`` - Le logiciel est une application web exécutée sur un
+   serveur et accessible via un navigateur web.
+-  ``standalone/backend`` - Le logiciel est une application backend qui fournit
+   des interfaces (par exemple des API) à d'autres services. Généralement,
+   il ne fournit pas d'interfaces utilisateur directes.
 -  ``standalone/other`` - Le logiciel a une nature différente de ceux
    listés ci-dessus.
 -  ``addon`` - Le software est un addon, tel qu'un plugin
    ou un thème, dans le cadre de logiciel plus complexe (ex. un CMS ou
    une suite bureautique).
--  ``library`` - Le logiciel contient une bibliothèque ou un SDK
-   pour faciliter la création de nouveaux produits par des développeurs tiers.
+-  ``library`` - Le logiciel est une bibliothèque ou un SDK destiné à être
+   utilisé par des développeurs dans d'autres projets logiciels.
 -  ``configurationFiles`` - Le logiciel ne contient pas de script
    exécutable, mais une série de fichiers de configuration. Ils peuvent
    documenter la manière d'obtenir un certain type déploiement. Les fichiers
