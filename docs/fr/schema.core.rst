@@ -264,7 +264,7 @@ Clé ``developmentStatus``
 -  Valeurs autorisées: ``concept``, ``development``, ``beta``, ``stable``,
    ``obsolete``
 
-Les clés sont: 
+Les valeurs autorisées sont:
 
 -  ``concept`` - Le logiciel est encore un « concept » : aucun code n’a été
    développé, et le dépôt peut exister symboliquement, dans l'attente.
@@ -288,7 +288,7 @@ Clé ``softwareType``
    ``"standalone/desktop"``, ``"standalone/web"``, ``"standalone/backend"``,
    ``"standalone/other"``, ``"addon"``, ``"library"``, ``"configurationFiles"``
 
-Les clés sont:
+Les valeurs autorisées sont:
 
 -  ``standalone/mobile`` - Le logiciel est paquet autonome et portable. 
    Le logiciel est une application mobile native.
