@@ -30,9 +30,10 @@ you MUST update ``publiccode.yml`` to describe it:
    the fork and how.
 
 You SHOULD add the fork's features to
-:ref:`description/[lang]/features <features>`. Keep inherited features
-unless you removed them from the software. Catalogs can compare the
-lists to show the differences.
+:ref:`description/[lang]/features <features>`. Existing features SHOULD
+NOT be edited or removed unless they have been removed from the fork.
+Parsers SHOULD expect and analyze metadata differences between forks,
+including comparing feature lists to show their user visible differences.
 
 .. tip::
 
