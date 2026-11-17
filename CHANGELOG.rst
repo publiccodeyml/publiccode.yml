@@ -25,6 +25,12 @@ Changed
   booleans. Ignore surrounding whitespace, reject empty strings and
   allow line breaks only where explicitly permitted. Count characters
   using Unicode extended grapheme clusters after trimming whitespace.
+* Require enumerated strings to match the listed values exactly,
+  including case.
+* Require e-mail addresses in RFC 5322 ``addr-spec`` form, without
+  display names.
+* Reject dependencies that combine ``version`` with ``versionMin`` or
+  ``versionMax``.
 * Require calendar dates to exist and be quoted strings in
   ``YYYY-MM-DD`` format.
 * Reject repository paths that start with ``/`` or refer outside the
