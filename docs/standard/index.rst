@@ -287,6 +287,15 @@ A URL to the hosted API documentation of the software.
 
 :ref:`array <array-type>` of :ref:`strings <string-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   description:
+     en:
+       features:
+         - Very important feature
+         - Will run without a problem
+
 What users can do with the software. Write the list for public
 decision makers who would commission it.
 
@@ -644,6 +653,13 @@ related software.
 :ref:`array <array-type>` of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`categories`
+
+.. code-block:: yaml
+   :caption: Example
+
+   categories:
+     - content-management
+     - office
 
 The categories the software belongs to. Catalogs use them to group
 software.
