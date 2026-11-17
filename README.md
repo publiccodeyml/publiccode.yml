@@ -93,6 +93,9 @@ This project follows the [Semantic Versioning](https://semver.org/).
 Feel free to submit [Pull Requests, file Issues](CONTRIBUTING.md) or open
 a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions).
 
+Translations of the documentation live in
+[publiccodeyml/translations](https://github.com/publiccodeyml/translations).
+
 The [Standard's website](https://publiccodeyml.github.io) is built using the
 Python Sphinx package and
 [deployed](https://github.com/publiccodeyml/publiccodeyml.github.io/blob/main/.github/workflows/publish.yml)
