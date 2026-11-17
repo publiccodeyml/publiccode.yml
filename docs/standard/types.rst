@@ -35,7 +35,7 @@ Country code
 
 An `ISO 3166-1 alpha-2
 <https://www.iso.org/iso-3166-country-codes.html>`__ country code,
-such as ``IT`` or ``DE``.
+such as ``IT`` or ``DE``. The code MUST be uppercase.
 
 .. _path-type:
 
@@ -92,7 +92,7 @@ Properties:
 -  ``name`` (**required**): The name of the contractor, whether it’s a
    company or a physical person.
 -  ``until`` (**required**): The :ref:`date <date-type>` the
-   maintenance is going to end. For community maintenance, it should
+   maintenance is going to end. For community maintenance, it SHOULD
    be no more than two years in the future. Update it regularly while
    the community maintains the software.
 -  ``email``: The e-mail address of the technical contact. It MUST

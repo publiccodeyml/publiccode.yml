@@ -90,7 +90,7 @@ prefer HTTPS.
    Forking just to contribute upstream? Do not change ``url``: it
    keeps pointing at the original repository, and parsers use the
    mismatch to skip technical forks. Only a fork meant to become its
-   own project should change it. See :ref:`forks-and-variants`.
+   own project SHOULD change it. See :ref:`forks-and-variants`.
 
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -573,8 +573,8 @@ string
 
    softwareVersion: "1.0"
 
-The latest stable version of the software. Parsers should display
-this string without interpreting or parsing it. They should not assume
+The latest stable version of the software. Parsers SHOULD display
+this string without interpreting or parsing it. They SHOULD NOT assume
 semantic versioning or any other version format.
 
 ``releaseDate``
