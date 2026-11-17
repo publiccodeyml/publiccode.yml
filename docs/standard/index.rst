@@ -539,7 +539,8 @@ array of :ref:`language tags <language-tag-type>`
        - fr
        - de-AT
 
-The languages the software is available in. List at least one.
+The languages the software is available in.
+It MUST contain at least one language tag.
 
 ``logo``
 ~~~~~~~~
