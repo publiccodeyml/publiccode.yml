@@ -37,13 +37,6 @@ Details carried by a ``publiccode.yml`` file include:
   
 and much more.
 
-See also
-----------
-
-- `More information about software reuse <https://developers.italia.it/en/reuse>`__
-- `publiccode.yml web editor
-  <https://publiccode-editor.developers.italia.it/>`__
-
 Table of contents
 -----------------
 
