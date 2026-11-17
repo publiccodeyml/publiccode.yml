@@ -32,10 +32,13 @@ Properties:
 -  ``name`` (**required**): The name of the contractor, whether it’s a
    company or a physical person.
 -  ``until`` (**required**): The date the maintenance is going
-   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format.
--  ``email``: The e-mail address of the contractor. It must reach the
-   contractor directly, not a mailing list or a generic contact point
-   like ``info@acme.inc``.
+   to end, as “YYYY-MM-DD”, the only allowed ISO8601 format. For
+   community maintenance, it should be no more than two years in the
+   future. Update it regularly while the community maintains the
+   software.
+-  ``email``: The e-mail address of the technical contact. It must
+   reach that person directly, not a mailing list or a generic
+   contact point like ``info@acme.inc``.
 -  ``website``: The contractor website: its main institutional site
    or a page specific to the project.
 
