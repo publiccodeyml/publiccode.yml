@@ -93,7 +93,7 @@ prefer HTTPS.
    Forking just to contribute? Do not change ``url``: it keeps
    pointing at the original repository, and catalogs use the mismatch
    to skip the fork. Only a fork published as software of its own
-   changes it. See :ref:`forks`.
+   SHOULD change it. See :ref:`forks`.
 
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
