@@ -570,8 +570,9 @@ Example:
 
    softwareVersion: "1.0"
 
-The version of the software, in any format: semantic versioning is
-not required.
+The latest stable version of the software. Parsers should display
+this string without interpreting or parsing it. They should not assume
+semantic versioning or any other version format.
 
 ``releaseDate``
 ~~~~~~~~~~~~~~~
