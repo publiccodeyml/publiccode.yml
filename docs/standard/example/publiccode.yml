@@ -44,35 +44,35 @@ description:
       - https://www.youtube.com/watch?v=xxxxxxxxxxx
     awards:
       - Public Sector Software Award 2025
-  it:
-    shortDescription: Invia e ricevi fax dal computer
+  en-GB:
+    shortDescription: Send and receive faxes from your computer
 
 legal:
   license: EUPL-1.2 OR AGPL-3.0-or-later
-  mainCopyrightOwner: Roma Capitale
+  mainCopyrightOwner: Example City Council
 
 organisation:
-  uri: urn:x-italian-pa:c_h501
-  name: Roma Capitale
+  uri: https://example.com/organisations/example-city-council
+  name: Example City Council
 
 maintenance:
   type: contract
   contractors:
-    - name: Fornitore Privato SpA
+    - name: Example Software Ltd
       until: "2027-12-31"
-      email: firefax-maintenance@fornitore.example.com
-      website: https://fornitore.example.com
+      email: firefax-maintenance@supplier.example.com
+      website: https://supplier.example.com
   contacts:
     - name: Jane Doe
-      email: jane.doe@fornitore.example.com
-      affiliation: Fornitore Privato SpA
-      phone: "+390612345678"
+      email: jane.doe@supplier.example.com
+      affiliation: Example Software Ltd
+      phone: "+441234567890"
 
 localisation:
   localisationReady: true
   availableLanguages:
     - en
-    - it
+    - en-GB
     - fr
 
 categories:
@@ -85,19 +85,19 @@ supports:
 
 intendedAudience:
   countries:
-    - IT
+    - GB
   unsupportedCountries:
     - US
   scope:
     - local-authorities
 
 usedBy:
-  - Roma Capitale
-  - Comune di Firenze
+  - Example City Council
+  - Example County Council
 
 fundedBy:
-  - name: Roma Capitale
-    uri: urn:x-italian-pa:c_h501
+  - name: Example City Council
+    uri: https://example.com/organisations/example-city-council
 
 dependsOn:
   open:
