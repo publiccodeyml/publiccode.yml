@@ -105,11 +105,19 @@ dependsOn:
       version: "16"
     - name: Ghostscript
       versionMin: "10.0"
+      versionMax: "10.5"
+      optional: true
   proprietary:
     - name: Oracle Database
       versionMin: "19"
       versionMax: "23"
       optional: true
+    - name: Proprietary fax driver
+      version: "3"
   hardware:
     - name: Fax modem
+      versionMin: "1"
+      versionMax: "2"
       optional: true
+    - name: USB fax adapter
+      version: "3"
