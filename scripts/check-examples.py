@@ -13,34 +13,60 @@ from pathlib import Path
 import yaml
 
 SPEC = Path("docs/standard/index.rst")
+TYPES = Path("docs/standard/types.rst")
 MINIMAL = Path("docs/standard/example/publiccode.minimal.yml")
 FULL = Path("docs/standard/example/publiccode.yml")
 
 HEADING = re.compile(r"^``([A-Za-z/\[\]]+)``")
 
 
+def properties(text):
+    match = re.search(r"^Properties(?: of each item)?:\n", text, re.MULTILINE)
+    if not match:
+        return set()
+    text = text[match.end():]
+    return set(re.findall(r"^-  ``([A-Za-z]+)``", text, re.MULTILINE))
+
+
 def documented_keys():
+    types = {}
+    for section in re.split(r"^\.\. _", TYPES.read_text(), flags=re.MULTILINE)[1:]:
+        anchor, _, body = section.partition(":")
+        types[anchor] = properties(body)
+
     lines = SPEC.read_text().splitlines()
-    keys = set()
-    for line, underline in zip(lines, lines[1:]):
+    headings = []
+    for index, (line, underline) in enumerate(zip(lines, lines[1:])):
         match = HEADING.match(line)
         if match and underline and set(underline) <= set("~'"):
-            keys.add(match[1])
+            headings.append((index, match[1]))
+
+    keys = set()
+    for position, (start, key) in enumerate(headings):
+        keys.add(key)
+        end = headings[position + 1][0] if position + 1 < len(headings) else len(lines)
+        section = "\n".join(lines[start:end])
+        item_properties = properties(section)
+        match = re.search(r"array of :ref:`[^`]+ <([^>]+)>`", section)
+        if match:
+            item_properties |= types[match[1]]
+        keys.update(f"{key}/[]/{prop}" for prop in item_properties)
     return keys
 
 
 def used_keys(node, prefix=""):
-    """Key paths of the nested mappings, stopping at lists: list items
-    are typed values, documented on the Types page."""
     keys = set()
-    for key, value in node.items():
-        path = f"{prefix}{key}"
-        # The language level is a tag, not a documented key
-        if prefix == "description/":
-            path = "description/[lang]"
-        else:
-            keys.add(path)
-        if isinstance(value, dict):
+    if isinstance(node, list):
+        for item in node:
+            keys |= used_keys(item, prefix + "[]/")
+    elif isinstance(node, dict):
+        for key, value in node.items():
+            path = f"{prefix}{key}"
+            # The language level is a tag, not a documented key.
+            if prefix == "description/":
+                path = "description/[lang]"
+            else:
+                keys.add(path)
             keys |= used_keys(value, path + "/")
     return keys
 
