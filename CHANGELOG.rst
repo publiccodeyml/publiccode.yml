@@ -17,6 +17,20 @@ Removed
 Changed
 ~~~~~~~
 
+* Reject unknown keys and null values. Omit optional keys without a
+  value.
+* Require arrays to be YAML sequences, including for a single item,
+  with at least one item and no duplicates.
+* Require string values to be YAML strings, rejecting numbers and
+  booleans. Ignore surrounding whitespace, reject empty strings and
+  allow line breaks only where explicitly permitted. Count characters
+  using Unicode extended grapheme clusters after trimming whitespace.
+* Require calendar dates to exist and be quoted strings in
+  ``YYYY-MM-DD`` format.
+* Reject repository paths that start with ``/`` or refer outside the
+  repository. Require absolute HTTP or HTTPS URLs unless the key allows
+  other schemes.
+
 * Require E.164 format for ``maintenance/contacts/phone`` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/306
 * Require uppercase ISO 3166-1 alpha-2 country codes in ``intendedAudience/countries`` and ``intendedAudience/unsupportedCountries`` by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/325
 * Require YAML 1.2, removing the deprecated YAML 1.1 allowance, by @bfabio in https://github.com/publiccodeyml/publiccode.yml/pull/325
