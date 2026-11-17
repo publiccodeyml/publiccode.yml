@@ -816,4 +816,4 @@ format though, so not the full ISO8601 is allowed for the date keys.
 
 Encoding
 ~~~~~~~~
-`publiccode.yml` **MUST** be a UTF-8 encoded and **MUST** be a YAML 1.2 document.
+``publiccode.yml`` **MUST** be UTF-8 encoded and **MUST** be a YAML 1.2 document.
