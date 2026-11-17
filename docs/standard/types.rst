@@ -219,12 +219,11 @@ Organisation
 ------------
 
 An entity that can fund software development, such as an
-association, a company or a public authority. Its properties follow
-the same rules as the :ref:`organisation <organisation>` section.
+association, a company or a public authority.
 
 Properties:
 
--  ``uri`` *(required)*, :ref:`URI <uri-type>`: The URI identifying
-   the organisation.
--  ``name``, :ref:`string <string-type>`: The name of the organisation
-   or person identified by ``uri``.
+-  ``name`` *(required)*, :ref:`string <string-type>`: The name of the
+   organisation or person funding the software.
+-  ``uri``, :ref:`URI <uri-type>`: The URI identifying the organisation
+   or person named in ``name``.
