@@ -42,12 +42,19 @@ def documented_keys():
             headings.append((index, match[1]))
 
     keys = set()
+    arrays = set()
     for position, (start, key) in enumerate(headings):
+        key = "/".join(
+            part + ("/[]" if "/".join(key.split("/")[:i + 1]) in arrays else "")
+            for i, part in enumerate(key.split("/"))
+        )
         keys.add(key)
         end = headings[position + 1][0] if position + 1 < len(headings) else len(lines)
         section = "\n".join(lines[start:end])
+        if re.search(r"(?:array|:ref:`array <array-type>`) of", section):
+            arrays.add(key)
         item_properties = properties(section)
-        match = re.search(r"array of :ref:`[^`]+ <([^>]+)>`", section)
+        match = re.search(r"(?:array|:ref:`array <array-type>`) of :ref:`[^`]+ <([^>]+)>`", section)
         if match:
             item_properties |= types[match[1]]
         keys.update(f"{key}/[]/{prop}" for prop in item_properties)
@@ -71,20 +78,6 @@ def used_keys(node, prefix=""):
     return keys
 
 
-def list_item_keys(node, containers, prefix=""):
-    """Key paths inside the mappings of lists, like supports/id."""
-    keys = set()
-    for key, value in node.items():
-        path = f"{prefix}{key}"
-        if isinstance(value, dict):
-            keys |= list_item_keys(value, containers, path + "/")
-        elif isinstance(value, list) and path in containers:
-            for item in value:
-                if isinstance(item, dict):
-                    keys |= {f"{path}/{k}" for k in item}
-    return keys
-
-
 def check_descriptions(name, data):
     errors = []
     for lang, texts in data.get("description", {}).items():
@@ -101,12 +94,10 @@ def check_descriptions(name, data):
 
 def main():
     spec = documented_keys()
-    containers = {key.rsplit("/", 1)[0] for key in spec if "/" in key}
     errors = []
     for path in (MINIMAL, FULL):
         data = yaml.safe_load(path.read_text())
-        # Typed objects have their properties on the Types page.
-        used = used_keys(data) | list_item_keys(data, containers)
+        used = used_keys(data)
         for key in sorted(used - spec):
             errors.append(f"{path}: {key} is not documented in {SPEC}")
         if path == FULL:
