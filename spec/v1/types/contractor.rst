@@ -1,7 +1,7 @@
 .. _contractor-type:
 
 Contractor
-==========
+**********
 
 Properties:
 
@@ -16,4 +16,3 @@ Properties:
    mailing list or a generic contact point like ``info@acme.inc``.
 -  ``website``, :ref:`URL <url-type>`: The contractor website: its
    main institutional site or a page specific to the project.
-

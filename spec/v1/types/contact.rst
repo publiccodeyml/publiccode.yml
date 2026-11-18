@@ -1,7 +1,7 @@
 .. _contact-type:
 
 Contact
-=======
+*******
 
 Properties:
 
@@ -19,4 +19,3 @@ Properties:
    technical contact works for, such as a company or an association.
    With several maintainers, it tells which maintainer entity each
    contact belongs to.
-
