@@ -13,7 +13,7 @@ import regex
 import yaml
 
 SPEC = Path("docs/standard/index.rst")
-TYPES = Path("docs/standard/types.rst")
+TYPES = Path("docs/standard/types")
 MINIMAL = Path("docs/standard/example/publiccode.minimal.yml")
 FULL = Path("docs/standard/example/publiccode.yml")
 
@@ -30,7 +30,8 @@ def properties(text):
 
 def documented_keys():
     types = {}
-    for section in re.split(r"^\.\. _", TYPES.read_text(), flags=re.MULTILINE)[1:]:
+    text = "\n".join(path.read_text() for path in sorted(TYPES.glob("*.rst")))
+    for section in re.split(r"^\.\. _", text, flags=re.MULTILINE)[1:]:
         anchor, _, body = section.partition(":")
         types[anchor] = properties(body)
 
