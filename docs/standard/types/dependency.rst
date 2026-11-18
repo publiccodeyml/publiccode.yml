@@ -1,7 +1,7 @@
 .. _dependency-type:
 
 Dependency
-==========
+**********
 
 Properties:
 
@@ -42,4 +42,3 @@ of its patch releases.
 
 This snippet marks a required dependency on MySQL, allowing any version
 between 8.0 and 8.4.
-

@@ -70,13 +70,15 @@ class ExampleTests(unittest.TestCase):
                 self.assertIn(prefix + "emali is not documented", errors)
 
     def test_new_type_properties_require_examples(self):
-        original = checker.TYPES.read_text()
+        import shutil
+
+        original = checker.TYPES
         for title in ("Contact", "Contractor", "Dependency", "Organisation"):
             with self.subTest(type=title):
-                types = self.full.parent / "types.rst"
-                heading = title + "\n" + "-" * len(title)
-                before, section = original.split(heading, 1)
-                types.write_text(before + heading + section.replace(
+                types = self.full.parent / title
+                shutil.copytree(original, types)
+                page = types / (title.lower() + ".rst")
+                page.write_text(page.read_text().replace(
                     "Properties:",
                     'Properties:\n\n-  ``newProperty``: A new property.',
                     1,

@@ -1,7 +1,7 @@
 .. _organisation-type:
 
 Organisation
-============
+************
 
 An entity that can fund software development, such as an
 association, a company or a public authority.

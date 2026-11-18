@@ -1,7 +1,7 @@
 .. _string-type:
 
 String
-======
+******
 
 A sequence of Unicode characters. Date, Enumerated string, Language
 tag, Country code, E-mail address, Path, URI and URL values are
@@ -20,4 +20,3 @@ Annex #29 <https://www.unicode.org/reports/tr29/>`__. For example,
 
 The value MUST be a YAML string: a number, a boolean or null is an
 error.
-
