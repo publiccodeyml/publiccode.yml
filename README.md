@@ -41,7 +41,7 @@ It is designed to be **easy to add to any new project** and to **grow as the pro
 A minimal `publiccode.yml` file:
 
 ```yaml
-publiccodeYmlVersion: "0"
+publiccodeYmlVersion: "1"
 name: My text editor
 url: "https://example.com/mysoftware/text-editor.git"
 platforms:

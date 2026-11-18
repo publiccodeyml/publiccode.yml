@@ -17,6 +17,7 @@ Removed
 Changed
 ~~~~~~~
 
+* Require ``publiccodeYmlVersion`` to be ``"1"``.
 * Reject unknown keys and null values. Omit optional keys without a
   value.
 * Require arrays to be YAML sequences, including for a single item,
