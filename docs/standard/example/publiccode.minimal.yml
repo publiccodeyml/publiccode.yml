@@ -31,6 +31,5 @@ maintenance:
     - name: Francesco Rossi
 
 localisation:
-  localisationReady: true
   availableLanguages:
     - en
