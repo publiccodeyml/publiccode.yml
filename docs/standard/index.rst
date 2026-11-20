@@ -57,6 +57,11 @@ Specification
 
 :ref:`enumerated string <enumerated-string-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   publiccodeYmlVersion: "1"
+
 The version of the specification the file follows: ``"1"``.
 
 .. _name:
@@ -108,6 +113,11 @@ several protocols, prefer HTTPS.
 
 :ref:`enumerated string <enumerated-string-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   softwareType: standalone/desktop
+
 The kind of software and how it reaches its users.
 
 Allowed values:
@@ -156,6 +166,11 @@ server runs.
 .. rst-class:: key-meta
 
 :ref:`enumerated string <enumerated-string-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   developmentStatus: stable
 
 How far the development of the software has gone.
 
@@ -490,6 +505,12 @@ How the software is maintained and who maintains it.
 
 :ref:`enumerated string <enumerated-string-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   maintenance:
+     type: contract
+
 How the software is currently maintained.
 
 Allowed values:
@@ -513,6 +534,16 @@ Allowed values:
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
 ``contract``. MUST NOT be present otherwise.
 
+.. code-block:: yaml
+   :caption: Example
+
+   maintenance:
+     contractors:
+       - name: Example Software Ltd
+         until: "2027-12-31"
+         email: firefax-maintenance@supplier.example.com
+         website: https://supplier.example.com
+
 The entities currently contracted to maintain the software:
 companies, organisations or other collective names.
 
@@ -527,6 +558,16 @@ companies, organisations or other collective names.
 
 MUST be present if :ref:`maintenance/type <maintenance-type>` is
 ``internal`` or ``community``. Optional otherwise.
+
+.. code-block:: yaml
+   :caption: Example
+
+   maintenance:
+     contacts:
+       - name: Jane Doe
+         email: jane.doe@supplier.example.com
+         affiliation: Example Software Ltd
+         phone: "+441234567890"
 
 The people responsible for technical maintenance. Each contact MUST
 be a person. Use ``affiliation`` for the institution they represent.
@@ -546,6 +587,12 @@ is available in.
 .. rst-class:: key-meta
 
 :ref:`boolean <boolean-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   localisation:
+     localisationReady: true
 
 If ``true``, the software supports translation into other languages.
 It may still be available in one language.
