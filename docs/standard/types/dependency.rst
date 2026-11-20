@@ -3,6 +3,9 @@
 Dependency
 **********
 
+Software or hardware the software needs at runtime, installed and
+maintained separately, such as a database.
+
 Properties:
 
 -  ``name`` *(required)*, :ref:`string <string-type>`: The name of the
