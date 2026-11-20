@@ -6,8 +6,10 @@ Vocabularies
 Aliases
 -------
 
-These aliases can be used in the ``supports`` key. Each alias
-resolves to the canonical resource it refers to.
+These aliases name a resource in the :ref:`supports <supports>` key.
+Write one as the ``id`` of a ``supports`` item with the ``alias:``
+prefix, such as ``id: alias:gdpr``. Each alias resolves to the
+canonical resource it refers to.
 
 ==========  ==============================================
 alias       resource
@@ -27,6 +29,9 @@ alias       resource
 
 Scopes
 ------
+
+The values of the :ref:`intendedAudience/scope
+<intended-audience-scope>` key.
 
 - ``agriculture``
 - ``culture``
@@ -56,6 +61,8 @@ Scopes
 
 Software categories
 -------------------
+
+The values of the :ref:`categories <categories-key>` key.
 
 - ``accounting``
 - ``agile-project-management``
