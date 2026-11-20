@@ -73,11 +73,11 @@ class ExampleTests(unittest.TestCase):
         import shutil
 
         original = checker.TYPES
-        for title in ("Contact", "Contractor", "Dependency", "Organisation"):
-            with self.subTest(type=title):
-                types = self.full.parent / title
+        for name in ("contact", "contractor", "dependency", "organisation", "supported-resource"):
+            with self.subTest(type=name):
+                types = self.full.parent / name
                 shutil.copytree(original, types)
-                page = types / (title.lower() + ".rst")
+                page = types / (name + ".rst")
                 page.write_text(page.read_text().replace(
                     "Properties:",
                     'Properties:\n\n-  ``newProperty``: A new property.',

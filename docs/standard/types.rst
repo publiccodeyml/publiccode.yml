@@ -23,6 +23,7 @@ rules for that type.
    types/contractor
    types/dependency
    types/organisation
+   types/supported-resource
 
 String
 ------
@@ -163,3 +164,12 @@ Organisation
    <span id="organisation-type"></span>
 
 See :doc:`types/organisation`.
+
+Supported resource
+------------------
+
+.. raw:: html
+
+   <span id="supported-resource-type"></span>
+
+See :doc:`types/supported-resource`.
