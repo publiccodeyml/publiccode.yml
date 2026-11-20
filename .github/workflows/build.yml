@@ -25,7 +25,9 @@ jobs:
           enable-cache: true
       - name: Test documentation checks
         run: uv run --frozen python -m unittest discover -s tests
-      - name: Build Standard with warnings as errors
-        run: uv run --frozen sphinx-build -W --keep-going -c . spec/v1 build
+      - name: Build version 0 with warnings as errors
+        run: uv run --frozen sphinx-build -W --keep-going -c . spec/v0 build/v0
+      - name: Build version 1 with warnings as errors
+        run: uv run --frozen sphinx-build -W --keep-going -c . spec/v1 build/v1
       - name: Check specification examples
         run: uv run --frozen scripts/check-examples.py
