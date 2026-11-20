@@ -286,6 +286,13 @@ formats to keep the description readable across catalogs.
 
 :ref:`URL <url-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   description:
+     en:
+       documentation: https://example.com/firefax/docs
+
 A URL to the user documentation of the software.
 
 .. tip::
@@ -303,6 +310,13 @@ A URL to the user documentation of the software.
 .. rst-class:: key-meta
 
 :ref:`URL <url-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   description:
+     en:
+       apiDocumentation: https://example.com/firefax/api
 
 A URL to the hosted API documentation of the software.
 
