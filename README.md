@@ -125,15 +125,16 @@ repository.
 
 ### Local development process
 
-`sphinx-build` compiles the sources of the current checkout to static
-HTML files. Run this command to generate the website:
+Each major version of the Standard has its own directory, `spec/v0` and
+`spec/v1`. `sphinx-build` compiles one of them to static HTML files. Run
+this command to generate the version 1 website:
 
 ```console
 uv run sphinx-build spec/v1 build -c .
 ```
 
 Then open a file of the build directory in a browser, for example
-`build/index.html`.
+`build/index.html`. Use `spec/v0` instead for version 0.
 
 #### Hot reloading
 
@@ -146,21 +147,21 @@ uv run sphinx-autobuild spec/v1 build -c .
 
 #### All the versions
 
-The published website puts every version line of the Standard side by
+The published website puts every major version of the Standard side by
 side, one directory per major version (`/v0/`, `/v1/`, ...) with a
-version switcher on each page. Each line is built from the newest
-release tag of its major version (`v0.8.0`, ...), or from its draft
-branch (`1.0-rc`, ...) while unreleased, using the `conf.py` and
-templates of the current checkout, see `poly.py`. Tags come with the
-clone, draft branches must exist locally (e.g.
-`git branch 1.0-rc origin/1.0-rc`), then:
+version switcher on each page. A major version with a release is built
+from its newest release tag (`v0.8.0`, ...). A major version with no
+release yet is built from the `spec/vN` directory of the last commit of
+the current checkout, as a draft (`1.0-rc`, ...) marked by a banner.
+Every version uses the `conf.py` and templates of the current checkout,
+see `poly.py`. Tags come with the clone, then:
 
 ```console
 uv run sphinx-polyversion poly.py build/html
 ```
 
-To preview the switcher on the current checkout alone, without building
-every branch:
+To preview the draft with the switcher, uncommitted changes included,
+without building the release tags:
 
 ```console
 uv run sphinx-polyversion poly.py build/html -l

@@ -5,40 +5,48 @@ preview the current checkout only, with a mocked version list).
 """
 
 import re
+import subprocess
 import sys
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PurePath
 
 from sphinx_polyversion import DefaultDriver, apply_overrides
 from sphinx_polyversion.environment import Environment
-from sphinx_polyversion.git import Git, GitRef, GitRefType, file_predicate
+from sphinx_polyversion.git import Git, GitRef, GitRefType, file_exists
 from sphinx_polyversion.sphinx import SphinxBuilder
 
-#: Releases are ``vMAJOR.MINOR.PATCH`` tags. The next release is drafted
-#: on a mutable ``MAJOR.MINOR-rc`` branch until it gets tagged.
-BRANCH_REGEX = r"^(?P<major>\d+)\.(?P<minor>\d+)-rc$"
+#: Releases are ``vMAJOR.MINOR.PATCH`` tags. A major version with no
+#: release yet is a draft, built from the checkout (main on the website)
+#: and named ``MAJOR.0-rc``.
 TAG_REGEX = r"^v(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)$"
 
+#: Branches are never built, the drafts come from the checkout.
+BRANCH_REGEX = r"(?!)"
+
 #: One subdirectory per major line (``v0/``, ``v1/``) holding its newest
-#: branch, so links stay stable across minor releases, plus redirects at
+#: release, so links stay stable across minor releases, plus redirects at
 #: the root for the unversioned URLs published before this layout.
 OUTPUT_DIR = "build/html"
 
-#: Doc source inside each revision. conf.py stays at the repo root and is
-#: shared by every version: sphinx runs against this checkout's conf.py
-#: and templates while the .rst files come from the revision being built.
-SOURCE_DIR = "docs/standard"
+#: Each major version keeps its doc source in ``spec/vMAJOR``. Releases
+#: tagged before that layout have it in ``docs/standard``. conf.py stays
+#: at the repo root and is shared by every version: sphinx runs against
+#: this checkout's conf.py and templates while the .rst files come from
+#: the revision being built.
+SPEC_ROOT = "spec"
+LEGACY_SOURCE_DIR = "docs/standard"
 
 #: Extra arguments for sphinx-build.
 SPHINX_ARGS = ""
 
-#: Used only for local builds (``-l``): renders the switcher without git.
+#: Used only for local builds (``-l``): renders the switcher without git
+#: and builds the checkout's draft.
 MOCK_DATA = {
     "revisions": [
         GitRef("1.0-rc", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
         GitRef("v0.8.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
     ],
-    "current": GitRef("v0.8.0", "", "", GitRefType.TAG, datetime.fromtimestamp(1)),
+    "current": GitRef("1.0-rc", "", "", GitRefType.BRANCH, datetime.fromtimestamp(2)),
 }
 
 MOCK = False
@@ -47,7 +55,6 @@ SEQUENTIAL = False
 apply_overrides(globals())
 
 root = Git.root(Path(__file__).parent)
-src = Path(SOURCE_DIR)
 version_pattern = re.compile(
     r"^v?(?P<major>\d+)\.(?P<minor>\d+)(?:\.(?P<patch>\d+))?(?P<rc>-rc)?$"
 )
@@ -90,9 +97,37 @@ def line(rev):
     return f"v{parse(rev.name)[0]}"
 
 
+async def source(repo, rev):
+    """The directory holding the doc source of rev, or None."""
+    for path in (f"{SPEC_ROOT}/{line(rev)}", LEGACY_SOURCE_DIR):
+        if await file_exists(repo, rev, PurePath(path)):
+            return path
+    return None
+
+
+async def has_source(repo, rev):
+    return await source(repo, rev) is not None
+
+
+def git(repo, *args):
+    return subprocess.run(
+        ["git", *args], cwd=repo, check=True, capture_output=True, text=True
+    ).stdout
+
+
+def drafts(repo):
+    """One draft per spec/vMAJOR directory of the checked out commit."""
+    commit = git(repo, "rev-parse", "HEAD").strip()
+    date = datetime.fromisoformat(git(repo, "log", "-1", "--format=%cI", commit).strip())
+    for path in git(repo, "ls-tree", "-d", "--name-only", commit, f"{SPEC_ROOT}/").split():
+        match = re.fullmatch(rf"{SPEC_ROOT}/v(\d+)", path)
+        if match:
+            yield GitRef(f"{match[1]}.0-rc", commit, "HEAD", GitRefType.BRANCH, date)
+
+
 class Lines(Git):
-    """Build one revision per major line: the newest release tag, or the
-    draft branch if none."""
+    """Build one revision per major line: the newest release tag, or a
+    draft from the checkout while the major has no release."""
 
     async def retrieve(self, root):
         best = {}
@@ -100,7 +135,27 @@ class Lines(Git):
             key = line(ref)
             if key not in best or rank(ref) > rank(best[key]):
                 best[key] = ref
+        for draft in drafts(root):
+            best.setdefault(line(draft), draft)
         return tuple(best.values())
+
+
+class Builders(dict):
+    """One sphinx builder per doc source directory, made on first use."""
+
+    def __missing__(self, path):
+        builder = self[path] = SphinxBuilder(
+            Path(path), args=["-c", str(root), *SPHINX_ARGS.split()]
+        )
+        return builder
+
+
+async def select_source(rev, paths):
+    # A local build (-l) copies the working tree: its revisions are mocks
+    # with no git object to look into.
+    if MOCK:
+        return f"{SPEC_ROOT}/{line(rev)}"
+    return await source(root, rev)
 
 
 def catalog(revisions):
@@ -148,8 +203,8 @@ class Driver(DefaultDriver):
         if not self.targets:
             sys.exit(
                 "no versions found: poly.py builds the local vX.Y.Z tags and "
-                "X.Y-rc branches. Run git fetch --tags and create the draft "
-                "branches (e.g. git branch 1.0-rc origin/1.0-rc)"
+                f"the {SPEC_ROOT}/vN directories of the checkout. Run "
+                "git fetch --tags"
             )
         data = catalog(self.targets)
         if not MOCK and data["default"]["prerelease"]:
@@ -162,17 +217,16 @@ class Driver(DefaultDriver):
         write_redirects(self.output_dir, "local" if MOCK else "v0")
 
 
+vcs = Lines(branch_regex=BRANCH_REGEX, tag_regex=TAG_REGEX, predicate=has_source)
+
 # All version lines share the same doc toolchain, so reuse the active
 # environment instead of provisioning one per build.
 Driver(
     root,
     OUTPUT_DIR,
-    vcs=Lines(
-        branch_regex=BRANCH_REGEX,
-        tag_regex=TAG_REGEX,
-        predicate=file_predicate([src]),
-    ),
-    builder=SphinxBuilder(src, args=["-c", str(root), *SPHINX_ARGS.split()]),
+    vcs=vcs,
+    builder=Builders(),
+    selector=select_source,
     env=Environment.factory(),
     namer=line,
     data_factory=page_data,
