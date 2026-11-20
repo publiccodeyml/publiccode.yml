@@ -21,11 +21,10 @@ description:
   en:
     localisedName: Firefax
     shortDescription: Send and receive faxes from the desktop
-    longDescription: >
+    longDescription: |
       Firefax lets you send and receive faxes from a desktop computer
       without a fax machine. You can search received faxes in an archive,
       schedule outgoing faxes and track their delivery.
-
 
       Offices that exchange documents by fax can keep those documents
       in one archive and replace their fax machines.
