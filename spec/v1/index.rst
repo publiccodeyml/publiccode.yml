@@ -749,10 +749,7 @@ software.
 
 .. rst-class:: key-meta
 
-:ref:`array <array-type>` of objects
-
-A list of standards, regulations, frameworks or systems that the
-software supports or complies with.
+:ref:`array <array-type>` of :ref:`Supported resources <supported-resource-type>`
 
 .. code-block:: yaml
    :caption: Example
@@ -761,26 +758,8 @@ software supports or complies with.
      - id: alias:gdpr
      - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
 
-``supports/id`` *(required)*
-''''''''''''''''''''''''''''
-
-.. rst-class:: key-meta
-
-:ref:`URI <uri-type>`
-
-An identifier for the supported standard, regulation, framework or
-system. Use ``alias:<name>`` with a name from the
-:ref:`list of aliases <aliases>` or another URI for the resource.
-
-An ``alias:`` value MUST exist in the :ref:`list of aliases
-<aliases>`. An unknown alias is an error. Other values MUST be valid
-URIs. Parsers accept these even if they do not recognize the resource.
-
-.. tip::
-
-   Prefer an alias when the list has one: every file then names the
-   standard the same way, while free URIs for the same resource can
-   differ.
+A list of standards, regulations, frameworks or systems that the
+software supports or complies with.
 
 ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~
