@@ -3,6 +3,9 @@
 Contractor
 **********
 
+A company, organisation or other collective name contracted to
+maintain the software.
+
 Properties:
 
 -  ``name`` *(required)*, :ref:`string <string-type>`: The name of the
