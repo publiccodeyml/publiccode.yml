@@ -4,8 +4,9 @@
 
 <div align="center">
   <i>
-    A metadata standard to describe software made by or for Public administrations, making it discoverable
-    and understandable for both developers and non-technical users.
+    A metadata standard to describe software made by or for public
+    administrations, making it discoverable and understandable for both
+    developers and non-technical users.
   </i>
 </div>
 
@@ -21,12 +22,14 @@
 
 ## What is `publiccode.yml`
 
-Public Administrations often create valuable software, but reuse is often limited due to
-poor discoverability or difficulty understanding if a project fits another administration's context.
+Public administrations often create valuable software. Other
+administrations rarely reuse it, because the software is hard to find. It
+is also hard to tell whether a project fits another administration's
+context.
 
-`publiccode.yml` solves this by providing a **human-readable and machine-readable metadata file**.
+`publiccode.yml` is a **human-readable and machine-readable metadata
+file** placed in the root of a repository. It answers these questions:
 
-It answers the questions:
 - What does this project do? (name, description, languages)
 - What is its status? (`concept`, `development`, `beta`, `stable`, `obsolete`)
 - Who maintains it and until when?
@@ -34,7 +37,8 @@ It answers the questions:
 - What legal frameworks is it designed for?
 - What are its dependencies?
 
-It is designed to be **easy to add to any new project** and to **grow as the project evolves**.
+It is designed to be **easy to add to any new project** and to **grow as
+the project evolves**.
 
 ## Example
 
@@ -74,13 +78,24 @@ localisation:
 
 [**See all available fields...**](https://publiccodeyml.github.io/)
 
+## Adding `publiccode.yml` to a project
+
+1. Create a `publiccode.yml` file in the root directory of the repository,
+   starting from the example above.
+2. Check it with the
+   [GitHub Action](https://github.com/publiccodeyml/publiccode-parser-action)
+   or the
+   [GitLab CI](https://github.com/publiccodeyml/publiccode-parser-gitlab-ci)
+   job, so that every change to the file is validated.
+3. Update the file when the project changes, for example its development
+   status, maintainers or supported languages.
+
 ## Finding projects
 
-Finding projects depends on how the search API is structured for every hosting
-platform. For example, you can find all `publiccode.yml` files in the root
-directory of projects on GitHub, either by using the search frontend or the API.
+Each code hosting platform has its own search. On GitHub, this search
+finds every `publiccode.yml` file in the root directory of a repository:
 
-* [GitHub Search `path:/^publiccode.yml$/`](https://github.com/search?q=path%3A%2F%5Epubliccode.yml%24%2F&type=code)
+- [GitHub Search `path:/^publiccode.yml$/`](https://github.com/search?q=path%3A%2F%5Epubliccode.yml%24%2F&type=code)
 
 ## Versioning
 
@@ -90,8 +105,9 @@ This project follows the [Semantic Versioning](https://semver.org/).
 
 ## Contributing
 
-Feel free to submit [Pull Requests, file Issues](CONTRIBUTING.md) or open
-a [Discussion](https://github.com/publiccodeyml/publiccode.yml/discussions).
+Read the [contributing guide](CONTRIBUTING.md) before opening an issue or
+a pull request. Questions and proposals are welcome in
+[Discussions](https://github.com/publiccodeyml/publiccode.yml/discussions).
 
 Translations of the documentation live in
 [publiccodeyml/translations](https://github.com/publiccodeyml/translations).
@@ -109,19 +125,20 @@ repository.
 
 ### Local development process
 
-`sphinx-build` can be used to compile all source files of the current
-checkout to static html files. Run this command to generate the website:
+`sphinx-build` compiles the sources of the current checkout to static
+HTML files. Run this command to generate the website:
 
 ```console
 uv run sphinx-build docs/standard build -c .
 ```
 
-then open the relevant file in the build directory with a browser (e.g.,
-`build/index.html`) to explore the contents.
+Then open a file of the build directory in a browser, for example
+`build/index.html`.
 
 #### Hot reloading
 
-`sphinx-autobuild` can be used to make use of hot reloading.
+`sphinx-autobuild` rebuilds the website and reloads the browser on every
+change:
 
 ```console
 uv run sphinx-autobuild docs/standard build -c .
