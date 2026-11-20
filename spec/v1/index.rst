@@ -154,7 +154,9 @@ is allowed.
    :caption: Example
 
    platforms:
-     - web
+     - linux
+     - windows
+     - mac
 
 The platforms people use to access and operate the software, not the
 ones it runs on: a web application lists ``web``, whatever system its
@@ -236,7 +238,7 @@ it differs from :ref:`name <name>`.
 
    description:
      en:
-       shortDescription: Advanced booking system for hospitals
+       shortDescription: Send and receive faxes from the desktop
 
 A short description of the software: a single line containing a
 single sentence, maximum 150 characters.
@@ -325,8 +327,11 @@ A URL to the hosted API documentation of the software.
    description:
      en:
        features:
-         - Very important feature
-         - Will run without a problem
+         - Send and receive faxes without a fax machine
+         - Search the archive of received faxes
+         - Schedule outgoing faxes
+         - Track the delivery of every fax
+         - Sign outgoing faxes digitally
 
 What users can do with the software. Write the list for public
 decision makers who would commission it.
@@ -353,7 +358,8 @@ Formats: PNG, JPEG, WebP, AVIF
    description:
      en:
        screenshots:
-         - data/screenshots/configuration.png
+         - img/screenshots/inbox.png
+         - img/screenshots/compose.png
 
 Screenshots of the software, giving a quick idea of what it looks
 like and how it works.
@@ -384,7 +390,7 @@ same repository as ``publiccode.yml``.
    description:
      en:
        videos:
-         - https://youtube.com/xxxxxxxx
+         - https://www.youtube.com/watch?v=xxxxxxxxxxx
 
 Videos showing how the software looks and works.
 
@@ -444,7 +450,7 @@ see the `SPDX License List <https://spdx.org/licenses/>`__.
    :caption: Example
 
    legal:
-     mainCopyrightOwner: City of Amsterdam
+     mainCopyrightOwner: Example City Council
 
 The entity that owns the copyright on most of the code in the
 repository: usually the one named next to the copyright symbol at the
@@ -474,7 +480,7 @@ The organisation publishing the software. This section is optional.
    :caption: Example
 
    organisation:
-     uri: https://example.org/my-organisation
+     uri: https://example.com/organisations/example-city-council
 
 The URI identifying the organisation publishing the software. The value
 SHOULD be a stable, resolvable URI or a persistent identifier.
@@ -501,7 +507,7 @@ method.
    :caption: Example
 
    organisation:
-     name: My organisation
+     name: Example City Council
 
 The canonical name of the organisation publishing the software.
 
@@ -667,7 +673,7 @@ same repository as ``publiccode.yml``.
 .. code-block:: yaml
    :caption: Example
 
-   softwareVersion: "1.0"
+   softwareVersion: "2.3"
 
 The latest stable version of the software. Parsers SHOULD display
 this string without interpreting or parsing it. They SHOULD NOT assume
@@ -683,7 +689,7 @@ semantic versioning or any other version format.
 .. code-block:: yaml
    :caption: Example
 
-   releaseDate: "2017-04-15"
+   releaseDate: "2026-03-15"
 
 The date the latest version was released.
 
@@ -732,8 +738,8 @@ Allowed values: see :ref:`categories`
    :caption: Example
 
    categories:
-     - content-management
-     - office
+     - communications
+     - document-management
 
 The categories the software belongs to. Catalogs use them to group
 software.
