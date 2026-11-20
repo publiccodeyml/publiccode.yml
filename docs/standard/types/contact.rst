@@ -3,6 +3,9 @@
 Contact
 *******
 
+A person responsible for the technical maintenance of the
+software.
+
 Properties:
 
 -  ``name`` *(required)*, :ref:`string <string-type>`: The full name
