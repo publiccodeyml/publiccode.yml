@@ -129,7 +129,7 @@ repository.
 HTML files. Run this command to generate the website:
 
 ```console
-uv run sphinx-build docs/standard build -c .
+uv run sphinx-build spec/v1 build -c .
 ```
 
 Then open a file of the build directory in a browser, for example
@@ -141,7 +141,7 @@ Then open a file of the build directory in a browser, for example
 change:
 
 ```console
-uv run sphinx-autobuild docs/standard build -c .
+uv run sphinx-autobuild spec/v1 build -c .
 ```
 
 #### All the versions

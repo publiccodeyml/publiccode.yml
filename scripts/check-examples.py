@@ -12,10 +12,10 @@ from pathlib import Path
 import regex
 import yaml
 
-SPEC = Path("docs/standard/index.rst")
-TYPES = Path("docs/standard/types")
-MINIMAL = Path("docs/standard/example/publiccode.minimal.yml")
-FULL = Path("docs/standard/example/publiccode.yml")
+SPEC = Path("spec/v1/index.rst")
+TYPES = Path("spec/v1/types")
+MINIMAL = Path("spec/v1/example/publiccode.minimal.yml")
+FULL = Path("spec/v1/example/publiccode.yml")
 
 HEADING = re.compile(r"^``([A-Za-z/\[\]]+)``")
 
