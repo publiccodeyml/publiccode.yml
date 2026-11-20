@@ -32,8 +32,8 @@ class Links(HTMLParser):
 
 
 class AnchorTests(unittest.TestCase):
-    def test_required_and_optional_keys_share_section_links(self):
-        for marker in (" *(required)*", ""):
+    def test_required_deprecated_and_optional_keys_share_section_links(self):
+        for marker in (" *(required)*", " (*deprecated*)", ""):
             with self.subTest(marker=marker), tempfile.TemporaryDirectory() as tmp:
                 source = Path(tmp) / "source"
                 output = Path(tmp) / "html"

@@ -1,3 +1,4 @@
+import re
 import warnings
 
 from docutils import nodes
@@ -69,21 +70,20 @@ def _meta_type_role(name, rawtext, text, lineno, inliner, options=None, content=
     return [chip], [*messages, *ref_messages]
 
 
-# The id docutils derives from "``url`` *(required)*" is url-required.
-# Anchor a required key at its name alone, so the anchor stays when
-# the key becomes optional.
-class _AnchorWithoutRequiredMarker(SphinxTransform):
+# The id docutils derives from "``url`` *(required)*" is url-required
+# and the one from "``usedBy`` (*deprecated*)" is usedby-deprecated.
+# Anchor such a key at its name alone, so the anchor stays when the key
+# becomes optional or deprecated.
+_STATUS_MARKER = re.compile(r"\s*\((?:required|deprecated)\)\s*$")
+
+
+class _AnchorWithoutStatusMarker(SphinxTransform):
     # before SphinxDomains (850), which records the label targets
     default_priority = 800
 
     def apply(self, **kwargs):
         for section in self.document.findall(nodes.section):
-            title = section[0]
-            text = "".join(
-                child.astext()
-                for child in title.children
-                if not (isinstance(child, nodes.emphasis) and child.astext() == "(required)")
-            )
+            text = _STATUS_MARKER.sub("", section[0].astext())
             anchor = nodes.make_id(text)
             if not anchor or self.document.ids.get(anchor, section) is not section:
                 continue
@@ -111,6 +111,6 @@ def _link_labels_to_sections(app, doctree):
 def setup(app):
     # priority > 500: after the theme handler that builds toctree_data
     app.connect("html-page-context", _flag_expandable_toc_entries, priority=501)
-    app.add_transform(_AnchorWithoutRequiredMarker)
+    app.add_transform(_AnchorWithoutStatusMarker)
     app.connect("doctree-read", _link_labels_to_sections)
     app.add_role("meta-type", _meta_type_role)
