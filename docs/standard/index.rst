@@ -108,6 +108,8 @@ several protocols, prefer HTTPS.
 
 :ref:`enumerated string <enumerated-string-type>`
 
+The kind of software and how it reaches its users.
+
 Allowed values:
 
 -  ``standalone/mobile``: A standalone application for a mobile
@@ -154,6 +156,8 @@ server runs.
 .. rst-class:: key-meta
 
 :ref:`enumerated string <enumerated-string-type>`
+
+How far the development of the software has gone.
 
 Allowed values:
 
@@ -373,6 +377,8 @@ A list of awards won by the software.
 
 ``legal`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~
+
+The license of the software and who holds its copyright.
 
 ``legal/license`` *(required)*
 ''''''''''''''''''''''''''''''
