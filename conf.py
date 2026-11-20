@@ -38,6 +38,10 @@ extensions = [
     "sphinx_copybutton",
 ]
 
+# Version 0 only: country.rst includes this fragment, which must not
+# also become a page of its own.
+exclude_patterns = ["schema.it.rst"]
+
 
 # The press theme attaches a page's sections to the sidebar only when
 # that page is the one being viewed, so the other entries carry no
