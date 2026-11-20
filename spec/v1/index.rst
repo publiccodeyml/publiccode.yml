@@ -739,6 +739,8 @@ The name of the suite the software belongs to, such as an office
 suite that includes a word processor. Catalogs can use it to group
 related software.
 
+.. _categories-key:
+
 ``categories``
 ~~~~~~~~~~~~~~
 
@@ -757,6 +759,8 @@ Allowed values: see :ref:`categories`
 
 The categories the software belongs to. Catalogs use them to group
 software.
+
+.. _supports:
 
 ``supports``
 ~~~~~~~~~~~~
@@ -811,6 +815,8 @@ technology of theirs.
 
 This key is deprecated. Use ``intendedAudience/countries`` to list the
 countries the software targets.
+
+.. _intended-audience-scope:
 
 ``intendedAudience/scope``
 ''''''''''''''''''''''''''
