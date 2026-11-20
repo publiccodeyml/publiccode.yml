@@ -35,6 +35,59 @@
   .version-banner {
     margin: 0 0 16px 0 !important;
   }
+{% if current.prerelease %}
+  .draft-banner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin: 0 0 16px 0;
+    padding: 20px 24px;
+    border-radius: 10px;
+    background: #b91c1c;
+    color: #fff;
+  }
+  .draft-banner svg {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+  }
+  .draft-banner p {
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+  }
+  .draft-banner .draft-banner-title {
+    margin-bottom: 6px;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .draft-banner a.draft-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: #fff;
+    color: #b91c1c;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .draft-banner a.draft-banner-cta:hover,
+  .draft-banner a.draft-banner-cta:active {
+    background: #fee2e2;
+  }
+  @media (max-width: 479px) {
+    .draft-banner {
+      padding: 16px;
+      gap: 12px;
+    }
+    .draft-banner svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+{% endif %}
 </style>
 <script>
   var versionSwitchRequest = 0;
@@ -74,12 +127,23 @@
 </div>
 
 {% if current.prerelease %}
-<div class="admonition note version-banner">
-  <p class="admonition-title">Pre-release</p>
-  <p>You are viewing <strong>{{ current.name }}</strong>, a draft of the next
-  version of the Standard that can still change.
-  {%- if latest %} The latest released version is
-  <a href="{{ prefix }}{{ latest.dir }}/">{{ latest.name }}</a>.{% endif %}</p>
+<div class="draft-banner" role="region" aria-label="Unreleased version">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <line x1="12" y1="9" x2="12" y2="13"/>
+    <line x1="12" y1="17" x2="12.01" y2="17"/>
+  </svg>
+  <div>
+    <p class="draft-banner-title">{{ current.name }} is not released</p>
+    <p>This is a draft of the next version of the Standard. Keys and rules
+    can still change or be removed before the release.
+    {%- if latest %} Write your publiccode.yml files against the released
+    version, {{ latest.name }}.{% endif %}</p>
+    {%- if latest %}
+    <a class="draft-banner-cta" href="{{ prefix }}{{ latest.dir }}/">Go to {{ latest.name }}, the released version</a>
+    {%- endif %}
+  </div>
 </div>
 {% elif latest and current.dir != latest.dir %}
 <div class="admonition warning version-banner">
