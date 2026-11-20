@@ -16,3 +16,11 @@ Properties:
    mailing list or a generic contact point like ``info@acme.inc``.
 -  ``website``, :ref:`URL <url-type>`: The contractor website: its
    main institutional site or a page specific to the project.
+
+.. code-block:: yaml
+   :caption: Example
+
+   - name: Example Software Ltd
+     until: "2027-12-31"
+     email: firefax-maintenance@supplier.example.com
+     website: https://supplier.example.com

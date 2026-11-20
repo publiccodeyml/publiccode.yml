@@ -19,3 +19,11 @@ Properties:
    technical contact works for, such as a company or an association.
    With several maintainers, it tells which maintainer entity each
    contact belongs to.
+
+.. code-block:: yaml
+   :caption: Example
+
+   - name: Jane Doe
+     email: jane.doe@supplier.example.com
+     affiliation: Example Software Ltd
+     phone: "+441234567890"
