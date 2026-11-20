@@ -20,5 +20,5 @@ Properties:
 
    - name: Example Software Ltd
      until: "2027-12-31"
-     email: firefax-maintenance@supplier.example.com
+     email: jane.doe@supplier.example.com
      website: https://supplier.example.com
