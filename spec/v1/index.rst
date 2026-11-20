@@ -582,7 +582,7 @@ MUST be present if :ref:`maintenance/type <maintenance-type>` is
      contractors:
        - name: Example Software Ltd
          until: "2027-12-31"
-         email: firefax-maintenance@supplier.example.com
+         email: jane.doe@supplier.example.com
          website: https://supplier.example.com
 
 The entities currently contracted to maintain the software:
