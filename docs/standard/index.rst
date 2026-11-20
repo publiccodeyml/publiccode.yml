@@ -252,6 +252,19 @@ single sentence, maximum 150 characters.
 
 MUST be present in at least one language.
 
+.. code-block:: yaml
+   :caption: Example
+
+   description:
+     en:
+       longDescription: |
+         Firefax lets you send and receive faxes from a desktop computer
+         without a fax machine. You can search received faxes in an archive,
+         schedule outgoing faxes and track their delivery.
+
+         Offices that exchange documents by fax can keep those documents
+         in one archive and replace their fax machines.
+
 A longer description of the software, between 150 and 10000
 characters, giving potential users an overview of what it can do.
 Write it for users, not developers: it is the text that would
@@ -387,6 +400,14 @@ the software's website.
 .. rst-class:: key-meta
 
 :ref:`array <array-type>` of :ref:`strings <string-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   description:
+     en:
+       awards:
+         - Public Sector Software Award 2025
 
 A list of awards won by the software.
 
@@ -767,6 +788,13 @@ Who the software is for.
 
 :ref:`array <array-type>` of :ref:`country codes <country-code-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   intendedAudience:
+     countries:
+       - GB
+
 Countries explicitly included in the intended audience: the
 software claims compliance with their processes, technologies
 or laws.
@@ -793,6 +821,13 @@ countries the software targets.
 :ref:`array <array-type>` of :ref:`enumerated strings <enumerated-string-type>`
 
 Allowed values: see :ref:`scopes`
+
+.. code-block:: yaml
+   :caption: Example
+
+   intendedAudience:
+     scope:
+       - local-authorities
 
 The sectors the software serves, such as healthcare or education.
 
@@ -826,6 +861,11 @@ The organisations known to be funding the development of the software.
 .. rst-class:: key-meta
 
 :ref:`URL <url-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   roadmap: https://example.com/firefax/roadmap
 
 A link to a public roadmap of the software.
 
@@ -883,6 +923,16 @@ documentation and deployment scripts.
 
 :ref:`array <array-type>` of :ref:`Dependencies <dependency-type>`
 
+.. code-block:: yaml
+   :caption: Example
+
+   dependsOn:
+     proprietary:
+       - name: Oracle Database
+         versionMin: "19"
+         versionMax: "23"
+         optional: true
+
 Runtime dependencies distributed under a proprietary license.
 
 ``dependsOn/hardware``
@@ -891,6 +941,16 @@ Runtime dependencies distributed under a proprietary license.
 .. rst-class:: key-meta
 
 :ref:`array <array-type>` of :ref:`Dependencies <dependency-type>`
+
+.. code-block:: yaml
+   :caption: Example
+
+   dependsOn:
+     hardware:
+       - name: Fax modem
+         versionMin: "1"
+         versionMax: "2"
+         optional: true
 
 Hardware needed to use the software.
 
