@@ -135,7 +135,7 @@ Key ``piattaforme/io`` (*deprecated*)
 - Type: boolean
 - Presence: optional
 
-If present and set to ``true``, the software interfaces with `IO - the public services app <https://io.italia.it/>`__.
+If present and set to ``true``, the software interfaces with `IO - the public services app <https://ioapp.it/>`__.
 
 Use the ``supports`` key with ``alias:io`` instead.
 
