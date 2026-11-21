@@ -11,16 +11,23 @@ export UV_PYTHON_DOWNLOADS=automatic
 export UV_PYTHON_PREFERENCE=managed
 export LC_ALL=C.UTF-8
 
+# CLI deploys upload the files with no .git and no VERCEL_GIT_ vars:
+# bootstrap a repo and commit the upload, poly.py builds the drafts
+# from HEAD. Commit before the uv install writes .uv/ and .uv-python/
+# into the tree.
+if ! git rev-parse --git-dir >/dev/null 2>&1; then
+  git init -q .
+  git add -A
+  git -c user.name=vercel -c user.email=vercel@localhost \
+    -c commit.gpgsign=false commit -q --no-verify -m 'CLI deploy'
+fi
+
 curl -LsSf https://astral.sh/uv/0.12.5/install.sh |
   UV_INSTALL_DIR=.uv UV_NO_MODIFY_PATH=1 sh
 
-# CLI deploys upload the files with no .git and no VERCEL_GIT_ vars:
-# bootstrap a repo, poly.py needs one too.
-git rev-parse --git-dir >/dev/null 2>&1 || git init -q .
-
-# The clone has a single branch: get the release tags and the drafts.
+# The clone has no tags: get the releases, the drafts come from HEAD.
 git fetch --depth=1 \
   "https://github.com/${VERCEL_GIT_REPO_OWNER:-publiccodeyml}/${VERCEL_GIT_REPO_SLUG:-publiccode.yml}.git" \
-  '+refs/tags/v*:refs/tags/v*' '+refs/heads/*-rc:refs/heads/*-rc'
+  '+refs/tags/v*:refs/tags/v*'
 
 ./.uv/uv run sphinx-polyversion poly.py build/html
