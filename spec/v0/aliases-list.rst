@@ -16,7 +16,7 @@ nis2      https://eur-lex.europa.eu/eli/dir/2022/2555/oj
 cra       https://eur-lex.europa.eu/eli/reg/2024/2847/oj
 spid      https://www.spid.gov.it/
 cie       https://www.cartaidentita.interno.gov.it/
-anpr      https://www.anpr.interno.it/
+anpr      https://www.anagrafenazionale.interno.it/
 pagopa    https://www.pagopa.gov.it/
-io        https://io.italia.it/
+io        https://ioapp.it/
 ========  ===============================================
