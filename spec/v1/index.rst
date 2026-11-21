@@ -481,6 +481,9 @@ the key if you cannot identify a main copyright owner.
 
 The organisation publishing the software. This section is optional.
 
+Organisations funding the software go in :ref:`fundedBy <funded-by>`,
+as items of the :ref:`Organisation <organisation-type>` type.
+
 .. _organisation-uri:
 
 ``organisation/uri`` *(required)*
@@ -850,6 +853,8 @@ Parsers can supplement the list using other evidence of use, such
 as a fork owned by an administration.
 
 This key is deprecated.
+
+.. _funded-by:
 
 ``fundedBy``
 ~~~~~~~~~~~~
