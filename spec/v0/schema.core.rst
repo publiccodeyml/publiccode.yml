@@ -340,6 +340,8 @@ Section ``organisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 This optional section provides the organisation publishing the software.
+Organisations funding the software go in ``fundedBy``, as items of the
+Organisation type described below.
 
 Key ``organisation/uri``
 ''''''''''''''''''''''''
@@ -891,6 +893,10 @@ is a mapping with the following properties:
    it’s an association, a company, a public sector organisation, or
    a physical person.
 -  ``uri`` - The URI identifying the organisation.
+
+This type is the item of ``fundedBy``. The organisation publishing the
+software goes in the separate ``organisation`` section, which has its
+own keys.
 
 Contractor
 ~~~~~~~~~~

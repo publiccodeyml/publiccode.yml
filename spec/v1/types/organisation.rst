@@ -6,6 +6,11 @@ Organisation
 An entity that can fund software development, such as an
 association, a company or a public authority.
 
+This type is the item of :ref:`fundedBy <funded-by>`. The organisation
+publishing the software goes in the separate
+:ref:`organisation <organisation>` section, which has its own
+properties.
+
 Properties:
 
 -  ``name`` *(required)*, :ref:`string <string-type>`: The name of the
