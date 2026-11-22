@@ -722,7 +722,7 @@ Key ``maintenance/contractors``
 
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
-organisations, or other collective names.
+organisations, other collective names, or physical persons.
 
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
@@ -886,8 +886,8 @@ Organisation
 ~~~~~~~~~~~~
 
 An organisation is a structure (association, company, public
-authority, etc.) that can fund software development. An organisation
-is a mapping with the following properties:
+authority, etc.) or a physical person that can fund software
+development. An organisation is a mapping with the following properties:
 
 -  ``name`` - **mandatory** - The name of the organisation, whether
    it’s an association, a company, a public sector organisation, or

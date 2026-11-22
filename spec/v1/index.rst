@@ -589,7 +589,7 @@ MUST be present if :ref:`maintenance/type <maintenance-type>` is
          website: https://supplier.example.com
 
 The entities currently contracted to maintain the software:
-companies, organisations or other collective names.
+companies, organisations or other collective names, or people.
 
 ``maintenance/contacts``
 ''''''''''''''''''''''''

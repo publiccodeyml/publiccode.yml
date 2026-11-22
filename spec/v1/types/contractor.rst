@@ -3,8 +3,8 @@
 Contractor
 **********
 
-A company, organisation or other collective name contracted to
-maintain the software.
+A company, organisation or other collective name, or a person,
+contracted to maintain the software.
 
 Properties:
 
