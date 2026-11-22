@@ -34,7 +34,7 @@ class ExampleTests(unittest.TestCase):
         self.addCleanup(patcher.stop)
 
     def check(self, data):
-        self.full.write_text(yaml.safe_dump(data))
+        self.full.write_text(yaml.safe_dump(data, sort_keys=False))
         output = io.StringIO()
         with contextlib.redirect_stderr(output):
             result = checker.main()
@@ -87,6 +87,23 @@ class ExampleTests(unittest.TestCase):
                     result, errors = self.check(self.data)
                 self.assertEqual(result, 1)
                 self.assertIn("/[]/newProperty is documented but missing", errors)
+
+    def test_top_level_keys_follow_the_reference_page(self):
+        data = {"landingURL": self.data["landingURL"]}
+        data.update((key, value) for key, value in self.data.items() if key != "landingURL")
+        result, errors = self.check(data)
+        self.assertEqual(result, 1)
+        self.assertIn("top level key landingURL comes before publiccodeYmlVersion", errors)
+
+    def test_minimal_example_key_order(self):
+        minimal = self.full.parent / "minimal.yml"
+        data = yaml.safe_load(checker.MINIMAL.read_text())
+        data = {"maintenance": data.pop("maintenance"), **data}
+        minimal.write_text(yaml.safe_dump(data, sort_keys=False))
+        with patch.object(checker, "MINIMAL", minimal):
+            result, errors = self.check(self.data)
+        self.assertEqual(result, 1)
+        self.assertIn("minimal.yml: top level key maintenance comes before", errors)
 
     def test_unknown_property_in_minimal_example(self):
         minimal = self.full.parent / "minimal.yml"

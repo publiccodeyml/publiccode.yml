@@ -2,7 +2,8 @@
 """Check the example files against the keys documented in the spec.
 
 Both examples may use only documented keys. The full example must
-use every key. Also check description lengths and line breaks.
+use every key. Top level keys must follow the order of the reference
+page. Also check description lengths and line breaks.
 """
 
 import re
@@ -28,6 +29,30 @@ def properties(text):
     return set(re.findall(r"^-  ``([A-Za-z]+)``", text, re.MULTILINE))
 
 
+def spec_headings(lines):
+    headings = []
+    for index, (line, underline) in enumerate(zip(lines, lines[1:])):
+        match = HEADING.match(line)
+        if match and underline and set(underline) <= set("~'"):
+            headings.append((index, match[1]))
+    return headings
+
+
+def documented_order():
+    """Top level keys in the order the reference page lists them."""
+    headings = spec_headings(SPEC.read_text().splitlines())
+    return [key for _, key in headings if "/" not in key]
+
+
+def check_order(name, data, order):
+    keys = [key for key in data if key in order]
+    expected = sorted(keys, key=order.index)
+    for key, wanted in zip(keys, expected):
+        if key != wanted:
+            return [f"{name}: top level key {key} comes before {wanted}, unlike {SPEC}"]
+    return []
+
+
 def documented_keys():
     types = {}
     text = "\n".join(path.read_text() for path in sorted(TYPES.glob("*.rst")))
@@ -36,11 +61,7 @@ def documented_keys():
         types[anchor] = properties(body)
 
     lines = SPEC.read_text().splitlines()
-    headings = []
-    for index, (line, underline) in enumerate(zip(lines, lines[1:])):
-        match = HEADING.match(line)
-        if match and underline and set(underline) <= set("~'"):
-            headings.append((index, match[1]))
+    headings = spec_headings(lines)
 
     keys = set()
     arrays = set()
@@ -95,6 +116,7 @@ def check_descriptions(name, data):
 
 def main():
     spec = documented_keys()
+    order = documented_order()
     errors = []
     for path in (MINIMAL, FULL):
         data = yaml.safe_load(path.read_text())
@@ -104,6 +126,7 @@ def main():
         if path == FULL:
             for key in sorted(spec - used):
                 errors.append(f"{path}: {key} is documented but missing from the full example")
+        errors += check_order(path, data, order)
         errors += check_descriptions(path, data)
     for error in errors:
         print(error, file=sys.stderr)

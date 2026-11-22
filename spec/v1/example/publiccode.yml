@@ -2,20 +2,12 @@ publiccodeYmlVersion: "1"
 
 name: Firefax
 url: https://example.com/firefax.git
-landingURL: https://example.com/firefax
 softwareType: standalone/desktop
 platforms:
   - linux
   - windows
   - mac
 developmentStatus: stable
-softwareVersion: "2.3"
-releaseDate: "2026-03-15"
-logo: img/logo.svg
-applicationSuite: MegaProductivitySuite
-isBasedOn:
-  - https://example.com/openfax.git
-roadmap: https://example.com/firefax/roadmap
 
 description:
   en:
@@ -74,6 +66,12 @@ localisation:
     - en-GB
     - fr
 
+logo: img/logo.svg
+softwareVersion: "2.3"
+releaseDate: "2026-03-15"
+landingURL: https://example.com/firefax
+applicationSuite: MegaProductivitySuite
+
 categories:
   - communications
   - document-management
@@ -97,6 +95,11 @@ usedBy:
 fundedBy:
   - name: Example City Council
     uri: https://example.com/organisations/example-city-council
+
+roadmap: https://example.com/firefax/roadmap
+
+isBasedOn:
+  - https://example.com/openfax.git
 
 dependsOn:
   open:
