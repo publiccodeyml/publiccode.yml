@@ -130,7 +130,7 @@ Each major version of the Standard has its own directory, `spec/v0` and
 this command to generate the version 1 website:
 
 ```console
-uv run sphinx-build spec/v1 build -c .
+uv run sphinx-build -W --keep-going -c . spec/v1 build
 ```
 
 Then open a file of the build directory in a browser, for example
