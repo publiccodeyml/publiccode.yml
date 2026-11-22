@@ -334,7 +334,7 @@ Example:
 
    supports:
      - id: alias:gdpr
-     - id: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+     - id: https://eur-lex.europa.eu/eli/dir/2016/2102/oj
 
 Section ``organisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
