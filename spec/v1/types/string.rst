@@ -20,3 +20,10 @@ Annex #29 <https://www.unicode.org/reports/tr29/>`__. For example,
 
 The value MUST be a YAML string: a number, a boolean or null is an
 error.
+
+.. tip::
+
+   YAML reads unquoted values like ``2.3``, ``16`` or
+   ``+3923113215112`` as numbers, and ``true`` or ``null`` as a
+   boolean or null. Quote them, as in ``softwareVersion: "2.3"`` or
+   ``phone: "+3923113215112"``, so that they stay strings.
