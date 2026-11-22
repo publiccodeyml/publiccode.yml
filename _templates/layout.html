@@ -9,6 +9,17 @@
 <script>document.documentElement.dataset.content_root = "{{ content_root }}";</script>
 {% endblock %}
 
+{#- The press theme prints titlesuffix but only the basic theme sets it,
+    so without this block every page title is its bare heading. -#}
+
+{% block htmltitle %}
+{%- if pagename == root_doc %}
+<title>{{ title|striptags|e }}</title>
+{%- else %}
+<title>{{ title|striptags|e }} - {{ project|e }}</title>
+{%- endif %}
+{% endblock %}
+
 {% block footer %}
 
 <div class="footer">
