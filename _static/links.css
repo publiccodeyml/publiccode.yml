@@ -1,0 +1,23 @@
+/* The press theme colors every link #3eaf7c, 2.75:1 on the white page
+   and lower on the type chips, table stripes and inline code. #247350
+   keeps the green and stays above 4.5:1 on all of them. Sidebar and
+   navbar links keep the theme colors. The admonition and banner rules
+   are more specific and keep theirs too. */
+.content a,
+.body-header a,
+.page-nav a {
+    color: #247350;
+}
+
+/* The theme paints a literal inside a link in the old green. */
+.content a code {
+    color: inherit;
+}
+
+/* At 1.9:1 against the body text, color alone does not tell a link in
+   a sentence apart. The theme's hover underline targets a class these
+   pages do not carry. Underline every content link but the heading
+   permalinks. */
+.content a:not(.headerlink) {
+    text-decoration: underline;
+}
