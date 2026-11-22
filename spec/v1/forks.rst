@@ -21,11 +21,11 @@ If you publish a working version of your fork for others to use,
 you MUST update ``publiccode.yml`` to describe it:
 
 -  Point :ref:`url <url>` to the repository of the fork.
--  Add :ref:`isBasedOn <is-based-on>` with the ``url`` of the
-   software it was forked from.
+-  Add :ref:`isBasedOn <is-based-on>` with the :ref:`url <url>` of
+   the software it was forked from.
 -  Replace :ref:`organisation <organisation>` with the fork's
-   publisher, updating both ``uri`` and ``name``. You can omit this
-   section.
+   publisher, updating both :ref:`uri <organisation-uri>` and
+   :ref:`name <organisation-name>`. You can omit this section.
 -  Use :ref:`maintenance <maintenance>` to describe who maintains
    the fork and how.
 
