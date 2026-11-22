@@ -50,6 +50,8 @@ Every value follows the rules of its :doc:`type <types>`.
 Specification
 -------------
 
+.. index:: ! publiccodeYmlVersion
+
 ``publiccodeYmlVersion`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -63,6 +65,8 @@ Specification
    publiccodeYmlVersion: "1"
 
 The version of the specification the file follows: ``"1"``.
+
+.. index:: ! name
 
 .. _name:
 
@@ -79,6 +83,8 @@ The version of the specification the file follows: ``"1"``.
    name: Firefax
 
 The short public name of the software, the one users know it by.
+
+.. index:: ! url
 
 .. _url:
 
@@ -105,6 +111,8 @@ several protocols, prefer HTTPS.
    pointing at the original repository, and catalogs use the mismatch
    to skip the fork. Only a fork published as software of its own
    SHOULD change it. See :ref:`forks`.
+
+.. index:: ! softwareType
 
 ``softwareType`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,6 +147,8 @@ Allowed values:
 -  ``configurationFiles``: Configuration files or scripts for a
    deployment, such as Bash scripts, Ansible playbooks or Dockerfiles.
 
+.. index:: ! platforms
+
 ``platforms`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,6 +171,8 @@ is allowed.
 The platforms people use to access and operate the software, not the
 ones it runs on: a web application lists ``web``, whatever system its
 server runs.
+
+.. index:: ! developmentStatus
 
 ``developmentStatus`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,6 +201,8 @@ Allowed values:
 -  ``obsolete``: No longer maintained or kept up to date. All of the
    source code is archived and kept for historical reasons.
 
+.. index:: ! description
+
 ``description`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -209,6 +223,8 @@ An example for English:
 
 In the key names below, ``[lang]`` stands for that tag.
 
+.. index:: ! localisedName
+
 ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''
 
@@ -226,6 +242,8 @@ In the key names below, ``[lang]`` stands for that tag.
 The short public name of the software in this language, for when
 it differs from :ref:`name <name>`.
 
+.. index:: ! shortDescription
+
 ``description/[lang]/shortDescription`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -242,6 +260,8 @@ it differs from :ref:`name <name>`.
 
 A short description of the software: a single line containing a
 single sentence, maximum 150 characters.
+
+.. index:: ! longDescription
 
 ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''
@@ -277,6 +297,8 @@ The value MAY contain line breaks and uses Markdown as defined by
 ``*italic*``, ``**bold**``, bullet points and ``[links](#)``. Use these
 formats to keep the description readable across catalogs.
 
+.. index:: ! documentation
+
 .. _documentation:
 
 ``description/[lang]/documentation``
@@ -304,6 +326,8 @@ A URL to the user documentation of the software.
    Publish the documentation sources under an open license, for
    example in the source code repository.
 
+.. index:: ! apiDocumentation
+
 ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''
 
@@ -325,6 +349,8 @@ A URL to the hosted API documentation of the software.
    The advice for :ref:`documentation <documentation>` applies here
    too. If there is a reference or test deployment, also consider an
    interactive interface (e.g. Swagger).
+
+.. index:: ! features
 
 .. _features:
 
@@ -354,6 +380,8 @@ decision makers who would commission it.
 
    Aim for 5 to 20 features, depending on the size and complexity of
    the software. Leave the details to the documentation.
+
+.. index:: ! screenshots
 
 .. _screenshots:
 
@@ -391,6 +419,8 @@ same repository as ``publiccode.yml``.
    -  Tablet: 1024x768 @2x
    -  Mobile: 375x667 @2x
 
+.. index:: ! videos
+
 ``description/[lang]/videos`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''
 
@@ -414,6 +444,8 @@ Videos MUST be hosted on a video sharing website that supports the
 This key is deprecated. Link to videos from the documentation or
 the software's website.
 
+.. index:: ! awards
+
 ``description/[lang]/awards``
 '''''''''''''''''''''''''''''
 
@@ -431,10 +463,14 @@ the software's website.
 
 A list of awards won by the software.
 
+.. index:: ! legal
+
 ``legal`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The license of the software and who holds its copyright.
+
+.. index:: ! license
 
 ``legal/license`` *(required)*
 ''''''''''''''''''''''''''''''
@@ -460,6 +496,8 @@ see the `SPDX License List <https://spdx.org/licenses/>`__.
    licenses, say whether later versions apply: write
    ``GPL-3.0-only`` or ``GPL-3.0-or-later``, not ``GPL-3.0``.
 
+.. index:: ! mainCopyrightOwner
+
 ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''
 
@@ -481,6 +519,8 @@ You can name several owners in one English sentence or name a
 community, such as "Linus Torvalds and all Linux contributors". Omit
 the key if you cannot identify a main copyright owner.
 
+.. index:: ! organisation
+
 .. _organisation:
 
 ``organisation``
@@ -490,6 +530,8 @@ The organisation publishing the software. This section is optional.
 
 Organisations funding the software go in :ref:`fundedBy <funded-by>`,
 as items of the :ref:`Organisation <organisation-type>` type.
+
+.. index:: ! uri
 
 .. _organisation-uri:
 
@@ -518,6 +560,8 @@ the file to verify that the URI belongs to the organisation in
 control of the repository. Each consumer chooses its verification
 method.
 
+.. index:: name
+
 .. _organisation-name:
 
 ``organisation/name``
@@ -540,12 +584,16 @@ It MUST name the entity identified by
 for that URI. It SHOULD be the widely recognized form of the name,
 such as the registered legal or institutional name.
 
+.. index:: ! maintenance
+
 .. _maintenance:
 
 ``maintenance`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How the software is maintained and who maintains it.
+
+.. index:: ! type
 
 .. _maintenance-type:
 
@@ -573,6 +621,8 @@ Allowed values:
    time to the project.
 -  ``none``: Not actively maintained.
 
+.. index:: ! contractors
+
 ``maintenance/contractors``
 '''''''''''''''''''''''''''
 
@@ -597,6 +647,8 @@ MUST be present if :ref:`maintenance/type <maintenance-type>` is
 
 The entities currently contracted to maintain the software:
 companies, organisations or other collective names, or people.
+
+.. index:: ! contacts
 
 ``maintenance/contacts``
 ''''''''''''''''''''''''
@@ -626,11 +678,15 @@ be a person. Use ``affiliation`` for the institution they represent.
 For contracted or subcontracted maintenance, list the people who do
 the work. Include the software owner only if they also maintain it.
 
+.. index:: ! localisation
+
 ``localisation`` *(required)*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whether the software supports localisation and which languages it
 is available in.
+
+.. index:: ! localisationReady
 
 ``localisation/localisationReady`` *(required)*
 '''''''''''''''''''''''''''''''''''''''''''''''
@@ -647,6 +703,8 @@ is available in.
 
 If ``true``, the software supports translation into other languages.
 It may still be available in one language.
+
+.. index:: ! availableLanguages
 
 ``localisation/availableLanguages`` *(required)*
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -666,6 +724,8 @@ It may still be available in one language.
 
 The languages the software is available in.
 It MUST contain at least one language tag.
+
+.. index:: ! logo
 
 ``logo``
 ~~~~~~~~
@@ -687,6 +747,8 @@ The value is either a path relative to the root of the repository or
 an absolute URL to the raw file. Either way, the file MUST be in the
 same repository as ``publiccode.yml``.
 
+.. index:: ! softwareVersion
+
 ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~
 
@@ -703,6 +765,8 @@ The latest stable version of the software. Parsers SHOULD display
 this string without interpreting or parsing it. They SHOULD NOT assume
 semantic versioning or any other version format.
 
+.. index:: ! releaseDate
+
 ``releaseDate``
 ~~~~~~~~~~~~~~~
 
@@ -716,6 +780,8 @@ semantic versioning or any other version format.
    releaseDate: "2026-03-15"
 
 The date the latest version was released.
+
+.. index:: ! landingURL
 
 ``landingURL``
 ~~~~~~~~~~~~~~
@@ -733,6 +799,8 @@ A web page that catalogs link to when :ref:`url <url>` gives access
 only to a version control client. The page can also offer a graphical
 installer for download.
 
+.. index:: ! applicationSuite
+
 ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -748,6 +816,8 @@ installer for download.
 The name of the suite the software belongs to, such as an office
 suite that includes a word processor. Catalogs can use it to group
 related software.
+
+.. index:: ! categories
 
 .. _categories-key:
 
@@ -770,6 +840,8 @@ Allowed values: see :ref:`categories`
 The categories the software belongs to. Catalogs use them to group
 software.
 
+.. index:: ! supports
+
 .. _supports:
 
 ``supports``
@@ -789,10 +861,14 @@ software.
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
 
+.. index:: ! intendedAudience
+
 ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~
 
 Who the software is for.
+
+.. index:: ! countries
 
 .. _intended-audience-countries:
 
@@ -821,6 +897,8 @@ or laws.
    purpose content management system. Do not list every country to
    mean a worldwide audience.
 
+.. index:: ! unsupportedCountries
+
 ``intendedAudience/unsupportedCountries`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -835,6 +913,8 @@ technology of theirs.
 This key is deprecated. Use
 :ref:`intendedAudience/countries <intended-audience-countries>` to list
 the countries the software targets.
+
+.. index:: ! scope
 
 .. _intended-audience-scope:
 
@@ -856,6 +936,8 @@ Allowed values: see :ref:`scopes`
 
 The sectors the software serves, such as healthcare or education.
 
+.. index:: ! usedBy
+
 ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -871,6 +953,8 @@ as a fork owned by an administration.
 
 This key is deprecated.
 
+.. index:: ! fundedBy
+
 .. _funded-by:
 
 ``fundedBy``
@@ -881,6 +965,8 @@ This key is deprecated.
 :ref:`array <array-type>` of :ref:`Organisations <organisation-type>`
 
 The organisations known to be funding the development of the software.
+
+.. index:: ! roadmap
 
 ``roadmap``
 ~~~~~~~~~~~
@@ -895,6 +981,8 @@ The organisations known to be funding the development of the software.
    roadmap: https://example.com/firefax/roadmap
 
 A link to a public roadmap of the software.
+
+.. index:: ! isBasedOn
 
 .. _is-based-on:
 
@@ -918,6 +1006,8 @@ was forked from, whether or not that has a ``publiccode.yml``. Like
 The key marks the software as a fork published as software of its
 own: see :ref:`forks`.
 
+.. index:: ! dependsOn
+
 ``dependsOn``
 ~~~~~~~~~~~~~
 
@@ -929,6 +1019,8 @@ software.
    List only the runtime and system-level dependencies installed and
    maintained separately, such as a database. Do not list source code
    dependencies, such as the libraries the software uses.
+
+.. index:: ! open
 
 ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''
@@ -942,6 +1034,8 @@ Runtime dependencies distributed under an open-source license.
 This key is deprecated. Declare these dependencies in an SBOM or
 package manager manifests. Put installation requirements in the
 documentation and deployment scripts.
+
+.. index:: ! proprietary
 
 ``dependsOn/proprietary``
 '''''''''''''''''''''''''
@@ -961,6 +1055,8 @@ documentation and deployment scripts.
          optional: true
 
 Runtime dependencies distributed under a proprietary license.
+
+.. index:: ! hardware
 
 ``dependsOn/hardware``
 ''''''''''''''''''''''

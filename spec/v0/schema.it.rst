@@ -13,6 +13,8 @@ All the keys listed below are specific for Italy and, as such, they must
 be inserted in a section named with the ``IT`` code.
 
 
+.. index:: ! countryExtensionVersion
+
 Key ``countryExtensionVersion`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -25,6 +27,8 @@ This key **MUST** always be set to ``1.0``.
 
 This key is deprecated together with the rest of the Italian section.
 
+.. index:: ! conforme
+
 Key ``conforme`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,6 +36,8 @@ This section contains the keys for auto-declaring the compliance with the
 current legislation, with respect to the following sections.
 Not including these keys implies that the compliance is not known or not
 declared.
+
+.. index:: ! lineeGuidaDesign
 
 Key ``conforme/lineeGuidaDesign`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -45,6 +51,8 @@ laws (L. 4/2004), as further explained in the
 design <https://docs.italia.it/italia/designers-italia/design-linee-guida-docs>`__ (Italian language).
 
 Don't use this deprecated key, those guidelines are no longer current.
+
+.. index:: ! modelloInteroperabilita
 
 Key ``conforme/modelloInteroperabilita`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -60,6 +68,8 @@ CAD <https://docs.italia.it/italia/piano-triennale-ict/codice-amministrazione-di
 
 Don't use this deprecated key, those guidelines are no longer current.
 
+.. index:: ! misureMinimeSicurezza
+
 Key ``conforme/misureMinimeSicurezza`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -70,6 +80,8 @@ If present and set to ``true``, the software is compliant with the `Misure
 minime di sicurezza ICT per le Pubbliche
 amministrazioni <https://www.agid.gov.it/it/sicurezza/misure-minime-sicurezza-ict>`__ (Italian language).
 
+
+.. index:: ! gdpr
 
 Key ``conforme/gdpr`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''
@@ -82,8 +94,12 @@ If present and set to ``true``, the software respects the GDPR.
 Use the ``supports`` key with ``alias:gdpr`` instead.
 
 
+.. index:: ! piattaforme
+
 Section ``piattaforme`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. index:: ! spid
 
 Key ``piattaforme/spid`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''
@@ -98,6 +114,8 @@ Digitale <https://developers.italia.it/it/spid>`__.
 
 Use the ``supports`` key with ``alias:spid`` instead.
 
+.. index:: ! cie
+
 Key ``piattaforme/cie`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''
 
@@ -109,6 +127,8 @@ electronic ID card (``Carta di Identità Elettronica``).
 
 Use the ``supports`` key with ``alias:cie`` instead.
 
+.. index:: ! anpr
+
 Key ``piattaforme/anpr`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''
 
@@ -119,6 +139,8 @@ If present and set to ``true``, the software interfaces with ANPR.
 
 Use the ``supports`` key with ``alias:anpr`` instead.
 
+.. index:: ! pagopa
+
 Key ``piattaforme/pagopa`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''
 
@@ -128,6 +150,8 @@ Key ``piattaforme/pagopa`` (*deprecated*)
 If present and set to ``true``, the software interfaces with pagoPA.
 
 Use the ``supports`` key with ``alias:pagopa`` instead.
+
+.. index:: ! io
 
 Key ``piattaforme/io`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''
@@ -140,11 +164,15 @@ If present and set to ``true``, the software interfaces with `IO - the public se
 Use the ``supports`` key with ``alias:io`` instead.
 
 
+.. index:: ! riuso
+
 Section ``riuso`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section contains a set of keys related to the publication of the software
 inside the reuse catalog of `Developers Italia <https://developers.italia.it>`__.
+
+.. index:: ! codiceIPA
 
 Key ``riuso/codiceIPA`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''
