@@ -1016,9 +1016,12 @@ software.
 
 .. note::
 
-   List only the runtime and system-level dependencies installed and
-   maintained separately, such as a database. Do not list source code
-   dependencies, such as the libraries the software uses.
+   List only the proprietary software and the hardware that the
+   software needs at runtime and that are installed and maintained
+   separately, such as a proprietary database or an NFC reader. Do
+   not list source code dependencies, such as the libraries the
+   software uses. Declare open source runtime dependencies in an SBOM
+   or package manager manifests.
 
 .. index:: ! open
 

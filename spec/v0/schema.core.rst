@@ -895,10 +895,11 @@ This section provides an overview on the system-level dependencies
 required to install and use this software.
 
 **NOTE:** do not list dependencies at the source code level (e.g.:
-software libraries being used), and focus only on runtime and/or
-system-level dependencies that must be installed and maintained
-separately. For instance, a database is a good example of such
-dependencies.
+software libraries being used), and focus only on the proprietary
+software and the hardware needed at runtime that must be installed and
+maintained separately. For instance, a proprietary database and an
+NFC reader are good examples of such dependencies. Open source runtime
+dependencies belong in the SBOM or in the package manager manifests.
 
 .. index:: ! open
 
@@ -946,8 +947,8 @@ Dependency
 
 A ``dependency`` is a mapping with the following properties:
 
--  ``name`` - **mandatory** - The name of the dependency (e.g. MySQL,
-   NFC Reader)
+-  ``name`` - **mandatory** - The name of the dependency (e.g. Oracle
+   Database, NFC Reader)
 -  ``versionMin`` - the first compatible version
 -  ``versionMax`` - the latest compatible version
 -  ``version`` - the only major version for which the software is
@@ -965,23 +966,27 @@ compatibility matrix.
 
 .. code:: yaml
 
-   - name: PostgreSQL
-     version: "3.2"
-     optional: true
+   dependsOn:
+     proprietary:
+       - name: Oracle Database
+         version: "19"
+         optional: true
 
-This snippet marks an optional dependency on PostgreSQL 3.2, with any
-of its patch releases.
+This snippet marks an optional proprietary dependency on Oracle
+Database 19, with any of its patch releases.
 
 *Ex. 2*
 
 .. code:: yaml
 
-   - name: MySQL
-     versionMin: "1.1"
-     versionMax: "1.3"
+   dependsOn:
+     proprietary:
+       - name: Microsoft SQL Server
+         versionMin: "2019"
+         versionMax: "2022"
 
-This snippet marks a mandatory dependency on MySQL, allowing any version
-between 1.1 and 1.3.
+This snippet marks a mandatory proprietary dependency on Microsoft SQL
+Server, allowing any version between 2019 and 2022.
 
 Contact
 ~~~~~~~
