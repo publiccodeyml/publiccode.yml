@@ -391,6 +391,13 @@ i.e. the software explicitly claims compliance with specific processes,
 technologies or laws. All countries are specified using lowercase (*deprecated*)
 or uppercase ISO 3166-1 alpha-2 two-letter country codes.
 
+.. tip::
+
+   Leave this key out when the software is not tied to the processes,
+   technologies or laws of any country, as is the case for a general
+   purpose content management system. Do not list every country to
+   mean a worldwide audience.
+
 Key ``intendedAudience/unsupportedCountries`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
