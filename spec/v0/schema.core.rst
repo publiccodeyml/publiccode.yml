@@ -9,6 +9,8 @@ schema.
 Top-Level Keys and Sections
 ---------------------------
 
+.. index:: ! publiccodeYmlVersion
+
 Key ``publiccodeYmlVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -18,6 +20,8 @@ Key ``publiccodeYmlVersion``
 
 This key specifies the version to which the current ``publiccode.yml``
 adheres, for forward compatibility.
+
+.. index:: ! name
 
 Key ``name``
 ~~~~~~~~~~~~
@@ -32,6 +36,8 @@ public name of the product, which can be localised using the
 people usually refer to the software. In case the software has both an
 internal “code” name and a commercial name, use the commercial name.
 
+.. index:: ! applicationSuite
+
 Key ``applicationSuite``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,6 +46,8 @@ Key ``applicationSuite``
 -  Example: ``"MegaProductivitySuite"``
 
 This key contains the name of the “suite” to which the software belongs.
+
+.. index:: ! url
 
 Key ``url``
 ~~~~~~~~~~~
@@ -64,6 +72,8 @@ See :ref:`forks-and-variants` for a complete description of what
 is a software variant and how to handle forked software as a parser or
 an author.
 
+.. index:: ! landingURL
+
 Key ``landingURL``
 ~~~~~~~~~~~~~~~~~~
 
@@ -79,6 +89,8 @@ something like “Go to the application source code”. In case the product
 provides an automated graphical installer, this URL can point to a page
 which contains a reference to the source code but also offers the
 download of such an installer.
+
+.. index:: ! isBasedOn
 
 Key ``isBasedOn``
 ~~~~~~~~~~~~~~~~~
@@ -97,6 +109,8 @@ variant, descending from the specified repositories.
 The single string form is deprecated, use a one element list
 instead.
 
+.. index:: ! softwareVersion
+
 Key ``softwareVersion``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -109,6 +123,8 @@ version number is a string that is not meant to be interpreted and
 parsed but just displayed; parsers should not assume semantic versioning
 or any other specific version format.
 
+.. index:: ! releaseDate
+
 Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
@@ -117,6 +133,8 @@ Key ``releaseDate``
 -  Example: ``"2017-04-15"``
 
 This key contains the date at which the latest version was released.
+
+.. index:: ! logo
 
 Key ``logo``
 ~~~~~~~~~~~~
@@ -132,6 +150,8 @@ The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the logo in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
+
+.. index:: ! monochromeLogo
 
 Key ``monochromeLogo`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,6 +171,8 @@ the ``publiccode.yml`` file is stored.
 
 This key is deprecated. A monochrome version can be obtained from ``logo``.
 
+.. index:: ! inputTypes
+
 Key ``inputTypes`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -167,6 +189,8 @@ In case the software does not support any input, you can skip this field
 or use ``application/x.empty``.
 
 This key is deprecated.
+
+.. index:: ! outputTypes
 
 Key ``outputTypes`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,6 +209,8 @@ field or use ``application/x.empty``.
 
 This key is deprecated.
 
+.. index:: ! platforms
+
 Key ``platforms``
 ~~~~~~~~~~~~~~~~~
 
@@ -202,6 +228,8 @@ Use the predefined values if possible. If the software runs on a
 platform for which a predefined value is not available, a different
 value can be used.
 
+.. index:: ! categories
+
 Key ``categories``
 ~~~~~~~~~~~~~~~~~~
 
@@ -214,6 +242,8 @@ building catalogs of open software.
 
 The controlled vocabulary :ref:`categories-list` contains the list of allowed
 values.
+
+.. index:: ! usedBy
 
 Key ``usedBy`` (*deprecated*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -232,6 +262,8 @@ software.
 
 This key is deprecated.
 
+.. index:: ! fundedBy
+
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
@@ -241,6 +273,8 @@ Key ``fundedBy``
 A list of organisations that are currently known to be funding the
 development of this software.
 
+.. index:: ! roadmap
+
 Key ``roadmap``
 ~~~~~~~~~~~~~~~
 
@@ -248,6 +282,8 @@ Key ``roadmap``
 -  Presence: optional
 
 A link to a public roadmap of the software.
+
+.. index:: ! developmentStatus
 
 Key ``developmentStatus``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -272,6 +308,8 @@ The allowed values are:
    release and is ready to be used in a production environment.
 -  ``obsolete`` - The software is no longer maintained or kept up to date.
    All of the source code is archived and kept for historical reasons.
+
+.. index:: ! softwareType
 
 Key ``softwareType``
 ~~~~~~~~~~~~~~~~~~~~
@@ -306,6 +344,8 @@ The allowed values are:
    configuration files, bash scripts, ansible playbooks, Dockerfiles, or
    other instruction sets.
 
+.. index:: ! supports
+
 Key ``supports``
 ~~~~~~~~~~~~~~~~
 
@@ -336,12 +376,16 @@ Example:
      - id: alias:gdpr
      - id: https://eur-lex.europa.eu/eli/dir/2016/2102/oj
 
+.. index:: ! organisation
+
 Section ``organisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 This optional section provides the organisation publishing the software.
 Organisations funding the software go in ``fundedBy``, as items of the
 Organisation type described below.
+
+.. index:: ! uri
 
 Key ``organisation/uri``
 ''''''''''''''''''''''''
@@ -363,6 +407,8 @@ corresponds to the organisation in control of the repository.
 The specific verification method depends on the implementation and policies of the
 platform consuming the file.
 
+.. index:: name
+
 Key ``organisation/name``
 '''''''''''''''''''''''''
 
@@ -377,8 +423,12 @@ intended to provide a human-readable label for that URI.
 It SHOULD be the canonical, widely recognized form of the name (such as the
 registered legal or institutional name).
 
+.. index:: ! intendedAudience
+
 Section ``intendedAudience``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. index:: ! countries
 
 Key ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''''''
@@ -398,6 +448,8 @@ or uppercase ISO 3166-1 alpha-2 two-letter country codes.
    purpose content management system. Do not list every country to
    mean a worldwide audience.
 
+.. index:: ! unsupportedCountries
+
 Key ``intendedAudience/unsupportedCountries`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -412,6 +464,8 @@ lowercase (*deprecated*) or uppercase ISO 3166-1 alpha-2 two-letter country code
 This key is deprecated, use ``intendedAudience/countries`` to list the
 countries the software explicitly targets instead.
 
+.. index:: ! scope
+
 Key ``intendedAudience/scope``
 ''''''''''''''''''''''''''''''
 
@@ -421,6 +475,8 @@ Key ``intendedAudience/scope``
 
 This key contains a list of tags related to the field of application of
 the software. 
+
+.. index:: ! description
 
 Section ``description``
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -452,6 +508,8 @@ sub-section with the name of the language (we will note this with
 **Note:** it is mandatory to have *at least* one language in this
 section. All other languages are optional.
 
+.. index:: ! localisedName
+
 Key ``description/[lang]/localisedName``
 ''''''''''''''''''''''''''''''''''''''''
 
@@ -464,6 +522,8 @@ It contains the (short) public name of the product. It should be the
 name most people usually refer to the software. In case the software has
 both an internal “code” name and a commercial name, use the commercial
 name.
+
+.. index:: ! genericName
 
 Key ``description/[lang]/genericName`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -481,6 +541,8 @@ Notable examples include “Text Editor”, “Word Processor”, “Web Browser
 This key is deprecated, use ``description/[lang]/shortDescription`` and ``name``
 instead.
 
+.. index:: ! shortDescription
+
 Key ``description/[lang]/shortDescription``
 '''''''''''''''''''''''''''''''''''''''''''
 
@@ -491,6 +553,8 @@ Key ``description/[lang]/shortDescription``
 This key contains a short description of the software. It should be a
 single line containing a single sentence. Maximum 150 characters are
 allowed.
+
+.. index:: ! longDescription
 
 Key ``description/[lang]/longDescription``
 ''''''''''''''''''''''''''''''''''''''''''
@@ -509,6 +573,8 @@ The value of this key is Markdown, as defined by
 `CommonMark <https://commonmark.org/>`__. Keep the formatting basic:
 ``*italic*``, ``**bold**``, bullet points and ``[links](#)``, since
 consumers MAY render only this subset.
+
+.. index:: ! documentation
 
 Key ``description/[lang]/documentation``
 ''''''''''''''''''''''''''''''''''''''''
@@ -539,6 +605,8 @@ version of the documentation.
    source files available under an open license, possibly by committing
    them as part of the repository itself.
 
+.. index:: ! apiDocumentation
+
 Key ``description/[lang]/apiDocumentation``
 '''''''''''''''''''''''''''''''''''''''''''
 
@@ -568,6 +636,8 @@ The value must be a URL to a hosted version of the documentation.
    source files available under an open license, possibly by committing
    them as part of the repository itself.
 
+.. index:: ! features
+
 Key ``description/[lang]/features``
 '''''''''''''''''''''''''''''''''''
 
@@ -585,6 +655,8 @@ The suggested number of features to list is between 5 and 20, depending
 on the software size and complexity. There is no need for
 exhaustiveness, as users can always read the documentation for
 additional information.
+
+.. index:: ! screenshots
 
 Key ``description/[lang]/screenshots``
 ''''''''''''''''''''''''''''''''''''''
@@ -608,6 +680,8 @@ Screenshots can be of any shape and size; the suggested formats are:
 -  Tablet: 1024x768 @2x
 -  Mobile: 375x667 @2x
 
+.. index:: ! videos
+
 Key ``description/[lang]/videos`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -625,6 +699,8 @@ and Vimeo.
 This key is deprecated, link videos from the documentation or the
 website of the software instead.
 
+.. index:: ! awards
+
 Key ``description/[lang]/awards``
 '''''''''''''''''''''''''''''''''
 
@@ -633,8 +709,12 @@ Key ``description/[lang]/awards``
 
 A list of awards won by the software.
 
+.. index:: ! legal
+
 Section ``legal``
 ~~~~~~~~~~~~~~~~~
+
+.. index:: ! license
 
 Key ``legal/license``
 '''''''''''''''''''''
@@ -655,6 +735,8 @@ documentation <https://spdx.org/licenses/>`__ for further information.
    licenses, say whether later versions apply: write
    ``GPL-3.0-only`` or ``GPL-3.0-or-later``, not ``GPL-3.0``.
 
+.. index:: ! mainCopyrightOwner
+
 Key ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''''''
 
@@ -674,6 +756,8 @@ In case it is not possible to name a main copyright owner, it is
 possible to omit this key; in those cases, if the repo has an authors
 file, you can point to it through ``legal/authorsFile``.
 
+.. index:: ! repoOwner
+
 Key ``legal/repoOwner`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''
 
@@ -687,6 +771,8 @@ itself. For instance, in case of a fork of the original software, the
 ``repoOwner`` is probably different from the ``mainCopyrightOwner``.
 
 This key is deprecated, use ``organisation/name`` instead.
+
+.. index:: ! authorsFile
 
 Key ``legal/authorsFile`` (*deprecated*)
 ''''''''''''''''''''''''''''''''''''''''
@@ -704,12 +790,16 @@ authors file, using a path relative to the root of the repository.
 
 This key is deprecated.
 
+.. index:: ! maintenance
+
 Section ``maintenance``
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides information on the maintenance status of the
 software, useful to evaluate whether the software is actively developed
 or not.
+
+.. index:: ! type
 
 Key ``maintenance/type``
 ''''''''''''''''''''''''
@@ -728,6 +818,8 @@ This key describes how the software is currently maintained.
    or more people that donate their time to the project;
 -  ``none`` - means that the software is not actively maintained.
 
+.. index:: ! contractors
+
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
@@ -737,6 +829,8 @@ Key ``maintenance/contractors``
 This key describes the entity or entities, if any, that are currently
 contracted for maintaining the software. They can be companies,
 organisations, other collective names, or physical persons.
+
+.. index:: ! contacts
 
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
@@ -757,11 +851,15 @@ specify the final entities actually contracted to deliver the
 maintenance. Do not specify the software owner unless it is technically
 involved with the maintenance of the product as well.
 
+.. index:: ! localisation
+
 Section ``localisation``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides an overview of the localization features of the
 software.
+
+.. index:: ! localisationReady
 
 Key ``localisation/localisationReady``
 ''''''''''''''''''''''''''''''''''''''
@@ -772,6 +870,8 @@ Key ``localisation/localisationReady``
 If ``true``, the software has infrastructure in place or is otherwise
 designed to be multilingual. It does not need to be available in more
 than one language.
+
+.. index:: ! availableLanguages
 
 Key ``localisation/availableLanguages``
 '''''''''''''''''''''''''''''''''''''''
@@ -785,6 +885,8 @@ available. Of course, this list will contain at least one language.
 The primary language subtag cannot be omitted, as mandated by the 
 `BCP 47 <https://www.rfc-editor.org/info/bcp47/>`__.
 
+.. index:: ! dependsOn
+
 Section ``dependsOn``
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -796,6 +898,8 @@ software libraries being used), and focus only on runtime and/or
 system-level dependencies that must be installed and maintained
 separately. For instance, a database is a good example of such
 dependencies.
+
+.. index:: ! open
 
 Key ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''
@@ -811,6 +915,8 @@ declared in the SBOM or in the package manager manifests, and what
 needs to be installed belongs in the documentation and in the
 deployment scripts.
 
+.. index:: ! proprietary
+
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
@@ -819,6 +925,8 @@ Key ``dependsOn/proprietary``
 
 This key contains a list of runtime dependencies that are distributed
 under a proprietary license.
+
+.. index:: ! hardware
 
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
