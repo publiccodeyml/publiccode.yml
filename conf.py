@@ -1,12 +1,8 @@
 import re
-import warnings
 
 from docutils import nodes
 from docutils.parsers.rst import roles
-from sphinx.deprecation import RemovedInSphinx90Warning
 from sphinx.transforms import SphinxTransform
-
-warnings.filterwarnings("ignore", category=RemovedInSphinx90Warning)
 
 # No version in the name: under sphinx-polyversion the switcher shows it,
 # and a hardcoded one goes stale on the branches that change version.
