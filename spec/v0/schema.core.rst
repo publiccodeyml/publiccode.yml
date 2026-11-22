@@ -33,8 +33,9 @@ Key ``name``
 This key contains the name of the software. It contains the (short)
 public name of the product, which can be localised using the
 ``description/[lang]/localisedName`` key. It should be the name most
-people usually refer to the software. In case the software has both an
-internal “code” name and a commercial name, use the commercial name.
+people usually use to refer to the software. In case the software has
+both an internal “code” name and a commercial name, use the commercial
+name.
 
 .. index:: ! applicationSuite
 
@@ -65,7 +66,7 @@ Forks created for the purpose of contributing upstream should not
 modify this file; this helps software parsing ``publiccode.yml`` to
 immediately skip technical forks. On the contrary, a
 complete fork that is meant to be maintained separately from the
-original software should modify this line, to give themselves the status
+original software should modify this line, to give itself the status
 of a different project.
 
 See :ref:`forks-and-variants` for a complete description of what
@@ -519,9 +520,9 @@ Key ``description/[lang]/localisedName``
 
 This key is an opportunity to localise the name in a specific language.
 It contains the (short) public name of the product. It should be the
-name most people usually refer to the software. In case the software has
-both an internal “code” name and a commercial name, use the commercial
-name.
+name most people usually use to refer to the software. In case the
+software has both an internal “code” name and a commercial name, use the
+commercial name.
 
 .. index:: ! genericName
 
@@ -667,14 +668,14 @@ Key ``description/[lang]/screenshots``
 -  Example: ``"data/screenshots/configuration.png"``
 
 This key contains one or multiple paths to files showing screenshots of
-the software. They are meant to give a quick idea on how the software
+the software. They are meant to give a quick idea of what the software
 looks like and how it works.
 The key value can be the relative path to the file starting from the root of
 the repository, or it can be an absolute URL pointing to the screenshot in raw
 version. In both cases, the file must reside inside the same repository where
 the ``publiccode.yml`` file is stored.
 
-Screenshots can be of any shape and size; the suggested formats are:
+Screenshots can be of any shape and size; the suggested sizes are:
 
 -  Desktop: 1280x800 @1x
 -  Tablet: 1024x768 @2x
@@ -691,7 +692,7 @@ Key ``description/[lang]/videos`` (*deprecated*)
 
 This key contains one or multiple URLs of videos showing how the
 software works. Like screenshots, videos should be used to give a quick
-overview on how the software looks like and how it works. Videos must be
+overview of what the software looks like and how it works. Videos must be
 hosted on a video sharing website that supports the
 `oEmbed <https://oembed.com>`__ standard; popular options are YouTube
 and Vimeo.
@@ -968,8 +969,8 @@ compatibility matrix.
      version: "3.2"
      optional: true
 
-This snippet marks an optional dependency on PostgreSQL exactly version
-3.2.
+This snippet marks an optional dependency on PostgreSQL 3.2, with any
+of its patch releases.
 
 *Ex. 2*
 
@@ -1029,10 +1030,10 @@ A Contractor is a mapping with the following properties:
    company or a physical person.
 -  ``until`` - **mandatory** - This is a date (YYYY-MM-DD). This key
    must contain the date at which the maintenance is going to end.
--  ``email`` - This key contains the e-mail address of the technical
-   contact. It must be an email address where the technical contact
-   can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@example.com”.
+-  ``email`` - This key contains the e-mail address of the contractor.
+   It must be an email address where the contractor can be directly
+   reached; do NOT populate this key with mailing-lists or generic
+   contact points like “info@example.com”.
 -  ``website`` - This key points to the maintainer website. It can
    either point to the main institutional website, or to a more
    project-specific page or website.
