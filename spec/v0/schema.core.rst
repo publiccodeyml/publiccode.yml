@@ -879,7 +879,7 @@ A Contact is a mapping with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”.
+   or generic contact points like “info@example.com”.
 -  ``phone`` - phone number. It SHOULD include the international
    prefix, following the `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
    format (e.g. ``+3923113215112``). This has to be a string.
@@ -917,7 +917,7 @@ A Contractor is a mapping with the following properties:
 -  ``email`` - This key contains the e-mail address of the technical
    contact. It must be an email address where the technical contact
    can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@acme.inc”.
+   or generic contact points like “info@example.com”.
 -  ``website`` - This key points to the maintainer website. It can
    either point to the main institutional website, or to a more
    project-specific page or website.

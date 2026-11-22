@@ -13,7 +13,7 @@ Properties:
    contact information, a company department or an association.
 -  ``email``, :ref:`e-mail address <email-type>`: The e-mail address
    of the technical contact. It MUST reach the contact directly, not a
-   mailing list or a generic contact point like ``info@acme.inc``.
+   mailing list or a generic contact point like ``info@example.com``.
 -  ``phone``, :ref:`string <string-type>`: The phone number, in
    `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ format. It MUST
    include the international dialing prefix (e.g.
