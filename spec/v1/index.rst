@@ -787,6 +787,8 @@ software supports or complies with.
 
 Who the software is for.
 
+.. _intended-audience-countries:
+
 ``intendedAudience/countries``
 ''''''''''''''''''''''''''''''
 
@@ -816,8 +818,9 @@ Countries explicitly excluded from the intended audience, for
 instance when the software conflicts with a law, process or
 technology of theirs.
 
-This key is deprecated. Use ``intendedAudience/countries`` to list the
-countries the software targets.
+This key is deprecated. Use
+:ref:`intendedAudience/countries <intended-audience-countries>` to list
+the countries the software targets.
 
 .. _intended-audience-scope:
 
