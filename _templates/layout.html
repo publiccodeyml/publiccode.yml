@@ -20,6 +20,16 @@
 {%- endif %}
 {% endblock %}
 
+{#- The theme prints each css_files entry as a string, which Sphinx 9
+    no longer allows. css_tag renders the stylesheet objects Sphinx
+    passes instead. -#}
+
+{% block css %}
+{%- for css in css_files %}
+{{ css_tag(css) }}
+{%- endfor %}
+{%- endblock %}
+
 {% block footer %}
 
 <div class="footer">
