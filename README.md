@@ -42,6 +42,12 @@ the project evolves**.
 
 ## Example
 
+The example below follows the draft of version 1.0 of the Standard.
+Validators accept it once a
+[libpubliccode](https://github.com/publiccodeyml/libpubliccode) release
+supports version 1.0. Until then, write `publiccodeYmlVersion: "0"` and
+follow the [version 0 reference](https://publiccodeyml.github.io/v0/).
+
 A minimal `publiccode.yml` file:
 
 ```yaml
