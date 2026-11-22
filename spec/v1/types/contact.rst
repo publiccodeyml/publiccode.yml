@@ -17,7 +17,7 @@ Properties:
 -  ``phone``, :ref:`string <string-type>`: The phone number, in
    `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_ format. It MUST
    include the international dialing prefix (e.g.
-   ``+3923113215112``).
+   ``"+3923113215112"``).
 -  ``affiliation``, :ref:`string <string-type>`: The organisation the
    technical contact works for, such as a company or an association.
    With several maintainers, it tells which maintainer entity each
