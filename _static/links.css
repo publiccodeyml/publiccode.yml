@@ -21,3 +21,12 @@
 .content a:not(.headerlink) {
     text-decoration: underline;
 }
+
+/* The theme drops the focus outline of content links and puts nothing
+   in its place. Keyboard users lose track of where they are. Show one
+   again for keyboard focus only, in the link green. It keeps well above
+   3:1 on every background the links sit on. */
+.content a:focus-visible {
+    outline: 2px solid #247350;
+    outline-offset: 2px;
+}
