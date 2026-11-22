@@ -453,6 +453,13 @@ The license the software is distributed under. The value MUST be a
 valid SPDX expression referring to one or more open source licenses:
 see the `SPDX License List <https://spdx.org/licenses/>`__.
 
+.. tip::
+
+   Avoid the identifiers the SPDX License List marks as
+   `deprecated <https://spdx.org/licenses/#deprecated>`__. For the GNU
+   licenses, say whether later versions apply: write
+   ``GPL-3.0-only`` or ``GPL-3.0-or-later``, not ``GPL-3.0``.
+
 ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''
 

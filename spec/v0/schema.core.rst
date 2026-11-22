@@ -648,6 +648,13 @@ distributed. The string must contain a valid SPDX expression, referring
 to one or multiple open-source licenses. Please refer to the `SPDX
 documentation <https://spdx.org/licenses/>`__ for further information.
 
+.. tip::
+
+   Avoid the identifiers the SPDX License List marks as
+   `deprecated <https://spdx.org/licenses/#deprecated>`__. For the GNU
+   licenses, say whether later versions apply: write
+   ``GPL-3.0-only`` or ``GPL-3.0-or-later``, not ``GPL-3.0``.
+
 Key ``legal/mainCopyrightOwner``
 ''''''''''''''''''''''''''''''''
 
