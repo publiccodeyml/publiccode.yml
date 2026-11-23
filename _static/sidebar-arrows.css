@@ -22,3 +22,20 @@
   border-right: 4px solid transparent;
   border-top: 6px solid var(--arrow-bg-color, #ccc);
 }
+
+/* Forced colors paint transparent borders with the text color, which
+   turns both triangles into the same block. Keep the colors as set
+   and draw the visible side in the link color of the theme. */
+@media (forced-colors: active) {
+  .vp-sidebar .toctree-l1 > a .arrow {
+    forced-color-adjust: none;
+  }
+
+  .vp-sidebar .toctree-l1 > a .arrow.right {
+    border-left-color: LinkText;
+  }
+
+  .vp-sidebar .toctree-l1 > a .arrow.down {
+    border-top-color: LinkText;
+  }
+}
