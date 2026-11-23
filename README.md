@@ -145,10 +145,11 @@ Then open a file of the build directory in a browser, for example
 #### Hot reloading
 
 `sphinx-autobuild` rebuilds the website and reloads the browser on every
-change:
+change. It watches only the source directory, so the `--watch` options
+add the configuration, the styles and the templates of the site:
 
 ```console
-uv run sphinx-autobuild spec/v1 build -c .
+uv run sphinx-autobuild spec/v1 build -c . --watch conf.py --watch _static --watch _templates
 ```
 
 #### All the versions
