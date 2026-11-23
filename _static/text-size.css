@@ -1,0 +1,17 @@
+/* The press theme sets the body and sidebar text in px, so readers who
+   raise the default font size in their browser get bigger headings but
+   the same small text. Use the same sizes in rem: nothing changes at the
+   16px default and the text follows the reader's setting. */
+body {
+    font-size: 1rem;
+}
+
+.vp-sidebar {
+    font-size: 1rem;
+}
+
+@media (max-width: 959px) {
+    .vp-sidebar {
+        font-size: 0.9375rem;
+    }
+}
