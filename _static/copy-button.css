@@ -1,0 +1,19 @@
+/* sphinx-copybutton hides the button of a code block with opacity: 0,
+   drops its outline and shows it only while the pointer is over the
+   block. The button still takes keyboard focus, so keyboard users
+   reach an invisible control that copies the block on Enter. Show the
+   button and an outline in the link green while it has keyboard
+   focus. */
+.highlight button.copybtn:focus-visible {
+    opacity: 1;
+    outline: 2px solid #247350;
+    outline-offset: 2px;
+}
+
+/* The button sits at the top of its block. When focus scrolls it into
+   view at the top edge, the fixed 3.6rem header covers it. Keep it
+   below the header, outline included, like the theme does for its
+   links. */
+.highlight button.copybtn {
+    scroll-margin-top: 4.1rem;
+}
