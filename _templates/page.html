@@ -92,6 +92,17 @@
 <script>
   var versionSwitchRequest = 0;
 
+  window.addEventListener("pageshow", function () {
+    var select = document.getElementById("version-select");
+    if (!select) return;
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].defaultSelected) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
+  });
+
   // Same page in the chosen version when it exists there, its index otherwise.
   function switchVersion(select) {
     var request = ++versionSwitchRequest;
@@ -117,7 +128,7 @@
 {% set prefix = '../' * (pagename.count('/') + 1) %}
 <div class="version-switcher">
   <label for="version-select">Version:</label>
-  <select id="version-select" data-page="{{ pagename }}.html" onchange="switchVersion(this)">
+  <select id="version-select" autocomplete="off" data-page="{{ pagename }}.html" onchange="switchVersion(this)">
     {% for v in versions %}
     <option value="{{ prefix }}{{ v.dir }}/"{% if v.dir == current.dir %} selected{% endif %}>
       {{- v.name }}{% if v.prerelease %} (pre-release){% elif v.latest %} (latest){% endif -%}
