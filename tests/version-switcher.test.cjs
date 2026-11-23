@@ -7,11 +7,17 @@ const { test } = require('node:test');
 const template = fs.readFileSync(path.join(__dirname, '../_templates/page.html'), 'utf8');
 const script = template.match(/<script>([\s\S]*?)<\/script>/)[1];
 
-function setup() {
+function setup(select = null) {
+  const listeners = {};
   const requests = [];
   const destinations = [];
   const context = vm.createContext({
+    document: { getElementById(id) {
+      assert.equal(id, 'version-select');
+      return select;
+    } },
     window: {
+      addEventListener(name, listener) { listeners[name] = listener; },
       location: {
         hash: '#example',
         set href(value) { destinations.push(value); }
@@ -26,6 +32,7 @@ function setup() {
   });
   vm.runInContext(script, context);
   return {
+    pageshow(persisted) { listeners.pageshow({ persisted }); },
     requests,
     destinations,
     select(value) { context.switchVersion({ value, dataset: { page: 'schema.html' } }); }
@@ -66,3 +73,30 @@ for (const outcome of ['ok', 'missing', 'error']) {
       [outcome === 'ok' ? '../v1/schema.html#example' : '../v1/']);
   });
 }
+
+for (const persisted of [false, true]) {
+  for (const current of [0, 1]) {
+    test(`restore version ${current} on pageshow, persisted=${persisted}`, () => {
+      const select = {
+        options: [0, 1].map(index => ({ defaultSelected: index === current })),
+        selectedIndex: 1 - current
+      };
+      const harness = setup(select);
+      harness.pageshow(persisted);
+      assert.equal(select.selectedIndex, current);
+      select.selectedIndex = 1 - current;
+      harness.pageshow(persisted);
+      assert.equal(select.selectedIndex, current);
+      assert.deepEqual(harness.destinations, []);
+      assert.deepEqual(harness.requests, []);
+    });
+  }
+}
+
+test('pageshow tolerates a missing selector', () => {
+  setup().pageshow(false);
+});
+
+test('disable history form value restoration on the selector', () => {
+  assert.match(template, /<select\b[^>]*id="version-select"[^>]*autocomplete="off"/);
+});
