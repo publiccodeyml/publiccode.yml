@@ -1,0 +1,10 @@
+/* The header menu button is a <button> so that keyboards reach it.
+   Drop the browser's button look and keep the theme's box. */
+.navbar .sidebar-button {
+    box-sizing: content-box;
+    margin: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+}
