@@ -1,0 +1,28 @@
+/* The theme has no print rules. On paper the fixed header and the
+   sidebar repeat on every page and take a third of the width, and the
+   code blocks keep their screen scrolling, so the end of a long
+   example line is cut. Print only the page content, at full width,
+   and wrap code lines instead. */
+@media print {
+  .navbar,
+  .sidebar-button,
+  .sidebar-mask,
+  .vp-sidebar,
+  .version-switcher,
+  .copybtn {
+    display: none !important;
+  }
+
+  .page {
+    padding-left: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .content pre,
+  .theme-default-content pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow: visible;
+  }
+}
