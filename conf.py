@@ -28,7 +28,7 @@ html_theme = "press"
 templates_path = ["_templates"]
 
 html_static_path = ["_static"]
-html_css_files = ["theme-vars.css", "sidebar-arrows.css", "light-code.css", "key-meta.css", "heading-scale.css", "links.css", "menu-button.css", "site-header.css", "search-form.css", "print.css"]
+html_css_files = ["theme-vars.css", "text-size.css", "sidebar-arrows.css", "light-code.css", "key-meta.css", "heading-scale.css", "links.css", "menu-button.css", "site-header.css", "search-form.css", "print.css"]
 
 # light-code.css repaints the code blocks light: the tokens need a
 # palette for light backgrounds instead of the theme's dark one.
