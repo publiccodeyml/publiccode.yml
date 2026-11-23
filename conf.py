@@ -28,7 +28,7 @@ html_theme = "press"
 templates_path = ["_templates"]
 
 html_static_path = ["_static"]
-html_css_files = ["theme-vars.css", "text-size.css", "sidebar-arrows.css", "light-code.css", "key-meta.css", "heading-scale.css", "links.css", "menu-button.css", "site-header.css", "search-form.css", "print.css"]
+html_css_files = ["theme-vars.css", "text-size.css", "sidebar-arrows.css", "light-code.css", "key-meta.css", "heading-scale.css", "links.css", "copy-button.css", "menu-button.css", "site-header.css", "search-form.css", "print.css"]
 
 # Heading links carry no text: links.css draws their "#", which is
 # neither copied with the heading nor read out. Screen readers name
