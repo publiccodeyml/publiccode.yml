@@ -54,20 +54,20 @@ A minimal `publiccode.yml` file:
 publiccodeYmlVersion: "1"
 name: My text editor
 url: "https://example.com/mysoftware/text-editor.git"
+softwareType: standalone/desktop
 platforms:
   - windows
 developmentStatus: development
-softwareType: standalone/desktop
 description:
   en:
     shortDescription: A lightweight text editor
     longDescription: >
-          A lightweight yet powerful text editor designed for everyday use by developers,
-          writers and public administrations. It also supports syntax highlighting.
+      A lightweight yet powerful text editor designed for everyday use by developers,
+      writers and public administrations. It also supports syntax highlighting.
     features:
-       - Syntax highlighting
-       - Collaborative editing features
-       - Scripting interface
+      - Syntax highlighting
+      - Collaborative editing features
+      - Scripting interface
 legal:
   license: AGPL-3.0-or-later
 maintenance:
