@@ -1,0 +1,15 @@
+{#- Copy of the theme's util/searchbox.html with the text field named
+    by its visible caption, as Sphinx's own searchbox does. The theme
+    left both unnamed, so screen readers announced a bare text field. -#}
+<div id="searchbox" class="searchbox" role="search" aria-labelledby="searchlabel">
+  <div class="caption"><span class="caption-text" id="searchlabel">{{ _('Quick search') }}</span>
+    <div class="searchformwrapper">
+      <form class="search" action="{{ pathto('search') }}" method="get">
+        <input type="text" name="q" aria-labelledby="searchlabel" />
+        <input type="submit" value="{{ _('Search') }}" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
