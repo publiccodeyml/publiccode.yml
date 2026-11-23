@@ -1,0 +1,26 @@
+/* The theme gives the phone header a fixed height but lays out its
+   content as text. On screens 360px wide and narrower the floated
+   GitHub icon wraps below the bar. At 320px the title does too.
+   Keep the title and the icon on one row and scale the title down
+   with the screen. A title that still needs two lines stays centered
+   inside the bar instead of under it. */
+@media (max-width: 719px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1rem;
+  }
+
+  .navbar .home-link {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .navbar .site-name {
+    font-size: min(1.15rem, 5vw);
+    line-height: 1.25;
+  }
+}
