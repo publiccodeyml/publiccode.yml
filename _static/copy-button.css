@@ -17,3 +17,11 @@
 .highlight button.copybtn {
     scroll-margin-top: 4.1rem;
 }
+
+/* The "Copy" and "Copied!" tooltip of sphinx-copybutton is white on
+   grey #808080 at 0.8em, a contrast of 3.95:1, under the 4.5:1 that
+   text of this size needs. Draw it on the page text color, about
+   11:1. */
+.highlight button.copybtn::after {
+    background: #2c3e50;
+}
