@@ -30,6 +30,11 @@ templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_css_files = ["theme-vars.css", "text-size.css", "sidebar-arrows.css", "light-code.css", "key-meta.css", "heading-scale.css", "links.css", "menu-button.css", "site-header.css", "search-form.css", "print.css"]
 
+# Heading links carry no text: links.css draws their "#", which is
+# neither copied with the heading nor read out. Screen readers name
+# the link from its title, "Link to this heading".
+html_permalinks_icon = ""
+
 # light-code.css repaints the code blocks light: the tokens need a
 # palette for light backgrounds instead of the theme's dark one.
 pygments_style = "default"
