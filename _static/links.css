@@ -30,3 +30,40 @@
     outline: 2px solid #247350;
     outline-offset: 2px;
 }
+
+/* The theme hides the heading permalinks with visibility: hidden and
+   draws a "#" only while the pointer is over the heading. A hidden link
+   takes no keyboard focus, so keyboard users cannot reach the link to a
+   key. Keep the links visible to the browser and hide only the "#",
+   then show it on hover and on keyboard focus. The links have no text
+   (html_permalinks_icon in conf.py). The "#" has empty alternative
+   text, so screen readers name the link from its title. */
+.content a.headerlink {
+    visibility: visible;
+}
+
+.content a.headerlink::after {
+    content: "#";
+    content: "#" / "";
+    color: #247350;
+    opacity: 0;
+}
+
+.content :is(h1, h2, h3, h4, h5, h6):hover > a.headerlink::after,
+.content a.headerlink:focus-visible::after {
+    content: "#";
+    content: "#" / "";
+    opacity: 1;
+}
+
+/* Give the "#" and the focus outline the system link color in forced
+   colors. */
+@media (forced-colors: active) {
+    .content a.headerlink {
+        outline-color: LinkText;
+    }
+
+    .content a.headerlink::after {
+        color: LinkText;
+    }
+}
