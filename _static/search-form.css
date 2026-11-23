@@ -1,0 +1,26 @@
+/* The theme leaves both search forms to the browser's default
+   controls: small text in boxes 21px tall that almost touch. Give
+   them the site's text size, a height well above the 24px minimum
+   target of WCAG 2.5.8 and some room between them. */
+form.search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+form.search input[type="text"],
+form.search input[type="submit"] {
+    box-sizing: border-box;
+    min-height: 2.25rem;
+    padding: 0.25rem 0.5rem;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+form.search input[type="text"] {
+    flex: 1 1 8rem;
+    min-width: 0;
+    max-width: 30rem;
+}
