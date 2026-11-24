@@ -13,7 +13,7 @@ Properties:
 -  ``until`` *(required)*, :ref:`date <date-type>`: The date the
    maintenance is going to end.
 -  ``email``, :ref:`e-mail address <email-type>`: The e-mail address
-   of the technical contact. It MUST reach that person directly, not a
+   of the contractor. It MUST reach the contractor directly, not a
    mailing list or a generic contact point like ``info@example.com``.
 -  ``website``, :ref:`URL <url-type>`: The contractor website: its
    main institutional site or a page specific to the project.
