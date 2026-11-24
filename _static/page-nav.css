@@ -1,0 +1,19 @@
+/* The theme keeps the breadcrumbs and the previous and next links on
+   one flex row. With text that follows the browser font size, the
+   links no longer fit there on phones and the page scrolls sideways.
+   Let the links move below the breadcrumbs and wrap instead. */
+.body-header {
+    flex-wrap: wrap;
+}
+
+.body-header ul.breadcrumbs,
+.body-header ul.page-nav {
+    min-width: 0;
+}
+
+@media (max-width: 959px) {
+    .body-header ul.page-nav {
+        margin-right: 0;
+        padding-left: 0;
+    }
+}
