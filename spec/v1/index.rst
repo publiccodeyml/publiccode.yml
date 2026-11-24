@@ -1020,8 +1020,8 @@ software.
    software needs at runtime and that are installed and maintained
    separately, such as a proprietary database or an NFC reader. Do
    not list source code dependencies, such as the libraries the
-   software uses. Declare open source runtime dependencies in an SBOM
-   or package manager manifests.
+   software uses. Declare open source runtime dependencies in a
+   software bill of materials (SBOM) or package manager manifests.
 
 .. index:: ! open
 

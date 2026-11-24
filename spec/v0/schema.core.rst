@@ -888,7 +888,8 @@ software libraries being used), and focus only on the proprietary
 software and the hardware needed at runtime that must be installed and
 maintained separately. For instance, a proprietary database and an
 NFC reader are good examples of such dependencies. Open source runtime
-dependencies belong in the SBOM or in the package manager manifests.
+dependencies belong in a software bill of materials (SBOM) or in the
+package manager manifests.
 
 .. index:: ! open
 
