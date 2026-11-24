@@ -28,3 +28,11 @@ pre code,
 .code-block-caption .headerlink {
     display: none;
 }
+
+/* An inline literal such as a path or a key path has no break
+   opportunity. When it is wider than a phone screen the whole page
+   scrolls sideways. Break it only where it would overflow: unlike
+   anywhere, break-word keeps the literals in table cells whole. */
+code.literal {
+    overflow-wrap: break-word;
+}
