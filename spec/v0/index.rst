@@ -772,6 +772,13 @@ documentation <https://spdx.org/licenses/>`__ for further information.
 
 .. tip::
 
+   Join several licenses with ``OR`` when users can pick any one of
+   them, as in dual licensing, and with ``AND`` when all of them apply
+   at once, for example when parts of the code are under different
+   licenses. Write the whole expression as one string, not as a YAML
+   list. See `SPDX license expressions
+   <https://spdx.github.io/spdx-spec/v3.0.1/annexes/spdx-license-expressions/#composite-license-expressions>`__.
+
    Avoid the identifiers the SPDX License List marks as
    `deprecated <https://spdx.org/licenses/#deprecated>`__. For the GNU
    licenses, say whether later versions apply: write
