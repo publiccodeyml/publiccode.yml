@@ -129,7 +129,7 @@ or any other specific version format.
 Key ``releaseDate``
 ~~~~~~~~~~~~~~~~~~~
 
--  Type: string (date)
+-  Type: string (:ref:`date <date-type>`)
 -  Presence: optional
 -  Example: ``"2017-04-15"``
 
@@ -268,7 +268,7 @@ This key is deprecated.
 Key ``fundedBy``
 ~~~~~~~~~~~~~~~~
 
--  Type: list of Organisations (see below)
+-  Type: list of :ref:`Organisations <organisation-type>`
 -  Presence: optional
 
 A list of organisations that are currently known to be funding the
@@ -350,24 +350,13 @@ The allowed values are:
 Key ``supports``
 ~~~~~~~~~~~~~~~~
 
--  Type: list of mappings
+-  Type: list of :ref:`Supported resources <supported-resource-type>`
 -  Presence: optional
 
 A list of standards, regulations, frameworks or systems that the
 software supports or complies with.
 
-Each item is a mapping with a single property:
-
--  ``id`` - **mandatory** - an identifier for the supported standard,
-   regulation, framework or system. It is either an alias in
-   the form ``alias:<name>`` (e.g. ``alias:gdpr``), resolved through the
-   :ref:`list of aliases <aliases-list>`, or any other valid URI (URL or
-   URN) referencing the resource directly.
-
-   An ``alias:`` value MUST exist in the
-   :ref:`list of aliases <aliases-list>`. An unknown alias is an error.
-   Any other value MUST be a syntactically valid URI. A value that is
-   well formed but not otherwise known is accepted as is.
+Each item names one resource in its ``id`` key.
 
 Example:
 
@@ -384,7 +373,7 @@ Section ``organisation``
 
 This optional section provides the organisation publishing the software.
 Organisations funding the software go in ``fundedBy``, as items of the
-Organisation type described below.
+Organisation type: see :ref:`organisation-type`.
 
 .. index:: ! uri
 
@@ -824,7 +813,7 @@ This key describes how the software is currently maintained.
 Key ``maintenance/contractors``
 '''''''''''''''''''''''''''''''
 
--  Type: list of Contractors (see below)
+-  Type: list of :ref:`Contractors <contractor-type>`
 -  Presence: mandatory if ``maintenance/type`` **is** ``contract``; must not be present otherwise
 
 This key describes the entity or entities, if any, that are currently
@@ -836,7 +825,7 @@ organisations, other collective names, or physical persons.
 Key ``maintenance/contacts``
 ''''''''''''''''''''''''''''
 
--  Type: list of Contacts (see below)
+-  Type: list of :ref:`Contacts <contact-type>`
 -  Presence: mandatory if ``maintenance/type`` **is** ``internal`` or ``community``; optional otherwise
 
 One or more contacts maintaining this software.
@@ -906,7 +895,7 @@ dependencies belong in the SBOM or in the package manager manifests.
 Key ``dependsOn/open`` (*deprecated*)
 '''''''''''''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
+-  Type: list of :ref:`Dependencies <dependency-type>`
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -922,7 +911,7 @@ deployment scripts.
 Key ``dependsOn/proprietary``
 '''''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
+-  Type: list of :ref:`Dependencies <dependency-type>`
 -  Presence: optional
 
 This key contains a list of runtime dependencies that are distributed
@@ -933,7 +922,7 @@ under a proprietary license.
 Key ``dependsOn/hardware``
 ''''''''''''''''''''''''''
 
--  Type: list of ``dependency`` (see below)
+-  Type: list of :ref:`Dependencies <dependency-type>`
 -  Presence: optional
 
 This key contains a list of hardware dependencies that must be owned to
@@ -942,115 +931,41 @@ use the software.
 Special data formats
 --------------------
 
+The mappings and the date format that keys refer to by name have a
+page each under :ref:`types`.
+
 Dependency
 ~~~~~~~~~~
 
-A ``dependency`` is a mapping with the following properties:
-
--  ``name`` - **mandatory** - The name of the dependency (e.g. Oracle
-   Database, NFC Reader)
--  ``versionMin`` - the first compatible version
--  ``versionMax`` - the latest compatible version
--  ``version`` - the only major version for which the software is
-   compatible. It assumes compatibility with all patches and bugfixes
-   later applied to this version.
--  ``optional`` - whether the dependency is optional or mandatory
+See :ref:`dependency-type`.
 
 Complex versioning
 ~~~~~~~~~~~~~~~~~~
 
-It is of course possible to use the various keys to specify a complex
-compatibility matrix.
-
-*Ex. 1*
-
-.. code:: yaml
-
-   dependsOn:
-     proprietary:
-       - name: Oracle Database
-         version: "19"
-         optional: true
-
-This snippet marks an optional proprietary dependency on Oracle
-Database 19, with any of its patch releases.
-
-*Ex. 2*
-
-.. code:: yaml
-
-   dependsOn:
-     proprietary:
-       - name: Microsoft SQL Server
-         versionMin: "2019"
-         versionMax: "2022"
-
-This snippet marks a mandatory proprietary dependency on Microsoft SQL
-Server, allowing any version between 2019 and 2022.
+See :ref:`dependency-type`.
 
 Contact
 ~~~~~~~
 
-A Contact is a mapping with the following properties:
-
--  ``name`` - **mandatory** - This key contains the full name of one of
-   the technical contacts. It must be a real person; do NOT populate
-   this key with generic contact information, company departments,
-   associations, etc.
--  ``email`` - This key contains the e-mail address of the technical
-   contact. It must be an email address where the technical contact
-   can be directly reached; do NOT populate this key with mailing-lists
-   or generic contact points like “info@example.com”.
--  ``phone`` - phone number. It SHOULD include the international
-   prefix, following the `E.164 <https://www.itu.int/rec/T-REC-E.164/en>`_
-   format (e.g. ``+3923113215112``). This has to be a string.
--  ``affiliation`` - This key contains an explicit affiliation
-   information for the technical contact. In case of multiple
-   maintainers, this can be used to create a relation between each
-   technical contact and each maintainer entity. It can contain for
-   instance a company name, an association name, etc.
+See :ref:`contact-type`.
 
 Organisation
 ~~~~~~~~~~~~
 
-An organisation is a structure (association, company, public
-authority, etc.) or a physical person that can fund software
-development. An organisation is a mapping with the following properties:
-
--  ``name`` - **mandatory** - The name of the organisation, whether
-   it’s an association, a company, a public sector organisation, or
-   a physical person.
--  ``uri`` - The URI identifying the organisation.
-
-This type is the item of ``fundedBy``. The organisation publishing the
-software goes in the separate ``organisation`` section, which has its
-own keys.
+See :ref:`organisation-type`.
 
 Contractor
 ~~~~~~~~~~
 
-A Contractor is a mapping with the following properties:
-
--  ``name`` - **mandatory** - The name of the contractor, whether it’s a
-   company or a physical person.
--  ``until`` - **mandatory** - This is a date (YYYY-MM-DD). This key
-   must contain the date at which the maintenance is going to end.
--  ``email`` - This key contains the e-mail address of the contractor.
-   It must be an email address where the contractor can be directly
-   reached; do NOT populate this key with mailing-lists or generic
-   contact points like “info@example.com”.
--  ``website`` - This key points to the maintainer website. It can
-   either point to the main institutional website, or to a more
-   project-specific page or website.
+See :ref:`contractor-type`.
 
 Dates
 ~~~~~
 
-All dates in ``publiccode.yml`` must follow the format “YYYY-MM-DD”,
-which is one of the ISO8601 allowed formats. This is the only allowed
-format though, so not the full ISO8601 is allowed for the date keys.
+See :ref:`date-type`.
 
 Encoding
-~~~~~~~~
+--------
+
 ``publiccode.yml`` **MUST** be UTF-8 encoded and **SHOULD** be a YAML 1.2 document,
 using YAML 1.1 is *deprecated*.
