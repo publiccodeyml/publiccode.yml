@@ -1,11 +1,21 @@
 /* The press theme colors every link #3eaf7c, 2.75:1 on the white page
    and lower on the type chips, table stripes and inline code. #247350
-   keeps the green and stays above 4.5:1 on all of them. Sidebar and
-   navbar links keep the theme colors. The admonition and banner rules
-   are more specific and keep theirs too. */
+   keeps the green and stays above 4.5:1 on all of them. Navbar links
+   keep the theme colors. The admonition and banner rules are more
+   specific and keep theirs too. */
 .content a,
 .body-header a,
 .page-nav a {
+    color: #247350;
+}
+
+/* In the sidebar the theme green colors the title link, the current
+   page and the link under the pointer. */
+.vp-sidebar .caption-text > a,
+.vp-sidebar .toctree-l1 a.current,
+.vp-sidebar .toctree-l2 a.current,
+.vp-sidebar .toctree-l1 a:hover,
+.vp-sidebar .toctree-l2 a:hover {
     color: #247350;
 }
 
