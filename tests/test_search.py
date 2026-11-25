@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 # The pages that define keys, per specification version.
 KEY_PAGES = {
-    "v0": ("schema.core", "country"),
+    "v0": ("index", "country"),
     "v1": ("index",),
 }
 

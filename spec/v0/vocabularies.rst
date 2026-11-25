@@ -1,13 +1,68 @@
-.. _categories-list:
+Vocabularies
+============
 
-List of software categories
-===========================
+.. _aliases:
+
+Aliases
+-------
+
+Here follows the list of aliases that can be used in the
+``supports`` key. Each alias resolves to the canonical resource it
+refers to.
+
+========  ===============================================
+alias     resource
+========  ===============================================
+gdpr      https://eur-lex.europa.eu/eli/reg/2016/679/oj
+eidas     https://eur-lex.europa.eu/eli/reg/2014/910/oj
+nis2      https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+cra       https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+spid      https://www.spid.gov.it/
+cie       https://www.cartaidentita.interno.gov.it/
+anpr      https://www.anagrafenazionale.interno.it/
+pagopa    https://www.pagopa.gov.it/
+io        https://ioapp.it/
+========  ===============================================
+
+.. _scopes:
+
+Scopes
+------
+
+Here follows a controlled vocabulary of useful tags for categorizing the
+software.
+
+- agriculture
+- culture
+- defence
+- education
+- emergency-services
+- employment
+- energy
+- environment
+- finance-and-economic-development
+- foreign-affairs
+- government (*deprecated*)
+- healthcare
+- infrastructures
+- justice
+- local-authorities
+- manufacturing
+- research
+- science-and-technology
+- security
+- society
+- sport
+- tourism
+- transportation
+- welfare
+
+.. _categories:
+
+Software categories
+-------------------
 
 Here follows a controlled vocabulary of allowed categories for the software.
-
-================
-Valid categories
-================
 
 - accounting
 - agile-project-management
