@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+          # The published URL test builds the release tags.
+          fetch-tags: true
       - name: Test documentation version selector
         run: node --test tests/version-switcher.test.cjs
       - uses: astral-sh/setup-uv@v10.4.0
