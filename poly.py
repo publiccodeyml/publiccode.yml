@@ -4,6 +4,7 @@ Run with ``uv run sphinx-polyversion poly.py build/html`` (add ``-l`` to
 preview the current checkout only, with a mocked version list).
 """
 
+import json
 import re
 import subprocess
 import sys
@@ -59,6 +60,30 @@ version_pattern = re.compile(
     r"^v?(?P<major>\d+)\.(?P<minor>\d+)(?:\.(?P<patch>\d+))?(?P<rc>-rc)?$"
 )
 
+#: Pages published before a version took the layout of version 1, with
+#: the page now holding their content. Each maps to its target and, for
+#: a page whose anchors stay meaningful, the anchors that moved
+#: elsewhere. schema.core.html also held the types, which now have pages
+#: of their own. Its key anchors need no entry: the redirect drops the
+#: key- and section- prefixes of the old "Key ``name``" headings.
+MOVED_PAGES = {
+    "schema.core.html": ("index.html", {
+        "core": "index.html#specification",
+        "the-standard": "index.html#specification",
+        "top-level-keys-and-sections": "index.html#specification",
+        "special-data-formats": "types.html",
+        "dependency": "types/dependency.html",
+        "complex-versioning": "types/dependency.html#complex-versioning",
+        "contact": "types/contact.html",
+        "organisation": "types/organisation.html",
+        "contractor": "types/contractor.html",
+        "dates": "types/date.html",
+    }),
+    "categories-list.html": ("vocabularies.html#categories", None),
+    "scope-list.html": ("vocabularies.html#scopes", None),
+    "aliases-list.html": ("vocabularies.html#aliases", None),
+}
+
 REDIRECT = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,13 +92,31 @@ REDIRECT = """<!DOCTYPE html>
 <title>publiccode.yml Standard</title>
 <link rel="canonical" href="{target}">
 <meta http-equiv="refresh" content="0; url={target}">
-<script>location.replace("{target}" + location.search + location.hash);</script>
+<script>{script}</script>
 </head>
 <body>
 <p>Moved to <a href="{target}">{target}</a>.</p>
 </body>
 </html>
 """
+
+
+def redirect(target, script=None):
+    if script is None:
+        script = f'location.replace("{target}" + location.search + location.hash);'
+    return REDIRECT.format(target=target, script=script)
+
+
+def moved_page(target, anchors):
+    if anchors is None:
+        return redirect(target, f"location.replace({json.dumps(target)});")
+    return redirect(target, (
+        "var anchor = location.hash.slice(1);\n"
+        f"var moved = {json.dumps(anchors)};\n"
+        "location.replace(moved.hasOwnProperty(anchor) ? moved[anchor] :\n"
+        f"  {json.dumps(target)} + "
+        '(anchor && "#" + anchor.replace(/^(?:key|section)-/, "")));'
+    ))
 
 
 def parse(name):
@@ -190,7 +233,16 @@ def write_redirects(out, version="v0"):
             target = f"{version}/"
         stub = out / rel
         stub.parent.mkdir(parents=True, exist_ok=True)
-        stub.write_text(REDIRECT.format(target=target))
+        stub.write_text(redirect(target))
+
+
+def write_moved_pages(version_dir):
+    """Redirect the pages a built version no longer has, so the links
+    published before the version 1 layout keep working."""
+    for page, (target, anchors) in MOVED_PAGES.items():
+        stub = version_dir / page
+        if not stub.exists():
+            stub.write_text(moved_page(target, anchors))
 
 
 class Driver(DefaultDriver):
@@ -214,6 +266,8 @@ class Driver(DefaultDriver):
                 "release tags."
             )
         await super().build_root()
+        for version in ["local"] if MOCK else [v["dir"] for v in data["versions"]]:
+            write_moved_pages(self.output_dir / version)
         write_redirects(self.output_dir, "local" if MOCK else "v0")
 
 
